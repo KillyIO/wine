@@ -44,6 +44,10 @@ class _$SeriesEventTearOff {
     );
   }
 
+  LikeStatusLoaded likeStatusLoaded() {
+    return const LikeStatusLoaded();
+  }
+
   SeriesSet seriesSet() {
     return const SeriesSet();
   }
@@ -54,6 +58,10 @@ class _$SeriesEventTearOff {
 
   SettingsFetched settingsFetched() {
     return const SettingsFetched();
+  }
+
+  ViewsUpdated viewsUpdated() {
+    return const ViewsUpdated();
   }
 }
 
@@ -69,9 +77,11 @@ mixin _$SeriesEvent {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,9 +91,11 @@ mixin _$SeriesEvent {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,9 +105,11 @@ mixin _$SeriesEvent {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,9 +121,11 @@ mixin _$SeriesEvent {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -119,9 +135,11 @@ mixin _$SeriesEvent {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -131,9 +149,11 @@ mixin _$SeriesEvent {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -200,9 +220,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) {
     return authorLoaded();
   }
@@ -215,9 +237,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) {
     return authorLoaded?.call();
   }
@@ -230,9 +254,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (authorLoaded != null) {
@@ -250,9 +276,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return authorLoaded(this);
   }
@@ -265,9 +293,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return authorLoaded?.call(this);
   }
@@ -280,9 +310,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (authorLoaded != null) {
@@ -368,9 +400,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) {
     return bookmarkButtonPressed(isBookmarked);
   }
@@ -383,9 +417,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) {
     return bookmarkButtonPressed?.call(isBookmarked);
   }
@@ -398,9 +434,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (bookmarkButtonPressed != null) {
@@ -418,9 +456,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return bookmarkButtonPressed(this);
   }
@@ -433,9 +473,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return bookmarkButtonPressed?.call(this);
   }
@@ -448,9 +490,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (bookmarkButtonPressed != null) {
@@ -516,9 +560,11 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) {
     return chapterOneLoaded();
   }
@@ -531,9 +577,11 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) {
     return chapterOneLoaded?.call();
   }
@@ -546,9 +594,11 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (chapterOneLoaded != null) {
@@ -566,9 +616,11 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return chapterOneLoaded(this);
   }
@@ -581,9 +633,11 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return chapterOneLoaded?.call(this);
   }
@@ -596,9 +650,11 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (chapterOneLoaded != null) {
@@ -704,9 +760,11 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) {
     return launchWithID(id, series);
   }
@@ -719,9 +777,11 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) {
     return launchWithID?.call(id, series);
   }
@@ -734,9 +794,11 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (launchWithID != null) {
@@ -754,9 +816,11 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return launchWithID(this);
   }
@@ -769,9 +833,11 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return launchWithID?.call(this);
   }
@@ -784,9 +850,11 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (launchWithID != null) {
@@ -876,9 +944,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) {
     return likeButtonPressed(isLiked);
   }
@@ -891,9 +961,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) {
     return likeButtonPressed?.call(isLiked);
   }
@@ -906,9 +978,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (likeButtonPressed != null) {
@@ -926,9 +1000,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return likeButtonPressed(this);
   }
@@ -941,9 +1017,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return likeButtonPressed?.call(this);
   }
@@ -956,9 +1034,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (likeButtonPressed != null) {
@@ -976,6 +1056,160 @@ abstract class LikeButtonPressed implements SeriesEvent {
   @JsonKey(ignore: true)
   $LikeButtonPressedCopyWith<LikeButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LikeStatusLoadedCopyWith<$Res> {
+  factory $LikeStatusLoadedCopyWith(
+          LikeStatusLoaded value, $Res Function(LikeStatusLoaded) then) =
+      _$LikeStatusLoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LikeStatusLoadedCopyWithImpl<$Res>
+    extends _$SeriesEventCopyWithImpl<$Res>
+    implements $LikeStatusLoadedCopyWith<$Res> {
+  _$LikeStatusLoadedCopyWithImpl(
+      LikeStatusLoaded _value, $Res Function(LikeStatusLoaded) _then)
+      : super(_value, (v) => _then(v as LikeStatusLoaded));
+
+  @override
+  LikeStatusLoaded get _value => super._value as LikeStatusLoaded;
+}
+
+/// @nodoc
+
+class _$LikeStatusLoaded implements LikeStatusLoaded {
+  const _$LikeStatusLoaded();
+
+  @override
+  String toString() {
+    return 'SeriesEvent.likeStatusLoaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LikeStatusLoaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authorLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function() chapterOneLoaded,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function() seriesSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
+  }) {
+    return likeStatusLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? chapterOneLoaded,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
+    TResult Function()? seriesSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
+  }) {
+    return likeStatusLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? chapterOneLoaded,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
+    TResult Function()? seriesSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (likeStatusLoaded != null) {
+      return likeStatusLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(SeriesSet value) seriesSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+  }) {
+    return likeStatusLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(SeriesSet value)? seriesSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+  }) {
+    return likeStatusLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(SeriesSet value)? seriesSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (likeStatusLoaded != null) {
+      return likeStatusLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikeStatusLoaded implements SeriesEvent {
+  const factory LikeStatusLoaded() = _$LikeStatusLoaded;
 }
 
 /// @nodoc
@@ -1021,9 +1255,11 @@ class _$SeriesSet implements SeriesSet {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) {
     return seriesSet();
   }
@@ -1036,9 +1272,11 @@ class _$SeriesSet implements SeriesSet {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) {
     return seriesSet?.call();
   }
@@ -1051,9 +1289,11 @@ class _$SeriesSet implements SeriesSet {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (seriesSet != null) {
@@ -1071,9 +1311,11 @@ class _$SeriesSet implements SeriesSet {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return seriesSet(this);
   }
@@ -1086,9 +1328,11 @@ class _$SeriesSet implements SeriesSet {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return seriesSet?.call(this);
   }
@@ -1101,9 +1345,11 @@ class _$SeriesSet implements SeriesSet {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (seriesSet != null) {
@@ -1162,9 +1408,11 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) {
     return sessionFetched();
   }
@@ -1177,9 +1425,11 @@ class _$SessionFetched implements SessionFetched {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) {
     return sessionFetched?.call();
   }
@@ -1192,9 +1442,11 @@ class _$SessionFetched implements SessionFetched {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (sessionFetched != null) {
@@ -1212,9 +1464,11 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return sessionFetched(this);
   }
@@ -1227,9 +1481,11 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return sessionFetched?.call(this);
   }
@@ -1242,9 +1498,11 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (sessionFetched != null) {
@@ -1304,9 +1562,11 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
     required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
   }) {
     return settingsFetched();
   }
@@ -1319,9 +1579,11 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
   }) {
     return settingsFetched?.call();
   }
@@ -1334,9 +1596,11 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
     TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (settingsFetched != null) {
@@ -1354,9 +1618,11 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return settingsFetched(this);
   }
@@ -1369,9 +1635,11 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return settingsFetched?.call(this);
   }
@@ -1384,9 +1652,11 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (settingsFetched != null) {
@@ -1398,6 +1668,159 @@ class _$SettingsFetched implements SettingsFetched {
 
 abstract class SettingsFetched implements SeriesEvent {
   const factory SettingsFetched() = _$SettingsFetched;
+}
+
+/// @nodoc
+abstract class $ViewsUpdatedCopyWith<$Res> {
+  factory $ViewsUpdatedCopyWith(
+          ViewsUpdated value, $Res Function(ViewsUpdated) then) =
+      _$ViewsUpdatedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ViewsUpdatedCopyWithImpl<$Res> extends _$SeriesEventCopyWithImpl<$Res>
+    implements $ViewsUpdatedCopyWith<$Res> {
+  _$ViewsUpdatedCopyWithImpl(
+      ViewsUpdated _value, $Res Function(ViewsUpdated) _then)
+      : super(_value, (v) => _then(v as ViewsUpdated));
+
+  @override
+  ViewsUpdated get _value => super._value as ViewsUpdated;
+}
+
+/// @nodoc
+
+class _$ViewsUpdated implements ViewsUpdated {
+  const _$ViewsUpdated();
+
+  @override
+  String toString() {
+    return 'SeriesEvent.viewsUpdated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ViewsUpdated);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authorLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function() chapterOneLoaded,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function() seriesSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() settingsFetched,
+    required TResult Function() viewsUpdated,
+  }) {
+    return viewsUpdated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? chapterOneLoaded,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
+    TResult Function()? seriesSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
+  }) {
+    return viewsUpdated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? chapterOneLoaded,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? likeStatusLoaded,
+    TResult Function()? seriesSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (viewsUpdated != null) {
+      return viewsUpdated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(SeriesSet value) seriesSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+  }) {
+    return viewsUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(SeriesSet value)? seriesSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+  }) {
+    return viewsUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(SeriesSet value)? seriesSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (viewsUpdated != null) {
+      return viewsUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ViewsUpdated implements SeriesEvent {
+  const factory ViewsUpdated() = _$ViewsUpdated;
 }
 
 /// @nodoc

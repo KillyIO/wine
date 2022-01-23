@@ -71,30 +71,30 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
       );
     });
     on<ChapterOneLoaded>((_, emit) async {
-      if (!_authFacade.isAnonymous) {
-        (await _seriesRepository.updateSeriesViews(
-          state.session.uid,
-          state.series.uid,
-        ))
-            .match(
-          (updated) {
-            emit(
-              state.copyWith(
-                failureOption: const None(),
-                isProcessing: updated,
-              ),
-            );
-          },
-          (failure) {
-            emit(
-              state.copyWith(
-                failureOption: Option.some(Err(CoreFailure.series(failure))),
-                isProcessing: false,
-              ),
-            );
-          },
-        );
-      }
+      (await _seriesRepository.updateSeriesViews(
+        state.session.uid,
+        state.series.uid,
+      ))
+          .match(
+        (updated) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              isProcessing: updated,
+            ),
+          );
+
+          add(const SeriesEvent.viewsUpdated());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.series(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
     });
     on<LaunchWithID>((value, emit) async {
       emit(state.copyWith(isProcessing: true));
@@ -162,6 +162,33 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
         },
       );
     });
+    on<LikeStatusLoaded>((_, emit) async {
+      (await _seriesRepository.loadBookmarkStatus(
+        state.session.uid,
+        state.series.uid,
+      ))
+          .match(
+        (isBookmarked) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              isBookmarked: isBookmarked,
+              isProcessing: false,
+            ),
+          );
+
+          add(const SeriesEvent.likeStatusLoaded());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.series(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
     on<SeriesSet>((_, emit) async {
       (await _sessionsRepository.fetchSession()).match(
         (session) {
@@ -221,17 +248,46 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
         (chapter) {
           emit(
             state.copyWith(
-              chapterOne: chapter,
+              chapterOne: chapter.isPublished ? chapter : null,
               failureOption: const None(),
+              isProcessing: !_authFacade.isAnonymous,
             ),
           );
 
-          add(const SeriesEvent.chapterOneLoaded());
+          if (!_authFacade.isAnonymous) {
+            add(const SeriesEvent.chapterOneLoaded());
+          }
         },
         (failure) {
           emit(
             state.copyWith(
               failureOption: Option.some(Err(CoreFailure.chapter(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<ViewsUpdated>((_, emit) async {
+      (await _seriesRepository.loadLikeStatus(
+        state.session.uid,
+        state.series.uid,
+      ))
+          .match(
+        (isLiked) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              isLiked: isLiked,
+            ),
+          );
+
+          add(const SeriesEvent.likeStatusLoaded());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.series(failure))),
               isProcessing: false,
             ),
           );

@@ -26,6 +26,9 @@ class SeriesEvent with _$SeriesEvent {
   }) = LikeButtonPressed;
 
   /// @nodoc
+  const factory SeriesEvent.likeStatusLoaded() = LikeStatusLoaded;
+
+  /// @nodoc
   const factory SeriesEvent.seriesSet() = SeriesSet;
 
   /// @nodoc
@@ -33,4 +36,7 @@ class SeriesEvent with _$SeriesEvent {
 
   /// @nodoc
   const factory SeriesEvent.settingsFetched() = SettingsFetched;
+
+  /// @nodoc
+  const factory SeriesEvent.viewsUpdated() = ViewsUpdated;
 }
