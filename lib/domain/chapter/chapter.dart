@@ -46,7 +46,7 @@ class Chapter with _$Chapter {
         likesCount: 0,
         previousChapterUID: UniqueID(),
         seriesUID: UniqueID(),
-        story: Story(''),
+        story: Story('', const <dynamic>[]),
         title: Title(''),
         uid: UniqueID(),
         viewsCount: 0,
