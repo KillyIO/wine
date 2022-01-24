@@ -14,11 +14,10 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
-
+import 'package:wine/domain/chapter/body.dart';
 import 'package:wine/domain/chapter/chapter.dart';
 import 'package:wine/domain/chapter/i_chapter_repository.dart';
 import 'package:wine/domain/chapter/licence.dart';
-import 'package:wine/domain/chapter/story.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
@@ -32,9 +31,9 @@ import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/utils/constants/cover.dart';
 import 'package:wine/utils/constants/typewriter.dart';
 
+part 'typewriter_chapter_bloc.freezed.dart';
 part 'typewriter_chapter_event.dart';
 part 'typewriter_chapter_state.dart';
-part 'typewriter_chapter_bloc.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
@@ -84,6 +83,21 @@ class TypewriterChapterBloc
           );
         }
       }
+    });
+    on<BodyChanged>((_, emit) {
+      final valuePlainText = state.bodyController.document.toPlainText();
+      final valueJson = state.bodyController.document.toDelta().toJson();
+
+      final bodyTrim = valuePlainText.trim();
+      final wordCount = bodyTrim.countWords();
+
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          body: Body(valuePlainText, valueJson),
+          bodyWordCount: wordCount,
+        ),
+      );
     });
     on<ChapterOneExistenceChecked>((_, emit) async => await _publish(emit));
     on<DeleteButtonPressed>((_, emit) async {
@@ -155,6 +169,8 @@ class TypewriterChapterBloc
         (user) {
           emit(
             state.copyWith(
+              bodyController: QuillController.basic()
+                ..changes.listen((_) => add(const BodyChanged())),
               chapter: state.chapter.copyWith(
                 authorUID: user.uid,
                 index: (value.previousChapter?.index ?? 0) + 1,
@@ -166,8 +182,6 @@ class TypewriterChapterBloc
               isNSFW: value.previousChapter?.isNSFW ?? value.series.isNSFW,
               language:
                   value.previousChapter?.language ?? value.series.language,
-              storyController: QuillController.basic()
-                ..changes.listen((_) => add(const StoryChanged())),
             ),
           );
 
@@ -191,20 +205,19 @@ class TypewriterChapterBloc
         ),
       );
 
-      if (value.chapter != null) {
-        final chapter = value.chapter;
-
+      final chapter = value.chapter;
+      if (chapter != null) {
         emit(
           state.copyWith(
-            coverURL: chapter!.coverURL.getOrCrash(),
+            body: chapter.body,
+            bodyWordCount: chapter.body.getOrNull()?.countWords() ?? 0,
+            coverURL: chapter.coverURL.getOrCrash(),
             genres: chapter.genres,
             isEdit: true,
             isNSFW: chapter.isNSFW,
             isProcessing: false,
             language: chapter.language,
             licence: chapter.licence,
-            story: chapter.story,
-            storyWordCount: chapter.story.getOrNull()?.countWords() ?? 0,
             title: chapter.title,
             titleWordCount: chapter.title.getOrNull()?.countWords() ?? 0,
           ),
@@ -214,6 +227,8 @@ class TypewriterChapterBloc
           (chapter) {
             emit(
               state.copyWith(
+                body: chapter.body,
+                bodyWordCount: chapter.body.getOrNull()?.countWords() ?? 0,
                 chapter: chapter,
                 coverURL: chapter.coverURL.getOrCrash(),
                 genres: chapter.genres,
@@ -222,8 +237,6 @@ class TypewriterChapterBloc
                 isProcessing: false,
                 language: chapter.language,
                 licence: chapter.licence,
-                story: chapter.story,
-                storyWordCount: chapter.story.getOrNull()?.countWords() ?? 0,
                 title: chapter.title,
                 titleWordCount: chapter.title.getOrNull()?.countWords() ?? 0,
               ),
@@ -266,9 +279,9 @@ class TypewriterChapterBloc
       }
     });
     on<PublishButtonPressed>((_, emit) async {
-      final isValid = state.genres.isNotEmpty &&
+      final isValid = state.body.isValid &&
+          state.genres.isNotEmpty &&
           state.language.isValid &&
-          state.story.isValid &&
           state.title.isValid;
 
       if (isValid) {
@@ -302,12 +315,12 @@ class TypewriterChapterBloc
     });
     on<SaveButtonPressed>((_, emit) async {
       final chapter = state.chapter.copyWith(
+        body: Body.forSaving(state.body.value),
         coverURL: CoverURL(state.coverURL),
         genres: state.genres,
         isNSFW: state.isNSFW,
         language: Language.forSaving(state.language.value),
         licence: Licence.forSaving(state.licence.value),
-        story: Story.forSaving(state.story.value),
         title: Title.forSaving(state.title.value),
       );
 
@@ -350,21 +363,7 @@ class TypewriterChapterBloc
         },
       );
     });
-    on<StoryChanged>((_, emit) {
-      final valuePlainText = state.storyController.document.toPlainText();
-      final valueJson = state.storyController.document.toDelta().toJson();
 
-      final storyTrim = valuePlainText.trim();
-      final wordCount = storyTrim.countWords();
-
-      emit(
-        state.copyWith(
-          failureOption: const None(),
-          story: Story(valuePlainText, valueJson),
-          storyWordCount: wordCount,
-        ),
-      );
-    });
     on<TitleChanged>((value, emit) {
       final titleTrim = value.title.trim();
       final wordCount = titleTrim.countWords();
@@ -385,6 +384,7 @@ class TypewriterChapterBloc
 
   FutureOr<void> _publish(Emitter<TypewriterChapterState> emit) async {
     final chapter = state.chapter.copyWith(
+      body: state.body,
       coverURL: isURL(state.coverURL)
           ? CoverURL(state.coverURL)
           : CoverURL.fromFile(state.coverURL),
@@ -393,7 +393,6 @@ class TypewriterChapterBloc
       language: state.language,
       licence: state.licence,
       isPublished: true,
-      story: state.story,
       title: state.title,
     );
 

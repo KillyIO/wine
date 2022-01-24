@@ -19,6 +19,7 @@ class _$ChapterTearOff {
 
   _Chapter call(
       {required UniqueID authorUID,
+      required Body body,
       required int bookmarksCount,
       required CoverURL coverURL,
       required List<Genre> genres,
@@ -30,12 +31,12 @@ class _$ChapterTearOff {
       required int likesCount,
       required UniqueID? previousChapterUID,
       required UniqueID seriesUID,
-      required Story story,
       required Title title,
       required UniqueID uid,
       required int viewsCount}) {
     return _Chapter(
       authorUID: authorUID,
+      body: body,
       bookmarksCount: bookmarksCount,
       coverURL: coverURL,
       genres: genres,
@@ -47,7 +48,6 @@ class _$ChapterTearOff {
       likesCount: likesCount,
       previousChapterUID: previousChapterUID,
       seriesUID: seriesUID,
-      story: story,
       title: title,
       uid: uid,
       viewsCount: viewsCount,
@@ -61,6 +61,7 @@ const $Chapter = _$ChapterTearOff();
 /// @nodoc
 mixin _$Chapter {
   UniqueID get authorUID => throw _privateConstructorUsedError;
+  Body get body => throw _privateConstructorUsedError;
   int get bookmarksCount => throw _privateConstructorUsedError;
   CoverURL get coverURL => throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
@@ -72,7 +73,6 @@ mixin _$Chapter {
   int get likesCount => throw _privateConstructorUsedError;
   UniqueID? get previousChapterUID => throw _privateConstructorUsedError;
   UniqueID get seriesUID => throw _privateConstructorUsedError;
-  Story get story => throw _privateConstructorUsedError;
   Title get title => throw _privateConstructorUsedError;
   UniqueID get uid => throw _privateConstructorUsedError;
   int get viewsCount => throw _privateConstructorUsedError;
@@ -87,6 +87,7 @@ abstract class $ChapterCopyWith<$Res> {
       _$ChapterCopyWithImpl<$Res>;
   $Res call(
       {UniqueID authorUID,
+      Body body,
       int bookmarksCount,
       CoverURL coverURL,
       List<Genre> genres,
@@ -98,7 +99,6 @@ abstract class $ChapterCopyWith<$Res> {
       int likesCount,
       UniqueID? previousChapterUID,
       UniqueID seriesUID,
-      Story story,
       Title title,
       UniqueID uid,
       int viewsCount});
@@ -115,6 +115,7 @@ class _$ChapterCopyWithImpl<$Res> implements $ChapterCopyWith<$Res> {
   @override
   $Res call({
     Object? authorUID = freezed,
+    Object? body = freezed,
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genres = freezed,
@@ -126,7 +127,6 @@ class _$ChapterCopyWithImpl<$Res> implements $ChapterCopyWith<$Res> {
     Object? likesCount = freezed,
     Object? previousChapterUID = freezed,
     Object? seriesUID = freezed,
-    Object? story = freezed,
     Object? title = freezed,
     Object? uid = freezed,
     Object? viewsCount = freezed,
@@ -136,6 +136,10 @@ class _$ChapterCopyWithImpl<$Res> implements $ChapterCopyWith<$Res> {
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Body,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
@@ -180,10 +184,6 @@ class _$ChapterCopyWithImpl<$Res> implements $ChapterCopyWith<$Res> {
           ? _value.seriesUID
           : seriesUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      story: story == freezed
-          ? _value.story
-          : story // ignore: cast_nullable_to_non_nullable
-              as Story,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -207,6 +207,7 @@ abstract class _$ChapterCopyWith<$Res> implements $ChapterCopyWith<$Res> {
   @override
   $Res call(
       {UniqueID authorUID,
+      Body body,
       int bookmarksCount,
       CoverURL coverURL,
       List<Genre> genres,
@@ -218,7 +219,6 @@ abstract class _$ChapterCopyWith<$Res> implements $ChapterCopyWith<$Res> {
       int likesCount,
       UniqueID? previousChapterUID,
       UniqueID seriesUID,
-      Story story,
       Title title,
       UniqueID uid,
       int viewsCount});
@@ -236,6 +236,7 @@ class __$ChapterCopyWithImpl<$Res> extends _$ChapterCopyWithImpl<$Res>
   @override
   $Res call({
     Object? authorUID = freezed,
+    Object? body = freezed,
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genres = freezed,
@@ -247,7 +248,6 @@ class __$ChapterCopyWithImpl<$Res> extends _$ChapterCopyWithImpl<$Res>
     Object? likesCount = freezed,
     Object? previousChapterUID = freezed,
     Object? seriesUID = freezed,
-    Object? story = freezed,
     Object? title = freezed,
     Object? uid = freezed,
     Object? viewsCount = freezed,
@@ -257,6 +257,10 @@ class __$ChapterCopyWithImpl<$Res> extends _$ChapterCopyWithImpl<$Res>
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as Body,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
@@ -301,10 +305,6 @@ class __$ChapterCopyWithImpl<$Res> extends _$ChapterCopyWithImpl<$Res>
           ? _value.seriesUID
           : seriesUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      story: story == freezed
-          ? _value.story
-          : story // ignore: cast_nullable_to_non_nullable
-              as Story,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -326,6 +326,7 @@ class __$ChapterCopyWithImpl<$Res> extends _$ChapterCopyWithImpl<$Res>
 class _$_Chapter implements _Chapter {
   _$_Chapter(
       {required this.authorUID,
+      required this.body,
       required this.bookmarksCount,
       required this.coverURL,
       required this.genres,
@@ -337,13 +338,14 @@ class _$_Chapter implements _Chapter {
       required this.likesCount,
       required this.previousChapterUID,
       required this.seriesUID,
-      required this.story,
       required this.title,
       required this.uid,
       required this.viewsCount});
 
   @override
   final UniqueID authorUID;
+  @override
+  final Body body;
   @override
   final int bookmarksCount;
   @override
@@ -367,8 +369,6 @@ class _$_Chapter implements _Chapter {
   @override
   final UniqueID seriesUID;
   @override
-  final Story story;
-  @override
   final Title title;
   @override
   final UniqueID uid;
@@ -377,7 +377,7 @@ class _$_Chapter implements _Chapter {
 
   @override
   String toString() {
-    return 'Chapter(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousChapterUID: $previousChapterUID, seriesUID: $seriesUID, story: $story, title: $title, uid: $uid, viewsCount: $viewsCount)';
+    return 'Chapter(authorUID: $authorUID, body: $body, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousChapterUID: $previousChapterUID, seriesUID: $seriesUID, title: $title, uid: $uid, viewsCount: $viewsCount)';
   }
 
   @override
@@ -386,6 +386,7 @@ class _$_Chapter implements _Chapter {
         (other.runtimeType == runtimeType &&
             other is _Chapter &&
             const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
+            const DeepCollectionEquality().equals(other.body, body) &&
             const DeepCollectionEquality()
                 .equals(other.bookmarksCount, bookmarksCount) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
@@ -401,7 +402,6 @@ class _$_Chapter implements _Chapter {
             const DeepCollectionEquality()
                 .equals(other.previousChapterUID, previousChapterUID) &&
             const DeepCollectionEquality().equals(other.seriesUID, seriesUID) &&
-            const DeepCollectionEquality().equals(other.story, story) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
@@ -412,6 +412,7 @@ class _$_Chapter implements _Chapter {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(authorUID),
+      const DeepCollectionEquality().hash(body),
       const DeepCollectionEquality().hash(bookmarksCount),
       const DeepCollectionEquality().hash(coverURL),
       const DeepCollectionEquality().hash(genres),
@@ -423,7 +424,6 @@ class _$_Chapter implements _Chapter {
       const DeepCollectionEquality().hash(likesCount),
       const DeepCollectionEquality().hash(previousChapterUID),
       const DeepCollectionEquality().hash(seriesUID),
-      const DeepCollectionEquality().hash(story),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(viewsCount));
@@ -437,6 +437,7 @@ class _$_Chapter implements _Chapter {
 abstract class _Chapter implements Chapter {
   factory _Chapter(
       {required UniqueID authorUID,
+      required Body body,
       required int bookmarksCount,
       required CoverURL coverURL,
       required List<Genre> genres,
@@ -448,13 +449,14 @@ abstract class _Chapter implements Chapter {
       required int likesCount,
       required UniqueID? previousChapterUID,
       required UniqueID seriesUID,
-      required Story story,
       required Title title,
       required UniqueID uid,
       required int viewsCount}) = _$_Chapter;
 
   @override
   UniqueID get authorUID;
+  @override
+  Body get body;
   @override
   int get bookmarksCount;
   @override
@@ -477,8 +479,6 @@ abstract class _Chapter implements Chapter {
   UniqueID? get previousChapterUID;
   @override
   UniqueID get seriesUID;
-  @override
-  Story get story;
   @override
   Title get title;
   @override

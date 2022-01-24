@@ -11,6 +11,23 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/series.dart';
 
 /// @nodoc
+Result<String, ValueFailure<String>> validateBody(
+  String input,
+  List<dynamic> json,
+) {
+  if (input.isEmpty) {
+    return Err(ValueFailure.emptyInput(json.toString()));
+  }
+  if (input.countWords() < bodyMinWords) {
+    return Err(ValueFailure.tooShortInput(json.toString()));
+  }
+  if (input.countWords() > bodyMaxWords) {
+    return Err(ValueFailure.tooLongInput(json.toString()));
+  }
+  return Ok(json.toString());
+}
+
+/// @nodoc
 Result<String, ValueFailure<String>> validateConfirmPassword(
   String input,
   String input2,
@@ -63,23 +80,6 @@ Result<String, ValueFailure<String>> validatePassword(String input) {
     return Ok(input);
   }
   return Err(ValueFailure.invalidPassword(input));
-}
-
-/// @nodoc
-Result<String, ValueFailure<String>> validateStory(
-  String input,
-  List<dynamic> json,
-) {
-  if (input.isEmpty) {
-    return Err(ValueFailure.emptyInput(json.toString()));
-  }
-  if (input.countWords() < storyMinWords) {
-    return Err(ValueFailure.tooShortInput(json.toString()));
-  }
-  if (input.countWords() > storyMaxWords) {
-    return Err(ValueFailure.tooLongInput(json.toString()));
-  }
-  return Ok(json.toString());
 }
 
 /// @nodoc

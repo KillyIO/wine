@@ -24,14 +24,14 @@ class TypewriterEditionLayout extends StatelessWidget {
   /// @nodoc
   const TypewriterEditionLayout({Key? key}) : super(key: key);
 
-  String _getStoryErrorMessage(int wordCount) {
+  String _getBodyErrorMessage(int wordCount) {
     if (wordCount > 0) {
-      if (wordCount < storyMinWords) {
-        return 'The story must be more than $storyMinWords words long.';
+      if (wordCount < bodyMinWords) {
+        return 'The body must be more than $bodyMinWords words long.';
       }
-      return 'The story must be less than $storyMinWords words long.';
+      return 'The body must be less than $bodyMinWords words long.';
     }
-    return 'The story must not be empty.';
+    return 'The body must not be empty.';
   }
 
   @override
@@ -92,14 +92,14 @@ class TypewriterEditionLayout extends StatelessWidget {
           BlocBuilder<TypewriterChapterBloc, TypewriterChapterState>(
             builder: (context, state) {
               return TypewriterQuill(
-                controller: state.storyController,
-                errorMessage: _getStoryErrorMessage(state.storyWordCount),
+                controller: state.bodyController,
+                errorMessage: _getBodyErrorMessage(state.bodyWordCount),
                 hintText:
-                    'More than $storyMinWords words and less than $storyMaxWords words',
-                label: 'STORY*',
-                wordCount: '${state.storyWordCount}/$storyMaxWords',
-                wordCountError: state.storyWordCount < storyMinWords ||
-                    state.storyWordCount > storyMaxWords,
+                    'More than $bodyMinWords words and less than $bodyMaxWords words',
+                label: 'BODY*',
+                wordCount: '${state.bodyWordCount}/$bodyMaxWords',
+                wordCountError: state.bodyWordCount < bodyMinWords ||
+                    state.bodyWordCount > bodyMaxWords,
               );
             },
           ),

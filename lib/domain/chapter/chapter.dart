@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:wine/domain/chapter/body.dart';
 import 'package:wine/domain/chapter/licence.dart';
-import 'package:wine/domain/chapter/story.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
@@ -15,6 +15,7 @@ class Chapter with _$Chapter {
   /// @nodoc
   factory Chapter({
     required UniqueID authorUID,
+    required Body body,
     required int bookmarksCount,
     required CoverURL coverURL,
     required List<Genre> genres,
@@ -26,7 +27,6 @@ class Chapter with _$Chapter {
     required int likesCount,
     required UniqueID? previousChapterUID,
     required UniqueID seriesUID,
-    required Story story,
     required Title title,
     required UniqueID uid,
     required int viewsCount,
@@ -35,6 +35,7 @@ class Chapter with _$Chapter {
   /// @nodoc
   factory Chapter.empty() => Chapter(
         authorUID: UniqueID(),
+        body: Body('', const <dynamic>[]),
         bookmarksCount: 0,
         coverURL: CoverURL(''),
         genres: <Genre>[],
@@ -46,7 +47,6 @@ class Chapter with _$Chapter {
         likesCount: 0,
         previousChapterUID: UniqueID(),
         seriesUID: UniqueID(),
-        story: Story('', const <dynamic>[]),
         title: Title(''),
         uid: UniqueID(),
         viewsCount: 0,

@@ -23,6 +23,7 @@ class _$ChapterDTOTearOff {
 
   _ChapterDTO call(
       {required String authorUID,
+      required String body,
       required int bookmarksCount,
       required String coverURL,
       required List<String> genres,
@@ -34,13 +35,13 @@ class _$ChapterDTOTearOff {
       required int likesCount,
       required String? previousChapterUID,
       required String seriesUID,
-      required String story,
       required String title,
       required String uid,
       @ServerTimestampConverter() required FieldValue updatedAt,
       required int viewsCount}) {
     return _ChapterDTO(
       authorUID: authorUID,
+      body: body,
       bookmarksCount: bookmarksCount,
       coverURL: coverURL,
       genres: genres,
@@ -52,7 +53,6 @@ class _$ChapterDTOTearOff {
       likesCount: likesCount,
       previousChapterUID: previousChapterUID,
       seriesUID: seriesUID,
-      story: story,
       title: title,
       uid: uid,
       updatedAt: updatedAt,
@@ -71,6 +71,7 @@ const $ChapterDTO = _$ChapterDTOTearOff();
 /// @nodoc
 mixin _$ChapterDTO {
   String get authorUID => throw _privateConstructorUsedError;
+  String get body => throw _privateConstructorUsedError;
   int get bookmarksCount => throw _privateConstructorUsedError;
   String get coverURL => throw _privateConstructorUsedError;
   List<String> get genres => throw _privateConstructorUsedError;
@@ -82,7 +83,6 @@ mixin _$ChapterDTO {
   int get likesCount => throw _privateConstructorUsedError;
   String? get previousChapterUID => throw _privateConstructorUsedError;
   String get seriesUID => throw _privateConstructorUsedError;
-  String get story => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
@@ -102,6 +102,7 @@ abstract class $ChapterDTOCopyWith<$Res> {
       _$ChapterDTOCopyWithImpl<$Res>;
   $Res call(
       {String authorUID,
+      String body,
       int bookmarksCount,
       String coverURL,
       List<String> genres,
@@ -113,7 +114,6 @@ abstract class $ChapterDTOCopyWith<$Res> {
       int likesCount,
       String? previousChapterUID,
       String seriesUID,
-      String story,
       String title,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
@@ -131,6 +131,7 @@ class _$ChapterDTOCopyWithImpl<$Res> implements $ChapterDTOCopyWith<$Res> {
   @override
   $Res call({
     Object? authorUID = freezed,
+    Object? body = freezed,
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genres = freezed,
@@ -142,7 +143,6 @@ class _$ChapterDTOCopyWithImpl<$Res> implements $ChapterDTOCopyWith<$Res> {
     Object? likesCount = freezed,
     Object? previousChapterUID = freezed,
     Object? seriesUID = freezed,
-    Object? story = freezed,
     Object? title = freezed,
     Object? uid = freezed,
     Object? updatedAt = freezed,
@@ -152,6 +152,10 @@ class _$ChapterDTOCopyWithImpl<$Res> implements $ChapterDTOCopyWith<$Res> {
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as String,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
@@ -196,10 +200,6 @@ class _$ChapterDTOCopyWithImpl<$Res> implements $ChapterDTOCopyWith<$Res> {
       seriesUID: seriesUID == freezed
           ? _value.seriesUID
           : seriesUID // ignore: cast_nullable_to_non_nullable
-              as String,
-      story: story == freezed
-          ? _value.story
-          : story // ignore: cast_nullable_to_non_nullable
               as String,
       title: title == freezed
           ? _value.title
@@ -229,6 +229,7 @@ abstract class _$ChapterDTOCopyWith<$Res> implements $ChapterDTOCopyWith<$Res> {
   @override
   $Res call(
       {String authorUID,
+      String body,
       int bookmarksCount,
       String coverURL,
       List<String> genres,
@@ -240,7 +241,6 @@ abstract class _$ChapterDTOCopyWith<$Res> implements $ChapterDTOCopyWith<$Res> {
       int likesCount,
       String? previousChapterUID,
       String seriesUID,
-      String story,
       String title,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
@@ -260,6 +260,7 @@ class __$ChapterDTOCopyWithImpl<$Res> extends _$ChapterDTOCopyWithImpl<$Res>
   @override
   $Res call({
     Object? authorUID = freezed,
+    Object? body = freezed,
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genres = freezed,
@@ -271,7 +272,6 @@ class __$ChapterDTOCopyWithImpl<$Res> extends _$ChapterDTOCopyWithImpl<$Res>
     Object? likesCount = freezed,
     Object? previousChapterUID = freezed,
     Object? seriesUID = freezed,
-    Object? story = freezed,
     Object? title = freezed,
     Object? uid = freezed,
     Object? updatedAt = freezed,
@@ -281,6 +281,10 @@ class __$ChapterDTOCopyWithImpl<$Res> extends _$ChapterDTOCopyWithImpl<$Res>
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
               as String,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
@@ -326,10 +330,6 @@ class __$ChapterDTOCopyWithImpl<$Res> extends _$ChapterDTOCopyWithImpl<$Res>
           ? _value.seriesUID
           : seriesUID // ignore: cast_nullable_to_non_nullable
               as String,
-      story: story == freezed
-          ? _value.story
-          : story // ignore: cast_nullable_to_non_nullable
-              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -355,6 +355,7 @@ class __$ChapterDTOCopyWithImpl<$Res> extends _$ChapterDTOCopyWithImpl<$Res>
 class _$_ChapterDTO implements _ChapterDTO {
   _$_ChapterDTO(
       {required this.authorUID,
+      required this.body,
       required this.bookmarksCount,
       required this.coverURL,
       required this.genres,
@@ -366,7 +367,6 @@ class _$_ChapterDTO implements _ChapterDTO {
       required this.likesCount,
       required this.previousChapterUID,
       required this.seriesUID,
-      required this.story,
       required this.title,
       required this.uid,
       @ServerTimestampConverter() required this.updatedAt,
@@ -377,6 +377,8 @@ class _$_ChapterDTO implements _ChapterDTO {
 
   @override
   final String authorUID;
+  @override
+  final String body;
   @override
   final int bookmarksCount;
   @override
@@ -400,8 +402,6 @@ class _$_ChapterDTO implements _ChapterDTO {
   @override
   final String seriesUID;
   @override
-  final String story;
-  @override
   final String title;
   @override
   final String uid;
@@ -413,7 +413,7 @@ class _$_ChapterDTO implements _ChapterDTO {
 
   @override
   String toString() {
-    return 'ChapterDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousChapterUID: $previousChapterUID, seriesUID: $seriesUID, story: $story, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
+    return 'ChapterDTO(authorUID: $authorUID, body: $body, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousChapterUID: $previousChapterUID, seriesUID: $seriesUID, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
   }
 
   @override
@@ -422,6 +422,7 @@ class _$_ChapterDTO implements _ChapterDTO {
         (other.runtimeType == runtimeType &&
             other is _ChapterDTO &&
             const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
+            const DeepCollectionEquality().equals(other.body, body) &&
             const DeepCollectionEquality()
                 .equals(other.bookmarksCount, bookmarksCount) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
@@ -437,7 +438,6 @@ class _$_ChapterDTO implements _ChapterDTO {
             const DeepCollectionEquality()
                 .equals(other.previousChapterUID, previousChapterUID) &&
             const DeepCollectionEquality().equals(other.seriesUID, seriesUID) &&
-            const DeepCollectionEquality().equals(other.story, story) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
@@ -449,6 +449,7 @@ class _$_ChapterDTO implements _ChapterDTO {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(authorUID),
+      const DeepCollectionEquality().hash(body),
       const DeepCollectionEquality().hash(bookmarksCount),
       const DeepCollectionEquality().hash(coverURL),
       const DeepCollectionEquality().hash(genres),
@@ -460,7 +461,6 @@ class _$_ChapterDTO implements _ChapterDTO {
       const DeepCollectionEquality().hash(likesCount),
       const DeepCollectionEquality().hash(previousChapterUID),
       const DeepCollectionEquality().hash(seriesUID),
-      const DeepCollectionEquality().hash(story),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(updatedAt),
@@ -480,6 +480,7 @@ class _$_ChapterDTO implements _ChapterDTO {
 abstract class _ChapterDTO implements ChapterDTO {
   factory _ChapterDTO(
       {required String authorUID,
+      required String body,
       required int bookmarksCount,
       required String coverURL,
       required List<String> genres,
@@ -491,7 +492,6 @@ abstract class _ChapterDTO implements ChapterDTO {
       required int likesCount,
       required String? previousChapterUID,
       required String seriesUID,
-      required String story,
       required String title,
       required String uid,
       @ServerTimestampConverter() required FieldValue updatedAt,
@@ -502,6 +502,8 @@ abstract class _ChapterDTO implements ChapterDTO {
 
   @override
   String get authorUID;
+  @override
+  String get body;
   @override
   int get bookmarksCount;
   @override
@@ -524,8 +526,6 @@ abstract class _ChapterDTO implements ChapterDTO {
   String? get previousChapterUID;
   @override
   String get seriesUID;
-  @override
-  String get story;
   @override
   String get title;
   @override

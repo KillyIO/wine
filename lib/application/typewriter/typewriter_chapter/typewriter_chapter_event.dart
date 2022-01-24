@@ -7,6 +7,9 @@ class TypewriterChapterEvent with _$TypewriterChapterEvent {
   const factory TypewriterChapterEvent.addCoverPressed() = AddCoverPressed;
 
   /// @nodoc
+  const factory TypewriterChapterEvent.bodyChanged() = BodyChanged;
+
+  /// @nodoc
   const factory TypewriterChapterEvent.chapterOneExistenceChecked() =
       ChapterOneExistenceChecked;
 
@@ -58,9 +61,6 @@ class TypewriterChapterEvent with _$TypewriterChapterEvent {
 
   /// @nodoc
   const factory TypewriterChapterEvent.sessionFetched() = SessionFetched;
-
-  /// @nodoc
-  const factory TypewriterChapterEvent.storyChanged() = StoryChanged;
 
   /// @nodoc
   const factory TypewriterChapterEvent.titleChanged(String title) =

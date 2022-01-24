@@ -9,6 +9,7 @@ part of 'chapter_dto.dart';
 _$_ChapterDTO _$$_ChapterDTOFromJson(Map<String, dynamic> json) =>
     _$_ChapterDTO(
       authorUID: json['authorUID'] as String,
+      body: json['body'] as String,
       bookmarksCount: json['bookmarksCount'] as int,
       coverURL: json['coverURL'] as String,
       genres:
@@ -21,7 +22,6 @@ _$_ChapterDTO _$$_ChapterDTOFromJson(Map<String, dynamic> json) =>
       likesCount: json['likesCount'] as int,
       previousChapterUID: json['previousChapterUID'] as String?,
       seriesUID: json['seriesUID'] as String,
-      story: json['story'] as String,
       title: json['title'] as String,
       uid: json['uid'] as String,
       updatedAt: const ServerTimestampConverter()
@@ -32,6 +32,7 @@ _$_ChapterDTO _$$_ChapterDTOFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_ChapterDTOToJson(_$_ChapterDTO instance) =>
     <String, dynamic>{
       'authorUID': instance.authorUID,
+      'body': instance.body,
       'bookmarksCount': instance.bookmarksCount,
       'coverURL': instance.coverURL,
       'genres': instance.genres,
@@ -43,7 +44,6 @@ Map<String, dynamic> _$$_ChapterDTOToJson(_$_ChapterDTO instance) =>
       'likesCount': instance.likesCount,
       'previousChapterUID': instance.previousChapterUID,
       'seriesUID': instance.seriesUID,
-      'story': instance.story,
       'title': instance.title,
       'uid': instance.uid,
       'updatedAt': const ServerTimestampConverter().toJson(instance.updatedAt),

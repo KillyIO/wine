@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:wine/domain/chapter/body.dart';
 import 'package:wine/domain/chapter/chapter.dart';
 import 'package:wine/domain/chapter/licence.dart';
-import 'package:wine/domain/chapter/story.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
@@ -22,6 +22,7 @@ class ChapterDTO with _$ChapterDTO {
   /// @nodoc
   factory ChapterDTO({
     required String authorUID,
+    required String body,
     required int bookmarksCount,
     required String coverURL,
     required List<String> genres,
@@ -33,7 +34,6 @@ class ChapterDTO with _$ChapterDTO {
     required int likesCount,
     required String? previousChapterUID,
     required String seriesUID,
-    required String story,
     required String title,
     required String uid,
     @ServerTimestampConverter() required FieldValue updatedAt,
@@ -44,6 +44,7 @@ class ChapterDTO with _$ChapterDTO {
   factory ChapterDTO.fromDomain(Chapter chapter) {
     return ChapterDTO(
       authorUID: chapter.authorUID.getOrCrash(),
+      body: chapter.body.getOrCrash(),
       bookmarksCount: chapter.bookmarksCount,
       coverURL: chapter.coverURL.getOrCrash(),
       genres: chapter.genres.map((g) => g.getOrCrash()).toList(),
@@ -55,7 +56,6 @@ class ChapterDTO with _$ChapterDTO {
       likesCount: chapter.likesCount,
       previousChapterUID: chapter.previousChapterUID?.getOrCrash(),
       seriesUID: chapter.seriesUID.getOrCrash(),
-      story: chapter.story.getOrCrash(),
       title: chapter.title.getOrCrash(),
       uid: chapter.uid.getOrCrash(),
       updatedAt: FieldValue.serverTimestamp(),
@@ -78,6 +78,17 @@ extension ChapterDTOX on ChapterDTO {
   /// @nodoc
   Chapter toDomain() => Chapter(
         authorUID: UniqueID.fromUniqueString(authorUID),
+        body: Body(
+          body.isEmpty
+              ? body
+              : Document.fromJson(jsonDecode(body) as List<dynamic>)
+                  .toPlainText(),
+          body.isEmpty
+              ? <dynamic>[]
+              : Document.fromJson(jsonDecode(body) as List<dynamic>)
+                  .toDelta()
+                  .toJson(),
+        ),
         bookmarksCount: bookmarksCount,
         coverURL: CoverURL(coverURL),
         genres: genres.map(Genre.new).toList(),
@@ -89,12 +100,6 @@ extension ChapterDTOX on ChapterDTO {
         likesCount: likesCount,
         previousChapterUID: UniqueID.fromUniqueString(previousChapterUID ?? ''),
         seriesUID: UniqueID.fromUniqueString(seriesUID),
-        story: Story(
-          Document.fromJson(jsonDecode(story) as List<dynamic>).toPlainText(),
-          Document.fromJson(jsonDecode(story) as List<dynamic>)
-              .toDelta()
-              .toJson(),
-        ),
         title: Title(title),
         uid: UniqueID.fromUniqueString(uid),
         viewsCount: viewsCount,
@@ -103,6 +108,7 @@ extension ChapterDTOX on ChapterDTO {
   /// @nodoc
   Map<String, dynamic> toMap() => <String, dynamic>{
         'authorUID': authorUID,
+        'body': body,
         'bookmarksCount': bookmarksCount,
         'coverURL': coverURL,
         'genres': genres,
@@ -114,7 +120,6 @@ extension ChapterDTOX on ChapterDTO {
         'likesCount': likesCount,
         'previousChapterUID': previousChapterUID,
         'seriesUID': seriesUID,
-        'story': story,
         'title': title,
         'uid': uid,
         'viewsCount': viewsCount,
@@ -125,6 +130,14 @@ extension ChapterDTOX on ChapterDTO {
 extension ChapterMapX on Map {
   /// @nodoc
   Chapter toDomain() => Chapter(
+        body: Body(
+          Document.fromJson(
+            jsonDecode(this['body'] as String) as List<dynamic>,
+          ).toPlainText(),
+          Document.fromJson(
+            jsonDecode(this['body'] as String) as List<dynamic>,
+          ).toDelta().toJson(),
+        ),
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
         bookmarksCount: this['bookmarksCount'] as int,
         coverURL: CoverURL(this['coverURL'] as String),
@@ -138,14 +151,6 @@ extension ChapterMapX on Map {
         previousChapterUID:
             UniqueID.fromUniqueString(this['previousChapterUID'] as String),
         seriesUID: UniqueID.fromUniqueString(this['seriesUID'] as String),
-        story: Story(
-          Document.fromJson(
-            jsonDecode(this['story'] as String) as List<dynamic>,
-          ).toPlainText(),
-          Document.fromJson(
-            jsonDecode(this['story'] as String) as List<dynamic>,
-          ).toDelta().toJson(),
-        ),
         title: Title(this['title'] as String),
         uid: UniqueID.fromUniqueString(this['uid'] as String),
         viewsCount: this['viewsCount'] as int,

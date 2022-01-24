@@ -2,7 +2,7 @@
 const int maxNextChaptersToDisplay = 10;
 
 /// @nodoc
-const int storyMinWords = 300;
+const int bodyMinWords = 300;
 
 /// @nodoc
-const int storyMaxWords = 1350;
+const int bodyMaxWords = 1350;

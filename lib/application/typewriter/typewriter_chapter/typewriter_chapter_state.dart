@@ -5,6 +5,9 @@ part of 'typewriter_chapter_bloc.dart';
 class TypewriterChapterState with _$TypewriterChapterState {
   /// @nodoc
   const factory TypewriterChapterState({
+    required Body body,
+    required QuillController bodyController,
+    required int bodyWordCount,
     required Chapter chapter,
     required String coverURL,
     required int currentPageViewIdx,
@@ -17,9 +20,6 @@ class TypewriterChapterState with _$TypewriterChapterState {
     required Language language,
     required Licence licence,
     required bool showErrorMessages,
-    required Story story,
-    required QuillController storyController,
-    required int storyWordCount,
     required Title title,
     required TextEditingController titleController,
     required int titleWordCount,
@@ -27,6 +27,9 @@ class TypewriterChapterState with _$TypewriterChapterState {
 
   /// @nodoc
   factory TypewriterChapterState.initial() => TypewriterChapterState(
+        body: Body('', const <dynamic>[]),
+        bodyController: QuillController.basic(),
+        bodyWordCount: 0,
         chapter: Chapter.empty(),
         coverURL: '',
         currentPageViewIdx: 0,
@@ -39,9 +42,6 @@ class TypewriterChapterState with _$TypewriterChapterState {
         language: Language(''),
         licence: Licence(''),
         showErrorMessages: false,
-        story: Story('', const <dynamic>[]),
-        storyController: QuillController.basic(),
-        storyWordCount: 0,
         title: Title(''),
         titleController: TextEditingController(),
         titleWordCount: 0,
