@@ -3,12 +3,12 @@ import 'package:wine/presentation/home/home_page.dart';
 import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/plus/plus_page.dart';
-import 'package:wine/presentation/series/series_page.dart';
 import 'package:wine/presentation/settings/settings_account/settings_account_page.dart';
 import 'package:wine/presentation/settings/settings_chapter/settings_chapter_page.dart';
 import 'package:wine/presentation/settings/settings_page.dart';
-import 'package:wine/presentation/settings/settings_series/settings_series_page.dart';
+import 'package:wine/presentation/settings/settings_tree/settings_tree_page.dart';
 import 'package:wine/presentation/sign_up/sign_up_page.dart';
+import 'package:wine/presentation/tree/tree_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_page.dart';
 import 'package:wine/presentation/wrappers/settings_wrapper.dart';
 import 'package:wine/utils/paths/router.dart';
@@ -20,40 +20,40 @@ export 'router.gr.dart';
   routes: <AutoRoute>[
     AutoRoute<HomePage>(
       page: HomePage,
-      path: homePath,
+      path: homePagePath,
       initial: true,
     ),
     AutoRoute<LibraryPage>(
       page: LibraryPage,
-      path: libraryPath,
+      path: libraryPagePath,
     ),
     AutoRoute<LogInPage>(
       page: LogInPage,
-      path: logInPath,
+      path: logInPagePath,
     ),
     AutoRoute<PlusPage>(
       page: PlusPage,
-      path: plusPath,
+      path: plusPagePath,
     ),
-    AutoRoute<SeriesPage>(
-      page: SeriesPage,
-      path: seriesPath,
+    AutoRoute<TreePage>(
+      page: TreePage,
+      path: treePagePath,
     ),
     AutoRoute<SettingsWrapper>(
       page: SettingsWrapper,
-      path: settingsPath,
+      path: settingsPagePath,
       children: <AutoRoute>[
         AutoRoute<SettingsAccountPage>(
           page: SettingsAccountPage,
-          path: settingsAccountPath,
+          path: settingsAccountPagePath,
         ),
         AutoRoute<SettingsChapterPage>(
           page: SettingsChapterPage,
-          path: settingsChapterPath,
+          path: settingsChapterPagePath,
         ),
-        AutoRoute<SettingsSeriesPage>(
-          page: SettingsSeriesPage,
-          path: settingsSeriesPath,
+        AutoRoute<SettingsTreePage>(
+          page: SettingsTreePage,
+          path: settingsTreePagePath,
         ),
         AutoRoute<SettingsPage>(
           page: SettingsPage,
@@ -63,27 +63,27 @@ export 'router.gr.dart';
     ),
     AutoRoute<SignUpPage>(
       page: SignUpPage,
-      path: signUpPath,
+      path: signUpPagePath,
     ),
     AutoRoute<TypewriterPage>(
       name: 'TypewriterChapterId',
       page: TypewriterPage,
-      path: '$typewriterPath$typewriterChapterIDPath',
+      path: '$typewriterPagePath$typewriterPageChapterIDPath',
     ),
     AutoRoute<TypewriterPage>(
       name: 'TypewriterChapterNew',
       page: TypewriterPage,
-      path: '$typewriterPath$typewriterChapterNewPath',
+      path: '$typewriterPagePath$typewriterPageChapterNewPath',
     ),
     AutoRoute<TypewriterPage>(
-      name: 'TypewriterSeriesId',
+      name: 'TypewriterTreeId',
       page: TypewriterPage,
-      path: '$typewriterPath$typewriterSeriesIDPath',
+      path: '$typewriterPagePath$typewriterPageTreeIDPath',
     ),
     AutoRoute<TypewriterPage>(
-      name: 'TypewriterSeriesNew',
+      name: 'TypewriterTreeNew',
       page: TypewriterPage,
-      path: '$typewriterPath$typewriterSeriesNewPath',
+      path: '$typewriterPagePath$typewriterPageTreeNewPath',
     ),
   ],
 )

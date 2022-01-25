@@ -2,17 +2,19 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
+import 'package:wine/domain/chapter/chapter.dart';
+import 'package:wine/domain/chapter/i_chapter_repository.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/domain/series/i_series_repository.dart';
-import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/tree/i_tree_repository.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/utils/constants/library.dart';
 
+part 'library_bloc.freezed.dart';
 part 'library_event.dart';
 part 'library_state.dart';
-part 'library_bloc.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
@@ -21,8 +23,9 @@ part 'library_bloc.freezed.dart';
 class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
   /// @nodoc
   LibraryBloc(
-    this._seriesRepository,
+    this._chapterRepository,
     this._sessionsRepository,
+    this._treeRepository,
   ) : super(LibraryState.initial()) {
     on<ChapterDeleted>((value, emit) async {});
     on<InitBloc>((_, emit) async {
@@ -54,7 +57,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         },
       );
     });
-    on<PageViewIndexChanged>((value, emit) {
+    on<PageViewIndexChanged>((value, emit) async {
       if (state.currentPageViewIdx != value.index) {
         var newIdx = value.index;
         if (value.index > libraryPageViewKeys.length - 1) {
@@ -72,14 +75,81 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
 
         switch (state.currentPageViewIdx) {
           case 0:
+            if (state.trees.isEmpty) {
+              (await _treeRepository.loadTreesByUserID(state.session.uid))
+                  .match(
+                (trees) {
+                  emit(
+                    state.copyWith(
+                      failureOption: Option.none(),
+                      isProcessing: false,
+                      trees: trees,
+                    ),
+                  );
+                },
+                (failure) {
+                  emit(
+                    state.copyWith(
+                      failureOption:
+                          Option.some(Err(CoreFailure.tree(failure))),
+                      isProcessing: false,
+                    ),
+                  );
+                },
+              );
+            }
             break;
           case 1:
+            if (state.chapters.isEmpty) {
+              (await _chapterRepository.loadChaptersByUserID(state.session.uid))
+                  .match(
+                (chapters) {
+                  emit(
+                    state.copyWith(
+                      failureOption: Option.none(),
+                      isProcessing: false,
+                      chapters: chapters,
+                    ),
+                  );
+                },
+                (failure) {
+                  emit(
+                    state.copyWith(
+                      failureOption:
+                          Option.some(Err(CoreFailure.chapter(failure))),
+                      isProcessing: false,
+                    ),
+                  );
+                },
+              );
+            }
             break;
           default:
         }
       }
     });
-    on<SeriesDeleted>((value, emit) async {
+    on<SessionFetched>((_, emit) async {
+      (await _treeRepository.loadTreesByUserID(state.session.uid)).match(
+        (trees) {
+          emit(
+            state.copyWith(
+              failureOption: Option.none(),
+              isProcessing: false,
+              trees: trees,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<TreeDeleted>((value, emit) async {
       emit(
         state.copyWith(
           failureOption: const None(),
@@ -87,7 +157,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         ),
       );
 
-      final seriesList = state.seriesList
+      final trees = state.trees
           .where((s) => s.uid.getOrCrash() != value.uid.getOrCrash())
           .toList();
 
@@ -95,29 +165,8 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         state.copyWith(
           failureOption: const None(),
           isProcessing: false,
-          seriesList: seriesList,
+          trees: trees,
         ),
-      );
-    });
-    on<SessionFetched>((_, emit) async {
-      (await _seriesRepository.loadSeriesByUserID(state.session.uid)).match(
-        (series) {
-          emit(
-            state.copyWith(
-              failureOption: Option.none(),
-              isProcessing: false,
-              seriesList: series,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.series(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
       );
     });
     on<VerticalNavbarIndexChanged>((value, emit) {
@@ -139,6 +188,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
     });
   }
 
-  final ISeriesRepository _seriesRepository;
+  final IChapterRepository _chapterRepository;
   final ISessionsRepository _sessionsRepository;
+  final ITreeRepository _treeRepository;
 }

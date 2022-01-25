@@ -14,9 +14,9 @@ class SettingsDTO with _$SettingsDTO {
     required bool? enableChaptersBookmarksCount,
     required bool? enableChaptersLikesCount,
     required bool? enableChaptersViewsCount,
-    required bool? enableSeriesBookmarksCount,
-    required bool? enableSeriesLikesCount,
-    required bool? enableSeriesViewsCount,
+    required bool? enableTreesBookmarksCount,
+    required bool? enableTreesLikesCount,
+    required bool? enableTreesViewsCount,
     String? uid,
   }) = _SettingsDTO;
 
@@ -26,9 +26,9 @@ class SettingsDTO with _$SettingsDTO {
       enableChaptersBookmarksCount: settings.enableChaptersBookmarksCount,
       enableChaptersLikesCount: settings.enableChaptersLikesCount,
       enableChaptersViewsCount: settings.enableChaptersViewsCount,
-      enableSeriesBookmarksCount: settings.enableSeriesBookmarksCount,
-      enableSeriesLikesCount: settings.enableSeriesLikesCount,
-      enableSeriesViewsCount: settings.enableSeriesViewsCount,
+      enableTreesBookmarksCount: settings.enableTreesBookmarksCount,
+      enableTreesLikesCount: settings.enableTreesLikesCount,
+      enableTreesViewsCount: settings.enableTreesViewsCount,
     );
   }
 
@@ -38,9 +38,9 @@ class SettingsDTO with _$SettingsDTO {
       enableChaptersBookmarksCount: settings.enableChaptersBookmarksCount,
       enableChaptersLikesCount: settings.enableChaptersLikesCount,
       enableChaptersViewsCount: settings.enableChaptersViewsCount,
-      enableSeriesBookmarksCount: settings.enableSeriesBookmarksCount,
-      enableSeriesLikesCount: settings.enableSeriesLikesCount,
-      enableSeriesViewsCount: settings.enableSeriesViewsCount,
+      enableTreesBookmarksCount: settings.enableTreesBookmarksCount,
+      enableTreesLikesCount: settings.enableTreesLikesCount,
+      enableTreesViewsCount: settings.enableTreesViewsCount,
       uid: settings.uid,
     );
   }
@@ -57,9 +57,9 @@ extension SettingsDTOX on SettingsDTO {
         enableChaptersBookmarksCount: enableChaptersBookmarksCount,
         enableChaptersLikesCount: enableChaptersLikesCount,
         enableChaptersViewsCount: enableChaptersViewsCount,
-        enableSeriesBookmarksCount: enableSeriesBookmarksCount,
-        enableSeriesLikesCount: enableSeriesLikesCount,
-        enableSeriesViewsCount: enableSeriesViewsCount,
+        enableTreesBookmarksCount: enableTreesBookmarksCount,
+        enableTreesLikesCount: enableTreesLikesCount,
+        enableTreesViewsCount: enableTreesViewsCount,
       );
 
   /// @nodoc
@@ -67,9 +67,9 @@ extension SettingsDTOX on SettingsDTO {
         enableChaptersBookmarksCount: enableChaptersBookmarksCount,
         enableChaptersLikesCount: enableChaptersLikesCount,
         enableChaptersViewsCount: enableChaptersViewsCount,
-        enableSeriesBookmarksCount: enableSeriesBookmarksCount,
-        enableSeriesLikesCount: enableSeriesLikesCount,
-        enableSeriesViewsCount: enableSeriesViewsCount,
+        enableTreesBookmarksCount: enableTreesBookmarksCount,
+        enableTreesLikesCount: enableTreesLikesCount,
+        enableTreesViewsCount: enableTreesViewsCount,
         uid: uid ?? UniqueID().getOrCrash(),
       );
 }
@@ -82,8 +82,8 @@ extension SettingsMapX on Map {
             this['enableChaptersBookmarksCount'] as bool,
         enableChaptersLikesCount: this['enableChaptersLikesCount'] as bool,
         enableChaptersViewsCount: this['enableChaptersViewsCount'] as bool,
-        enableSeriesBookmarksCount: this['enableSeriesBookmarksCount'] as bool,
-        enableSeriesLikesCount: this['enableSeriesLikesCount'] as bool,
-        enableSeriesViewsCount: this['enableSeriesViewsCount'] as bool,
+        enableTreesBookmarksCount: this['enableTreesBookmarksCount'] as bool,
+        enableTreesLikesCount: this['enableTreesLikesCount'] as bool,
+        enableTreesViewsCount: this['enableTreesViewsCount'] as bool,
       );
 }

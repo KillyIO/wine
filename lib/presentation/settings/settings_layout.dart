@@ -33,9 +33,9 @@ class SettingsLayout extends StatelessWidget {
             ),
             TileButton(
               leadingIconData: LineIcons.book,
-              title: 'SERIES',
+              title: 'TREE',
               trailingIconData: Icons.keyboard_arrow_right,
-              onPressed: () => context.router.push(const SettingsSeriesRoute()),
+              onPressed: () => context.router.push(const SettingsTreeRoute()),
             ),
             TileButton(
               leadingIconData: LineIcons.bookOpen,

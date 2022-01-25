@@ -17,16 +17,16 @@ extension GetIsarSettingsCollection on Isar {
 final IsarSettingsSchema = CollectionSchema(
   name: 'IsarSettings',
   schema:
-      '{"name":"IsarSettings","properties":[{"name":"enableChaptersBookmarksCount","type":"Byte"},{"name":"enableChaptersLikesCount","type":"Byte"},{"name":"enableChaptersViewsCount","type":"Byte"},{"name":"enableSeriesBookmarksCount","type":"Byte"},{"name":"enableSeriesLikesCount","type":"Byte"},{"name":"enableSeriesViewsCount","type":"Byte"},{"name":"uid","type":"String"},{"name":"stringify","type":"Byte"},{"name":"hashCode","type":"Long"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
+      '{"name":"IsarSettings","properties":[{"name":"enableChaptersBookmarksCount","type":"Byte"},{"name":"enableChaptersLikesCount","type":"Byte"},{"name":"enableChaptersViewsCount","type":"Byte"},{"name":"enableTreesBookmarksCount","type":"Byte"},{"name":"enableTreesLikesCount","type":"Byte"},{"name":"enableTreesViewsCount","type":"Byte"},{"name":"uid","type":"String"},{"name":"stringify","type":"Byte"},{"name":"hashCode","type":"Long"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
   adapter: const _IsarSettingsAdapter(),
   idName: 'id',
   propertyIds: {
     'enableChaptersBookmarksCount': 0,
     'enableChaptersLikesCount': 1,
     'enableChaptersViewsCount': 2,
-    'enableSeriesBookmarksCount': 3,
-    'enableSeriesLikesCount': 4,
-    'enableSeriesViewsCount': 5,
+    'enableTreesBookmarksCount': 3,
+    'enableTreesLikesCount': 4,
+    'enableTreesViewsCount': 5,
     'uid': 6,
     'stringify': 7,
     'hashCode': 8
@@ -59,12 +59,12 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
     final _enableChaptersLikesCount = value1;
     final value2 = object.enableChaptersViewsCount;
     final _enableChaptersViewsCount = value2;
-    final value3 = object.enableSeriesBookmarksCount;
-    final _enableSeriesBookmarksCount = value3;
-    final value4 = object.enableSeriesLikesCount;
-    final _enableSeriesLikesCount = value4;
-    final value5 = object.enableSeriesViewsCount;
-    final _enableSeriesViewsCount = value5;
+    final value3 = object.enableTreesBookmarksCount;
+    final _enableTreesBookmarksCount = value3;
+    final value4 = object.enableTreesLikesCount;
+    final _enableTreesLikesCount = value4;
+    final value5 = object.enableTreesViewsCount;
+    final _enableTreesViewsCount = value5;
     final value6 = object.uid;
     final _uid = BinaryWriter.utf8Encoder.convert(value6);
     dynamicSize += _uid.length;
@@ -93,9 +93,9 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
     writer.writeBool(offsets[0], _enableChaptersBookmarksCount);
     writer.writeBool(offsets[1], _enableChaptersLikesCount);
     writer.writeBool(offsets[2], _enableChaptersViewsCount);
-    writer.writeBool(offsets[3], _enableSeriesBookmarksCount);
-    writer.writeBool(offsets[4], _enableSeriesLikesCount);
-    writer.writeBool(offsets[5], _enableSeriesViewsCount);
+    writer.writeBool(offsets[3], _enableTreesBookmarksCount);
+    writer.writeBool(offsets[4], _enableTreesLikesCount);
+    writer.writeBool(offsets[5], _enableTreesViewsCount);
     writer.writeBytes(offsets[6], _uid);
     writer.writeBool(offsets[7], _stringify);
     writer.writeLong(offsets[8], _hashCode);
@@ -109,9 +109,9 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
       enableChaptersBookmarksCount: reader.readBoolOrNull(offsets[0]),
       enableChaptersLikesCount: reader.readBoolOrNull(offsets[1]),
       enableChaptersViewsCount: reader.readBoolOrNull(offsets[2]),
-      enableSeriesBookmarksCount: reader.readBoolOrNull(offsets[3]),
-      enableSeriesLikesCount: reader.readBoolOrNull(offsets[4]),
-      enableSeriesViewsCount: reader.readBoolOrNull(offsets[5]),
+      enableTreesBookmarksCount: reader.readBoolOrNull(offsets[3]),
+      enableTreesLikesCount: reader.readBoolOrNull(offsets[4]),
+      enableTreesViewsCount: reader.readBoolOrNull(offsets[5]),
       id: id,
       uid: reader.readString(offsets[6]),
     );
@@ -315,61 +315,61 @@ extension IsarSettingsQueryFilter
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      enableSeriesBookmarksCountIsNull() {
+      enableTreesBookmarksCountIsNull() {
     return addFilterCondition(FilterCondition(
       type: ConditionType.isNull,
-      property: 'enableSeriesBookmarksCount',
+      property: 'enableTreesBookmarksCount',
       value: null,
     ));
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      enableSeriesBookmarksCountEqualTo(
+      enableTreesBookmarksCountEqualTo(
     bool? value,
   ) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.eq,
-      property: 'enableSeriesBookmarksCount',
+      property: 'enableTreesBookmarksCount',
       value: value,
     ));
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      enableSeriesLikesCountIsNull() {
+      enableTreesLikesCountIsNull() {
     return addFilterCondition(FilterCondition(
       type: ConditionType.isNull,
-      property: 'enableSeriesLikesCount',
+      property: 'enableTreesLikesCount',
       value: null,
     ));
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      enableSeriesLikesCountEqualTo(
+      enableTreesLikesCountEqualTo(
     bool? value,
   ) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.eq,
-      property: 'enableSeriesLikesCount',
+      property: 'enableTreesLikesCount',
       value: value,
     ));
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      enableSeriesViewsCountIsNull() {
+      enableTreesViewsCountIsNull() {
     return addFilterCondition(FilterCondition(
       type: ConditionType.isNull,
-      property: 'enableSeriesViewsCount',
+      property: 'enableTreesViewsCount',
       value: null,
     ));
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      enableSeriesViewsCountEqualTo(
+      enableTreesViewsCountEqualTo(
     bool? value,
   ) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.eq,
-      property: 'enableSeriesViewsCount',
+      property: 'enableTreesViewsCount',
       value: value,
     ));
   }
@@ -607,33 +607,33 @@ extension IsarSettingsQueryWhereSortBy
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      sortByEnableSeriesBookmarksCount() {
-    return addSortByInternal('enableSeriesBookmarksCount', Sort.asc);
+      sortByEnableTreesBookmarksCount() {
+    return addSortByInternal('enableTreesBookmarksCount', Sort.asc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      sortByEnableSeriesBookmarksCountDesc() {
-    return addSortByInternal('enableSeriesBookmarksCount', Sort.desc);
+      sortByEnableTreesBookmarksCountDesc() {
+    return addSortByInternal('enableTreesBookmarksCount', Sort.desc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      sortByEnableSeriesLikesCount() {
-    return addSortByInternal('enableSeriesLikesCount', Sort.asc);
+      sortByEnableTreesLikesCount() {
+    return addSortByInternal('enableTreesLikesCount', Sort.asc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      sortByEnableSeriesLikesCountDesc() {
-    return addSortByInternal('enableSeriesLikesCount', Sort.desc);
+      sortByEnableTreesLikesCountDesc() {
+    return addSortByInternal('enableTreesLikesCount', Sort.desc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      sortByEnableSeriesViewsCount() {
-    return addSortByInternal('enableSeriesViewsCount', Sort.asc);
+      sortByEnableTreesViewsCount() {
+    return addSortByInternal('enableTreesViewsCount', Sort.asc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      sortByEnableSeriesViewsCountDesc() {
-    return addSortByInternal('enableSeriesViewsCount', Sort.desc);
+      sortByEnableTreesViewsCountDesc() {
+    return addSortByInternal('enableTreesViewsCount', Sort.desc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortById() {
@@ -702,33 +702,33 @@ extension IsarSettingsQueryWhereSortThenBy
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      thenByEnableSeriesBookmarksCount() {
-    return addSortByInternal('enableSeriesBookmarksCount', Sort.asc);
+      thenByEnableTreesBookmarksCount() {
+    return addSortByInternal('enableTreesBookmarksCount', Sort.asc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      thenByEnableSeriesBookmarksCountDesc() {
-    return addSortByInternal('enableSeriesBookmarksCount', Sort.desc);
+      thenByEnableTreesBookmarksCountDesc() {
+    return addSortByInternal('enableTreesBookmarksCount', Sort.desc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      thenByEnableSeriesLikesCount() {
-    return addSortByInternal('enableSeriesLikesCount', Sort.asc);
+      thenByEnableTreesLikesCount() {
+    return addSortByInternal('enableTreesLikesCount', Sort.asc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      thenByEnableSeriesLikesCountDesc() {
-    return addSortByInternal('enableSeriesLikesCount', Sort.desc);
+      thenByEnableTreesLikesCountDesc() {
+    return addSortByInternal('enableTreesLikesCount', Sort.desc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      thenByEnableSeriesViewsCount() {
-    return addSortByInternal('enableSeriesViewsCount', Sort.asc);
+      thenByEnableTreesViewsCount() {
+    return addSortByInternal('enableTreesViewsCount', Sort.asc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
-      thenByEnableSeriesViewsCountDesc() {
-    return addSortByInternal('enableSeriesViewsCount', Sort.desc);
+      thenByEnableTreesViewsCountDesc() {
+    return addSortByInternal('enableTreesViewsCount', Sort.desc);
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenById() {
@@ -782,18 +782,18 @@ extension IsarSettingsQueryWhereDistinct
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
-      distinctByEnableSeriesBookmarksCount() {
-    return addDistinctByInternal('enableSeriesBookmarksCount');
+      distinctByEnableTreesBookmarksCount() {
+    return addDistinctByInternal('enableTreesBookmarksCount');
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
-      distinctByEnableSeriesLikesCount() {
-    return addDistinctByInternal('enableSeriesLikesCount');
+      distinctByEnableTreesLikesCount() {
+    return addDistinctByInternal('enableTreesLikesCount');
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
-      distinctByEnableSeriesViewsCount() {
-    return addDistinctByInternal('enableSeriesViewsCount');
+      distinctByEnableTreesViewsCount() {
+    return addDistinctByInternal('enableTreesViewsCount');
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct> distinctById() {
@@ -832,18 +832,18 @@ extension IsarSettingsQueryProperty
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
-      enableSeriesBookmarksCountProperty() {
-    return addPropertyName('enableSeriesBookmarksCount');
+      enableTreesBookmarksCountProperty() {
+    return addPropertyName('enableTreesBookmarksCount');
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
-      enableSeriesLikesCountProperty() {
-    return addPropertyName('enableSeriesLikesCount');
+      enableTreesLikesCountProperty() {
+    return addPropertyName('enableTreesLikesCount');
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
-      enableSeriesViewsCountProperty() {
-    return addPropertyName('enableSeriesViewsCount');
+      enableTreesViewsCountProperty() {
+    return addPropertyName('enableTreesViewsCount');
   }
 
   QueryBuilder<IsarSettings, int?, QQueryOperations> idProperty() {

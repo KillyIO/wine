@@ -14,10 +14,10 @@ class LibraryEvent with _$LibraryEvent {
       PageViewIndexChanged;
 
   /// @nodoc
-  const factory LibraryEvent.seriesDeleted(UniqueID uid) = SeriesDeleted;
+  const factory LibraryEvent.sessionFetched() = SessionFetched;
 
   /// @nodoc
-  const factory LibraryEvent.sessionFetched() = SessionFetched;
+  const factory LibraryEvent.treeDeleted(UniqueID uid) = TreeDeleted;
 
   /// @nodoc
   const factory LibraryEvent.verticalNavbarIndexChanged(int index) =

@@ -30,8 +30,8 @@ class _$ChapterTearOff {
       required Licence licence,
       required int likesCount,
       required UniqueID? previousChapterUID,
-      required UniqueID seriesUID,
       required Title title,
+      required UniqueID treeUID,
       required UniqueID uid,
       required int viewsCount}) {
     return _Chapter(
@@ -47,8 +47,8 @@ class _$ChapterTearOff {
       licence: licence,
       likesCount: likesCount,
       previousChapterUID: previousChapterUID,
-      seriesUID: seriesUID,
       title: title,
+      treeUID: treeUID,
       uid: uid,
       viewsCount: viewsCount,
     );
@@ -72,8 +72,8 @@ mixin _$Chapter {
   Licence get licence => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
   UniqueID? get previousChapterUID => throw _privateConstructorUsedError;
-  UniqueID get seriesUID => throw _privateConstructorUsedError;
   Title get title => throw _privateConstructorUsedError;
+  UniqueID get treeUID => throw _privateConstructorUsedError;
   UniqueID get uid => throw _privateConstructorUsedError;
   int get viewsCount => throw _privateConstructorUsedError;
 
@@ -98,8 +98,8 @@ abstract class $ChapterCopyWith<$Res> {
       Licence licence,
       int likesCount,
       UniqueID? previousChapterUID,
-      UniqueID seriesUID,
       Title title,
+      UniqueID treeUID,
       UniqueID uid,
       int viewsCount});
 }
@@ -126,8 +126,8 @@ class _$ChapterCopyWithImpl<$Res> implements $ChapterCopyWith<$Res> {
     Object? licence = freezed,
     Object? likesCount = freezed,
     Object? previousChapterUID = freezed,
-    Object? seriesUID = freezed,
     Object? title = freezed,
+    Object? treeUID = freezed,
     Object? uid = freezed,
     Object? viewsCount = freezed,
   }) {
@@ -180,14 +180,14 @@ class _$ChapterCopyWithImpl<$Res> implements $ChapterCopyWith<$Res> {
           ? _value.previousChapterUID
           : previousChapterUID // ignore: cast_nullable_to_non_nullable
               as UniqueID?,
-      seriesUID: seriesUID == freezed
-          ? _value.seriesUID
-          : seriesUID // ignore: cast_nullable_to_non_nullable
-              as UniqueID,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Title,
+      treeUID: treeUID == freezed
+          ? _value.treeUID
+          : treeUID // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -218,8 +218,8 @@ abstract class _$ChapterCopyWith<$Res> implements $ChapterCopyWith<$Res> {
       Licence licence,
       int likesCount,
       UniqueID? previousChapterUID,
-      UniqueID seriesUID,
       Title title,
+      UniqueID treeUID,
       UniqueID uid,
       int viewsCount});
 }
@@ -247,8 +247,8 @@ class __$ChapterCopyWithImpl<$Res> extends _$ChapterCopyWithImpl<$Res>
     Object? licence = freezed,
     Object? likesCount = freezed,
     Object? previousChapterUID = freezed,
-    Object? seriesUID = freezed,
     Object? title = freezed,
+    Object? treeUID = freezed,
     Object? uid = freezed,
     Object? viewsCount = freezed,
   }) {
@@ -301,14 +301,14 @@ class __$ChapterCopyWithImpl<$Res> extends _$ChapterCopyWithImpl<$Res>
           ? _value.previousChapterUID
           : previousChapterUID // ignore: cast_nullable_to_non_nullable
               as UniqueID?,
-      seriesUID: seriesUID == freezed
-          ? _value.seriesUID
-          : seriesUID // ignore: cast_nullable_to_non_nullable
-              as UniqueID,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Title,
+      treeUID: treeUID == freezed
+          ? _value.treeUID
+          : treeUID // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -337,8 +337,8 @@ class _$_Chapter implements _Chapter {
       required this.licence,
       required this.likesCount,
       required this.previousChapterUID,
-      required this.seriesUID,
       required this.title,
+      required this.treeUID,
       required this.uid,
       required this.viewsCount});
 
@@ -367,9 +367,9 @@ class _$_Chapter implements _Chapter {
   @override
   final UniqueID? previousChapterUID;
   @override
-  final UniqueID seriesUID;
-  @override
   final Title title;
+  @override
+  final UniqueID treeUID;
   @override
   final UniqueID uid;
   @override
@@ -377,7 +377,7 @@ class _$_Chapter implements _Chapter {
 
   @override
   String toString() {
-    return 'Chapter(authorUID: $authorUID, body: $body, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousChapterUID: $previousChapterUID, seriesUID: $seriesUID, title: $title, uid: $uid, viewsCount: $viewsCount)';
+    return 'Chapter(authorUID: $authorUID, body: $body, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousChapterUID: $previousChapterUID, title: $title, treeUID: $treeUID, uid: $uid, viewsCount: $viewsCount)';
   }
 
   @override
@@ -401,8 +401,8 @@ class _$_Chapter implements _Chapter {
                 .equals(other.likesCount, likesCount) &&
             const DeepCollectionEquality()
                 .equals(other.previousChapterUID, previousChapterUID) &&
-            const DeepCollectionEquality().equals(other.seriesUID, seriesUID) &&
             const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.treeUID, treeUID) &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
                 .equals(other.viewsCount, viewsCount));
@@ -423,8 +423,8 @@ class _$_Chapter implements _Chapter {
       const DeepCollectionEquality().hash(licence),
       const DeepCollectionEquality().hash(likesCount),
       const DeepCollectionEquality().hash(previousChapterUID),
-      const DeepCollectionEquality().hash(seriesUID),
       const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(treeUID),
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(viewsCount));
 
@@ -448,8 +448,8 @@ abstract class _Chapter implements Chapter {
       required Licence licence,
       required int likesCount,
       required UniqueID? previousChapterUID,
-      required UniqueID seriesUID,
       required Title title,
+      required UniqueID treeUID,
       required UniqueID uid,
       required int viewsCount}) = _$_Chapter;
 
@@ -478,9 +478,9 @@ abstract class _Chapter implements Chapter {
   @override
   UniqueID? get previousChapterUID;
   @override
-  UniqueID get seriesUID;
-  @override
   Title get title;
+  @override
+  UniqueID get treeUID;
   @override
   UniqueID get uid;
   @override

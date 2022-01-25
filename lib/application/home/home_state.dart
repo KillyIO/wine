@@ -9,9 +9,9 @@ class HomeState with _$HomeState {
     required Option<Result<Unit, CoreFailure>> failure,
     required String genreFilterKey,
     required String languageFilterKey,
-    required List<Series> newSeriesList,
+    required List<Tree> newTrees,
     required String timeFilterKey,
-    required List<Series> topSeriesList,
+    required List<Tree> topTrees,
   }) = _HomeState;
 
   /// @nodoc
@@ -20,8 +20,8 @@ class HomeState with _$HomeState {
         failure: None(),
         genreFilterKey: '',
         languageFilterKey: '',
-        newSeriesList: <Series>[],
+        newTrees: <Tree>[],
         timeFilterKey: '',
-        topSeriesList: <Series>[],
+        topTrees: <Tree>[],
       );
 }

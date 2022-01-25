@@ -12,9 +12,9 @@ class IsarSettings extends Equatable {
     this.enableChaptersBookmarksCount,
     this.enableChaptersLikesCount,
     this.enableChaptersViewsCount,
-    this.enableSeriesBookmarksCount,
-    this.enableSeriesLikesCount,
-    this.enableSeriesViewsCount,
+    this.enableTreesBookmarksCount,
+    this.enableTreesLikesCount,
+    this.enableTreesViewsCount,
     this.id,
     required this.uid,
   });
@@ -25,9 +25,9 @@ class IsarSettings extends Equatable {
       enableChaptersBookmarksCount: map['enableChaptersBookmarksCount'] as bool,
       enableChaptersLikesCount: map['enableChaptersLikesCount'] as bool,
       enableChaptersViewsCount: map['enableChaptersViewsCount'] as bool,
-      enableSeriesBookmarksCount: map['enableSeriesBookmarksCount'] as bool,
-      enableSeriesLikesCount: map['enableSeriesLikesCount'] as bool,
-      enableSeriesViewsCount: map['enableSeriesViewsCount'] as bool,
+      enableTreesBookmarksCount: map['enableTreesBookmarksCount'] as bool,
+      enableTreesLikesCount: map['enableTreesLikesCount'] as bool,
+      enableTreesViewsCount: map['enableTreesViewsCount'] as bool,
       id: map['id'] as int,
       uid: map['uid'] as String,
     );
@@ -43,13 +43,13 @@ class IsarSettings extends Equatable {
   final bool? enableChaptersViewsCount;
 
   /// @nodoc
-  final bool? enableSeriesBookmarksCount;
+  final bool? enableTreesBookmarksCount;
 
   /// @nodoc
-  final bool? enableSeriesLikesCount;
+  final bool? enableTreesLikesCount;
 
   /// @nodoc
-  final bool? enableSeriesViewsCount;
+  final bool? enableTreesViewsCount;
 
   /// @nodoc
   final int? id;
@@ -63,9 +63,9 @@ class IsarSettings extends Equatable {
     bool? enableChaptersBookmarksCount,
     bool? enableChaptersLikesCount,
     bool? enableChaptersViewsCount,
-    bool? enableSeriesBookmarksCount,
-    bool? enableSeriesLikesCount,
-    bool? enableSeriesViewsCount,
+    bool? enableTreesBookmarksCount,
+    bool? enableTreesLikesCount,
+    bool? enableTreesViewsCount,
     int? id,
     String? uid,
   }) {
@@ -76,12 +76,12 @@ class IsarSettings extends Equatable {
           enableChaptersLikesCount ?? this.enableChaptersLikesCount,
       enableChaptersViewsCount:
           enableChaptersViewsCount ?? this.enableChaptersViewsCount,
-      enableSeriesBookmarksCount:
-          enableSeriesBookmarksCount ?? this.enableSeriesBookmarksCount,
-      enableSeriesLikesCount:
-          enableSeriesLikesCount ?? this.enableSeriesLikesCount,
-      enableSeriesViewsCount:
-          enableSeriesViewsCount ?? this.enableSeriesViewsCount,
+      enableTreesBookmarksCount:
+          enableTreesBookmarksCount ?? this.enableTreesBookmarksCount,
+      enableTreesLikesCount:
+          enableTreesLikesCount ?? this.enableTreesLikesCount,
+      enableTreesViewsCount:
+          enableTreesViewsCount ?? this.enableTreesViewsCount,
       id: id ?? this.id,
       uid: uid ?? this.uid,
     );
@@ -93,9 +93,9 @@ class IsarSettings extends Equatable {
       'enableChaptersBookmarksCount': enableChaptersBookmarksCount,
       'enableChaptersLikesCount': enableChaptersLikesCount,
       'enableChaptersViewsCount': enableChaptersViewsCount,
-      'enableSeriesBookmarksCount': enableSeriesBookmarksCount,
-      'enableSeriesLikesCount': enableSeriesLikesCount,
-      'enableSeriesViewsCount': enableSeriesViewsCount,
+      'enableTreesBookmarksCount': enableTreesBookmarksCount,
+      'enableTreesLikesCount': enableTreesLikesCount,
+      'enableTreesViewsCount': enableTreesViewsCount,
       'id': id,
       'uid': uid,
     };
@@ -107,9 +107,9 @@ class IsarSettings extends Equatable {
       enableChaptersBookmarksCount: enableChaptersBookmarksCount,
       enableChaptersLikesCount: enableChaptersLikesCount,
       enableChaptersViewsCount: enableChaptersViewsCount,
-      enableSeriesBookmarksCount: enableSeriesBookmarksCount,
-      enableSeriesLikesCount: enableSeriesLikesCount,
-      enableSeriesViewsCount: enableSeriesViewsCount,
+      enableTreesBookmarksCount: enableTreesBookmarksCount,
+      enableTreesLikesCount: enableTreesLikesCount,
+      enableTreesViewsCount: enableTreesViewsCount,
     );
   }
 
@@ -118,9 +118,9 @@ class IsarSettings extends Equatable {
         enableChaptersBookmarksCount,
         enableChaptersLikesCount,
         enableChaptersViewsCount,
-        enableSeriesBookmarksCount,
-        enableSeriesLikesCount,
-        enableSeriesViewsCount,
+        enableTreesBookmarksCount,
+        enableTreesLikesCount,
+        enableTreesViewsCount,
         id,
         uid,
       ];

@@ -33,14 +33,14 @@ class _$LibraryEventTearOff {
     );
   }
 
-  SeriesDeleted seriesDeleted(UniqueID uid) {
-    return SeriesDeleted(
-      uid,
-    );
-  }
-
   SessionFetched sessionFetched() {
     return const SessionFetched();
+  }
+
+  TreeDeleted treeDeleted(UniqueID uid) {
+    return TreeDeleted(
+      uid,
+    );
   }
 
   VerticalNavbarIndexChanged verticalNavbarIndexChanged(int index) {
@@ -60,8 +60,8 @@ mixin _$LibraryEvent {
     required TResult Function(UniqueID uid) chapterDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function(UniqueID uid) seriesDeleted,
     required TResult Function() sessionFetched,
+    required TResult Function(UniqueID uid) treeDeleted,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -70,8 +70,8 @@ mixin _$LibraryEvent {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -80,8 +80,8 @@ mixin _$LibraryEvent {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) =>
@@ -91,8 +91,8 @@ mixin _$LibraryEvent {
     required TResult Function(ChapterDeleted value) chapterDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(SeriesDeleted value) seriesDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(TreeDeleted value) treeDeleted,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) =>
@@ -102,8 +102,8 @@ mixin _$LibraryEvent {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) =>
@@ -113,8 +113,8 @@ mixin _$LibraryEvent {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -206,8 +206,8 @@ class _$ChapterDeleted implements ChapterDeleted {
     required TResult Function(UniqueID uid) chapterDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function(UniqueID uid) seriesDeleted,
     required TResult Function() sessionFetched,
+    required TResult Function(UniqueID uid) treeDeleted,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return chapterDeleted(uid);
@@ -219,8 +219,8 @@ class _$ChapterDeleted implements ChapterDeleted {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return chapterDeleted?.call(uid);
@@ -232,8 +232,8 @@ class _$ChapterDeleted implements ChapterDeleted {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -249,8 +249,8 @@ class _$ChapterDeleted implements ChapterDeleted {
     required TResult Function(ChapterDeleted value) chapterDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(SeriesDeleted value) seriesDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(TreeDeleted value) treeDeleted,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -263,8 +263,8 @@ class _$ChapterDeleted implements ChapterDeleted {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -277,8 +277,8 @@ class _$ChapterDeleted implements ChapterDeleted {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -340,8 +340,8 @@ class _$InitBloc implements InitBloc {
     required TResult Function(UniqueID uid) chapterDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function(UniqueID uid) seriesDeleted,
     required TResult Function() sessionFetched,
+    required TResult Function(UniqueID uid) treeDeleted,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return initBloc();
@@ -353,8 +353,8 @@ class _$InitBloc implements InitBloc {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return initBloc?.call();
@@ -366,8 +366,8 @@ class _$InitBloc implements InitBloc {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -383,8 +383,8 @@ class _$InitBloc implements InitBloc {
     required TResult Function(ChapterDeleted value) chapterDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(SeriesDeleted value) seriesDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(TreeDeleted value) treeDeleted,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -397,8 +397,8 @@ class _$InitBloc implements InitBloc {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -411,8 +411,8 @@ class _$InitBloc implements InitBloc {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -497,8 +497,8 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     required TResult Function(UniqueID uid) chapterDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function(UniqueID uid) seriesDeleted,
     required TResult Function() sessionFetched,
+    required TResult Function(UniqueID uid) treeDeleted,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return pageViewIndexChanged(index);
@@ -510,8 +510,8 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return pageViewIndexChanged?.call(index);
@@ -523,8 +523,8 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -540,8 +540,8 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     required TResult Function(ChapterDeleted value) chapterDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(SeriesDeleted value) seriesDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(TreeDeleted value) treeDeleted,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -554,8 +554,8 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -568,8 +568,8 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -587,166 +587,6 @@ abstract class PageViewIndexChanged implements LibraryEvent {
   int get index;
   @JsonKey(ignore: true)
   $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SeriesDeletedCopyWith<$Res> {
-  factory $SeriesDeletedCopyWith(
-          SeriesDeleted value, $Res Function(SeriesDeleted) then) =
-      _$SeriesDeletedCopyWithImpl<$Res>;
-  $Res call({UniqueID uid});
-}
-
-/// @nodoc
-class _$SeriesDeletedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
-    implements $SeriesDeletedCopyWith<$Res> {
-  _$SeriesDeletedCopyWithImpl(
-      SeriesDeleted _value, $Res Function(SeriesDeleted) _then)
-      : super(_value, (v) => _then(v as SeriesDeleted));
-
-  @override
-  SeriesDeleted get _value => super._value as SeriesDeleted;
-
-  @override
-  $Res call({
-    Object? uid = freezed,
-  }) {
-    return _then(SeriesDeleted(
-      uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as UniqueID,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SeriesDeleted implements SeriesDeleted {
-  const _$SeriesDeleted(this.uid);
-
-  @override
-  final UniqueID uid;
-
-  @override
-  String toString() {
-    return 'LibraryEvent.seriesDeleted(uid: $uid)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SeriesDeleted &&
-            const DeepCollectionEquality().equals(other.uid, uid));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(uid));
-
-  @JsonKey(ignore: true)
-  @override
-  $SeriesDeletedCopyWith<SeriesDeleted> get copyWith =>
-      _$SeriesDeletedCopyWithImpl<SeriesDeleted>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(UniqueID uid) chapterDeleted,
-    required TResult Function() initBloc,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function(UniqueID uid) seriesDeleted,
-    required TResult Function() sessionFetched,
-    required TResult Function(int index) verticalNavbarIndexChanged,
-  }) {
-    return seriesDeleted(uid);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
-    TResult Function()? initBloc,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
-    TResult Function()? sessionFetched,
-    TResult Function(int index)? verticalNavbarIndexChanged,
-  }) {
-    return seriesDeleted?.call(uid);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
-    TResult Function()? initBloc,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
-    TResult Function()? sessionFetched,
-    TResult Function(int index)? verticalNavbarIndexChanged,
-    required TResult orElse(),
-  }) {
-    if (seriesDeleted != null) {
-      return seriesDeleted(uid);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChapterDeleted value) chapterDeleted,
-    required TResult Function(InitBloc value) initBloc,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(SeriesDeleted value) seriesDeleted,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(VerticalNavbarIndexChanged value)
-        verticalNavbarIndexChanged,
-  }) {
-    return seriesDeleted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
-    TResult Function(InitBloc value)? initBloc,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(VerticalNavbarIndexChanged value)?
-        verticalNavbarIndexChanged,
-  }) {
-    return seriesDeleted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
-    TResult Function(InitBloc value)? initBloc,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(VerticalNavbarIndexChanged value)?
-        verticalNavbarIndexChanged,
-    required TResult orElse(),
-  }) {
-    if (seriesDeleted != null) {
-      return seriesDeleted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SeriesDeleted implements LibraryEvent {
-  const factory SeriesDeleted(UniqueID uid) = _$SeriesDeleted;
-
-  UniqueID get uid;
-  @JsonKey(ignore: true)
-  $SeriesDeletedCopyWith<SeriesDeleted> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -794,8 +634,8 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(UniqueID uid) chapterDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function(UniqueID uid) seriesDeleted,
     required TResult Function() sessionFetched,
+    required TResult Function(UniqueID uid) treeDeleted,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return sessionFetched();
@@ -807,8 +647,8 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return sessionFetched?.call();
@@ -820,8 +660,8 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -837,8 +677,8 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(ChapterDeleted value) chapterDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(SeriesDeleted value) seriesDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(TreeDeleted value) treeDeleted,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -851,8 +691,8 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -865,8 +705,8 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -880,6 +720,166 @@ class _$SessionFetched implements SessionFetched {
 
 abstract class SessionFetched implements LibraryEvent {
   const factory SessionFetched() = _$SessionFetched;
+}
+
+/// @nodoc
+abstract class $TreeDeletedCopyWith<$Res> {
+  factory $TreeDeletedCopyWith(
+          TreeDeleted value, $Res Function(TreeDeleted) then) =
+      _$TreeDeletedCopyWithImpl<$Res>;
+  $Res call({UniqueID uid});
+}
+
+/// @nodoc
+class _$TreeDeletedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+    implements $TreeDeletedCopyWith<$Res> {
+  _$TreeDeletedCopyWithImpl(
+      TreeDeleted _value, $Res Function(TreeDeleted) _then)
+      : super(_value, (v) => _then(v as TreeDeleted));
+
+  @override
+  TreeDeleted get _value => super._value as TreeDeleted;
+
+  @override
+  $Res call({
+    Object? uid = freezed,
+  }) {
+    return _then(TreeDeleted(
+      uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TreeDeleted implements TreeDeleted {
+  const _$TreeDeleted(this.uid);
+
+  @override
+  final UniqueID uid;
+
+  @override
+  String toString() {
+    return 'LibraryEvent.treeDeleted(uid: $uid)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TreeDeleted &&
+            const DeepCollectionEquality().equals(other.uid, uid));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(uid));
+
+  @JsonKey(ignore: true)
+  @override
+  $TreeDeletedCopyWith<TreeDeleted> get copyWith =>
+      _$TreeDeletedCopyWithImpl<TreeDeleted>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid) chapterDeleted,
+    required TResult Function() initBloc,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() sessionFetched,
+    required TResult Function(UniqueID uid) treeDeleted,
+    required TResult Function(int index) verticalNavbarIndexChanged,
+  }) {
+    return treeDeleted(uid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function()? initBloc,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
+    TResult Function(int index)? verticalNavbarIndexChanged,
+  }) {
+    return treeDeleted?.call(uid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function()? initBloc,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
+    TResult Function(int index)? verticalNavbarIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (treeDeleted != null) {
+      return treeDeleted(uid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChapterDeleted value) chapterDeleted,
+    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(TreeDeleted value) treeDeleted,
+    required TResult Function(VerticalNavbarIndexChanged value)
+        verticalNavbarIndexChanged,
+  }) {
+    return treeDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
+  }) {
+    return treeDeleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (treeDeleted != null) {
+      return treeDeleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TreeDeleted implements LibraryEvent {
+  const factory TreeDeleted(UniqueID uid) = _$TreeDeleted;
+
+  UniqueID get uid;
+  @JsonKey(ignore: true)
+  $TreeDeletedCopyWith<TreeDeleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -953,8 +953,8 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
     required TResult Function(UniqueID uid) chapterDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function(UniqueID uid) seriesDeleted,
     required TResult Function() sessionFetched,
+    required TResult Function(UniqueID uid) treeDeleted,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return verticalNavbarIndexChanged(index);
@@ -966,8 +966,8 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return verticalNavbarIndexChanged?.call(index);
@@ -979,8 +979,8 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
     TResult Function(UniqueID uid)? chapterDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? seriesDeleted,
     TResult Function()? sessionFetched,
+    TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -996,8 +996,8 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
     required TResult Function(ChapterDeleted value) chapterDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(SeriesDeleted value) seriesDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(TreeDeleted value) treeDeleted,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -1010,8 +1010,8 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -1024,8 +1024,8 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
     TResult Function(ChapterDeleted value)? chapterDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(SeriesDeleted value)? seriesDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TreeDeleted value)? treeDeleted,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -1052,21 +1052,25 @@ class _$LibraryStateTearOff {
   const _$LibraryStateTearOff();
 
   _LibraryState call(
-      {required List<Series> bookmarkedSeriesList,
+      {required List<Chapter> bookmarkedChapters,
+      required List<Tree> bookmarkedTree,
+      required List<Chapter> chapters,
       required int currentPageViewIdx,
       required int currentVerticalNavbarIdx,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isProcessing,
-      required List<Series> seriesList,
-      required User session}) {
+      required User session,
+      required List<Tree> trees}) {
     return _LibraryState(
-      bookmarkedSeriesList: bookmarkedSeriesList,
+      bookmarkedChapters: bookmarkedChapters,
+      bookmarkedTree: bookmarkedTree,
+      chapters: chapters,
       currentPageViewIdx: currentPageViewIdx,
       currentVerticalNavbarIdx: currentVerticalNavbarIdx,
       failureOption: failureOption,
       isProcessing: isProcessing,
-      seriesList: seriesList,
       session: session,
+      trees: trees,
     );
   }
 }
@@ -1076,16 +1080,16 @@ const $LibraryState = _$LibraryStateTearOff();
 
 /// @nodoc
 mixin _$LibraryState {
-// required List<Chapter> bookmarkedSeriesList,
-  List<Series> get bookmarkedSeriesList => throw _privateConstructorUsedError;
+  List<Chapter> get bookmarkedChapters => throw _privateConstructorUsedError;
+  List<Tree> get bookmarkedTree => throw _privateConstructorUsedError;
+  List<Chapter> get chapters => throw _privateConstructorUsedError;
   int get currentPageViewIdx => throw _privateConstructorUsedError;
-  int get currentVerticalNavbarIdx =>
-      throw _privateConstructorUsedError; // required List<Chapter> chapterList,
+  int get currentVerticalNavbarIdx => throw _privateConstructorUsedError;
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
-  List<Series> get seriesList => throw _privateConstructorUsedError;
   User get session => throw _privateConstructorUsedError;
+  List<Tree> get trees => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LibraryStateCopyWith<LibraryState> get copyWith =>
@@ -1098,13 +1102,15 @@ abstract class $LibraryStateCopyWith<$Res> {
           LibraryState value, $Res Function(LibraryState) then) =
       _$LibraryStateCopyWithImpl<$Res>;
   $Res call(
-      {List<Series> bookmarkedSeriesList,
+      {List<Chapter> bookmarkedChapters,
+      List<Tree> bookmarkedTree,
+      List<Chapter> chapters,
       int currentPageViewIdx,
       int currentVerticalNavbarIdx,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isProcessing,
-      List<Series> seriesList,
-      User session});
+      User session,
+      List<Tree> trees});
 
   $UserCopyWith<$Res> get session;
 }
@@ -1119,19 +1125,29 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? bookmarkedSeriesList = freezed,
+    Object? bookmarkedChapters = freezed,
+    Object? bookmarkedTree = freezed,
+    Object? chapters = freezed,
     Object? currentPageViewIdx = freezed,
     Object? currentVerticalNavbarIdx = freezed,
     Object? failureOption = freezed,
     Object? isProcessing = freezed,
-    Object? seriesList = freezed,
     Object? session = freezed,
+    Object? trees = freezed,
   }) {
     return _then(_value.copyWith(
-      bookmarkedSeriesList: bookmarkedSeriesList == freezed
-          ? _value.bookmarkedSeriesList
-          : bookmarkedSeriesList // ignore: cast_nullable_to_non_nullable
-              as List<Series>,
+      bookmarkedChapters: bookmarkedChapters == freezed
+          ? _value.bookmarkedChapters
+          : bookmarkedChapters // ignore: cast_nullable_to_non_nullable
+              as List<Chapter>,
+      bookmarkedTree: bookmarkedTree == freezed
+          ? _value.bookmarkedTree
+          : bookmarkedTree // ignore: cast_nullable_to_non_nullable
+              as List<Tree>,
+      chapters: chapters == freezed
+          ? _value.chapters
+          : chapters // ignore: cast_nullable_to_non_nullable
+              as List<Chapter>,
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
@@ -1148,14 +1164,14 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      seriesList: seriesList == freezed
-          ? _value.seriesList
-          : seriesList // ignore: cast_nullable_to_non_nullable
-              as List<Series>,
       session: session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User,
+      trees: trees == freezed
+          ? _value.trees
+          : trees // ignore: cast_nullable_to_non_nullable
+              as List<Tree>,
     ));
   }
 
@@ -1175,13 +1191,15 @@ abstract class _$LibraryStateCopyWith<$Res>
       __$LibraryStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Series> bookmarkedSeriesList,
+      {List<Chapter> bookmarkedChapters,
+      List<Tree> bookmarkedTree,
+      List<Chapter> chapters,
       int currentPageViewIdx,
       int currentVerticalNavbarIdx,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isProcessing,
-      List<Series> seriesList,
-      User session});
+      User session,
+      List<Tree> trees});
 
   @override
   $UserCopyWith<$Res> get session;
@@ -1199,19 +1217,29 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? bookmarkedSeriesList = freezed,
+    Object? bookmarkedChapters = freezed,
+    Object? bookmarkedTree = freezed,
+    Object? chapters = freezed,
     Object? currentPageViewIdx = freezed,
     Object? currentVerticalNavbarIdx = freezed,
     Object? failureOption = freezed,
     Object? isProcessing = freezed,
-    Object? seriesList = freezed,
     Object? session = freezed,
+    Object? trees = freezed,
   }) {
     return _then(_LibraryState(
-      bookmarkedSeriesList: bookmarkedSeriesList == freezed
-          ? _value.bookmarkedSeriesList
-          : bookmarkedSeriesList // ignore: cast_nullable_to_non_nullable
-              as List<Series>,
+      bookmarkedChapters: bookmarkedChapters == freezed
+          ? _value.bookmarkedChapters
+          : bookmarkedChapters // ignore: cast_nullable_to_non_nullable
+              as List<Chapter>,
+      bookmarkedTree: bookmarkedTree == freezed
+          ? _value.bookmarkedTree
+          : bookmarkedTree // ignore: cast_nullable_to_non_nullable
+              as List<Tree>,
+      chapters: chapters == freezed
+          ? _value.chapters
+          : chapters // ignore: cast_nullable_to_non_nullable
+              as List<Chapter>,
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
@@ -1228,14 +1256,14 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      seriesList: seriesList == freezed
-          ? _value.seriesList
-          : seriesList // ignore: cast_nullable_to_non_nullable
-              as List<Series>,
       session: session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User,
+      trees: trees == freezed
+          ? _value.trees
+          : trees // ignore: cast_nullable_to_non_nullable
+              as List<Tree>,
     ));
   }
 }
@@ -1244,32 +1272,38 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
 
 class _$_LibraryState implements _LibraryState {
   const _$_LibraryState(
-      {required this.bookmarkedSeriesList,
+      {required this.bookmarkedChapters,
+      required this.bookmarkedTree,
+      required this.chapters,
       required this.currentPageViewIdx,
       required this.currentVerticalNavbarIdx,
       required this.failureOption,
       required this.isProcessing,
-      required this.seriesList,
-      required this.session});
+      required this.session,
+      required this.trees});
 
-  @override // required List<Chapter> bookmarkedSeriesList,
-  final List<Series> bookmarkedSeriesList;
+  @override
+  final List<Chapter> bookmarkedChapters;
+  @override
+  final List<Tree> bookmarkedTree;
+  @override
+  final List<Chapter> chapters;
   @override
   final int currentPageViewIdx;
   @override
   final int currentVerticalNavbarIdx;
-  @override // required List<Chapter> chapterList,
+  @override
   final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isProcessing;
   @override
-  final List<Series> seriesList;
-  @override
   final User session;
+  @override
+  final List<Tree> trees;
 
   @override
   String toString() {
-    return 'LibraryState(bookmarkedSeriesList: $bookmarkedSeriesList, currentPageViewIdx: $currentPageViewIdx, currentVerticalNavbarIdx: $currentVerticalNavbarIdx, failureOption: $failureOption, isProcessing: $isProcessing, seriesList: $seriesList, session: $session)';
+    return 'LibraryState(bookmarkedChapters: $bookmarkedChapters, bookmarkedTree: $bookmarkedTree, chapters: $chapters, currentPageViewIdx: $currentPageViewIdx, currentVerticalNavbarIdx: $currentVerticalNavbarIdx, failureOption: $failureOption, isProcessing: $isProcessing, session: $session, trees: $trees)';
   }
 
   @override
@@ -1278,7 +1312,10 @@ class _$_LibraryState implements _LibraryState {
         (other.runtimeType == runtimeType &&
             other is _LibraryState &&
             const DeepCollectionEquality()
-                .equals(other.bookmarkedSeriesList, bookmarkedSeriesList) &&
+                .equals(other.bookmarkedChapters, bookmarkedChapters) &&
+            const DeepCollectionEquality()
+                .equals(other.bookmarkedTree, bookmarkedTree) &&
+            const DeepCollectionEquality().equals(other.chapters, chapters) &&
             const DeepCollectionEquality()
                 .equals(other.currentPageViewIdx, currentPageViewIdx) &&
             const DeepCollectionEquality().equals(
@@ -1287,21 +1324,22 @@ class _$_LibraryState implements _LibraryState {
                 .equals(other.failureOption, failureOption) &&
             const DeepCollectionEquality()
                 .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality()
-                .equals(other.seriesList, seriesList) &&
-            const DeepCollectionEquality().equals(other.session, session));
+            const DeepCollectionEquality().equals(other.session, session) &&
+            const DeepCollectionEquality().equals(other.trees, trees));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(bookmarkedSeriesList),
+      const DeepCollectionEquality().hash(bookmarkedChapters),
+      const DeepCollectionEquality().hash(bookmarkedTree),
+      const DeepCollectionEquality().hash(chapters),
       const DeepCollectionEquality().hash(currentPageViewIdx),
       const DeepCollectionEquality().hash(currentVerticalNavbarIdx),
       const DeepCollectionEquality().hash(failureOption),
       const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(seriesList),
-      const DeepCollectionEquality().hash(session));
+      const DeepCollectionEquality().hash(session),
+      const DeepCollectionEquality().hash(trees));
 
   @JsonKey(ignore: true)
   @override
@@ -1311,28 +1349,34 @@ class _$_LibraryState implements _LibraryState {
 
 abstract class _LibraryState implements LibraryState {
   const factory _LibraryState(
-      {required List<Series> bookmarkedSeriesList,
+      {required List<Chapter> bookmarkedChapters,
+      required List<Tree> bookmarkedTree,
+      required List<Chapter> chapters,
       required int currentPageViewIdx,
       required int currentVerticalNavbarIdx,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isProcessing,
-      required List<Series> seriesList,
-      required User session}) = _$_LibraryState;
+      required User session,
+      required List<Tree> trees}) = _$_LibraryState;
 
-  @override // required List<Chapter> bookmarkedSeriesList,
-  List<Series> get bookmarkedSeriesList;
+  @override
+  List<Chapter> get bookmarkedChapters;
+  @override
+  List<Tree> get bookmarkedTree;
+  @override
+  List<Chapter> get chapters;
   @override
   int get currentPageViewIdx;
   @override
   int get currentVerticalNavbarIdx;
-  @override // required List<Chapter> chapterList,
+  @override
   Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
   bool get isProcessing;
   @override
-  List<Series> get seriesList;
-  @override
   User get session;
+  @override
+  List<Tree> get trees;
   @override
   @JsonKey(ignore: true)
   _$LibraryStateCopyWith<_LibraryState> get copyWith =>

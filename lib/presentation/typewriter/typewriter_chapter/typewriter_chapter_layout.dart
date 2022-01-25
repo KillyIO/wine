@@ -39,7 +39,7 @@ class TypewriterChapterLayout extends StatelessWidget {
                     context,
                     <String>[
                       'Chapter 1 already published!',
-                      'Only one chapter 1 can be publish per series.',
+                      'Only one chapter 1 can be publish per tree.',
                     ],
                   ),
                   chapterNotFound: (_) async => baseErrorDialog(

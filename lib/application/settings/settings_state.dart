@@ -21,9 +21,9 @@ class SettingsState with _$SettingsState {
           enableChaptersBookmarksCount: false,
           enableChaptersLikesCount: false,
           enableChaptersViewsCount: false,
-          enableSeriesBookmarksCount: false,
-          enableSeriesLikesCount: false,
-          enableSeriesViewsCount: false,
+          enableTreesBookmarksCount: false,
+          enableTreesLikesCount: false,
+          enableTreesViewsCount: false,
         ),
         username: '',
       );

@@ -8,7 +8,7 @@ import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/infrastructure/core/string_helpers.dart';
 import 'package:wine/utils/constants/chapter.dart';
 import 'package:wine/utils/constants/core.dart';
-import 'package:wine/utils/constants/series.dart';
+import 'package:wine/utils/constants/tree.dart';
 
 /// @nodoc
 Result<String, ValueFailure<String>> validateBody(

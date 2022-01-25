@@ -24,14 +24,14 @@ class LibraryLayout extends StatelessWidget {
               some: (value) => value.when(
                 ok: (_) {},
                 err: (err) => err.maybeMap(
-                  series: (f) => f.f.maybeMap(
-                    seriesNotFound: (_) async => baseErrorDialog(
-                      context,
-                      <String>['Series not found!'],
-                    ),
+                  tree: (f) => f.f.maybeMap(
                     serverError: (_) async => baseErrorDialog(
                       context,
                       <String>['A problem occurred on our end!'],
+                    ),
+                    treeNotFound: (_) async => baseErrorDialog(
+                      context,
+                      <String>['Tree not found!'],
                     ),
                     unexpected: (_) async => baseErrorDialog(
                       context,

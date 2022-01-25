@@ -34,7 +34,7 @@ class TypewriterChapterEvent with _$TypewriterChapterEvent {
 
   /// @nodoc
   const factory TypewriterChapterEvent.launchAsNewChapter(
-    Series series, {
+    Tree tree, {
     Chapter? previousChapter,
   }) = LaunchAsNewChapter;
 

@@ -29,7 +29,7 @@ const testSubtitle = 'this is a subtitle';
 const testInvalidSubtitleTooLong =
     'this is a subtitle too long and should cause an error in the app';
 
-const testSeriesUid = '6ebf3f3e-b8e0-11eb-8529-0242ac130003';
+const testTreeUid = '6ebf3f3e-b8e0-11eb-8529-0242ac130003';
 const testSummary = '''
 congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem
 viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas
@@ -93,17 +93,17 @@ const testSettings = Settings(
   enableChaptersBookmarksCount: false,
   enableChaptersLikesCount: false,
   enableChaptersViewsCount: false,
-  enableSeriesBookmarksCount: false,
-  enableSeriesLikesCount: false,
-  enableSeriesViewsCount: false,
+  enableTreesBookmarksCount: false,
+  enableTreesLikesCount: false,
+  enableTreesViewsCount: false,
 );
 const testIsarSettings = IsarSettings(
   enableChaptersBookmarksCount: false,
   enableChaptersLikesCount: false,
   enableChaptersViewsCount: false,
-  enableSeriesBookmarksCount: false,
-  enableSeriesLikesCount: false,
-  enableSeriesViewsCount: false,
+  enableTreesBookmarksCount: false,
+  enableTreesLikesCount: false,
+  enableTreesViewsCount: false,
   uid: testUserUid,
 );
 

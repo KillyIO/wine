@@ -12,9 +12,9 @@ _$_SettingsDTO _$$_SettingsDTOFromJson(Map<String, dynamic> json) =>
           json['enableChaptersBookmarksCount'] as bool?,
       enableChaptersLikesCount: json['enableChaptersLikesCount'] as bool?,
       enableChaptersViewsCount: json['enableChaptersViewsCount'] as bool?,
-      enableSeriesBookmarksCount: json['enableSeriesBookmarksCount'] as bool?,
-      enableSeriesLikesCount: json['enableSeriesLikesCount'] as bool?,
-      enableSeriesViewsCount: json['enableSeriesViewsCount'] as bool?,
+      enableTreesBookmarksCount: json['enableTreesBookmarksCount'] as bool?,
+      enableTreesLikesCount: json['enableTreesLikesCount'] as bool?,
+      enableTreesViewsCount: json['enableTreesViewsCount'] as bool?,
       uid: json['uid'] as String?,
     );
 
@@ -23,8 +23,8 @@ Map<String, dynamic> _$$_SettingsDTOToJson(_$_SettingsDTO instance) =>
       'enableChaptersBookmarksCount': instance.enableChaptersBookmarksCount,
       'enableChaptersLikesCount': instance.enableChaptersLikesCount,
       'enableChaptersViewsCount': instance.enableChaptersViewsCount,
-      'enableSeriesBookmarksCount': instance.enableSeriesBookmarksCount,
-      'enableSeriesLikesCount': instance.enableSeriesLikesCount,
-      'enableSeriesViewsCount': instance.enableSeriesViewsCount,
+      'enableTreesBookmarksCount': instance.enableTreesBookmarksCount,
+      'enableTreesLikesCount': instance.enableTreesLikesCount,
+      'enableTreesViewsCount': instance.enableTreesViewsCount,
       'uid': instance.uid,
     };

@@ -26,8 +26,8 @@ import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
-import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/cover.dart';
 import 'package:wine/utils/constants/typewriter.dart';
 
@@ -175,13 +175,12 @@ class TypewriterChapterBloc
                 authorUID: user.uid,
                 index: (value.previousChapter?.index ?? 0) + 1,
                 previousChapterUID: value.previousChapter?.uid,
-                seriesUID: value.series.uid,
+                treeUID: value.tree.uid,
               ),
               failureOption: const None(),
-              genres: value.previousChapter?.genres ?? value.series.genres,
-              isNSFW: value.previousChapter?.isNSFW ?? value.series.isNSFW,
-              language:
-                  value.previousChapter?.language ?? value.series.language,
+              genres: value.previousChapter?.genres ?? value.tree.genres,
+              isNSFW: value.previousChapter?.isNSFW ?? value.tree.isNSFW,
+              language: value.previousChapter?.language ?? value.tree.language,
             ),
           );
 
@@ -294,7 +293,7 @@ class TypewriterChapterBloc
 
         if (state.chapter.previousChapterUID == null) {
           (await _chapterRepository
-                  .checkChapterOneAlreadyExists(state.chapter.seriesUID))
+                  .checkChapterOneAlreadyExists(state.chapter.treeUID))
               .match(
             (_) {
               add(const TypewriterChapterEvent.chapterOneExistenceChecked());

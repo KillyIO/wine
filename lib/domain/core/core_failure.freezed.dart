@@ -35,12 +35,6 @@ class _$CoreFailureTearOff {
     );
   }
 
-  _Series series(SeriesFailure f) {
-    return _Series(
-      f,
-    );
-  }
-
   _Sessions sessions(SessionsFailure f) {
     return _Sessions(
       f,
@@ -49,6 +43,12 @@ class _$CoreFailureTearOff {
 
   _Settings settings(SettingsFailure f) {
     return _Settings(
+      f,
+    );
+  }
+
+  _Tree tree(TreeFailure f) {
+    return _Tree(
       f,
     );
   }
@@ -70,9 +70,9 @@ mixin _$CoreFailure {
     required TResult Function(AuthFailure f) auth,
     required TResult Function(ChapterFailure f) chapter,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) =>
       throw _privateConstructorUsedError;
@@ -81,9 +81,9 @@ mixin _$CoreFailure {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) =>
       throw _privateConstructorUsedError;
@@ -92,9 +92,9 @@ mixin _$CoreFailure {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) =>
@@ -104,9 +104,9 @@ mixin _$CoreFailure {
     required TResult Function(_Auth value) auth,
     required TResult Function(_Chapter value) chapter,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) =>
       throw _privateConstructorUsedError;
@@ -115,9 +115,9 @@ mixin _$CoreFailure {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) =>
       throw _privateConstructorUsedError;
@@ -126,9 +126,9 @@ mixin _$CoreFailure {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) =>
@@ -225,9 +225,9 @@ class _$_Auth implements _Auth {
     required TResult Function(AuthFailure f) auth,
     required TResult Function(ChapterFailure f) chapter,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return auth(f);
@@ -239,9 +239,9 @@ class _$_Auth implements _Auth {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return auth?.call(f);
@@ -253,9 +253,9 @@ class _$_Auth implements _Auth {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -271,9 +271,9 @@ class _$_Auth implements _Auth {
     required TResult Function(_Auth value) auth,
     required TResult Function(_Chapter value) chapter,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return auth(this);
@@ -285,9 +285,9 @@ class _$_Auth implements _Auth {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return auth?.call(this);
@@ -299,9 +299,9 @@ class _$_Auth implements _Auth {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -394,9 +394,9 @@ class _$_Chapter implements _Chapter {
     required TResult Function(AuthFailure f) auth,
     required TResult Function(ChapterFailure f) chapter,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return chapter(f);
@@ -408,9 +408,9 @@ class _$_Chapter implements _Chapter {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return chapter?.call(f);
@@ -422,9 +422,9 @@ class _$_Chapter implements _Chapter {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -440,9 +440,9 @@ class _$_Chapter implements _Chapter {
     required TResult Function(_Auth value) auth,
     required TResult Function(_Chapter value) chapter,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return chapter(this);
@@ -454,9 +454,9 @@ class _$_Chapter implements _Chapter {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return chapter?.call(this);
@@ -468,9 +468,9 @@ class _$_Chapter implements _Chapter {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -566,9 +566,9 @@ class _$_DefaultCovers implements _DefaultCovers {
     required TResult Function(AuthFailure f) auth,
     required TResult Function(ChapterFailure f) chapter,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return defaultCovers(f);
@@ -580,9 +580,9 @@ class _$_DefaultCovers implements _DefaultCovers {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return defaultCovers?.call(f);
@@ -594,9 +594,9 @@ class _$_DefaultCovers implements _DefaultCovers {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -612,9 +612,9 @@ class _$_DefaultCovers implements _DefaultCovers {
     required TResult Function(_Auth value) auth,
     required TResult Function(_Chapter value) chapter,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return defaultCovers(this);
@@ -626,9 +626,9 @@ class _$_DefaultCovers implements _DefaultCovers {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return defaultCovers?.call(this);
@@ -640,9 +640,9 @@ class _$_DefaultCovers implements _DefaultCovers {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -660,175 +660,6 @@ abstract class _DefaultCovers implements CoreFailure {
   @JsonKey(ignore: true)
   _$DefaultCoversCopyWith<_DefaultCovers> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$SeriesCopyWith<$Res> {
-  factory _$SeriesCopyWith(_Series value, $Res Function(_Series) then) =
-      __$SeriesCopyWithImpl<$Res>;
-  $Res call({SeriesFailure f});
-
-  $SeriesFailureCopyWith<$Res> get f;
-}
-
-/// @nodoc
-class __$SeriesCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-    implements _$SeriesCopyWith<$Res> {
-  __$SeriesCopyWithImpl(_Series _value, $Res Function(_Series) _then)
-      : super(_value, (v) => _then(v as _Series));
-
-  @override
-  _Series get _value => super._value as _Series;
-
-  @override
-  $Res call({
-    Object? f = freezed,
-  }) {
-    return _then(_Series(
-      f == freezed
-          ? _value.f
-          : f // ignore: cast_nullable_to_non_nullable
-              as SeriesFailure,
-    ));
-  }
-
-  @override
-  $SeriesFailureCopyWith<$Res> get f {
-    return $SeriesFailureCopyWith<$Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_Series implements _Series {
-  const _$_Series(this.f);
-
-  @override
-  final SeriesFailure f;
-
-  @override
-  String toString() {
-    return 'CoreFailure.series(f: $f)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Series &&
-            const DeepCollectionEquality().equals(other.f, f));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
-
-  @JsonKey(ignore: true)
-  @override
-  _$SeriesCopyWith<_Series> get copyWith =>
-      __$SeriesCopyWithImpl<_Series>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
-    required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
-    required TResult Function(SessionsFailure f) sessions,
-    required TResult Function(SettingsFailure f) settings,
-    required TResult Function(UserFailure f) user,
-  }) {
-    return series(f);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(UserFailure f)? user,
-  }) {
-    return series?.call(f);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(UserFailure f)? user,
-    required TResult orElse(),
-  }) {
-    if (series != null) {
-      return series(f);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
-    required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
-    required TResult Function(_Sessions value) sessions,
-    required TResult Function(_Settings value) settings,
-    required TResult Function(_User value) user,
-  }) {
-    return series(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_User value)? user,
-  }) {
-    return series?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_User value)? user,
-    required TResult orElse(),
-  }) {
-    if (series != null) {
-      return series(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Series implements CoreFailure {
-  const factory _Series(SeriesFailure f) = _$_Series;
-
-  SeriesFailure get f;
-  @JsonKey(ignore: true)
-  _$SeriesCopyWith<_Series> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -905,9 +736,9 @@ class _$_Sessions implements _Sessions {
     required TResult Function(AuthFailure f) auth,
     required TResult Function(ChapterFailure f) chapter,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return sessions(f);
@@ -919,9 +750,9 @@ class _$_Sessions implements _Sessions {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return sessions?.call(f);
@@ -933,9 +764,9 @@ class _$_Sessions implements _Sessions {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -951,9 +782,9 @@ class _$_Sessions implements _Sessions {
     required TResult Function(_Auth value) auth,
     required TResult Function(_Chapter value) chapter,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return sessions(this);
@@ -965,9 +796,9 @@ class _$_Sessions implements _Sessions {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return sessions?.call(this);
@@ -979,9 +810,9 @@ class _$_Sessions implements _Sessions {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -1075,9 +906,9 @@ class _$_Settings implements _Settings {
     required TResult Function(AuthFailure f) auth,
     required TResult Function(ChapterFailure f) chapter,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return settings(f);
@@ -1089,9 +920,9 @@ class _$_Settings implements _Settings {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return settings?.call(f);
@@ -1103,9 +934,9 @@ class _$_Settings implements _Settings {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -1121,9 +952,9 @@ class _$_Settings implements _Settings {
     required TResult Function(_Auth value) auth,
     required TResult Function(_Chapter value) chapter,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return settings(this);
@@ -1135,9 +966,9 @@ class _$_Settings implements _Settings {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return settings?.call(this);
@@ -1149,9 +980,9 @@ class _$_Settings implements _Settings {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -1169,6 +1000,175 @@ abstract class _Settings implements CoreFailure {
   @JsonKey(ignore: true)
   _$SettingsCopyWith<_Settings> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$TreeCopyWith<$Res> {
+  factory _$TreeCopyWith(_Tree value, $Res Function(_Tree) then) =
+      __$TreeCopyWithImpl<$Res>;
+  $Res call({TreeFailure f});
+
+  $TreeFailureCopyWith<$Res> get f;
+}
+
+/// @nodoc
+class __$TreeCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+    implements _$TreeCopyWith<$Res> {
+  __$TreeCopyWithImpl(_Tree _value, $Res Function(_Tree) _then)
+      : super(_value, (v) => _then(v as _Tree));
+
+  @override
+  _Tree get _value => super._value as _Tree;
+
+  @override
+  $Res call({
+    Object? f = freezed,
+  }) {
+    return _then(_Tree(
+      f == freezed
+          ? _value.f
+          : f // ignore: cast_nullable_to_non_nullable
+              as TreeFailure,
+    ));
+  }
+
+  @override
+  $TreeFailureCopyWith<$Res> get f {
+    return $TreeFailureCopyWith<$Res>(_value.f, (value) {
+      return _then(_value.copyWith(f: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Tree implements _Tree {
+  const _$_Tree(this.f);
+
+  @override
+  final TreeFailure f;
+
+  @override
+  String toString() {
+    return 'CoreFailure.tree(f: $f)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Tree &&
+            const DeepCollectionEquality().equals(other.f, f));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+
+  @JsonKey(ignore: true)
+  @override
+  _$TreeCopyWith<_Tree> get copyWith =>
+      __$TreeCopyWithImpl<_Tree>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AuthFailure f) auth,
+    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SessionsFailure f) sessions,
+    required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
+    required TResult Function(UserFailure f) user,
+  }) {
+    return tree(f);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return tree?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
+    TResult Function(UserFailure f)? user,
+    required TResult orElse(),
+  }) {
+    if (tree != null) {
+      return tree(f);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Auth value) auth,
+    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Sessions value) sessions,
+    required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
+    required TResult Function(_User value) user,
+  }) {
+    return tree(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_Chapter value)? chapter,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
+    TResult Function(_User value)? user,
+  }) {
+    return tree?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_Chapter value)? chapter,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
+    TResult Function(_User value)? user,
+    required TResult orElse(),
+  }) {
+    if (tree != null) {
+      return tree(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Tree implements CoreFailure {
+  const factory _Tree(TreeFailure f) = _$_Tree;
+
+  TreeFailure get f;
+  @JsonKey(ignore: true)
+  _$TreeCopyWith<_Tree> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1245,9 +1245,9 @@ class _$_User implements _User {
     required TResult Function(AuthFailure f) auth,
     required TResult Function(ChapterFailure f) chapter,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return user(f);
@@ -1259,9 +1259,9 @@ class _$_User implements _User {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return user?.call(f);
@@ -1273,9 +1273,9 @@ class _$_User implements _User {
     TResult Function(AuthFailure f)? auth,
     TResult Function(ChapterFailure f)? chapter,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -1291,9 +1291,9 @@ class _$_User implements _User {
     required TResult Function(_Auth value) auth,
     required TResult Function(_Chapter value) chapter,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return user(this);
@@ -1305,9 +1305,9 @@ class _$_User implements _User {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return user?.call(this);
@@ -1319,9 +1319,9 @@ class _$_User implements _User {
     TResult Function(_Auth value)? auth,
     TResult Function(_Chapter value)? chapter,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {

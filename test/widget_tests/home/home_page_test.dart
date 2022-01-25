@@ -473,12 +473,11 @@ void main() {
         );
 
         final homeFilterButton = find.byKey(const Key('home_filter_button'));
-        final homeNewSeriesButton =
-            find.byKey(const Key('home_new_series_button'));
+        final homeNewTreeButton = find.byKey(const Key('home_new_tree_button'));
         final homeMenuButton = find.byKey(const Key('home_menu_button'));
 
         expect(homeFilterButton, findsOneWidget);
-        expect(homeNewSeriesButton, findsOneWidget);
+        expect(homeNewTreeButton, findsOneWidget);
         expect(homeMenuButton, findsOneWidget);
       });
     });
@@ -535,10 +534,10 @@ void main() {
 
     // TODO(SSebigo): test "LIBRARY" button navigate to LibraryPage
 
-    // TODO(SSebigo): test series is displayed
+    // TODO(SSebigo): test tree is displayed
 
-    // TODO(SSebigo): test if more than 5 series shoud find top five series
+    // TODO(SSebigo): test if more than 5 tree shoud find top five tree
 
-    // TODO(SSebigo): test plus icon navigate to NewSeries
+    // TODO(SSebigo): test plus icon navigate to NewTree
   });
 }

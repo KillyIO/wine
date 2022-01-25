@@ -26,8 +26,8 @@ class Chapter with _$Chapter {
     required Licence licence,
     required int likesCount,
     required UniqueID? previousChapterUID,
-    required UniqueID seriesUID,
     required Title title,
+    required UniqueID treeUID,
     required UniqueID uid,
     required int viewsCount,
   }) = _Chapter;
@@ -46,8 +46,8 @@ class Chapter with _$Chapter {
         licence: Licence(''),
         likesCount: 0,
         previousChapterUID: UniqueID(),
-        seriesUID: UniqueID(),
         title: Title(''),
+        treeUID: UniqueID(),
         uid: UniqueID(),
         viewsCount: 0,
       );

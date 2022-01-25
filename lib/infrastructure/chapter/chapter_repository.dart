@@ -30,12 +30,12 @@ class ChapterRepository implements IChapterRepository {
 
   @override
   Future<Result<Unit, ChapterFailure>> checkChapterOneAlreadyExists(
-    UniqueID seriesUID,
+    UniqueID treeUID,
   ) async {
     try {
       final querySnapshot = await _firestore
           .collection(chaptersPath)
-          .where('seriesUID', isEqualTo: seriesUID.getOrCrash())
+          .where('treeUID', isEqualTo: treeUID.getOrCrash())
           .where('index', isEqualTo: 1)
           .where('isPublished', isEqualTo: true)
           .withConverter<Chapter>(
@@ -133,14 +133,14 @@ class ChapterRepository implements IChapterRepository {
   }
 
   @override
-  Future<Result<Chapter, ChapterFailure>> loadChapterBySeriesUIDAndIndex(
-    UniqueID seriesUID,
+  Future<Result<Chapter, ChapterFailure>> loadChapterByTreeUIDAndIndex(
+    UniqueID treeUID,
     int index,
   ) async {
     try {
       final querySnapshot = await _firestore
           .collection(chaptersPath)
-          .where('seriesUID', isEqualTo: seriesUID.getOrCrash())
+          .where('treeUID', isEqualTo: treeUID.getOrCrash())
           .where('index', isEqualTo: index)
           .withConverter<Chapter>(
             fromFirestore: (snapshot, _) {

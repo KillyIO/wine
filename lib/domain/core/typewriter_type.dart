@@ -7,5 +7,5 @@ enum TypewriterType {
   chapter,
 
   /// @nodoc
-  series,
+  tree,
 }

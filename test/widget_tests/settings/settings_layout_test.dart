@@ -4,7 +4,7 @@ void main() {
   group('SettingsLayout -', () {
     // TODO(SSebigo): test find ACCOUNT button
 
-    // TODO(SSebigo): test find SERIES button
+    // TODO(SSebigo): test find TREE button
 
     // TODO(SSebigo): test find CHAPTER button
   });

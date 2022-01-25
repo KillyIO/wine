@@ -76,12 +76,12 @@ class SettingsRepository implements ISettingsRepository {
           await isar.isarSettingss.put(
             SettingsDTO.fromDomain(
               const Settings(
-                enableSeriesViewsCount: false,
-                enableSeriesLikesCount: false,
-                enableSeriesBookmarksCount: false,
                 enableChaptersViewsCount: false,
                 enableChaptersLikesCount: false,
                 enableChaptersBookmarksCount: false,
+                enableTreesViewsCount: false,
+                enableTreesLikesCount: false,
+                enableTreesBookmarksCount: false,
               ),
             ).toAdapter().copyWith(uid: firebaseUser.uid),
           );

@@ -57,10 +57,9 @@ class _$TypewriterChapterEventTearOff {
     );
   }
 
-  LaunchAsNewChapter launchAsNewChapter(Series series,
-      {Chapter? previousChapter}) {
+  LaunchAsNewChapter launchAsNewChapter(Tree tree, {Chapter? previousChapter}) {
     return LaunchAsNewChapter(
-      series,
+      tree,
       previousChapter: previousChapter,
     );
   }
@@ -118,7 +117,7 @@ mixin _$TypewriterChapterEvent {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -139,8 +138,7 @@ mixin _$TypewriterChapterEvent {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -160,8 +158,7 @@ mixin _$TypewriterChapterEvent {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -304,7 +301,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -328,8 +325,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -352,8 +348,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -499,7 +494,7 @@ class _$BodyChanged implements BodyChanged {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -523,8 +518,7 @@ class _$BodyChanged implements BodyChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -547,8 +541,7 @@ class _$BodyChanged implements BodyChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -696,7 +689,7 @@ class _$ChapterOneExistenceChecked implements ChapterOneExistenceChecked {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -720,8 +713,7 @@ class _$ChapterOneExistenceChecked implements ChapterOneExistenceChecked {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -744,8 +736,7 @@ class _$ChapterOneExistenceChecked implements ChapterOneExistenceChecked {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -891,7 +882,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -915,8 +906,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -939,8 +929,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1109,7 +1098,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -1133,8 +1122,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1157,8 +1145,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1333,7 +1320,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -1357,8 +1344,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1381,8 +1367,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1557,7 +1542,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -1581,8 +1566,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1605,8 +1589,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1781,7 +1764,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -1805,8 +1788,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1829,8 +1811,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -1937,9 +1918,9 @@ abstract class $LaunchAsNewChapterCopyWith<$Res> {
   factory $LaunchAsNewChapterCopyWith(
           LaunchAsNewChapter value, $Res Function(LaunchAsNewChapter) then) =
       _$LaunchAsNewChapterCopyWithImpl<$Res>;
-  $Res call({Series series, Chapter? previousChapter});
+  $Res call({Tree tree, Chapter? previousChapter});
 
-  $SeriesCopyWith<$Res> get series;
+  $TreeCopyWith<$Res> get tree;
   $ChapterCopyWith<$Res>? get previousChapter;
 }
 
@@ -1956,14 +1937,14 @@ class _$LaunchAsNewChapterCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? series = freezed,
+    Object? tree = freezed,
     Object? previousChapter = freezed,
   }) {
     return _then(LaunchAsNewChapter(
-      series == freezed
-          ? _value.series
-          : series // ignore: cast_nullable_to_non_nullable
-              as Series,
+      tree == freezed
+          ? _value.tree
+          : tree // ignore: cast_nullable_to_non_nullable
+              as Tree,
       previousChapter: previousChapter == freezed
           ? _value.previousChapter
           : previousChapter // ignore: cast_nullable_to_non_nullable
@@ -1972,9 +1953,9 @@ class _$LaunchAsNewChapterCopyWithImpl<$Res>
   }
 
   @override
-  $SeriesCopyWith<$Res> get series {
-    return $SeriesCopyWith<$Res>(_value.series, (value) {
-      return _then(_value.copyWith(series: value));
+  $TreeCopyWith<$Res> get tree {
+    return $TreeCopyWith<$Res>(_value.tree, (value) {
+      return _then(_value.copyWith(tree: value));
     });
   }
 
@@ -1993,16 +1974,16 @@ class _$LaunchAsNewChapterCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LaunchAsNewChapter implements LaunchAsNewChapter {
-  const _$LaunchAsNewChapter(this.series, {this.previousChapter});
+  const _$LaunchAsNewChapter(this.tree, {this.previousChapter});
 
   @override
-  final Series series;
+  final Tree tree;
   @override
   final Chapter? previousChapter;
 
   @override
   String toString() {
-    return 'TypewriterChapterEvent.launchAsNewChapter(series: $series, previousChapter: $previousChapter)';
+    return 'TypewriterChapterEvent.launchAsNewChapter(tree: $tree, previousChapter: $previousChapter)';
   }
 
   @override
@@ -2010,7 +1991,7 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LaunchAsNewChapter &&
-            const DeepCollectionEquality().equals(other.series, series) &&
+            const DeepCollectionEquality().equals(other.tree, tree) &&
             const DeepCollectionEquality()
                 .equals(other.previousChapter, previousChapter));
   }
@@ -2018,7 +1999,7 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(series),
+      const DeepCollectionEquality().hash(tree),
       const DeepCollectionEquality().hash(previousChapter));
 
   @JsonKey(ignore: true)
@@ -2037,7 +2018,7 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -2047,7 +2028,7 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
-    return launchAsNewChapter(series, previousChapter);
+    return launchAsNewChapter(tree, previousChapter);
   }
 
   @override
@@ -2061,8 +2042,7 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2071,7 +2051,7 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
-    return launchAsNewChapter?.call(series, previousChapter);
+    return launchAsNewChapter?.call(tree, previousChapter);
   }
 
   @override
@@ -2085,8 +2065,7 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2097,7 +2076,7 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     required TResult orElse(),
   }) {
     if (launchAsNewChapter != null) {
-      return launchAsNewChapter(series, previousChapter);
+      return launchAsNewChapter(tree, previousChapter);
     }
     return orElse();
   }
@@ -2180,10 +2159,10 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
 }
 
 abstract class LaunchAsNewChapter implements TypewriterChapterEvent {
-  const factory LaunchAsNewChapter(Series series, {Chapter? previousChapter}) =
+  const factory LaunchAsNewChapter(Tree tree, {Chapter? previousChapter}) =
       _$LaunchAsNewChapter;
 
-  Series get series;
+  Tree get tree;
   Chapter? get previousChapter;
   @JsonKey(ignore: true)
   $LaunchAsNewChapterCopyWith<LaunchAsNewChapter> get copyWith =>
@@ -2286,7 +2265,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -2310,8 +2289,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2334,8 +2312,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2511,7 +2488,7 @@ class _$LicenceSelected implements LicenceSelected {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -2535,8 +2512,7 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2559,8 +2535,7 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2736,7 +2711,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -2760,8 +2735,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2784,8 +2758,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2936,7 +2909,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -2960,8 +2933,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -2984,8 +2956,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -3131,7 +3102,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -3155,8 +3126,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -3179,8 +3149,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -3326,7 +3295,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -3350,8 +3319,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -3374,8 +3342,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -3545,7 +3512,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? previousChapter)
+    required TResult Function(Tree tree, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
@@ -3569,8 +3536,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
@@ -3593,8 +3559,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? previousChapter)?
-        launchAsNewChapter,
+    TResult Function(Tree tree, Chapter? previousChapter)? launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,

@@ -1,5 +1,5 @@
 /// @nodoc
 const List<String> homePageViewKeys = <String>[
-  'topSeries',
-  'newSeries',
+  'topTrees',
+  'newTrees',
 ];

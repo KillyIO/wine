@@ -53,7 +53,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 padding:
                     getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
                 child: IconButton(
-                  key: const Key('home_new_series_button'),
+                  key: const Key('home_new_tree_button'),
                   highlightColor: Colors.transparent,
                   hoverColor: Colors.transparent,
                   icon: const Icon(
@@ -62,8 +62,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   onPressed: () => handleAuthGuardedNavigation(
                     context,
-                    navigateTo:
-                        TypewriterSeriesNew(type: TypewriterType.series),
+                    navigateTo: TypewriterTreeNew(type: TypewriterType.tree),
                   ),
                   splashColor: Colors.transparent,
                 ),

@@ -34,8 +34,8 @@ class _$ChapterDTOTearOff {
       required String licence,
       required int likesCount,
       required String? previousChapterUID,
-      required String seriesUID,
       required String title,
+      required String treeUID,
       required String uid,
       @ServerTimestampConverter() required FieldValue updatedAt,
       required int viewsCount}) {
@@ -52,8 +52,8 @@ class _$ChapterDTOTearOff {
       licence: licence,
       likesCount: likesCount,
       previousChapterUID: previousChapterUID,
-      seriesUID: seriesUID,
       title: title,
+      treeUID: treeUID,
       uid: uid,
       updatedAt: updatedAt,
       viewsCount: viewsCount,
@@ -82,8 +82,8 @@ mixin _$ChapterDTO {
   String get licence => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
   String? get previousChapterUID => throw _privateConstructorUsedError;
-  String get seriesUID => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  String get treeUID => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   FieldValue get updatedAt => throw _privateConstructorUsedError;
@@ -113,8 +113,8 @@ abstract class $ChapterDTOCopyWith<$Res> {
       String licence,
       int likesCount,
       String? previousChapterUID,
-      String seriesUID,
       String title,
+      String treeUID,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
       int viewsCount});
@@ -142,8 +142,8 @@ class _$ChapterDTOCopyWithImpl<$Res> implements $ChapterDTOCopyWith<$Res> {
     Object? licence = freezed,
     Object? likesCount = freezed,
     Object? previousChapterUID = freezed,
-    Object? seriesUID = freezed,
     Object? title = freezed,
+    Object? treeUID = freezed,
     Object? uid = freezed,
     Object? updatedAt = freezed,
     Object? viewsCount = freezed,
@@ -197,13 +197,13 @@ class _$ChapterDTOCopyWithImpl<$Res> implements $ChapterDTOCopyWith<$Res> {
           ? _value.previousChapterUID
           : previousChapterUID // ignore: cast_nullable_to_non_nullable
               as String?,
-      seriesUID: seriesUID == freezed
-          ? _value.seriesUID
-          : seriesUID // ignore: cast_nullable_to_non_nullable
-              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      treeUID: treeUID == freezed
+          ? _value.treeUID
+          : treeUID // ignore: cast_nullable_to_non_nullable
               as String,
       uid: uid == freezed
           ? _value.uid
@@ -240,8 +240,8 @@ abstract class _$ChapterDTOCopyWith<$Res> implements $ChapterDTOCopyWith<$Res> {
       String licence,
       int likesCount,
       String? previousChapterUID,
-      String seriesUID,
       String title,
+      String treeUID,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
       int viewsCount});
@@ -271,8 +271,8 @@ class __$ChapterDTOCopyWithImpl<$Res> extends _$ChapterDTOCopyWithImpl<$Res>
     Object? licence = freezed,
     Object? likesCount = freezed,
     Object? previousChapterUID = freezed,
-    Object? seriesUID = freezed,
     Object? title = freezed,
+    Object? treeUID = freezed,
     Object? uid = freezed,
     Object? updatedAt = freezed,
     Object? viewsCount = freezed,
@@ -326,13 +326,13 @@ class __$ChapterDTOCopyWithImpl<$Res> extends _$ChapterDTOCopyWithImpl<$Res>
           ? _value.previousChapterUID
           : previousChapterUID // ignore: cast_nullable_to_non_nullable
               as String?,
-      seriesUID: seriesUID == freezed
-          ? _value.seriesUID
-          : seriesUID // ignore: cast_nullable_to_non_nullable
-              as String,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      treeUID: treeUID == freezed
+          ? _value.treeUID
+          : treeUID // ignore: cast_nullable_to_non_nullable
               as String,
       uid: uid == freezed
           ? _value.uid
@@ -366,8 +366,8 @@ class _$_ChapterDTO implements _ChapterDTO {
       required this.licence,
       required this.likesCount,
       required this.previousChapterUID,
-      required this.seriesUID,
       required this.title,
+      required this.treeUID,
       required this.uid,
       @ServerTimestampConverter() required this.updatedAt,
       required this.viewsCount});
@@ -400,9 +400,9 @@ class _$_ChapterDTO implements _ChapterDTO {
   @override
   final String? previousChapterUID;
   @override
-  final String seriesUID;
-  @override
   final String title;
+  @override
+  final String treeUID;
   @override
   final String uid;
   @override
@@ -413,7 +413,7 @@ class _$_ChapterDTO implements _ChapterDTO {
 
   @override
   String toString() {
-    return 'ChapterDTO(authorUID: $authorUID, body: $body, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousChapterUID: $previousChapterUID, seriesUID: $seriesUID, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
+    return 'ChapterDTO(authorUID: $authorUID, body: $body, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousChapterUID: $previousChapterUID, title: $title, treeUID: $treeUID, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
   }
 
   @override
@@ -437,8 +437,8 @@ class _$_ChapterDTO implements _ChapterDTO {
                 .equals(other.likesCount, likesCount) &&
             const DeepCollectionEquality()
                 .equals(other.previousChapterUID, previousChapterUID) &&
-            const DeepCollectionEquality().equals(other.seriesUID, seriesUID) &&
             const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.treeUID, treeUID) &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
             const DeepCollectionEquality()
@@ -460,8 +460,8 @@ class _$_ChapterDTO implements _ChapterDTO {
       const DeepCollectionEquality().hash(licence),
       const DeepCollectionEquality().hash(likesCount),
       const DeepCollectionEquality().hash(previousChapterUID),
-      const DeepCollectionEquality().hash(seriesUID),
       const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(treeUID),
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(updatedAt),
       const DeepCollectionEquality().hash(viewsCount));
@@ -491,8 +491,8 @@ abstract class _ChapterDTO implements ChapterDTO {
       required String licence,
       required int likesCount,
       required String? previousChapterUID,
-      required String seriesUID,
       required String title,
+      required String treeUID,
       required String uid,
       @ServerTimestampConverter() required FieldValue updatedAt,
       required int viewsCount}) = _$_ChapterDTO;
@@ -525,9 +525,9 @@ abstract class _ChapterDTO implements ChapterDTO {
   @override
   String? get previousChapterUID;
   @override
-  String get seriesUID;
-  @override
   String get title;
+  @override
+  String get treeUID;
   @override
   String get uid;
   @override

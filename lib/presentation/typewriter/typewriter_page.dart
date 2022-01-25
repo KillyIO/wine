@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wine/domain/chapter/chapter.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
-import 'package:wine/domain/series/series.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/presentation/typewriter/typewriter_chapter/typewriter_chapter_id_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_chapter/typewriter_chapter_new_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_id_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_new_page.dart';
+import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_id_page.dart';
+import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_new_page.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
@@ -18,19 +18,19 @@ class TypewriterPage extends StatelessWidget {
   const TypewriterPage({
     Key? key,
     this.chapter,
-    this.series,
     @PathParam('id') this.id,
+    this.tree,
     this.type = TypewriterType.unknown,
   }) : super(key: key);
 
   /// @nodoc
   final Chapter? chapter;
 
-  /// @nodoc
-  final Series? series;
-
-  /// Series or Chapter id.
+  /// Tree or Chapter id.
   final String? id;
+
+  /// @nodoc
+  final Tree? tree;
 
   /// @nodoc
   final TypewriterType type;
@@ -42,14 +42,14 @@ class TypewriterPage extends StatelessWidget {
           return TypewriterChapterIDPage(chapter: chapter, chapterId: id!);
         }
         return TypewriterChapterNewPage(
-          series: series!,
+          tree: tree!,
           previousChapter: chapter,
         );
-      case TypewriterType.series:
+      case TypewriterType.tree:
         if (id != null) {
-          return TypewriterSeriesIDPage(series: series, seriesId: id!);
+          return TypewriterTreeIDPage(tree: tree, treeId: id!);
         }
-        return const TypewriterSeriesNewPage();
+        return const TypewriterTreeNewPage();
     }
     return Container();
   }

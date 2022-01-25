@@ -10,9 +10,9 @@ class Settings with _$Settings {
     required bool? enableChaptersBookmarksCount,
     required bool? enableChaptersLikesCount,
     required bool? enableChaptersViewsCount,
-    required bool? enableSeriesBookmarksCount,
-    required bool? enableSeriesLikesCount,
-    required bool? enableSeriesViewsCount,
+    required bool? enableTreesBookmarksCount,
+    required bool? enableTreesLikesCount,
+    required bool? enableTreesViewsCount,
   }) = _Settings;
 
   /// @nodoc
@@ -20,8 +20,8 @@ class Settings with _$Settings {
         enableChaptersBookmarksCount: false,
         enableChaptersLikesCount: false,
         enableChaptersViewsCount: false,
-        enableSeriesBookmarksCount: false,
-        enableSeriesLikesCount: false,
-        enableSeriesViewsCount: false,
+        enableTreesBookmarksCount: false,
+        enableTreesLikesCount: false,
+        enableTreesViewsCount: false,
       );
 }
