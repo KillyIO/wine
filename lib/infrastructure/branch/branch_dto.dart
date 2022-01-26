@@ -86,15 +86,10 @@ extension BranchDTOX on BranchDTO {
         isPublished: isPublished,
         language: Language(language),
         leaf: Leaf(
-          leaf.isEmpty
-              ? leaf
-              : Document.fromJson(jsonDecode(leaf) as List<dynamic>)
-                  .toPlainText(),
-          leaf.isEmpty
-              ? <dynamic>[]
-              : Document.fromJson(jsonDecode(leaf) as List<dynamic>)
-                  .toDelta()
-                  .toJson(),
+          Document.fromJson(jsonDecode(leaf) as List<dynamic>).toPlainText(),
+          Document.fromJson(jsonDecode(leaf) as List<dynamic>)
+              .toDelta()
+              .toJson(),
         ),
         licence: Licence(licence),
         likesCount: likesCount,
