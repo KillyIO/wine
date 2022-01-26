@@ -5,8 +5,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
-import 'package:wine/domain/chapter/chapter.dart';
-import 'package:wine/domain/chapter/i_chapter_repository.dart';
+import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/branch/i_branch_repository.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
@@ -29,13 +29,13 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
   /// @nodoc
   TreeBloc(
     this._authFacade,
-    this._chapterRepository,
+    this._branchRepository,
     this._sessionsRepository,
     this._settingsRepository,
     this._treeRepository,
     this._userRepository,
   ) : super(TreeState.initial()) {
-    // TODO(SSebigo): try fetching last chapter read
+    // TODO(SSebigo): try fetching last branch read
     on<AuthorLoaded>((_, emit) async {
       await _fetchSettings(emit);
     });
@@ -70,7 +70,7 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
         },
       );
     });
-    on<ChapterOneLoaded>((_, emit) async {
+    on<BranchOneLoaded>((_, emit) async {
       (await _treeRepository.updateTreeViews(
         state.session.uid,
         state.tree.uid,
@@ -214,35 +214,35 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
       }
     });
     on<SettingsFetched>((_, emit) async {
-      (await _chapterRepository.loadChapterByTreeUIDAndIndex(
+      (await _branchRepository.loadBranchByTreeUIDAndIndex(
         state.tree.uid,
         1,
       ))
           .match(
-        (chapter) {
+        (branch) {
           emit(
             state.copyWith(
-              chapterOne: chapter.isPublished ? chapter : null,
+              branchOne: branch.isPublished ? branch : null,
               failureOption: const None(),
               isProcessing: !_authFacade.isAnonymous,
             ),
           );
 
           if (!_authFacade.isAnonymous) {
-            add(const TreeEvent.chapterOneLoaded());
+            add(const TreeEvent.branchOneLoaded());
           }
         },
         (failure) {
           failure.maybeWhen(
-            chapterNotFound: () {
+            branchNotFound: () {
               if (!_authFacade.isAnonymous) {
-                add(const TreeEvent.chapterOneLoaded());
+                add(const TreeEvent.branchOneLoaded());
               }
             },
             orElse: () {
               emit(
                 state.copyWith(
-                  failureOption: Option.some(Err(CoreFailure.chapter(failure))),
+                  failureOption: Option.some(Err(CoreFailure.branch(failure))),
                   isProcessing: false,
                 ),
               );
@@ -304,7 +304,7 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
   }
 
   final IAuthFacade _authFacade;
-  final IChapterRepository _chapterRepository;
+  final IBranchRepository _branchRepository;
   final ISessionsRepository _sessionsRepository;
   final ISettingsRepository _settingsRepository;
   final ITreeRepository _treeRepository;

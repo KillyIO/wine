@@ -8,10 +8,10 @@ part of 'settings_dto.dart';
 
 _$_SettingsDTO _$$_SettingsDTOFromJson(Map<String, dynamic> json) =>
     _$_SettingsDTO(
-      enableChaptersBookmarksCount:
-          json['enableChaptersBookmarksCount'] as bool?,
-      enableChaptersLikesCount: json['enableChaptersLikesCount'] as bool?,
-      enableChaptersViewsCount: json['enableChaptersViewsCount'] as bool?,
+      enableBranchesBookmarksCount:
+          json['enableBranchesBookmarksCount'] as bool?,
+      enableBranchesLikesCount: json['enableBranchesLikesCount'] as bool?,
+      enableBranchesViewsCount: json['enableBranchesViewsCount'] as bool?,
       enableTreesBookmarksCount: json['enableTreesBookmarksCount'] as bool?,
       enableTreesLikesCount: json['enableTreesLikesCount'] as bool?,
       enableTreesViewsCount: json['enableTreesViewsCount'] as bool?,
@@ -20,9 +20,9 @@ _$_SettingsDTO _$$_SettingsDTOFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_SettingsDTOToJson(_$_SettingsDTO instance) =>
     <String, dynamic>{
-      'enableChaptersBookmarksCount': instance.enableChaptersBookmarksCount,
-      'enableChaptersLikesCount': instance.enableChaptersLikesCount,
-      'enableChaptersViewsCount': instance.enableChaptersViewsCount,
+      'enableBranchesBookmarksCount': instance.enableBranchesBookmarksCount,
+      'enableBranchesLikesCount': instance.enableBranchesLikesCount,
+      'enableBranchesViewsCount': instance.enableBranchesViewsCount,
       'enableTreesBookmarksCount': instance.enableTreesBookmarksCount,
       'enableTreesLikesCount': instance.enableTreesLikesCount,
       'enableTreesViewsCount': instance.enableTreesViewsCount,

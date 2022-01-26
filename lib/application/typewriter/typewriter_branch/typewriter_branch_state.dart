@@ -1,0 +1,49 @@
+part of 'typewriter_branch_bloc.dart';
+
+/// @nodoc
+@freezed
+class TypewriterBranchState with _$TypewriterBranchState {
+  /// @nodoc
+  const factory TypewriterBranchState({
+    required Body body,
+    required QuillController bodyController,
+    required int bodyWordCount,
+    required Branch branch,
+    required String coverURL,
+    required int currentPageViewIdx,
+    required TypewriterEndState endState,
+    required Option<Result<None, CoreFailure>> failureOption,
+    required List<Genre> genres,
+    required bool isEdit,
+    required bool isNSFW,
+    required bool isProcessing,
+    required Language language,
+    required Licence licence,
+    required bool showErrorMessages,
+    required Title title,
+    required TextEditingController titleController,
+    required int titleWordCount,
+  }) = _TypewriterBranchState;
+
+  /// @nodoc
+  factory TypewriterBranchState.initial() => TypewriterBranchState(
+        body: Body('', const <dynamic>[]),
+        bodyController: QuillController.basic(),
+        bodyWordCount: 0,
+        branch: Branch.empty(),
+        coverURL: '',
+        currentPageViewIdx: 0,
+        endState: TypewriterEndState.unknown,
+        failureOption: const None(),
+        genres: <Genre>[],
+        isEdit: false,
+        isNSFW: false,
+        isProcessing: false,
+        language: Language(''),
+        licence: Licence(''),
+        showErrorMessages: false,
+        title: Title(''),
+        titleController: TextEditingController(),
+        titleWordCount: 0,
+      );
+}

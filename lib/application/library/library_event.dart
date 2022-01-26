@@ -4,7 +4,7 @@ part of 'library_bloc.dart';
 @freezed
 class LibraryEvent with _$LibraryEvent {
   /// @nodoc
-  const factory LibraryEvent.chapterDeleted(UniqueID uid) = ChapterDeleted;
+  const factory LibraryEvent.branchDeleted(UniqueID uid) = BranchDeleted;
 
   /// @nodoc
   const factory LibraryEvent.initBloc() = InitBloc;

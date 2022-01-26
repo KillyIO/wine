@@ -90,17 +90,17 @@ const testIsarDefaultCover = IsarDefaultCover(
 
 // SECTION Settings
 const testSettings = Settings(
-  enableChaptersBookmarksCount: false,
-  enableChaptersLikesCount: false,
-  enableChaptersViewsCount: false,
+  enableBranchesBookmarksCount: false,
+  enableBranchesLikesCount: false,
+  enableBranchesViewsCount: false,
   enableTreesBookmarksCount: false,
   enableTreesLikesCount: false,
   enableTreesViewsCount: false,
 );
 const testIsarSettings = IsarSettings(
-  enableChaptersBookmarksCount: false,
-  enableChaptersLikesCount: false,
-  enableChaptersViewsCount: false,
+  enableBranchesBookmarksCount: false,
+  enableBranchesLikesCount: false,
+  enableBranchesViewsCount: false,
   enableTreesBookmarksCount: false,
   enableTreesLikesCount: false,
   enableTreesViewsCount: false,

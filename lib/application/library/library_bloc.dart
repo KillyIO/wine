@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/chapter/chapter.dart';
-import 'package:wine/domain/chapter/i_chapter_repository.dart';
+import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/branch/i_branch_repository.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
@@ -23,11 +23,11 @@ part 'library_state.dart';
 class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
   /// @nodoc
   LibraryBloc(
-    this._chapterRepository,
+    this._branchRepository,
     this._sessionsRepository,
     this._treeRepository,
   ) : super(LibraryState.initial()) {
-    on<ChapterDeleted>((value, emit) async {});
+    on<BranchDeleted>((value, emit) async {});
     on<InitBloc>((_, emit) async {
       emit(
         state.copyWith(
@@ -100,15 +100,15 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
             }
             break;
           case 1:
-            if (state.chapters.isEmpty) {
-              (await _chapterRepository.loadChaptersByUserID(state.session.uid))
+            if (state.branches.isEmpty) {
+              (await _branchRepository.loadBranchesByUserID(state.session.uid))
                   .match(
-                (chapters) {
+                (branches) {
                   emit(
                     state.copyWith(
                       failureOption: Option.none(),
                       isProcessing: false,
-                      chapters: chapters,
+                      branches: branches,
                     ),
                   );
                 },
@@ -116,7 +116,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                   emit(
                     state.copyWith(
                       failureOption:
-                          Option.some(Err(CoreFailure.chapter(failure))),
+                          Option.some(Err(CoreFailure.branch(failure))),
                       isProcessing: false,
                     ),
                   );
@@ -188,7 +188,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
     });
   }
 
-  final IChapterRepository _chapterRepository;
+  final IBranchRepository _branchRepository;
   final ISessionsRepository _sessionsRepository;
   final ITreeRepository _treeRepository;
 }

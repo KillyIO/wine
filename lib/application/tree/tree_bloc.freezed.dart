@@ -27,8 +27,8 @@ class _$TreeEventTearOff {
     );
   }
 
-  ChapterOneLoaded chapterOneLoaded() {
-    return const ChapterOneLoaded();
+  BranchOneLoaded branchOneLoaded() {
+    return const BranchOneLoaded();
   }
 
   LaunchWithID launchWithID(UniqueID id, {Tree? tree}) {
@@ -74,7 +74,7 @@ mixin _$TreeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -88,7 +88,7 @@ mixin _$TreeEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -102,7 +102,7 @@ mixin _$TreeEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -118,7 +118,7 @@ mixin _$TreeEvent {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -132,7 +132,7 @@ mixin _$TreeEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -146,7 +146,7 @@ mixin _$TreeEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -216,7 +216,7 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -233,7 +233,7 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -250,7 +250,7 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -272,7 +272,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -289,7 +289,7 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -306,7 +306,7 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -396,7 +396,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -413,7 +413,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -430,7 +430,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -452,7 +452,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -469,7 +469,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -486,7 +486,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -514,37 +514,37 @@ abstract class BookmarkButtonPressed implements TreeEvent {
 }
 
 /// @nodoc
-abstract class $ChapterOneLoadedCopyWith<$Res> {
-  factory $ChapterOneLoadedCopyWith(
-          ChapterOneLoaded value, $Res Function(ChapterOneLoaded) then) =
-      _$ChapterOneLoadedCopyWithImpl<$Res>;
+abstract class $BranchOneLoadedCopyWith<$Res> {
+  factory $BranchOneLoadedCopyWith(
+          BranchOneLoaded value, $Res Function(BranchOneLoaded) then) =
+      _$BranchOneLoadedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ChapterOneLoadedCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
-    implements $ChapterOneLoadedCopyWith<$Res> {
-  _$ChapterOneLoadedCopyWithImpl(
-      ChapterOneLoaded _value, $Res Function(ChapterOneLoaded) _then)
-      : super(_value, (v) => _then(v as ChapterOneLoaded));
+class _$BranchOneLoadedCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
+    implements $BranchOneLoadedCopyWith<$Res> {
+  _$BranchOneLoadedCopyWithImpl(
+      BranchOneLoaded _value, $Res Function(BranchOneLoaded) _then)
+      : super(_value, (v) => _then(v as BranchOneLoaded));
 
   @override
-  ChapterOneLoaded get _value => super._value as ChapterOneLoaded;
+  BranchOneLoaded get _value => super._value as BranchOneLoaded;
 }
 
 /// @nodoc
 
-class _$ChapterOneLoaded implements ChapterOneLoaded {
-  const _$ChapterOneLoaded();
+class _$BranchOneLoaded implements BranchOneLoaded {
+  const _$BranchOneLoaded();
 
   @override
   String toString() {
-    return 'TreeEvent.chapterOneLoaded()';
+    return 'TreeEvent.branchOneLoaded()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ChapterOneLoaded);
+        (other.runtimeType == runtimeType && other is BranchOneLoaded);
   }
 
   @override
@@ -555,7 +555,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -564,7 +564,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     required TResult Function() treeSet,
     required TResult Function() viewsUpdated,
   }) {
-    return chapterOneLoaded();
+    return branchOneLoaded();
   }
 
   @override
@@ -572,7 +572,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -581,7 +581,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     TResult Function()? treeSet,
     TResult Function()? viewsUpdated,
   }) {
-    return chapterOneLoaded?.call();
+    return branchOneLoaded?.call();
   }
 
   @override
@@ -589,7 +589,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -599,8 +599,8 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
-    if (chapterOneLoaded != null) {
-      return chapterOneLoaded();
+    if (branchOneLoaded != null) {
+      return branchOneLoaded();
     }
     return orElse();
   }
@@ -611,7 +611,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -620,7 +620,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     required TResult Function(TreeSet value) treeSet,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
-    return chapterOneLoaded(this);
+    return branchOneLoaded(this);
   }
 
   @override
@@ -628,7 +628,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -637,7 +637,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     TResult Function(TreeSet value)? treeSet,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
-    return chapterOneLoaded?.call(this);
+    return branchOneLoaded?.call(this);
   }
 
   @override
@@ -645,7 +645,7 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -655,15 +655,15 @@ class _$ChapterOneLoaded implements ChapterOneLoaded {
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
-    if (chapterOneLoaded != null) {
-      return chapterOneLoaded(this);
+    if (branchOneLoaded != null) {
+      return branchOneLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterOneLoaded implements TreeEvent {
-  const factory ChapterOneLoaded() = _$ChapterOneLoaded;
+abstract class BranchOneLoaded implements TreeEvent {
+  const factory BranchOneLoaded() = _$BranchOneLoaded;
 }
 
 /// @nodoc
@@ -755,7 +755,7 @@ class _$LaunchWithID implements LaunchWithID {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -772,7 +772,7 @@ class _$LaunchWithID implements LaunchWithID {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -789,7 +789,7 @@ class _$LaunchWithID implements LaunchWithID {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -811,7 +811,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -828,7 +828,7 @@ class _$LaunchWithID implements LaunchWithID {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -845,7 +845,7 @@ class _$LaunchWithID implements LaunchWithID {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -939,7 +939,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -956,7 +956,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -973,7 +973,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -995,7 +995,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -1012,7 +1012,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1029,7 +1029,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1098,7 +1098,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -1115,7 +1115,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1132,7 +1132,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1154,7 +1154,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -1171,7 +1171,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1188,7 +1188,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1251,7 +1251,7 @@ class _$SessionFetched implements SessionFetched {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -1268,7 +1268,7 @@ class _$SessionFetched implements SessionFetched {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1285,7 +1285,7 @@ class _$SessionFetched implements SessionFetched {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1307,7 +1307,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -1324,7 +1324,7 @@ class _$SessionFetched implements SessionFetched {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1341,7 +1341,7 @@ class _$SessionFetched implements SessionFetched {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1404,7 +1404,7 @@ class _$SettingsFetched implements SettingsFetched {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -1421,7 +1421,7 @@ class _$SettingsFetched implements SettingsFetched {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1438,7 +1438,7 @@ class _$SettingsFetched implements SettingsFetched {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1460,7 +1460,7 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -1477,7 +1477,7 @@ class _$SettingsFetched implements SettingsFetched {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1494,7 +1494,7 @@ class _$SettingsFetched implements SettingsFetched {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1555,7 +1555,7 @@ class _$TreeSet implements TreeSet {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -1572,7 +1572,7 @@ class _$TreeSet implements TreeSet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1589,7 +1589,7 @@ class _$TreeSet implements TreeSet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1611,7 +1611,7 @@ class _$TreeSet implements TreeSet {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -1628,7 +1628,7 @@ class _$TreeSet implements TreeSet {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1645,7 +1645,7 @@ class _$TreeSet implements TreeSet {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1708,7 +1708,7 @@ class _$ViewsUpdated implements ViewsUpdated {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() chapterOneLoaded,
+    required TResult Function() branchOneLoaded,
     required TResult Function(UniqueID id, Tree? tree) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
@@ -1725,7 +1725,7 @@ class _$ViewsUpdated implements ViewsUpdated {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1742,7 +1742,7 @@ class _$ViewsUpdated implements ViewsUpdated {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? chapterOneLoaded,
+    TResult Function()? branchOneLoaded,
     TResult Function(UniqueID id, Tree? tree)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
@@ -1764,7 +1764,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
+    required TResult Function(BranchOneLoaded value) branchOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
@@ -1781,7 +1781,7 @@ class _$ViewsUpdated implements ViewsUpdated {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1798,7 +1798,7 @@ class _$ViewsUpdated implements ViewsUpdated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
+    TResult Function(BranchOneLoaded value)? branchOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
@@ -1826,8 +1826,8 @@ class _$TreeStateTearOff {
   _TreeState call(
       {required bool authorIsUser,
       required User author,
-      Chapter? chapterOne,
-      Chapter? chapterResume,
+      Branch? branchOne,
+      Branch? branchResume,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isBookmarked,
       required bool isLiked,
@@ -1838,8 +1838,8 @@ class _$TreeStateTearOff {
     return _TreeState(
       authorIsUser: authorIsUser,
       author: author,
-      chapterOne: chapterOne,
-      chapterResume: chapterResume,
+      branchOne: branchOne,
+      branchResume: branchResume,
       failureOption: failureOption,
       isBookmarked: isBookmarked,
       isLiked: isLiked,
@@ -1858,8 +1858,8 @@ const $TreeState = _$TreeStateTearOff();
 mixin _$TreeState {
   bool get authorIsUser => throw _privateConstructorUsedError;
   User get author => throw _privateConstructorUsedError;
-  Chapter? get chapterOne => throw _privateConstructorUsedError;
-  Chapter? get chapterResume => throw _privateConstructorUsedError;
+  Branch? get branchOne => throw _privateConstructorUsedError;
+  Branch? get branchResume => throw _privateConstructorUsedError;
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isBookmarked => throw _privateConstructorUsedError;
@@ -1881,8 +1881,8 @@ abstract class $TreeStateCopyWith<$Res> {
   $Res call(
       {bool authorIsUser,
       User author,
-      Chapter? chapterOne,
-      Chapter? chapterResume,
+      Branch? branchOne,
+      Branch? branchResume,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
@@ -1892,8 +1892,8 @@ abstract class $TreeStateCopyWith<$Res> {
       Tree tree});
 
   $UserCopyWith<$Res> get author;
-  $ChapterCopyWith<$Res>? get chapterOne;
-  $ChapterCopyWith<$Res>? get chapterResume;
+  $BranchCopyWith<$Res>? get branchOne;
+  $BranchCopyWith<$Res>? get branchResume;
   $UserCopyWith<$Res> get session;
   $SettingsCopyWith<$Res> get settings;
   $TreeCopyWith<$Res> get tree;
@@ -1911,8 +1911,8 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
   $Res call({
     Object? authorIsUser = freezed,
     Object? author = freezed,
-    Object? chapterOne = freezed,
-    Object? chapterResume = freezed,
+    Object? branchOne = freezed,
+    Object? branchResume = freezed,
     Object? failureOption = freezed,
     Object? isBookmarked = freezed,
     Object? isLiked = freezed,
@@ -1930,14 +1930,14 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as User,
-      chapterOne: chapterOne == freezed
-          ? _value.chapterOne
-          : chapterOne // ignore: cast_nullable_to_non_nullable
-              as Chapter?,
-      chapterResume: chapterResume == freezed
-          ? _value.chapterResume
-          : chapterResume // ignore: cast_nullable_to_non_nullable
-              as Chapter?,
+      branchOne: branchOne == freezed
+          ? _value.branchOne
+          : branchOne // ignore: cast_nullable_to_non_nullable
+              as Branch?,
+      branchResume: branchResume == freezed
+          ? _value.branchResume
+          : branchResume // ignore: cast_nullable_to_non_nullable
+              as Branch?,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -1977,24 +1977,24 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
   }
 
   @override
-  $ChapterCopyWith<$Res>? get chapterOne {
-    if (_value.chapterOne == null) {
+  $BranchCopyWith<$Res>? get branchOne {
+    if (_value.branchOne == null) {
       return null;
     }
 
-    return $ChapterCopyWith<$Res>(_value.chapterOne!, (value) {
-      return _then(_value.copyWith(chapterOne: value));
+    return $BranchCopyWith<$Res>(_value.branchOne!, (value) {
+      return _then(_value.copyWith(branchOne: value));
     });
   }
 
   @override
-  $ChapterCopyWith<$Res>? get chapterResume {
-    if (_value.chapterResume == null) {
+  $BranchCopyWith<$Res>? get branchResume {
+    if (_value.branchResume == null) {
       return null;
     }
 
-    return $ChapterCopyWith<$Res>(_value.chapterResume!, (value) {
-      return _then(_value.copyWith(chapterResume: value));
+    return $BranchCopyWith<$Res>(_value.branchResume!, (value) {
+      return _then(_value.copyWith(branchResume: value));
     });
   }
 
@@ -2029,8 +2029,8 @@ abstract class _$TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
   $Res call(
       {bool authorIsUser,
       User author,
-      Chapter? chapterOne,
-      Chapter? chapterResume,
+      Branch? branchOne,
+      Branch? branchResume,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
@@ -2042,9 +2042,9 @@ abstract class _$TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
   @override
   $UserCopyWith<$Res> get author;
   @override
-  $ChapterCopyWith<$Res>? get chapterOne;
+  $BranchCopyWith<$Res>? get branchOne;
   @override
-  $ChapterCopyWith<$Res>? get chapterResume;
+  $BranchCopyWith<$Res>? get branchResume;
   @override
   $UserCopyWith<$Res> get session;
   @override
@@ -2066,8 +2066,8 @@ class __$TreeStateCopyWithImpl<$Res> extends _$TreeStateCopyWithImpl<$Res>
   $Res call({
     Object? authorIsUser = freezed,
     Object? author = freezed,
-    Object? chapterOne = freezed,
-    Object? chapterResume = freezed,
+    Object? branchOne = freezed,
+    Object? branchResume = freezed,
     Object? failureOption = freezed,
     Object? isBookmarked = freezed,
     Object? isLiked = freezed,
@@ -2085,14 +2085,14 @@ class __$TreeStateCopyWithImpl<$Res> extends _$TreeStateCopyWithImpl<$Res>
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as User,
-      chapterOne: chapterOne == freezed
-          ? _value.chapterOne
-          : chapterOne // ignore: cast_nullable_to_non_nullable
-              as Chapter?,
-      chapterResume: chapterResume == freezed
-          ? _value.chapterResume
-          : chapterResume // ignore: cast_nullable_to_non_nullable
-              as Chapter?,
+      branchOne: branchOne == freezed
+          ? _value.branchOne
+          : branchOne // ignore: cast_nullable_to_non_nullable
+              as Branch?,
+      branchResume: branchResume == freezed
+          ? _value.branchResume
+          : branchResume // ignore: cast_nullable_to_non_nullable
+              as Branch?,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -2131,8 +2131,8 @@ class _$_TreeState implements _TreeState {
   const _$_TreeState(
       {required this.authorIsUser,
       required this.author,
-      this.chapterOne,
-      this.chapterResume,
+      this.branchOne,
+      this.branchResume,
       required this.failureOption,
       required this.isBookmarked,
       required this.isLiked,
@@ -2146,9 +2146,9 @@ class _$_TreeState implements _TreeState {
   @override
   final User author;
   @override
-  final Chapter? chapterOne;
+  final Branch? branchOne;
   @override
-  final Chapter? chapterResume;
+  final Branch? branchResume;
   @override
   final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
@@ -2166,7 +2166,7 @@ class _$_TreeState implements _TreeState {
 
   @override
   String toString() {
-    return 'TreeState(authorIsUser: $authorIsUser, author: $author, chapterOne: $chapterOne, chapterResume: $chapterResume, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, session: $session, settings: $settings, tree: $tree)';
+    return 'TreeState(authorIsUser: $authorIsUser, author: $author, branchOne: $branchOne, branchResume: $branchResume, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, session: $session, settings: $settings, tree: $tree)';
   }
 
   @override
@@ -2177,10 +2177,9 @@ class _$_TreeState implements _TreeState {
             const DeepCollectionEquality()
                 .equals(other.authorIsUser, authorIsUser) &&
             const DeepCollectionEquality().equals(other.author, author) &&
+            const DeepCollectionEquality().equals(other.branchOne, branchOne) &&
             const DeepCollectionEquality()
-                .equals(other.chapterOne, chapterOne) &&
-            const DeepCollectionEquality()
-                .equals(other.chapterResume, chapterResume) &&
+                .equals(other.branchResume, branchResume) &&
             const DeepCollectionEquality()
                 .equals(other.failureOption, failureOption) &&
             const DeepCollectionEquality()
@@ -2198,8 +2197,8 @@ class _$_TreeState implements _TreeState {
       runtimeType,
       const DeepCollectionEquality().hash(authorIsUser),
       const DeepCollectionEquality().hash(author),
-      const DeepCollectionEquality().hash(chapterOne),
-      const DeepCollectionEquality().hash(chapterResume),
+      const DeepCollectionEquality().hash(branchOne),
+      const DeepCollectionEquality().hash(branchResume),
       const DeepCollectionEquality().hash(failureOption),
       const DeepCollectionEquality().hash(isBookmarked),
       const DeepCollectionEquality().hash(isLiked),
@@ -2218,8 +2217,8 @@ abstract class _TreeState implements TreeState {
   const factory _TreeState(
       {required bool authorIsUser,
       required User author,
-      Chapter? chapterOne,
-      Chapter? chapterResume,
+      Branch? branchOne,
+      Branch? branchResume,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isBookmarked,
       required bool isLiked,
@@ -2233,9 +2232,9 @@ abstract class _TreeState implements TreeState {
   @override
   User get author;
   @override
-  Chapter? get chapterOne;
+  Branch? get branchOne;
   @override
-  Chapter? get chapterResume;
+  Branch? get branchResume;
   @override
   Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override

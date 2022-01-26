@@ -18,16 +18,16 @@ class _$SettingsTearOff {
   const _$SettingsTearOff();
 
   _Settings call(
-      {required bool? enableChaptersBookmarksCount,
-      required bool? enableChaptersLikesCount,
-      required bool? enableChaptersViewsCount,
+      {required bool? enableBranchesBookmarksCount,
+      required bool? enableBranchesLikesCount,
+      required bool? enableBranchesViewsCount,
       required bool? enableTreesBookmarksCount,
       required bool? enableTreesLikesCount,
       required bool? enableTreesViewsCount}) {
     return _Settings(
-      enableChaptersBookmarksCount: enableChaptersBookmarksCount,
-      enableChaptersLikesCount: enableChaptersLikesCount,
-      enableChaptersViewsCount: enableChaptersViewsCount,
+      enableBranchesBookmarksCount: enableBranchesBookmarksCount,
+      enableBranchesLikesCount: enableBranchesLikesCount,
+      enableBranchesViewsCount: enableBranchesViewsCount,
       enableTreesBookmarksCount: enableTreesBookmarksCount,
       enableTreesLikesCount: enableTreesLikesCount,
       enableTreesViewsCount: enableTreesViewsCount,
@@ -40,9 +40,9 @@ const $Settings = _$SettingsTearOff();
 
 /// @nodoc
 mixin _$Settings {
-  bool? get enableChaptersBookmarksCount => throw _privateConstructorUsedError;
-  bool? get enableChaptersLikesCount => throw _privateConstructorUsedError;
-  bool? get enableChaptersViewsCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesViewsCount => throw _privateConstructorUsedError;
   bool? get enableTreesBookmarksCount => throw _privateConstructorUsedError;
   bool? get enableTreesLikesCount => throw _privateConstructorUsedError;
   bool? get enableTreesViewsCount => throw _privateConstructorUsedError;
@@ -57,9 +57,9 @@ abstract class $SettingsCopyWith<$Res> {
   factory $SettingsCopyWith(Settings value, $Res Function(Settings) then) =
       _$SettingsCopyWithImpl<$Res>;
   $Res call(
-      {bool? enableChaptersBookmarksCount,
-      bool? enableChaptersLikesCount,
-      bool? enableChaptersViewsCount,
+      {bool? enableBranchesBookmarksCount,
+      bool? enableBranchesLikesCount,
+      bool? enableBranchesViewsCount,
       bool? enableTreesBookmarksCount,
       bool? enableTreesLikesCount,
       bool? enableTreesViewsCount});
@@ -75,25 +75,25 @@ class _$SettingsCopyWithImpl<$Res> implements $SettingsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? enableChaptersBookmarksCount = freezed,
-    Object? enableChaptersLikesCount = freezed,
-    Object? enableChaptersViewsCount = freezed,
+    Object? enableBranchesBookmarksCount = freezed,
+    Object? enableBranchesLikesCount = freezed,
+    Object? enableBranchesViewsCount = freezed,
     Object? enableTreesBookmarksCount = freezed,
     Object? enableTreesLikesCount = freezed,
     Object? enableTreesViewsCount = freezed,
   }) {
     return _then(_value.copyWith(
-      enableChaptersBookmarksCount: enableChaptersBookmarksCount == freezed
-          ? _value.enableChaptersBookmarksCount
-          : enableChaptersBookmarksCount // ignore: cast_nullable_to_non_nullable
+      enableBranchesBookmarksCount: enableBranchesBookmarksCount == freezed
+          ? _value.enableBranchesBookmarksCount
+          : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableChaptersLikesCount: enableChaptersLikesCount == freezed
-          ? _value.enableChaptersLikesCount
-          : enableChaptersLikesCount // ignore: cast_nullable_to_non_nullable
+      enableBranchesLikesCount: enableBranchesLikesCount == freezed
+          ? _value.enableBranchesLikesCount
+          : enableBranchesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableChaptersViewsCount: enableChaptersViewsCount == freezed
-          ? _value.enableChaptersViewsCount
-          : enableChaptersViewsCount // ignore: cast_nullable_to_non_nullable
+      enableBranchesViewsCount: enableBranchesViewsCount == freezed
+          ? _value.enableBranchesViewsCount
+          : enableBranchesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
       enableTreesBookmarksCount: enableTreesBookmarksCount == freezed
           ? _value.enableTreesBookmarksCount
@@ -117,9 +117,9 @@ abstract class _$SettingsCopyWith<$Res> implements $SettingsCopyWith<$Res> {
       __$SettingsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool? enableChaptersBookmarksCount,
-      bool? enableChaptersLikesCount,
-      bool? enableChaptersViewsCount,
+      {bool? enableBranchesBookmarksCount,
+      bool? enableBranchesLikesCount,
+      bool? enableBranchesViewsCount,
       bool? enableTreesBookmarksCount,
       bool? enableTreesLikesCount,
       bool? enableTreesViewsCount});
@@ -136,25 +136,25 @@ class __$SettingsCopyWithImpl<$Res> extends _$SettingsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? enableChaptersBookmarksCount = freezed,
-    Object? enableChaptersLikesCount = freezed,
-    Object? enableChaptersViewsCount = freezed,
+    Object? enableBranchesBookmarksCount = freezed,
+    Object? enableBranchesLikesCount = freezed,
+    Object? enableBranchesViewsCount = freezed,
     Object? enableTreesBookmarksCount = freezed,
     Object? enableTreesLikesCount = freezed,
     Object? enableTreesViewsCount = freezed,
   }) {
     return _then(_Settings(
-      enableChaptersBookmarksCount: enableChaptersBookmarksCount == freezed
-          ? _value.enableChaptersBookmarksCount
-          : enableChaptersBookmarksCount // ignore: cast_nullable_to_non_nullable
+      enableBranchesBookmarksCount: enableBranchesBookmarksCount == freezed
+          ? _value.enableBranchesBookmarksCount
+          : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableChaptersLikesCount: enableChaptersLikesCount == freezed
-          ? _value.enableChaptersLikesCount
-          : enableChaptersLikesCount // ignore: cast_nullable_to_non_nullable
+      enableBranchesLikesCount: enableBranchesLikesCount == freezed
+          ? _value.enableBranchesLikesCount
+          : enableBranchesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableChaptersViewsCount: enableChaptersViewsCount == freezed
-          ? _value.enableChaptersViewsCount
-          : enableChaptersViewsCount // ignore: cast_nullable_to_non_nullable
+      enableBranchesViewsCount: enableBranchesViewsCount == freezed
+          ? _value.enableBranchesViewsCount
+          : enableBranchesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
       enableTreesBookmarksCount: enableTreesBookmarksCount == freezed
           ? _value.enableTreesBookmarksCount
@@ -176,19 +176,19 @@ class __$SettingsCopyWithImpl<$Res> extends _$SettingsCopyWithImpl<$Res>
 
 class _$_Settings implements _Settings {
   const _$_Settings(
-      {required this.enableChaptersBookmarksCount,
-      required this.enableChaptersLikesCount,
-      required this.enableChaptersViewsCount,
+      {required this.enableBranchesBookmarksCount,
+      required this.enableBranchesLikesCount,
+      required this.enableBranchesViewsCount,
       required this.enableTreesBookmarksCount,
       required this.enableTreesLikesCount,
       required this.enableTreesViewsCount});
 
   @override
-  final bool? enableChaptersBookmarksCount;
+  final bool? enableBranchesBookmarksCount;
   @override
-  final bool? enableChaptersLikesCount;
+  final bool? enableBranchesLikesCount;
   @override
-  final bool? enableChaptersViewsCount;
+  final bool? enableBranchesViewsCount;
   @override
   final bool? enableTreesBookmarksCount;
   @override
@@ -198,7 +198,7 @@ class _$_Settings implements _Settings {
 
   @override
   String toString() {
-    return 'Settings(enableChaptersBookmarksCount: $enableChaptersBookmarksCount, enableChaptersLikesCount: $enableChaptersLikesCount, enableChaptersViewsCount: $enableChaptersViewsCount, enableTreesBookmarksCount: $enableTreesBookmarksCount, enableTreesLikesCount: $enableTreesLikesCount, enableTreesViewsCount: $enableTreesViewsCount)';
+    return 'Settings(enableBranchesBookmarksCount: $enableBranchesBookmarksCount, enableBranchesLikesCount: $enableBranchesLikesCount, enableBranchesViewsCount: $enableBranchesViewsCount, enableTreesBookmarksCount: $enableTreesBookmarksCount, enableTreesLikesCount: $enableTreesLikesCount, enableTreesViewsCount: $enableTreesViewsCount)';
   }
 
   @override
@@ -207,12 +207,12 @@ class _$_Settings implements _Settings {
         (other.runtimeType == runtimeType &&
             other is _Settings &&
             const DeepCollectionEquality().equals(
-                other.enableChaptersBookmarksCount,
-                enableChaptersBookmarksCount) &&
+                other.enableBranchesBookmarksCount,
+                enableBranchesBookmarksCount) &&
             const DeepCollectionEquality().equals(
-                other.enableChaptersLikesCount, enableChaptersLikesCount) &&
+                other.enableBranchesLikesCount, enableBranchesLikesCount) &&
             const DeepCollectionEquality().equals(
-                other.enableChaptersViewsCount, enableChaptersViewsCount) &&
+                other.enableBranchesViewsCount, enableBranchesViewsCount) &&
             const DeepCollectionEquality().equals(
                 other.enableTreesBookmarksCount, enableTreesBookmarksCount) &&
             const DeepCollectionEquality()
@@ -224,9 +224,9 @@ class _$_Settings implements _Settings {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(enableChaptersBookmarksCount),
-      const DeepCollectionEquality().hash(enableChaptersLikesCount),
-      const DeepCollectionEquality().hash(enableChaptersViewsCount),
+      const DeepCollectionEquality().hash(enableBranchesBookmarksCount),
+      const DeepCollectionEquality().hash(enableBranchesLikesCount),
+      const DeepCollectionEquality().hash(enableBranchesViewsCount),
       const DeepCollectionEquality().hash(enableTreesBookmarksCount),
       const DeepCollectionEquality().hash(enableTreesLikesCount),
       const DeepCollectionEquality().hash(enableTreesViewsCount));
@@ -239,19 +239,19 @@ class _$_Settings implements _Settings {
 
 abstract class _Settings implements Settings {
   const factory _Settings(
-      {required bool? enableChaptersBookmarksCount,
-      required bool? enableChaptersLikesCount,
-      required bool? enableChaptersViewsCount,
+      {required bool? enableBranchesBookmarksCount,
+      required bool? enableBranchesLikesCount,
+      required bool? enableBranchesViewsCount,
       required bool? enableTreesBookmarksCount,
       required bool? enableTreesLikesCount,
       required bool? enableTreesViewsCount}) = _$_Settings;
 
   @override
-  bool? get enableChaptersBookmarksCount;
+  bool? get enableBranchesBookmarksCount;
   @override
-  bool? get enableChaptersLikesCount;
+  bool? get enableBranchesLikesCount;
   @override
-  bool? get enableChaptersViewsCount;
+  bool? get enableBranchesViewsCount;
   @override
   bool? get enableTreesBookmarksCount;
   @override

@@ -18,9 +18,9 @@ class SettingsState with _$SettingsState {
         isLoggedOut: false,
         isProcessing: false,
         settings: Settings(
-          enableChaptersBookmarksCount: false,
-          enableChaptersLikesCount: false,
-          enableChaptersViewsCount: false,
+          enableBranchesBookmarksCount: false,
+          enableBranchesLikesCount: false,
+          enableBranchesViewsCount: false,
           enableTreesBookmarksCount: false,
           enableTreesLikesCount: false,
           enableTreesViewsCount: false,

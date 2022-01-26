@@ -39,10 +39,9 @@ class SettingsLayout extends StatelessWidget {
             ),
             TileButton(
               leadingIconData: LineIcons.bookOpen,
-              title: 'CHAPTER',
+              title: 'BRANCH',
               trailingIconData: Icons.keyboard_arrow_right,
-              onPressed: () =>
-                  context.router.push(const SettingsChapterRoute()),
+              onPressed: () => context.router.push(const SettingsBranchRoute()),
             )
           ],
         ),

@@ -11,9 +11,9 @@ part 'settings_dto.g.dart';
 class SettingsDTO with _$SettingsDTO {
   /// @nodoc
   factory SettingsDTO({
-    required bool? enableChaptersBookmarksCount,
-    required bool? enableChaptersLikesCount,
-    required bool? enableChaptersViewsCount,
+    required bool? enableBranchesBookmarksCount,
+    required bool? enableBranchesLikesCount,
+    required bool? enableBranchesViewsCount,
     required bool? enableTreesBookmarksCount,
     required bool? enableTreesLikesCount,
     required bool? enableTreesViewsCount,
@@ -23,9 +23,9 @@ class SettingsDTO with _$SettingsDTO {
   /// @nodoc
   factory SettingsDTO.fromDomain(Settings settings) {
     return SettingsDTO(
-      enableChaptersBookmarksCount: settings.enableChaptersBookmarksCount,
-      enableChaptersLikesCount: settings.enableChaptersLikesCount,
-      enableChaptersViewsCount: settings.enableChaptersViewsCount,
+      enableBranchesBookmarksCount: settings.enableBranchesBookmarksCount,
+      enableBranchesLikesCount: settings.enableBranchesLikesCount,
+      enableBranchesViewsCount: settings.enableBranchesViewsCount,
       enableTreesBookmarksCount: settings.enableTreesBookmarksCount,
       enableTreesLikesCount: settings.enableTreesLikesCount,
       enableTreesViewsCount: settings.enableTreesViewsCount,
@@ -35,9 +35,9 @@ class SettingsDTO with _$SettingsDTO {
   /// @nodoc
   factory SettingsDTO.fromAdapter(IsarSettings settings) {
     return SettingsDTO(
-      enableChaptersBookmarksCount: settings.enableChaptersBookmarksCount,
-      enableChaptersLikesCount: settings.enableChaptersLikesCount,
-      enableChaptersViewsCount: settings.enableChaptersViewsCount,
+      enableBranchesBookmarksCount: settings.enableBranchesBookmarksCount,
+      enableBranchesLikesCount: settings.enableBranchesLikesCount,
+      enableBranchesViewsCount: settings.enableBranchesViewsCount,
       enableTreesBookmarksCount: settings.enableTreesBookmarksCount,
       enableTreesLikesCount: settings.enableTreesLikesCount,
       enableTreesViewsCount: settings.enableTreesViewsCount,
@@ -54,9 +54,9 @@ class SettingsDTO with _$SettingsDTO {
 extension SettingsDTOX on SettingsDTO {
   /// @nodoc
   Settings toDomain() => Settings(
-        enableChaptersBookmarksCount: enableChaptersBookmarksCount,
-        enableChaptersLikesCount: enableChaptersLikesCount,
-        enableChaptersViewsCount: enableChaptersViewsCount,
+        enableBranchesBookmarksCount: enableBranchesBookmarksCount,
+        enableBranchesLikesCount: enableBranchesLikesCount,
+        enableBranchesViewsCount: enableBranchesViewsCount,
         enableTreesBookmarksCount: enableTreesBookmarksCount,
         enableTreesLikesCount: enableTreesLikesCount,
         enableTreesViewsCount: enableTreesViewsCount,
@@ -64,9 +64,9 @@ extension SettingsDTOX on SettingsDTO {
 
   /// @nodoc
   IsarSettings toAdapter() => IsarSettings(
-        enableChaptersBookmarksCount: enableChaptersBookmarksCount,
-        enableChaptersLikesCount: enableChaptersLikesCount,
-        enableChaptersViewsCount: enableChaptersViewsCount,
+        enableBranchesBookmarksCount: enableBranchesBookmarksCount,
+        enableBranchesLikesCount: enableBranchesLikesCount,
+        enableBranchesViewsCount: enableBranchesViewsCount,
         enableTreesBookmarksCount: enableTreesBookmarksCount,
         enableTreesLikesCount: enableTreesLikesCount,
         enableTreesViewsCount: enableTreesViewsCount,
@@ -78,10 +78,10 @@ extension SettingsDTOX on SettingsDTO {
 extension SettingsMapX on Map {
   /// @nodoc
   Settings toDomain() => Settings(
-        enableChaptersBookmarksCount:
-            this['enableChaptersBookmarksCount'] as bool,
-        enableChaptersLikesCount: this['enableChaptersLikesCount'] as bool,
-        enableChaptersViewsCount: this['enableChaptersViewsCount'] as bool,
+        enableBranchesBookmarksCount:
+            this['enableBranchesBookmarksCount'] as bool,
+        enableBranchesLikesCount: this['enableBranchesLikesCount'] as bool,
+        enableBranchesViewsCount: this['enableBranchesViewsCount'] as bool,
         enableTreesBookmarksCount: this['enableTreesBookmarksCount'] as bool,
         enableTreesLikesCount: this['enableTreesLikesCount'] as bool,
         enableTreesViewsCount: this['enableTreesViewsCount'] as bool,

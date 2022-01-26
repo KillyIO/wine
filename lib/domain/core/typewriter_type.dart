@@ -4,7 +4,7 @@ enum TypewriterType {
   unknown,
 
   /// @nodoc
-  chapter,
+  branch,
 
   /// @nodoc
   tree,

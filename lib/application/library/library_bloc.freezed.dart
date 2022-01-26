@@ -17,8 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$LibraryEventTearOff {
   const _$LibraryEventTearOff();
 
-  ChapterDeleted chapterDeleted(UniqueID uid) {
-    return ChapterDeleted(
+  BranchDeleted branchDeleted(UniqueID uid) {
+    return BranchDeleted(
       uid,
     );
   }
@@ -57,7 +57,7 @@ const $LibraryEvent = _$LibraryEventTearOff();
 mixin _$LibraryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueID uid) chapterDeleted,
+    required TResult Function(UniqueID uid) branchDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
@@ -67,7 +67,7 @@ mixin _$LibraryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -77,7 +77,7 @@ mixin _$LibraryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -88,7 +88,7 @@ mixin _$LibraryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChapterDeleted value) chapterDeleted,
+    required TResult Function(BranchDeleted value) branchDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -99,7 +99,7 @@ mixin _$LibraryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -110,7 +110,7 @@ mixin _$LibraryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -139,29 +139,28 @@ class _$LibraryEventCopyWithImpl<$Res> implements $LibraryEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $ChapterDeletedCopyWith<$Res> {
-  factory $ChapterDeletedCopyWith(
-          ChapterDeleted value, $Res Function(ChapterDeleted) then) =
-      _$ChapterDeletedCopyWithImpl<$Res>;
+abstract class $BranchDeletedCopyWith<$Res> {
+  factory $BranchDeletedCopyWith(
+          BranchDeleted value, $Res Function(BranchDeleted) then) =
+      _$BranchDeletedCopyWithImpl<$Res>;
   $Res call({UniqueID uid});
 }
 
 /// @nodoc
-class _$ChapterDeletedCopyWithImpl<$Res>
-    extends _$LibraryEventCopyWithImpl<$Res>
-    implements $ChapterDeletedCopyWith<$Res> {
-  _$ChapterDeletedCopyWithImpl(
-      ChapterDeleted _value, $Res Function(ChapterDeleted) _then)
-      : super(_value, (v) => _then(v as ChapterDeleted));
+class _$BranchDeletedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+    implements $BranchDeletedCopyWith<$Res> {
+  _$BranchDeletedCopyWithImpl(
+      BranchDeleted _value, $Res Function(BranchDeleted) _then)
+      : super(_value, (v) => _then(v as BranchDeleted));
 
   @override
-  ChapterDeleted get _value => super._value as ChapterDeleted;
+  BranchDeleted get _value => super._value as BranchDeleted;
 
   @override
   $Res call({
     Object? uid = freezed,
   }) {
-    return _then(ChapterDeleted(
+    return _then(BranchDeleted(
       uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -172,22 +171,22 @@ class _$ChapterDeletedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChapterDeleted implements ChapterDeleted {
-  const _$ChapterDeleted(this.uid);
+class _$BranchDeleted implements BranchDeleted {
+  const _$BranchDeleted(this.uid);
 
   @override
   final UniqueID uid;
 
   @override
   String toString() {
-    return 'LibraryEvent.chapterDeleted(uid: $uid)';
+    return 'LibraryEvent.branchDeleted(uid: $uid)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ChapterDeleted &&
+            other is BranchDeleted &&
             const DeepCollectionEquality().equals(other.uid, uid));
   }
 
@@ -197,39 +196,39 @@ class _$ChapterDeleted implements ChapterDeleted {
 
   @JsonKey(ignore: true)
   @override
-  $ChapterDeletedCopyWith<ChapterDeleted> get copyWith =>
-      _$ChapterDeletedCopyWithImpl<ChapterDeleted>(this, _$identity);
+  $BranchDeletedCopyWith<BranchDeleted> get copyWith =>
+      _$BranchDeletedCopyWithImpl<BranchDeleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueID uid) chapterDeleted,
+    required TResult Function(UniqueID uid) branchDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
-    return chapterDeleted(uid);
+    return branchDeleted(uid);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
-    return chapterDeleted?.call(uid);
+    return branchDeleted?.call(uid);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -237,8 +236,8 @@ class _$ChapterDeleted implements ChapterDeleted {
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
-    if (chapterDeleted != null) {
-      return chapterDeleted(uid);
+    if (branchDeleted != null) {
+      return branchDeleted(uid);
     }
     return orElse();
   }
@@ -246,7 +245,7 @@ class _$ChapterDeleted implements ChapterDeleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChapterDeleted value) chapterDeleted,
+    required TResult Function(BranchDeleted value) branchDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -254,13 +253,13 @@ class _$ChapterDeleted implements ChapterDeleted {
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
-    return chapterDeleted(this);
+    return branchDeleted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -268,13 +267,13 @@ class _$ChapterDeleted implements ChapterDeleted {
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
-    return chapterDeleted?.call(this);
+    return branchDeleted?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -283,19 +282,19 @@ class _$ChapterDeleted implements ChapterDeleted {
         verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
-    if (chapterDeleted != null) {
-      return chapterDeleted(this);
+    if (branchDeleted != null) {
+      return branchDeleted(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterDeleted implements LibraryEvent {
-  const factory ChapterDeleted(UniqueID uid) = _$ChapterDeleted;
+abstract class BranchDeleted implements LibraryEvent {
+  const factory BranchDeleted(UniqueID uid) = _$BranchDeleted;
 
   UniqueID get uid;
   @JsonKey(ignore: true)
-  $ChapterDeletedCopyWith<ChapterDeleted> get copyWith =>
+  $BranchDeletedCopyWith<BranchDeleted> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -337,7 +336,7 @@ class _$InitBloc implements InitBloc {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueID uid) chapterDeleted,
+    required TResult Function(UniqueID uid) branchDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
@@ -350,7 +349,7 @@ class _$InitBloc implements InitBloc {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -363,7 +362,7 @@ class _$InitBloc implements InitBloc {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -380,7 +379,7 @@ class _$InitBloc implements InitBloc {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChapterDeleted value) chapterDeleted,
+    required TResult Function(BranchDeleted value) branchDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -394,7 +393,7 @@ class _$InitBloc implements InitBloc {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -408,7 +407,7 @@ class _$InitBloc implements InitBloc {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -494,7 +493,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueID uid) chapterDeleted,
+    required TResult Function(UniqueID uid) branchDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
@@ -507,7 +506,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -520,7 +519,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -537,7 +536,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChapterDeleted value) chapterDeleted,
+    required TResult Function(BranchDeleted value) branchDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -551,7 +550,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -565,7 +564,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -631,7 +630,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueID uid) chapterDeleted,
+    required TResult Function(UniqueID uid) branchDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
@@ -644,7 +643,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -657,7 +656,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -674,7 +673,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChapterDeleted value) chapterDeleted,
+    required TResult Function(BranchDeleted value) branchDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -688,7 +687,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -702,7 +701,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -786,7 +785,7 @@ class _$TreeDeleted implements TreeDeleted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueID uid) chapterDeleted,
+    required TResult Function(UniqueID uid) branchDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
@@ -799,7 +798,7 @@ class _$TreeDeleted implements TreeDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -812,7 +811,7 @@ class _$TreeDeleted implements TreeDeleted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -829,7 +828,7 @@ class _$TreeDeleted implements TreeDeleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChapterDeleted value) chapterDeleted,
+    required TResult Function(BranchDeleted value) branchDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -843,7 +842,7 @@ class _$TreeDeleted implements TreeDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -857,7 +856,7 @@ class _$TreeDeleted implements TreeDeleted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -950,7 +949,7 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(UniqueID uid) chapterDeleted,
+    required TResult Function(UniqueID uid) branchDeleted,
     required TResult Function() initBloc,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
@@ -963,7 +962,7 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -976,7 +975,7 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UniqueID uid)? chapterDeleted,
+    TResult Function(UniqueID uid)? branchDeleted,
     TResult Function()? initBloc,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
@@ -993,7 +992,7 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ChapterDeleted value) chapterDeleted,
+    required TResult Function(BranchDeleted value) branchDeleted,
     required TResult Function(InitBloc value) initBloc,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1007,7 +1006,7 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1021,7 +1020,7 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterDeleted value)? chapterDeleted,
+    TResult Function(BranchDeleted value)? branchDeleted,
     TResult Function(InitBloc value)? initBloc,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1052,9 +1051,9 @@ class _$LibraryStateTearOff {
   const _$LibraryStateTearOff();
 
   _LibraryState call(
-      {required List<Chapter> bookmarkedChapters,
+      {required List<Branch> bookmarkedBranches,
       required List<Tree> bookmarkedTree,
-      required List<Chapter> chapters,
+      required List<Branch> branches,
       required int currentPageViewIdx,
       required int currentVerticalNavbarIdx,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
@@ -1062,9 +1061,9 @@ class _$LibraryStateTearOff {
       required User session,
       required List<Tree> trees}) {
     return _LibraryState(
-      bookmarkedChapters: bookmarkedChapters,
+      bookmarkedBranches: bookmarkedBranches,
       bookmarkedTree: bookmarkedTree,
-      chapters: chapters,
+      branches: branches,
       currentPageViewIdx: currentPageViewIdx,
       currentVerticalNavbarIdx: currentVerticalNavbarIdx,
       failureOption: failureOption,
@@ -1080,9 +1079,9 @@ const $LibraryState = _$LibraryStateTearOff();
 
 /// @nodoc
 mixin _$LibraryState {
-  List<Chapter> get bookmarkedChapters => throw _privateConstructorUsedError;
+  List<Branch> get bookmarkedBranches => throw _privateConstructorUsedError;
   List<Tree> get bookmarkedTree => throw _privateConstructorUsedError;
-  List<Chapter> get chapters => throw _privateConstructorUsedError;
+  List<Branch> get branches => throw _privateConstructorUsedError;
   int get currentPageViewIdx => throw _privateConstructorUsedError;
   int get currentVerticalNavbarIdx => throw _privateConstructorUsedError;
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
@@ -1102,9 +1101,9 @@ abstract class $LibraryStateCopyWith<$Res> {
           LibraryState value, $Res Function(LibraryState) then) =
       _$LibraryStateCopyWithImpl<$Res>;
   $Res call(
-      {List<Chapter> bookmarkedChapters,
+      {List<Branch> bookmarkedBranches,
       List<Tree> bookmarkedTree,
-      List<Chapter> chapters,
+      List<Branch> branches,
       int currentPageViewIdx,
       int currentVerticalNavbarIdx,
       Option<Result<None<Object>, CoreFailure>> failureOption,
@@ -1125,9 +1124,9 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? bookmarkedChapters = freezed,
+    Object? bookmarkedBranches = freezed,
     Object? bookmarkedTree = freezed,
-    Object? chapters = freezed,
+    Object? branches = freezed,
     Object? currentPageViewIdx = freezed,
     Object? currentVerticalNavbarIdx = freezed,
     Object? failureOption = freezed,
@@ -1136,18 +1135,18 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
     Object? trees = freezed,
   }) {
     return _then(_value.copyWith(
-      bookmarkedChapters: bookmarkedChapters == freezed
-          ? _value.bookmarkedChapters
-          : bookmarkedChapters // ignore: cast_nullable_to_non_nullable
-              as List<Chapter>,
+      bookmarkedBranches: bookmarkedBranches == freezed
+          ? _value.bookmarkedBranches
+          : bookmarkedBranches // ignore: cast_nullable_to_non_nullable
+              as List<Branch>,
       bookmarkedTree: bookmarkedTree == freezed
           ? _value.bookmarkedTree
           : bookmarkedTree // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
-      chapters: chapters == freezed
-          ? _value.chapters
-          : chapters // ignore: cast_nullable_to_non_nullable
-              as List<Chapter>,
+      branches: branches == freezed
+          ? _value.branches
+          : branches // ignore: cast_nullable_to_non_nullable
+              as List<Branch>,
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
@@ -1191,9 +1190,9 @@ abstract class _$LibraryStateCopyWith<$Res>
       __$LibraryStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Chapter> bookmarkedChapters,
+      {List<Branch> bookmarkedBranches,
       List<Tree> bookmarkedTree,
-      List<Chapter> chapters,
+      List<Branch> branches,
       int currentPageViewIdx,
       int currentVerticalNavbarIdx,
       Option<Result<None<Object>, CoreFailure>> failureOption,
@@ -1217,9 +1216,9 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? bookmarkedChapters = freezed,
+    Object? bookmarkedBranches = freezed,
     Object? bookmarkedTree = freezed,
-    Object? chapters = freezed,
+    Object? branches = freezed,
     Object? currentPageViewIdx = freezed,
     Object? currentVerticalNavbarIdx = freezed,
     Object? failureOption = freezed,
@@ -1228,18 +1227,18 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
     Object? trees = freezed,
   }) {
     return _then(_LibraryState(
-      bookmarkedChapters: bookmarkedChapters == freezed
-          ? _value.bookmarkedChapters
-          : bookmarkedChapters // ignore: cast_nullable_to_non_nullable
-              as List<Chapter>,
+      bookmarkedBranches: bookmarkedBranches == freezed
+          ? _value.bookmarkedBranches
+          : bookmarkedBranches // ignore: cast_nullable_to_non_nullable
+              as List<Branch>,
       bookmarkedTree: bookmarkedTree == freezed
           ? _value.bookmarkedTree
           : bookmarkedTree // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
-      chapters: chapters == freezed
-          ? _value.chapters
-          : chapters // ignore: cast_nullable_to_non_nullable
-              as List<Chapter>,
+      branches: branches == freezed
+          ? _value.branches
+          : branches // ignore: cast_nullable_to_non_nullable
+              as List<Branch>,
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
@@ -1272,9 +1271,9 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
 
 class _$_LibraryState implements _LibraryState {
   const _$_LibraryState(
-      {required this.bookmarkedChapters,
+      {required this.bookmarkedBranches,
       required this.bookmarkedTree,
-      required this.chapters,
+      required this.branches,
       required this.currentPageViewIdx,
       required this.currentVerticalNavbarIdx,
       required this.failureOption,
@@ -1283,11 +1282,11 @@ class _$_LibraryState implements _LibraryState {
       required this.trees});
 
   @override
-  final List<Chapter> bookmarkedChapters;
+  final List<Branch> bookmarkedBranches;
   @override
   final List<Tree> bookmarkedTree;
   @override
-  final List<Chapter> chapters;
+  final List<Branch> branches;
   @override
   final int currentPageViewIdx;
   @override
@@ -1303,7 +1302,7 @@ class _$_LibraryState implements _LibraryState {
 
   @override
   String toString() {
-    return 'LibraryState(bookmarkedChapters: $bookmarkedChapters, bookmarkedTree: $bookmarkedTree, chapters: $chapters, currentPageViewIdx: $currentPageViewIdx, currentVerticalNavbarIdx: $currentVerticalNavbarIdx, failureOption: $failureOption, isProcessing: $isProcessing, session: $session, trees: $trees)';
+    return 'LibraryState(bookmarkedBranches: $bookmarkedBranches, bookmarkedTree: $bookmarkedTree, branches: $branches, currentPageViewIdx: $currentPageViewIdx, currentVerticalNavbarIdx: $currentVerticalNavbarIdx, failureOption: $failureOption, isProcessing: $isProcessing, session: $session, trees: $trees)';
   }
 
   @override
@@ -1312,10 +1311,10 @@ class _$_LibraryState implements _LibraryState {
         (other.runtimeType == runtimeType &&
             other is _LibraryState &&
             const DeepCollectionEquality()
-                .equals(other.bookmarkedChapters, bookmarkedChapters) &&
+                .equals(other.bookmarkedBranches, bookmarkedBranches) &&
             const DeepCollectionEquality()
                 .equals(other.bookmarkedTree, bookmarkedTree) &&
-            const DeepCollectionEquality().equals(other.chapters, chapters) &&
+            const DeepCollectionEquality().equals(other.branches, branches) &&
             const DeepCollectionEquality()
                 .equals(other.currentPageViewIdx, currentPageViewIdx) &&
             const DeepCollectionEquality().equals(
@@ -1331,9 +1330,9 @@ class _$_LibraryState implements _LibraryState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(bookmarkedChapters),
+      const DeepCollectionEquality().hash(bookmarkedBranches),
       const DeepCollectionEquality().hash(bookmarkedTree),
-      const DeepCollectionEquality().hash(chapters),
+      const DeepCollectionEquality().hash(branches),
       const DeepCollectionEquality().hash(currentPageViewIdx),
       const DeepCollectionEquality().hash(currentVerticalNavbarIdx),
       const DeepCollectionEquality().hash(failureOption),
@@ -1349,9 +1348,9 @@ class _$_LibraryState implements _LibraryState {
 
 abstract class _LibraryState implements LibraryState {
   const factory _LibraryState(
-      {required List<Chapter> bookmarkedChapters,
+      {required List<Branch> bookmarkedBranches,
       required List<Tree> bookmarkedTree,
-      required List<Chapter> chapters,
+      required List<Branch> branches,
       required int currentPageViewIdx,
       required int currentVerticalNavbarIdx,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
@@ -1360,11 +1359,11 @@ abstract class _LibraryState implements LibraryState {
       required List<Tree> trees}) = _$_LibraryState;
 
   @override
-  List<Chapter> get bookmarkedChapters;
+  List<Branch> get bookmarkedBranches;
   @override
   List<Tree> get bookmarkedTree;
   @override
-  List<Chapter> get chapters;
+  List<Branch> get branches;
   @override
   int get currentPageViewIdx;
   @override

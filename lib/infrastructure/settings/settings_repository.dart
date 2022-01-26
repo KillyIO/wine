@@ -76,9 +76,9 @@ class SettingsRepository implements ISettingsRepository {
           await isar.isarSettingss.put(
             SettingsDTO.fromDomain(
               const Settings(
-                enableChaptersViewsCount: false,
-                enableChaptersLikesCount: false,
-                enableChaptersBookmarksCount: false,
+                enableBranchesViewsCount: false,
+                enableBranchesLikesCount: false,
+                enableBranchesBookmarksCount: false,
                 enableTreesViewsCount: false,
                 enableTreesLikesCount: false,
                 enableTreesBookmarksCount: false,

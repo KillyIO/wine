@@ -17,7 +17,7 @@ const String settingsPagePath = '/settings';
 const String settingsAccountPagePath = 'account';
 
 /// @nodoc
-const String settingsChapterPagePath = 'chapter';
+const String settingsBranchPagePath = 'branch';
 
 /// @nodoc
 const String settingsTreePagePath = 'tree';
@@ -29,10 +29,10 @@ const String signUpPagePath = '/sign-up';
 const String treePagePath = '/tree/:id';
 
 /// @nodoc
-const String typewriterPageChapterIDPath = '/chapter/:id';
+const String typewriterPageBranchIDPath = '/branch/:id';
 
 /// @nodoc
-const String typewriterPageChapterNewPath = '/chapter/new';
+const String typewriterPageBranchNewPath = '/branch/new';
 
 /// @nodoc
 const String typewriterPagePath = '/typewriter';

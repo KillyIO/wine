@@ -7,9 +7,9 @@ part 'settings.freezed.dart';
 class Settings with _$Settings {
   /// @nodoc
   const factory Settings({
-    required bool? enableChaptersBookmarksCount,
-    required bool? enableChaptersLikesCount,
-    required bool? enableChaptersViewsCount,
+    required bool? enableBranchesBookmarksCount,
+    required bool? enableBranchesLikesCount,
+    required bool? enableBranchesViewsCount,
     required bool? enableTreesBookmarksCount,
     required bool? enableTreesLikesCount,
     required bool? enableTreesViewsCount,
@@ -17,9 +17,9 @@ class Settings with _$Settings {
 
   /// @nodoc
   factory Settings.empty() => const Settings(
-        enableChaptersBookmarksCount: false,
-        enableChaptersLikesCount: false,
-        enableChaptersViewsCount: false,
+        enableBranchesBookmarksCount: false,
+        enableBranchesLikesCount: false,
+        enableBranchesViewsCount: false,
         enableTreesBookmarksCount: false,
         enableTreesLikesCount: false,
         enableTreesViewsCount: false,

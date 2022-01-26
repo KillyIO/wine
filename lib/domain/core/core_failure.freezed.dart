@@ -23,8 +23,8 @@ class _$CoreFailureTearOff {
     );
   }
 
-  _Chapter chapter(ChapterFailure f) {
-    return _Chapter(
+  _Branch branch(BranchFailure f) {
+    return _Branch(
       f,
     );
   }
@@ -68,7 +68,7 @@ mixin _$CoreFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
@@ -79,7 +79,7 @@ mixin _$CoreFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -90,7 +90,7 @@ mixin _$CoreFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -102,7 +102,7 @@ mixin _$CoreFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
@@ -113,7 +113,7 @@ mixin _$CoreFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -124,7 +124,7 @@ mixin _$CoreFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -223,7 +223,7 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
@@ -237,7 +237,7 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -251,7 +251,7 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -269,7 +269,7 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
@@ -283,7 +283,7 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -297,7 +297,7 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -321,38 +321,38 @@ abstract class _Auth implements CoreFailure {
 }
 
 /// @nodoc
-abstract class _$ChapterCopyWith<$Res> {
-  factory _$ChapterCopyWith(_Chapter value, $Res Function(_Chapter) then) =
-      __$ChapterCopyWithImpl<$Res>;
-  $Res call({ChapterFailure f});
+abstract class _$BranchCopyWith<$Res> {
+  factory _$BranchCopyWith(_Branch value, $Res Function(_Branch) then) =
+      __$BranchCopyWithImpl<$Res>;
+  $Res call({BranchFailure f});
 
-  $ChapterFailureCopyWith<$Res> get f;
+  $BranchFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
-class __$ChapterCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-    implements _$ChapterCopyWith<$Res> {
-  __$ChapterCopyWithImpl(_Chapter _value, $Res Function(_Chapter) _then)
-      : super(_value, (v) => _then(v as _Chapter));
+class __$BranchCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+    implements _$BranchCopyWith<$Res> {
+  __$BranchCopyWithImpl(_Branch _value, $Res Function(_Branch) _then)
+      : super(_value, (v) => _then(v as _Branch));
 
   @override
-  _Chapter get _value => super._value as _Chapter;
+  _Branch get _value => super._value as _Branch;
 
   @override
   $Res call({
     Object? f = freezed,
   }) {
-    return _then(_Chapter(
+    return _then(_Branch(
       f == freezed
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
-              as ChapterFailure,
+              as BranchFailure,
     ));
   }
 
   @override
-  $ChapterFailureCopyWith<$Res> get f {
-    return $ChapterFailureCopyWith<$Res>(_value.f, (value) {
+  $BranchFailureCopyWith<$Res> get f {
+    return $BranchFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
     });
   }
@@ -360,22 +360,22 @@ class __$ChapterCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Chapter implements _Chapter {
-  const _$_Chapter(this.f);
+class _$_Branch implements _Branch {
+  const _$_Branch(this.f);
 
   @override
-  final ChapterFailure f;
+  final BranchFailure f;
 
   @override
   String toString() {
-    return 'CoreFailure.chapter(f: $f)';
+    return 'CoreFailure.branch(f: $f)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Chapter &&
+            other is _Branch &&
             const DeepCollectionEquality().equals(other.f, f));
   }
 
@@ -385,42 +385,42 @@ class _$_Chapter implements _Chapter {
 
   @JsonKey(ignore: true)
   @override
-  _$ChapterCopyWith<_Chapter> get copyWith =>
-      __$ChapterCopyWithImpl<_Chapter>(this, _$identity);
+  _$BranchCopyWith<_Branch> get copyWith =>
+      __$BranchCopyWithImpl<_Branch>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
     required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
-    return chapter(f);
+    return branch(f);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
     TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
-    return chapter?.call(f);
+    return branch?.call(f);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -428,8 +428,8 @@ class _$_Chapter implements _Chapter {
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
-    if (chapter != null) {
-      return chapter(f);
+    if (branch != null) {
+      return branch(f);
     }
     return orElse();
   }
@@ -438,35 +438,35 @@ class _$_Chapter implements _Chapter {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
     required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
-    return chapter(this);
+    return branch(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
     TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
-    return chapter?.call(this);
+    return branch?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -474,20 +474,19 @@ class _$_Chapter implements _Chapter {
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
-    if (chapter != null) {
-      return chapter(this);
+    if (branch != null) {
+      return branch(this);
     }
     return orElse();
   }
 }
 
-abstract class _Chapter implements CoreFailure {
-  const factory _Chapter(ChapterFailure f) = _$_Chapter;
+abstract class _Branch implements CoreFailure {
+  const factory _Branch(BranchFailure f) = _$_Branch;
 
-  ChapterFailure get f;
+  BranchFailure get f;
   @JsonKey(ignore: true)
-  _$ChapterCopyWith<_Chapter> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$BranchCopyWith<_Branch> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -564,7 +563,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
@@ -578,7 +577,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -592,7 +591,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -610,7 +609,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
@@ -624,7 +623,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -638,7 +637,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -734,7 +733,7 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
@@ -748,7 +747,7 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -762,7 +761,7 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -780,7 +779,7 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
@@ -794,7 +793,7 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -808,7 +807,7 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -904,7 +903,7 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
@@ -918,7 +917,7 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -932,7 +931,7 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -950,7 +949,7 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
@@ -964,7 +963,7 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -978,7 +977,7 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -1074,7 +1073,7 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
@@ -1088,7 +1087,7 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -1102,7 +1101,7 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -1120,7 +1119,7 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
@@ -1134,7 +1133,7 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -1148,7 +1147,7 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -1243,7 +1242,7 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
-    required TResult Function(ChapterFailure f) chapter,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
@@ -1257,7 +1256,7 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -1271,7 +1270,7 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
-    TResult Function(ChapterFailure f)? chapter,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
@@ -1289,7 +1288,7 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
-    required TResult Function(_Chapter value) chapter,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
@@ -1303,7 +1302,7 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
@@ -1317,7 +1316,7 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
-    TResult Function(_Chapter value)? chapter,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,

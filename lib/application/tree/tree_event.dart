@@ -12,7 +12,7 @@ class TreeEvent with _$TreeEvent {
   }) = BookmarkButtonPressed;
 
   /// @nodoc
-  const factory TreeEvent.chapterOneLoaded() = ChapterOneLoaded;
+  const factory TreeEvent.branchOneLoaded() = BranchOneLoaded;
 
   /// @nodoc
   const factory TreeEvent.launchWithID(UniqueID id, {Tree? tree}) =

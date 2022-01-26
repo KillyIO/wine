@@ -9,9 +9,9 @@ part 'isar_settings.g.dart';
 class IsarSettings extends Equatable {
   /// @nodoc
   const IsarSettings({
-    this.enableChaptersBookmarksCount,
-    this.enableChaptersLikesCount,
-    this.enableChaptersViewsCount,
+    this.enableBranchesBookmarksCount,
+    this.enableBranchesLikesCount,
+    this.enableBranchesViewsCount,
     this.enableTreesBookmarksCount,
     this.enableTreesLikesCount,
     this.enableTreesViewsCount,
@@ -22,9 +22,9 @@ class IsarSettings extends Equatable {
   /// @nodoc
   factory IsarSettings.fromMap(Map<String, dynamic> map) {
     return IsarSettings(
-      enableChaptersBookmarksCount: map['enableChaptersBookmarksCount'] as bool,
-      enableChaptersLikesCount: map['enableChaptersLikesCount'] as bool,
-      enableChaptersViewsCount: map['enableChaptersViewsCount'] as bool,
+      enableBranchesBookmarksCount: map['enableBranchesBookmarksCount'] as bool,
+      enableBranchesLikesCount: map['enableBranchesLikesCount'] as bool,
+      enableBranchesViewsCount: map['enableBranchesViewsCount'] as bool,
       enableTreesBookmarksCount: map['enableTreesBookmarksCount'] as bool,
       enableTreesLikesCount: map['enableTreesLikesCount'] as bool,
       enableTreesViewsCount: map['enableTreesViewsCount'] as bool,
@@ -34,13 +34,13 @@ class IsarSettings extends Equatable {
   }
 
   /// @nodoc
-  final bool? enableChaptersBookmarksCount;
+  final bool? enableBranchesBookmarksCount;
 
   /// @nodoc
-  final bool? enableChaptersLikesCount;
+  final bool? enableBranchesLikesCount;
 
   /// @nodoc
-  final bool? enableChaptersViewsCount;
+  final bool? enableBranchesViewsCount;
 
   /// @nodoc
   final bool? enableTreesBookmarksCount;
@@ -60,9 +60,9 @@ class IsarSettings extends Equatable {
 
   /// @nodoc
   IsarSettings copyWith({
-    bool? enableChaptersBookmarksCount,
-    bool? enableChaptersLikesCount,
-    bool? enableChaptersViewsCount,
+    bool? enableBranchesBookmarksCount,
+    bool? enableBranchesLikesCount,
+    bool? enableBranchesViewsCount,
     bool? enableTreesBookmarksCount,
     bool? enableTreesLikesCount,
     bool? enableTreesViewsCount,
@@ -70,12 +70,12 @@ class IsarSettings extends Equatable {
     String? uid,
   }) {
     return IsarSettings(
-      enableChaptersBookmarksCount:
-          enableChaptersBookmarksCount ?? this.enableChaptersBookmarksCount,
-      enableChaptersLikesCount:
-          enableChaptersLikesCount ?? this.enableChaptersLikesCount,
-      enableChaptersViewsCount:
-          enableChaptersViewsCount ?? this.enableChaptersViewsCount,
+      enableBranchesBookmarksCount:
+          enableBranchesBookmarksCount ?? this.enableBranchesBookmarksCount,
+      enableBranchesLikesCount:
+          enableBranchesLikesCount ?? this.enableBranchesLikesCount,
+      enableBranchesViewsCount:
+          enableBranchesViewsCount ?? this.enableBranchesViewsCount,
       enableTreesBookmarksCount:
           enableTreesBookmarksCount ?? this.enableTreesBookmarksCount,
       enableTreesLikesCount:
@@ -90,9 +90,9 @@ class IsarSettings extends Equatable {
   /// @nodoc
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'enableChaptersBookmarksCount': enableChaptersBookmarksCount,
-      'enableChaptersLikesCount': enableChaptersLikesCount,
-      'enableChaptersViewsCount': enableChaptersViewsCount,
+      'enableBranchesBookmarksCount': enableBranchesBookmarksCount,
+      'enableBranchesLikesCount': enableBranchesLikesCount,
+      'enableBranchesViewsCount': enableBranchesViewsCount,
       'enableTreesBookmarksCount': enableTreesBookmarksCount,
       'enableTreesLikesCount': enableTreesLikesCount,
       'enableTreesViewsCount': enableTreesViewsCount,
@@ -104,9 +104,9 @@ class IsarSettings extends Equatable {
   /// @nodoc
   Settings toDomain() {
     return Settings(
-      enableChaptersBookmarksCount: enableChaptersBookmarksCount,
-      enableChaptersLikesCount: enableChaptersLikesCount,
-      enableChaptersViewsCount: enableChaptersViewsCount,
+      enableBranchesBookmarksCount: enableBranchesBookmarksCount,
+      enableBranchesLikesCount: enableBranchesLikesCount,
+      enableBranchesViewsCount: enableBranchesViewsCount,
       enableTreesBookmarksCount: enableTreesBookmarksCount,
       enableTreesLikesCount: enableTreesLikesCount,
       enableTreesViewsCount: enableTreesViewsCount,
@@ -115,9 +115,9 @@ class IsarSettings extends Equatable {
 
   @override
   List<Object?> get props => [
-        enableChaptersBookmarksCount,
-        enableChaptersLikesCount,
-        enableChaptersViewsCount,
+        enableBranchesBookmarksCount,
+        enableBranchesLikesCount,
+        enableBranchesViewsCount,
         enableTreesBookmarksCount,
         enableTreesLikesCount,
         enableTreesViewsCount,

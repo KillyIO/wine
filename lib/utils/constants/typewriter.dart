@@ -1,5 +1,5 @@
 /// @nodoc
-const List<String> typewriterChapterPageViewKeys = [
+const List<String> typewriterBranchPageViewKeys = [
   'editor',
   'preview',
 ];

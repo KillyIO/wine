@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
-import 'package:wine/presentation/tree/widgets/tree_chapter_one.dart';
+import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';
 import 'package:wine/presentation/tree/widgets/tree_cover_layout.dart';
 import 'package:wine/presentation/tree/widgets/tree_genres.dart';
 import 'package:wine/presentation/tree/widgets/tree_resume_reading.dart';
@@ -27,7 +27,7 @@ class TreeLayout extends StatelessWidget {
             some: (value) => value.when(
               ok: (_) {},
               err: (err) => err.maybeMap(
-                chapter: (f) => f.f.maybeMap(
+                branch: (f) => f.f.maybeMap(
                   permissionDenied: (_) async => baseErrorDialog(
                     context,
                     <String>['Forbidden action. Permission denied!'],
@@ -92,7 +92,7 @@ class TreeLayout extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 50),
-                  child: TreeChapterOne(),
+                  child: TreeBranchOne(),
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),

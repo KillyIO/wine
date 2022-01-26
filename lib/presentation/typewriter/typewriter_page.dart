@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wine/domain/chapter/chapter.dart';
+import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/domain/tree/tree.dart';
-import 'package:wine/presentation/typewriter/typewriter_chapter/typewriter_chapter_id_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_chapter/typewriter_chapter_new_page.dart';
+import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_id_page.dart';
+import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_new_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_id_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_new_page.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -17,16 +17,16 @@ class TypewriterPage extends StatelessWidget {
   /// @nodoc
   const TypewriterPage({
     Key? key,
-    this.chapter,
+    this.branch,
     @PathParam('id') this.id,
     this.tree,
     this.type = TypewriterType.unknown,
   }) : super(key: key);
 
   /// @nodoc
-  final Chapter? chapter;
+  final Branch? branch;
 
-  /// Tree or Chapter id.
+  /// Tree or Branch id.
   final String? id;
 
   /// @nodoc
@@ -37,13 +37,13 @@ class TypewriterPage extends StatelessWidget {
 
   Widget get _typewriter {
     switch (type) {
-      case TypewriterType.chapter:
+      case TypewriterType.branch:
         if (id != null) {
-          return TypewriterChapterIDPage(chapter: chapter, chapterId: id!);
+          return TypewriterBranchIDPage(branch: branch, branchId: id!);
         }
-        return TypewriterChapterNewPage(
+        return TypewriterBranchNewPage(
           tree: tree!,
-          previousChapter: chapter,
+          previousBranch: branch,
         );
       case TypewriterType.tree:
         if (id != null) {

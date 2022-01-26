@@ -24,7 +24,7 @@ class TreeResumeReading extends StatelessWidget {
           ),
         ),
         // TODO(SSebigo): make something with Isar
-        // to store last chapter read UID
+        // to store last branch read UID
         Container(),
       ],
     );

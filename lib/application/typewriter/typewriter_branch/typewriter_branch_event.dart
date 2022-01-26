@@ -1,0 +1,66 @@
+part of 'typewriter_branch_bloc.dart';
+
+/// @nodoc
+@freezed
+class TypewriterBranchEvent with _$TypewriterBranchEvent {
+  /// @nodoc
+  const factory TypewriterBranchEvent.addCoverPressed() = AddCoverPressed;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.bodyChanged() = BodyChanged;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.branchOneExistenceChecked() =
+      BranchOneExistenceChecked;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.deleteButtonPressed() =
+      DeleteButtonPressed;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.genreAdded(String genre) = GenreAdded;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.genreRemoved(String genre) = GenreRemoved;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.isNSFWChanged({required bool isNSFW}) =
+      IsNSFWChanged;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.languageSelected(String language) =
+      LanguageSelected;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.launchAsNewBranch(
+    Tree tree, {
+    Branch? previousBranch,
+  }) = LaunchAsNewBranch;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.launchWithID(
+    UniqueID id, {
+    Branch? branch,
+  }) = LaunchWithID;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.licenceSelected(String licence) =
+      LicenceSelected;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.pageViewIndexChanged(int index) =
+      PageViewIndexChanged;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.publishButtonPressed() =
+      PublishButtonPressed;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.saveButtonPressed() = SaveButtonPressed;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.sessionFetched() = SessionFetched;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.titleChanged(String title) = TitleChanged;
+}

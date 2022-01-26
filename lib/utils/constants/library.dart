@@ -1,7 +1,7 @@
 /// @nodoc
 const List<String> libraryPageViewKeys = <String>[
   'myTrees',
-  'myChapters',
+  'myBranches',
 ];
 
 /// @nodoc

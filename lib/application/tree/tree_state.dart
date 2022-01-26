@@ -7,8 +7,8 @@ class TreeState with _$TreeState {
   const factory TreeState({
     required bool authorIsUser,
     required User author,
-    Chapter? chapterOne,
-    Chapter? chapterResume,
+    Branch? branchOne,
+    Branch? branchResume,
     required Option<Result<None, CoreFailure>> failureOption,
     required bool isBookmarked,
     required bool isLiked,

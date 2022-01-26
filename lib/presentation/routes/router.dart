@@ -4,7 +4,7 @@ import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/plus/plus_page.dart';
 import 'package:wine/presentation/settings/settings_account/settings_account_page.dart';
-import 'package:wine/presentation/settings/settings_chapter/settings_chapter_page.dart';
+import 'package:wine/presentation/settings/settings_branch/settings_branch_page.dart';
 import 'package:wine/presentation/settings/settings_page.dart';
 import 'package:wine/presentation/settings/settings_tree/settings_tree_page.dart';
 import 'package:wine/presentation/sign_up/sign_up_page.dart';
@@ -47,9 +47,9 @@ export 'router.gr.dart';
           page: SettingsAccountPage,
           path: settingsAccountPagePath,
         ),
-        AutoRoute<SettingsChapterPage>(
-          page: SettingsChapterPage,
-          path: settingsChapterPagePath,
+        AutoRoute<SettingsBranchPage>(
+          page: SettingsBranchPage,
+          path: settingsBranchPagePath,
         ),
         AutoRoute<SettingsTreePage>(
           page: SettingsTreePage,
@@ -66,14 +66,14 @@ export 'router.gr.dart';
       path: signUpPagePath,
     ),
     AutoRoute<TypewriterPage>(
-      name: 'TypewriterChapterId',
+      name: 'TypewriterBranchId',
       page: TypewriterPage,
-      path: '$typewriterPagePath$typewriterPageChapterIDPath',
+      path: '$typewriterPagePath$typewriterPageBranchIDPath',
     ),
     AutoRoute<TypewriterPage>(
-      name: 'TypewriterChapterNew',
+      name: 'TypewriterBranchNew',
       page: TypewriterPage,
-      path: '$typewriterPagePath$typewriterPageChapterNewPath',
+      path: '$typewriterPagePath$typewriterPageBranchNewPath',
     ),
     AutoRoute<TypewriterPage>(
       name: 'TypewriterTreeId',

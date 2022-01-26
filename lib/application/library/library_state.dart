@@ -5,9 +5,9 @@ part of 'library_bloc.dart';
 class LibraryState with _$LibraryState {
   /// [treeList]: Used to display "published" and "drafts" page views.
   const factory LibraryState({
-    required List<Chapter> bookmarkedChapters,
+    required List<Branch> bookmarkedBranches,
     required List<Tree> bookmarkedTree,
-    required List<Chapter> chapters,
+    required List<Branch> branches,
     required int currentPageViewIdx,
     required int currentVerticalNavbarIdx,
     required Option<Result<None, CoreFailure>> failureOption,
@@ -18,9 +18,9 @@ class LibraryState with _$LibraryState {
 
   /// @nodoc
   factory LibraryState.initial() => LibraryState(
-        bookmarkedChapters: <Chapter>[],
+        bookmarkedBranches: <Branch>[],
         bookmarkedTree: <Tree>[],
-        chapters: <Chapter>[],
+        branches: <Branch>[],
         currentPageViewIdx: 0,
         currentVerticalNavbarIdx: 0,
         failureOption: const None(),

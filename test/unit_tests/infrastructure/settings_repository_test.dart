@@ -180,7 +180,7 @@ void main() {
 
     test('When settings not updated Then return SettingsNotUpdated', () async {
       final updatedTestIsarSettings =
-          testIsarSettings.copyWith(enableChaptersBookmarksCount: true);
+          testIsarSettings.copyWith(enableBranchesBookmarksCount: true);
 
       when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
       when(_build.findFirst).thenAnswer((_) async => updatedTestIsarSettings);
