@@ -7,9 +7,6 @@ class TypewriterBranchEvent with _$TypewriterBranchEvent {
   const factory TypewriterBranchEvent.addCoverPressed() = AddCoverPressed;
 
   /// @nodoc
-  const factory TypewriterBranchEvent.bodyChanged() = BodyChanged;
-
-  /// @nodoc
   const factory TypewriterBranchEvent.branchOneExistenceChecked() =
       BranchOneExistenceChecked;
 
@@ -42,6 +39,9 @@ class TypewriterBranchEvent with _$TypewriterBranchEvent {
     UniqueID id, {
     Branch? branch,
   }) = LaunchWithID;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.leafChanged() = LeafChanged;
 
   /// @nodoc
   const factory TypewriterBranchEvent.licenceSelected(String licence) =

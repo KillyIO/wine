@@ -4,23 +4,23 @@ import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
 /// @nodoc
-class Body extends ValueObject<String> {
+class Leaf extends ValueObject<String> {
   /// @nodoc
-  factory Body(String input, List<dynamic> json) {
-    return Body._(
-      validateBody(input, json),
+  factory Leaf(String input, List<dynamic> json) {
+    return Leaf._(
+      validateLeaf(input, json),
     );
   }
 
   /// @nodoc
-  factory Body.forSaving(Result<String, ValueFailure<String>> input) {
-    return Body._(
+  factory Leaf.forSaving(Result<String, ValueFailure<String>> input) {
+    return Leaf._(
       Ok(input.unwrapOr('')),
     );
   }
 
   /// @nodoc
-  const Body._(this.value);
+  const Leaf._(this.value);
 
   @override
   final Result<String, ValueFailure<String>> value;

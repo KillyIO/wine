@@ -8,7 +8,6 @@ part of 'branch_dto.dart';
 
 _$_BranchDTO _$$_BranchDTOFromJson(Map<String, dynamic> json) => _$_BranchDTO(
       authorUID: json['authorUID'] as String,
-      body: json['body'] as String,
       bookmarksCount: json['bookmarksCount'] as int,
       coverURL: json['coverURL'] as String,
       genres:
@@ -17,6 +16,7 @@ _$_BranchDTO _$$_BranchDTOFromJson(Map<String, dynamic> json) => _$_BranchDTO(
       isNSFW: json['isNSFW'] as bool,
       isPublished: json['isPublished'] as bool,
       language: json['language'] as String,
+      leaf: json['leaf'] as String,
       licence: json['licence'] as String,
       likesCount: json['likesCount'] as int,
       previousBranchUID: json['previousBranchUID'] as String?,
@@ -31,7 +31,6 @@ _$_BranchDTO _$$_BranchDTOFromJson(Map<String, dynamic> json) => _$_BranchDTO(
 Map<String, dynamic> _$$_BranchDTOToJson(_$_BranchDTO instance) =>
     <String, dynamic>{
       'authorUID': instance.authorUID,
-      'body': instance.body,
       'bookmarksCount': instance.bookmarksCount,
       'coverURL': instance.coverURL,
       'genres': instance.genres,
@@ -39,6 +38,7 @@ Map<String, dynamic> _$$_BranchDTOToJson(_$_BranchDTO instance) =>
       'isNSFW': instance.isNSFW,
       'isPublished': instance.isPublished,
       'language': instance.language,
+      'leaf': instance.leaf,
       'licence': instance.licence,
       'likesCount': instance.likesCount,
       'previousBranchUID': instance.previousBranchUID,

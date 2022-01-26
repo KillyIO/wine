@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_quill/flutter_quill.dart';
+import 'package:flutter_quill/flutter_quill.dart' hide Leaf;
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/domain/branch/body.dart';
 import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/branch/leaf.dart';
 import 'package:wine/domain/branch/licence.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
@@ -22,7 +22,6 @@ class BranchDTO with _$BranchDTO {
   /// @nodoc
   factory BranchDTO({
     required String authorUID,
-    required String body,
     required int bookmarksCount,
     required String coverURL,
     required List<String> genres,
@@ -30,6 +29,7 @@ class BranchDTO with _$BranchDTO {
     required bool isNSFW,
     required bool isPublished,
     required String language,
+    required String leaf,
     required String licence,
     required int likesCount,
     required String? previousBranchUID,
@@ -44,7 +44,6 @@ class BranchDTO with _$BranchDTO {
   factory BranchDTO.fromDomain(Branch branch) {
     return BranchDTO(
       authorUID: branch.authorUID.getOrCrash(),
-      body: branch.body.getOrCrash(),
       bookmarksCount: branch.bookmarksCount,
       coverURL: branch.coverURL.getOrCrash(),
       genres: branch.genres.map((g) => g.getOrCrash()).toList(),
@@ -52,6 +51,7 @@ class BranchDTO with _$BranchDTO {
       isNSFW: branch.isNSFW,
       isPublished: branch.isPublished,
       language: branch.language.getOrCrash(),
+      leaf: branch.leaf.getOrCrash(),
       licence: branch.licence.getOrCrash(),
       likesCount: branch.likesCount,
       previousBranchUID: branch.previousBranchUID?.getOrCrash(),
@@ -78,17 +78,6 @@ extension BranchDTOX on BranchDTO {
   /// @nodoc
   Branch toDomain() => Branch(
         authorUID: UniqueID.fromUniqueString(authorUID),
-        body: Body(
-          body.isEmpty
-              ? body
-              : Document.fromJson(jsonDecode(body) as List<dynamic>)
-                  .toPlainText(),
-          body.isEmpty
-              ? <dynamic>[]
-              : Document.fromJson(jsonDecode(body) as List<dynamic>)
-                  .toDelta()
-                  .toJson(),
-        ),
         bookmarksCount: bookmarksCount,
         coverURL: CoverURL(coverURL),
         genres: genres.map(Genre.new).toList(),
@@ -96,6 +85,17 @@ extension BranchDTOX on BranchDTO {
         isNSFW: isNSFW,
         isPublished: isPublished,
         language: Language(language),
+        leaf: Leaf(
+          leaf.isEmpty
+              ? leaf
+              : Document.fromJson(jsonDecode(leaf) as List<dynamic>)
+                  .toPlainText(),
+          leaf.isEmpty
+              ? <dynamic>[]
+              : Document.fromJson(jsonDecode(leaf) as List<dynamic>)
+                  .toDelta()
+                  .toJson(),
+        ),
         licence: Licence(licence),
         likesCount: likesCount,
         previousBranchUID: UniqueID.fromUniqueString(previousBranchUID ?? ''),
@@ -108,7 +108,6 @@ extension BranchDTOX on BranchDTO {
   /// @nodoc
   Map<String, dynamic> toMap() => <String, dynamic>{
         'authorUID': authorUID,
-        'body': body,
         'bookmarksCount': bookmarksCount,
         'coverURL': coverURL,
         'genres': genres,
@@ -116,6 +115,7 @@ extension BranchDTOX on BranchDTO {
         'isNSFW': isNSFW,
         'isPublished': isPublished,
         'language': language,
+        'leaf': leaf,
         'licence': licence,
         'likesCount': likesCount,
         'previousBranchUID': previousBranchUID,
@@ -130,14 +130,6 @@ extension BranchDTOX on BranchDTO {
 extension BranchMapX on Map {
   /// @nodoc
   Branch toDomain() => Branch(
-        body: Body(
-          Document.fromJson(
-            jsonDecode(this['body'] as String) as List<dynamic>,
-          ).toPlainText(),
-          Document.fromJson(
-            jsonDecode(this['body'] as String) as List<dynamic>,
-          ).toDelta().toJson(),
-        ),
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
         bookmarksCount: this['bookmarksCount'] as int,
         coverURL: CoverURL(this['coverURL'] as String),
@@ -146,6 +138,14 @@ extension BranchMapX on Map {
         isNSFW: this['isNSFW'] as bool,
         isPublished: this['isPublished'] as bool,
         language: Language(this['language'] as String),
+        leaf: Leaf(
+          Document.fromJson(
+            jsonDecode(this['leaf'] as String) as List<dynamic>,
+          ).toPlainText(),
+          Document.fromJson(
+            jsonDecode(this['leaf'] as String) as List<dynamic>,
+          ).toDelta().toJson(),
+        ),
         licence: Licence(this['licence'] as String),
         likesCount: this['likesCount'] as int,
         previousBranchUID:

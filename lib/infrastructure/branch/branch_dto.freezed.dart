@@ -23,7 +23,6 @@ class _$BranchDTOTearOff {
 
   _BranchDTO call(
       {required String authorUID,
-      required String body,
       required int bookmarksCount,
       required String coverURL,
       required List<String> genres,
@@ -31,6 +30,7 @@ class _$BranchDTOTearOff {
       required bool isNSFW,
       required bool isPublished,
       required String language,
+      required String leaf,
       required String licence,
       required int likesCount,
       required String? previousBranchUID,
@@ -41,7 +41,6 @@ class _$BranchDTOTearOff {
       required int viewsCount}) {
     return _BranchDTO(
       authorUID: authorUID,
-      body: body,
       bookmarksCount: bookmarksCount,
       coverURL: coverURL,
       genres: genres,
@@ -49,6 +48,7 @@ class _$BranchDTOTearOff {
       isNSFW: isNSFW,
       isPublished: isPublished,
       language: language,
+      leaf: leaf,
       licence: licence,
       likesCount: likesCount,
       previousBranchUID: previousBranchUID,
@@ -71,7 +71,6 @@ const $BranchDTO = _$BranchDTOTearOff();
 /// @nodoc
 mixin _$BranchDTO {
   String get authorUID => throw _privateConstructorUsedError;
-  String get body => throw _privateConstructorUsedError;
   int get bookmarksCount => throw _privateConstructorUsedError;
   String get coverURL => throw _privateConstructorUsedError;
   List<String> get genres => throw _privateConstructorUsedError;
@@ -79,6 +78,7 @@ mixin _$BranchDTO {
   bool get isNSFW => throw _privateConstructorUsedError;
   bool get isPublished => throw _privateConstructorUsedError;
   String get language => throw _privateConstructorUsedError;
+  String get leaf => throw _privateConstructorUsedError;
   String get licence => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
   String? get previousBranchUID => throw _privateConstructorUsedError;
@@ -101,7 +101,6 @@ abstract class $BranchDTOCopyWith<$Res> {
       _$BranchDTOCopyWithImpl<$Res>;
   $Res call(
       {String authorUID,
-      String body,
       int bookmarksCount,
       String coverURL,
       List<String> genres,
@@ -109,6 +108,7 @@ abstract class $BranchDTOCopyWith<$Res> {
       bool isNSFW,
       bool isPublished,
       String language,
+      String leaf,
       String licence,
       int likesCount,
       String? previousBranchUID,
@@ -130,7 +130,6 @@ class _$BranchDTOCopyWithImpl<$Res> implements $BranchDTOCopyWith<$Res> {
   @override
   $Res call({
     Object? authorUID = freezed,
-    Object? body = freezed,
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genres = freezed,
@@ -138,6 +137,7 @@ class _$BranchDTOCopyWithImpl<$Res> implements $BranchDTOCopyWith<$Res> {
     Object? isNSFW = freezed,
     Object? isPublished = freezed,
     Object? language = freezed,
+    Object? leaf = freezed,
     Object? licence = freezed,
     Object? likesCount = freezed,
     Object? previousBranchUID = freezed,
@@ -151,10 +151,6 @@ class _$BranchDTOCopyWithImpl<$Res> implements $BranchDTOCopyWith<$Res> {
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
               as String,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
@@ -183,6 +179,10 @@ class _$BranchDTOCopyWithImpl<$Res> implements $BranchDTOCopyWith<$Res> {
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      leaf: leaf == freezed
+          ? _value.leaf
+          : leaf // ignore: cast_nullable_to_non_nullable
               as String,
       licence: licence == freezed
           ? _value.licence
@@ -228,7 +228,6 @@ abstract class _$BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
   @override
   $Res call(
       {String authorUID,
-      String body,
       int bookmarksCount,
       String coverURL,
       List<String> genres,
@@ -236,6 +235,7 @@ abstract class _$BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
       bool isNSFW,
       bool isPublished,
       String language,
+      String leaf,
       String licence,
       int likesCount,
       String? previousBranchUID,
@@ -258,7 +258,6 @@ class __$BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
   @override
   $Res call({
     Object? authorUID = freezed,
-    Object? body = freezed,
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genres = freezed,
@@ -266,6 +265,7 @@ class __$BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
     Object? isNSFW = freezed,
     Object? isPublished = freezed,
     Object? language = freezed,
+    Object? leaf = freezed,
     Object? licence = freezed,
     Object? likesCount = freezed,
     Object? previousBranchUID = freezed,
@@ -279,10 +279,6 @@ class __$BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
               as String,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
@@ -311,6 +307,10 @@ class __$BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      leaf: leaf == freezed
+          ? _value.leaf
+          : leaf // ignore: cast_nullable_to_non_nullable
               as String,
       licence: licence == freezed
           ? _value.licence
@@ -353,7 +353,6 @@ class __$BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
 class _$_BranchDTO implements _BranchDTO {
   _$_BranchDTO(
       {required this.authorUID,
-      required this.body,
       required this.bookmarksCount,
       required this.coverURL,
       required this.genres,
@@ -361,6 +360,7 @@ class _$_BranchDTO implements _BranchDTO {
       required this.isNSFW,
       required this.isPublished,
       required this.language,
+      required this.leaf,
       required this.licence,
       required this.likesCount,
       required this.previousBranchUID,
@@ -376,8 +376,6 @@ class _$_BranchDTO implements _BranchDTO {
   @override
   final String authorUID;
   @override
-  final String body;
-  @override
   final int bookmarksCount;
   @override
   final String coverURL;
@@ -391,6 +389,8 @@ class _$_BranchDTO implements _BranchDTO {
   final bool isPublished;
   @override
   final String language;
+  @override
+  final String leaf;
   @override
   final String licence;
   @override
@@ -411,7 +411,7 @@ class _$_BranchDTO implements _BranchDTO {
 
   @override
   String toString() {
-    return 'BranchDTO(authorUID: $authorUID, body: $body, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousBranchUID: $previousBranchUID, title: $title, treeUID: $treeUID, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
+    return 'BranchDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, leaf: $leaf, licence: $licence, likesCount: $likesCount, previousBranchUID: $previousBranchUID, title: $title, treeUID: $treeUID, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
   }
 
   @override
@@ -420,7 +420,6 @@ class _$_BranchDTO implements _BranchDTO {
         (other.runtimeType == runtimeType &&
             other is _BranchDTO &&
             const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
             const DeepCollectionEquality()
                 .equals(other.bookmarksCount, bookmarksCount) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
@@ -430,6 +429,7 @@ class _$_BranchDTO implements _BranchDTO {
             const DeepCollectionEquality()
                 .equals(other.isPublished, isPublished) &&
             const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality().equals(other.leaf, leaf) &&
             const DeepCollectionEquality().equals(other.licence, licence) &&
             const DeepCollectionEquality()
                 .equals(other.likesCount, likesCount) &&
@@ -447,7 +447,6 @@ class _$_BranchDTO implements _BranchDTO {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(authorUID),
-      const DeepCollectionEquality().hash(body),
       const DeepCollectionEquality().hash(bookmarksCount),
       const DeepCollectionEquality().hash(coverURL),
       const DeepCollectionEquality().hash(genres),
@@ -455,6 +454,7 @@ class _$_BranchDTO implements _BranchDTO {
       const DeepCollectionEquality().hash(isNSFW),
       const DeepCollectionEquality().hash(isPublished),
       const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(leaf),
       const DeepCollectionEquality().hash(licence),
       const DeepCollectionEquality().hash(likesCount),
       const DeepCollectionEquality().hash(previousBranchUID),
@@ -478,7 +478,6 @@ class _$_BranchDTO implements _BranchDTO {
 abstract class _BranchDTO implements BranchDTO {
   factory _BranchDTO(
       {required String authorUID,
-      required String body,
       required int bookmarksCount,
       required String coverURL,
       required List<String> genres,
@@ -486,6 +485,7 @@ abstract class _BranchDTO implements BranchDTO {
       required bool isNSFW,
       required bool isPublished,
       required String language,
+      required String leaf,
       required String licence,
       required int likesCount,
       required String? previousBranchUID,
@@ -501,8 +501,6 @@ abstract class _BranchDTO implements BranchDTO {
   @override
   String get authorUID;
   @override
-  String get body;
-  @override
   int get bookmarksCount;
   @override
   String get coverURL;
@@ -516,6 +514,8 @@ abstract class _BranchDTO implements BranchDTO {
   bool get isPublished;
   @override
   String get language;
+  @override
+  String get leaf;
   @override
   String get licence;
   @override

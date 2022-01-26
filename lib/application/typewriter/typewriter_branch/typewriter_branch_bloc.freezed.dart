@@ -21,10 +21,6 @@ class _$TypewriterBranchEventTearOff {
     return const AddCoverPressed();
   }
 
-  BodyChanged bodyChanged() {
-    return const BodyChanged();
-  }
-
   BranchOneExistenceChecked branchOneExistenceChecked() {
     return const BranchOneExistenceChecked();
   }
@@ -71,6 +67,10 @@ class _$TypewriterBranchEventTearOff {
     );
   }
 
+  LeafChanged leafChanged() {
+    return const LeafChanged();
+  }
+
   LicenceSelected licenceSelected(String licence) {
     return LicenceSelected(
       licence,
@@ -110,7 +110,6 @@ mixin _$TypewriterBranchEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -120,6 +119,7 @@ mixin _$TypewriterBranchEvent {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -131,7 +131,6 @@ mixin _$TypewriterBranchEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -140,6 +139,7 @@ mixin _$TypewriterBranchEvent {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -151,7 +151,6 @@ mixin _$TypewriterBranchEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -160,6 +159,7 @@ mixin _$TypewriterBranchEvent {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -172,7 +172,6 @@ mixin _$TypewriterBranchEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -182,6 +181,7 @@ mixin _$TypewriterBranchEvent {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -193,7 +193,6 @@ mixin _$TypewriterBranchEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -203,6 +202,7 @@ mixin _$TypewriterBranchEvent {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -214,7 +214,6 @@ mixin _$TypewriterBranchEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -224,6 +223,7 @@ mixin _$TypewriterBranchEvent {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -294,7 +294,6 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -304,6 +303,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -318,7 +318,6 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -327,6 +326,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -341,7 +341,6 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -350,6 +349,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -368,7 +368,6 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -378,6 +377,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -392,7 +392,6 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -402,6 +401,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -416,7 +416,6 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -426,6 +425,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -443,199 +443,6 @@ class _$AddCoverPressed implements AddCoverPressed {
 
 abstract class AddCoverPressed implements TypewriterBranchEvent {
   const factory AddCoverPressed() = _$AddCoverPressed;
-}
-
-/// @nodoc
-abstract class $BodyChangedCopyWith<$Res> {
-  factory $BodyChangedCopyWith(
-          BodyChanged value, $Res Function(BodyChanged) then) =
-      _$BodyChangedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$BodyChangedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $BodyChangedCopyWith<$Res> {
-  _$BodyChangedCopyWithImpl(
-      BodyChanged _value, $Res Function(BodyChanged) _then)
-      : super(_value, (v) => _then(v as BodyChanged));
-
-  @override
-  BodyChanged get _value => super._value as BodyChanged;
-}
-
-/// @nodoc
-
-class _$BodyChanged implements BodyChanged {
-  const _$BodyChanged();
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.bodyChanged()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is BodyChanged);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
-        launchAsNewBranch,
-    required TResult Function(UniqueID id, Branch? branch) launchWithID,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return bodyChanged();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
-    TResult Function(UniqueID id, Branch? branch)? launchWithID,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return bodyChanged?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
-    TResult Function(UniqueID id, Branch? branch)? launchWithID,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (bodyChanged != null) {
-      return bodyChanged();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithID value) launchWithID,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return bodyChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithID value)? launchWithID,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return bodyChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithID value)? launchWithID,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (bodyChanged != null) {
-      return bodyChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BodyChanged implements TypewriterBranchEvent {
-  const factory BodyChanged() = _$BodyChanged;
 }
 
 /// @nodoc
@@ -682,7 +489,6 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -692,6 +498,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -706,7 +513,6 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -715,6 +521,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -729,7 +536,6 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -738,6 +544,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -756,7 +563,6 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -766,6 +572,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -780,7 +587,6 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -790,6 +596,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -804,7 +611,6 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -814,6 +620,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -875,7 +682,6 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -885,6 +691,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -899,7 +706,6 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -908,6 +714,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -922,7 +729,6 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -931,6 +737,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -949,7 +756,6 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -959,6 +765,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -973,7 +780,6 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -983,6 +789,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -997,7 +804,6 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1007,6 +813,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -1091,7 +898,6 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -1101,6 +907,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -1115,7 +922,6 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -1124,6 +930,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -1138,7 +945,6 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -1147,6 +953,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -1165,7 +972,6 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -1175,6 +981,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -1189,7 +996,6 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1199,6 +1005,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -1213,7 +1020,6 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1223,6 +1029,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -1313,7 +1120,6 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -1323,6 +1129,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -1337,7 +1144,6 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -1346,6 +1152,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -1360,7 +1167,6 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -1369,6 +1175,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -1387,7 +1194,6 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -1397,6 +1203,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -1411,7 +1218,6 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1421,6 +1227,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -1435,7 +1242,6 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1445,6 +1251,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -1535,7 +1342,6 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -1545,6 +1351,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -1559,7 +1366,6 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -1568,6 +1374,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -1582,7 +1389,6 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -1591,6 +1397,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -1609,7 +1416,6 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -1619,6 +1425,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -1633,7 +1440,6 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1643,6 +1449,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -1657,7 +1464,6 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1667,6 +1473,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -1757,7 +1564,6 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -1767,6 +1573,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -1781,7 +1588,6 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -1790,6 +1596,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -1804,7 +1611,6 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -1813,6 +1619,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -1831,7 +1638,6 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -1841,6 +1647,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -1855,7 +1662,6 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1865,6 +1671,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -1879,7 +1686,6 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -1889,6 +1695,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2011,7 +1818,6 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -2021,6 +1827,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -2035,7 +1842,6 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2044,6 +1850,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2058,7 +1865,6 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2067,6 +1873,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2085,7 +1892,6 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -2095,6 +1901,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -2109,7 +1916,6 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -2119,6 +1925,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2133,7 +1940,6 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -2143,6 +1949,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2258,7 +2065,6 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -2268,6 +2074,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -2282,7 +2089,6 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2291,6 +2097,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2305,7 +2112,6 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2314,6 +2120,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2332,7 +2139,6 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -2342,6 +2148,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -2356,7 +2163,6 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -2366,6 +2172,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2380,7 +2187,6 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -2390,6 +2196,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2413,6 +2220,199 @@ abstract class LaunchWithID implements TypewriterBranchEvent {
   @JsonKey(ignore: true)
   $LaunchWithIDCopyWith<LaunchWithID> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LeafChangedCopyWith<$Res> {
+  factory $LeafChangedCopyWith(
+          LeafChanged value, $Res Function(LeafChanged) then) =
+      _$LeafChangedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LeafChangedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements $LeafChangedCopyWith<$Res> {
+  _$LeafChangedCopyWithImpl(
+      LeafChanged _value, $Res Function(LeafChanged) _then)
+      : super(_value, (v) => _then(v as LeafChanged));
+
+  @override
+  LeafChanged get _value => super._value as LeafChanged;
+}
+
+/// @nodoc
+
+class _$LeafChanged implements LeafChanged {
+  const _$LeafChanged();
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.leafChanged()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LeafChanged);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(Tree tree, Branch? previousBranch)
+        launchAsNewBranch,
+    required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return leafChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return leafChanged?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (leafChanged != null) {
+      return leafChanged();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return leafChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return leafChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (leafChanged != null) {
+      return leafChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LeafChanged implements TypewriterBranchEvent {
+  const factory LeafChanged() = _$LeafChanged;
 }
 
 /// @nodoc
@@ -2481,7 +2481,6 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -2491,6 +2490,7 @@ class _$LicenceSelected implements LicenceSelected {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -2505,7 +2505,6 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2514,6 +2513,7 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2528,7 +2528,6 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2537,6 +2536,7 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2555,7 +2555,6 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -2565,6 +2564,7 @@ class _$LicenceSelected implements LicenceSelected {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -2579,7 +2579,6 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -2589,6 +2588,7 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2603,7 +2603,6 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -2613,6 +2612,7 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2704,7 +2704,6 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -2714,6 +2713,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -2728,7 +2728,6 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2737,6 +2736,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2751,7 +2751,6 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2760,6 +2759,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2778,7 +2778,6 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -2788,6 +2787,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -2802,7 +2802,6 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -2812,6 +2811,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2826,7 +2826,6 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -2836,6 +2835,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -2902,7 +2902,6 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -2912,6 +2911,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -2926,7 +2926,6 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2935,6 +2934,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2949,7 +2949,6 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -2958,6 +2957,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -2976,7 +2976,6 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -2986,6 +2985,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -3000,7 +3000,6 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -3010,6 +3009,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -3024,7 +3024,6 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -3034,6 +3033,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -3095,7 +3095,6 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -3105,6 +3104,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -3119,7 +3119,6 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -3128,6 +3127,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -3142,7 +3142,6 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -3151,6 +3150,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -3169,7 +3169,6 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -3179,6 +3178,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -3193,7 +3193,6 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -3203,6 +3202,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -3217,7 +3217,6 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -3227,6 +3226,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -3288,7 +3288,6 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -3298,6 +3297,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -3312,7 +3312,6 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -3321,6 +3320,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -3335,7 +3335,6 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -3344,6 +3343,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -3362,7 +3362,6 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -3372,6 +3371,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -3386,7 +3386,6 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -3396,6 +3395,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -3410,7 +3410,6 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -3420,6 +3419,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -3505,7 +3505,6 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
-    required TResult Function() bodyChanged,
     required TResult Function() branchOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
@@ -3515,6 +3514,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(Tree tree, Branch? previousBranch)
         launchAsNewBranch,
     required TResult Function(UniqueID id, Branch? branch) launchWithID,
+    required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() publishButtonPressed,
@@ -3529,7 +3529,6 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -3538,6 +3537,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -3552,7 +3552,6 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
-    TResult Function()? bodyChanged,
     TResult Function()? branchOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
@@ -3561,6 +3560,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(String language)? languageSelected,
     TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
     TResult Function(UniqueID id, Branch? branch)? launchWithID,
+    TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? publishButtonPressed,
@@ -3579,7 +3579,6 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BodyChanged value) bodyChanged,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
@@ -3589,6 +3588,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
@@ -3603,7 +3603,6 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -3613,6 +3612,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -3627,7 +3627,6 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BodyChanged value)? bodyChanged,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
@@ -3637,6 +3636,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
@@ -3666,10 +3666,7 @@ class _$TypewriterBranchStateTearOff {
   const _$TypewriterBranchStateTearOff();
 
   _TypewriterBranchState call(
-      {required Body body,
-      required QuillController bodyController,
-      required int bodyWordCount,
-      required Branch branch,
+      {required Branch branch,
       required String coverURL,
       required int currentPageViewIdx,
       required TypewriterEndState endState,
@@ -3679,15 +3676,15 @@ class _$TypewriterBranchStateTearOff {
       required bool isNSFW,
       required bool isProcessing,
       required Language language,
+      required Leaf leaf,
+      required QuillController leafController,
+      required int leafWordCount,
       required Licence licence,
       required bool showErrorMessages,
       required Title title,
       required TextEditingController titleController,
       required int titleWordCount}) {
     return _TypewriterBranchState(
-      body: body,
-      bodyController: bodyController,
-      bodyWordCount: bodyWordCount,
       branch: branch,
       coverURL: coverURL,
       currentPageViewIdx: currentPageViewIdx,
@@ -3698,6 +3695,9 @@ class _$TypewriterBranchStateTearOff {
       isNSFW: isNSFW,
       isProcessing: isProcessing,
       language: language,
+      leaf: leaf,
+      leafController: leafController,
+      leafWordCount: leafWordCount,
       licence: licence,
       showErrorMessages: showErrorMessages,
       title: title,
@@ -3712,9 +3712,6 @@ const $TypewriterBranchState = _$TypewriterBranchStateTearOff();
 
 /// @nodoc
 mixin _$TypewriterBranchState {
-  Body get body => throw _privateConstructorUsedError;
-  QuillController get bodyController => throw _privateConstructorUsedError;
-  int get bodyWordCount => throw _privateConstructorUsedError;
   Branch get branch => throw _privateConstructorUsedError;
   String get coverURL => throw _privateConstructorUsedError;
   int get currentPageViewIdx => throw _privateConstructorUsedError;
@@ -3726,6 +3723,9 @@ mixin _$TypewriterBranchState {
   bool get isNSFW => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
   Language get language => throw _privateConstructorUsedError;
+  Leaf get leaf => throw _privateConstructorUsedError;
+  QuillController get leafController => throw _privateConstructorUsedError;
+  int get leafWordCount => throw _privateConstructorUsedError;
   Licence get licence => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   Title get title => throw _privateConstructorUsedError;
@@ -3744,10 +3744,7 @@ abstract class $TypewriterBranchStateCopyWith<$Res> {
           $Res Function(TypewriterBranchState) then) =
       _$TypewriterBranchStateCopyWithImpl<$Res>;
   $Res call(
-      {Body body,
-      QuillController bodyController,
-      int bodyWordCount,
-      Branch branch,
+      {Branch branch,
       String coverURL,
       int currentPageViewIdx,
       TypewriterEndState endState,
@@ -3757,6 +3754,9 @@ abstract class $TypewriterBranchStateCopyWith<$Res> {
       bool isNSFW,
       bool isProcessing,
       Language language,
+      Leaf leaf,
+      QuillController leafController,
+      int leafWordCount,
       Licence licence,
       bool showErrorMessages,
       Title title,
@@ -3777,9 +3777,6 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? body = freezed,
-    Object? bodyController = freezed,
-    Object? bodyWordCount = freezed,
     Object? branch = freezed,
     Object? coverURL = freezed,
     Object? currentPageViewIdx = freezed,
@@ -3790,6 +3787,9 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
     Object? isNSFW = freezed,
     Object? isProcessing = freezed,
     Object? language = freezed,
+    Object? leaf = freezed,
+    Object? leafController = freezed,
+    Object? leafWordCount = freezed,
     Object? licence = freezed,
     Object? showErrorMessages = freezed,
     Object? title = freezed,
@@ -3797,18 +3797,6 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
     Object? titleWordCount = freezed,
   }) {
     return _then(_value.copyWith(
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as Body,
-      bodyController: bodyController == freezed
-          ? _value.bodyController
-          : bodyController // ignore: cast_nullable_to_non_nullable
-              as QuillController,
-      bodyWordCount: bodyWordCount == freezed
-          ? _value.bodyWordCount
-          : bodyWordCount // ignore: cast_nullable_to_non_nullable
-              as int,
       branch: branch == freezed
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
@@ -3849,6 +3837,18 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      leaf: leaf == freezed
+          ? _value.leaf
+          : leaf // ignore: cast_nullable_to_non_nullable
+              as Leaf,
+      leafController: leafController == freezed
+          ? _value.leafController
+          : leafController // ignore: cast_nullable_to_non_nullable
+              as QuillController,
+      leafWordCount: leafWordCount == freezed
+          ? _value.leafWordCount
+          : leafWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
       licence: licence == freezed
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
@@ -3888,10 +3888,7 @@ abstract class _$TypewriterBranchStateCopyWith<$Res>
       __$TypewriterBranchStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Body body,
-      QuillController bodyController,
-      int bodyWordCount,
-      Branch branch,
+      {Branch branch,
       String coverURL,
       int currentPageViewIdx,
       TypewriterEndState endState,
@@ -3901,6 +3898,9 @@ abstract class _$TypewriterBranchStateCopyWith<$Res>
       bool isNSFW,
       bool isProcessing,
       Language language,
+      Leaf leaf,
+      QuillController leafController,
+      int leafWordCount,
       Licence licence,
       bool showErrorMessages,
       Title title,
@@ -3924,9 +3924,6 @@ class __$TypewriterBranchStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? body = freezed,
-    Object? bodyController = freezed,
-    Object? bodyWordCount = freezed,
     Object? branch = freezed,
     Object? coverURL = freezed,
     Object? currentPageViewIdx = freezed,
@@ -3937,6 +3934,9 @@ class __$TypewriterBranchStateCopyWithImpl<$Res>
     Object? isNSFW = freezed,
     Object? isProcessing = freezed,
     Object? language = freezed,
+    Object? leaf = freezed,
+    Object? leafController = freezed,
+    Object? leafWordCount = freezed,
     Object? licence = freezed,
     Object? showErrorMessages = freezed,
     Object? title = freezed,
@@ -3944,18 +3944,6 @@ class __$TypewriterBranchStateCopyWithImpl<$Res>
     Object? titleWordCount = freezed,
   }) {
     return _then(_TypewriterBranchState(
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as Body,
-      bodyController: bodyController == freezed
-          ? _value.bodyController
-          : bodyController // ignore: cast_nullable_to_non_nullable
-              as QuillController,
-      bodyWordCount: bodyWordCount == freezed
-          ? _value.bodyWordCount
-          : bodyWordCount // ignore: cast_nullable_to_non_nullable
-              as int,
       branch: branch == freezed
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
@@ -3996,6 +3984,18 @@ class __$TypewriterBranchStateCopyWithImpl<$Res>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      leaf: leaf == freezed
+          ? _value.leaf
+          : leaf // ignore: cast_nullable_to_non_nullable
+              as Leaf,
+      leafController: leafController == freezed
+          ? _value.leafController
+          : leafController // ignore: cast_nullable_to_non_nullable
+              as QuillController,
+      leafWordCount: leafWordCount == freezed
+          ? _value.leafWordCount
+          : leafWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
       licence: licence == freezed
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
@@ -4024,10 +4024,7 @@ class __$TypewriterBranchStateCopyWithImpl<$Res>
 
 class _$_TypewriterBranchState implements _TypewriterBranchState {
   const _$_TypewriterBranchState(
-      {required this.body,
-      required this.bodyController,
-      required this.bodyWordCount,
-      required this.branch,
+      {required this.branch,
       required this.coverURL,
       required this.currentPageViewIdx,
       required this.endState,
@@ -4037,18 +4034,15 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
       required this.isNSFW,
       required this.isProcessing,
       required this.language,
+      required this.leaf,
+      required this.leafController,
+      required this.leafWordCount,
       required this.licence,
       required this.showErrorMessages,
       required this.title,
       required this.titleController,
       required this.titleWordCount});
 
-  @override
-  final Body body;
-  @override
-  final QuillController bodyController;
-  @override
-  final int bodyWordCount;
   @override
   final Branch branch;
   @override
@@ -4070,6 +4064,12 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
   @override
   final Language language;
   @override
+  final Leaf leaf;
+  @override
+  final QuillController leafController;
+  @override
+  final int leafWordCount;
+  @override
   final Licence licence;
   @override
   final bool showErrorMessages;
@@ -4082,7 +4082,7 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
 
   @override
   String toString() {
-    return 'TypewriterBranchState(body: $body, bodyController: $bodyController, bodyWordCount: $bodyWordCount, branch: $branch, coverURL: $coverURL, currentPageViewIdx: $currentPageViewIdx, endState: $endState, failureOption: $failureOption, genres: $genres, isEdit: $isEdit, isNSFW: $isNSFW, isProcessing: $isProcessing, language: $language, licence: $licence, showErrorMessages: $showErrorMessages, title: $title, titleController: $titleController, titleWordCount: $titleWordCount)';
+    return 'TypewriterBranchState(branch: $branch, coverURL: $coverURL, currentPageViewIdx: $currentPageViewIdx, endState: $endState, failureOption: $failureOption, genres: $genres, isEdit: $isEdit, isNSFW: $isNSFW, isProcessing: $isProcessing, language: $language, leaf: $leaf, leafController: $leafController, leafWordCount: $leafWordCount, licence: $licence, showErrorMessages: $showErrorMessages, title: $title, titleController: $titleController, titleWordCount: $titleWordCount)';
   }
 
   @override
@@ -4090,11 +4090,6 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TypewriterBranchState &&
-            const DeepCollectionEquality().equals(other.body, body) &&
-            const DeepCollectionEquality()
-                .equals(other.bodyController, bodyController) &&
-            const DeepCollectionEquality()
-                .equals(other.bodyWordCount, bodyWordCount) &&
             const DeepCollectionEquality().equals(other.branch, branch) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
             const DeepCollectionEquality()
@@ -4108,6 +4103,11 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
             const DeepCollectionEquality()
                 .equals(other.isProcessing, isProcessing) &&
             const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality().equals(other.leaf, leaf) &&
+            const DeepCollectionEquality()
+                .equals(other.leafController, leafController) &&
+            const DeepCollectionEquality()
+                .equals(other.leafWordCount, leafWordCount) &&
             const DeepCollectionEquality().equals(other.licence, licence) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
@@ -4121,9 +4121,6 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(body),
-      const DeepCollectionEquality().hash(bodyController),
-      const DeepCollectionEquality().hash(bodyWordCount),
       const DeepCollectionEquality().hash(branch),
       const DeepCollectionEquality().hash(coverURL),
       const DeepCollectionEquality().hash(currentPageViewIdx),
@@ -4134,6 +4131,9 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
       const DeepCollectionEquality().hash(isNSFW),
       const DeepCollectionEquality().hash(isProcessing),
       const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(leaf),
+      const DeepCollectionEquality().hash(leafController),
+      const DeepCollectionEquality().hash(leafWordCount),
       const DeepCollectionEquality().hash(licence),
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(title),
@@ -4149,10 +4149,7 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
 
 abstract class _TypewriterBranchState implements TypewriterBranchState {
   const factory _TypewriterBranchState(
-      {required Body body,
-      required QuillController bodyController,
-      required int bodyWordCount,
-      required Branch branch,
+      {required Branch branch,
       required String coverURL,
       required int currentPageViewIdx,
       required TypewriterEndState endState,
@@ -4162,18 +4159,15 @@ abstract class _TypewriterBranchState implements TypewriterBranchState {
       required bool isNSFW,
       required bool isProcessing,
       required Language language,
+      required Leaf leaf,
+      required QuillController leafController,
+      required int leafWordCount,
       required Licence licence,
       required bool showErrorMessages,
       required Title title,
       required TextEditingController titleController,
       required int titleWordCount}) = _$_TypewriterBranchState;
 
-  @override
-  Body get body;
-  @override
-  QuillController get bodyController;
-  @override
-  int get bodyWordCount;
   @override
   Branch get branch;
   @override
@@ -4194,6 +4188,12 @@ abstract class _TypewriterBranchState implements TypewriterBranchState {
   bool get isProcessing;
   @override
   Language get language;
+  @override
+  Leaf get leaf;
+  @override
+  QuillController get leafController;
+  @override
+  int get leafWordCount;
   @override
   Licence get licence;
   @override

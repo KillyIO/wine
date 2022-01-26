@@ -19,7 +19,6 @@ class _$BranchTearOff {
 
   _Branch call(
       {required UniqueID authorUID,
-      required Body body,
       required int bookmarksCount,
       required CoverURL coverURL,
       required List<Genre> genres,
@@ -27,6 +26,7 @@ class _$BranchTearOff {
       required bool isNSFW,
       required bool isPublished,
       required Language language,
+      required Leaf leaf,
       required Licence licence,
       required int likesCount,
       required UniqueID? previousBranchUID,
@@ -36,7 +36,6 @@ class _$BranchTearOff {
       required int viewsCount}) {
     return _Branch(
       authorUID: authorUID,
-      body: body,
       bookmarksCount: bookmarksCount,
       coverURL: coverURL,
       genres: genres,
@@ -44,6 +43,7 @@ class _$BranchTearOff {
       isNSFW: isNSFW,
       isPublished: isPublished,
       language: language,
+      leaf: leaf,
       licence: licence,
       likesCount: likesCount,
       previousBranchUID: previousBranchUID,
@@ -61,7 +61,6 @@ const $Branch = _$BranchTearOff();
 /// @nodoc
 mixin _$Branch {
   UniqueID get authorUID => throw _privateConstructorUsedError;
-  Body get body => throw _privateConstructorUsedError;
   int get bookmarksCount => throw _privateConstructorUsedError;
   CoverURL get coverURL => throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
@@ -69,6 +68,7 @@ mixin _$Branch {
   bool get isNSFW => throw _privateConstructorUsedError;
   bool get isPublished => throw _privateConstructorUsedError;
   Language get language => throw _privateConstructorUsedError;
+  Leaf get leaf => throw _privateConstructorUsedError;
   Licence get licence => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
   UniqueID? get previousBranchUID => throw _privateConstructorUsedError;
@@ -87,7 +87,6 @@ abstract class $BranchCopyWith<$Res> {
       _$BranchCopyWithImpl<$Res>;
   $Res call(
       {UniqueID authorUID,
-      Body body,
       int bookmarksCount,
       CoverURL coverURL,
       List<Genre> genres,
@@ -95,6 +94,7 @@ abstract class $BranchCopyWith<$Res> {
       bool isNSFW,
       bool isPublished,
       Language language,
+      Leaf leaf,
       Licence licence,
       int likesCount,
       UniqueID? previousBranchUID,
@@ -115,7 +115,6 @@ class _$BranchCopyWithImpl<$Res> implements $BranchCopyWith<$Res> {
   @override
   $Res call({
     Object? authorUID = freezed,
-    Object? body = freezed,
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genres = freezed,
@@ -123,6 +122,7 @@ class _$BranchCopyWithImpl<$Res> implements $BranchCopyWith<$Res> {
     Object? isNSFW = freezed,
     Object? isPublished = freezed,
     Object? language = freezed,
+    Object? leaf = freezed,
     Object? licence = freezed,
     Object? likesCount = freezed,
     Object? previousBranchUID = freezed,
@@ -136,10 +136,6 @@ class _$BranchCopyWithImpl<$Res> implements $BranchCopyWith<$Res> {
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as Body,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
@@ -168,6 +164,10 @@ class _$BranchCopyWithImpl<$Res> implements $BranchCopyWith<$Res> {
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      leaf: leaf == freezed
+          ? _value.leaf
+          : leaf // ignore: cast_nullable_to_non_nullable
+              as Leaf,
       licence: licence == freezed
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
@@ -207,7 +207,6 @@ abstract class _$BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
   @override
   $Res call(
       {UniqueID authorUID,
-      Body body,
       int bookmarksCount,
       CoverURL coverURL,
       List<Genre> genres,
@@ -215,6 +214,7 @@ abstract class _$BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
       bool isNSFW,
       bool isPublished,
       Language language,
+      Leaf leaf,
       Licence licence,
       int likesCount,
       UniqueID? previousBranchUID,
@@ -236,7 +236,6 @@ class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
   @override
   $Res call({
     Object? authorUID = freezed,
-    Object? body = freezed,
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genres = freezed,
@@ -244,6 +243,7 @@ class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
     Object? isNSFW = freezed,
     Object? isPublished = freezed,
     Object? language = freezed,
+    Object? leaf = freezed,
     Object? licence = freezed,
     Object? likesCount = freezed,
     Object? previousBranchUID = freezed,
@@ -257,10 +257,6 @@ class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as Body,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
@@ -289,6 +285,10 @@ class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      leaf: leaf == freezed
+          ? _value.leaf
+          : leaf // ignore: cast_nullable_to_non_nullable
+              as Leaf,
       licence: licence == freezed
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
@@ -326,7 +326,6 @@ class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
 class _$_Branch implements _Branch {
   _$_Branch(
       {required this.authorUID,
-      required this.body,
       required this.bookmarksCount,
       required this.coverURL,
       required this.genres,
@@ -334,6 +333,7 @@ class _$_Branch implements _Branch {
       required this.isNSFW,
       required this.isPublished,
       required this.language,
+      required this.leaf,
       required this.licence,
       required this.likesCount,
       required this.previousBranchUID,
@@ -344,8 +344,6 @@ class _$_Branch implements _Branch {
 
   @override
   final UniqueID authorUID;
-  @override
-  final Body body;
   @override
   final int bookmarksCount;
   @override
@@ -360,6 +358,8 @@ class _$_Branch implements _Branch {
   final bool isPublished;
   @override
   final Language language;
+  @override
+  final Leaf leaf;
   @override
   final Licence licence;
   @override
@@ -377,7 +377,7 @@ class _$_Branch implements _Branch {
 
   @override
   String toString() {
-    return 'Branch(authorUID: $authorUID, body: $body, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, licence: $licence, likesCount: $likesCount, previousBranchUID: $previousBranchUID, title: $title, treeUID: $treeUID, uid: $uid, viewsCount: $viewsCount)';
+    return 'Branch(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, index: $index, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, leaf: $leaf, licence: $licence, likesCount: $likesCount, previousBranchUID: $previousBranchUID, title: $title, treeUID: $treeUID, uid: $uid, viewsCount: $viewsCount)';
   }
 
   @override
@@ -386,7 +386,6 @@ class _$_Branch implements _Branch {
         (other.runtimeType == runtimeType &&
             other is _Branch &&
             const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
             const DeepCollectionEquality()
                 .equals(other.bookmarksCount, bookmarksCount) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
@@ -396,6 +395,7 @@ class _$_Branch implements _Branch {
             const DeepCollectionEquality()
                 .equals(other.isPublished, isPublished) &&
             const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality().equals(other.leaf, leaf) &&
             const DeepCollectionEquality().equals(other.licence, licence) &&
             const DeepCollectionEquality()
                 .equals(other.likesCount, likesCount) &&
@@ -412,7 +412,6 @@ class _$_Branch implements _Branch {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(authorUID),
-      const DeepCollectionEquality().hash(body),
       const DeepCollectionEquality().hash(bookmarksCount),
       const DeepCollectionEquality().hash(coverURL),
       const DeepCollectionEquality().hash(genres),
@@ -420,6 +419,7 @@ class _$_Branch implements _Branch {
       const DeepCollectionEquality().hash(isNSFW),
       const DeepCollectionEquality().hash(isPublished),
       const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(leaf),
       const DeepCollectionEquality().hash(licence),
       const DeepCollectionEquality().hash(likesCount),
       const DeepCollectionEquality().hash(previousBranchUID),
@@ -437,7 +437,6 @@ class _$_Branch implements _Branch {
 abstract class _Branch implements Branch {
   factory _Branch(
       {required UniqueID authorUID,
-      required Body body,
       required int bookmarksCount,
       required CoverURL coverURL,
       required List<Genre> genres,
@@ -445,6 +444,7 @@ abstract class _Branch implements Branch {
       required bool isNSFW,
       required bool isPublished,
       required Language language,
+      required Leaf leaf,
       required Licence licence,
       required int likesCount,
       required UniqueID? previousBranchUID,
@@ -455,8 +455,6 @@ abstract class _Branch implements Branch {
 
   @override
   UniqueID get authorUID;
-  @override
-  Body get body;
   @override
   int get bookmarksCount;
   @override
@@ -471,6 +469,8 @@ abstract class _Branch implements Branch {
   bool get isPublished;
   @override
   Language get language;
+  @override
+  Leaf get leaf;
   @override
   Licence get licence;
   @override

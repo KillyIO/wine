@@ -155,15 +155,17 @@ class AppRouter extends _i13.RootStackRouter {
           _i13.RouteConfig(SettingsAccountRoute.name,
               path: 'account', parent: SettingsWrapper.name),
           _i13.RouteConfig(SettingsBranchRoute.name,
-              path: 'settings-branch-page', parent: SettingsWrapper.name),
+              path: 'branch', parent: SettingsWrapper.name),
           _i13.RouteConfig(SettingsTreeRoute.name,
               path: 'tree', parent: SettingsWrapper.name),
           _i13.RouteConfig(SettingsRoute.name,
               path: '', parent: SettingsWrapper.name)
         ]),
         _i13.RouteConfig(SignUpRoute.name, path: '/sign-up'),
-        _i13.RouteConfig(TypewriterBranchId.name, path: '/typewriter-page'),
-        _i13.RouteConfig(TypewriterBranchNew.name, path: '/typewriter-page'),
+        _i13.RouteConfig(TypewriterBranchId.name,
+            path: '/typewriter/branch/:id'),
+        _i13.RouteConfig(TypewriterBranchNew.name,
+            path: '/typewriter/branch/new'),
         _i13.RouteConfig(TypewriterTreeId.name, path: '/typewriter/tree/:id'),
         _i13.RouteConfig(TypewriterTreeNew.name, path: '/typewriter/tree/new')
       ];
@@ -288,7 +290,7 @@ class TypewriterBranchId extends _i13.PageRouteInfo<TypewriterBranchIdArgs> {
       _i15.Tree? tree,
       _i17.TypewriterType type = _i17.TypewriterType.unknown})
       : super(TypewriterBranchId.name,
-            path: '/typewriter-page',
+            path: '/typewriter/branch/:id',
             args: TypewriterBranchIdArgs(
                 key: key, branch: branch, id: id, tree: tree, type: type),
             rawPathParams: {'id': id});
@@ -330,7 +332,7 @@ class TypewriterBranchNew extends _i13.PageRouteInfo<TypewriterBranchNewArgs> {
       _i15.Tree? tree,
       _i17.TypewriterType type = _i17.TypewriterType.unknown})
       : super(TypewriterBranchNew.name,
-            path: '/typewriter-page',
+            path: '/typewriter/branch/new',
             args: TypewriterBranchNewArgs(
                 key: key, branch: branch, id: id, tree: tree, type: type),
             rawPathParams: {'id': id});
@@ -458,8 +460,7 @@ class SettingsAccountRoute extends _i13.PageRouteInfo<void> {
 /// generated route for
 /// [_i10.SettingsBranchPage]
 class SettingsBranchRoute extends _i13.PageRouteInfo<void> {
-  const SettingsBranchRoute()
-      : super(SettingsBranchRoute.name, path: 'settings-branch-page');
+  const SettingsBranchRoute() : super(SettingsBranchRoute.name, path: 'branch');
 
   static const String name = 'SettingsBranchRoute';
 }

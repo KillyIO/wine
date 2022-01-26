@@ -5,9 +5,6 @@ part of 'typewriter_branch_bloc.dart';
 class TypewriterBranchState with _$TypewriterBranchState {
   /// @nodoc
   const factory TypewriterBranchState({
-    required Body body,
-    required QuillController bodyController,
-    required int bodyWordCount,
     required Branch branch,
     required String coverURL,
     required int currentPageViewIdx,
@@ -18,6 +15,9 @@ class TypewriterBranchState with _$TypewriterBranchState {
     required bool isNSFW,
     required bool isProcessing,
     required Language language,
+    required Leaf leaf,
+    required QuillController leafController,
+    required int leafWordCount,
     required Licence licence,
     required bool showErrorMessages,
     required Title title,
@@ -27,9 +27,6 @@ class TypewriterBranchState with _$TypewriterBranchState {
 
   /// @nodoc
   factory TypewriterBranchState.initial() => TypewriterBranchState(
-        body: Body('', const <dynamic>[]),
-        bodyController: QuillController.basic(),
-        bodyWordCount: 0,
         branch: Branch.empty(),
         coverURL: '',
         currentPageViewIdx: 0,
@@ -40,6 +37,9 @@ class TypewriterBranchState with _$TypewriterBranchState {
         isNSFW: false,
         isProcessing: false,
         language: Language(''),
+        leaf: Leaf('', const <dynamic>[]),
+        leafController: QuillController.basic(),
+        leafWordCount: 0,
         licence: Licence(''),
         showErrorMessages: false,
         title: Title(''),

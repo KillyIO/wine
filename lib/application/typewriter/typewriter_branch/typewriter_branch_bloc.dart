@@ -4,7 +4,7 @@ import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart' hide Title;
-import 'package:flutter_quill/flutter_quill.dart';
+import 'package:flutter_quill/flutter_quill.dart' hide Leaf;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -14,9 +14,9 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
-import 'package:wine/domain/branch/body.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/branch/i_branch_repository.dart';
+import 'package:wine/domain/branch/leaf.dart';
 import 'package:wine/domain/branch/licence.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/cover_url.dart';
@@ -83,21 +83,6 @@ class TypewriterBranchBloc
           );
         }
       }
-    });
-    on<BodyChanged>((_, emit) {
-      final valuePlainText = state.bodyController.document.toPlainText();
-      final valueJson = state.bodyController.document.toDelta().toJson();
-
-      final bodyTrim = valuePlainText.trim();
-      final wordCount = bodyTrim.countWords();
-
-      emit(
-        state.copyWith(
-          failureOption: const None(),
-          body: Body(valuePlainText, valueJson),
-          bodyWordCount: wordCount,
-        ),
-      );
     });
     on<BranchOneExistenceChecked>((_, emit) async => await _publish(emit));
     on<DeleteButtonPressed>((_, emit) async {
@@ -169,8 +154,6 @@ class TypewriterBranchBloc
         (user) {
           emit(
             state.copyWith(
-              bodyController: QuillController.basic()
-                ..changes.listen((_) => add(const BodyChanged())),
               branch: state.branch.copyWith(
                 authorUID: user.uid,
                 index: (value.previousBranch?.index ?? 0) + 1,
@@ -181,6 +164,8 @@ class TypewriterBranchBloc
               genres: value.previousBranch?.genres ?? value.tree.genres,
               isNSFW: value.previousBranch?.isNSFW ?? value.tree.isNSFW,
               language: value.previousBranch?.language ?? value.tree.language,
+              leafController: QuillController.basic()
+                ..changes.listen((_) => add(const LeafChanged())),
             ),
           );
 
@@ -208,14 +193,14 @@ class TypewriterBranchBloc
       if (branch != null) {
         emit(
           state.copyWith(
-            body: branch.body,
-            bodyWordCount: branch.body.getOrNull()?.countWords() ?? 0,
             coverURL: branch.coverURL.getOrCrash(),
             genres: branch.genres,
             isEdit: true,
             isNSFW: branch.isNSFW,
             isProcessing: false,
             language: branch.language,
+            leaf: branch.leaf,
+            leafWordCount: branch.leaf.getOrNull()?.countWords() ?? 0,
             licence: branch.licence,
             title: branch.title,
             titleWordCount: branch.title.getOrNull()?.countWords() ?? 0,
@@ -226,8 +211,6 @@ class TypewriterBranchBloc
           (branch) {
             emit(
               state.copyWith(
-                body: branch.body,
-                bodyWordCount: branch.body.getOrNull()?.countWords() ?? 0,
                 branch: branch,
                 coverURL: branch.coverURL.getOrCrash(),
                 genres: branch.genres,
@@ -235,6 +218,8 @@ class TypewriterBranchBloc
                 isNSFW: branch.isNSFW,
                 isProcessing: false,
                 language: branch.language,
+                leaf: branch.leaf,
+                leafWordCount: branch.leaf.getOrNull()?.countWords() ?? 0,
                 licence: branch.licence,
                 title: branch.title,
                 titleWordCount: branch.title.getOrNull()?.countWords() ?? 0,
@@ -251,6 +236,21 @@ class TypewriterBranchBloc
           },
         );
       }
+    });
+    on<LeafChanged>((_, emit) {
+      final valuePlainText = state.leafController.document.toPlainText();
+      final valueJson = state.leafController.document.toDelta().toJson();
+
+      final leafTrim = valuePlainText.trim();
+      final wordCount = leafTrim.countWords();
+
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          leaf: Leaf(valuePlainText, valueJson),
+          leafWordCount: wordCount,
+        ),
+      );
     });
     on<LicenceSelected>(
       (value, emit) => emit(
@@ -278,9 +278,9 @@ class TypewriterBranchBloc
       }
     });
     on<PublishButtonPressed>((_, emit) async {
-      final isValid = state.body.isValid &&
-          state.genres.isNotEmpty &&
+      final isValid = state.genres.isNotEmpty &&
           state.language.isValid &&
+          state.leaf.isValid &&
           state.title.isValid;
 
       if (isValid) {
@@ -314,11 +314,11 @@ class TypewriterBranchBloc
     });
     on<SaveButtonPressed>((_, emit) async {
       final branch = state.branch.copyWith(
-        body: Body.forSaving(state.body.value),
         coverURL: CoverURL(state.coverURL),
         genres: state.genres,
         isNSFW: state.isNSFW,
         language: Language.forSaving(state.language.value),
+        leaf: Leaf.forSaving(state.leaf.value),
         licence: Licence.forSaving(state.licence.value),
         title: Title.forSaving(state.title.value),
       );
@@ -383,13 +383,13 @@ class TypewriterBranchBloc
 
   FutureOr<void> _publish(Emitter<TypewriterBranchState> emit) async {
     final branch = state.branch.copyWith(
-      body: state.body,
       coverURL: isURL(state.coverURL)
           ? CoverURL(state.coverURL)
           : CoverURL.fromFile(state.coverURL),
       genres: state.genres,
       isNSFW: state.isNSFW,
       language: state.language,
+      leaf: state.leaf,
       licence: state.licence,
       isPublished: true,
       title: state.title,

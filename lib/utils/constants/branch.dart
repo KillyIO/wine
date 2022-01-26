@@ -1,8 +1,8 @@
 /// @nodoc
+const int leafMinWords = 300;
+
+/// @nodoc
+const int leafMaxWords = 1350;
+
+/// @nodoc
 const int maxNextBranchesToDisplay = 10;
-
-/// @nodoc
-const int bodyMinWords = 300;
-
-/// @nodoc
-const int bodyMaxWords = 1350;
