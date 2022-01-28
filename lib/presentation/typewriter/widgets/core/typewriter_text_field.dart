@@ -32,7 +32,7 @@ class TypewriterTextField extends StatelessWidget {
   final String label;
 
   /// @nodoc
-  final int maxLines;
+  final int? maxLines;
 
   /// @nodoc
   final void Function(String) onChanged;
@@ -54,6 +54,7 @@ class TypewriterTextField extends StatelessWidget {
         TextFieldLabel(title: label),
         TextFormField(
           controller: controller,
+          focusNode: FocusNode(),
           textCapitalization: TextCapitalization.sentences,
           decoration: InputDecoration(
             hintText: hintText,
