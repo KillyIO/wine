@@ -30,10 +30,8 @@ class SessionsRepository implements ISessionsRepository {
 
     if (firebaseUser != null) {
       return _isar.writeTxn((isar) async {
-        final isDeleted = await isar.isarUsers
-            .where()
-            .uidEqualTo(firebaseUser.uid)
-            .deleteFirst();
+        final isDeleted =
+            await isar.users.where().uidEqualTo(firebaseUser.uid).deleteFirst();
 
         if (isDeleted) {
           return Ok(unit);
@@ -49,10 +47,8 @@ class SessionsRepository implements ISessionsRepository {
     final firebaseUser = _firebaseAuth.currentUser;
 
     if (firebaseUser != null) {
-      final session = await _isar.isarUsers
-          .where()
-          .uidEqualTo(firebaseUser.uid)
-          .findFirst();
+      final session =
+          await _isar.users.where().uidEqualTo(firebaseUser.uid).findFirst();
 
       if (session != null) {
         return Ok(session.toDomain());
@@ -67,23 +63,19 @@ class SessionsRepository implements ISessionsRepository {
 
     if (firebaseUser != null) {
       var userAdapter = UserDTO.fromDomain(user).toAdapter();
-      var session = await _isar.isarUsers
-          .where()
-          .uidEqualTo(firebaseUser.uid)
-          .findFirst();
+      var session =
+          await _isar.users.where().uidEqualTo(firebaseUser.uid).findFirst();
 
       if (session != null) {
         userAdapter = userAdapter.copyWith(id: session.id);
       }
 
       await _isar.writeTxn((isar) async {
-        await isar.isarUsers.put(userAdapter);
+        await isar.users.put(userAdapter);
       });
 
-      session = await _isar.isarUsers
-          .where()
-          .uidEqualTo(firebaseUser.uid)
-          .findFirst();
+      session =
+          await _isar.users.where().uidEqualTo(firebaseUser.uid).findFirst();
 
       if (session != null &&
           session.updatedAt.compareTo(userAdapter.updatedAt) >= 0) {

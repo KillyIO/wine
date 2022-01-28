@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_use_of_protected_member
+
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:isar/isar.dart';
@@ -74,7 +76,7 @@ void main() {
 
   group('fetchSettings -', () {
     setUp(() {
-      when(() => _isar.isarSettingss).thenReturn(_collection);
+      when(() => _isar.settings).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
         () => _where.addWhereClause<QAfterWhereClause>(any()),
@@ -143,7 +145,7 @@ void main() {
 
   group('updateSettings -', () {
     setUp(() {
-      when(() => _isar.isarSettingss).thenReturn(_collection);
+      when(() => _isar.settings).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
         () => _where.addWhereClause<QAfterWhereClause>(any()),

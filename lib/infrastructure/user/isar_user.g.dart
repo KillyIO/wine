@@ -6,10 +6,10 @@ part of 'isar_user.dart';
 // IsarCollectionGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, invalid_use_of_protected_member
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member
 
 extension GetIsarUserCollection on Isar {
-  IsarCollection<IsarUser> get isarUsers {
+  IsarCollection<IsarUser> get users {
     return getCollection('IsarUser');
   }
 }
@@ -17,16 +17,16 @@ extension GetIsarUserCollection on Isar {
 final IsarUserSchema = CollectionSchema(
   name: 'IsarUser',
   schema:
-      '{"name":"IsarUser","properties":[{"name":"emailAddress","type":"String"},{"name":"uid","type":"String"},{"name":"updatedAt","type":"Long"},{"name":"username","type":"String"},{"name":"stringify","type":"Byte"},{"name":"hashCode","type":"Long"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
+      '{"name":"IsarUser","properties":[{"name":"emailAddress","type":"String"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Byte"},{"name":"uid","type":"String"},{"name":"updatedAt","type":"Long"},{"name":"username","type":"String"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
   adapter: const _IsarUserAdapter(),
   idName: 'id',
   propertyIds: {
     'emailAddress': 0,
-    'uid': 1,
-    'updatedAt': 2,
-    'username': 3,
-    'stringify': 4,
-    'hashCode': 5
+    'hashCode': 1,
+    'stringify': 2,
+    'uid': 3,
+    'updatedAt': 4,
+    'username': 5
   },
   indexIds: {'uid': 0},
   indexTypes: {
@@ -38,6 +38,8 @@ final IsarUserSchema = CollectionSchema(
   backlinkIds: {},
   linkedCollections: [],
   getId: (obj) => obj.id,
+  setId: null,
+  getLinks: (obj) => [],
   version: 0,
 );
 
@@ -45,50 +47,50 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
   const _IsarUserAdapter();
 
   @override
-  int serialize(IsarCollection<IsarUser> collection, RawObject rawObj,
+  int serialize(IsarCollection<IsarUser> collection, IsarRawObject rawObj,
       IsarUser object, List<int> offsets,
       [int? existingBufferSize]) {
-    rawObj.id = object.id ?? Isar.minId;
+    rawObj.id = object.id ?? Isar.autoIncrement;
     var dynamicSize = 0;
     final value0 = object.emailAddress;
     final _emailAddress = BinaryWriter.utf8Encoder.convert(value0);
     dynamicSize += _emailAddress.length;
-    final value1 = object.uid;
-    final _uid = BinaryWriter.utf8Encoder.convert(value1);
+    final value1 = object.hashCode;
+    final _hashCode = value1;
+    final value2 = object.stringify;
+    final _stringify = value2;
+    final value3 = object.uid;
+    final _uid = BinaryWriter.utf8Encoder.convert(value3);
     dynamicSize += _uid.length;
-    final value2 = object.updatedAt;
-    final _updatedAt = value2;
-    final value3 = object.username;
-    final _username = BinaryWriter.utf8Encoder.convert(value3);
+    final value4 = object.updatedAt;
+    final _updatedAt = value4;
+    final value5 = object.username;
+    final _username = BinaryWriter.utf8Encoder.convert(value5);
     dynamicSize += _username.length;
-    final value4 = object.stringify;
-    final _stringify = value4;
-    final value5 = object.hashCode;
-    final _hashCode = value5;
-    final size = dynamicSize + 51;
+    final size = dynamicSize + 43;
 
     late int bufferSize;
     if (existingBufferSize != null) {
       if (existingBufferSize < size) {
-        malloc.free(rawObj.buffer);
-        rawObj.buffer = malloc(size);
+        isarFree(rawObj.buffer);
+        rawObj.buffer = isarMalloc(size);
         bufferSize = size;
       } else {
         bufferSize = existingBufferSize;
       }
     } else {
-      rawObj.buffer = malloc(size);
+      rawObj.buffer = isarMalloc(size);
       bufferSize = size;
     }
     rawObj.buffer_length = size;
-    final buffer = rawObj.buffer.asTypedList(size);
-    final writer = BinaryWriter(buffer, 51);
+    final buffer = bufAsBytes(rawObj.buffer, size);
+    final writer = BinaryWriter(buffer, 43);
     writer.writeBytes(offsets[0], _emailAddress);
-    writer.writeBytes(offsets[1], _uid);
-    writer.writeDateTime(offsets[2], _updatedAt);
-    writer.writeBytes(offsets[3], _username);
-    writer.writeBool(offsets[4], _stringify);
-    writer.writeLong(offsets[5], _hashCode);
+    writer.writeLong(offsets[1], _hashCode);
+    writer.writeBool(offsets[2], _stringify);
+    writer.writeBytes(offsets[3], _uid);
+    writer.writeDateTime(offsets[4], _updatedAt);
+    writer.writeBytes(offsets[5], _username);
     return bufferSize;
   }
 
@@ -98,9 +100,9 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
     final object = IsarUser(
       emailAddress: reader.readString(offsets[0]),
       id: id,
-      uid: reader.readString(offsets[1]),
-      updatedAt: reader.readDateTime(offsets[2]),
-      username: reader.readString(offsets[3]),
+      uid: reader.readString(offsets[3]),
+      updatedAt: reader.readDateTime(offsets[4]),
+      username: reader.readString(offsets[5]),
     );
     return object;
   }
@@ -114,15 +116,15 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
       case 0:
         return (reader.readString(offset)) as P;
       case 1:
-        return (reader.readString(offset)) as P;
+        return (reader.readLong(offset)) as P;
       case 2:
-        return (reader.readDateTime(offset)) as P;
+        return (reader.readBool(offset)) as P;
       case 3:
         return (reader.readString(offset)) as P;
       case 4:
-        return (reader.readBool(offset)) as P;
+        return (reader.readDateTime(offset)) as P;
       case 5:
-        return (reader.readLong(offset)) as P;
+        return (reader.readString(offset)) as P;
       default:
         throw 'Illegal propertyIndex';
     }
@@ -131,18 +133,18 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
 
 extension IsarUserQueryWhereSort on QueryBuilder<IsarUser, IsarUser, QWhere> {
   QueryBuilder<IsarUser, IsarUser, QAfterWhere> anyId() {
-    return addWhereClause(WhereClause(indexName: '_id'));
+    return addWhereClause(const WhereClause(indexName: null));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterWhere> anyUid() {
-    return addWhereClause(WhereClause(indexName: 'uid'));
+    return addWhereClause(const WhereClause(indexName: 'uid'));
   }
 }
 
 extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idEqualTo(int? id) {
     return addWhereClause(WhereClause(
-      indexName: '_id',
+      indexName: null,
       lower: [id],
       includeLower: true,
       upper: [id],
@@ -153,42 +155,61 @@ extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idNotEqualTo(int? id) {
     if (whereSortInternal == Sort.asc) {
       return addWhereClause(WhereClause(
-        indexName: '_id',
+        indexName: null,
         upper: [id],
         includeUpper: false,
       )).addWhereClause(WhereClause(
-        indexName: '_id',
+        indexName: null,
         lower: [id],
         includeLower: false,
       ));
     } else {
       return addWhereClause(WhereClause(
-        indexName: '_id',
+        indexName: null,
         lower: [id],
         includeLower: false,
       )).addWhereClause(WhereClause(
-        indexName: '_id',
+        indexName: null,
         upper: [id],
         includeUpper: false,
       ));
     }
   }
 
-  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idIsNull() {
+  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idGreaterThan(
+    int? id, {
+    bool include = false,
+  }) {
     return addWhereClause(WhereClause(
-      indexName: '_id',
-      upper: [null],
-      includeUpper: true,
-      lower: [null],
-      includeLower: true,
+      indexName: null,
+      lower: [id],
+      includeLower: include,
     ));
   }
 
-  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idIsNotNull() {
+  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idLessThan(
+    int? id, {
+    bool include = false,
+  }) {
     return addWhereClause(WhereClause(
-      indexName: '_id',
-      lower: [null],
-      includeLower: false,
+      indexName: null,
+      upper: [id],
+      includeUpper: include,
+    ));
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idBetween(
+    int? lowerId,
+    int? upperId, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return addWhereClause(WhereClause(
+      indexName: null,
+      lower: [lowerId],
+      includeLower: includeLower,
+      upper: [upperId],
+      includeUpper: includeUpper,
     ));
   }
 
@@ -246,9 +267,11 @@ extension IsarUserQueryFilter
       emailAddressGreaterThan(
     String value, {
     bool caseSensitive = true,
+    bool include = false,
   }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.gt,
+      include: include,
       property: 'emailAddress',
       value: value,
       caseSensitive: caseSensitive,
@@ -258,9 +281,11 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> emailAddressLessThan(
     String value, {
     bool caseSensitive = true,
+    bool include = false,
   }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.lt,
+      include: include,
       property: 'emailAddress',
       value: value,
       caseSensitive: caseSensitive,
@@ -271,17 +296,24 @@ extension IsarUserQueryFilter
     String lower,
     String upper, {
     bool caseSensitive = true,
+    bool includeLower = true,
+    bool includeUpper = true,
   }) {
     return addFilterCondition(FilterCondition.between(
       property: 'emailAddress',
       lower: lower,
+      includeLower: includeLower,
       upper: upper,
+      includeUpper: includeUpper,
       caseSensitive: caseSensitive,
     ));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition>
-      emailAddressStartsWith(String value, {bool caseSensitive = true}) {
+      emailAddressStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.startsWith,
       property: 'emailAddress',
@@ -291,8 +323,9 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> emailAddressEndsWith(
-      String value,
-      {bool caseSensitive = true}) {
+    String value, {
+    bool caseSensitive = true,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.endsWith,
       property: 'emailAddress',
@@ -323,6 +356,54 @@ extension IsarUserQueryFilter
     ));
   }
 
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeEqualTo(
+      int value) {
+    return addFilterCondition(FilterCondition(
+      type: ConditionType.eq,
+      property: 'hashCode',
+      value: value,
+    ));
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeGreaterThan(
+    int value, {
+    bool include = false,
+  }) {
+    return addFilterCondition(FilterCondition(
+      type: ConditionType.gt,
+      include: include,
+      property: 'hashCode',
+      value: value,
+    ));
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeLessThan(
+    int value, {
+    bool include = false,
+  }) {
+    return addFilterCondition(FilterCondition(
+      type: ConditionType.lt,
+      include: include,
+      property: 'hashCode',
+      value: value,
+    ));
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeBetween(
+    int lower,
+    int upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return addFilterCondition(FilterCondition.between(
+      property: 'hashCode',
+      lower: lower,
+      includeLower: includeLower,
+      upper: upper,
+      includeUpper: includeUpper,
+    ));
+  }
+
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idIsNull() {
     return addFilterCondition(FilterCondition(
       type: ConditionType.isNull,
@@ -332,8 +413,7 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idEqualTo(
-    int? value,
-  ) {
+      int? value) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.eq,
       property: 'id',
@@ -342,20 +422,24 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idGreaterThan(
-    int? value,
-  ) {
+    int? value, {
+    bool include = false,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.gt,
+      include: include,
       property: 'id',
       value: value,
     ));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idLessThan(
-    int? value,
-  ) {
+    int? value, {
+    bool include = false,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.lt,
+      include: include,
       property: 'id',
       value: value,
     ));
@@ -363,12 +447,25 @@ extension IsarUserQueryFilter
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idBetween(
     int? lower,
-    int? upper,
-  ) {
+    int? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
     return addFilterCondition(FilterCondition.between(
       property: 'id',
       lower: lower,
+      includeLower: includeLower,
       upper: upper,
+      includeUpper: includeUpper,
+    ));
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> stringifyEqualTo(
+      bool value) {
+    return addFilterCondition(FilterCondition(
+      type: ConditionType.eq,
+      property: 'stringify',
+      value: value,
     ));
   }
 
@@ -387,9 +484,11 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> uidGreaterThan(
     String value, {
     bool caseSensitive = true,
+    bool include = false,
   }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.gt,
+      include: include,
       property: 'uid',
       value: value,
       caseSensitive: caseSensitive,
@@ -399,9 +498,11 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> uidLessThan(
     String value, {
     bool caseSensitive = true,
+    bool include = false,
   }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.lt,
+      include: include,
       property: 'uid',
       value: value,
       caseSensitive: caseSensitive,
@@ -412,18 +513,23 @@ extension IsarUserQueryFilter
     String lower,
     String upper, {
     bool caseSensitive = true,
+    bool includeLower = true,
+    bool includeUpper = true,
   }) {
     return addFilterCondition(FilterCondition.between(
       property: 'uid',
       lower: lower,
+      includeLower: includeLower,
       upper: upper,
+      includeUpper: includeUpper,
       caseSensitive: caseSensitive,
     ));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> uidStartsWith(
-      String value,
-      {bool caseSensitive = true}) {
+    String value, {
+    bool caseSensitive = true,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.startsWith,
       property: 'uid',
@@ -433,8 +539,9 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> uidEndsWith(
-      String value,
-      {bool caseSensitive = true}) {
+    String value, {
+    bool caseSensitive = true,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.endsWith,
       property: 'uid',
@@ -466,8 +573,7 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtEqualTo(
-    DateTime value,
-  ) {
+      DateTime value) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.eq,
       property: 'updatedAt',
@@ -476,20 +582,24 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtGreaterThan(
-    DateTime value,
-  ) {
+    DateTime value, {
+    bool include = false,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.gt,
+      include: include,
       property: 'updatedAt',
       value: value,
     ));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtLessThan(
-    DateTime value,
-  ) {
+    DateTime value, {
+    bool include = false,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.lt,
+      include: include,
       property: 'updatedAt',
       value: value,
     ));
@@ -497,12 +607,16 @@ extension IsarUserQueryFilter
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtBetween(
     DateTime lower,
-    DateTime upper,
-  ) {
+    DateTime upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
     return addFilterCondition(FilterCondition.between(
       property: 'updatedAt',
       lower: lower,
+      includeLower: includeLower,
       upper: upper,
+      includeUpper: includeUpper,
     ));
   }
 
@@ -521,9 +635,11 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> usernameGreaterThan(
     String value, {
     bool caseSensitive = true,
+    bool include = false,
   }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.gt,
+      include: include,
       property: 'username',
       value: value,
       caseSensitive: caseSensitive,
@@ -533,9 +649,11 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> usernameLessThan(
     String value, {
     bool caseSensitive = true,
+    bool include = false,
   }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.lt,
+      include: include,
       property: 'username',
       value: value,
       caseSensitive: caseSensitive,
@@ -546,18 +664,23 @@ extension IsarUserQueryFilter
     String lower,
     String upper, {
     bool caseSensitive = true,
+    bool includeLower = true,
+    bool includeUpper = true,
   }) {
     return addFilterCondition(FilterCondition.between(
       property: 'username',
       lower: lower,
+      includeLower: includeLower,
       upper: upper,
+      includeUpper: includeUpper,
       caseSensitive: caseSensitive,
     ));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> usernameStartsWith(
-      String value,
-      {bool caseSensitive = true}) {
+    String value, {
+    bool caseSensitive = true,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.startsWith,
       property: 'username',
@@ -567,8 +690,9 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> usernameEndsWith(
-      String value,
-      {bool caseSensitive = true}) {
+    String value, {
+    bool caseSensitive = true,
+  }) {
     return addFilterCondition(FilterCondition(
       type: ConditionType.endsWith,
       property: 'username',
@@ -598,57 +722,6 @@ extension IsarUserQueryFilter
       caseSensitive: caseSensitive,
     ));
   }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> stringifyEqualTo(
-    bool value,
-  ) {
-    return addFilterCondition(FilterCondition(
-      type: ConditionType.eq,
-      property: 'stringify',
-      value: value,
-    ));
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeEqualTo(
-    int value,
-  ) {
-    return addFilterCondition(FilterCondition(
-      type: ConditionType.eq,
-      property: 'hashCode',
-      value: value,
-    ));
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeGreaterThan(
-    int value,
-  ) {
-    return addFilterCondition(FilterCondition(
-      type: ConditionType.gt,
-      property: 'hashCode',
-      value: value,
-    ));
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeLessThan(
-    int value,
-  ) {
-    return addFilterCondition(FilterCondition(
-      type: ConditionType.lt,
-      property: 'hashCode',
-      value: value,
-    ));
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeBetween(
-    int lower,
-    int upper,
-  ) {
-    return addFilterCondition(FilterCondition.between(
-      property: 'hashCode',
-      lower: lower,
-      upper: upper,
-    ));
-  }
 }
 
 extension IsarUserQueryWhereSortBy
@@ -661,12 +734,28 @@ extension IsarUserQueryWhereSortBy
     return addSortByInternal('emailAddress', Sort.desc);
   }
 
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByHashCode() {
+    return addSortByInternal('hashCode', Sort.asc);
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByHashCodeDesc() {
+    return addSortByInternal('hashCode', Sort.desc);
+  }
+
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortById() {
     return addSortByInternal('id', Sort.asc);
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByIdDesc() {
     return addSortByInternal('id', Sort.desc);
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByStringify() {
+    return addSortByInternal('stringify', Sort.asc);
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByStringifyDesc() {
+    return addSortByInternal('stringify', Sort.desc);
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByUid() {
@@ -692,22 +781,6 @@ extension IsarUserQueryWhereSortBy
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByUsernameDesc() {
     return addSortByInternal('username', Sort.desc);
   }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByStringify() {
-    return addSortByInternal('stringify', Sort.asc);
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByStringifyDesc() {
-    return addSortByInternal('stringify', Sort.desc);
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByHashCode() {
-    return addSortByInternal('hashCode', Sort.asc);
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByHashCodeDesc() {
-    return addSortByInternal('hashCode', Sort.desc);
-  }
 }
 
 extension IsarUserQueryWhereSortThenBy
@@ -720,12 +793,28 @@ extension IsarUserQueryWhereSortThenBy
     return addSortByInternal('emailAddress', Sort.desc);
   }
 
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByHashCode() {
+    return addSortByInternal('hashCode', Sort.asc);
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByHashCodeDesc() {
+    return addSortByInternal('hashCode', Sort.desc);
+  }
+
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenById() {
     return addSortByInternal('id', Sort.asc);
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByIdDesc() {
     return addSortByInternal('id', Sort.desc);
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByStringify() {
+    return addSortByInternal('stringify', Sort.asc);
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByStringifyDesc() {
+    return addSortByInternal('stringify', Sort.desc);
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByUid() {
@@ -751,22 +840,6 @@ extension IsarUserQueryWhereSortThenBy
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByUsernameDesc() {
     return addSortByInternal('username', Sort.desc);
   }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByStringify() {
-    return addSortByInternal('stringify', Sort.asc);
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByStringifyDesc() {
-    return addSortByInternal('stringify', Sort.desc);
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByHashCode() {
-    return addSortByInternal('hashCode', Sort.asc);
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByHashCodeDesc() {
-    return addSortByInternal('hashCode', Sort.desc);
-  }
 }
 
 extension IsarUserQueryWhereDistinct
@@ -776,8 +849,16 @@ extension IsarUserQueryWhereDistinct
     return addDistinctByInternal('emailAddress', caseSensitive: caseSensitive);
   }
 
+  QueryBuilder<IsarUser, IsarUser, QDistinct> distinctByHashCode() {
+    return addDistinctByInternal('hashCode');
+  }
+
   QueryBuilder<IsarUser, IsarUser, QDistinct> distinctById() {
     return addDistinctByInternal('id');
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QDistinct> distinctByStringify() {
+    return addDistinctByInternal('stringify');
   }
 
   QueryBuilder<IsarUser, IsarUser, QDistinct> distinctByUid(
@@ -793,14 +874,6 @@ extension IsarUserQueryWhereDistinct
       {bool caseSensitive = true}) {
     return addDistinctByInternal('username', caseSensitive: caseSensitive);
   }
-
-  QueryBuilder<IsarUser, IsarUser, QDistinct> distinctByStringify() {
-    return addDistinctByInternal('stringify');
-  }
-
-  QueryBuilder<IsarUser, IsarUser, QDistinct> distinctByHashCode() {
-    return addDistinctByInternal('hashCode');
-  }
 }
 
 extension IsarUserQueryProperty
@@ -809,8 +882,16 @@ extension IsarUserQueryProperty
     return addPropertyName('emailAddress');
   }
 
+  QueryBuilder<IsarUser, int, QQueryOperations> hashCodeProperty() {
+    return addPropertyName('hashCode');
+  }
+
   QueryBuilder<IsarUser, int?, QQueryOperations> idProperty() {
     return addPropertyName('id');
+  }
+
+  QueryBuilder<IsarUser, bool, QQueryOperations> stringifyProperty() {
+    return addPropertyName('stringify');
   }
 
   QueryBuilder<IsarUser, String, QQueryOperations> uidProperty() {
@@ -823,13 +904,5 @@ extension IsarUserQueryProperty
 
   QueryBuilder<IsarUser, String, QQueryOperations> usernameProperty() {
     return addPropertyName('username');
-  }
-
-  QueryBuilder<IsarUser, bool, QQueryOperations> stringifyProperty() {
-    return addPropertyName('stringify');
-  }
-
-  QueryBuilder<IsarUser, int, QQueryOperations> hashCodeProperty() {
-    return addPropertyName('hashCode');
   }
 }

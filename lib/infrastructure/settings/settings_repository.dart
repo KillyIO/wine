@@ -30,7 +30,7 @@ class SettingsRepository implements ISettingsRepository {
 
     if (firebaseUser != null) {
       return _isar.writeTxn((isar) async {
-        final isDeleted = await isar.isarSettingss
+        final isDeleted = await isar.settings
             .where()
             .uidEqualTo(firebaseUser.uid)
             .deleteFirst();
@@ -49,10 +49,8 @@ class SettingsRepository implements ISettingsRepository {
     final firebaseUser = _firebaseAuth.currentUser;
 
     if (firebaseUser != null) {
-      final settings = await _isar.isarSettingss
-          .where()
-          .uidEqualTo(firebaseUser.uid)
-          .findFirst();
+      final settings =
+          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
 
       if (settings != null) {
         return Ok(settings.toDomain());
@@ -67,13 +65,13 @@ class SettingsRepository implements ISettingsRepository {
 
     if (firebaseUser != null) {
       return _isar.writeTxn((isar) async {
-        final settings = await isar.isarSettingss
+        final settings = await isar.settings
             .where()
             .uidEqualTo(firebaseUser.uid)
             .findFirst();
 
         if (settings == null) {
-          await isar.isarSettingss.put(
+          await isar.settings.put(
             SettingsDTO.fromDomain(
               const Settings(
                 enableBranchesViewsCount: false,
@@ -100,10 +98,8 @@ class SettingsRepository implements ISettingsRepository {
     final firebaseUser = _firebaseAuth.currentUser;
 
     if (firebaseUser != null) {
-      var isarSettings = await _isar.isarSettingss
-          .where()
-          .uidEqualTo(firebaseUser.uid)
-          .findFirst();
+      var isarSettings =
+          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
 
       if (isarSettings == null) {
         return Err(const SettingsFailure.settingsNotFound());
@@ -114,13 +110,11 @@ class SettingsRepository implements ISettingsRepository {
           .copyWith(id: isarSettings.id, uid: firebaseUser.uid);
 
       await _isar.writeTxn((isar) async {
-        await isar.isarSettingss.put(settingsAdapter);
+        await isar.settings.put(settingsAdapter);
       });
 
-      isarSettings = await _isar.isarSettingss
-          .where()
-          .uidEqualTo(firebaseUser.uid)
-          .findFirst();
+      isarSettings =
+          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
 
       if (isarSettings != null && isarSettings == settingsAdapter) {
         return Ok(unit);

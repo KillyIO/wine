@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_use_of_protected_member
+
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:isar/isar.dart';
@@ -73,7 +75,7 @@ void main() {
 
   group('fetchSession -', () {
     setUp(() {
-      when(() => _isar.isarUsers).thenReturn(_collection);
+      when(() => _isar.users).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
         () => _where.addWhereClause<QAfterWhereClause>(any()),
@@ -108,7 +110,7 @@ void main() {
 
   group('insertSession -', () {
     setUp(() {
-      when(() => _isar.isarUsers).thenReturn(_collection);
+      when(() => _isar.users).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
         () => _where.addWhereClause<QAfterWhereClause>(any()),
