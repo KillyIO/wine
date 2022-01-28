@@ -76,11 +76,16 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
         state.tree.uid,
       ))
           .match(
-        (updated) {
+        (isUpdated) {
+          final viewsCount = state.tree.viewsCount;
+
           emit(
             state.copyWith(
               failureOption: const None(),
-              isProcessing: updated,
+              isProcessing: isUpdated,
+              tree: state.tree.copyWith(
+                viewsCount: isUpdated ? viewsCount + 1 : viewsCount,
+              ),
             ),
           );
 
