@@ -16,6 +16,8 @@ class TreeStats extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         BlocBuilder<TreeBloc, TreeState>(
+          buildWhen: (previous, current) =>
+              current.tree.viewsCount != previous.tree.viewsCount,
           builder: (context, state) {
             return LikeButton(
               countBuilder: (count, _, text) {
