@@ -12,31 +12,31 @@ dependencies:
   assorted_layout_widgets: ^5.5.0
   auto_route: ^3.2.2
   cached_network_image: ^3.2.0
-  cloud_firestore: ^3.1.6
+  cloud_firestore: ^3.1.7
   cupertino_icons: ^1.0.4
   devicelocale: ^0.5.0
   equatable: ^2.0.3
-  firebase_auth: ^3.3.5
-  firebase_core: ^1.11.0
-  firebase_storage: ^10.2.5
+  firebase_auth: ^3.3.6
+  firebase_core: ^1.12.0
+  firebase_storage: ^10.2.6
   flare_flutter: ^3.0.2
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_native_splash: ^1.3.3
-  flutter_quill: ^3.6.4
-  flutter_staggered_grid_view: ^0.6.0
+  flutter_quill: ^3.8.3
+  flutter_staggered_grid_view: ^0.6.1
   freezed_annotation: ^1.1.0
   get_it: ^7.2.0
   google_sign_in: ^5.2.3
   image_cropper: ^1.4.1
-  image_picker: ^0.8.4+4
+  image_picker: ^0.8.4+5
   injectable: ^1.5.3
   intl: ^0.17.0
   introduction_screen: ^2.1.0
-  isar: ^1.0.5
-  isar_connect: ^1.0.5
-  isar_flutter_libs: ^1.0.5
+  isar: ^2.0.0
+  isar_connect: ^2.0.0
+  isar_flutter_libs: ^2.0.0
   json_annotation: ^4.4.0
   like_button: ^2.0.4
   line_icons: ^2.0.1
@@ -52,6 +52,9 @@ dependencies:
   time: ^2.1.0
   uuid: ^3.0.5
 
+dependency_overrides:
+  analyzer: ^3.2.0
+
 dev_dependencies:
   auto_route_generator: ^3.2.1
   bloc_test: ^9.0.2
@@ -61,9 +64,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   fluttericon: ^2.0.0
-  freezed: ^1.1.0
-  injectable_generator: ^1.5.2
-  isar_generator: ^1.0.5
+  freezed: ^1.1.1
+  injectable_generator: ^1.5.3
+  isar_generator: ^2.0.0
   json_serializable: ^6.1.4
   mocktail: ^0.2.0
   very_good_analysis: ^2.4.0

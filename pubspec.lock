@@ -7,14 +7,14 @@ packages:
       name: _fe_analyzer_shared
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "31.0.0"
+    version: "34.0.0"
   analyzer:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.8.0"
+    version: "3.2.0"
   archive:
     dependency: transitive
     description:
@@ -196,21 +196,21 @@ packages:
       name: cloud_firestore
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.6"
+    version: "3.1.7"
   cloud_firestore_platform_interface:
     dependency: transitive
     description:
       name: cloud_firestore_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.4.11"
+    version: "5.4.12"
   cloud_firestore_web:
     dependency: transitive
     description:
       name: cloud_firestore_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.6.6"
+    version: "2.6.7"
   code_builder:
     dependency: transitive
     description:
@@ -343,63 +343,63 @@ packages:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.3.5"
+    version: "3.3.6"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
       name: firebase_auth_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.10"
+    version: "6.1.11"
   firebase_auth_web:
     dependency: transitive
     description:
       name: firebase_auth_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.3.6"
+    version: "3.3.7"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.11.0"
+    version: "1.12.0"
   firebase_core_platform_interface:
     dependency: transitive
     description:
       name: firebase_core_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.2.3"
+    version: "4.2.4"
   firebase_core_web:
     dependency: transitive
     description:
       name: firebase_core_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.3"
+    version: "1.5.4"
   firebase_storage:
     dependency: "direct main"
     description:
       name: firebase_storage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "10.2.5"
+    version: "10.2.6"
   firebase_storage_platform_interface:
     dependency: transitive
     description:
       name: firebase_storage_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.12"
+    version: "4.0.13"
   firebase_storage_web:
     dependency: transitive
     description:
       name: firebase_storage_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.6"
+    version: "3.2.7"
   fixnum:
     dependency: transitive
     description:
@@ -502,14 +502,14 @@ packages:
       name: flutter_quill
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.6.4"
+    version: "3.8.3"
   flutter_staggered_grid_view:
     dependency: "direct main"
     description:
       name: flutter_staggered_grid_view
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.0"
+    version: "0.6.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -533,7 +533,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -659,7 +659,7 @@ packages:
       name: image_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.4+4"
+    version: "0.8.4+5"
   image_picker_for_web:
     dependency: transitive
     description:
@@ -687,7 +687,7 @@ packages:
       name: injectable_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.2"
+    version: "1.5.3"
   intl:
     dependency: "direct main"
     description:
@@ -715,28 +715,28 @@ packages:
       name: isar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.5"
+    version: "2.0.0"
   isar_connect:
     dependency: "direct main"
     description:
       name: isar_connect
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.5"
+    version: "2.0.0"
   isar_flutter_libs:
     dependency: "direct main"
     description:
       name: isar_flutter_libs
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.5"
+    version: "2.0.0"
   isar_generator:
     dependency: "direct dev"
     description:
       name: isar_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.5"
+    version: "2.0.0"
   js:
     dependency: transitive
     description:
