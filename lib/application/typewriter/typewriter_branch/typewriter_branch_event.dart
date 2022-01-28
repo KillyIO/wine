@@ -35,10 +35,10 @@ class TypewriterBranchEvent with _$TypewriterBranchEvent {
   }) = LaunchAsNewBranch;
 
   /// @nodoc
-  const factory TypewriterBranchEvent.launchWithID(
-    UniqueID id, {
+  const factory TypewriterBranchEvent.launchWithUID(
+    UniqueID uid, {
     Branch? branch,
-  }) = LaunchWithID;
+  }) = LaunchWithUID;
 
   /// @nodoc
   const factory TypewriterBranchEvent.leafChanged() = LeafChanged;

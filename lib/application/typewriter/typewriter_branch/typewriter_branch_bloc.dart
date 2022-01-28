@@ -181,7 +181,7 @@ class TypewriterBranchBloc
         },
       );
     });
-    on<LaunchWithID>((value, emit) async {
+    on<LaunchWithUID>((value, emit) async {
       emit(
         state.copyWith(
           failureOption: Option.none(),
@@ -207,7 +207,7 @@ class TypewriterBranchBloc
           ),
         );
       } else {
-        (await _branchRepository.loadBranchByID(value.id)).match(
+        (await _branchRepository.loadBranchByID(value.uid)).match(
           (branch) {
             emit(
               state.copyWith(
