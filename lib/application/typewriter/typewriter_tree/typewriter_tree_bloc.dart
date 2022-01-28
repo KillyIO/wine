@@ -363,12 +363,13 @@ class TypewriterTreeBloc
   ) async {
     if (state.isEdit) {
       (await _treeRepository.updateTree(tree)).match(
-        (_) {
+        (tree_) {
           emit(
             state.copyWith(
               endState: endState,
               failureOption: const None(),
               isProcessing: false,
+              tree: tree_,
             ),
           );
         },
@@ -383,12 +384,13 @@ class TypewriterTreeBloc
       );
     } else {
       (await _treeRepository.createTree(tree)).match(
-        (_) {
+        (tree_) {
           emit(
             state.copyWith(
               endState: endState,
               failureOption: const None(),
               isProcessing: false,
+              tree: tree_,
             ),
           );
         },
