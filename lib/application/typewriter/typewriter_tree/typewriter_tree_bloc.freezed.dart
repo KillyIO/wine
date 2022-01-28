@@ -54,9 +54,9 @@ class _$TypewriterTreeEventTearOff {
     return const LaunchAsNewTree();
   }
 
-  LaunchWithID launchWithID(UniqueID id, {Tree? tree}) {
-    return LaunchWithID(
-      id,
+  LaunchWithUID launchWithUID(UniqueID uid, {Tree? tree}) {
+    return LaunchWithUID(
+      uid,
       tree: tree,
     );
   }
@@ -106,7 +106,7 @@ mixin _$TypewriterTreeEvent {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -124,7 +124,7 @@ mixin _$TypewriterTreeEvent {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -142,7 +142,7 @@ mixin _$TypewriterTreeEvent {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -161,7 +161,7 @@ mixin _$TypewriterTreeEvent {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -179,7 +179,7 @@ mixin _$TypewriterTreeEvent {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -197,7 +197,7 @@ mixin _$TypewriterTreeEvent {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -274,7 +274,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -295,7 +295,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -316,7 +316,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -341,7 +341,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -362,7 +362,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -383,7 +383,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -451,7 +451,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -472,7 +472,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -493,7 +493,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -518,7 +518,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -539,7 +539,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -560,7 +560,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -651,7 +651,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -672,7 +672,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -693,7 +693,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -718,7 +718,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -739,7 +739,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -760,7 +760,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -857,7 +857,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -878,7 +878,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -899,7 +899,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -924,7 +924,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -945,7 +945,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -966,7 +966,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1063,7 +1063,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -1084,7 +1084,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1105,7 +1105,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1130,7 +1130,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1151,7 +1151,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1172,7 +1172,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1269,7 +1269,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -1290,7 +1290,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1311,7 +1311,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1336,7 +1336,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1357,7 +1357,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1378,7 +1378,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1451,7 +1451,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -1472,7 +1472,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1493,7 +1493,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1518,7 +1518,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1539,7 +1539,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1560,7 +1560,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1581,35 +1581,35 @@ abstract class LaunchAsNewTree implements TypewriterTreeEvent {
 }
 
 /// @nodoc
-abstract class $LaunchWithIDCopyWith<$Res> {
-  factory $LaunchWithIDCopyWith(
-          LaunchWithID value, $Res Function(LaunchWithID) then) =
-      _$LaunchWithIDCopyWithImpl<$Res>;
-  $Res call({UniqueID id, Tree? tree});
+abstract class $LaunchWithUIDCopyWith<$Res> {
+  factory $LaunchWithUIDCopyWith(
+          LaunchWithUID value, $Res Function(LaunchWithUID) then) =
+      _$LaunchWithUIDCopyWithImpl<$Res>;
+  $Res call({UniqueID uid, Tree? tree});
 
   $TreeCopyWith<$Res>? get tree;
 }
 
 /// @nodoc
-class _$LaunchWithIDCopyWithImpl<$Res>
+class _$LaunchWithUIDCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $LaunchWithIDCopyWith<$Res> {
-  _$LaunchWithIDCopyWithImpl(
-      LaunchWithID _value, $Res Function(LaunchWithID) _then)
-      : super(_value, (v) => _then(v as LaunchWithID));
+    implements $LaunchWithUIDCopyWith<$Res> {
+  _$LaunchWithUIDCopyWithImpl(
+      LaunchWithUID _value, $Res Function(LaunchWithUID) _then)
+      : super(_value, (v) => _then(v as LaunchWithUID));
 
   @override
-  LaunchWithID get _value => super._value as LaunchWithID;
+  LaunchWithUID get _value => super._value as LaunchWithUID;
 
   @override
   $Res call({
-    Object? id = freezed,
+    Object? uid = freezed,
     Object? tree = freezed,
   }) {
-    return _then(LaunchWithID(
-      id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+    return _then(LaunchWithUID(
+      uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
       tree: tree == freezed
           ? _value.tree
@@ -1632,38 +1632,38 @@ class _$LaunchWithIDCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LaunchWithID implements LaunchWithID {
-  const _$LaunchWithID(this.id, {this.tree});
+class _$LaunchWithUID implements LaunchWithUID {
+  const _$LaunchWithUID(this.uid, {this.tree});
 
   @override
-  final UniqueID id;
+  final UniqueID uid;
   @override
   final Tree? tree;
 
   @override
   String toString() {
-    return 'TypewriterTreeEvent.launchWithID(id: $id, tree: $tree)';
+    return 'TypewriterTreeEvent.launchWithUID(uid: $uid, tree: $tree)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LaunchWithID &&
-            const DeepCollectionEquality().equals(other.id, id) &&
+            other is LaunchWithUID &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.tree, tree));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(tree));
 
   @JsonKey(ignore: true)
   @override
-  $LaunchWithIDCopyWith<LaunchWithID> get copyWith =>
-      _$LaunchWithIDCopyWithImpl<LaunchWithID>(this, _$identity);
+  $LaunchWithUIDCopyWith<LaunchWithUID> get copyWith =>
+      _$LaunchWithUIDCopyWithImpl<LaunchWithUID>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1675,7 +1675,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -1683,7 +1683,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
   }) {
-    return launchWithID(id, tree);
+    return launchWithUID(uid, tree);
   }
 
   @override
@@ -1696,7 +1696,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1704,7 +1704,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
   }) {
-    return launchWithID?.call(id, tree);
+    return launchWithUID?.call(uid, tree);
   }
 
   @override
@@ -1717,7 +1717,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1726,8 +1726,8 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
-    if (launchWithID != null) {
-      return launchWithID(id, tree);
+    if (launchWithUID != null) {
+      return launchWithUID(uid, tree);
     }
     return orElse();
   }
@@ -1742,7 +1742,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1750,7 +1750,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
-    return launchWithID(this);
+    return launchWithUID(this);
   }
 
   @override
@@ -1763,7 +1763,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1771,7 +1771,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
-    return launchWithID?.call(this);
+    return launchWithUID?.call(this);
   }
 
   @override
@@ -1784,7 +1784,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1793,20 +1793,20 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
-    if (launchWithID != null) {
-      return launchWithID(this);
+    if (launchWithUID != null) {
+      return launchWithUID(this);
     }
     return orElse();
   }
 }
 
-abstract class LaunchWithID implements TypewriterTreeEvent {
-  const factory LaunchWithID(UniqueID id, {Tree? tree}) = _$LaunchWithID;
+abstract class LaunchWithUID implements TypewriterTreeEvent {
+  const factory LaunchWithUID(UniqueID uid, {Tree? tree}) = _$LaunchWithUID;
 
-  UniqueID get id;
+  UniqueID get uid;
   Tree? get tree;
   @JsonKey(ignore: true)
-  $LaunchWithIDCopyWith<LaunchWithID> get copyWith =>
+  $LaunchWithUIDCopyWith<LaunchWithUID> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1858,7 +1858,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -1879,7 +1879,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1900,7 +1900,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -1925,7 +1925,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1946,7 +1946,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1967,7 +1967,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2035,7 +2035,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -2056,7 +2056,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2077,7 +2077,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2102,7 +2102,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -2123,7 +2123,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2144,7 +2144,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2212,7 +2212,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -2233,7 +2233,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2254,7 +2254,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2279,7 +2279,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -2300,7 +2300,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2321,7 +2321,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2413,7 +2413,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -2434,7 +2434,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2455,7 +2455,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2480,7 +2480,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -2501,7 +2501,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2522,7 +2522,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2619,7 +2619,7 @@ class _$SummaryChanged implements SummaryChanged {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -2640,7 +2640,7 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2661,7 +2661,7 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2686,7 +2686,7 @@ class _$SummaryChanged implements SummaryChanged {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -2707,7 +2707,7 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2728,7 +2728,7 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2825,7 +2825,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewTree,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
@@ -2846,7 +2846,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2867,7 +2867,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewTree,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
@@ -2892,7 +2892,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewTree value) launchAsNewTree,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -2913,7 +2913,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -2934,7 +2934,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,

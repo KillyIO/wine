@@ -15,13 +15,13 @@ abstract class ITreeRepository {
 
   /// @nodoc
   Future<Result<bool, TreeFailure>> loadBookmarkStatus(
-    UniqueID userID,
+    UniqueID userUID,
     UniqueID treeUID,
   );
 
   /// @nodoc
   Future<Result<bool, TreeFailure>> loadLikeStatus(
-    UniqueID userID,
+    UniqueID userUID,
     UniqueID treeUID,
   );
 
@@ -39,21 +39,21 @@ abstract class ITreeRepository {
 
   /// @nodoc
   Future<Result<Unit, TreeFailure>> updateTreeBookmarks(
-    UniqueID userID,
+    UniqueID userUID,
     UniqueID treeUID, {
     required bool isBookmarked,
   });
 
   /// @nodoc
   Future<Result<Unit, TreeFailure>> updateTreeLikes(
-    UniqueID userID,
+    UniqueID userUID,
     UniqueID treeUID, {
     required bool isLiked,
   });
 
   /// @nodoc
   Future<Result<bool, TreeFailure>> updateTreeViews(
-    UniqueID userID,
+    UniqueID userUID,
     UniqueID treeUID,
   );
 

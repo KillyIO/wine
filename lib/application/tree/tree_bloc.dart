@@ -96,7 +96,7 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
         },
       );
     });
-    on<LaunchWithID>((value, emit) async {
+    on<LaunchWithUID>((value, emit) async {
       emit(state.copyWith(isProcessing: true));
 
       final tree = value.tree;
@@ -111,7 +111,7 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
 
         add(const TreeEvent.treeSet());
       } else {
-        (await _treeRepository.loadTreeByID(state.tree.uid)).match(
+        (await _treeRepository.loadTreeByID(value.uid)).match(
           (tree) {
             emit(
               state.copyWith(

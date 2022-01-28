@@ -27,8 +27,8 @@ class TypewriterTreeEvent with _$TypewriterTreeEvent {
   const factory TypewriterTreeEvent.launchAsNewTree() = LaunchAsNewTree;
 
   /// @nodoc
-  const factory TypewriterTreeEvent.launchWithID(UniqueID id, {Tree? tree}) =
-      LaunchWithID;
+  const factory TypewriterTreeEvent.launchWithUID(UniqueID uid, {Tree? tree}) =
+      LaunchWithUID;
 
   /// @nodoc
   const factory TypewriterTreeEvent.publishButtonPressed() =

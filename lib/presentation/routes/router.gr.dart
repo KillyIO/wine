@@ -73,16 +73,17 @@ class AppRouter extends _i13.RootStackRouter {
           routeData: routeData,
           child: _i7.SignUpPage(key: args.key, navigateTo: args.navigateTo));
     },
-    TypewriterBranchId.name: (routeData) {
+    TypewriterBranchUID.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
-      final args = routeData.argsAs<TypewriterBranchIdArgs>(
-          orElse: () => TypewriterBranchIdArgs(id: pathParams.optString('id')));
+      final args = routeData.argsAs<TypewriterBranchUIDArgs>(
+          orElse: () =>
+              TypewriterBranchUIDArgs(uid: pathParams.optString('id')));
       return _i13.AdaptivePage<_i8.TypewriterPage>(
           routeData: routeData,
           child: _i8.TypewriterPage(
               key: args.key,
               branch: args.branch,
-              id: args.id,
+              uid: args.uid,
               tree: args.tree,
               type: args.type));
     },
@@ -90,39 +91,39 @@ class AppRouter extends _i13.RootStackRouter {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<TypewriterBranchNewArgs>(
           orElse: () =>
-              TypewriterBranchNewArgs(id: pathParams.optString('id')));
+              TypewriterBranchNewArgs(uid: pathParams.optString('id')));
       return _i13.AdaptivePage<_i8.TypewriterPage>(
           routeData: routeData,
           child: _i8.TypewriterPage(
               key: args.key,
               branch: args.branch,
-              id: args.id,
+              uid: args.uid,
               tree: args.tree,
               type: args.type));
     },
-    TypewriterTreeId.name: (routeData) {
+    TypewriterTreeUID.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
-      final args = routeData.argsAs<TypewriterTreeIdArgs>(
-          orElse: () => TypewriterTreeIdArgs(id: pathParams.optString('id')));
+      final args = routeData.argsAs<TypewriterTreeUIDArgs>(
+          orElse: () => TypewriterTreeUIDArgs(uid: pathParams.optString('id')));
       return _i13.AdaptivePage<_i8.TypewriterPage>(
           routeData: routeData,
           child: _i8.TypewriterPage(
               key: args.key,
               branch: args.branch,
-              id: args.id,
+              uid: args.uid,
               tree: args.tree,
               type: args.type));
     },
     TypewriterTreeNew.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<TypewriterTreeNewArgs>(
-          orElse: () => TypewriterTreeNewArgs(id: pathParams.optString('id')));
+          orElse: () => TypewriterTreeNewArgs(uid: pathParams.optString('id')));
       return _i13.AdaptivePage<_i8.TypewriterPage>(
           routeData: routeData,
           child: _i8.TypewriterPage(
               key: args.key,
               branch: args.branch,
-              id: args.id,
+              uid: args.uid,
               tree: args.tree,
               type: args.type));
     },
@@ -162,11 +163,11 @@ class AppRouter extends _i13.RootStackRouter {
               path: '', parent: SettingsWrapper.name)
         ]),
         _i13.RouteConfig(SignUpRoute.name, path: '/sign-up'),
-        _i13.RouteConfig(TypewriterBranchId.name,
+        _i13.RouteConfig(TypewriterBranchUID.name,
             path: '/typewriter/branch/:id'),
         _i13.RouteConfig(TypewriterBranchNew.name,
             path: '/typewriter/branch/new'),
-        _i13.RouteConfig(TypewriterTreeId.name, path: '/typewriter/tree/:id'),
+        _i13.RouteConfig(TypewriterTreeUID.name, path: '/typewriter/tree/:id'),
         _i13.RouteConfig(TypewriterTreeNew.name, path: '/typewriter/tree/new')
       ];
 }
@@ -282,27 +283,27 @@ class SignUpRouteArgs {
 
 /// generated route for
 /// [_i8.TypewriterPage]
-class TypewriterBranchId extends _i13.PageRouteInfo<TypewriterBranchIdArgs> {
-  TypewriterBranchId(
+class TypewriterBranchUID extends _i13.PageRouteInfo<TypewriterBranchUIDArgs> {
+  TypewriterBranchUID(
       {_i14.Key? key,
       _i16.Branch? branch,
-      String? id,
+      String? uid,
       _i15.Tree? tree,
       _i17.TypewriterType type = _i17.TypewriterType.unknown})
-      : super(TypewriterBranchId.name,
+      : super(TypewriterBranchUID.name,
             path: '/typewriter/branch/:id',
-            args: TypewriterBranchIdArgs(
-                key: key, branch: branch, id: id, tree: tree, type: type),
-            rawPathParams: {'id': id});
+            args: TypewriterBranchUIDArgs(
+                key: key, branch: branch, uid: uid, tree: tree, type: type),
+            rawPathParams: {'id': uid});
 
-  static const String name = 'TypewriterBranchId';
+  static const String name = 'TypewriterBranchUID';
 }
 
-class TypewriterBranchIdArgs {
-  const TypewriterBranchIdArgs(
+class TypewriterBranchUIDArgs {
+  const TypewriterBranchUIDArgs(
       {this.key,
       this.branch,
-      this.id,
+      this.uid,
       this.tree,
       this.type = _i17.TypewriterType.unknown});
 
@@ -310,7 +311,7 @@ class TypewriterBranchIdArgs {
 
   final _i16.Branch? branch;
 
-  final String? id;
+  final String? uid;
 
   final _i15.Tree? tree;
 
@@ -318,7 +319,7 @@ class TypewriterBranchIdArgs {
 
   @override
   String toString() {
-    return 'TypewriterBranchIdArgs{key: $key, branch: $branch, id: $id, tree: $tree, type: $type}';
+    return 'TypewriterBranchUIDArgs{key: $key, branch: $branch, uid: $uid, tree: $tree, type: $type}';
   }
 }
 
@@ -328,14 +329,14 @@ class TypewriterBranchNew extends _i13.PageRouteInfo<TypewriterBranchNewArgs> {
   TypewriterBranchNew(
       {_i14.Key? key,
       _i16.Branch? branch,
-      String? id,
+      String? uid,
       _i15.Tree? tree,
       _i17.TypewriterType type = _i17.TypewriterType.unknown})
       : super(TypewriterBranchNew.name,
             path: '/typewriter/branch/new',
             args: TypewriterBranchNewArgs(
-                key: key, branch: branch, id: id, tree: tree, type: type),
-            rawPathParams: {'id': id});
+                key: key, branch: branch, uid: uid, tree: tree, type: type),
+            rawPathParams: {'id': uid});
 
   static const String name = 'TypewriterBranchNew';
 }
@@ -344,7 +345,7 @@ class TypewriterBranchNewArgs {
   const TypewriterBranchNewArgs(
       {this.key,
       this.branch,
-      this.id,
+      this.uid,
       this.tree,
       this.type = _i17.TypewriterType.unknown});
 
@@ -352,7 +353,7 @@ class TypewriterBranchNewArgs {
 
   final _i16.Branch? branch;
 
-  final String? id;
+  final String? uid;
 
   final _i15.Tree? tree;
 
@@ -360,33 +361,33 @@ class TypewriterBranchNewArgs {
 
   @override
   String toString() {
-    return 'TypewriterBranchNewArgs{key: $key, branch: $branch, id: $id, tree: $tree, type: $type}';
+    return 'TypewriterBranchNewArgs{key: $key, branch: $branch, uid: $uid, tree: $tree, type: $type}';
   }
 }
 
 /// generated route for
 /// [_i8.TypewriterPage]
-class TypewriterTreeId extends _i13.PageRouteInfo<TypewriterTreeIdArgs> {
-  TypewriterTreeId(
+class TypewriterTreeUID extends _i13.PageRouteInfo<TypewriterTreeUIDArgs> {
+  TypewriterTreeUID(
       {_i14.Key? key,
       _i16.Branch? branch,
-      String? id,
+      String? uid,
       _i15.Tree? tree,
       _i17.TypewriterType type = _i17.TypewriterType.unknown})
-      : super(TypewriterTreeId.name,
+      : super(TypewriterTreeUID.name,
             path: '/typewriter/tree/:id',
-            args: TypewriterTreeIdArgs(
-                key: key, branch: branch, id: id, tree: tree, type: type),
-            rawPathParams: {'id': id});
+            args: TypewriterTreeUIDArgs(
+                key: key, branch: branch, uid: uid, tree: tree, type: type),
+            rawPathParams: {'id': uid});
 
-  static const String name = 'TypewriterTreeId';
+  static const String name = 'TypewriterTreeUID';
 }
 
-class TypewriterTreeIdArgs {
-  const TypewriterTreeIdArgs(
+class TypewriterTreeUIDArgs {
+  const TypewriterTreeUIDArgs(
       {this.key,
       this.branch,
-      this.id,
+      this.uid,
       this.tree,
       this.type = _i17.TypewriterType.unknown});
 
@@ -394,7 +395,7 @@ class TypewriterTreeIdArgs {
 
   final _i16.Branch? branch;
 
-  final String? id;
+  final String? uid;
 
   final _i15.Tree? tree;
 
@@ -402,7 +403,7 @@ class TypewriterTreeIdArgs {
 
   @override
   String toString() {
-    return 'TypewriterTreeIdArgs{key: $key, branch: $branch, id: $id, tree: $tree, type: $type}';
+    return 'TypewriterTreeUIDArgs{key: $key, branch: $branch, uid: $uid, tree: $tree, type: $type}';
   }
 }
 
@@ -412,14 +413,14 @@ class TypewriterTreeNew extends _i13.PageRouteInfo<TypewriterTreeNewArgs> {
   TypewriterTreeNew(
       {_i14.Key? key,
       _i16.Branch? branch,
-      String? id,
+      String? uid,
       _i15.Tree? tree,
       _i17.TypewriterType type = _i17.TypewriterType.unknown})
       : super(TypewriterTreeNew.name,
             path: '/typewriter/tree/new',
             args: TypewriterTreeNewArgs(
-                key: key, branch: branch, id: id, tree: tree, type: type),
-            rawPathParams: {'id': id});
+                key: key, branch: branch, uid: uid, tree: tree, type: type),
+            rawPathParams: {'id': uid});
 
   static const String name = 'TypewriterTreeNew';
 }
@@ -428,7 +429,7 @@ class TypewriterTreeNewArgs {
   const TypewriterTreeNewArgs(
       {this.key,
       this.branch,
-      this.id,
+      this.uid,
       this.tree,
       this.type = _i17.TypewriterType.unknown});
 
@@ -436,7 +437,7 @@ class TypewriterTreeNewArgs {
 
   final _i16.Branch? branch;
 
-  final String? id;
+  final String? uid;
 
   final _i15.Tree? tree;
 
@@ -444,7 +445,7 @@ class TypewriterTreeNewArgs {
 
   @override
   String toString() {
-    return 'TypewriterTreeNewArgs{key: $key, branch: $branch, id: $id, tree: $tree, type: $type}';
+    return 'TypewriterTreeNewArgs{key: $key, branch: $branch, uid: $uid, tree: $tree, type: $type}';
   }
 }
 

@@ -167,7 +167,7 @@ class TypewriterTreeBloc
         },
       );
     });
-    on<LaunchWithID>((value, emit) async {
+    on<LaunchWithUID>((value, emit) async {
       emit(
         state.copyWith(
           failureOption: Option.none(),
@@ -196,7 +196,7 @@ class TypewriterTreeBloc
           ),
         );
       } else {
-        (await _treeRepository.loadTreeByID(value.id)).match(
+        (await _treeRepository.loadTreeByID(value.uid)).match(
           (tree) {
             emit(
               state.copyWith(

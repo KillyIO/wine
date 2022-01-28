@@ -29,7 +29,7 @@ const String signUpPagePath = '/sign-up';
 const String treePagePath = '/tree/:id';
 
 /// @nodoc
-const String typewriterPageBranchIDPath = '/branch/:id';
+const String typewriterPageBranchUIDPath = '/branch/:id';
 
 /// @nodoc
 const String typewriterPageBranchNewPath = '/branch/new';
@@ -38,7 +38,7 @@ const String typewriterPageBranchNewPath = '/branch/new';
 const String typewriterPagePath = '/typewriter';
 
 /// @nodoc
-const String typewriterPageTreeIDPath = '/tree/:id';
+const String typewriterPageTreeUIDPath = '/tree/:id';
 
 /// @nodoc
 const String typewriterPageTreeNewPath = '/tree/new';

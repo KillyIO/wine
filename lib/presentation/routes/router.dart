@@ -66,9 +66,9 @@ export 'router.gr.dart';
       path: signUpPagePath,
     ),
     AutoRoute<TypewriterPage>(
-      name: 'TypewriterBranchId',
+      name: 'TypewriterBranchUID',
       page: TypewriterPage,
-      path: '$typewriterPagePath$typewriterPageBranchIDPath',
+      path: '$typewriterPagePath$typewriterPageBranchUIDPath',
     ),
     AutoRoute<TypewriterPage>(
       name: 'TypewriterBranchNew',
@@ -76,9 +76,9 @@ export 'router.gr.dart';
       path: '$typewriterPagePath$typewriterPageBranchNewPath',
     ),
     AutoRoute<TypewriterPage>(
-      name: 'TypewriterTreeId',
+      name: 'TypewriterTreeUID',
       page: TypewriterPage,
-      path: '$typewriterPagePath$typewriterPageTreeIDPath',
+      path: '$typewriterPagePath$typewriterPageTreeUIDPath',
     ),
     AutoRoute<TypewriterPage>(
       name: 'TypewriterTreeNew',

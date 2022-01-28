@@ -8,27 +8,27 @@ import 'package:wine/injection.dart';
 import 'package:wine/presentation/typewriter/typewriter_tree/typwriter_tree_layout.dart';
 
 /// @nodoc
-class TypewriterTreeIDPage extends StatelessWidget {
+class TypewriterTreeUIDPage extends StatelessWidget {
   /// @nodoc
-  const TypewriterTreeIDPage({
+  const TypewriterTreeUIDPage({
     Key? key,
     this.tree,
-    required this.treeId,
+    required this.treeUID,
   }) : super(key: key);
 
   /// @nodoc
   final Tree? tree;
 
   /// @nodoc
-  final String treeId;
+  final String treeUID;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => getIt<TypewriterTreeBloc>()
         ..add(
-          TypewriterTreeEvent.launchWithID(
-            UniqueID.fromUniqueString(treeId),
+          TypewriterTreeEvent.launchWithUID(
+            UniqueID.fromUniqueString(treeUID),
             tree: tree,
           ),
         ),

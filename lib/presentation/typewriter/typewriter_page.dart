@@ -5,10 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/domain/tree/tree.dart';
-import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_id_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_new_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_id_page.dart';
+import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_uid_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_new_page.dart';
+import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_uid_page.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
@@ -18,7 +18,7 @@ class TypewriterPage extends StatelessWidget {
   const TypewriterPage({
     Key? key,
     this.branch,
-    @PathParam('id') this.id,
+    @PathParam('id') this.uid,
     this.tree,
     this.type = TypewriterType.unknown,
   }) : super(key: key);
@@ -27,7 +27,7 @@ class TypewriterPage extends StatelessWidget {
   final Branch? branch;
 
   /// Tree or Branch id.
-  final String? id;
+  final String? uid;
 
   /// @nodoc
   final Tree? tree;
@@ -38,16 +38,16 @@ class TypewriterPage extends StatelessWidget {
   Widget get _typewriter {
     switch (type) {
       case TypewriterType.branch:
-        if (id != null) {
-          return TypewriterBranchIDPage(branch: branch, branchId: id!);
+        if (uid != null) {
+          return TypewriterBranchUIDPage(branch: branch, branchUID: uid!);
         }
         return TypewriterBranchNewPage(
           tree: tree!,
           previousBranch: branch,
         );
       case TypewriterType.tree:
-        if (id != null) {
-          return TypewriterTreeIDPage(tree: tree, treeId: id!);
+        if (uid != null) {
+          return TypewriterTreeUIDPage(tree: tree, treeUID: uid!);
         }
         return const TypewriterTreeNewPage();
     }

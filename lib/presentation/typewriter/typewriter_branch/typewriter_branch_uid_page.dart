@@ -7,27 +7,27 @@ import 'package:wine/injection.dart';
 import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_layout.dart';
 
 /// @nodoc
-class TypewriterBranchIDPage extends StatelessWidget {
+class TypewriterBranchUIDPage extends StatelessWidget {
   /// @nodoc
-  const TypewriterBranchIDPage({
+  const TypewriterBranchUIDPage({
     Key? key,
     this.branch,
-    required this.branchId,
+    required this.branchUID,
   }) : super(key: key);
 
   /// @nodoc
   final Branch? branch;
 
   /// @nodoc
-  final String branchId;
+  final String branchUID;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<TypewriterBranchBloc>()
         ..add(
-          TypewriterBranchEvent.launchWithID(
-            UniqueID.fromUniqueString(branchId),
+          TypewriterBranchEvent.launchWithUID(
+            UniqueID.fromUniqueString(branchUID),
             branch: branch,
           ),
         ),

@@ -78,7 +78,7 @@ class TreeRepository implements ITreeRepository {
 
   @override
   Future<Result<bool, TreeFailure>> loadBookmarkStatus(
-    UniqueID userID,
+    UniqueID userUID,
     UniqueID treeUID,
   ) async {
     try {
@@ -93,7 +93,7 @@ class TreeRepository implements ITreeRepository {
 
       final data = documentSnapshot.data();
       if (data != null) {
-        final isBookmarked = data[userID.getOrCrash()] as bool;
+        final isBookmarked = data[userUID.getOrCrash()] as bool;
 
         return Ok(isBookmarked);
       }
@@ -110,7 +110,7 @@ class TreeRepository implements ITreeRepository {
 
   @override
   Future<Result<bool, TreeFailure>> loadLikeStatus(
-    UniqueID userID,
+    UniqueID userUID,
     UniqueID treeUID,
   ) async {
     try {
@@ -125,7 +125,7 @@ class TreeRepository implements ITreeRepository {
 
       final data = documentSnapshot.data();
       if (data != null) {
-        final isLiked = data[userID.getOrCrash()] as bool;
+        final isLiked = data[userUID.getOrCrash()] as bool;
 
         return Ok(isLiked);
       }
@@ -244,19 +244,19 @@ class TreeRepository implements ITreeRepository {
 
   @override
   Future<Result<Unit, TreeFailure>> updateTreeBookmarks(
-    UniqueID userID,
+    UniqueID userUUUID,
     UniqueID treeUID, {
     required bool isBookmarked,
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userID register inside tree_bookmarks collection
+        // Check userUUUID register inside tree_bookmarks collection
         final treeBookmarksReference =
             _firestore.collection(treesBookmarksPath).doc(treeUID.getOrCrash());
 
         final sbrSnapshot = await transaction.get(treeBookmarksReference);
         final dbIsBookmarked =
-            sbrSnapshot.data()?[userID.getOrCrash()] as bool? ?? false;
+            sbrSnapshot.data()?[userUUUID.getOrCrash()] as bool? ?? false;
 
         if (isBookmarked != dbIsBookmarked) {
           // Update tree bokmarks count
@@ -272,7 +272,7 @@ class TreeRepository implements ITreeRepository {
             ..set(
               treeBookmarksReference,
               <String, dynamic>{
-                userID.getOrCrash(): isBookmarked,
+                userUUUID.getOrCrash(): isBookmarked,
               },
               SetOptions(merge: true),
             )
@@ -296,19 +296,19 @@ class TreeRepository implements ITreeRepository {
 
   @override
   Future<Result<Unit, TreeFailure>> updateTreeLikes(
-    UniqueID userID,
+    UniqueID userUUID,
     UniqueID treeUID, {
     required bool isLiked,
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userID register inside tree_likes collection
+        // Check userUUID register inside tree_likes collection
         final treeLikesReference =
             _firestore.collection(treesLikesPath).doc(treeUID.getOrCrash());
 
         final slrSnapshot = await transaction.get(treeLikesReference);
         final dbIsLiked =
-            slrSnapshot.data()?[userID.getOrCrash()] as bool? ?? false;
+            slrSnapshot.data()?[userUUID.getOrCrash()] as bool? ?? false;
 
         if (isLiked != dbIsLiked) {
           // Update tree likes count
@@ -324,7 +324,7 @@ class TreeRepository implements ITreeRepository {
             ..set(
               treeLikesReference,
               <String, dynamic>{
-                userID.getOrCrash(): isLiked,
+                userUUID.getOrCrash(): isLiked,
               },
               SetOptions(merge: true),
             )
@@ -347,18 +347,18 @@ class TreeRepository implements ITreeRepository {
 
   @override
   Future<Result<bool, TreeFailure>> updateTreeViews(
-    UniqueID userID,
+    UniqueID userUID,
     UniqueID treeUID,
   ) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userID register inside tree_views collection
+        // Check userUID register inside tree_views collection
         final treeViewsReference =
             _firestore.collection(treesViewsPath).doc(treeUID.getOrCrash());
 
         final svrSnapshot = await transaction.get(treeViewsReference);
         final viewed =
-            svrSnapshot.data()?[userID.getOrCrash()] as bool? ?? false;
+            svrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
 
         if (!viewed) {
           // Update tree views count
@@ -373,7 +373,7 @@ class TreeRepository implements ITreeRepository {
           transaction
             ..set(
               treeViewsReference,
-              <String, dynamic>{userID.getOrCrash(): true},
+              <String, dynamic>{userUID.getOrCrash(): true},
               SetOptions(merge: true),
             )
             ..update(treeReference, <String, dynamic>{

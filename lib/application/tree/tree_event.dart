@@ -15,8 +15,8 @@ class TreeEvent with _$TreeEvent {
   const factory TreeEvent.branchOneLoaded() = BranchOneLoaded;
 
   /// @nodoc
-  const factory TreeEvent.launchWithID(UniqueID id, {Tree? tree}) =
-      LaunchWithID;
+  const factory TreeEvent.launchWithUID(UniqueID uid, {Tree? tree}) =
+      LaunchWithUID;
 
   /// @nodoc
   const factory TreeEvent.likeButtonPressed({

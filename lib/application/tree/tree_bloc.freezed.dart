@@ -32,9 +32,9 @@ class _$TreeEventTearOff {
     return const BranchOneLoaded();
   }
 
-  LaunchWithID launchWithID(UniqueID id, {Tree? tree}) {
-    return LaunchWithID(
-      id,
+  LaunchWithUID launchWithUID(UniqueID uid, {Tree? tree}) {
+    return LaunchWithUID(
+      uid,
       tree: tree,
     );
   }
@@ -76,7 +76,7 @@ mixin _$TreeEvent {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -90,7 +90,7 @@ mixin _$TreeEvent {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -104,7 +104,7 @@ mixin _$TreeEvent {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -120,7 +120,7 @@ mixin _$TreeEvent {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -134,7 +134,7 @@ mixin _$TreeEvent {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -148,7 +148,7 @@ mixin _$TreeEvent {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -218,7 +218,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -235,7 +235,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -252,7 +252,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -274,7 +274,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -291,7 +291,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -308,7 +308,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -398,7 +398,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -415,7 +415,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -432,7 +432,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -454,7 +454,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -471,7 +471,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -488,7 +488,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -557,7 +557,7 @@ class _$BranchOneLoaded implements BranchOneLoaded {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -574,7 +574,7 @@ class _$BranchOneLoaded implements BranchOneLoaded {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -591,7 +591,7 @@ class _$BranchOneLoaded implements BranchOneLoaded {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -613,7 +613,7 @@ class _$BranchOneLoaded implements BranchOneLoaded {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -630,7 +630,7 @@ class _$BranchOneLoaded implements BranchOneLoaded {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -647,7 +647,7 @@ class _$BranchOneLoaded implements BranchOneLoaded {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -668,34 +668,34 @@ abstract class BranchOneLoaded implements TreeEvent {
 }
 
 /// @nodoc
-abstract class $LaunchWithIDCopyWith<$Res> {
-  factory $LaunchWithIDCopyWith(
-          LaunchWithID value, $Res Function(LaunchWithID) then) =
-      _$LaunchWithIDCopyWithImpl<$Res>;
-  $Res call({UniqueID id, Tree? tree});
+abstract class $LaunchWithUIDCopyWith<$Res> {
+  factory $LaunchWithUIDCopyWith(
+          LaunchWithUID value, $Res Function(LaunchWithUID) then) =
+      _$LaunchWithUIDCopyWithImpl<$Res>;
+  $Res call({UniqueID uid, Tree? tree});
 
   $TreeCopyWith<$Res>? get tree;
 }
 
 /// @nodoc
-class _$LaunchWithIDCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
-    implements $LaunchWithIDCopyWith<$Res> {
-  _$LaunchWithIDCopyWithImpl(
-      LaunchWithID _value, $Res Function(LaunchWithID) _then)
-      : super(_value, (v) => _then(v as LaunchWithID));
+class _$LaunchWithUIDCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
+    implements $LaunchWithUIDCopyWith<$Res> {
+  _$LaunchWithUIDCopyWithImpl(
+      LaunchWithUID _value, $Res Function(LaunchWithUID) _then)
+      : super(_value, (v) => _then(v as LaunchWithUID));
 
   @override
-  LaunchWithID get _value => super._value as LaunchWithID;
+  LaunchWithUID get _value => super._value as LaunchWithUID;
 
   @override
   $Res call({
-    Object? id = freezed,
+    Object? uid = freezed,
     Object? tree = freezed,
   }) {
-    return _then(LaunchWithID(
-      id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+    return _then(LaunchWithUID(
+      uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
       tree: tree == freezed
           ? _value.tree
@@ -718,38 +718,38 @@ class _$LaunchWithIDCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LaunchWithID implements LaunchWithID {
-  const _$LaunchWithID(this.id, {this.tree});
+class _$LaunchWithUID implements LaunchWithUID {
+  const _$LaunchWithUID(this.uid, {this.tree});
 
   @override
-  final UniqueID id;
+  final UniqueID uid;
   @override
   final Tree? tree;
 
   @override
   String toString() {
-    return 'TreeEvent.launchWithID(id: $id, tree: $tree)';
+    return 'TreeEvent.launchWithUID(uid: $uid, tree: $tree)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LaunchWithID &&
-            const DeepCollectionEquality().equals(other.id, id) &&
+            other is LaunchWithUID &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.tree, tree));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(tree));
 
   @JsonKey(ignore: true)
   @override
-  $LaunchWithIDCopyWith<LaunchWithID> get copyWith =>
-      _$LaunchWithIDCopyWithImpl<LaunchWithID>(this, _$identity);
+  $LaunchWithUIDCopyWith<LaunchWithUID> get copyWith =>
+      _$LaunchWithUIDCopyWithImpl<LaunchWithUID>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -757,7 +757,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -765,7 +765,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function() treeSet,
     required TResult Function() viewsUpdated,
   }) {
-    return launchWithID(id, tree);
+    return launchWithUID(uid, tree);
   }
 
   @override
@@ -774,7 +774,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -782,7 +782,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function()? treeSet,
     TResult Function()? viewsUpdated,
   }) {
-    return launchWithID?.call(id, tree);
+    return launchWithUID?.call(uid, tree);
   }
 
   @override
@@ -791,7 +791,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -800,8 +800,8 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
-    if (launchWithID != null) {
-      return launchWithID(id, tree);
+    if (launchWithUID != null) {
+      return launchWithUID(uid, tree);
     }
     return orElse();
   }
@@ -813,7 +813,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -821,7 +821,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(TreeSet value) treeSet,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
-    return launchWithID(this);
+    return launchWithUID(this);
   }
 
   @override
@@ -830,7 +830,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -838,7 +838,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(TreeSet value)? treeSet,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
-    return launchWithID?.call(this);
+    return launchWithUID?.call(this);
   }
 
   @override
@@ -847,7 +847,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -856,20 +856,20 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
-    if (launchWithID != null) {
-      return launchWithID(this);
+    if (launchWithUID != null) {
+      return launchWithUID(this);
     }
     return orElse();
   }
 }
 
-abstract class LaunchWithID implements TreeEvent {
-  const factory LaunchWithID(UniqueID id, {Tree? tree}) = _$LaunchWithID;
+abstract class LaunchWithUID implements TreeEvent {
+  const factory LaunchWithUID(UniqueID uid, {Tree? tree}) = _$LaunchWithUID;
 
-  UniqueID get id;
+  UniqueID get uid;
   Tree? get tree;
   @JsonKey(ignore: true)
-  $LaunchWithIDCopyWith<LaunchWithID> get copyWith =>
+  $LaunchWithUIDCopyWith<LaunchWithUID> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -941,7 +941,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -958,7 +958,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -975,7 +975,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -997,7 +997,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1014,7 +1014,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1031,7 +1031,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1100,7 +1100,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -1117,7 +1117,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1134,7 +1134,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1156,7 +1156,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1173,7 +1173,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1190,7 +1190,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1253,7 +1253,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -1270,7 +1270,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1287,7 +1287,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1309,7 +1309,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1326,7 +1326,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1343,7 +1343,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1406,7 +1406,7 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -1423,7 +1423,7 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1440,7 +1440,7 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1462,7 +1462,7 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1479,7 +1479,7 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1496,7 +1496,7 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1557,7 +1557,7 @@ class _$TreeSet implements TreeSet {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -1574,7 +1574,7 @@ class _$TreeSet implements TreeSet {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1591,7 +1591,7 @@ class _$TreeSet implements TreeSet {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1613,7 +1613,7 @@ class _$TreeSet implements TreeSet {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1630,7 +1630,7 @@ class _$TreeSet implements TreeSet {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1647,7 +1647,7 @@ class _$TreeSet implements TreeSet {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1710,7 +1710,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() branchOneLoaded,
-    required TResult Function(UniqueID id, Tree? tree) launchWithID,
+    required TResult Function(UniqueID uid, Tree? tree) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() likeStatusLoaded,
     required TResult Function() sessionFetched,
@@ -1727,7 +1727,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1744,7 +1744,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? branchOneLoaded,
-    TResult Function(UniqueID id, Tree? tree)? launchWithID,
+    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? likeStatusLoaded,
     TResult Function()? sessionFetched,
@@ -1766,7 +1766,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
     required TResult Function(BranchOneLoaded value) branchOneLoaded,
-    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -1783,7 +1783,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -1800,7 +1800,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
     TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
     TResult Function(SessionFetched value)? sessionFetched,

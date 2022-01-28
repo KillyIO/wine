@@ -67,7 +67,7 @@ class TreePage extends StatelessWidget {
       body: BlocProvider(
         create: (_) => getIt<TreeBloc>()
           ..add(
-            TreeEvent.launchWithID(
+            TreeEvent.launchWithUID(
               UniqueID.fromUniqueString(id),
               tree: tree,
             ),
