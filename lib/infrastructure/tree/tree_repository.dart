@@ -29,7 +29,7 @@ class TreeRepository implements ITreeRepository {
   final FirebaseStorage _firebaseStorage;
 
   @override
-  Future<Result<Unit, TreeFailure>> createTree(Tree tree) async {
+  Future<Result<Tree, TreeFailure>> createTree(Tree tree) async {
     var tmpTree = tree;
 
     try {
@@ -49,7 +49,7 @@ class TreeRepository implements ITreeRepository {
           .doc(tmpTree.uid.getOrCrash())
           .set(TreeDTO.fromDomain(tmpTree).toJson());
 
-      return Ok(unit);
+      return Ok(tmpTree);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
         return Err(const TreeFailure.permissionDenied());
@@ -211,7 +211,7 @@ class TreeRepository implements ITreeRepository {
   }
 
   @override
-  Future<Result<Unit, TreeFailure>> updateTree(Tree tree) async {
+  Future<Result<Tree, TreeFailure>> updateTree(Tree tree) async {
     var tmpTree = tree;
 
     try {
@@ -231,7 +231,7 @@ class TreeRepository implements ITreeRepository {
           .doc(tmpTree.uid.getOrCrash())
           .update(TreeDTO.fromDomain(tmpTree).toJson());
 
-      return Ok(unit);
+      return Ok(tmpTree);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
         return Err(const TreeFailure.permissionDenied());
@@ -351,7 +351,7 @@ class TreeRepository implements ITreeRepository {
     UniqueID treeUID,
   ) async {
     try {
-      await _firestore.runTransaction((transaction) async {
+      final result = await _firestore.runTransaction((transaction) async {
         // Check userUID register inside tree_views collection
         final treeViewsReference =
             _firestore.collection(treesViewsPath).doc(treeUID.getOrCrash());
@@ -379,12 +379,11 @@ class TreeRepository implements ITreeRepository {
             ..update(treeReference, <String, dynamic>{
               'viewsCount': viewsCount + 1,
             });
-
-          return Ok(true);
         }
+        return !viewed;
       });
 
-      return Ok(false);
+      return Ok(result);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
         return Err(const TreeFailure.permissionDenied());

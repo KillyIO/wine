@@ -8,7 +8,7 @@ import 'package:wine/domain/tree/tree_failure.dart';
 /// @nodoc
 abstract class ITreeRepository {
   /// @nodoc
-  Future<Result<Unit, TreeFailure>> createTree(Tree tree);
+  Future<Result<Tree, TreeFailure>> createTree(Tree tree);
 
   /// @nodoc
   Future<Result<Unit, TreeFailure>> deleteTree(UniqueID uid);
@@ -35,7 +35,7 @@ abstract class ITreeRepository {
   });
 
   /// @nodoc
-  Future<Result<Unit, TreeFailure>> updateTree(Tree tree);
+  Future<Result<Tree, TreeFailure>> updateTree(Tree tree);
 
   /// @nodoc
   Future<Result<Unit, TreeFailure>> updateTreeBookmarks(
