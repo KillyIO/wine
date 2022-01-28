@@ -214,6 +214,7 @@ class TypewriterTreeLayout extends StatelessWidget {
                         controller: state.summaryController,
                         label: 'SUMMARY*',
                         hintText: 'Less than  words',
+                        maxLines: null,
                         onChanged: (value) => context
                             .read<TypewriterTreeBloc>()
                             .add(TypewriterTreeEvent.summaryChanged(value)),
