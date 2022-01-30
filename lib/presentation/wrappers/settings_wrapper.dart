@@ -13,7 +13,7 @@ class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<SettingsBloc>()..add(const SettingsEvent.initBloc()),
+      create: (_) => getIt<SettingsBloc>()..add(const SettingsEvent.init()),
       child: BlocListener<SettingsBloc, SettingsState>(
         listener: (context, state) {
           state.failureOption.when(

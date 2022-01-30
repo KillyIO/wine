@@ -4,7 +4,7 @@ part of 'settings_bloc.dart';
 @freezed
 class SettingsEvent with _$SettingsEvent {
   /// @nodoc
-  const factory SettingsEvent.initBloc() = InitBloc;
+  const factory SettingsEvent.init() = Init;
 
   /// @nodoc
   const factory SettingsEvent.logOutPressed() = LogOutPressed;

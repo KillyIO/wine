@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$SettingsEventTearOff {
   const _$SettingsEventTearOff();
 
-  InitBloc initBloc() {
-    return const InitBloc();
+  Init init() {
+    return const Init();
   }
 
   LogOutPressed logOutPressed() {
@@ -42,7 +42,7 @@ const $SettingsEvent = _$SettingsEventTearOff();
 mixin _$SettingsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
+    required TResult Function() init,
     required TResult Function() logOutPressed,
     required TResult Function() sessionDeleted,
     required TResult Function() sessionFetched,
@@ -50,7 +50,7 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
@@ -58,7 +58,7 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
@@ -67,7 +67,7 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(Init value) init,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(SessionDeleted value) sessionDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -75,7 +75,7 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -83,7 +83,7 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -110,35 +110,35 @@ class _$SettingsEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitBlocCopyWith<$Res> {
-  factory $InitBlocCopyWith(InitBloc value, $Res Function(InitBloc) then) =
-      _$InitBlocCopyWithImpl<$Res>;
+abstract class $InitCopyWith<$Res> {
+  factory $InitCopyWith(Init value, $Res Function(Init) then) =
+      _$InitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitBlocCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res>
-    implements $InitBlocCopyWith<$Res> {
-  _$InitBlocCopyWithImpl(InitBloc _value, $Res Function(InitBloc) _then)
-      : super(_value, (v) => _then(v as InitBloc));
+class _$InitCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res>
+    implements $InitCopyWith<$Res> {
+  _$InitCopyWithImpl(Init _value, $Res Function(Init) _then)
+      : super(_value, (v) => _then(v as Init));
 
   @override
-  InitBloc get _value => super._value as InitBloc;
+  Init get _value => super._value as Init;
 }
 
 /// @nodoc
 
-class _$InitBloc implements InitBloc {
-  const _$InitBloc();
+class _$Init implements Init {
+  const _$Init();
 
   @override
   String toString() {
-    return 'SettingsEvent.initBloc()';
+    return 'SettingsEvent.init()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is InitBloc);
+        (other.runtimeType == runtimeType && other is Init);
   }
 
   @override
@@ -147,36 +147,36 @@ class _$InitBloc implements InitBloc {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
+    required TResult Function() init,
     required TResult Function() logOutPressed,
     required TResult Function() sessionDeleted,
     required TResult Function() sessionFetched,
   }) {
-    return initBloc();
+    return init();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
   }) {
-    return initBloc?.call();
+    return init?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
     required TResult orElse(),
   }) {
-    if (initBloc != null) {
-      return initBloc();
+    if (init != null) {
+      return init();
     }
     return orElse();
   }
@@ -184,43 +184,43 @@ class _$InitBloc implements InitBloc {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(Init value) init,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(SessionDeleted value) sessionDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
-    return initBloc(this);
+    return init(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
   }) {
-    return initBloc?.call(this);
+    return init?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
     required TResult orElse(),
   }) {
-    if (initBloc != null) {
-      return initBloc(this);
+    if (init != null) {
+      return init(this);
     }
     return orElse();
   }
 }
 
-abstract class InitBloc implements SettingsEvent {
-  const factory InitBloc() = _$InitBloc;
+abstract class Init implements SettingsEvent {
+  const factory Init() = _$Init;
 }
 
 /// @nodoc
@@ -264,7 +264,7 @@ class _$LogOutPressed implements LogOutPressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
+    required TResult Function() init,
     required TResult Function() logOutPressed,
     required TResult Function() sessionDeleted,
     required TResult Function() sessionFetched,
@@ -275,7 +275,7 @@ class _$LogOutPressed implements LogOutPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
@@ -286,7 +286,7 @@ class _$LogOutPressed implements LogOutPressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
@@ -301,7 +301,7 @@ class _$LogOutPressed implements LogOutPressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(Init value) init,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(SessionDeleted value) sessionDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -312,7 +312,7 @@ class _$LogOutPressed implements LogOutPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -323,7 +323,7 @@ class _$LogOutPressed implements LogOutPressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -381,7 +381,7 @@ class _$SessionDeleted implements SessionDeleted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
+    required TResult Function() init,
     required TResult Function() logOutPressed,
     required TResult Function() sessionDeleted,
     required TResult Function() sessionFetched,
@@ -392,7 +392,7 @@ class _$SessionDeleted implements SessionDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
@@ -403,7 +403,7 @@ class _$SessionDeleted implements SessionDeleted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
@@ -418,7 +418,7 @@ class _$SessionDeleted implements SessionDeleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(Init value) init,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(SessionDeleted value) sessionDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -429,7 +429,7 @@ class _$SessionDeleted implements SessionDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -440,7 +440,7 @@ class _$SessionDeleted implements SessionDeleted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -498,7 +498,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
+    required TResult Function() init,
     required TResult Function() logOutPressed,
     required TResult Function() sessionDeleted,
     required TResult Function() sessionFetched,
@@ -509,7 +509,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
@@ -520,7 +520,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+    TResult Function()? init,
     TResult Function()? logOutPressed,
     TResult Function()? sessionDeleted,
     TResult Function()? sessionFetched,
@@ -535,7 +535,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(Init value) init,
     required TResult Function(LogOutPressed value) logOutPressed,
     required TResult Function(SessionDeleted value) sessionDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
@@ -546,7 +546,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,
@@ -557,7 +557,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+    TResult Function(Init value)? init,
     TResult Function(LogOutPressed value)? logOutPressed,
     TResult Function(SessionDeleted value)? sessionDeleted,
     TResult Function(SessionFetched value)? sessionFetched,

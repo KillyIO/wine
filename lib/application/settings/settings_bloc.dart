@@ -24,7 +24,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     this._sessionsRepository,
     this._settingsRepository,
   ) : super(SettingsState.initial()) {
-    on<InitBloc>((_, emit) async {
+    on<Init>((_, emit) async {
       emit(
         state.copyWith(
           failureOption: const None(),
