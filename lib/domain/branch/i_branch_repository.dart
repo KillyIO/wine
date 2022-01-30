@@ -13,7 +13,7 @@ abstract class IBranchRepository {
   );
 
   /// @nodoc
-  Future<Result<Unit, BranchFailure>> createBranch(Branch branch);
+  Future<Result<Branch, BranchFailure>> createBranch(Branch branch);
 
   /// @nodoc
   Future<Result<Unit, BranchFailure>> deleteBranch(UniqueID uid);
@@ -34,7 +34,7 @@ abstract class IBranchRepository {
   });
 
   /// @nodoc
-  Future<Result<Unit, BranchFailure>> updateBranch(Branch branch);
+  Future<Result<Branch, BranchFailure>> updateBranch(Branch branch);
 
   /// @nodoc
   Future<Result<String, BranchFailure>> uploadCover(File cover);

@@ -64,7 +64,7 @@ class BranchRepository implements IBranchRepository {
   }
 
   @override
-  Future<Result<Unit, BranchFailure>> createBranch(Branch branch) async {
+  Future<Result<Branch, BranchFailure>> createBranch(Branch branch) async {
     var tmpBranch = branch;
 
     try {
@@ -84,7 +84,7 @@ class BranchRepository implements IBranchRepository {
           .doc(tmpBranch.uid.getOrCrash())
           .set(BranchDTO.fromDomain(tmpBranch).toJson());
 
-      return Ok(unit);
+      return Ok(tmpBranch);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
         return Err(const BranchFailure.permissionDenied());
@@ -221,7 +221,7 @@ class BranchRepository implements IBranchRepository {
   }
 
   @override
-  Future<Result<Unit, BranchFailure>> updateBranch(Branch branch) async {
+  Future<Result<Branch, BranchFailure>> updateBranch(Branch branch) async {
     var tmpBranch = branch;
 
     try {
@@ -241,7 +241,7 @@ class BranchRepository implements IBranchRepository {
           .doc(tmpBranch.uid.getOrCrash())
           .update(BranchDTO.fromDomain(tmpBranch).toJson());
 
-      return Ok(unit);
+      return Ok(tmpBranch);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
         return Err(const BranchFailure.permissionDenied());
