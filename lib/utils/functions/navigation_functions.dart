@@ -15,6 +15,7 @@ void handleAuthRedirect(
   BuildContext context, {
   required PageRouteInfo<dynamic> navigateTo,
   bool useRoot = true,
+  bool popUntil = false,
 }) {
   final mediaQuery = MediaQuery.of(context).size;
   final deviceType = getDeviceType(mediaQuery);
@@ -22,13 +23,25 @@ void handleAuthRedirect(
   // We do something for monile just in case...
   if (deviceType == DeviceScreenType.mobile) {
     if (useRoot) {
-      context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
-        ..router.root.replace(navigateTo);
+      if (popUntil) {
+        context
+          ..read<AuthBloc>().add(const AuthEvent.authChanged())
+          ..router.root.popUntilRouteWithName(navigateTo.routeName);
+      } else {
+        context
+          ..read<AuthBloc>().add(const AuthEvent.authChanged())
+          ..router.root.replace(navigateTo);
+      }
     } else {
-      context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
-        ..router.replace(navigateTo);
+      if (popUntil) {
+        context
+          ..read<AuthBloc>().add(const AuthEvent.authChanged())
+          ..router.popUntilRouteWithName(navigateTo.routeName);
+      } else {
+        context
+          ..read<AuthBloc>().add(const AuthEvent.authChanged())
+          ..router.replace(navigateTo);
+      }
     }
   } else {
     if (useRoot) {
