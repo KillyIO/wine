@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
@@ -193,6 +194,7 @@ class TypewriterBranchBloc
       if (branch != null) {
         emit(
           state.copyWith(
+            branch: branch,
             coverURL: branch.coverURL.getOrCrash(),
             genres: branch.genres,
             isEdit: true,
@@ -201,9 +203,20 @@ class TypewriterBranchBloc
             language: branch.language,
             leaf: branch.leaf,
             leafWordCount: branch.leaf.getOrNull()?.countWords() ?? 0,
+            leafController: (branch.leaf.getOrNull() != null
+                ? QuillController(
+                    document: Document.fromJson(
+                      jsonDecode(branch.leaf.getOrNull()!) as List<dynamic>,
+                    ),
+                    selection: const TextSelection.collapsed(offset: 0),
+                  )
+                : QuillController.basic())
+              ..changes.listen((_) => add(const LeafChanged())),
             licence: branch.licence,
             title: branch.title,
             titleWordCount: branch.title.getOrNull()?.countWords() ?? 0,
+            titleController:
+                TextEditingController(text: branch.title.getOrNull()),
           ),
         );
       } else {
@@ -220,9 +233,19 @@ class TypewriterBranchBloc
                 language: branch.language,
                 leaf: branch.leaf,
                 leafWordCount: branch.leaf.getOrNull()?.countWords() ?? 0,
+                leafController: branch.leaf.getOrNull() != null
+                    ? QuillController(
+                        document: Document.fromJson(
+                          jsonDecode(branch.leaf.getOrNull()!) as List<dynamic>,
+                        ),
+                        selection: const TextSelection.collapsed(offset: 0),
+                      )
+                    : QuillController.basic(),
                 licence: branch.licence,
                 title: branch.title,
                 titleWordCount: branch.title.getOrNull()?.countWords() ?? 0,
+                titleController:
+                    TextEditingController(text: branch.title.getOrNull()),
               ),
             );
           },
@@ -362,7 +385,6 @@ class TypewriterBranchBloc
         },
       );
     });
-
     on<TitleChanged>((value, emit) {
       final titleTrim = value.title.trim();
       final wordCount = titleTrim.countWords();
@@ -370,6 +392,7 @@ class TypewriterBranchBloc
       emit(
         state.copyWith(
           failureOption: const None(),
+          isProcessing: false,
           title: Title(titleTrim),
           titleWordCount: wordCount,
         ),
@@ -418,9 +441,10 @@ class TypewriterBranchBloc
   ) async {
     if (state.isEdit) {
       (await _branchRepository.updateBranch(branch)).match(
-        (_) {
+        (branch) {
           emit(
             state.copyWith(
+              branch: branch,
               endState: endState,
               failureOption: const None(),
               isProcessing: false,
@@ -438,9 +462,10 @@ class TypewriterBranchBloc
       );
     } else {
       (await _branchRepository.createBranch(branch)).match(
-        (_) {
+        (branch) {
           emit(
             state.copyWith(
+              branch: branch,
               endState: endState,
               failureOption: const None(),
               isProcessing: false,

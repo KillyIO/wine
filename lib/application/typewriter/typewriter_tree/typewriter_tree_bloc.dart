@@ -175,12 +175,11 @@ class TypewriterTreeBloc
         ),
       );
 
-      if (value.tree != null) {
-        final tree = value.tree;
-
+      final tree = value.tree;
+      if (tree != null) {
         emit(
           state.copyWith(
-            coverURL: tree!.coverURL.getOrCrash(),
+            coverURL: tree.coverURL.getOrCrash(),
             genres: tree.genres,
             isEdit: true,
             isNSFW: tree.isNSFW,
@@ -189,10 +188,16 @@ class TypewriterTreeBloc
             tree: tree,
             subtitle: tree.subtitle ?? Subtitle(''),
             subtitleWordCount: tree.subtitle?.getOrNull()?.countWords() ?? 0,
+            subtitleController:
+                TextEditingController(text: tree.subtitle?.getOrNull()),
             summary: tree.summary,
             summaryWordCount: tree.summary.getOrNull()?.countWords() ?? 0,
+            summaryController:
+                TextEditingController(text: tree.summary.getOrNull()),
             title: tree.title,
             titleWordCount: tree.title.getOrNull()?.countWords() ?? 0,
+            titleController:
+                TextEditingController(text: tree.title.getOrNull()),
           ),
         );
       } else {
@@ -210,10 +215,16 @@ class TypewriterTreeBloc
                 subtitle: tree.subtitle ?? Subtitle(''),
                 subtitleWordCount:
                     tree.subtitle?.getOrNull()?.countWords() ?? 0,
+                subtitleController:
+                    TextEditingController(text: tree.subtitle?.getOrNull()),
                 summary: tree.summary,
                 summaryWordCount: tree.summary.getOrNull()?.countWords() ?? 0,
+                summaryController:
+                    TextEditingController(text: tree.summary.getOrNull()),
                 title: tree.title,
                 titleWordCount: tree.title.getOrNull()?.countWords() ?? 0,
+                titleController:
+                    TextEditingController(text: tree.title.getOrNull()),
               ),
             );
           },
