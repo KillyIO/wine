@@ -86,14 +86,21 @@ extension BranchDTOX on BranchDTO {
         isPublished: isPublished,
         language: Language(language),
         leaf: Leaf(
-          Document.fromJson(jsonDecode(leaf) as List<dynamic>).toPlainText(),
-          Document.fromJson(jsonDecode(leaf) as List<dynamic>)
-              .toDelta()
-              .toJson(),
+          leaf.isEmpty
+              ? leaf
+              : Document.fromJson(jsonDecode(leaf) as List<dynamic>)
+                  .toPlainText(),
+          leaf.isEmpty
+              ? <dynamic>[]
+              : Document.fromJson(jsonDecode(leaf) as List<dynamic>)
+                  .toDelta()
+                  .toJson(),
         ),
         licence: Licence(licence),
         likesCount: likesCount,
-        previousBranchUID: UniqueID.fromUniqueString(previousBranchUID ?? ''),
+        previousBranchUID: previousBranchUID != null
+            ? UniqueID.fromUniqueString(previousBranchUID!)
+            : null,
         title: Title(title),
         treeUID: UniqueID.fromUniqueString(treeUID),
         uid: UniqueID.fromUniqueString(uid),
@@ -143,8 +150,9 @@ extension BranchMapX on Map {
         ),
         licence: Licence(this['licence'] as String),
         likesCount: this['likesCount'] as int,
-        previousBranchUID:
-            UniqueID.fromUniqueString(this['previousBranchUID'] as String),
+        previousBranchUID: this['previousBranchUID'] != null
+            ? UniqueID.fromUniqueString(this['previousBranchUID'] as String)
+            : null,
         title: Title(this['title'] as String),
         treeUID: UniqueID.fromUniqueString(this['treeUID'] as String),
         uid: UniqueID.fromUniqueString(this['uid'] as String),
