@@ -17,13 +17,13 @@ class TreeCard extends StatelessWidget {
   }) : super(key: key);
 
   /// @nodoc
-  final String coverURL;
+  final String? coverURL;
 
   /// @nodoc
   final VoidCallback onPressed;
 
   /// @nodoc
-  final String title;
+  final String? title;
 
   /// @nodoc
   final double titleFontSize;
@@ -47,12 +47,18 @@ class TreeCard extends StatelessWidget {
               ),
               child: Hero(
                 tag: uid,
-                child: isURL(coverURL)
-                    ? CachedNetworkImage(
-                        fit: BoxFit.contain,
-                        imageUrl: coverURL,
-                      )
-                    : Image.file(File(coverURL)),
+                child: coverURL != null
+                    ? isURL(coverURL!)
+                        ? CachedNetworkImage(
+                            fit: BoxFit.contain,
+                            imageUrl: coverURL!,
+                          )
+                        : Image.file(File(coverURL!))
+                    : Container(
+                        width: 100,
+                        height: 200,
+                        color: Colors.black38,
+                      ),
               ),
             ),
             Container(
@@ -63,10 +69,11 @@ class TreeCard extends StatelessWidget {
                 ),
                 color: Colors.black87,
               ),
+              width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  title,
+                  title ?? 'No title*',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
