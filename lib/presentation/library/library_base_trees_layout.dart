@@ -61,18 +61,9 @@ class LibraryBaseTreesLayout extends StatelessWidget {
             shrinkWrap: true,
             itemCount: trees.length,
             itemBuilder: (_, i) => TreeCard(
-              coverURL: trees[i].coverURL.getOrNull() ?? '',
+              coverURL: trees[i].coverURL.getOrNull(),
               onPressed: () {
                 switch (type) {
-                  case 'published':
-                    handleAuthGuardedNavigation(
-                      context,
-                      navigateTo: TreeRoute(
-                        id: trees[i].uid.getOrCrash(),
-                        tree: trees[i],
-                      ),
-                    );
-                    break;
                   case 'drafts':
                     handleAuthGuardedNavigation(
                       context,
@@ -83,11 +74,18 @@ class LibraryBaseTreesLayout extends StatelessWidget {
                       ),
                     );
                     break;
-                  case 'bookmarks':
                   default:
+                    handleAuthGuardedNavigation(
+                      context,
+                      navigateTo: TreeRoute(
+                        id: trees[i].uid.getOrCrash(),
+                        tree: trees[i],
+                      ),
+                    );
+                    break;
                 }
               },
-              title: trees[i].title.getOrNull() ?? '',
+              title: trees[i].title.getOrNull(),
               uid: trees[i].uid.getOrCrash(),
             ),
           ),
