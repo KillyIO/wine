@@ -65,7 +65,7 @@ class TypewriterEditionLayout extends StatelessWidget {
               return TypewriterTextField(
                 controller: state.titleController,
                 label: 'TITLE*',
-                hintText: 'Less than  words',
+                hintText: 'Less than $titleMaxWords words',
                 onChanged: (value) => context
                     .read<TypewriterBranchBloc>()
                     .add(TypewriterBranchEvent.titleChanged(value)),
@@ -83,7 +83,7 @@ class TypewriterEditionLayout extends StatelessWidget {
                         orElse: () => null,
                       ),
                     ),
-                wordCount: '${state.titleWordCount}/$titleMaxWords',
+                wordCount: '${state.titleWordCount}/$titleMaxWords words',
                 wordCountError: state.titleWordCount == 0 ||
                     state.titleWordCount > titleMaxWords,
               );
@@ -97,7 +97,7 @@ class TypewriterEditionLayout extends StatelessWidget {
                 hintText:
                     'More than $leafMinWords words and less than $leafMaxWords words',
                 label: 'BODY*',
-                wordCount: '${state.leafWordCount}/$leafMaxWords',
+                wordCount: '${state.leafWordCount}/$leafMaxWords words',
                 wordCountError: state.leafWordCount < leafMinWords ||
                     state.leafWordCount > leafMaxWords,
               );

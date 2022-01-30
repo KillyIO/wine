@@ -153,7 +153,7 @@ class TypewriterTreeLayout extends StatelessWidget {
                       return TypewriterTextField(
                         controller: state.titleController,
                         label: 'TITLE*',
-                        hintText: 'Less than  words',
+                        hintText: 'Less than $titleMaxWords words',
                         onChanged: (value) => context
                             .read<TypewriterTreeBloc>()
                             .add(TypewriterTreeEvent.titleChanged(value)),
@@ -172,7 +172,8 @@ class TypewriterTreeLayout extends StatelessWidget {
                                 orElse: () => null,
                               ),
                             ),
-                        wordCount: '${state.titleWordCount}/$titleMaxWords',
+                        wordCount:
+                            '${state.titleWordCount}/$titleMaxWords words',
                         wordCountError: state.titleWordCount == 0 ||
                             state.titleWordCount > titleMaxWords,
                       );
@@ -183,7 +184,7 @@ class TypewriterTreeLayout extends StatelessWidget {
                       return TypewriterTextField(
                         controller: state.subtitleController,
                         label: 'SUBTITLE (OPTIONAL)',
-                        hintText: 'Less than  words',
+                        hintText: 'Less than $subtitleMaxWords words',
                         onChanged: (value) =>
                             context.read<TypewriterTreeBloc>().add(
                                   TypewriterTreeEvent.subtitleChanged(value),
@@ -202,7 +203,7 @@ class TypewriterTreeLayout extends StatelessWidget {
                               ),
                             ),
                         wordCount:
-                            '${state.subtitleWordCount}/$subtitleMaxWords',
+                            '${state.subtitleWordCount}/$subtitleMaxWords words',
                         wordCountError:
                             state.subtitleWordCount > subtitleMaxWords,
                       );
@@ -213,7 +214,7 @@ class TypewriterTreeLayout extends StatelessWidget {
                       return TypewriterTextField(
                         controller: state.summaryController,
                         label: 'SUMMARY*',
-                        hintText: 'Less than  words',
+                        hintText: 'Less than $summaryMaxWords words',
                         maxLines: null,
                         onChanged: (value) => context
                             .read<TypewriterTreeBloc>()
@@ -233,7 +234,8 @@ class TypewriterTreeLayout extends StatelessWidget {
                                 orElse: () => null,
                               ),
                             ),
-                        wordCount: '${state.summaryWordCount}/$summaryMaxWords',
+                        wordCount:
+                            '${state.summaryWordCount}/$summaryMaxWords words',
                         wordCountError: state.summaryWordCount == 0 ||
                             state.summaryWordCount > summaryMaxWords,
                       );
