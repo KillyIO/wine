@@ -8,7 +8,7 @@ class TypewriterTextField extends StatelessWidget {
   /// @nodoc
   const TypewriterTextField({
     Key? key,
-    required this.controller,
+    this.controller,
     required this.hintText,
     this.keyboardType = TextInputType.text,
     required this.label,
@@ -20,7 +20,7 @@ class TypewriterTextField extends StatelessWidget {
   }) : super(key: key);
 
   /// @nodoc
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   /// @nodoc
   final String hintText;
@@ -55,7 +55,6 @@ class TypewriterTextField extends StatelessWidget {
         TextFormField(
           controller: controller,
           focusNode: FocusNode(),
-          textCapitalization: TextCapitalization.sentences,
           decoration: InputDecoration(
             hintText: hintText,
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
@@ -74,6 +73,7 @@ class TypewriterTextField extends StatelessWidget {
           keyboardType: keyboardType,
           maxLines: maxLines,
           onChanged: onChanged,
+          textCapitalization: TextCapitalization.sentences,
           validator: validator,
         ),
         Padding(
