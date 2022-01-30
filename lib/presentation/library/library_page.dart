@@ -23,7 +23,7 @@ class _LibraryPageState extends State<LibraryPage> {
   void initState() {
     super.initState();
 
-    context.read<LibraryBloc>().add(const LibraryEvent.initBloc());
+    context.read<LibraryBloc>().add(const LibraryEvent.init());
   }
 
   @override

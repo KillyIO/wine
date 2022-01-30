@@ -27,10 +27,54 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
     this._sessionsRepository,
     this._treeRepository,
   ) : super(LibraryState.initial()) {
-    on<BranchDeleted>((value, emit) async {});
-    on<InitBloc>((_, emit) async {
+    on<BranchDeleted>((value, emit) async {
       emit(
         state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      final branches = state.branches
+          .where((s) => s.uid.getOrCrash() != value.uid.getOrCrash())
+          .toList();
+
+      emit(
+        state.copyWith(
+          branches: branches,
+          failureOption: const None(),
+          isProcessing: false,
+        ),
+      );
+    });
+    on<BranchModified>((value, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      final i = state.branches.indexWhere(
+        (e) => e.uid.getOrCrash() == value.branch.uid.getOrCrash(),
+      );
+
+      final branches = state.branches;
+      branches[i] = value.branch;
+
+      emit(
+        state.copyWith(
+          branches: branches,
+          failureOption: const None(),
+          isProcessing: false,
+        ),
+      );
+    });
+    on<Init>((_, emit) async {
+      emit(
+        state.copyWith(
+          currentPageViewIdx: 0,
+          currentVerticalNavbarIdx: 0,
           failureOption: const None(),
           isProcessing: true,
         ),
@@ -106,9 +150,9 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                 (branches) {
                   emit(
                     state.copyWith(
+                      branches: branches,
                       failureOption: Option.none(),
                       isProcessing: false,
-                      branches: branches,
                     ),
                   );
                 },
@@ -160,6 +204,29 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
       final trees = state.trees
           .where((s) => s.uid.getOrCrash() != value.uid.getOrCrash())
           .toList();
+
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: false,
+          trees: trees,
+        ),
+      );
+    });
+    on<TreeModified>((value, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      final i = state.trees.indexWhere(
+        (e) => e.uid.getOrCrash() == value.tree.uid.getOrCrash(),
+      );
+
+      final trees = state.trees;
+      trees[i] = value.tree;
 
       emit(
         state.copyWith(

@@ -7,7 +7,10 @@ class LibraryEvent with _$LibraryEvent {
   const factory LibraryEvent.branchDeleted(UniqueID uid) = BranchDeleted;
 
   /// @nodoc
-  const factory LibraryEvent.initBloc() = InitBloc;
+  const factory LibraryEvent.branchModified(Branch branch) = BranchModified;
+
+  /// @nodoc
+  const factory LibraryEvent.init() = Init;
 
   /// @nodoc
   const factory LibraryEvent.pageViewIndexChanged(int index) =
@@ -18,6 +21,9 @@ class LibraryEvent with _$LibraryEvent {
 
   /// @nodoc
   const factory LibraryEvent.treeDeleted(UniqueID uid) = TreeDeleted;
+
+  /// @nodoc
+  const factory LibraryEvent.treeModified(Tree tree) = TreeModified;
 
   /// @nodoc
   const factory LibraryEvent.verticalNavbarIndexChanged(int index) =
