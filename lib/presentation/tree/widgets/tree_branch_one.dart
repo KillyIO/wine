@@ -39,6 +39,7 @@ class TreeBranchOne extends StatelessWidget {
                 title: state.branchOne!.title.getOrCrash(),
                 coverURL: state.branchOne!.coverURL.getOrCrash(),
                 onPressed: () {},
+                uid: state.branchOne!.uid.getOrCrash(),
               );
             }
             if (state.authorIsUser) {

@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:string_validator/string_validator.dart';
 
 /// @nodoc
 class BranchTile extends StatelessWidget {
@@ -8,22 +12,72 @@ class BranchTile extends StatelessWidget {
     required this.coverURL,
     required this.onPressed,
     required this.title,
+    required this.uid,
   }) : super(key: key);
 
   /// @nodoc
-  final String coverURL;
+  final String? coverURL;
 
   /// @nodoc
   final VoidCallback onPressed;
 
   /// @nodoc
-  final String title;
+  final String? title;
+
+  /// @nodoc
+  final String uid;
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return GestureDetector(
       onTap: onPressed,
-      child: Container(),
+      child: Container(
+        decoration: const BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              width: 0.5,
+              color: Colors.black26,
+            ),
+          ),
+        ),
+        height: mediaQuery.height * .15,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5, top: 5),
+                child: Text(
+                  title ?? 'No title*',
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ),
+            Hero(
+              tag: uid,
+              child: coverURL != null
+                  ? isURL(coverURL!)
+                      ? CachedNetworkImage(
+                          fit: BoxFit.contain,
+                          imageUrl: coverURL!,
+                        )
+                      : Image.file(File(coverURL!))
+                  : Container(
+                      width: mediaQuery.width * .25,
+                      height: mediaQuery.height * .15,
+                      color: Colors.black38,
+                    ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
