@@ -19,7 +19,7 @@ abstract class IBranchRepository {
   Future<Result<Unit, BranchFailure>> deleteBranch(UniqueID uid);
 
   /// @nodoc
-  Future<Result<Branch, BranchFailure>> loadBranchByID(UniqueID uid);
+  Future<Result<Branch, BranchFailure>> loadBranchByUID(UniqueID uid);
 
   /// @nodoc
   Future<Result<Branch, BranchFailure>> loadBranchByTreeUIDAndIndex(
@@ -28,7 +28,7 @@ abstract class IBranchRepository {
   );
 
   /// @nodoc
-  Future<Result<List<Branch>, BranchFailure>> loadBranchesByUserID(
+  Future<Result<List<Branch>, BranchFailure>> loadBranchesByUserUID(
     UniqueID uid, {
     UniqueID? lastBranchUID,
   });

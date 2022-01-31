@@ -116,7 +116,7 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
 
         add(const TreeEvent.treeSet());
       } else {
-        (await _treeRepository.loadTreeByID(value.uid)).match(
+        (await _treeRepository.loadTreeByUID(value.uid)).match(
           (tree) {
             emit(
               state.copyWith(

@@ -120,7 +120,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         switch (state.currentPageViewIdx) {
           case 0:
             if (state.trees.isEmpty) {
-              (await _treeRepository.loadTreesByUserID(state.session.uid))
+              (await _treeRepository.loadTreesByUserUID(state.session.uid))
                   .match(
                 (trees) {
                   emit(
@@ -145,7 +145,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
             break;
           case 1:
             if (state.branches.isEmpty) {
-              (await _branchRepository.loadBranchesByUserID(state.session.uid))
+              (await _branchRepository.loadBranchesByUserUID(state.session.uid))
                   .match(
                 (branches) {
                   emit(
@@ -173,7 +173,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
       }
     });
     on<SessionFetched>((_, emit) async {
-      (await _treeRepository.loadTreesByUserID(state.session.uid)).match(
+      (await _treeRepository.loadTreesByUserUID(state.session.uid)).match(
         (trees) {
           emit(
             state.copyWith(

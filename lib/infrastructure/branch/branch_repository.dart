@@ -112,7 +112,7 @@ class BranchRepository implements IBranchRepository {
   }
 
   @override
-  Future<Result<Branch, BranchFailure>> loadBranchByID(UniqueID uid) async {
+  Future<Result<Branch, BranchFailure>> loadBranchByUID(UniqueID uid) async {
     try {
       final snapshot =
           await _firestore.collection(branchesPath).doc(uid.getOrCrash()).get();
@@ -171,7 +171,7 @@ class BranchRepository implements IBranchRepository {
   }
 
   @override
-  Future<Result<List<Branch>, BranchFailure>> loadBranchesByUserID(
+  Future<Result<List<Branch>, BranchFailure>> loadBranchesByUserUID(
     UniqueID uid, {
     UniqueID? lastBranchUID,
   }) async {

@@ -141,7 +141,7 @@ class TreeRepository implements ITreeRepository {
   }
 
   @override
-  Future<Result<Tree, TreeFailure>> loadTreeByID(UniqueID uid) async {
+  Future<Result<Tree, TreeFailure>> loadTreeByUID(UniqueID uid) async {
     try {
       final snapshot =
           await _firestore.collection(treesPath).doc(uid.getOrCrash()).get();
@@ -162,7 +162,7 @@ class TreeRepository implements ITreeRepository {
   }
 
   @override
-  Future<Result<List<Tree>, TreeFailure>> loadTreesByUserID(
+  Future<Result<List<Tree>, TreeFailure>> loadTreesByUserUID(
     UniqueID uid, {
     UniqueID? lastTreeUID,
   }) async {

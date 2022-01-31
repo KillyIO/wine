@@ -26,10 +26,10 @@ abstract class ITreeRepository {
   );
 
   /// @nodoc
-  Future<Result<Tree, TreeFailure>> loadTreeByID(UniqueID uid);
+  Future<Result<Tree, TreeFailure>> loadTreeByUID(UniqueID uid);
 
   /// @nodoc
-  Future<Result<List<Tree>, TreeFailure>> loadTreesByUserID(
+  Future<Result<List<Tree>, TreeFailure>> loadTreesByUserUID(
     UniqueID uid, {
     UniqueID? lastTreeUID,
   });
