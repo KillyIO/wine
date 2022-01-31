@@ -87,7 +87,7 @@ void main() {
       when(_collection.where).thenReturn(_where);
       when(
         // ignore: invalid_use_of_protected_member
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
+        () => _where.addWhereClauseInternal<QAfterWhereClause>(any()),
       ).thenReturn(_uidEqualTo);
       when(_uidEqualTo.build).thenReturn(_build);
     });

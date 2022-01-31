@@ -79,7 +79,7 @@ void main() {
       when(() => _isar.settings).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
+        () => _where.addWhereClauseInternal<QAfterWhereClause>(any()),
       ).thenReturn(_uidEqualTo);
       when(_uidEqualTo.build).thenReturn(_build);
     });
@@ -148,7 +148,7 @@ void main() {
       when(() => _isar.settings).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
+        () => _where.addWhereClauseInternal<QAfterWhereClause>(any()),
       ).thenReturn(_uidEqualTo);
       when(_uidEqualTo.build).thenReturn(_build);
     });
