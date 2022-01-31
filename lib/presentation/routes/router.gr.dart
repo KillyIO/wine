@@ -11,10 +11,11 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i13;
+import 'package:flutter/foundation.dart' as _i15;
 import 'package:flutter/material.dart' as _i14;
-import 'package:wine/domain/branch/branch.dart' as _i16;
-import 'package:wine/domain/core/typewriter_type.dart' as _i17;
-import 'package:wine/domain/tree/tree.dart' as _i15;
+import 'package:wine/domain/branch/branch.dart' as _i17;
+import 'package:wine/domain/core/typewriter_type.dart' as _i18;
+import 'package:wine/domain/tree/tree.dart' as _i16;
 import 'package:wine/presentation/home/home_page.dart' as _i1;
 import 'package:wine/presentation/library/library_page.dart' as _i2;
 import 'package:wine/presentation/log_in/log_in_page.dart' as _i3;
@@ -191,7 +192,7 @@ class LibraryRoute extends _i13.PageRouteInfo<void> {
 /// generated route for
 /// [_i3.LogInPage]
 class LogInRoute extends _i13.PageRouteInfo<LogInRouteArgs> {
-  LogInRoute({_i14.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
+  LogInRoute({_i15.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
       : super(LogInRoute.name,
             path: '/log-in',
             args: LogInRouteArgs(key: key, navigateTo: navigateTo));
@@ -202,7 +203,7 @@ class LogInRoute extends _i13.PageRouteInfo<LogInRouteArgs> {
 class LogInRouteArgs {
   const LogInRouteArgs({this.key, required this.navigateTo});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final _i13.PageRouteInfo<dynamic> navigateTo;
 
@@ -223,7 +224,7 @@ class PlusRoute extends _i13.PageRouteInfo<void> {
 /// generated route for
 /// [_i5.TreePage]
 class TreeRoute extends _i13.PageRouteInfo<TreeRouteArgs> {
-  TreeRoute({_i14.Key? key, required String id, _i15.Tree? tree})
+  TreeRoute({_i15.Key? key, required String id, _i16.Tree? tree})
       : super(TreeRoute.name,
             path: '/tree/:id',
             args: TreeRouteArgs(key: key, id: id, tree: tree),
@@ -235,11 +236,11 @@ class TreeRoute extends _i13.PageRouteInfo<TreeRouteArgs> {
 class TreeRouteArgs {
   const TreeRouteArgs({this.key, required this.id, this.tree});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final String id;
 
-  final _i15.Tree? tree;
+  final _i16.Tree? tree;
 
   @override
   String toString() {
@@ -260,7 +261,7 @@ class SettingsWrapper extends _i13.PageRouteInfo<void> {
 /// generated route for
 /// [_i7.SignUpPage]
 class SignUpRoute extends _i13.PageRouteInfo<SignUpRouteArgs> {
-  SignUpRoute({_i14.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
+  SignUpRoute({_i15.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
       : super(SignUpRoute.name,
             path: '/sign-up',
             args: SignUpRouteArgs(key: key, navigateTo: navigateTo));
@@ -271,7 +272,7 @@ class SignUpRoute extends _i13.PageRouteInfo<SignUpRouteArgs> {
 class SignUpRouteArgs {
   const SignUpRouteArgs({this.key, required this.navigateTo});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final _i13.PageRouteInfo<dynamic> navigateTo;
 
@@ -285,11 +286,11 @@ class SignUpRouteArgs {
 /// [_i8.TypewriterPage]
 class TypewriterBranchUID extends _i13.PageRouteInfo<TypewriterBranchUIDArgs> {
   TypewriterBranchUID(
-      {_i14.Key? key,
-      _i16.Branch? branch,
+      {_i15.Key? key,
+      _i17.Branch? branch,
       String? uid,
-      _i15.Tree? tree,
-      _i17.TypewriterType type = _i17.TypewriterType.unknown})
+      _i16.Tree? tree,
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterBranchUID.name,
             path: '/typewriter/branch/:id',
             args: TypewriterBranchUIDArgs(
@@ -305,17 +306,17 @@ class TypewriterBranchUIDArgs {
       this.branch,
       this.uid,
       this.tree,
-      this.type = _i17.TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
-  final _i16.Branch? branch;
+  final _i17.Branch? branch;
 
   final String? uid;
 
-  final _i15.Tree? tree;
+  final _i16.Tree? tree;
 
-  final _i17.TypewriterType type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
@@ -327,11 +328,11 @@ class TypewriterBranchUIDArgs {
 /// [_i8.TypewriterPage]
 class TypewriterBranchNew extends _i13.PageRouteInfo<TypewriterBranchNewArgs> {
   TypewriterBranchNew(
-      {_i14.Key? key,
-      _i16.Branch? branch,
+      {_i15.Key? key,
+      _i17.Branch? branch,
       String? uid,
-      _i15.Tree? tree,
-      _i17.TypewriterType type = _i17.TypewriterType.unknown})
+      _i16.Tree? tree,
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterBranchNew.name,
             path: '/typewriter/branch/new',
             args: TypewriterBranchNewArgs(
@@ -347,17 +348,17 @@ class TypewriterBranchNewArgs {
       this.branch,
       this.uid,
       this.tree,
-      this.type = _i17.TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
-  final _i16.Branch? branch;
+  final _i17.Branch? branch;
 
   final String? uid;
 
-  final _i15.Tree? tree;
+  final _i16.Tree? tree;
 
-  final _i17.TypewriterType type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
@@ -369,11 +370,11 @@ class TypewriterBranchNewArgs {
 /// [_i8.TypewriterPage]
 class TypewriterTreeUID extends _i13.PageRouteInfo<TypewriterTreeUIDArgs> {
   TypewriterTreeUID(
-      {_i14.Key? key,
-      _i16.Branch? branch,
+      {_i15.Key? key,
+      _i17.Branch? branch,
       String? uid,
-      _i15.Tree? tree,
-      _i17.TypewriterType type = _i17.TypewriterType.unknown})
+      _i16.Tree? tree,
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterTreeUID.name,
             path: '/typewriter/tree/:id',
             args: TypewriterTreeUIDArgs(
@@ -389,17 +390,17 @@ class TypewriterTreeUIDArgs {
       this.branch,
       this.uid,
       this.tree,
-      this.type = _i17.TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
-  final _i16.Branch? branch;
+  final _i17.Branch? branch;
 
   final String? uid;
 
-  final _i15.Tree? tree;
+  final _i16.Tree? tree;
 
-  final _i17.TypewriterType type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
@@ -411,11 +412,11 @@ class TypewriterTreeUIDArgs {
 /// [_i8.TypewriterPage]
 class TypewriterTreeNew extends _i13.PageRouteInfo<TypewriterTreeNewArgs> {
   TypewriterTreeNew(
-      {_i14.Key? key,
-      _i16.Branch? branch,
+      {_i15.Key? key,
+      _i17.Branch? branch,
       String? uid,
-      _i15.Tree? tree,
-      _i17.TypewriterType type = _i17.TypewriterType.unknown})
+      _i16.Tree? tree,
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterTreeNew.name,
             path: '/typewriter/tree/new',
             args: TypewriterTreeNewArgs(
@@ -431,17 +432,17 @@ class TypewriterTreeNewArgs {
       this.branch,
       this.uid,
       this.tree,
-      this.type = _i17.TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
-  final _i16.Branch? branch;
+  final _i17.Branch? branch;
 
   final String? uid;
 
-  final _i15.Tree? tree;
+  final _i16.Tree? tree;
 
-  final _i17.TypewriterType type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
