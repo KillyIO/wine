@@ -6,9 +6,9 @@ import 'package:wine/presentation/tree/widgets/tree_cover.dart';
 import 'package:wine/presentation/tree/widgets/tree_title.dart';
 
 /// @nodoc
-class TreeCoverLayout extends StatelessWidget {
+class TreeDetails extends StatelessWidget {
   /// @nodoc
-  const TreeCoverLayout({Key? key}) : super(key: key);
+  const TreeDetails({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

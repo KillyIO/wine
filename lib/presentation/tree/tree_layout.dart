@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
 import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';
-import 'package:wine/presentation/tree/widgets/tree_cover_layout.dart';
+import 'package:wine/presentation/tree/widgets/tree_details.dart';
 import 'package:wine/presentation/tree/widgets/tree_genres.dart';
 import 'package:wine/presentation/tree/widgets/tree_resume_reading.dart';
 import 'package:wine/presentation/tree/widgets/tree_stats.dart';
@@ -76,7 +76,7 @@ class TreeLayout extends StatelessWidget {
               children: const [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),
-                  child: TreeCoverLayout(),
+                  child: TreeDetails(),
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
