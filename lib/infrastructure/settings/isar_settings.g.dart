@@ -43,17 +43,15 @@ final IsarSettingsSchema = CollectionSchema(
   getId: (obj) => obj.id,
   setId: null,
   getLinks: (obj) => [],
-  version: 0,
+  version: 1,
 );
 
 class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
   const _IsarSettingsAdapter();
 
   @override
-  int serialize(IsarCollection<IsarSettings> collection, IsarRawObject rawObj,
-      IsarSettings object, List<int> offsets,
-      [int? existingBufferSize]) {
-    rawObj.id = object.id ?? Isar.autoIncrement;
+  void serialize(IsarCollection<IsarSettings> collection, IsarRawObject rawObj,
+      IsarSettings object, List<int> offsets, AdapterAlloc alloc) {
     var dynamicSize = 0;
     final value0 = object.enableBranchesBookmarksCount;
     final _enableBranchesBookmarksCount = value0;
@@ -76,19 +74,7 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
     dynamicSize += _uid.length;
     final size = dynamicSize + 25;
 
-    late int bufferSize;
-    if (existingBufferSize != null) {
-      if (existingBufferSize < size) {
-        isarFree(rawObj.buffer);
-        rawObj.buffer = isarMalloc(size);
-        bufferSize = size;
-      } else {
-        bufferSize = existingBufferSize;
-      }
-    } else {
-      rawObj.buffer = isarMalloc(size);
-      bufferSize = size;
-    }
+    rawObj.buffer = alloc(size);
     rawObj.buffer_length = size;
     final buffer = bufAsBytes(rawObj.buffer, size);
     final writer = BinaryWriter(buffer, 25);
@@ -101,7 +87,6 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
     writer.writeLong(offsets[6], _hashCode);
     writer.writeBool(offsets[7], _stringify);
     writer.writeBytes(offsets[8], _uid);
-    return bufferSize;
   }
 
   @override
@@ -153,11 +138,11 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
 extension IsarSettingsQueryWhereSort
     on QueryBuilder<IsarSettings, IsarSettings, QWhere> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhere> anyId() {
-    return addWhereClause(const WhereClause(indexName: null));
+    return addWhereClauseInternal(const WhereClause(indexName: null));
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhere> anyUid() {
-    return addWhereClause(const WhereClause(indexName: 'uid'));
+    return addWhereClauseInternal(const WhereClause(indexName: 'uid'));
   }
 }
 
@@ -165,7 +150,7 @@ extension IsarSettingsQueryWhere
     on QueryBuilder<IsarSettings, IsarSettings, QWhereClause> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idEqualTo(
       int? id) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [id],
       includeLower: true,
@@ -177,21 +162,21 @@ extension IsarSettingsQueryWhere
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idNotEqualTo(
       int? id) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: null,
         upper: [id],
         includeUpper: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: null,
         lower: [id],
         includeLower: false,
       ));
     } else {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: null,
         lower: [id],
         includeLower: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: null,
         upper: [id],
         includeUpper: false,
@@ -203,7 +188,7 @@ extension IsarSettingsQueryWhere
     int? id, {
     bool include = false,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [id],
       includeLower: include,
@@ -214,7 +199,7 @@ extension IsarSettingsQueryWhere
     int? id, {
     bool include = false,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       upper: [id],
       includeUpper: include,
@@ -227,7 +212,7 @@ extension IsarSettingsQueryWhere
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [lowerId],
       includeLower: includeLower,
@@ -238,7 +223,7 @@ extension IsarSettingsQueryWhere
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> uidEqualTo(
       String uid) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: 'uid',
       lower: [uid],
       includeLower: true,
@@ -250,21 +235,21 @@ extension IsarSettingsQueryWhere
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> uidNotEqualTo(
       String uid) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: 'uid',
         upper: [uid],
         includeUpper: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: 'uid',
         lower: [uid],
         includeLower: false,
       ));
     } else {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: 'uid',
         lower: [uid],
         includeLower: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: 'uid',
         upper: [uid],
         includeUpper: false,
@@ -277,7 +262,7 @@ extension IsarSettingsQueryFilter
     on QueryBuilder<IsarSettings, IsarSettings, QFilterCondition> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesBookmarksCountIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'enableBranchesBookmarksCount',
       value: null,
@@ -286,7 +271,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesBookmarksCountEqualTo(bool? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'enableBranchesBookmarksCount',
       value: value,
@@ -295,7 +280,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesLikesCountIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'enableBranchesLikesCount',
       value: null,
@@ -304,7 +289,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesLikesCountEqualTo(bool? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'enableBranchesLikesCount',
       value: value,
@@ -313,7 +298,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesViewsCountIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'enableBranchesViewsCount',
       value: null,
@@ -322,7 +307,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesViewsCountEqualTo(bool? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'enableBranchesViewsCount',
       value: value,
@@ -331,7 +316,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesBookmarksCountIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'enableTreesBookmarksCount',
       value: null,
@@ -340,7 +325,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesBookmarksCountEqualTo(bool? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'enableTreesBookmarksCount',
       value: value,
@@ -349,7 +334,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesLikesCountIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'enableTreesLikesCount',
       value: null,
@@ -358,7 +343,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesLikesCountEqualTo(bool? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'enableTreesLikesCount',
       value: value,
@@ -367,7 +352,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesViewsCountIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'enableTreesViewsCount',
       value: null,
@@ -376,7 +361,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesViewsCountEqualTo(bool? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'enableTreesViewsCount',
       value: value,
@@ -385,7 +370,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       hashCodeEqualTo(int value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'hashCode',
       value: value,
@@ -397,7 +382,7 @@ extension IsarSettingsQueryFilter
     int value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'hashCode',
@@ -410,7 +395,7 @@ extension IsarSettingsQueryFilter
     int value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'hashCode',
@@ -425,7 +410,7 @@ extension IsarSettingsQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'hashCode',
       lower: lower,
       includeLower: includeLower,
@@ -435,7 +420,7 @@ extension IsarSettingsQueryFilter
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> idIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'id',
       value: null,
@@ -444,7 +429,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> idEqualTo(
       int? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'id',
       value: value,
@@ -455,7 +440,7 @@ extension IsarSettingsQueryFilter
     int? value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'id',
@@ -467,7 +452,7 @@ extension IsarSettingsQueryFilter
     int? value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'id',
@@ -481,7 +466,7 @@ extension IsarSettingsQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'id',
       lower: lower,
       includeLower: includeLower,
@@ -492,7 +477,7 @@ extension IsarSettingsQueryFilter
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       stringifyEqualTo(bool value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'stringify',
       value: value,
@@ -503,7 +488,7 @@ extension IsarSettingsQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'uid',
       value: value,
@@ -517,7 +502,7 @@ extension IsarSettingsQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'uid',
@@ -531,7 +516,7 @@ extension IsarSettingsQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'uid',
@@ -547,7 +532,7 @@ extension IsarSettingsQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'uid',
       lower: lower,
       includeLower: includeLower,
@@ -561,7 +546,7 @@ extension IsarSettingsQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.startsWith,
       property: 'uid',
       value: value,
@@ -573,7 +558,7 @@ extension IsarSettingsQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.endsWith,
       property: 'uid',
       value: value,
@@ -584,7 +569,7 @@ extension IsarSettingsQueryFilter
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidContains(
       String value,
       {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.contains,
       property: 'uid',
       value: value,
@@ -595,7 +580,7 @@ extension IsarSettingsQueryFilter
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidMatches(
       String pattern,
       {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.matches,
       property: 'uid',
       value: pattern,
@@ -848,47 +833,47 @@ extension IsarSettingsQueryProperty
     on QueryBuilder<IsarSettings, IsarSettings, QQueryProperty> {
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableBranchesBookmarksCountProperty() {
-    return addPropertyName('enableBranchesBookmarksCount');
+    return addPropertyNameInternal('enableBranchesBookmarksCount');
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableBranchesLikesCountProperty() {
-    return addPropertyName('enableBranchesLikesCount');
+    return addPropertyNameInternal('enableBranchesLikesCount');
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableBranchesViewsCountProperty() {
-    return addPropertyName('enableBranchesViewsCount');
+    return addPropertyNameInternal('enableBranchesViewsCount');
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableTreesBookmarksCountProperty() {
-    return addPropertyName('enableTreesBookmarksCount');
+    return addPropertyNameInternal('enableTreesBookmarksCount');
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableTreesLikesCountProperty() {
-    return addPropertyName('enableTreesLikesCount');
+    return addPropertyNameInternal('enableTreesLikesCount');
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableTreesViewsCountProperty() {
-    return addPropertyName('enableTreesViewsCount');
+    return addPropertyNameInternal('enableTreesViewsCount');
   }
 
   QueryBuilder<IsarSettings, int, QQueryOperations> hashCodeProperty() {
-    return addPropertyName('hashCode');
+    return addPropertyNameInternal('hashCode');
   }
 
   QueryBuilder<IsarSettings, int?, QQueryOperations> idProperty() {
-    return addPropertyName('id');
+    return addPropertyNameInternal('id');
   }
 
   QueryBuilder<IsarSettings, bool, QQueryOperations> stringifyProperty() {
-    return addPropertyName('stringify');
+    return addPropertyNameInternal('stringify');
   }
 
   QueryBuilder<IsarSettings, String, QQueryOperations> uidProperty() {
-    return addPropertyName('uid');
+    return addPropertyNameInternal('uid');
   }
 }

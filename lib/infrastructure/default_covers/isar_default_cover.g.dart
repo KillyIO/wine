@@ -33,17 +33,19 @@ final IsarDefaultCoverSchema = CollectionSchema(
   getId: (obj) => obj.id,
   setId: null,
   getLinks: (obj) => [],
-  version: 0,
+  version: 1,
 );
 
 class _IsarDefaultCoverAdapter extends IsarTypeAdapter<IsarDefaultCover> {
   const _IsarDefaultCoverAdapter();
 
   @override
-  int serialize(IsarCollection<IsarDefaultCover> collection,
-      IsarRawObject rawObj, IsarDefaultCover object, List<int> offsets,
-      [int? existingBufferSize]) {
-    rawObj.id = object.id ?? Isar.autoIncrement;
+  void serialize(
+      IsarCollection<IsarDefaultCover> collection,
+      IsarRawObject rawObj,
+      IsarDefaultCover object,
+      List<int> offsets,
+      AdapterAlloc alloc) {
     var dynamicSize = 0;
     final value0 = object.hashCode;
     final _hashCode = value0;
@@ -57,19 +59,7 @@ class _IsarDefaultCoverAdapter extends IsarTypeAdapter<IsarDefaultCover> {
     dynamicSize += _url.length;
     final size = dynamicSize + 27;
 
-    late int bufferSize;
-    if (existingBufferSize != null) {
-      if (existingBufferSize < size) {
-        isarFree(rawObj.buffer);
-        rawObj.buffer = isarMalloc(size);
-        bufferSize = size;
-      } else {
-        bufferSize = existingBufferSize;
-      }
-    } else {
-      rawObj.buffer = isarMalloc(size);
-      bufferSize = size;
-    }
+    rawObj.buffer = alloc(size);
     rawObj.buffer_length = size;
     final buffer = bufAsBytes(rawObj.buffer, size);
     final writer = BinaryWriter(buffer, 27);
@@ -77,7 +67,6 @@ class _IsarDefaultCoverAdapter extends IsarTypeAdapter<IsarDefaultCover> {
     writer.writeBytes(offsets[1], _key);
     writer.writeBool(offsets[2], _stringify);
     writer.writeBytes(offsets[3], _url);
-    return bufferSize;
   }
 
   @override
@@ -114,11 +103,11 @@ class _IsarDefaultCoverAdapter extends IsarTypeAdapter<IsarDefaultCover> {
 extension IsarDefaultCoverQueryWhereSort
     on QueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhere> {
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhere> anyId() {
-    return addWhereClause(const WhereClause(indexName: null));
+    return addWhereClauseInternal(const WhereClause(indexName: null));
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhere> anyKey() {
-    return addWhereClause(const WhereClause(indexName: 'key'));
+    return addWhereClauseInternal(const WhereClause(indexName: 'key'));
   }
 }
 
@@ -126,7 +115,7 @@ extension IsarDefaultCoverQueryWhere
     on QueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhereClause> {
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause> idEqualTo(
       int? id) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [id],
       includeLower: true,
@@ -138,21 +127,21 @@ extension IsarDefaultCoverQueryWhere
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
       idNotEqualTo(int? id) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: null,
         upper: [id],
         includeUpper: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: null,
         lower: [id],
         includeLower: false,
       ));
     } else {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: null,
         lower: [id],
         includeLower: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: null,
         upper: [id],
         includeUpper: false,
@@ -165,7 +154,7 @@ extension IsarDefaultCoverQueryWhere
     int? id, {
     bool include = false,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [id],
       includeLower: include,
@@ -177,7 +166,7 @@ extension IsarDefaultCoverQueryWhere
     int? id, {
     bool include = false,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       upper: [id],
       includeUpper: include,
@@ -190,7 +179,7 @@ extension IsarDefaultCoverQueryWhere
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [lowerId],
       includeLower: includeLower,
@@ -201,7 +190,7 @@ extension IsarDefaultCoverQueryWhere
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
       keyEqualTo(String key) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: 'key',
       lower: [key],
       includeLower: true,
@@ -213,21 +202,21 @@ extension IsarDefaultCoverQueryWhere
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
       keyNotEqualTo(String key) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: 'key',
         upper: [key],
         includeUpper: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: 'key',
         lower: [key],
         includeLower: false,
       ));
     } else {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: 'key',
         lower: [key],
         includeLower: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: 'key',
         upper: [key],
         includeUpper: false,
@@ -240,7 +229,7 @@ extension IsarDefaultCoverQueryFilter
     on QueryBuilder<IsarDefaultCover, IsarDefaultCover, QFilterCondition> {
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       hashCodeEqualTo(int value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'hashCode',
       value: value,
@@ -252,7 +241,7 @@ extension IsarDefaultCoverQueryFilter
     int value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'hashCode',
@@ -265,7 +254,7 @@ extension IsarDefaultCoverQueryFilter
     int value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'hashCode',
@@ -280,7 +269,7 @@ extension IsarDefaultCoverQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'hashCode',
       lower: lower,
       includeLower: includeLower,
@@ -291,7 +280,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       idIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'id',
       value: null,
@@ -300,7 +289,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       idEqualTo(int? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'id',
       value: value,
@@ -312,7 +301,7 @@ extension IsarDefaultCoverQueryFilter
     int? value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'id',
@@ -325,7 +314,7 @@ extension IsarDefaultCoverQueryFilter
     int? value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'id',
@@ -340,7 +329,7 @@ extension IsarDefaultCoverQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'id',
       lower: lower,
       includeLower: includeLower,
@@ -354,7 +343,7 @@ extension IsarDefaultCoverQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'key',
       value: value,
@@ -368,7 +357,7 @@ extension IsarDefaultCoverQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'key',
@@ -383,7 +372,7 @@ extension IsarDefaultCoverQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'key',
@@ -400,7 +389,7 @@ extension IsarDefaultCoverQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'key',
       lower: lower,
       includeLower: includeLower,
@@ -415,7 +404,7 @@ extension IsarDefaultCoverQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.startsWith,
       property: 'key',
       value: value,
@@ -428,7 +417,7 @@ extension IsarDefaultCoverQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.endsWith,
       property: 'key',
       value: value,
@@ -438,7 +427,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       keyContains(String value, {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.contains,
       property: 'key',
       value: value,
@@ -448,7 +437,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       keyMatches(String pattern, {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.matches,
       property: 'key',
       value: pattern,
@@ -458,7 +447,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       stringifyEqualTo(bool value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'stringify',
       value: value,
@@ -470,7 +459,7 @@ extension IsarDefaultCoverQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'url',
       value: value,
@@ -484,7 +473,7 @@ extension IsarDefaultCoverQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'url',
@@ -499,7 +488,7 @@ extension IsarDefaultCoverQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'url',
@@ -516,7 +505,7 @@ extension IsarDefaultCoverQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'url',
       lower: lower,
       includeLower: includeLower,
@@ -531,7 +520,7 @@ extension IsarDefaultCoverQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.startsWith,
       property: 'url',
       value: value,
@@ -544,7 +533,7 @@ extension IsarDefaultCoverQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.endsWith,
       property: 'url',
       value: value,
@@ -554,7 +543,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       urlContains(String value, {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.contains,
       property: 'url',
       value: value,
@@ -564,7 +553,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       urlMatches(String pattern, {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.matches,
       property: 'url',
       value: pattern,
@@ -703,22 +692,22 @@ extension IsarDefaultCoverQueryWhereDistinct
 extension IsarDefaultCoverQueryProperty
     on QueryBuilder<IsarDefaultCover, IsarDefaultCover, QQueryProperty> {
   QueryBuilder<IsarDefaultCover, int, QQueryOperations> hashCodeProperty() {
-    return addPropertyName('hashCode');
+    return addPropertyNameInternal('hashCode');
   }
 
   QueryBuilder<IsarDefaultCover, int?, QQueryOperations> idProperty() {
-    return addPropertyName('id');
+    return addPropertyNameInternal('id');
   }
 
   QueryBuilder<IsarDefaultCover, String, QQueryOperations> keyProperty() {
-    return addPropertyName('key');
+    return addPropertyNameInternal('key');
   }
 
   QueryBuilder<IsarDefaultCover, bool, QQueryOperations> stringifyProperty() {
-    return addPropertyName('stringify');
+    return addPropertyNameInternal('stringify');
   }
 
   QueryBuilder<IsarDefaultCover, String, QQueryOperations> urlProperty() {
-    return addPropertyName('url');
+    return addPropertyNameInternal('url');
   }
 }

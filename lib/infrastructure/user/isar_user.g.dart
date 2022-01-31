@@ -40,17 +40,15 @@ final IsarUserSchema = CollectionSchema(
   getId: (obj) => obj.id,
   setId: null,
   getLinks: (obj) => [],
-  version: 0,
+  version: 1,
 );
 
 class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
   const _IsarUserAdapter();
 
   @override
-  int serialize(IsarCollection<IsarUser> collection, IsarRawObject rawObj,
-      IsarUser object, List<int> offsets,
-      [int? existingBufferSize]) {
-    rawObj.id = object.id ?? Isar.autoIncrement;
+  void serialize(IsarCollection<IsarUser> collection, IsarRawObject rawObj,
+      IsarUser object, List<int> offsets, AdapterAlloc alloc) {
     var dynamicSize = 0;
     final value0 = object.emailAddress;
     final _emailAddress = BinaryWriter.utf8Encoder.convert(value0);
@@ -69,19 +67,7 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
     dynamicSize += _username.length;
     final size = dynamicSize + 43;
 
-    late int bufferSize;
-    if (existingBufferSize != null) {
-      if (existingBufferSize < size) {
-        isarFree(rawObj.buffer);
-        rawObj.buffer = isarMalloc(size);
-        bufferSize = size;
-      } else {
-        bufferSize = existingBufferSize;
-      }
-    } else {
-      rawObj.buffer = isarMalloc(size);
-      bufferSize = size;
-    }
+    rawObj.buffer = alloc(size);
     rawObj.buffer_length = size;
     final buffer = bufAsBytes(rawObj.buffer, size);
     final writer = BinaryWriter(buffer, 43);
@@ -91,7 +77,6 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
     writer.writeBytes(offsets[3], _uid);
     writer.writeDateTime(offsets[4], _updatedAt);
     writer.writeBytes(offsets[5], _username);
-    return bufferSize;
   }
 
   @override
@@ -133,17 +118,17 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
 
 extension IsarUserQueryWhereSort on QueryBuilder<IsarUser, IsarUser, QWhere> {
   QueryBuilder<IsarUser, IsarUser, QAfterWhere> anyId() {
-    return addWhereClause(const WhereClause(indexName: null));
+    return addWhereClauseInternal(const WhereClause(indexName: null));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterWhere> anyUid() {
-    return addWhereClause(const WhereClause(indexName: 'uid'));
+    return addWhereClauseInternal(const WhereClause(indexName: 'uid'));
   }
 }
 
 extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idEqualTo(int? id) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [id],
       includeLower: true,
@@ -154,21 +139,21 @@ extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
 
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idNotEqualTo(int? id) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: null,
         upper: [id],
         includeUpper: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: null,
         lower: [id],
         includeLower: false,
       ));
     } else {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: null,
         lower: [id],
         includeLower: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: null,
         upper: [id],
         includeUpper: false,
@@ -180,7 +165,7 @@ extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
     int? id, {
     bool include = false,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [id],
       includeLower: include,
@@ -191,7 +176,7 @@ extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
     int? id, {
     bool include = false,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       upper: [id],
       includeUpper: include,
@@ -204,7 +189,7 @@ extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: null,
       lower: [lowerId],
       includeLower: includeLower,
@@ -214,7 +199,7 @@ extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> uidEqualTo(String uid) {
-    return addWhereClause(WhereClause(
+    return addWhereClauseInternal(WhereClause(
       indexName: 'uid',
       lower: [uid],
       includeLower: true,
@@ -226,21 +211,21 @@ extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> uidNotEqualTo(
       String uid) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: 'uid',
         upper: [uid],
         includeUpper: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: 'uid',
         lower: [uid],
         includeLower: false,
       ));
     } else {
-      return addWhereClause(WhereClause(
+      return addWhereClauseInternal(WhereClause(
         indexName: 'uid',
         lower: [uid],
         includeLower: false,
-      )).addWhereClause(WhereClause(
+      )).addWhereClauseInternal(WhereClause(
         indexName: 'uid',
         upper: [uid],
         includeUpper: false,
@@ -255,7 +240,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'emailAddress',
       value: value,
@@ -269,7 +254,7 @@ extension IsarUserQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'emailAddress',
@@ -283,7 +268,7 @@ extension IsarUserQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'emailAddress',
@@ -299,7 +284,7 @@ extension IsarUserQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'emailAddress',
       lower: lower,
       includeLower: includeLower,
@@ -314,7 +299,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.startsWith,
       property: 'emailAddress',
       value: value,
@@ -326,7 +311,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.endsWith,
       property: 'emailAddress',
       value: value,
@@ -337,7 +322,7 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> emailAddressContains(
       String value,
       {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.contains,
       property: 'emailAddress',
       value: value,
@@ -348,7 +333,7 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> emailAddressMatches(
       String pattern,
       {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.matches,
       property: 'emailAddress',
       value: pattern,
@@ -358,7 +343,7 @@ extension IsarUserQueryFilter
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> hashCodeEqualTo(
       int value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'hashCode',
       value: value,
@@ -369,7 +354,7 @@ extension IsarUserQueryFilter
     int value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'hashCode',
@@ -381,7 +366,7 @@ extension IsarUserQueryFilter
     int value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'hashCode',
@@ -395,7 +380,7 @@ extension IsarUserQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'hashCode',
       lower: lower,
       includeLower: includeLower,
@@ -405,7 +390,7 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idIsNull() {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.isNull,
       property: 'id',
       value: null,
@@ -414,7 +399,7 @@ extension IsarUserQueryFilter
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idEqualTo(
       int? value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'id',
       value: value,
@@ -425,7 +410,7 @@ extension IsarUserQueryFilter
     int? value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'id',
@@ -437,7 +422,7 @@ extension IsarUserQueryFilter
     int? value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'id',
@@ -451,7 +436,7 @@ extension IsarUserQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'id',
       lower: lower,
       includeLower: includeLower,
@@ -462,7 +447,7 @@ extension IsarUserQueryFilter
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> stringifyEqualTo(
       bool value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'stringify',
       value: value,
@@ -473,7 +458,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'uid',
       value: value,
@@ -486,7 +471,7 @@ extension IsarUserQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'uid',
@@ -500,7 +485,7 @@ extension IsarUserQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'uid',
@@ -516,7 +501,7 @@ extension IsarUserQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'uid',
       lower: lower,
       includeLower: includeLower,
@@ -530,7 +515,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.startsWith,
       property: 'uid',
       value: value,
@@ -542,7 +527,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.endsWith,
       property: 'uid',
       value: value,
@@ -553,7 +538,7 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> uidContains(
       String value,
       {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.contains,
       property: 'uid',
       value: value,
@@ -564,7 +549,7 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> uidMatches(
       String pattern,
       {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.matches,
       property: 'uid',
       value: pattern,
@@ -574,7 +559,7 @@ extension IsarUserQueryFilter
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtEqualTo(
       DateTime value) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'updatedAt',
       value: value,
@@ -585,7 +570,7 @@ extension IsarUserQueryFilter
     DateTime value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'updatedAt',
@@ -597,7 +582,7 @@ extension IsarUserQueryFilter
     DateTime value, {
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'updatedAt',
@@ -611,7 +596,7 @@ extension IsarUserQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'updatedAt',
       lower: lower,
       includeLower: includeLower,
@@ -624,7 +609,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'username',
       value: value,
@@ -637,7 +622,7 @@ extension IsarUserQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.gt,
       include: include,
       property: 'username',
@@ -651,7 +636,7 @@ extension IsarUserQueryFilter
     bool caseSensitive = true,
     bool include = false,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.lt,
       include: include,
       property: 'username',
@@ -667,7 +652,7 @@ extension IsarUserQueryFilter
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterCondition(FilterCondition.between(
+    return addFilterConditionInternal(FilterCondition.between(
       property: 'username',
       lower: lower,
       includeLower: includeLower,
@@ -681,7 +666,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.startsWith,
       property: 'username',
       value: value,
@@ -693,7 +678,7 @@ extension IsarUserQueryFilter
     String value, {
     bool caseSensitive = true,
   }) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.endsWith,
       property: 'username',
       value: value,
@@ -704,7 +689,7 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> usernameContains(
       String value,
       {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.contains,
       property: 'username',
       value: value,
@@ -715,7 +700,7 @@ extension IsarUserQueryFilter
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> usernameMatches(
       String pattern,
       {bool caseSensitive = true}) {
-    return addFilterCondition(FilterCondition(
+    return addFilterConditionInternal(FilterCondition(
       type: ConditionType.matches,
       property: 'username',
       value: pattern,
@@ -879,30 +864,30 @@ extension IsarUserQueryWhereDistinct
 extension IsarUserQueryProperty
     on QueryBuilder<IsarUser, IsarUser, QQueryProperty> {
   QueryBuilder<IsarUser, String, QQueryOperations> emailAddressProperty() {
-    return addPropertyName('emailAddress');
+    return addPropertyNameInternal('emailAddress');
   }
 
   QueryBuilder<IsarUser, int, QQueryOperations> hashCodeProperty() {
-    return addPropertyName('hashCode');
+    return addPropertyNameInternal('hashCode');
   }
 
   QueryBuilder<IsarUser, int?, QQueryOperations> idProperty() {
-    return addPropertyName('id');
+    return addPropertyNameInternal('id');
   }
 
   QueryBuilder<IsarUser, bool, QQueryOperations> stringifyProperty() {
-    return addPropertyName('stringify');
+    return addPropertyNameInternal('stringify');
   }
 
   QueryBuilder<IsarUser, String, QQueryOperations> uidProperty() {
-    return addPropertyName('uid');
+    return addPropertyNameInternal('uid');
   }
 
   QueryBuilder<IsarUser, DateTime, QQueryOperations> updatedAtProperty() {
-    return addPropertyName('updatedAt');
+    return addPropertyNameInternal('updatedAt');
   }
 
   QueryBuilder<IsarUser, String, QQueryOperations> usernameProperty() {
-    return addPropertyName('username');
+    return addPropertyNameInternal('username');
   }
 }
