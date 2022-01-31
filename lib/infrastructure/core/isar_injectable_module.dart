@@ -1,6 +1,5 @@
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
-import 'package:isar_connect/isar_connect.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
@@ -17,7 +16,7 @@ abstract class IIsarInjectableModule {
   @LazySingleton()
   Future<Isar> get isar async {
     if (F.appFlavor == Flavor.development) {
-      initializeIsarConnect();
+      // initializeIsarConnect();
     }
 
     final isar = await Isar.open(
