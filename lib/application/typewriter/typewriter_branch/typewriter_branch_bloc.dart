@@ -192,6 +192,16 @@ class TypewriterBranchBloc
 
       final branch = value.branch;
       if (branch != null) {
+        final quillController = (branch.leaf.getOrNull() != null
+            ? QuillController(
+                document: Document.fromJson(
+                  jsonDecode(branch.leaf.getOrNull()!) as List<dynamic>,
+                ),
+                selection: const TextSelection.collapsed(offset: 0),
+              )
+            : QuillController.basic())
+          ..changes.listen((_) => add(const LeafChanged()));
+
         emit(
           state.copyWith(
             branch: branch,
@@ -202,16 +212,9 @@ class TypewriterBranchBloc
             isProcessing: false,
             language: branch.language,
             leaf: branch.leaf,
-            leafWordCount: branch.leaf.getOrNull()?.countWords() ?? 0,
-            leafController: (branch.leaf.getOrNull() != null
-                ? QuillController(
-                    document: Document.fromJson(
-                      jsonDecode(branch.leaf.getOrNull()!) as List<dynamic>,
-                    ),
-                    selection: const TextSelection.collapsed(offset: 0),
-                  )
-                : QuillController.basic())
-              ..changes.listen((_) => add(const LeafChanged())),
+            leafWordCount:
+                quillController.document.toPlainText().trim().countWords(),
+            leafController: quillController,
             licence: branch.licence,
             title: branch.title,
             titleWordCount: branch.title.getOrNull()?.countWords() ?? 0,
@@ -220,32 +223,36 @@ class TypewriterBranchBloc
           ),
         );
       } else {
-        (await _branchRepository.loadBranchByID(value.uid)).match(
-          (branch) {
+        (await _branchRepository.loadBranchByUID(value.uid)).match(
+          (branch_) {
+            final quillController = (branch_.leaf.getOrNull() != null
+                ? QuillController(
+                    document: Document.fromJson(
+                      jsonDecode(branch_.leaf.getOrNull()!) as List<dynamic>,
+                    ),
+                    selection: const TextSelection.collapsed(offset: 0),
+                  )
+                : QuillController.basic())
+              ..changes.listen((_) => add(const LeafChanged()));
+
             emit(
               state.copyWith(
-                branch: branch,
-                coverURL: branch.coverURL.getOrCrash(),
-                genres: branch.genres,
+                branch: branch_,
+                coverURL: branch_.coverURL.getOrCrash(),
+                genres: branch_.genres,
                 isEdit: true,
-                isNSFW: branch.isNSFW,
+                isNSFW: branch_.isNSFW,
                 isProcessing: false,
-                language: branch.language,
-                leaf: branch.leaf,
-                leafWordCount: branch.leaf.getOrNull()?.countWords() ?? 0,
-                leafController: branch.leaf.getOrNull() != null
-                    ? QuillController(
-                        document: Document.fromJson(
-                          jsonDecode(branch.leaf.getOrNull()!) as List<dynamic>,
-                        ),
-                        selection: const TextSelection.collapsed(offset: 0),
-                      )
-                    : QuillController.basic(),
-                licence: branch.licence,
-                title: branch.title,
-                titleWordCount: branch.title.getOrNull()?.countWords() ?? 0,
+                language: branch_.language,
+                leaf: branch_.leaf,
+                leafWordCount:
+                    quillController.document.toPlainText().trim().countWords(),
+                leafController: quillController,
+                licence: branch_.licence,
+                title: branch_.title,
+                titleWordCount: branch_.title.getOrNull()?.countWords() ?? 0,
                 titleController:
-                    TextEditingController(text: branch.title.getOrNull()),
+                    TextEditingController(text: branch_.title.getOrNull()),
               ),
             );
           },
