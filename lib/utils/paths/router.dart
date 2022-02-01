@@ -1,4 +1,7 @@
 /// @nodoc
+const String branchPagePath = '/branch/:id';
+
+/// @nodoc
 const String homePagePath = '/';
 
 /// @nodoc

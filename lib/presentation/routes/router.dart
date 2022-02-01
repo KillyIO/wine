@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:wine/presentation/branch/branch_page.dart';
 import 'package:wine/presentation/home/home_page.dart';
 import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
@@ -18,6 +19,10 @@ export 'router.gr.dart';
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
+    AutoRoute<BranchPage>(
+      page: BranchPage,
+      path: branchPagePath,
+    ),
     AutoRoute<HomePage>(
       page: HomePage,
       path: homePagePath,
