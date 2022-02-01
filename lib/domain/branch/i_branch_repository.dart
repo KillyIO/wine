@@ -34,7 +34,33 @@ abstract class IBranchRepository {
   });
 
   /// @nodoc
+  Future<Result<List<Branch>, BranchFailure>> loadNextBranches(
+    UniqueID uid, {
+    UniqueID? lastBranchUID,
+  });
+
+  /// @nodoc
   Future<Result<Branch, BranchFailure>> updateBranch(Branch branch);
+
+  /// @nodoc
+  Future<Result<Unit, BranchFailure>> updateBranchBookmarks(
+    UniqueID userUID,
+    UniqueID branchUID, {
+    required bool isBookmarked,
+  });
+
+  /// @nodoc
+  Future<Result<Unit, BranchFailure>> updateBranchLikes(
+    UniqueID userUID,
+    UniqueID branchUID, {
+    required bool isLiked,
+  });
+
+  /// @nodoc
+  Future<Result<bool, BranchFailure>> updateBranchViews(
+    UniqueID userUID,
+    UniqueID branchUID,
+  );
 
   /// @nodoc
   Future<Result<String, BranchFailure>> uploadCover(File cover);

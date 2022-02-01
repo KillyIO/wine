@@ -221,6 +221,58 @@ class BranchRepository implements IBranchRepository {
   }
 
   @override
+  Future<Result<List<Branch>, BranchFailure>> loadNextBranches(
+    UniqueID uid, {
+    UniqueID? lastBranchUID,
+  }) async {
+    try {
+      final branchesCollection = _firestore.collection(branchesPath);
+
+      Query? query;
+      if (lastBranchUID != null) {
+        final lastDocument =
+            await branchesCollection.doc(lastBranchUID.getOrCrash()).get();
+
+        query = branchesCollection
+            .startAfterDocument(lastDocument)
+            .where('previousBranchUID', isEqualTo: uid.getOrCrash());
+      } else {
+        query = branchesCollection.where(
+          'previousBranchUID',
+          isEqualTo: uid.getOrCrash(),
+        );
+      }
+
+      final querySnapshot = await query
+          .orderBy('updatedAt', descending: true)
+          .limit(20)
+          .withConverter<Branch>(
+            fromFirestore: (snapshot, _) {
+              if (snapshot.exists) {
+                return BranchDTO.fromJson(snapshot.data()!).toDomain();
+              }
+              return Branch.empty();
+            },
+            toFirestore: (value, _) => BranchDTO.fromDomain(value).toJson(),
+          )
+          .get();
+
+      final branch = <Branch>[];
+      for (final doc in querySnapshot.docs) {
+        branch.add(doc.data());
+      }
+      return Ok(branch);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const BranchFailure.permissionDenied());
+      }
+      return Err(const BranchFailure.serverError());
+    } catch (_) {
+      return Err(const BranchFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<Branch, BranchFailure>> updateBranch(Branch branch) async {
     var tmpBranch = branch;
 
@@ -242,6 +294,161 @@ class BranchRepository implements IBranchRepository {
           .update(BranchDTO.fromDomain(tmpBranch).toJson());
 
       return Ok(tmpBranch);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const BranchFailure.permissionDenied());
+      }
+      return Err(const BranchFailure.serverError());
+    } catch (_) {
+      return Err(const BranchFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<Unit, BranchFailure>> updateBranchBookmarks(
+    UniqueID userUID,
+    UniqueID branchUID, {
+    required bool isBookmarked,
+  }) async {
+    try {
+      await _firestore.runTransaction((transaction) async {
+        // Check userUID register inside tree_bookmarks collection
+        final treeBookmarksReference = _firestore
+            .collection(branchesBookmarksPath)
+            .doc(branchUID.getOrCrash());
+
+        final sbrSnapshot = await transaction.get(treeBookmarksReference);
+        final dbIsBookmarked =
+            sbrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
+
+        if (isBookmarked != dbIsBookmarked) {
+          // Update tree bokmarks count
+          // TODO(SSebigo): make sure firebase rules
+          // match to prevent fraudulent updates
+          final treeReference =
+              _firestore.collection(branchesPath).doc(branchUID.getOrCrash());
+
+          final srSnapshot = await transaction.get(treeReference);
+          final bookmarksCount = srSnapshot.data()?['bookmarksCount'] as int;
+
+          transaction
+            ..set(
+              treeBookmarksReference,
+              <String, dynamic>{
+                userUID.getOrCrash(): isBookmarked,
+              },
+              SetOptions(merge: true),
+            )
+            ..update(treeReference, <String, dynamic>{
+              'bookmarksCount':
+                  isBookmarked ? bookmarksCount + 1 : bookmarksCount - 1,
+            });
+        }
+      });
+
+      return Ok(unit);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const BranchFailure.permissionDenied());
+      }
+      return Err(const BranchFailure.serverError());
+    } catch (e) {
+      return Err(const BranchFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<Unit, BranchFailure>> updateBranchLikes(
+    UniqueID userUID,
+    UniqueID branchUID, {
+    required bool isLiked,
+  }) async {
+    try {
+      await _firestore.runTransaction((transaction) async {
+        // Check userUID register inside tree_likes collection
+        final treeLikesReference = _firestore
+            .collection(branchesLikesPath)
+            .doc(branchUID.getOrCrash());
+
+        final slrSnapshot = await transaction.get(treeLikesReference);
+        final dbIsLiked =
+            slrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
+
+        if (isLiked != dbIsLiked) {
+          // Update tree likes count
+          // TODO(SSebigo): make sure firebase rules
+          // match to prevent fraudulent updates
+          final treeReference =
+              _firestore.collection(branchesPath).doc(branchUID.getOrCrash());
+
+          final srSnapshot = await transaction.get(treeReference);
+          final likesCount = srSnapshot.data()?['likesCount'] as int;
+
+          transaction
+            ..set(
+              treeLikesReference,
+              <String, dynamic>{
+                userUID.getOrCrash(): isLiked,
+              },
+              SetOptions(merge: true),
+            )
+            ..update(treeReference, <String, dynamic>{
+              'likesCount': isLiked ? likesCount + 1 : likesCount - 1,
+            });
+        }
+      });
+
+      return Ok(unit);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const BranchFailure.permissionDenied());
+      }
+      return Err(const BranchFailure.serverError());
+    } catch (e) {
+      return Err(const BranchFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<bool, BranchFailure>> updateBranchViews(
+    UniqueID userUID,
+    UniqueID branchUID,
+  ) async {
+    try {
+      final result = await _firestore.runTransaction((transaction) async {
+        // Check userUID register inside tree_views collection
+        final treeViewsReference = _firestore
+            .collection(branchesViewsPath)
+            .doc(branchUID.getOrCrash());
+
+        final svrSnapshot = await transaction.get(treeViewsReference);
+        final viewed =
+            svrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
+
+        if (!viewed) {
+          // Update tree views count
+          // TODO(SSebigo): make sure firebase rules
+          // match to prevent fraudulent updates
+          final treeReference =
+              _firestore.collection(branchesPath).doc(branchUID.getOrCrash());
+
+          final srSnapshot = await transaction.get(treeReference);
+          final viewsCount = srSnapshot.data()?['viewsCount'] as int;
+
+          transaction
+            ..set(
+              treeViewsReference,
+              <String, dynamic>{userUID.getOrCrash(): true},
+              SetOptions(merge: true),
+            )
+            ..update(treeReference, <String, dynamic>{
+              'viewsCount': viewsCount + 1,
+            });
+        }
+        return !viewed;
+      });
+
+      return Ok(result);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
         return Err(const BranchFailure.permissionDenied());
