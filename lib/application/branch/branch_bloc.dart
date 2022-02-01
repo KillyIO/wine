@@ -1,6 +1,22 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:oxidized/oxidized.dart';
+import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/branch/i_branch_repository.dart';
+import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/core/unique_id.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/settings/i_settings_repository.dart';
+import 'package:wine/domain/settings/settings.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
+import 'package:wine/domain/user/user.dart';
 
 part 'branch_event.dart';
 part 'branch_state.dart';
@@ -12,9 +28,224 @@ part 'branch_bloc.freezed.dart';
 @injectable
 class BranchBloc extends Bloc<BranchEvent, BranchState> {
   /// @nodoc
-  BranchBloc() : super(_Initial()) {
-    on<BranchEvent>((event, emit) {
-      // TODO: implement event handler
+  BranchBloc(
+    this._authFacade,
+    this._branchRepository,
+    this._sessionsRepository,
+    this._settingsRepository,
+    this._userRepository,
+  ) : super(BranchState.initial()) {
+    on<AuthorLoaded>((_, emit) {});
+    on<BookmarkButtonPressed>((value, emit) async {
+      (await _branchRepository.updateBranchBookmarks(
+        state.session.uid,
+        state.branch.uid,
+        isBookmarked: !value.isBookmarked,
+      ))
+          .match(
+        (_) {
+          final bookmarksCount = state.branch.bookmarksCount;
+
+          emit(
+            state.copyWith(
+              branch: state.branch.copyWith(
+                bookmarksCount: !value.isBookmarked
+                    ? bookmarksCount + 1
+                    : bookmarksCount - 1,
+              ),
+              isLiked: !value.isBookmarked,
+              failureOption: const None(),
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.branch(failure))),
+            ),
+          );
+        },
+      );
     });
+    on<BranchSet>((_, emit) async {
+      (await _sessionsRepository.fetchSession()).match(
+        (session) {
+          emit(
+            state.copyWith(
+              authorIsUser: state.branch.authorUID.getOrCrash() ==
+                  session.uid.getOrCrash(),
+              failureOption: const None(),
+              session: session,
+            ),
+          );
+
+          add(const BranchEvent.sessionFetched());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<LaunchWithUID>((value, emit) async {
+      emit(state.copyWith(isProcessing: true));
+
+      final branch = value.branch;
+      if (branch != null) {
+        final quillController = branch.leaf.getOrNull() != null
+            ? QuillController(
+                document: Document.fromJson(
+                  jsonDecode(branch.leaf.getOrNull()!) as List<dynamic>,
+                ),
+                selection: const TextSelection.collapsed(offset: 0),
+              )
+            : QuillController.basic();
+
+        emit(
+          state.copyWith(
+            branch: branch,
+            failureOption: const None(),
+            leafController: quillController,
+          ),
+        );
+
+        add(const BranchEvent.branchSet());
+      } else {
+        (await _branchRepository.loadBranchByUID(value.uid)).match(
+          (branch) {
+            emit(
+              state.copyWith(
+                branch: branch,
+                failureOption: const None(),
+              ),
+            );
+
+            add(const BranchEvent.branchSet());
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.branch(failure))),
+                isProcessing: false,
+              ),
+            );
+          },
+        );
+      }
+    });
+    on<LikeButtonPressed>((value, emit) async {
+      (await _branchRepository.updateBranchLikes(
+        state.session.uid,
+        state.branch.uid,
+        isLiked: !value.isLiked,
+      ))
+          .match(
+        (_) {
+          final likesCount = state.branch.likesCount;
+
+          emit(
+            state.copyWith(
+              branch: state.branch.copyWith(
+                likesCount: !value.isLiked ? likesCount + 1 : likesCount - 1,
+              ),
+              isLiked: !value.isLiked,
+              failureOption: const None(),
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.branch(failure))),
+            ),
+          );
+        },
+      );
+    });
+    on<NextBranchesLoaded>((_, emit) {});
+    on<SessionFetched>((_, emit) async {
+      if (!state.authorIsUser) {
+        (await _userRepository.loadUser(state.branch.authorUID)).match(
+          (user) {
+            emit(
+              state.copyWith(
+                author: user,
+                failureOption: const None(),
+              ),
+            );
+
+            add(const BranchEvent.authorLoaded());
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.user(failure))),
+                isProcessing: false,
+              ),
+            );
+          },
+        );
+      } else {
+        await _fetchSettings(emit);
+      }
+    });
+    on<SettingsFetched>((_, emit) async {
+      (await _branchRepository.loadNextBranches(state.branch.uid)).match(
+        (branches) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              nextBranches: branches,
+            ),
+          );
+
+          if (!_authFacade.isAnonymous) {
+            add(const BranchEvent.nextBranchesLoaded());
+          }
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.branch(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<ViewsUpdated>((_, emit) {});
+  }
+
+  final IAuthFacade _authFacade;
+  final IBranchRepository _branchRepository;
+  final ISessionsRepository _sessionsRepository;
+  final ISettingsRepository _settingsRepository;
+  final IUserRepository _userRepository;
+
+  FutureOr<void> _fetchSettings(Emitter<BranchState> emit) async {
+    (await _settingsRepository.fetchSettings()).match(
+      (settings) {
+        emit(
+          state.copyWith(
+            failureOption: const None(),
+            settings: settings,
+          ),
+        );
+
+        add(const BranchEvent.settingsFetched());
+      },
+      (failure) {
+        emit(
+          state.copyWith(
+            failureOption: Option.some(Err(CoreFailure.settings(failure))),
+            isProcessing: false,
+          ),
+        );
+      },
+    );
   }
 }
