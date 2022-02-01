@@ -96,20 +96,20 @@ class TypewriterBranchLayout extends StatelessWidget {
               }
               break;
             case TypewriterEndState.published:
-              // redirectDialog(
-              //   context,
-              //   <String>[
-              //     'Your branch has been successfully published.',
-              //     'You will now be redirected.'
-              //   ],
-              //   () => handleAuthRedirect(
-              //     context,
-              //     navigateTo: BranchRoute(
-              //       id: state.branch.uid.getOrCrash(),
-              //       branch: state.branch,
-              //     ),
-              //   ),
-              // );
+              redirectDialog(
+                context,
+                <String>[
+                  'Your branch has been successfully published.',
+                  'You will now be redirected.'
+                ],
+                () => handleAuthRedirect(
+                  context,
+                  navigateTo: BranchRoute(
+                    id: state.branch.uid.getOrCrash(),
+                    branch: state.branch,
+                  ),
+                ),
+              );
               break;
             case TypewriterEndState.saved:
               if (state.isEdit) {
