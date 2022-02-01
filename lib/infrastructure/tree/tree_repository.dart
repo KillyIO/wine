@@ -244,19 +244,19 @@ class TreeRepository implements ITreeRepository {
 
   @override
   Future<Result<Unit, TreeFailure>> updateTreeBookmarks(
-    UniqueID userUUUID,
+    UniqueID userUID,
     UniqueID treeUID, {
     required bool isBookmarked,
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userUUUID register inside tree_bookmarks collection
+        // Check userUID register inside tree_bookmarks collection
         final treeBookmarksReference =
             _firestore.collection(treesBookmarksPath).doc(treeUID.getOrCrash());
 
         final sbrSnapshot = await transaction.get(treeBookmarksReference);
         final dbIsBookmarked =
-            sbrSnapshot.data()?[userUUUID.getOrCrash()] as bool? ?? false;
+            sbrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
 
         if (isBookmarked != dbIsBookmarked) {
           // Update tree bokmarks count
@@ -272,7 +272,7 @@ class TreeRepository implements ITreeRepository {
             ..set(
               treeBookmarksReference,
               <String, dynamic>{
-                userUUUID.getOrCrash(): isBookmarked,
+                userUID.getOrCrash(): isBookmarked,
               },
               SetOptions(merge: true),
             )
@@ -296,19 +296,19 @@ class TreeRepository implements ITreeRepository {
 
   @override
   Future<Result<Unit, TreeFailure>> updateTreeLikes(
-    UniqueID userUUID,
+    UniqueID userUID,
     UniqueID treeUID, {
     required bool isLiked,
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userUUID register inside tree_likes collection
+        // Check userUID register inside tree_likes collection
         final treeLikesReference =
             _firestore.collection(treesLikesPath).doc(treeUID.getOrCrash());
 
         final slrSnapshot = await transaction.get(treeLikesReference);
         final dbIsLiked =
-            slrSnapshot.data()?[userUUID.getOrCrash()] as bool? ?? false;
+            slrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
 
         if (isLiked != dbIsLiked) {
           // Update tree likes count
@@ -324,7 +324,7 @@ class TreeRepository implements ITreeRepository {
             ..set(
               treeLikesReference,
               <String, dynamic>{
-                userUUID.getOrCrash(): isLiked,
+                userUID.getOrCrash(): isLiked,
               },
               SetOptions(merge: true),
             )
