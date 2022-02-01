@@ -70,37 +70,8 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
         },
       );
     });
-    on<BranchOneLoaded>((_, emit) async {
-      (await _treeRepository.updateTreeViews(
-        state.session.uid,
-        state.tree.uid,
-      ))
-          .match(
-        (isUpdated) {
-          final viewsCount = state.tree.viewsCount;
-
-          emit(
-            state.copyWith(
-              failureOption: const None(),
-              isProcessing: isUpdated,
-              tree: state.tree.copyWith(
-                viewsCount: isUpdated ? viewsCount + 1 : viewsCount,
-              ),
-            ),
-          );
-
-          add(const TreeEvent.viewsUpdated());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.tree(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
-    });
+    on<BranchOneLoaded>((_, emit) async => _updateTreeViews(emit));
+    on<BranchOneNotFound>((_, emit) async => _updateTreeViews(emit));
     on<LaunchWithUID>((value, emit) async {
       emit(state.copyWith(isProcessing: true));
 
@@ -241,7 +212,7 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
           failure.maybeWhen(
             branchNotFound: () {
               if (!_authFacade.isAnonymous) {
-                add(const TreeEvent.branchOneLoaded());
+                add(const TreeEvent.branchOneNotFound());
               }
             },
             orElse: () {
@@ -331,6 +302,38 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
         emit(
           state.copyWith(
             failureOption: Option.some(Err(CoreFailure.settings(failure))),
+            isProcessing: false,
+          ),
+        );
+      },
+    );
+  }
+
+  FutureOr<void> _updateTreeViews(Emitter<TreeState> emit) async {
+    (await _treeRepository.updateTreeViews(
+      state.session.uid,
+      state.tree.uid,
+    ))
+        .match(
+      (isUpdated) {
+        final viewsCount = state.tree.viewsCount;
+
+        emit(
+          state.copyWith(
+            failureOption: const None(),
+            isProcessing: isUpdated,
+            tree: state.tree.copyWith(
+              viewsCount: isUpdated ? viewsCount + 1 : viewsCount,
+            ),
+          ),
+        );
+
+        add(const TreeEvent.viewsUpdated());
+      },
+      (failure) {
+        emit(
+          state.copyWith(
+            failureOption: Option.some(Err(CoreFailure.tree(failure))),
             isProcessing: false,
           ),
         );

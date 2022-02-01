@@ -15,6 +15,9 @@ class TreeEvent with _$TreeEvent {
   const factory TreeEvent.branchOneLoaded() = BranchOneLoaded;
 
   /// @nodoc
+  const factory TreeEvent.branchOneNotFound() = BranchOneNotFound;
+
+  /// @nodoc
   const factory TreeEvent.launchWithUID(UniqueID uid, {Tree? tree}) =
       LaunchWithUID;
 
