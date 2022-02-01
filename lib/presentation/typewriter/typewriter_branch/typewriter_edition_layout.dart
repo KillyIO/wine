@@ -17,6 +17,7 @@ import 'package:wine/utils/constants/branch.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/genres.dart';
 import 'package:wine/utils/constants/languages.dart';
+import 'package:wine/utils/constants/licences.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
@@ -200,7 +201,7 @@ class TypewriterEditionLayout extends StatelessWidget {
                           TypewriterBranchState>(
                         builder: (context, state) {
                           return TypewriterSelectionDialog(
-                            items: isoCountryCodes,
+                            items: licencesKeys,
                             onPressed: (v) =>
                                 context.read<TypewriterBranchBloc>().add(
                                       TypewriterBranchEvent.licenceSelected(v),
