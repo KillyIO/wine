@@ -42,6 +42,20 @@ class TreeLayout extends StatelessWidget {
                   ),
                   orElse: () {},
                 ),
+                sessions: (f) => f.f.maybeMap(
+                  sessionNotFound: (_) async => baseErrorDialog(
+                    context,
+                    <String>['Session not found!'],
+                  ),
+                  orElse: () {},
+                ),
+                settings: (f) => f.f.maybeMap(
+                  settingsNotFound: (_) async => baseErrorDialog(
+                    context,
+                    <String>['Settings were not found!'],
+                  ),
+                  orElse: () {},
+                ),
                 tree: (f) => f.f.maybeMap(
                   permissionDenied: (_) async => baseErrorDialog(
                     context,
@@ -58,6 +72,25 @@ class TreeLayout extends StatelessWidget {
                   unexpected: (_) async => baseErrorDialog(
                     context,
                     <String>['An unexpected error occured!'],
+                  ),
+                  orElse: () {},
+                ),
+                user: (f) => f.f.maybeMap(
+                  permissionDenied: (_) async => baseErrorDialog(
+                    context,
+                    <String>['Forbidden action. Permission denied!'],
+                  ),
+                  serverError: (_) async => baseErrorDialog(
+                    context,
+                    <String>['A problem occurred on our end!'],
+                  ),
+                  unexpected: (_) async => baseErrorDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
+                  ),
+                  userNotFound: (_) async => baseErrorDialog(
+                    context,
+                    <String>['User was not found!'],
                   ),
                   orElse: () {},
                 ),
