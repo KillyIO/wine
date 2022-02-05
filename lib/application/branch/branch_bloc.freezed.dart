@@ -45,6 +45,10 @@ class _$BranchEventTearOff {
     );
   }
 
+  NextBranchesBySameAuthorLoaded nextBranchesBySameAuthorLoaded() {
+    return const NextBranchesBySameAuthorLoaded();
+  }
+
   NextBranchesLoaded nextBranchesLoaded() {
     return const NextBranchesLoaded();
   }
@@ -55,6 +59,10 @@ class _$BranchEventTearOff {
 
   SettingsFetched settingsFetched() {
     return const SettingsFetched();
+  }
+
+  ToggleDetails toggleDetails() {
+    return const ToggleDetails();
   }
 
   ViewsUpdated viewsUpdated() {
@@ -74,9 +82,11 @@ mixin _$BranchEvent {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
@@ -87,9 +97,11 @@ mixin _$BranchEvent {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
@@ -100,9 +112,11 @@ mixin _$BranchEvent {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) =>
@@ -115,9 +129,12 @@ mixin _$BranchEvent {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
@@ -128,9 +145,12 @@ mixin _$BranchEvent {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
@@ -141,9 +161,12 @@ mixin _$BranchEvent {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) =>
@@ -211,9 +234,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return authorLoaded();
@@ -227,9 +252,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return authorLoaded?.call();
@@ -243,9 +270,11 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -264,9 +293,12 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return authorLoaded(this);
@@ -280,9 +312,12 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return authorLoaded?.call(this);
@@ -296,9 +331,12 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -385,9 +423,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return bookmarkButtonPressed(isBookmarked);
@@ -401,9 +441,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return bookmarkButtonPressed?.call(isBookmarked);
@@ -417,9 +459,11 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -438,9 +482,12 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return bookmarkButtonPressed(this);
@@ -454,9 +501,12 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return bookmarkButtonPressed?.call(this);
@@ -470,9 +520,12 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -536,9 +589,11 @@ class _$BranchSet implements BranchSet {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return branchSet();
@@ -552,9 +607,11 @@ class _$BranchSet implements BranchSet {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return branchSet?.call();
@@ -568,9 +625,11 @@ class _$BranchSet implements BranchSet {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -589,9 +648,12 @@ class _$BranchSet implements BranchSet {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return branchSet(this);
@@ -605,9 +667,12 @@ class _$BranchSet implements BranchSet {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return branchSet?.call(this);
@@ -621,9 +686,12 @@ class _$BranchSet implements BranchSet {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -730,9 +798,11 @@ class _$LaunchWithUID implements LaunchWithUID {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return launchWithUID(uid, branch);
@@ -746,9 +816,11 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return launchWithUID?.call(uid, branch);
@@ -762,9 +834,11 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -783,9 +857,12 @@ class _$LaunchWithUID implements LaunchWithUID {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return launchWithUID(this);
@@ -799,9 +876,12 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return launchWithUID?.call(this);
@@ -815,9 +895,12 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -908,9 +991,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return likeButtonPressed(isLiked);
@@ -924,9 +1009,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return likeButtonPressed?.call(isLiked);
@@ -940,9 +1027,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -961,9 +1050,12 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return likeButtonPressed(this);
@@ -977,9 +1069,12 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return likeButtonPressed?.call(this);
@@ -993,9 +1088,12 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1014,6 +1112,175 @@ abstract class LikeButtonPressed implements BranchEvent {
   @JsonKey(ignore: true)
   $LikeButtonPressedCopyWith<LikeButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NextBranchesBySameAuthorLoadedCopyWith<$Res> {
+  factory $NextBranchesBySameAuthorLoadedCopyWith(
+          NextBranchesBySameAuthorLoaded value,
+          $Res Function(NextBranchesBySameAuthorLoaded) then) =
+      _$NextBranchesBySameAuthorLoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$NextBranchesBySameAuthorLoadedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res>
+    implements $NextBranchesBySameAuthorLoadedCopyWith<$Res> {
+  _$NextBranchesBySameAuthorLoadedCopyWithImpl(
+      NextBranchesBySameAuthorLoaded _value,
+      $Res Function(NextBranchesBySameAuthorLoaded) _then)
+      : super(_value, (v) => _then(v as NextBranchesBySameAuthorLoaded));
+
+  @override
+  NextBranchesBySameAuthorLoaded get _value =>
+      super._value as NextBranchesBySameAuthorLoaded;
+}
+
+/// @nodoc
+
+class _$NextBranchesBySameAuthorLoaded
+    implements NextBranchesBySameAuthorLoaded {
+  const _$NextBranchesBySameAuthorLoaded();
+
+  @override
+  String toString() {
+    return 'BranchEvent.nextBranchesBySameAuthorLoaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NextBranchesBySameAuthorLoaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authorLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function() branchSet,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() sessionFetched,
+    required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
+    required TResult Function() viewsUpdated,
+  }) {
+    return nextBranchesBySameAuthorLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? branchSet,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
+    TResult Function()? viewsUpdated,
+  }) {
+    return nextBranchesBySameAuthorLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? branchSet,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
+    TResult Function()? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (nextBranchesBySameAuthorLoaded != null) {
+      return nextBranchesBySameAuthorLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+  }) {
+    return nextBranchesBySameAuthorLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+  }) {
+    return nextBranchesBySameAuthorLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (nextBranchesBySameAuthorLoaded != null) {
+      return nextBranchesBySameAuthorLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NextBranchesBySameAuthorLoaded implements BranchEvent {
+  const factory NextBranchesBySameAuthorLoaded() =
+      _$NextBranchesBySameAuthorLoaded;
 }
 
 /// @nodoc
@@ -1062,9 +1329,11 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return nextBranchesLoaded();
@@ -1078,9 +1347,11 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return nextBranchesLoaded?.call();
@@ -1094,9 +1365,11 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1115,9 +1388,12 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return nextBranchesLoaded(this);
@@ -1131,9 +1407,12 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return nextBranchesLoaded?.call(this);
@@ -1147,9 +1426,12 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1209,9 +1491,11 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return sessionFetched();
@@ -1225,9 +1509,11 @@ class _$SessionFetched implements SessionFetched {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return sessionFetched?.call();
@@ -1241,9 +1527,11 @@ class _$SessionFetched implements SessionFetched {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1262,9 +1550,12 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return sessionFetched(this);
@@ -1278,9 +1569,12 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return sessionFetched?.call(this);
@@ -1294,9 +1588,12 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1357,9 +1654,11 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return settingsFetched();
@@ -1373,9 +1672,11 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return settingsFetched?.call();
@@ -1389,9 +1690,11 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1410,9 +1713,12 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return settingsFetched(this);
@@ -1426,9 +1732,12 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return settingsFetched?.call(this);
@@ -1442,9 +1751,12 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1457,6 +1769,168 @@ class _$SettingsFetched implements SettingsFetched {
 
 abstract class SettingsFetched implements BranchEvent {
   const factory SettingsFetched() = _$SettingsFetched;
+}
+
+/// @nodoc
+abstract class $ToggleDetailsCopyWith<$Res> {
+  factory $ToggleDetailsCopyWith(
+          ToggleDetails value, $Res Function(ToggleDetails) then) =
+      _$ToggleDetailsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ToggleDetailsCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+    implements $ToggleDetailsCopyWith<$Res> {
+  _$ToggleDetailsCopyWithImpl(
+      ToggleDetails _value, $Res Function(ToggleDetails) _then)
+      : super(_value, (v) => _then(v as ToggleDetails));
+
+  @override
+  ToggleDetails get _value => super._value as ToggleDetails;
+}
+
+/// @nodoc
+
+class _$ToggleDetails implements ToggleDetails {
+  const _$ToggleDetails();
+
+  @override
+  String toString() {
+    return 'BranchEvent.toggleDetails()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ToggleDetails);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authorLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function() branchSet,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() sessionFetched,
+    required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
+    required TResult Function() viewsUpdated,
+  }) {
+    return toggleDetails();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? branchSet,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
+    TResult Function()? viewsUpdated,
+  }) {
+    return toggleDetails?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? branchSet,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
+    TResult Function()? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (toggleDetails != null) {
+      return toggleDetails();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+  }) {
+    return toggleDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+  }) {
+    return toggleDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (toggleDetails != null) {
+      return toggleDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ToggleDetails implements BranchEvent {
+  const factory ToggleDetails() = _$ToggleDetails;
 }
 
 /// @nodoc
@@ -1504,9 +1978,11 @@ class _$ViewsUpdated implements ViewsUpdated {
     required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
     required TResult Function() viewsUpdated,
   }) {
     return viewsUpdated();
@@ -1520,9 +1996,11 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
   }) {
     return viewsUpdated?.call();
@@ -1536,9 +2014,11 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
     TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1557,9 +2037,12 @@ class _$ViewsUpdated implements ViewsUpdated {
     required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
     required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return viewsUpdated(this);
@@ -1573,9 +2056,12 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return viewsUpdated?.call(this);
@@ -1589,9 +2075,12 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
     TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
@@ -1620,8 +2109,11 @@ class _$BranchStateTearOff {
       required bool isProcessing,
       required QuillController leafController,
       required List<Branch> nextBranches,
+      required List<Branch> sameAuthorNextBranches,
+      required double scrollProgress,
       required User session,
-      required Settings settings}) {
+      required Settings settings,
+      required bool showDetails}) {
     return _BranchState(
       authorIsUser: authorIsUser,
       author: author,
@@ -1632,8 +2124,11 @@ class _$BranchStateTearOff {
       isProcessing: isProcessing,
       leafController: leafController,
       nextBranches: nextBranches,
+      sameAuthorNextBranches: sameAuthorNextBranches,
+      scrollProgress: scrollProgress,
       session: session,
       settings: settings,
+      showDetails: showDetails,
     );
   }
 }
@@ -1653,8 +2148,11 @@ mixin _$BranchState {
   bool get isProcessing => throw _privateConstructorUsedError;
   QuillController get leafController => throw _privateConstructorUsedError;
   List<Branch> get nextBranches => throw _privateConstructorUsedError;
+  List<Branch> get sameAuthorNextBranches => throw _privateConstructorUsedError;
+  double get scrollProgress => throw _privateConstructorUsedError;
   User get session => throw _privateConstructorUsedError;
   Settings get settings => throw _privateConstructorUsedError;
+  bool get showDetails => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BranchStateCopyWith<BranchState> get copyWith =>
@@ -1676,8 +2174,11 @@ abstract class $BranchStateCopyWith<$Res> {
       bool isProcessing,
       QuillController leafController,
       List<Branch> nextBranches,
+      List<Branch> sameAuthorNextBranches,
+      double scrollProgress,
       User session,
-      Settings settings});
+      Settings settings,
+      bool showDetails});
 
   $UserCopyWith<$Res> get author;
   $BranchCopyWith<$Res> get branch;
@@ -1704,8 +2205,11 @@ class _$BranchStateCopyWithImpl<$Res> implements $BranchStateCopyWith<$Res> {
     Object? isProcessing = freezed,
     Object? leafController = freezed,
     Object? nextBranches = freezed,
+    Object? sameAuthorNextBranches = freezed,
+    Object? scrollProgress = freezed,
     Object? session = freezed,
     Object? settings = freezed,
+    Object? showDetails = freezed,
   }) {
     return _then(_value.copyWith(
       authorIsUser: authorIsUser == freezed
@@ -1744,6 +2248,14 @@ class _$BranchStateCopyWithImpl<$Res> implements $BranchStateCopyWith<$Res> {
           ? _value.nextBranches
           : nextBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
+      sameAuthorNextBranches: sameAuthorNextBranches == freezed
+          ? _value.sameAuthorNextBranches
+          : sameAuthorNextBranches // ignore: cast_nullable_to_non_nullable
+              as List<Branch>,
+      scrollProgress: scrollProgress == freezed
+          ? _value.scrollProgress
+          : scrollProgress // ignore: cast_nullable_to_non_nullable
+              as double,
       session: session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
@@ -1752,6 +2264,10 @@ class _$BranchStateCopyWithImpl<$Res> implements $BranchStateCopyWith<$Res> {
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
+      showDetails: showDetails == freezed
+          ? _value.showDetails
+          : showDetails // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -1801,8 +2317,11 @@ abstract class _$BranchStateCopyWith<$Res>
       bool isProcessing,
       QuillController leafController,
       List<Branch> nextBranches,
+      List<Branch> sameAuthorNextBranches,
+      double scrollProgress,
       User session,
-      Settings settings});
+      Settings settings,
+      bool showDetails});
 
   @override
   $UserCopyWith<$Res> get author;
@@ -1835,8 +2354,11 @@ class __$BranchStateCopyWithImpl<$Res> extends _$BranchStateCopyWithImpl<$Res>
     Object? isProcessing = freezed,
     Object? leafController = freezed,
     Object? nextBranches = freezed,
+    Object? sameAuthorNextBranches = freezed,
+    Object? scrollProgress = freezed,
     Object? session = freezed,
     Object? settings = freezed,
+    Object? showDetails = freezed,
   }) {
     return _then(_BranchState(
       authorIsUser: authorIsUser == freezed
@@ -1875,6 +2397,14 @@ class __$BranchStateCopyWithImpl<$Res> extends _$BranchStateCopyWithImpl<$Res>
           ? _value.nextBranches
           : nextBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
+      sameAuthorNextBranches: sameAuthorNextBranches == freezed
+          ? _value.sameAuthorNextBranches
+          : sameAuthorNextBranches // ignore: cast_nullable_to_non_nullable
+              as List<Branch>,
+      scrollProgress: scrollProgress == freezed
+          ? _value.scrollProgress
+          : scrollProgress // ignore: cast_nullable_to_non_nullable
+              as double,
       session: session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
@@ -1883,6 +2413,10 @@ class __$BranchStateCopyWithImpl<$Res> extends _$BranchStateCopyWithImpl<$Res>
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
+      showDetails: showDetails == freezed
+          ? _value.showDetails
+          : showDetails // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1900,8 +2434,11 @@ class _$_BranchState implements _BranchState {
       required this.isProcessing,
       required this.leafController,
       required this.nextBranches,
+      required this.sameAuthorNextBranches,
+      required this.scrollProgress,
       required this.session,
-      required this.settings});
+      required this.settings,
+      required this.showDetails});
 
   @override
   final bool authorIsUser;
@@ -1922,13 +2459,19 @@ class _$_BranchState implements _BranchState {
   @override
   final List<Branch> nextBranches;
   @override
+  final List<Branch> sameAuthorNextBranches;
+  @override
+  final double scrollProgress;
+  @override
   final User session;
   @override
   final Settings settings;
+  @override
+  final bool showDetails;
 
   @override
   String toString() {
-    return 'BranchState(authorIsUser: $authorIsUser, author: $author, branch: $branch, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, leafController: $leafController, nextBranches: $nextBranches, session: $session, settings: $settings)';
+    return 'BranchState(authorIsUser: $authorIsUser, author: $author, branch: $branch, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, leafController: $leafController, nextBranches: $nextBranches, sameAuthorNextBranches: $sameAuthorNextBranches, scrollProgress: $scrollProgress, session: $session, settings: $settings, showDetails: $showDetails)';
   }
 
   @override
@@ -1951,8 +2494,14 @@ class _$_BranchState implements _BranchState {
                 .equals(other.leafController, leafController) &&
             const DeepCollectionEquality()
                 .equals(other.nextBranches, nextBranches) &&
+            const DeepCollectionEquality()
+                .equals(other.sameAuthorNextBranches, sameAuthorNextBranches) &&
+            const DeepCollectionEquality()
+                .equals(other.scrollProgress, scrollProgress) &&
             const DeepCollectionEquality().equals(other.session, session) &&
-            const DeepCollectionEquality().equals(other.settings, settings));
+            const DeepCollectionEquality().equals(other.settings, settings) &&
+            const DeepCollectionEquality()
+                .equals(other.showDetails, showDetails));
   }
 
   @override
@@ -1967,8 +2516,11 @@ class _$_BranchState implements _BranchState {
       const DeepCollectionEquality().hash(isProcessing),
       const DeepCollectionEquality().hash(leafController),
       const DeepCollectionEquality().hash(nextBranches),
+      const DeepCollectionEquality().hash(sameAuthorNextBranches),
+      const DeepCollectionEquality().hash(scrollProgress),
       const DeepCollectionEquality().hash(session),
-      const DeepCollectionEquality().hash(settings));
+      const DeepCollectionEquality().hash(settings),
+      const DeepCollectionEquality().hash(showDetails));
 
   @JsonKey(ignore: true)
   @override
@@ -1987,8 +2539,11 @@ abstract class _BranchState implements BranchState {
       required bool isProcessing,
       required QuillController leafController,
       required List<Branch> nextBranches,
+      required List<Branch> sameAuthorNextBranches,
+      required double scrollProgress,
       required User session,
-      required Settings settings}) = _$_BranchState;
+      required Settings settings,
+      required bool showDetails}) = _$_BranchState;
 
   @override
   bool get authorIsUser;
@@ -2009,9 +2564,15 @@ abstract class _BranchState implements BranchState {
   @override
   List<Branch> get nextBranches;
   @override
+  List<Branch> get sameAuthorNextBranches;
+  @override
+  double get scrollProgress;
+  @override
   User get session;
   @override
   Settings get settings;
+  @override
+  bool get showDetails;
   @override
   @JsonKey(ignore: true)
   _$BranchStateCopyWith<_BranchState> get copyWith =>

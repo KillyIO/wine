@@ -24,6 +24,10 @@ class BranchEvent with _$BranchEvent {
   }) = LikeButtonPressed;
 
   /// @nodoc
+  const factory BranchEvent.nextBranchesBySameAuthorLoaded() =
+      NextBranchesBySameAuthorLoaded;
+
+  /// @nodoc
   const factory BranchEvent.nextBranchesLoaded() = NextBranchesLoaded;
 
   /// @nodoc
@@ -31,6 +35,9 @@ class BranchEvent with _$BranchEvent {
 
   /// @nodoc
   const factory BranchEvent.settingsFetched() = SettingsFetched;
+
+  /// @nodoc
+  const factory BranchEvent.toggleDetails() = ToggleDetails;
 
   /// @nodoc
   const factory BranchEvent.viewsUpdated() = ViewsUpdated;

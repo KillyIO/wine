@@ -35,7 +35,9 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
     this._settingsRepository,
     this._userRepository,
   ) : super(BranchState.initial()) {
-    on<AuthorLoaded>((_, emit) {});
+    on<AuthorLoaded>((_, emit) async {
+      await _fetchSettings(emit);
+    });
     on<BookmarkButtonPressed>((value, emit) async {
       (await _branchRepository.updateBranchBookmarks(
         state.session.uid,
@@ -72,6 +74,10 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
         (session) {
           emit(
             state.copyWith(
+              author: state.branch.authorUID.getOrCrash() ==
+                      session.uid.getOrCrash()
+                  ? session
+                  : User.empty(),
               authorIsUser: state.branch.authorUID.getOrCrash() ==
                   session.uid.getOrCrash(),
               failureOption: const None(),
@@ -166,6 +172,34 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
         },
       );
     });
+    on<NextBranchesBySameAuthorLoaded>((_, emit) async {
+      (await _branchRepository.loadNextBranchesNotAuthorUID(
+        state.branch.authorUID,
+        state.branch.uid,
+      ))
+          .match(
+        (branches) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              nextBranches: branches,
+            ),
+          );
+
+          if (!_authFacade.isAnonymous) {
+            add(const BranchEvent.nextBranchesLoaded());
+          }
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.branch(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
     on<NextBranchesLoaded>((_, emit) {});
     on<SessionFetched>((_, emit) async {
       if (!state.authorIsUser) {
@@ -194,18 +228,20 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       }
     });
     on<SettingsFetched>((_, emit) async {
-      (await _branchRepository.loadNextBranches(state.branch.uid)).match(
+      (await _branchRepository.loadNextBranchesByAuthorUID(
+        state.branch.authorUID,
+        state.branch.uid,
+      ))
+          .match(
         (branches) {
           emit(
             state.copyWith(
               failureOption: const None(),
-              nextBranches: branches,
+              sameAuthorNextBranches: branches,
             ),
           );
 
-          if (!_authFacade.isAnonymous) {
-            add(const BranchEvent.nextBranchesLoaded());
-          }
+          add(const BranchEvent.nextBranchesBySameAuthorLoaded());
         },
         (failure) {
           emit(
@@ -217,6 +253,14 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
         },
       );
     });
+    on<ToggleDetails>(
+      (_, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          showDetails: !state.showDetails,
+        ),
+      ),
+    );
     on<ViewsUpdated>((_, emit) {});
   }
 
