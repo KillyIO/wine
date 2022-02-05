@@ -232,6 +232,10 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
         (session) {
           emit(
             state.copyWith(
+              author:
+                  state.tree.authorUID.getOrCrash() == session.uid.getOrCrash()
+                      ? session
+                      : User.empty(),
               authorIsUser:
                   state.tree.authorUID.getOrCrash() == session.uid.getOrCrash(),
               failureOption: const None(),
