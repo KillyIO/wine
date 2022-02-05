@@ -24,13 +24,13 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_native_splash: ^2.0.1+1
-  flutter_quill: ^3.9.3
+  flutter_quill: ^3.9.7
   flutter_staggered_grid_view: ^0.6.1
   freezed_annotation: ^1.1.0
   get_it: ^7.2.0
   google_sign_in: ^5.2.3
   image_cropper: ^1.4.1
-  image_picker: ^0.8.4+5
+  image_picker: ^0.8.4+6
   injectable: ^1.5.3
   intl: ^0.17.0
   introduction_screen: ^2.1.0

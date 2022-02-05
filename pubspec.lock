@@ -502,7 +502,7 @@ packages:
       name: flutter_quill
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.9.3"
+    version: "3.9.7"
   flutter_staggered_grid_view:
     dependency: "direct main"
     description:
@@ -659,7 +659,7 @@ packages:
       name: image_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.4+5"
+    version: "0.8.4+6"
   image_picker_for_web:
     dependency: transitive
     description:
