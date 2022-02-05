@@ -222,7 +222,61 @@ class BranchRepository implements IBranchRepository {
 
   @override
   Future<Result<List<Branch>, BranchFailure>> loadNextBranches(
-    UniqueID uid, {
+    UniqueID previousBranchUID, {
+    UniqueID? lastBranchUID,
+  }) async {
+    try {
+      final branchesCollection = _firestore.collection(branchesPath);
+
+      Query? query;
+      if (lastBranchUID != null) {
+        final lastDocument =
+            await branchesCollection.doc(lastBranchUID.getOrCrash()).get();
+
+        query = branchesCollection.startAfterDocument(lastDocument).where(
+              'previousBranchUID',
+              isEqualTo: previousBranchUID.getOrCrash(),
+            );
+      } else {
+        query = branchesCollection.where(
+          'previousBranchUID',
+          isEqualTo: previousBranchUID.getOrCrash(),
+        );
+      }
+
+      final querySnapshot = await query
+          .orderBy('updatedAt', descending: true)
+          .limit(20)
+          .withConverter<Branch>(
+            fromFirestore: (snapshot, _) {
+              if (snapshot.exists) {
+                return BranchDTO.fromJson(snapshot.data()!).toDomain();
+              }
+              return Branch.empty();
+            },
+            toFirestore: (value, _) => BranchDTO.fromDomain(value).toJson(),
+          )
+          .get();
+
+      final branch = <Branch>[];
+      for (final doc in querySnapshot.docs) {
+        branch.add(doc.data());
+      }
+      return Ok(branch);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const BranchFailure.permissionDenied());
+      }
+      return Err(const BranchFailure.serverError());
+    } catch (_) {
+      return Err(const BranchFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<List<Branch>, BranchFailure>> loadNextBranchesByAuthorUID(
+    UniqueID authorUID,
+    UniqueID previousBranchUID, {
     UniqueID? lastBranchUID,
   }) async {
     try {
@@ -235,15 +289,81 @@ class BranchRepository implements IBranchRepository {
 
         query = branchesCollection
             .startAfterDocument(lastDocument)
-            .where('previousBranchUID', isEqualTo: uid.getOrCrash());
+            .where(
+              'previousBranchUID',
+              isEqualTo: previousBranchUID.getOrCrash(),
+            )
+            .where('authorUID', isEqualTo: authorUID.getOrCrash());
       } else {
-        query = branchesCollection.where(
-          'previousBranchUID',
-          isEqualTo: uid.getOrCrash(),
-        );
+        query = branchesCollection
+            .where(
+              'previousBranchUID',
+              isEqualTo: previousBranchUID.getOrCrash(),
+            )
+            .where('authorUID', isEqualTo: authorUID.getOrCrash());
       }
 
       final querySnapshot = await query
+          .orderBy('updatedAt', descending: true)
+          .limit(20)
+          .withConverter<Branch>(
+            fromFirestore: (snapshot, _) {
+              if (snapshot.exists) {
+                return BranchDTO.fromJson(snapshot.data()!).toDomain();
+              }
+              return Branch.empty();
+            },
+            toFirestore: (value, _) => BranchDTO.fromDomain(value).toJson(),
+          )
+          .get();
+
+      final branch = <Branch>[];
+      for (final doc in querySnapshot.docs) {
+        branch.add(doc.data());
+      }
+      return Ok(branch);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const BranchFailure.permissionDenied());
+      }
+      return Err(const BranchFailure.serverError());
+    } catch (_) {
+      return Err(const BranchFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<List<Branch>, BranchFailure>> loadNextBranchesNotAuthorUID(
+    UniqueID authorUID,
+    UniqueID previousBranchUID, {
+    UniqueID? lastBranchUID,
+  }) async {
+    try {
+      final branchesCollection = _firestore.collection(branchesPath);
+
+      Query? query;
+      if (lastBranchUID != null) {
+        final lastDocument =
+            await branchesCollection.doc(lastBranchUID.getOrCrash()).get();
+
+        query = branchesCollection
+            .startAfterDocument(lastDocument)
+            .where(
+              'previousBranchUID',
+              isEqualTo: previousBranchUID.getOrCrash(),
+            )
+            .where('authorUID', isNotEqualTo: authorUID.getOrCrash());
+      } else {
+        query = branchesCollection
+            .where(
+              'previousBranchUID',
+              isEqualTo: previousBranchUID.getOrCrash(),
+            )
+            .where('authorUID', isNotEqualTo: authorUID.getOrCrash());
+      }
+
+      final querySnapshot = await query
+          .orderBy('authorUID')
           .orderBy('updatedAt', descending: true)
           .limit(20)
           .withConverter<Branch>(
