@@ -41,11 +41,11 @@ class AppRouter extends _i14.RootStackRouter {
     BranchRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<BranchRouteArgs>(
-          orElse: () => BranchRouteArgs(id: pathParams.getString('id')));
+          orElse: () => BranchRouteArgs(uid: pathParams.getString('id')));
       return _i14.AdaptivePage<_i1.BranchPage>(
           routeData: routeData,
-          child:
-              _i1.BranchPage(key: args.key, branch: args.branch, id: args.id));
+          child: _i1.BranchPage(
+              key: args.key, branch: args.branch, uid: args.uid));
     },
     HomeRoute.name: (routeData) {
       return _i14.AdaptivePage<_i2.HomePage>(
@@ -68,10 +68,10 @@ class AppRouter extends _i14.RootStackRouter {
     TreeRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<TreeRouteArgs>(
-          orElse: () => TreeRouteArgs(id: pathParams.getString('id')));
+          orElse: () => TreeRouteArgs(uid: pathParams.getString('id')));
       return _i14.AdaptivePage<_i6.TreePage>(
           routeData: routeData,
-          child: _i6.TreePage(key: args.key, id: args.id, tree: args.tree));
+          child: _i6.TreePage(key: args.key, uid: args.uid, tree: args.tree));
     },
     SettingsWrapper.name: (routeData) {
       return _i14.AdaptivePage<_i7.SettingsWrapper>(
@@ -186,27 +186,27 @@ class AppRouter extends _i14.RootStackRouter {
 /// generated route for
 /// [_i1.BranchPage]
 class BranchRoute extends _i14.PageRouteInfo<BranchRouteArgs> {
-  BranchRoute({_i15.Key? key, _i16.Branch? branch, required String id})
+  BranchRoute({_i15.Key? key, _i16.Branch? branch, required String uid})
       : super(BranchRoute.name,
             path: '/branch/:id',
-            args: BranchRouteArgs(key: key, branch: branch, id: id),
-            rawPathParams: {'id': id});
+            args: BranchRouteArgs(key: key, branch: branch, uid: uid),
+            rawPathParams: {'id': uid});
 
   static const String name = 'BranchRoute';
 }
 
 class BranchRouteArgs {
-  const BranchRouteArgs({this.key, this.branch, required this.id});
+  const BranchRouteArgs({this.key, this.branch, required this.uid});
 
   final _i15.Key? key;
 
   final _i16.Branch? branch;
 
-  final String id;
+  final String uid;
 
   @override
   String toString() {
-    return 'BranchRouteArgs{key: $key, branch: $branch, id: $id}';
+    return 'BranchRouteArgs{key: $key, branch: $branch, uid: $uid}';
   }
 }
 
@@ -261,27 +261,27 @@ class PlusRoute extends _i14.PageRouteInfo<void> {
 /// generated route for
 /// [_i6.TreePage]
 class TreeRoute extends _i14.PageRouteInfo<TreeRouteArgs> {
-  TreeRoute({_i15.Key? key, required String id, _i17.Tree? tree})
+  TreeRoute({_i15.Key? key, required String uid, _i17.Tree? tree})
       : super(TreeRoute.name,
             path: '/tree/:id',
-            args: TreeRouteArgs(key: key, id: id, tree: tree),
-            rawPathParams: {'id': id});
+            args: TreeRouteArgs(key: key, uid: uid, tree: tree),
+            rawPathParams: {'id': uid});
 
   static const String name = 'TreeRoute';
 }
 
 class TreeRouteArgs {
-  const TreeRouteArgs({this.key, required this.id, this.tree});
+  const TreeRouteArgs({this.key, required this.uid, this.tree});
 
   final _i15.Key? key;
 
-  final String id;
+  final String uid;
 
   final _i17.Tree? tree;
 
   @override
   String toString() {
-    return 'TreeRouteArgs{key: $key, id: $id, tree: $tree}';
+    return 'TreeRouteArgs{key: $key, uid: $uid, tree: $tree}';
   }
 }
 
