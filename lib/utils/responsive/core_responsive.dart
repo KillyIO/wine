@@ -18,6 +18,7 @@ double? getHorizontalPageViewNavbarButtonFontSize(Size size) {
   if (deviceType == DeviceScreenType.desktop) {
     return 16;
   }
+  return null;
 }
 
 /// @nodoc
