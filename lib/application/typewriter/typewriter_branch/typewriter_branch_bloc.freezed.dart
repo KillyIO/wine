@@ -54,10 +54,10 @@ class _$TypewriterBranchEventTearOff {
     );
   }
 
-  LaunchAsNewBranch launchAsNewBranch(Tree tree, {Branch? previousBranch}) {
+  LaunchAsNewBranch launchAsNewBranch({Branch? previousBranch, Tree? tree}) {
     return LaunchAsNewBranch(
-      tree,
       previousBranch: previousBranch,
+      tree: tree,
     );
   }
 
@@ -117,7 +117,7 @@ mixin _$TypewriterBranchEvent {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -138,7 +138,7 @@ mixin _$TypewriterBranchEvent {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -158,7 +158,7 @@ mixin _$TypewriterBranchEvent {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -301,7 +301,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -325,7 +325,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -348,7 +348,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -496,7 +496,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -520,7 +520,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -543,7 +543,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -689,7 +689,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -713,7 +713,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -736,7 +736,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -905,7 +905,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -929,7 +929,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -952,7 +952,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1127,7 +1127,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -1151,7 +1151,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1174,7 +1174,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1349,7 +1349,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -1373,7 +1373,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1396,7 +1396,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1571,7 +1571,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -1595,7 +1595,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1618,7 +1618,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1726,10 +1726,10 @@ abstract class $LaunchAsNewBranchCopyWith<$Res> {
   factory $LaunchAsNewBranchCopyWith(
           LaunchAsNewBranch value, $Res Function(LaunchAsNewBranch) then) =
       _$LaunchAsNewBranchCopyWithImpl<$Res>;
-  $Res call({Tree tree, Branch? previousBranch});
+  $Res call({Branch? previousBranch, Tree? tree});
 
-  $TreeCopyWith<$Res> get tree;
   $BranchCopyWith<$Res>? get previousBranch;
+  $TreeCopyWith<$Res>? get tree;
 }
 
 /// @nodoc
@@ -1745,26 +1745,19 @@ class _$LaunchAsNewBranchCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? tree = freezed,
     Object? previousBranch = freezed,
+    Object? tree = freezed,
   }) {
     return _then(LaunchAsNewBranch(
-      tree == freezed
-          ? _value.tree
-          : tree // ignore: cast_nullable_to_non_nullable
-              as Tree,
       previousBranch: previousBranch == freezed
           ? _value.previousBranch
           : previousBranch // ignore: cast_nullable_to_non_nullable
               as Branch?,
+      tree: tree == freezed
+          ? _value.tree
+          : tree // ignore: cast_nullable_to_non_nullable
+              as Tree?,
     ));
-  }
-
-  @override
-  $TreeCopyWith<$Res> get tree {
-    return $TreeCopyWith<$Res>(_value.tree, (value) {
-      return _then(_value.copyWith(tree: value));
-    });
   }
 
   @override
@@ -1777,21 +1770,32 @@ class _$LaunchAsNewBranchCopyWithImpl<$Res>
       return _then(_value.copyWith(previousBranch: value));
     });
   }
+
+  @override
+  $TreeCopyWith<$Res>? get tree {
+    if (_value.tree == null) {
+      return null;
+    }
+
+    return $TreeCopyWith<$Res>(_value.tree!, (value) {
+      return _then(_value.copyWith(tree: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$LaunchAsNewBranch implements LaunchAsNewBranch {
-  const _$LaunchAsNewBranch(this.tree, {this.previousBranch});
+  const _$LaunchAsNewBranch({this.previousBranch, this.tree});
 
   @override
-  final Tree tree;
-  @override
   final Branch? previousBranch;
+  @override
+  final Tree? tree;
 
   @override
   String toString() {
-    return 'TypewriterBranchEvent.launchAsNewBranch(tree: $tree, previousBranch: $previousBranch)';
+    return 'TypewriterBranchEvent.launchAsNewBranch(previousBranch: $previousBranch, tree: $tree)';
   }
 
   @override
@@ -1799,16 +1803,16 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LaunchAsNewBranch &&
-            const DeepCollectionEquality().equals(other.tree, tree) &&
             const DeepCollectionEquality()
-                .equals(other.previousBranch, previousBranch));
+                .equals(other.previousBranch, previousBranch) &&
+            const DeepCollectionEquality().equals(other.tree, tree));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(tree),
-      const DeepCollectionEquality().hash(previousBranch));
+      const DeepCollectionEquality().hash(previousBranch),
+      const DeepCollectionEquality().hash(tree));
 
   @JsonKey(ignore: true)
   @override
@@ -1825,7 +1829,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -1836,7 +1840,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
-    return launchAsNewBranch(tree, previousBranch);
+    return launchAsNewBranch(previousBranch, tree);
   }
 
   @override
@@ -1849,7 +1853,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1859,7 +1863,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
-    return launchAsNewBranch?.call(tree, previousBranch);
+    return launchAsNewBranch?.call(previousBranch, tree);
   }
 
   @override
@@ -1872,7 +1876,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -1884,7 +1888,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
     required TResult orElse(),
   }) {
     if (launchAsNewBranch != null) {
-      return launchAsNewBranch(tree, previousBranch);
+      return launchAsNewBranch(previousBranch, tree);
     }
     return orElse();
   }
@@ -1967,11 +1971,11 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
 }
 
 abstract class LaunchAsNewBranch implements TypewriterBranchEvent {
-  const factory LaunchAsNewBranch(Tree tree, {Branch? previousBranch}) =
+  const factory LaunchAsNewBranch({Branch? previousBranch, Tree? tree}) =
       _$LaunchAsNewBranch;
 
-  Tree get tree;
   Branch? get previousBranch;
+  Tree? get tree;
   @JsonKey(ignore: true)
   $LaunchAsNewBranchCopyWith<LaunchAsNewBranch> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2072,7 +2076,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -2096,7 +2100,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2119,7 +2123,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2271,7 +2275,7 @@ class _$LeafChanged implements LeafChanged {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -2295,7 +2299,7 @@ class _$LeafChanged implements LeafChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2318,7 +2322,7 @@ class _$LeafChanged implements LeafChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2488,7 +2492,7 @@ class _$LicenceSelected implements LicenceSelected {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -2512,7 +2516,7 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2535,7 +2539,7 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2711,7 +2715,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -2735,7 +2739,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2758,7 +2762,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2909,7 +2913,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -2933,7 +2937,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -2956,7 +2960,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -3102,7 +3106,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -3126,7 +3130,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -3149,7 +3153,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -3295,7 +3299,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -3319,7 +3323,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -3342,7 +3346,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -3512,7 +3516,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Tree tree, Branch? previousBranch)
+    required TResult Function(Branch? previousBranch, Tree? tree)
         launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
@@ -3536,7 +3540,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
@@ -3559,7 +3563,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Tree tree, Branch? previousBranch)? launchAsNewBranch,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,

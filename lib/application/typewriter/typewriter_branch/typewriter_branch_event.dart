@@ -29,9 +29,9 @@ class TypewriterBranchEvent with _$TypewriterBranchEvent {
       LanguageSelected;
 
   /// @nodoc
-  const factory TypewriterBranchEvent.launchAsNewBranch(
-    Tree tree, {
+  const factory TypewriterBranchEvent.launchAsNewBranch({
     Branch? previousBranch,
+    Tree? tree,
   }) = LaunchAsNewBranch;
 
   /// @nodoc

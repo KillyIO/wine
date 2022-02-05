@@ -42,8 +42,8 @@ class TypewriterPage extends StatelessWidget {
           return TypewriterBranchUIDPage(branch: branch, branchUID: uid!);
         }
         return TypewriterBranchNewPage(
-          tree: tree!,
           previousBranch: branch,
+          tree: tree,
         );
       case TypewriterType.tree:
         if (uid != null) {

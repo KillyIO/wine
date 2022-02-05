@@ -19,7 +19,7 @@ class TypewriterBranchNewPage extends StatelessWidget {
   final Branch? previousBranch;
 
   /// @nodoc
-  final Tree tree;
+  final Tree? tree;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,8 @@ class TypewriterBranchNewPage extends StatelessWidget {
       create: (context) => getIt<TypewriterBranchBloc>()
         ..add(
           TypewriterBranchEvent.launchAsNewBranch(
-            tree,
             previousBranch: previousBranch,
+            tree: tree,
           ),
         ),
       child: TypewriterBranchLayout(),
