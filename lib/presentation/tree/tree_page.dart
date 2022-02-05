@@ -16,12 +16,12 @@ class TreePage extends StatelessWidget {
   /// @nodoc
   const TreePage({
     Key? key,
-    @PathParam('id') required this.id,
+    @PathParam('id') required this.uid,
     this.tree,
   }) : super(key: key);
 
   /// nodoc
-  final String id;
+  final String uid;
 
   /// @nodoc
   final Tree? tree;
@@ -68,7 +68,7 @@ class TreePage extends StatelessWidget {
         create: (_) => getIt<TreeBloc>()
           ..add(
             TreeEvent.launchWithUID(
-              UniqueID.fromUniqueString(id),
+              UniqueID.fromUniqueString(uid),
               tree: tree,
             ),
           ),
