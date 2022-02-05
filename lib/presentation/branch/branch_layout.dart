@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:time/time.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
+import 'package:wine/domain/core/typewriter_type.dart';
+import 'package:wine/presentation/branch/widgets/branch_app_bar.dart';
+import 'package:wine/presentation/branch/widgets/branch_details.dart';
+import 'package:wine/presentation/branch/widgets/next_branches.dart';
 import 'package:wine/presentation/core/branch/branch_index.dart';
 import 'package:wine/presentation/core/branch/branch_leaf.dart';
 import 'package:wine/presentation/core/branch/branch_title.dart';
+import 'package:wine/presentation/core/buttons/default_button.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class BranchLayout extends StatelessWidget {
@@ -14,6 +23,8 @@ class BranchLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return Container(
       constraints: const BoxConstraints(
         maxWidth: maxContentLayoutWidth,
@@ -82,11 +93,15 @@ class BranchLayout extends StatelessWidget {
             none: () {},
           );
         },
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Stack(
-            children: [
-              ListView(
+        child: Stack(
+          children: [
+            GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: () => context
+                  .read<BranchBloc>()
+                  .add(const BranchEvent.toggleDetails()),
+              child: ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(bottom: 10, top: 50),
@@ -102,17 +117,97 @@ class BranchLayout extends StatelessWidget {
                     },
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 25, top: 75),
+                    padding: const EdgeInsets.symmetric(vertical: 75),
                     child: BlocBuilder<BranchBloc, BranchState>(
                       builder: (context, state) {
                         return BranchLeaf(leafController: state.leafController);
                       },
                     ),
-                  )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 50),
+                    child: BlocBuilder<BranchBloc, BranchState>(
+                      builder: (context, state) {
+                        return DefaultButton(
+                          color: pastelPink,
+                          hasRoundedCorners: true,
+                          title: 'WRITE NEXT BRANCH',
+                          onPressed: () => handleAuthGuardedNavigation(
+                            context,
+                            navigateTo: TypewriterBranchNew(
+                              branch: state.branch,
+                              type: TypewriterType.branch,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 50),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text('AD'),
+                        // TODO(SSebigo): add ad banner
+                        Container(
+                          color: Colors.black54,
+                          height: 50,
+                          width: mediaQuery.width,
+                        ),
+                      ],
+                    ),
+                  ),
+                  BlocBuilder<BranchBloc, BranchState>(
+                    builder: (context, state) {
+                      return SameAuthorNextBranches(
+                        branches: state.sameAuthorNextBranches,
+                        title:
+                            'BRANCHES ${state.branch.index + 1} BY THE SAME AUTHOR',
+                      );
+                    },
+                  ),
+                  const Divider(
+                    color: Colors.black26,
+                    height: 50,
+                    thickness: 2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 25),
+                    child: BlocBuilder<BranchBloc, BranchState>(
+                      builder: (context, state) {
+                        return SameAuthorNextBranches(
+                          branches: state.nextBranches,
+                          title: 'BRANCHES ${state.branch.index + 1}',
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
-            ],
-          ),
+            ),
+            IgnorePointer(
+              child: BlocBuilder<BranchBloc, BranchState>(
+                builder: (context, state) {
+                  return AnimatedOpacity(
+                    duration: 200.milliseconds,
+                    opacity: state.showDetails ? .75 : 0,
+                    child: Container(
+                      width: mediaQuery.width,
+                      height: mediaQuery.height,
+                      color: Colors.black54,
+                    ),
+                  );
+                },
+              ),
+            ),
+            const BranchAppBar(),
+            const Align(
+              alignment: Alignment.bottomCenter,
+              child: BranchDetails(),
+            )
+          ],
         ),
       ),
     );

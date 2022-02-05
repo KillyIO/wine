@@ -54,7 +54,7 @@ class BranchTile extends StatelessWidget {
                   title ?? 'No title*',
                   style: const TextStyle(
                     color: Colors.black,
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

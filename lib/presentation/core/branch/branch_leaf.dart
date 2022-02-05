@@ -17,9 +17,16 @@ class BranchLeaf extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context).size;
 
     if (leafController != null) {
-      return QuillEditor.basic(
+      return QuillEditor(
+        autoFocus: false,
         controller: leafController!,
+        expands: false,
+        focusNode: FocusNode(),
+        padding: EdgeInsets.zero,
         readOnly: true,
+        scrollable: true,
+        scrollController: ScrollController(),
+        showCursor: false,
       );
     }
     return Column(
