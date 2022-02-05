@@ -59,8 +59,6 @@ class LibraryBaseBranchesLayout extends StatelessWidget {
               coverURL: branches[i].coverURL.getOrNull(),
               onPressed: () {
                 switch (type) {
-                  case 'published':
-                    break;
                   case 'drafts':
                     handleAuthGuardedNavigation(
                       context,
@@ -72,6 +70,14 @@ class LibraryBaseBranchesLayout extends StatelessWidget {
                     );
                     break;
                   default:
+                    handleAuthGuardedNavigation(
+                      context,
+                      navigateTo: BranchRoute(
+                        branch: branches[i],
+                        uid: branches[i].uid.getOrCrash(),
+                      ),
+                    );
+                    break;
                 }
               },
               title: branches[i].title.getOrNull(),
