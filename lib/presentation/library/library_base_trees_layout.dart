@@ -78,8 +78,8 @@ class LibraryBaseTreesLayout extends StatelessWidget {
                     handleAuthGuardedNavigation(
                       context,
                       navigateTo: TreeRoute(
-                        id: trees[i].uid.getOrCrash(),
                         tree: trees[i],
+                        uid: trees[i].uid.getOrCrash(),
                       ),
                     );
                     break;
