@@ -96,6 +96,10 @@ class TypewriterBranchLayout extends StatelessWidget {
               }
               break;
             case TypewriterEndState.published:
+              context
+                  .read<LibraryBloc>()
+                  .add(LibraryEvent.branchModified(state.branch));
+
               redirectDialog(
                 context,
                 <String>[
@@ -105,8 +109,8 @@ class TypewriterBranchLayout extends StatelessWidget {
                 () => handleAuthRedirect(
                   context,
                   navigateTo: BranchRoute(
-                    id: state.branch.uid.getOrCrash(),
                     branch: state.branch,
+                    uid: state.branch.uid.getOrCrash(),
                   ),
                 ),
               );

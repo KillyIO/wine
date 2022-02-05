@@ -99,6 +99,10 @@ class TypewriterTreeLayout extends StatelessWidget {
               }
               break;
             case TypewriterEndState.published:
+              context
+                  .read<LibraryBloc>()
+                  .add(LibraryEvent.treeModified(state.tree));
+
               redirectDialog(
                 context,
                 <String>[
@@ -108,8 +112,8 @@ class TypewriterTreeLayout extends StatelessWidget {
                 () => handleAuthRedirect(
                   context,
                   navigateTo: TreeRoute(
-                    id: state.tree.uid.getOrCrash(),
                     tree: state.tree,
+                    uid: state.tree.uid.getOrCrash(),
                   ),
                 ),
               );
