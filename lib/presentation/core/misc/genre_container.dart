@@ -5,8 +5,16 @@ class GenreContainer extends StatelessWidget {
   /// @nodoc
   const GenreContainer({
     Key? key,
+    this.backgroundColor = Colors.black12,
+    this.textColor = Colors.black,
     required this.title,
   }) : super(key: key);
+
+  /// @nodoc
+  final Color? backgroundColor;
+
+  /// @nodoc
+  final Color? textColor;
 
   /// @nodoc
   final String? title;
@@ -15,14 +23,14 @@ class GenreContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.black12,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(20),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Text(
         title ?? '',
-        style: const TextStyle(
-          color: Colors.black,
+        style: TextStyle(
+          color: textColor,
           fontWeight: FontWeight.w400,
         ),
       ),
