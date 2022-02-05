@@ -14,8 +14,11 @@ class BranchState with _$BranchState {
     required bool isProcessing,
     required QuillController leafController,
     required List<Branch> nextBranches,
+    required List<Branch> sameAuthorNextBranches,
+    required double scrollProgress,
     required User session,
     required Settings settings,
+    required bool showDetails,
   }) = _BranchState;
 
   /// @nodoc
@@ -29,7 +32,10 @@ class BranchState with _$BranchState {
         isProcessing: false,
         leafController: QuillController.basic(),
         nextBranches: <Branch>[],
+        sameAuthorNextBranches: <Branch>[],
+        scrollProgress: 0,
         session: User.empty(),
         settings: Settings.empty(),
+        showDetails: false,
       );
 }
