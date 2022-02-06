@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/presentation/branch/widgets/branch_detail_container.dart';
-import 'package:wine/presentation/core/common/genre_container.dart';
 import 'package:wine/presentation/core/common/content_actions.dart';
+import 'package:wine/presentation/core/common/genre_container.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
