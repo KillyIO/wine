@@ -173,9 +173,10 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       );
     });
     on<NextBranchesBySameAuthorLoaded>((_, emit) async {
-      (await _branchRepository.loadNextBranchesNotAuthorUID(
+      (await _branchRepository.loadNextBranchesByAuthorUID(
         state.branch.authorUID,
         state.branch.uid,
+        notAuthorUID: true,
       ))
           .match(
         (branches) {

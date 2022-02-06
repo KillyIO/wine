@@ -44,13 +44,7 @@ abstract class IBranchRepository {
     UniqueID authorUID,
     UniqueID previousBranchUID, {
     UniqueID? lastBranchUID,
-  });
-
-  /// @nodoc
-  Future<Result<List<Branch>, BranchFailure>> loadNextBranchesNotAuthorUID(
-    UniqueID authorUID,
-    UniqueID previousBranchUID, {
-    UniqueID? lastBranchUID,
+    bool notAuthorUID = false,
   });
 
   /// @nodoc
