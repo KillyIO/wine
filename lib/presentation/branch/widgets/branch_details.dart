@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/presentation/branch/widgets/branch_detail_container.dart';
-import 'package:wine/presentation/core/misc/genre_container.dart';
-import 'package:wine/presentation/core/misc/stats_counter.dart';
+import 'package:wine/presentation/core/common/genre_container.dart';
+import 'package:wine/presentation/core/common/content_actions.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
@@ -112,7 +112,7 @@ class BranchDetails extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 25),
                   child: BlocBuilder<BranchBloc, BranchState>(
                     builder: (context, state) {
-                      return StatsCounter(
+                      return ContentActions(
                         bookmarksCount: state.branch.bookmarksCount,
                         isBookmarked: state.isBookmarked,
                         isLiked: state.isLiked,

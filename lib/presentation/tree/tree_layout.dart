@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
-import 'package:wine/presentation/core/misc/stats_counter.dart';
+import 'package:wine/presentation/core/common/content_actions.dart';
 import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';
 import 'package:wine/presentation/tree/widgets/tree_details.dart';
 import 'package:wine/presentation/tree/widgets/tree_genres.dart';
@@ -115,7 +115,7 @@ class TreeLayout extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 20),
                   child: BlocBuilder<TreeBloc, TreeState>(
                     builder: (context, state) {
-                      return StatsCounter(
+                      return ContentActions(
                         bookmarksCount: state.tree.bookmarksCount,
                         isBookmarked: state.isBookmarked,
                         isLiked: state.isLiked,

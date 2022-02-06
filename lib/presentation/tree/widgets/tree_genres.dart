@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
-import 'package:wine/presentation/core/misc/genre_container.dart';
+import 'package:wine/presentation/core/common/genre_container.dart';
 
 /// @nodoc
 class TreeGenres extends StatelessWidget {

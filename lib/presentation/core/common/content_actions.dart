@@ -4,9 +4,9 @@ import 'package:like_button/like_button.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
-class StatsCounter extends StatelessWidget {
+class ContentActions extends StatelessWidget {
   /// @nodoc
-  const StatsCounter({
+  const ContentActions({
     Key? key,
     required this.bookmarksCount,
     required this.isBookmarked,
