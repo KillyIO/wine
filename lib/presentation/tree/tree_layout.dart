@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
+import 'package:wine/presentation/core/misc/stats_counter.dart';
 import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';
 import 'package:wine/presentation/tree/widgets/tree_details.dart';
 import 'package:wine/presentation/tree/widgets/tree_genres.dart';
 import 'package:wine/presentation/tree/widgets/tree_resume_reading.dart';
-import 'package:wine/presentation/tree/widgets/tree_stats.dart';
 import 'package:wine/presentation/tree/widgets/tree_summary_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
@@ -106,28 +106,54 @@ class TreeLayout extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
-              children: const [
-                Padding(
+              children: [
+                const Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),
                   child: TreeDetails(),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                  child: TreeStats(),
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: BlocBuilder<TreeBloc, TreeState>(
+                    builder: (context, state) {
+                      return StatsCounter(
+                        bookmarksCount: state.tree.bookmarksCount,
+                        isBookmarked: state.isBookmarked,
+                        isLiked: state.isLiked,
+                        likesCount: state.tree.likesCount,
+                        onBookmarkTap: (isBookmarked) async {
+                          context.read<TreeBloc>().add(
+                                TreeEvent.bookmarkButtonPressed(
+                                  isBookmarked: isBookmarked,
+                                ),
+                              );
+
+                          return state.isBookmarked;
+                        },
+                        onLikeTap: (isLiked) async {
+                          context.read<TreeBloc>().add(
+                                TreeEvent.likeButtonPressed(isLiked: isLiked),
+                              );
+
+                          return state.isLiked;
+                        },
+                        viewsCount: state.tree.viewsCount,
+                      );
+                    },
+                  ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: TreeSummaryLayout(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(bottom: 50),
                   child: TreeGenres(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(bottom: 50),
                   child: TreeBranchOne(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: TreeResumeReading(),
                 ),

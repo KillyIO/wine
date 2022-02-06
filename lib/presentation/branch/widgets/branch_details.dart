@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/presentation/branch/widgets/branch_detail_container.dart';
-import 'package:wine/presentation/branch/widgets/branch_stats.dart';
 import 'package:wine/presentation/core/misc/genre_container.dart';
+import 'package:wine/presentation/core/misc/stats_counter.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
@@ -108,9 +108,37 @@ class BranchDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 25),
-                  child: BranchStats(),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 25),
+                  child: BlocBuilder<BranchBloc, BranchState>(
+                    builder: (context, state) {
+                      return StatsCounter(
+                        bookmarksCount: state.branch.bookmarksCount,
+                        isBookmarked: state.isBookmarked,
+                        isLiked: state.isLiked,
+                        likesCount: state.branch.likesCount,
+                        onBookmarkTap: (isBookmarked) async {
+                          context.read<BranchBloc>().add(
+                                BranchEvent.bookmarkButtonPressed(
+                                  isBookmarked: isBookmarked,
+                                ),
+                              );
+
+                          return state.isBookmarked;
+                        },
+                        onLikeTap: (isLiked) async {
+                          context.read<BranchBloc>().add(
+                                BranchEvent.likeButtonPressed(
+                                  isLiked: isLiked,
+                                ),
+                              );
+
+                          return state.isLiked;
+                        },
+                        viewsCount: state.branch.viewsCount,
+                      );
+                    },
+                  ),
                 ),
                 BlocBuilder<BranchBloc, BranchState>(
                   builder: (context, state) {
