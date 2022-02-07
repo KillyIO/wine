@@ -300,13 +300,17 @@ class BranchRepository implements IBranchRepository {
       }
 
       if (notAuthorUID) {
-        query = query.where('authorUID', isNotEqualTo: authorUID.getOrCrash());
+        query = query
+            .where('authorUID', isNotEqualTo: authorUID.getOrCrash())
+            .where('isPublished', isEqualTo: true)
+            .orderBy('authorUID', descending: true);
       } else {
-        query = query.where('authorUID', isEqualTo: authorUID.getOrCrash());
+        query = query
+            .where('authorUID', isEqualTo: authorUID.getOrCrash())
+            .where('isPublished', isEqualTo: true);
       }
 
       final querySnapshot = await query
-          .orderBy('authorUID')
           .orderBy('updatedAt', descending: true)
           .limit(20)
           .withConverter<Branch>(
