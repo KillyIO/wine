@@ -165,6 +165,7 @@ class BranchLayout extends StatelessWidget {
                         branches: state.sameAuthorNextBranches,
                         title:
                             'BRANCHES ${state.branch.index + 1} BY THE SAME AUTHOR',
+                        onRefreshPressed: () {},
                       );
                     },
                   ),
@@ -180,6 +181,7 @@ class BranchLayout extends StatelessWidget {
                         return SameAuthorNextBranches(
                           branches: state.nextBranches,
                           title: 'BRANCHES ${state.branch.index + 1}',
+                          onRefreshPressed: () {},
                         );
                       },
                     ),
