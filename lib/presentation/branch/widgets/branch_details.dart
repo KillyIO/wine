@@ -70,7 +70,13 @@ class BranchDetails extends StatelessWidget {
                                 right: i == state.branch.genres.length ? 0 : 10,
                               ),
                               child: GenreContainer(
-                                backgroundColor: Colors.white,
+                                backgroundColor: [
+                                  pastelBlue,
+                                  pastelCyan,
+                                  pastelPink,
+                                  pastelYellow
+                                ][i % 4],
+                                textColor: Colors.white,
                                 title: state.branch.genres
                                     .map((e) => e.getOrNull())
                                     .toList()[i],
