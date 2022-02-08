@@ -24,7 +24,7 @@ import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/subtitle.dart';
-import 'package:wine/domain/tree/summary.dart';
+import 'package:wine/domain/tree/synopsis.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/cover.dart';
 
@@ -190,10 +190,10 @@ class TypewriterTreeBloc
             subtitleWordCount: tree.subtitle?.getOrNull()?.countWords() ?? 0,
             subtitleController:
                 TextEditingController(text: tree.subtitle?.getOrNull()),
-            summary: tree.summary,
-            summaryWordCount: tree.summary.getOrNull()?.countWords() ?? 0,
-            summaryController:
-                TextEditingController(text: tree.summary.getOrNull()),
+            synopsis: tree.synopsis,
+            synopsisWordCount: tree.synopsis.getOrNull()?.countWords() ?? 0,
+            synopsisController:
+                TextEditingController(text: tree.synopsis.getOrNull()),
             title: tree.title,
             titleWordCount: tree.title.getOrNull()?.countWords() ?? 0,
             titleController:
@@ -217,10 +217,10 @@ class TypewriterTreeBloc
                     tree.subtitle?.getOrNull()?.countWords() ?? 0,
                 subtitleController:
                     TextEditingController(text: tree.subtitle?.getOrNull()),
-                summary: tree.summary,
-                summaryWordCount: tree.summary.getOrNull()?.countWords() ?? 0,
-                summaryController:
-                    TextEditingController(text: tree.summary.getOrNull()),
+                synopsis: tree.synopsis,
+                synopsisWordCount: tree.synopsis.getOrNull()?.countWords() ?? 0,
+                synopsisController:
+                    TextEditingController(text: tree.synopsis.getOrNull()),
                 title: tree.title,
                 titleWordCount: tree.title.getOrNull()?.countWords() ?? 0,
                 titleController:
@@ -242,7 +242,7 @@ class TypewriterTreeBloc
     on<PublishButtonPressed>((_, emit) async {
       final isValid = state.genres.isNotEmpty &&
           state.language.isValid &&
-          state.summary.isValid &&
+          state.synopsis.isValid &&
           state.title.isValid;
 
       if (isValid) {
@@ -255,7 +255,7 @@ class TypewriterTreeBloc
           language: state.language,
           isPublished: true,
           subtitle: state.subtitle,
-          summary: state.summary,
+          synopsis: state.synopsis,
           title: state.title,
         );
 
@@ -281,7 +281,7 @@ class TypewriterTreeBloc
         isNSFW: state.isNSFW,
         language: Language.forSaving(state.language.value),
         subtitle: state.subtitle,
-        summary: Summary.forSaving(state.summary.value),
+        synopsis: Synopsis.forSaving(state.synopsis.value),
         title: Title.forSaving(state.title.value),
       );
 
@@ -336,15 +336,15 @@ class TypewriterTreeBloc
         ),
       );
     });
-    on<SummaryChanged>((value, emit) {
-      final summaryTrim = value.summary.trim();
-      final wordCount = summaryTrim.countWords();
+    on<SynopsisChanged>((value, emit) {
+      final synopsisTrim = value.synopsis.trim();
+      final wordCount = synopsisTrim.countWords();
 
       emit(
         state.copyWith(
           failureOption: const None(),
-          summary: Summary(summaryTrim),
-          summaryWordCount: wordCount,
+          synopsis: Synopsis(synopsisTrim),
+          synopsisWordCount: wordCount,
         ),
       );
     });

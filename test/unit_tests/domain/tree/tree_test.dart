@@ -5,7 +5,7 @@ import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/tree/subtitle.dart';
-import 'package:wine/domain/tree/summary.dart';
+import 'package:wine/domain/tree/synopsis.dart';
 import 'package:wine/domain/tree/tree.dart';
 
 import '../../utils/constants.dart';
@@ -23,7 +23,7 @@ void main() {
         language: Language(testLanguage),
         likesCount: 10,
         subtitle: Subtitle(testSubtitle),
-        summary: Summary(testSummary),
+        synopsis: Synopsis(testSynopsis),
         title: Title(testTitle),
         uid: UniqueID.fromUniqueString(testTreeUid),
         viewsCount: 10,
@@ -38,7 +38,7 @@ void main() {
       expect(tree.language.getOrCrash(), testLanguage);
       expect(tree.likesCount, 10);
       expect(tree.subtitle?.getOrCrash(), testSubtitle);
-      expect(tree.summary.getOrCrash(), testSummary);
+      expect(tree.synopsis.getOrCrash(), testSynopsis);
       expect(tree.title.getOrCrash(), testTitle);
       expect(tree.uid.getOrCrash(), testTreeUid);
       expect(tree.viewsCount, 10);

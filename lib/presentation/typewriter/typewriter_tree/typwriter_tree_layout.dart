@@ -222,32 +222,32 @@ class TypewriterTreeLayout extends StatelessWidget {
                   BlocBuilder<TypewriterTreeBloc, TypewriterTreeState>(
                     builder: (context, state) {
                       return TypewriterTextField(
-                        controller: state.summaryController,
-                        label: 'SUMMARY*',
-                        hintText: 'Less than $summaryMaxWords words',
+                        controller: state.synopsisController,
+                        label: 'SYNOPSIS*',
+                        hintText: 'Less than $synopsisMaxWords words',
                         maxLines: null,
                         onChanged: (value) => context
                             .read<TypewriterTreeBloc>()
-                            .add(TypewriterTreeEvent.summaryChanged(value)),
+                            .add(TypewriterTreeEvent.synopsisChanged(value)),
                         validator: (_) => context
                             .watch<TypewriterTreeBloc>()
                             .state
-                            .summary
+                            .synopsis
                             .value
                             .match(
                               (_) => null,
                               (err) => err.maybeMap(
                                 emptyInput: (_) =>
-                                    'The summary must not be empty.',
+                                    'The synopsis must not be empty.',
                                 tooLongInput: (_) =>
-                                    'The summary must be less than $summaryMaxWords words long.',
+                                    'The synopsis must be less than $synopsisMaxWords words long.',
                                 orElse: () => null,
                               ),
                             ),
                         wordCount:
-                            '${state.summaryWordCount}/$summaryMaxWords words',
-                        wordCountError: state.summaryWordCount == 0 ||
-                            state.summaryWordCount > summaryMaxWords,
+                            '${state.synopsisWordCount}/$synopsisMaxWords words',
+                        wordCountError: state.synopsisWordCount == 0 ||
+                            state.synopsisWordCount > synopsisMaxWords,
                       );
                     },
                   ),

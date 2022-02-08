@@ -79,9 +79,9 @@ class _$TypewriterTreeEventTearOff {
     );
   }
 
-  SummaryChanged summaryChanged(String summary) {
-    return SummaryChanged(
-      summary,
+  SynopsisChanged synopsisChanged(String synopsis) {
+    return SynopsisChanged(
+      synopsis,
     );
   }
 
@@ -111,7 +111,7 @@ mixin _$TypewriterTreeEvent {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -129,7 +129,7 @@ mixin _$TypewriterTreeEvent {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -147,7 +147,7 @@ mixin _$TypewriterTreeEvent {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) =>
@@ -166,7 +166,7 @@ mixin _$TypewriterTreeEvent {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -184,7 +184,7 @@ mixin _$TypewriterTreeEvent {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -202,7 +202,7 @@ mixin _$TypewriterTreeEvent {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) =>
@@ -279,7 +279,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return addCoverPressed();
@@ -300,7 +300,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return addCoverPressed?.call();
@@ -321,7 +321,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -346,7 +346,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return addCoverPressed(this);
@@ -367,7 +367,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return addCoverPressed?.call(this);
@@ -388,7 +388,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -456,7 +456,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return deleteButtonPressed();
@@ -477,7 +477,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return deleteButtonPressed?.call();
@@ -498,7 +498,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -523,7 +523,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return deleteButtonPressed(this);
@@ -544,7 +544,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return deleteButtonPressed?.call(this);
@@ -565,7 +565,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -656,7 +656,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return genreAdded(genre);
@@ -677,7 +677,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return genreAdded?.call(genre);
@@ -698,7 +698,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -723,7 +723,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return genreAdded(this);
@@ -744,7 +744,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return genreAdded?.call(this);
@@ -765,7 +765,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -862,7 +862,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return genreRemoved(genre);
@@ -883,7 +883,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return genreRemoved?.call(genre);
@@ -904,7 +904,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -929,7 +929,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return genreRemoved(this);
@@ -950,7 +950,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return genreRemoved?.call(this);
@@ -971,7 +971,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1068,7 +1068,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return isNSFWChanged(isNSFW);
@@ -1089,7 +1089,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return isNSFWChanged?.call(isNSFW);
@@ -1110,7 +1110,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1135,7 +1135,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return isNSFWChanged(this);
@@ -1156,7 +1156,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return isNSFWChanged?.call(this);
@@ -1177,7 +1177,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1274,7 +1274,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return languageSelected(language);
@@ -1295,7 +1295,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return languageSelected?.call(language);
@@ -1316,7 +1316,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1341,7 +1341,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return languageSelected(this);
@@ -1362,7 +1362,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return languageSelected?.call(this);
@@ -1383,7 +1383,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1456,7 +1456,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return launchAsNewTree();
@@ -1477,7 +1477,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return launchAsNewTree?.call();
@@ -1498,7 +1498,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1523,7 +1523,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchAsNewTree(this);
@@ -1544,7 +1544,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return launchAsNewTree?.call(this);
@@ -1565,7 +1565,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1680,7 +1680,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return launchWithUID(uid, tree);
@@ -1701,7 +1701,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return launchWithUID?.call(uid, tree);
@@ -1722,7 +1722,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1747,7 +1747,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchWithUID(this);
@@ -1768,7 +1768,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return launchWithUID?.call(this);
@@ -1789,7 +1789,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1863,7 +1863,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return publishButtonPressed();
@@ -1884,7 +1884,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return publishButtonPressed?.call();
@@ -1905,7 +1905,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1930,7 +1930,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return publishButtonPressed(this);
@@ -1951,7 +1951,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return publishButtonPressed?.call(this);
@@ -1972,7 +1972,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2040,7 +2040,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return saveButtonPressed();
@@ -2061,7 +2061,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return saveButtonPressed?.call();
@@ -2082,7 +2082,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2107,7 +2107,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return saveButtonPressed(this);
@@ -2128,7 +2128,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return saveButtonPressed?.call(this);
@@ -2149,7 +2149,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2217,7 +2217,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return sessionFetched();
@@ -2238,7 +2238,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return sessionFetched?.call();
@@ -2259,7 +2259,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2284,7 +2284,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return sessionFetched(this);
@@ -2305,7 +2305,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return sessionFetched?.call(this);
@@ -2326,7 +2326,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2418,7 +2418,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return subtitleChanged(subtitle);
@@ -2439,7 +2439,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return subtitleChanged?.call(subtitle);
@@ -2460,7 +2460,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2485,7 +2485,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return subtitleChanged(this);
@@ -2506,7 +2506,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return subtitleChanged?.call(this);
@@ -2527,7 +2527,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2548,32 +2548,32 @@ abstract class SubtitleChanged implements TypewriterTreeEvent {
 }
 
 /// @nodoc
-abstract class $SummaryChangedCopyWith<$Res> {
-  factory $SummaryChangedCopyWith(
-          SummaryChanged value, $Res Function(SummaryChanged) then) =
-      _$SummaryChangedCopyWithImpl<$Res>;
-  $Res call({String summary});
+abstract class $SynopsisChangedCopyWith<$Res> {
+  factory $SynopsisChangedCopyWith(
+          SynopsisChanged value, $Res Function(SynopsisChanged) then) =
+      _$SynopsisChangedCopyWithImpl<$Res>;
+  $Res call({String synopsis});
 }
 
 /// @nodoc
-class _$SummaryChangedCopyWithImpl<$Res>
+class _$SynopsisChangedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $SummaryChangedCopyWith<$Res> {
-  _$SummaryChangedCopyWithImpl(
-      SummaryChanged _value, $Res Function(SummaryChanged) _then)
-      : super(_value, (v) => _then(v as SummaryChanged));
+    implements $SynopsisChangedCopyWith<$Res> {
+  _$SynopsisChangedCopyWithImpl(
+      SynopsisChanged _value, $Res Function(SynopsisChanged) _then)
+      : super(_value, (v) => _then(v as SynopsisChanged));
 
   @override
-  SummaryChanged get _value => super._value as SummaryChanged;
+  SynopsisChanged get _value => super._value as SynopsisChanged;
 
   @override
   $Res call({
-    Object? summary = freezed,
+    Object? synopsis = freezed,
   }) {
-    return _then(SummaryChanged(
-      summary == freezed
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
+    return _then(SynopsisChanged(
+      synopsis == freezed
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -2581,33 +2581,33 @@ class _$SummaryChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SummaryChanged implements SummaryChanged {
-  const _$SummaryChanged(this.summary);
+class _$SynopsisChanged implements SynopsisChanged {
+  const _$SynopsisChanged(this.synopsis);
 
   @override
-  final String summary;
+  final String synopsis;
 
   @override
   String toString() {
-    return 'TypewriterTreeEvent.summaryChanged(summary: $summary)';
+    return 'TypewriterTreeEvent.synopsisChanged(synopsis: $synopsis)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SummaryChanged &&
-            const DeepCollectionEquality().equals(other.summary, summary));
+            other is SynopsisChanged &&
+            const DeepCollectionEquality().equals(other.synopsis, synopsis));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(summary));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(synopsis));
 
   @JsonKey(ignore: true)
   @override
-  $SummaryChangedCopyWith<SummaryChanged> get copyWith =>
-      _$SummaryChangedCopyWithImpl<SummaryChanged>(this, _$identity);
+  $SynopsisChangedCopyWith<SynopsisChanged> get copyWith =>
+      _$SynopsisChangedCopyWithImpl<SynopsisChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2624,10 +2624,10 @@ class _$SummaryChanged implements SummaryChanged {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
-    return summaryChanged(summary);
+    return synopsisChanged(synopsis);
   }
 
   @override
@@ -2645,10 +2645,10 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
-    return summaryChanged?.call(summary);
+    return synopsisChanged?.call(synopsis);
   }
 
   @override
@@ -2666,12 +2666,12 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
-    if (summaryChanged != null) {
-      return summaryChanged(summary);
+    if (synopsisChanged != null) {
+      return synopsisChanged(synopsis);
     }
     return orElse();
   }
@@ -2691,10 +2691,10 @@ class _$SummaryChanged implements SummaryChanged {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
-    return summaryChanged(this);
+    return synopsisChanged(this);
   }
 
   @override
@@ -2712,10 +2712,10 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
-    return summaryChanged?.call(this);
+    return synopsisChanged?.call(this);
   }
 
   @override
@@ -2733,23 +2733,23 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
-    if (summaryChanged != null) {
-      return summaryChanged(this);
+    if (synopsisChanged != null) {
+      return synopsisChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class SummaryChanged implements TypewriterTreeEvent {
-  const factory SummaryChanged(String summary) = _$SummaryChanged;
+abstract class SynopsisChanged implements TypewriterTreeEvent {
+  const factory SynopsisChanged(String synopsis) = _$SynopsisChanged;
 
-  String get summary;
+  String get synopsis;
   @JsonKey(ignore: true)
-  $SummaryChangedCopyWith<SummaryChanged> get copyWith =>
+  $SynopsisChangedCopyWith<SynopsisChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2830,7 +2830,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
-    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String synopsis) synopsisChanged,
     required TResult Function(String title) titleChanged,
   }) {
     return titleChanged(title);
@@ -2851,7 +2851,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
   }) {
     return titleChanged?.call(title);
@@ -2872,7 +2872,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String summary)? summaryChanged,
+    TResult Function(String synopsis)? synopsisChanged,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2897,7 +2897,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
-    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(SynopsisChanged value) synopsisChanged,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return titleChanged(this);
@@ -2918,7 +2918,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return titleChanged?.call(this);
@@ -2939,7 +2939,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(SynopsisChanged value)? synopsisChanged,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2976,9 +2976,9 @@ class _$TypewriterTreeStateTearOff {
       required Subtitle subtitle,
       required TextEditingController subtitleController,
       required int subtitleWordCount,
-      required Summary summary,
-      required TextEditingController summaryController,
-      required int summaryWordCount,
+      required Synopsis synopsis,
+      required TextEditingController synopsisController,
+      required int synopsisWordCount,
       required Title title,
       required TextEditingController titleController,
       required int titleWordCount,
@@ -2996,9 +2996,9 @@ class _$TypewriterTreeStateTearOff {
       subtitle: subtitle,
       subtitleController: subtitleController,
       subtitleWordCount: subtitleWordCount,
-      summary: summary,
-      summaryController: summaryController,
-      summaryWordCount: summaryWordCount,
+      synopsis: synopsis,
+      synopsisController: synopsisController,
+      synopsisWordCount: synopsisWordCount,
       title: title,
       titleController: titleController,
       titleWordCount: titleWordCount,
@@ -3026,10 +3026,10 @@ mixin _$TypewriterTreeState {
   TextEditingController get subtitleController =>
       throw _privateConstructorUsedError;
   int get subtitleWordCount => throw _privateConstructorUsedError;
-  Summary get summary => throw _privateConstructorUsedError;
-  TextEditingController get summaryController =>
+  Synopsis get synopsis => throw _privateConstructorUsedError;
+  TextEditingController get synopsisController =>
       throw _privateConstructorUsedError;
-  int get summaryWordCount => throw _privateConstructorUsedError;
+  int get synopsisWordCount => throw _privateConstructorUsedError;
   Title get title => throw _privateConstructorUsedError;
   TextEditingController get titleController =>
       throw _privateConstructorUsedError;
@@ -3059,9 +3059,9 @@ abstract class $TypewriterTreeStateCopyWith<$Res> {
       Subtitle subtitle,
       TextEditingController subtitleController,
       int subtitleWordCount,
-      Summary summary,
-      TextEditingController summaryController,
-      int summaryWordCount,
+      Synopsis synopsis,
+      TextEditingController synopsisController,
+      int synopsisWordCount,
       Title title,
       TextEditingController titleController,
       int titleWordCount,
@@ -3093,9 +3093,9 @@ class _$TypewriterTreeStateCopyWithImpl<$Res>
     Object? subtitle = freezed,
     Object? subtitleController = freezed,
     Object? subtitleWordCount = freezed,
-    Object? summary = freezed,
-    Object? summaryController = freezed,
-    Object? summaryWordCount = freezed,
+    Object? synopsis = freezed,
+    Object? synopsisController = freezed,
+    Object? synopsisWordCount = freezed,
     Object? title = freezed,
     Object? titleController = freezed,
     Object? titleWordCount = freezed,
@@ -3150,17 +3150,17 @@ class _$TypewriterTreeStateCopyWithImpl<$Res>
           ? _value.subtitleWordCount
           : subtitleWordCount // ignore: cast_nullable_to_non_nullable
               as int,
-      summary: summary == freezed
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as Summary,
-      summaryController: summaryController == freezed
-          ? _value.summaryController
-          : summaryController // ignore: cast_nullable_to_non_nullable
+      synopsis: synopsis == freezed
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
+              as Synopsis,
+      synopsisController: synopsisController == freezed
+          ? _value.synopsisController
+          : synopsisController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      summaryWordCount: summaryWordCount == freezed
-          ? _value.summaryWordCount
-          : summaryWordCount // ignore: cast_nullable_to_non_nullable
+      synopsisWordCount: synopsisWordCount == freezed
+          ? _value.synopsisWordCount
+          : synopsisWordCount // ignore: cast_nullable_to_non_nullable
               as int,
       title: title == freezed
           ? _value.title
@@ -3209,9 +3209,9 @@ abstract class _$TypewriterTreeStateCopyWith<$Res>
       Subtitle subtitle,
       TextEditingController subtitleController,
       int subtitleWordCount,
-      Summary summary,
-      TextEditingController summaryController,
-      int summaryWordCount,
+      Synopsis synopsis,
+      TextEditingController synopsisController,
+      int synopsisWordCount,
       Title title,
       TextEditingController titleController,
       int titleWordCount,
@@ -3246,9 +3246,9 @@ class __$TypewriterTreeStateCopyWithImpl<$Res>
     Object? subtitle = freezed,
     Object? subtitleController = freezed,
     Object? subtitleWordCount = freezed,
-    Object? summary = freezed,
-    Object? summaryController = freezed,
-    Object? summaryWordCount = freezed,
+    Object? synopsis = freezed,
+    Object? synopsisController = freezed,
+    Object? synopsisWordCount = freezed,
     Object? title = freezed,
     Object? titleController = freezed,
     Object? titleWordCount = freezed,
@@ -3303,17 +3303,17 @@ class __$TypewriterTreeStateCopyWithImpl<$Res>
           ? _value.subtitleWordCount
           : subtitleWordCount // ignore: cast_nullable_to_non_nullable
               as int,
-      summary: summary == freezed
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as Summary,
-      summaryController: summaryController == freezed
-          ? _value.summaryController
-          : summaryController // ignore: cast_nullable_to_non_nullable
+      synopsis: synopsis == freezed
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
+              as Synopsis,
+      synopsisController: synopsisController == freezed
+          ? _value.synopsisController
+          : synopsisController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      summaryWordCount: summaryWordCount == freezed
-          ? _value.summaryWordCount
-          : summaryWordCount // ignore: cast_nullable_to_non_nullable
+      synopsisWordCount: synopsisWordCount == freezed
+          ? _value.synopsisWordCount
+          : synopsisWordCount // ignore: cast_nullable_to_non_nullable
               as int,
       title: title == freezed
           ? _value.title
@@ -3351,9 +3351,9 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
       required this.subtitle,
       required this.subtitleController,
       required this.subtitleWordCount,
-      required this.summary,
-      required this.summaryController,
-      required this.summaryWordCount,
+      required this.synopsis,
+      required this.synopsisController,
+      required this.synopsisWordCount,
       required this.title,
       required this.titleController,
       required this.titleWordCount,
@@ -3384,11 +3384,11 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
   @override
   final int subtitleWordCount;
   @override
-  final Summary summary;
+  final Synopsis synopsis;
   @override
-  final TextEditingController summaryController;
+  final TextEditingController synopsisController;
   @override
-  final int summaryWordCount;
+  final int synopsisWordCount;
   @override
   final Title title;
   @override
@@ -3400,7 +3400,7 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
 
   @override
   String toString() {
-    return 'TypewriterTreeState(coverURL: $coverURL, endState: $endState, failureOption: $failureOption, genres: $genres, isEdit: $isEdit, isNSFW: $isNSFW, isProcessing: $isProcessing, language: $language, showErrorMessages: $showErrorMessages, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount, tree: $tree)';
+    return 'TypewriterTreeState(coverURL: $coverURL, endState: $endState, failureOption: $failureOption, genres: $genres, isEdit: $isEdit, isNSFW: $isNSFW, isProcessing: $isProcessing, language: $language, showErrorMessages: $showErrorMessages, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, synopsis: $synopsis, synopsisController: $synopsisController, synopsisWordCount: $synopsisWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount, tree: $tree)';
   }
 
   @override
@@ -3425,11 +3425,11 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
                 .equals(other.subtitleController, subtitleController) &&
             const DeepCollectionEquality()
                 .equals(other.subtitleWordCount, subtitleWordCount) &&
-            const DeepCollectionEquality().equals(other.summary, summary) &&
+            const DeepCollectionEquality().equals(other.synopsis, synopsis) &&
             const DeepCollectionEquality()
-                .equals(other.summaryController, summaryController) &&
+                .equals(other.synopsisController, synopsisController) &&
             const DeepCollectionEquality()
-                .equals(other.summaryWordCount, summaryWordCount) &&
+                .equals(other.synopsisWordCount, synopsisWordCount) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality()
                 .equals(other.titleController, titleController) &&
@@ -3453,9 +3453,9 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
         const DeepCollectionEquality().hash(subtitle),
         const DeepCollectionEquality().hash(subtitleController),
         const DeepCollectionEquality().hash(subtitleWordCount),
-        const DeepCollectionEquality().hash(summary),
-        const DeepCollectionEquality().hash(summaryController),
-        const DeepCollectionEquality().hash(summaryWordCount),
+        const DeepCollectionEquality().hash(synopsis),
+        const DeepCollectionEquality().hash(synopsisController),
+        const DeepCollectionEquality().hash(synopsisWordCount),
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(titleController),
         const DeepCollectionEquality().hash(titleWordCount),
@@ -3483,9 +3483,9 @@ abstract class _TypewriterTreeState implements TypewriterTreeState {
       required Subtitle subtitle,
       required TextEditingController subtitleController,
       required int subtitleWordCount,
-      required Summary summary,
-      required TextEditingController summaryController,
-      required int summaryWordCount,
+      required Synopsis synopsis,
+      required TextEditingController synopsisController,
+      required int synopsisWordCount,
       required Title title,
       required TextEditingController titleController,
       required int titleWordCount,
@@ -3516,11 +3516,11 @@ abstract class _TypewriterTreeState implements TypewriterTreeState {
   @override
   int get subtitleWordCount;
   @override
-  Summary get summary;
+  Synopsis get synopsis;
   @override
-  TextEditingController get summaryController;
+  TextEditingController get synopsisController;
   @override
-  int get summaryWordCount;
+  int get synopsisWordCount;
   @override
   Title get title;
   @override

@@ -30,7 +30,7 @@ const testInvalidSubtitleTooLong =
     'this is a subtitle too long and should cause an error in the app';
 
 const testTreeUid = '6ebf3f3e-b8e0-11eb-8529-0242ac130003';
-const testSummary = '''
+const testSynopsis = '''
 congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem
 viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas
 pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices
@@ -45,7 +45,7 @@ lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus
 est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat
 vivamus at augue eget arcu dictum varius duis at consectetur lorem donec massa
 ''';
-const testInvalidSummaryTooLong = '''
+const testInvalidSynopsisTooLong = '''
 malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa
 massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit
 amet consectetur adipiscing elit pellentesque habitant morbi tristique

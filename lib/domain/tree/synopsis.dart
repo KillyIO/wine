@@ -4,22 +4,22 @@ import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
 /// @nodoc
-class Summary extends ValueObject<String> {
+class Synopsis extends ValueObject<String> {
   /// @nodoc
-  factory Summary(String input) {
-    return Summary._(
-      validateSummary(input),
+  factory Synopsis(String input) {
+    return Synopsis._(
+      validateSynopsis(input),
     );
   }
 
   /// @nodoc
-  factory Summary.forSaving(Result<String, ValueFailure<String>> input) {
-    return Summary._(
+  factory Synopsis.forSaving(Result<String, ValueFailure<String>> input) {
+    return Synopsis._(
       Ok(input.unwrapOr('')),
     );
   }
 
-  const Summary._(this.value);
+  const Synopsis._(this.value);
 
   @override
   final Result<String, ValueFailure<String>> value;

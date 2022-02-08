@@ -6,7 +6,7 @@ import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/tree/subtitle.dart';
-import 'package:wine/domain/tree/summary.dart';
+import 'package:wine/domain/tree/synopsis.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/infrastructure/core/converter.dart';
 
@@ -27,7 +27,7 @@ class TreeDTO with _$TreeDTO {
     required String language,
     required int likesCount,
     String? subtitle,
-    required String summary,
+    required String synopsis,
     required String title,
     required String uid,
     @ServerTimestampConverter() required FieldValue updatedAt,
@@ -46,7 +46,7 @@ class TreeDTO with _$TreeDTO {
       language: tree.language.getOrCrash(),
       likesCount: tree.likesCount,
       subtitle: tree.subtitle?.getOrCrash(),
-      summary: tree.summary.getOrCrash(),
+      synopsis: tree.synopsis.getOrCrash(),
       title: tree.title.getOrCrash(),
       uid: tree.uid.getOrCrash(),
       updatedAt: FieldValue.serverTimestamp(),
@@ -77,7 +77,7 @@ extension TreeDTOX on TreeDTO {
         language: Language(language),
         likesCount: likesCount,
         subtitle: Subtitle(subtitle ?? ''),
-        summary: Summary(summary),
+        synopsis: Synopsis(synopsis),
         title: Title(title),
         uid: UniqueID.fromUniqueString(uid),
         viewsCount: viewsCount,
@@ -94,7 +94,7 @@ extension TreeDTOX on TreeDTO {
         'language': language,
         'likesCount': likesCount,
         'subtitle': subtitle,
-        'summary': summary,
+        'synopsis': synopsis,
         'title': title,
         'uid': uid,
         'viewsCount': viewsCount,
@@ -114,7 +114,7 @@ extension TreeMapX on Map {
         language: Language(this['language'] as String),
         likesCount: this['likesCount'] as int,
         subtitle: Subtitle(this['subtitle'] as String),
-        summary: Summary(this['summary'] as String),
+        synopsis: Synopsis(this['synopsis'] as String),
         title: Title(this['title'] as String),
         uid: UniqueID.fromUniqueString(this['uid'] as String),
         viewsCount: this['viewsCount'] as int,

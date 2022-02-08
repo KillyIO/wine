@@ -45,8 +45,8 @@ class TypewriterTreeEvent with _$TypewriterTreeEvent {
       SubtitleChanged;
 
   /// @nodoc
-  const factory TypewriterTreeEvent.summaryChanged(String summary) =
-      SummaryChanged;
+  const factory TypewriterTreeEvent.synopsisChanged(String synopsis) =
+      SynopsisChanged;
 
   /// @nodoc
   const factory TypewriterTreeEvent.titleChanged(String title) = TitleChanged;

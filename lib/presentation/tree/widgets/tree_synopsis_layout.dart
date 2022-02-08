@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
-import 'package:wine/presentation/tree/widgets/tree_summary.dart';
+import 'package:wine/presentation/tree/widgets/tree_synopsis.dart';
 
 /// @nodoc
-class TreeSummaryLayout extends StatelessWidget {
+class TreeSynopsisLayout extends StatelessWidget {
   /// @nodoc
-  const TreeSummaryLayout({Key? key}) : super(key: key);
+  const TreeSynopsisLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class TreeSummaryLayout extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.only(bottom: 10),
           child: Text(
-            'Summary',
+            'Synopsis',
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w600,
@@ -25,7 +25,7 @@ class TreeSummaryLayout extends StatelessWidget {
         ),
         BlocBuilder<TreeBloc, TreeState>(
           builder: (context, state) {
-            return TreeSummary(summary: state.tree.summary.getOrNull());
+            return TreeSynopsis(synopsis: state.tree.synopsis.getOrNull());
           },
         )
       ],

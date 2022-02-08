@@ -92,10 +92,10 @@ Result<String, ValueFailure<String>> validateSubtitle(String input) {
 }
 
 /// @nodoc
-Result<String, ValueFailure<String>> validateSummary(String input) {
+Result<String, ValueFailure<String>> validateSynopsis(String input) {
   if (input.isEmpty) {
     return Err(ValueFailure.emptyInput(input));
-  } else if (input.countWords() > summaryMaxWords) {
+  } else if (input.countWords() > synopsisMaxWords) {
     return Err(ValueFailure.tooLongInput(input));
   }
   return Ok(input);

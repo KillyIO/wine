@@ -1,26 +1,26 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/value_failure.dart';
-import 'package:wine/domain/tree/summary.dart';
+import 'package:wine/domain/tree/synopsis.dart';
 
 import '../../utils/constants.dart';
 
 void main() {
-  group('Summary -', () {
+  group('Synopsis -', () {
     test('When input valid Then return input', () {
-      final summary = Summary(testSummary);
+      final synopsis = Synopsis(testSynopsis);
 
       expect(
-        summary.value,
-        Ok<String, ValueFailure<String>>(testSummary),
+        synopsis.value,
+        Ok<String, ValueFailure<String>>(testSynopsis),
       );
     });
 
     test('When input empty Then return input', () {
-      final summary = Summary(testEmpty);
+      final synopsis = Synopsis(testEmpty);
 
       expect(
-        summary.value,
+        synopsis.value,
         Err<String, ValueFailure<String>>(
           const ValueFailure<String>.emptyInput(testEmpty),
         ),
@@ -28,12 +28,12 @@ void main() {
     });
 
     test('When input empty Then return tooLong', () {
-      final summary = Summary(testInvalidSummaryTooLong);
+      final synopsis = Synopsis(testInvalidSynopsisTooLong);
 
       expect(
-        summary.value,
+        synopsis.value,
         Err<String, ValueFailure<String>>(
-          const ValueFailure<String>.tooLongInput(testInvalidSummaryTooLong),
+          const ValueFailure<String>.tooLongInput(testInvalidSynopsisTooLong),
         ),
       );
     });

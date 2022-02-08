@@ -6,7 +6,7 @@ import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';
 import 'package:wine/presentation/tree/widgets/tree_details.dart';
 import 'package:wine/presentation/tree/widgets/tree_genres.dart';
 import 'package:wine/presentation/tree/widgets/tree_resume_reading.dart';
-import 'package:wine/presentation/tree/widgets/tree_summary_layout.dart';
+import 'package:wine/presentation/tree/widgets/tree_synopsis_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
@@ -143,7 +143,7 @@ class TreeLayout extends StatelessWidget {
                 ),
                 const Padding(
                   padding: EdgeInsets.only(bottom: 20),
-                  child: TreeSummaryLayout(),
+                  child: TreeSynopsisLayout(),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(bottom: 50),

@@ -17,7 +17,7 @@ _$_TreeDTO _$$_TreeDTOFromJson(Map<String, dynamic> json) => _$_TreeDTO(
       language: json['language'] as String,
       likesCount: json['likesCount'] as int,
       subtitle: json['subtitle'] as String?,
-      summary: json['summary'] as String,
+      synopsis: json['synopsis'] as String,
       title: json['title'] as String,
       uid: json['uid'] as String,
       updatedAt: const ServerTimestampConverter()
@@ -36,7 +36,7 @@ Map<String, dynamic> _$$_TreeDTOToJson(_$_TreeDTO instance) =>
       'language': instance.language,
       'likesCount': instance.likesCount,
       'subtitle': instance.subtitle,
-      'summary': instance.summary,
+      'synopsis': instance.synopsis,
       'title': instance.title,
       'uid': instance.uid,
       'updatedAt': const ServerTimestampConverter().toJson(instance.updatedAt),

@@ -28,7 +28,7 @@ class _$TreeTearOff {
       required Language language,
       required int likesCount,
       Subtitle? subtitle,
-      required Summary summary,
+      required Synopsis synopsis,
       required Title title,
       required UniqueID uid,
       required int viewsCount}) {
@@ -42,7 +42,7 @@ class _$TreeTearOff {
       language: language,
       likesCount: likesCount,
       subtitle: subtitle,
-      summary: summary,
+      synopsis: synopsis,
       title: title,
       uid: uid,
       viewsCount: viewsCount,
@@ -64,7 +64,7 @@ mixin _$Tree {
   Language get language => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
   Subtitle? get subtitle => throw _privateConstructorUsedError;
-  Summary get summary => throw _privateConstructorUsedError;
+  Synopsis get synopsis => throw _privateConstructorUsedError;
   Title get title => throw _privateConstructorUsedError;
   UniqueID get uid => throw _privateConstructorUsedError;
   int get viewsCount => throw _privateConstructorUsedError;
@@ -87,7 +87,7 @@ abstract class $TreeCopyWith<$Res> {
       Language language,
       int likesCount,
       Subtitle? subtitle,
-      Summary summary,
+      Synopsis synopsis,
       Title title,
       UniqueID uid,
       int viewsCount});
@@ -112,7 +112,7 @@ class _$TreeCopyWithImpl<$Res> implements $TreeCopyWith<$Res> {
     Object? language = freezed,
     Object? likesCount = freezed,
     Object? subtitle = freezed,
-    Object? summary = freezed,
+    Object? synopsis = freezed,
     Object? title = freezed,
     Object? uid = freezed,
     Object? viewsCount = freezed,
@@ -154,10 +154,10 @@ class _$TreeCopyWithImpl<$Res> implements $TreeCopyWith<$Res> {
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as Subtitle?,
-      summary: summary == freezed
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as Summary,
+      synopsis: synopsis == freezed
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
+              as Synopsis,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -189,7 +189,7 @@ abstract class _$TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
       Language language,
       int likesCount,
       Subtitle? subtitle,
-      Summary summary,
+      Synopsis synopsis,
       Title title,
       UniqueID uid,
       int viewsCount});
@@ -215,7 +215,7 @@ class __$TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res>
     Object? language = freezed,
     Object? likesCount = freezed,
     Object? subtitle = freezed,
-    Object? summary = freezed,
+    Object? synopsis = freezed,
     Object? title = freezed,
     Object? uid = freezed,
     Object? viewsCount = freezed,
@@ -257,10 +257,10 @@ class __$TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res>
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as Subtitle?,
-      summary: summary == freezed
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
-              as Summary,
+      synopsis: synopsis == freezed
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
+              as Synopsis,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -290,7 +290,7 @@ class _$_Tree implements _Tree {
       required this.language,
       required this.likesCount,
       this.subtitle,
-      required this.summary,
+      required this.synopsis,
       required this.title,
       required this.uid,
       required this.viewsCount});
@@ -314,7 +314,7 @@ class _$_Tree implements _Tree {
   @override
   final Subtitle? subtitle;
   @override
-  final Summary summary;
+  final Synopsis synopsis;
   @override
   final Title title;
   @override
@@ -324,7 +324,7 @@ class _$_Tree implements _Tree {
 
   @override
   String toString() {
-    return 'Tree(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, viewsCount: $viewsCount)';
+    return 'Tree(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, synopsis: $synopsis, title: $title, uid: $uid, viewsCount: $viewsCount)';
   }
 
   @override
@@ -344,7 +344,7 @@ class _$_Tree implements _Tree {
             const DeepCollectionEquality()
                 .equals(other.likesCount, likesCount) &&
             const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
-            const DeepCollectionEquality().equals(other.summary, summary) &&
+            const DeepCollectionEquality().equals(other.synopsis, synopsis) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
@@ -363,7 +363,7 @@ class _$_Tree implements _Tree {
       const DeepCollectionEquality().hash(language),
       const DeepCollectionEquality().hash(likesCount),
       const DeepCollectionEquality().hash(subtitle),
-      const DeepCollectionEquality().hash(summary),
+      const DeepCollectionEquality().hash(synopsis),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(viewsCount));
@@ -385,7 +385,7 @@ abstract class _Tree implements Tree {
       required Language language,
       required int likesCount,
       Subtitle? subtitle,
-      required Summary summary,
+      required Synopsis synopsis,
       required Title title,
       required UniqueID uid,
       required int viewsCount}) = _$_Tree;
@@ -409,7 +409,7 @@ abstract class _Tree implements Tree {
   @override
   Subtitle? get subtitle;
   @override
-  Summary get summary;
+  Synopsis get synopsis;
   @override
   Title get title;
   @override

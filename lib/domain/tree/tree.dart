@@ -5,7 +5,7 @@ import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/tree/subtitle.dart';
-import 'package:wine/domain/tree/summary.dart';
+import 'package:wine/domain/tree/synopsis.dart';
 
 part 'tree.freezed.dart';
 
@@ -23,7 +23,7 @@ class Tree with _$Tree {
     required Language language,
     required int likesCount,
     Subtitle? subtitle,
-    required Summary summary,
+    required Synopsis synopsis,
     required Title title,
     required UniqueID uid,
     required int viewsCount,
@@ -40,7 +40,7 @@ class Tree with _$Tree {
         language: Language(''),
         likesCount: 0,
         subtitle: Subtitle(''),
-        summary: Summary(''),
+        synopsis: Synopsis(''),
         title: Title(''),
         uid: UniqueID(),
         viewsCount: 0,

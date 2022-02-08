@@ -32,7 +32,7 @@ class _$TreeDTOTearOff {
       required String language,
       required int likesCount,
       String? subtitle,
-      required String summary,
+      required String synopsis,
       required String title,
       required String uid,
       @ServerTimestampConverter() required FieldValue updatedAt,
@@ -47,7 +47,7 @@ class _$TreeDTOTearOff {
       language: language,
       likesCount: likesCount,
       subtitle: subtitle,
-      summary: summary,
+      synopsis: synopsis,
       title: title,
       uid: uid,
       updatedAt: updatedAt,
@@ -74,7 +74,7 @@ mixin _$TreeDTO {
   String get language => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
   String? get subtitle => throw _privateConstructorUsedError;
-  String get summary => throw _privateConstructorUsedError;
+  String get synopsis => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
@@ -100,7 +100,7 @@ abstract class $TreeDTOCopyWith<$Res> {
       String language,
       int likesCount,
       String? subtitle,
-      String summary,
+      String synopsis,
       String title,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
@@ -126,7 +126,7 @@ class _$TreeDTOCopyWithImpl<$Res> implements $TreeDTOCopyWith<$Res> {
     Object? language = freezed,
     Object? likesCount = freezed,
     Object? subtitle = freezed,
-    Object? summary = freezed,
+    Object? synopsis = freezed,
     Object? title = freezed,
     Object? uid = freezed,
     Object? updatedAt = freezed,
@@ -169,9 +169,9 @@ class _$TreeDTOCopyWithImpl<$Res> implements $TreeDTOCopyWith<$Res> {
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      summary: summary == freezed
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
+      synopsis: synopsis == freezed
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
               as String,
       title: title == freezed
           ? _value.title
@@ -208,7 +208,7 @@ abstract class _$TreeDTOCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
       String language,
       int likesCount,
       String? subtitle,
-      String summary,
+      String synopsis,
       String title,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
@@ -235,7 +235,7 @@ class __$TreeDTOCopyWithImpl<$Res> extends _$TreeDTOCopyWithImpl<$Res>
     Object? language = freezed,
     Object? likesCount = freezed,
     Object? subtitle = freezed,
-    Object? summary = freezed,
+    Object? synopsis = freezed,
     Object? title = freezed,
     Object? uid = freezed,
     Object? updatedAt = freezed,
@@ -278,9 +278,9 @@ class __$TreeDTOCopyWithImpl<$Res> extends _$TreeDTOCopyWithImpl<$Res>
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      summary: summary == freezed
-          ? _value.summary
-          : summary // ignore: cast_nullable_to_non_nullable
+      synopsis: synopsis == freezed
+          ? _value.synopsis
+          : synopsis // ignore: cast_nullable_to_non_nullable
               as String,
       title: title == freezed
           ? _value.title
@@ -315,7 +315,7 @@ class _$_TreeDTO implements _TreeDTO {
       required this.language,
       required this.likesCount,
       this.subtitle,
-      required this.summary,
+      required this.synopsis,
       required this.title,
       required this.uid,
       @ServerTimestampConverter() required this.updatedAt,
@@ -343,7 +343,7 @@ class _$_TreeDTO implements _TreeDTO {
   @override
   final String? subtitle;
   @override
-  final String summary;
+  final String synopsis;
   @override
   final String title;
   @override
@@ -356,7 +356,7 @@ class _$_TreeDTO implements _TreeDTO {
 
   @override
   String toString() {
-    return 'TreeDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
+    return 'TreeDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, synopsis: $synopsis, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
   }
 
   @override
@@ -376,7 +376,7 @@ class _$_TreeDTO implements _TreeDTO {
             const DeepCollectionEquality()
                 .equals(other.likesCount, likesCount) &&
             const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
-            const DeepCollectionEquality().equals(other.summary, summary) &&
+            const DeepCollectionEquality().equals(other.synopsis, synopsis) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
@@ -396,7 +396,7 @@ class _$_TreeDTO implements _TreeDTO {
       const DeepCollectionEquality().hash(language),
       const DeepCollectionEquality().hash(likesCount),
       const DeepCollectionEquality().hash(subtitle),
-      const DeepCollectionEquality().hash(summary),
+      const DeepCollectionEquality().hash(synopsis),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(updatedAt),
@@ -424,7 +424,7 @@ abstract class _TreeDTO implements TreeDTO {
       required String language,
       required int likesCount,
       String? subtitle,
-      required String summary,
+      required String synopsis,
       required String title,
       required String uid,
       @ServerTimestampConverter() required FieldValue updatedAt,
@@ -451,7 +451,7 @@ abstract class _TreeDTO implements TreeDTO {
   @override
   String? get subtitle;
   @override
-  String get summary;
+  String get synopsis;
   @override
   String get title;
   @override

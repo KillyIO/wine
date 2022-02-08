@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 /// @nodoc
-class TreeSummary extends StatelessWidget {
+class TreeSynopsis extends StatelessWidget {
   /// @nodoc
-  const TreeSummary({
+  const TreeSynopsis({
     Key? key,
-    required this.summary,
+    required this.synopsis,
   }) : super(key: key);
 
   /// @nodoc
-  final String? summary;
+  final String? synopsis;
 
   @override
   Widget build(BuildContext context) {
-    if (summary != null) {
+    if (synopsis != null) {
       return ReadMoreText(
-        summary!,
+        synopsis!,
         lessStyle: const TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.bold,
