@@ -44,21 +44,19 @@ class TypewriterSelectionDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context).size;
-
     return Dialog(
       elevation: 10,
       child: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
         ),
-        height: mediaQuery.height * 0.8,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
               color: Colors.black,
               child: ListTile(
+                tileColor: Colors.black,
                 title: Text(
                   title,
                   textAlign: TextAlign.center,
@@ -79,29 +77,28 @@ class TypewriterSelectionDialog extends StatelessWidget {
                     : null,
               ),
             ),
-            Expanded(
-              child: ListView.separated(
-                itemBuilder: (_, int i) => Container(
-                  color: _itemColor(items[i]),
-                  child: ListTile(
-                    title: Text(
-                      items[i],
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
+            ListView.separated(
+              shrinkWrap: true,
+              itemBuilder: (_, int i) => Container(
+                color: _itemColor(items[i]),
+                child: ListTile(
+                  title: Text(
+                    items[i],
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
                     ),
-                    onTap: () => onPressed(items[i]),
                   ),
+                  onTap: () => onPressed(items[i]),
                 ),
-                itemCount: items.length,
-                separatorBuilder: (_, __) => const Divider(
-                  color: Colors.black,
-                  height: 0,
-                  thickness: 1,
-                ),
+              ),
+              itemCount: items.length,
+              separatorBuilder: (_, __) => const Divider(
+                color: Colors.black,
+                height: 0,
+                thickness: 1,
               ),
             ),
           ],
