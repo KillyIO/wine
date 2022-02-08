@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
 import 'package:wine/presentation/core/common/content_actions.dart';
+import 'package:wine/presentation/core/common/content_genres.dart';
 import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';
 import 'package:wine/presentation/tree/widgets/tree_details.dart';
-import 'package:wine/presentation/tree/widgets/tree_genres.dart';
 import 'package:wine/presentation/tree/widgets/tree_resume_reading.dart';
 import 'package:wine/presentation/tree/widgets/tree_synopsis_layout.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -145,9 +145,18 @@ class TreeLayout extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 20),
                   child: TreeSynopsisLayout(),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 50),
-                  child: TreeGenres(),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 50),
+                  child: BlocBuilder<TreeBloc, TreeState>(
+                    builder: (context, state) {
+                      return ContentGenres(
+                        genres: state.tree.genres
+                            .map((e) => e.getOrNull())
+                            .whereType<String>()
+                            .toList(),
+                      );
+                    },
+                  ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(bottom: 50),

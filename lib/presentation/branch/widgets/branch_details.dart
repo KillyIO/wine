@@ -4,7 +4,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/presentation/branch/widgets/branch_detail_container.dart';
 import 'package:wine/presentation/core/common/content_actions.dart';
-import 'package:wine/presentation/core/common/genre_container.dart';
+import 'package:wine/presentation/core/common/content_genres.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
@@ -61,28 +61,11 @@ class BranchDetails extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 10),
                   child: BlocBuilder<BranchBloc, BranchState>(
                     builder: (context, state) {
-                      return Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          for (int i = 0; i < state.branch.genres.length; i++)
-                            Padding(
-                              padding: EdgeInsets.only(
-                                right: i == state.branch.genres.length ? 0 : 10,
-                              ),
-                              child: GenreContainer(
-                                backgroundColor: [
-                                  pastelBlue,
-                                  pastelCyan,
-                                  pastelPink,
-                                  pastelYellow
-                                ][i % 4],
-                                textColor: Colors.white,
-                                title: state.branch.genres
-                                    .map((e) => e.getOrNull())
-                                    .toList()[i],
-                              ),
-                            )
-                        ],
+                      return ContentGenres(
+                        genres: state.branch.genres
+                            .map((e) => e.getOrNull())
+                            .whereType<String>()
+                            .toList(),
                       );
                     },
                   ),

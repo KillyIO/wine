@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 /// @nodoc
-class GenreContainer extends StatelessWidget {
+class GenreItem extends StatelessWidget {
   /// @nodoc
-  const GenreContainer({
+  const GenreItem({
     Key? key,
     this.backgroundColor = Colors.black12,
     this.textColor = Colors.black,
