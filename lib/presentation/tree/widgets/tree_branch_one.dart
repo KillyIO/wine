@@ -39,7 +39,13 @@ class TreeBranchOne extends StatelessWidget {
                 title: state.branchOne!.title.getOrCrash(),
                 language: state.branchOne!.language.getOrCrash(),
                 coverURL: state.branchOne!.coverURL.getOrCrash(),
-                onPressed: () {},
+                onPressed: () => handleAuthGuardedNavigation(
+                  context,
+                  navigateTo: BranchRoute(
+                    branch: state.branchOne,
+                    uid: state.branchOne!.uid.getOrCrash(),
+                  ),
+                ),
                 uid: state.branchOne!.uid.getOrCrash(),
               );
             }
