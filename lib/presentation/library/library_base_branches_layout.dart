@@ -57,6 +57,7 @@ class LibraryBaseBranchesLayout extends StatelessWidget {
             itemCount: branches.length,
             itemBuilder: (_, i) => BranchTile(
               coverURL: branches[i].coverURL.getOrNull(),
+              language: branches[i].language.getOrNull(),
               onPressed: () {
                 switch (type) {
                   case 'drafts':

@@ -46,9 +46,10 @@ class SameAuthorNextBranches extends StatelessWidget {
             if (branches.isNotEmpty)
               for (final branch in branches)
                 BranchTile(
-                  coverURL: branch.coverURL.getOrNull(),
+                  coverURL: branch.coverURL.getOrCrash(),
+                  language: branch.language.getOrCrash(),
                   onPressed: () {},
-                  title: branch.title.getOrNull(),
+                  title: branch.title.getOrCrash(),
                   uid: branch.uid.getOrCrash(),
                 )
             else

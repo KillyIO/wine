@@ -37,6 +37,7 @@ class TreeBranchOne extends StatelessWidget {
             if (state.branchOne != null) {
               return BranchTile(
                 title: state.branchOne!.title.getOrCrash(),
+                language: state.branchOne!.language.getOrCrash(),
                 coverURL: state.branchOne!.coverURL.getOrCrash(),
                 onPressed: () {},
                 uid: state.branchOne!.uid.getOrCrash(),

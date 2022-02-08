@@ -87,7 +87,7 @@ class TreeCard extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                color: Colors.black26,
+                color: Colors.black38,
                 fontWeight: FontWeight.bold,
                 fontSize: titleFontSize,
                 letterSpacing: .25,

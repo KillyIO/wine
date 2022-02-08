@@ -10,6 +10,7 @@ class BranchTile extends StatelessWidget {
   const BranchTile({
     Key? key,
     required this.coverURL,
+    required this.language,
     required this.onPressed,
     required this.title,
     required this.uid,
@@ -17,6 +18,9 @@ class BranchTile extends StatelessWidget {
 
   /// @nodoc
   final String? coverURL;
+
+  /// @nodoc
+  final String? language;
 
   /// @nodoc
   final VoidCallback onPressed;
@@ -49,14 +53,28 @@ class BranchTile extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 5, top: 5),
-                child: Text(
-                  title ?? 'No title*',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
+                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      title ?? 'No title*',
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Text(
+                      language ?? 'No language*',
+                      style: const TextStyle(
+                        color: Colors.black38,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
