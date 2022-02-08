@@ -10,14 +10,18 @@ class TreeCard extends StatelessWidget {
   const TreeCard({
     Key? key,
     required this.coverURL,
+    required this.language,
     required this.onPressed,
     required this.title,
-    this.titleFontSize = 12,
+    this.titleFontSize = 14,
     required this.uid,
   }) : super(key: key);
 
   /// @nodoc
   final String? coverURL;
+
+  /// @nodoc
+  final String? language;
 
   /// @nodoc
   final VoidCallback onPressed;
@@ -35,16 +39,14 @@ class TreeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Card(
-        elevation: 4,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(6),
-                topRight: Radius.circular(6),
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(bottom: 5),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
               child: Hero(
                 tag: uid,
                 child: coverURL != null
@@ -61,30 +63,39 @@ class TreeCard extends StatelessWidget {
                       ),
               ),
             ),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(6),
-                  bottomRight: Radius.circular(6),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+            child: Center(
+              child: Text(
+                title ?? 'No title*',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: titleFontSize,
+                  letterSpacing: .25,
                 ),
-                color: Colors.black87,
-              ),
-              width: MediaQuery.of(context).size.width,
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  title ?? 'No title*',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: titleFontSize,
-                    letterSpacing: .25,
-                  ),
-                ),
+                textAlign: TextAlign.center,
               ),
             ),
-          ],
-        ),
+          ),
+          Center(
+            child: Text(
+              language ?? 'No language*',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: Colors.black26,
+                fontWeight: FontWeight.bold,
+                fontSize: titleFontSize,
+                letterSpacing: .25,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ],
       ),
     );
   }

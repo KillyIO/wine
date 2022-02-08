@@ -57,11 +57,13 @@ class LibraryBaseTreesLayout extends StatelessWidget {
           child: MasonryGridView.count(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
+            mainAxisSpacing: 20,
             padding: const EdgeInsets.symmetric(vertical: 20),
             shrinkWrap: true,
             itemCount: trees.length,
             itemBuilder: (_, i) => TreeCard(
               coverURL: trees[i].coverURL.getOrNull(),
+              language: trees[i].language.getOrNull(),
               onPressed: () {
                 switch (type) {
                   case 'drafts':
