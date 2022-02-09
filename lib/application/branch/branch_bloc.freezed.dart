@@ -53,6 +53,13 @@ class _$BranchEventTearOff {
     return const NextBranchesLoaded();
   }
 
+  Scrolled scrolled(int currentScrollPosition, int maxScrollPosition) {
+    return Scrolled(
+      currentScrollPosition,
+      maxScrollPosition,
+    );
+  }
+
   SessionFetched sessionFetched() {
     return const SessionFetched();
   }
@@ -84,6 +91,8 @@ mixin _$BranchEvent {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -99,6 +108,8 @@ mixin _$BranchEvent {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -114,6 +125,8 @@ mixin _$BranchEvent {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -132,6 +145,7 @@ mixin _$BranchEvent {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -148,6 +162,7 @@ mixin _$BranchEvent {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -164,6 +179,7 @@ mixin _$BranchEvent {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -236,6 +252,8 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -254,6 +272,8 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -272,6 +292,8 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -296,6 +318,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -315,6 +338,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -334,6 +358,7 @@ class _$AuthorLoaded implements AuthorLoaded {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -425,6 +450,8 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -443,6 +470,8 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -461,6 +490,8 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -485,6 +516,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -504,6 +536,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -523,6 +556,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -591,6 +625,8 @@ class _$BranchSet implements BranchSet {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -609,6 +645,8 @@ class _$BranchSet implements BranchSet {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -627,6 +665,8 @@ class _$BranchSet implements BranchSet {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -651,6 +691,7 @@ class _$BranchSet implements BranchSet {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -670,6 +711,7 @@ class _$BranchSet implements BranchSet {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -689,6 +731,7 @@ class _$BranchSet implements BranchSet {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -800,6 +843,8 @@ class _$LaunchWithUID implements LaunchWithUID {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -818,6 +863,8 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -836,6 +883,8 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -860,6 +909,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -879,6 +929,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -898,6 +949,7 @@ class _$LaunchWithUID implements LaunchWithUID {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -993,6 +1045,8 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -1011,6 +1065,8 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1029,6 +1085,8 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1053,6 +1111,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -1072,6 +1131,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1091,6 +1151,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1167,6 +1228,8 @@ class _$NextBranchesBySameAuthorLoaded
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -1185,6 +1248,8 @@ class _$NextBranchesBySameAuthorLoaded
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1203,6 +1268,8 @@ class _$NextBranchesBySameAuthorLoaded
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1227,6 +1294,7 @@ class _$NextBranchesBySameAuthorLoaded
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -1246,6 +1314,7 @@ class _$NextBranchesBySameAuthorLoaded
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1265,6 +1334,7 @@ class _$NextBranchesBySameAuthorLoaded
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1331,6 +1401,8 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -1349,6 +1421,8 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1367,6 +1441,8 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1391,6 +1467,7 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -1410,6 +1487,7 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1429,6 +1507,7 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1444,6 +1523,218 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
 
 abstract class NextBranchesLoaded implements BranchEvent {
   const factory NextBranchesLoaded() = _$NextBranchesLoaded;
+}
+
+/// @nodoc
+abstract class $ScrolledCopyWith<$Res> {
+  factory $ScrolledCopyWith(Scrolled value, $Res Function(Scrolled) then) =
+      _$ScrolledCopyWithImpl<$Res>;
+  $Res call({int currentScrollPosition, int maxScrollPosition});
+}
+
+/// @nodoc
+class _$ScrolledCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+    implements $ScrolledCopyWith<$Res> {
+  _$ScrolledCopyWithImpl(Scrolled _value, $Res Function(Scrolled) _then)
+      : super(_value, (v) => _then(v as Scrolled));
+
+  @override
+  Scrolled get _value => super._value as Scrolled;
+
+  @override
+  $Res call({
+    Object? currentScrollPosition = freezed,
+    Object? maxScrollPosition = freezed,
+  }) {
+    return _then(Scrolled(
+      currentScrollPosition == freezed
+          ? _value.currentScrollPosition
+          : currentScrollPosition // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxScrollPosition == freezed
+          ? _value.maxScrollPosition
+          : maxScrollPosition // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Scrolled implements Scrolled {
+  const _$Scrolled(this.currentScrollPosition, this.maxScrollPosition);
+
+  @override
+  final int currentScrollPosition;
+  @override
+  final int maxScrollPosition;
+
+  @override
+  String toString() {
+    return 'BranchEvent.scrolled(currentScrollPosition: $currentScrollPosition, maxScrollPosition: $maxScrollPosition)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Scrolled &&
+            const DeepCollectionEquality()
+                .equals(other.currentScrollPosition, currentScrollPosition) &&
+            const DeepCollectionEquality()
+                .equals(other.maxScrollPosition, maxScrollPosition));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(currentScrollPosition),
+      const DeepCollectionEquality().hash(maxScrollPosition));
+
+  @JsonKey(ignore: true)
+  @override
+  $ScrolledCopyWith<Scrolled> get copyWith =>
+      _$ScrolledCopyWithImpl<Scrolled>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authorLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function() branchSet,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() sessionFetched,
+    required TResult Function() settingsFetched,
+    required TResult Function() toggleDetails,
+    required TResult Function() viewsUpdated,
+  }) {
+    return scrolled(currentScrollPosition, maxScrollPosition);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? branchSet,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
+    TResult Function()? viewsUpdated,
+  }) {
+    return scrolled?.call(currentScrollPosition, maxScrollPosition);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authorLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function()? branchSet,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? sessionFetched,
+    TResult Function()? settingsFetched,
+    TResult Function()? toggleDetails,
+    TResult Function()? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (scrolled != null) {
+      return scrolled(currentScrollPosition, maxScrollPosition);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(ToggleDetails value) toggleDetails,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+  }) {
+    return scrolled(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+  }) {
+    return scrolled?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    required TResult orElse(),
+  }) {
+    if (scrolled != null) {
+      return scrolled(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Scrolled implements BranchEvent {
+  const factory Scrolled(int currentScrollPosition, int maxScrollPosition) =
+      _$Scrolled;
+
+  int get currentScrollPosition;
+  int get maxScrollPosition;
+  @JsonKey(ignore: true)
+  $ScrolledCopyWith<Scrolled> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1493,6 +1784,8 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -1511,6 +1804,8 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1529,6 +1824,8 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1553,6 +1850,7 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -1572,6 +1870,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1591,6 +1890,7 @@ class _$SessionFetched implements SessionFetched {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1656,6 +1956,8 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -1674,6 +1976,8 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1692,6 +1996,8 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1716,6 +2022,7 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -1735,6 +2042,7 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1754,6 +2062,7 @@ class _$SettingsFetched implements SettingsFetched {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1818,6 +2127,8 @@ class _$ToggleDetails implements ToggleDetails {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -1836,6 +2147,8 @@ class _$ToggleDetails implements ToggleDetails {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1854,6 +2167,8 @@ class _$ToggleDetails implements ToggleDetails {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -1878,6 +2193,7 @@ class _$ToggleDetails implements ToggleDetails {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -1897,6 +2213,7 @@ class _$ToggleDetails implements ToggleDetails {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1916,6 +2233,7 @@ class _$ToggleDetails implements ToggleDetails {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -1980,6 +2298,8 @@ class _$ViewsUpdated implements ViewsUpdated {
     required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
@@ -1998,6 +2318,8 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -2016,6 +2338,8 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
@@ -2040,6 +2364,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(Scrolled value) scrolled,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
@@ -2059,6 +2384,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
@@ -2078,6 +2404,7 @@ class _$ViewsUpdated implements ViewsUpdated {
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(Scrolled value)? scrolled,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,

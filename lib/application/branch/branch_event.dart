@@ -31,6 +31,12 @@ class BranchEvent with _$BranchEvent {
   const factory BranchEvent.nextBranchesLoaded() = NextBranchesLoaded;
 
   /// @nodoc
+  const factory BranchEvent.scrolled(
+    int currentScrollPosition,
+    int maxScrollPosition,
+  ) = Scrolled;
+
+  /// @nodoc
   const factory BranchEvent.sessionFetched() = SessionFetched;
 
   /// @nodoc

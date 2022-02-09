@@ -39,7 +39,7 @@ class BranchPage extends StatelessWidget {
               branch: branch,
             ),
           ),
-        child: const SafeArea(child: BranchLayout()),
+        child: SafeArea(child: BranchLayout()),
       ),
     );
   }

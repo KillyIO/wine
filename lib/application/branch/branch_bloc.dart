@@ -202,6 +202,22 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       );
     });
     on<NextBranchesLoaded>((_, emit) {});
+    on<Scrolled>((value, emit) {
+      var scrollProgress = 0.0;
+
+      if (value.currentScrollPosition != 0 || value.maxScrollPosition != 0) {
+        scrollProgress = value.currentScrollPosition / value.maxScrollPosition;
+      }
+
+      if (scrollProgress > 1) scrollProgress = 1;
+
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          scrollProgress: scrollProgress,
+        ),
+      );
+    });
     on<SessionFetched>((_, emit) async {
       if (!state.authorIsUser) {
         (await _userRepository.loadUser(state.branch.authorUID)).match(

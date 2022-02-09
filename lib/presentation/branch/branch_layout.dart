@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:measured_size/measured_size.dart';
 import 'package:time/time.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
@@ -17,9 +18,31 @@ import 'package:wine/utils/functions/dialog_functions.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
-class BranchLayout extends StatelessWidget {
+class BranchLayout extends StatefulWidget {
   /// @nodoc
   const BranchLayout({Key? key}) : super(key: key);
+
+  @override
+  State<BranchLayout> createState() => _BranchLayoutState();
+}
+
+class _BranchLayoutState extends State<BranchLayout> {
+  final _scrollController = ScrollController();
+  var _size = Size.zero;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _scrollController.addListener(
+      () => context.read<BranchBloc>().add(
+            BranchEvent.scrolled(
+              _scrollController.offset.toInt(),
+              _size.height.toInt(),
+            ),
+          ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +124,7 @@ class BranchLayout extends StatelessWidget {
                   .read<BranchBloc>()
                   .add(const BranchEvent.toggleDetails()),
               child: ListView(
+                controller: _scrollController,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 children: [
                   Padding(
@@ -113,14 +137,21 @@ class BranchLayout extends StatelessWidget {
                   ),
                   BlocBuilder<BranchBloc, BranchState>(
                     builder: (context, state) {
-                      return BranchTitle(title: state.branch.title.getOrNull());
+                      return BranchTitle(
+                        title: state.branch.title.getOrNull(),
+                      );
                     },
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 75),
                     child: BlocBuilder<BranchBloc, BranchState>(
                       builder: (context, state) {
-                        return BranchLeaf(leafController: state.leafController);
+                        return MeasuredSize(
+                          onChange: (size) => setState(() => _size = size),
+                          child: BranchLeaf(
+                            leafController: state.leafController,
+                          ),
+                        );
                       },
                     ),
                   ),
