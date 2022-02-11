@@ -25,8 +25,8 @@ class TypewriterCover extends StatelessWidget {
     return Stack(
       children: <Widget>[
         SizedBox(
-          width: mediaQuery.width,
           height: 150,
+          width: mediaQuery.width,
           child: coverURL.isEmpty
               ? Container()
               : isURL(coverURL)
