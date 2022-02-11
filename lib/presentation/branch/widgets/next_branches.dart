@@ -4,13 +4,15 @@ import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/presentation/core/branch/branch_tile.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/assets/images.dart';
 import 'package:wine/utils/constants/palette.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
-class SameAuthorNextBranches extends StatelessWidget {
+class NextBranches extends StatelessWidget {
   /// @nodoc
-  const SameAuthorNextBranches({
+  const NextBranches({
     Key? key,
     required this.branches,
     required this.title,
@@ -35,12 +37,15 @@ class SameAuthorNextBranches extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              title,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 25),
+              child: Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
             if (branches.isNotEmpty)
@@ -48,7 +53,13 @@ class SameAuthorNextBranches extends StatelessWidget {
                 BranchTile(
                   coverURL: branch.coverURL.getOrCrash(),
                   language: branch.language.getOrCrash(),
-                  onPressed: () {},
+                  onPressed: () => handleAuthGuardedNavigation(
+                    context,
+                    navigateTo: BranchRoute(
+                      branch: branch,
+                      uid: branch.uid.getOrCrash(),
+                    ),
+                  ),
                   title: branch.title.getOrCrash(),
                   uid: branch.uid.getOrCrash(),
                 )
