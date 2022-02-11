@@ -64,7 +64,7 @@ class HomeMenuLayout extends StatelessWidget {
                       text: 'LIBRARY',
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 50),
+                      padding: const EdgeInsets.only(top: 25),
                       child: HomeMenuTile(
                         key: const Key('home_menu_plus_tile'),
                         onPressed: () =>
