@@ -24,11 +24,22 @@ class BranchEvent with _$BranchEvent {
   }) = LikeButtonPressed;
 
   /// @nodoc
+  const factory BranchEvent.likeStatusLoaded() = LikeStatusLoaded;
+
+  /// @nodoc
   const factory BranchEvent.nextBranchesBySameAuthorLoaded() =
       NextBranchesBySameAuthorLoaded;
 
   /// @nodoc
   const factory BranchEvent.nextBranchesLoaded() = NextBranchesLoaded;
+
+  /// @nodoc
+  const factory BranchEvent.refreshNextBranchesBySameAuthorPressed() =
+      RefreshNextBranchesBySameAuthorPressed;
+
+  /// @nodoc
+  const factory BranchEvent.refreshNextBranchesPressed() =
+      RefreshNextBranchesPressed;
 
   /// @nodoc
   const factory BranchEvent.scrolled(
