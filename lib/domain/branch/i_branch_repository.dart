@@ -19,6 +19,12 @@ abstract class IBranchRepository {
   Future<Result<Unit, BranchFailure>> deleteBranch(UniqueID uid);
 
   /// @nodoc
+  Future<Result<bool, BranchFailure>> loadBookmarkStatus(
+    UniqueID userUID,
+    UniqueID branchUID,
+  );
+
+  /// @nodoc
   Future<Result<Branch, BranchFailure>> loadBranchByUID(UniqueID uid);
 
   /// @nodoc
@@ -34,6 +40,12 @@ abstract class IBranchRepository {
   });
 
   /// @nodoc
+  Future<Result<bool, BranchFailure>> loadLikeStatus(
+    UniqueID userUID,
+    UniqueID branchUID,
+  );
+
+  /// @nodoc
   Future<Result<List<Branch>, BranchFailure>> loadNextBranches(
     UniqueID previousBranchUID, {
     UniqueID? lastBranchUID,
@@ -44,7 +56,7 @@ abstract class IBranchRepository {
     UniqueID authorUID,
     UniqueID previousBranchUID, {
     UniqueID? lastBranchUID,
-    bool notAuthorUID = false,
+    bool sameAuthor = true,
   });
 
   /// @nodoc

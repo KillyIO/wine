@@ -112,6 +112,38 @@ class BranchRepository implements IBranchRepository {
   }
 
   @override
+  Future<Result<bool, BranchFailure>> loadBookmarkStatus(
+    UniqueID userUID,
+    UniqueID branchUID,
+  ) async {
+    try {
+      final documentSnapshot = await _firestore
+          .collection(branchesBookmarksPath)
+          .doc(branchUID.getOrCrash())
+          .get();
+
+      if (!documentSnapshot.exists) {
+        return Ok(false);
+      }
+
+      final data = documentSnapshot.data();
+      if (data != null) {
+        final isBookmarked = data[userUID.getOrCrash()] as bool;
+
+        return Ok(isBookmarked);
+      }
+      return Ok(false);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const BranchFailure.permissionDenied());
+      }
+      return Err(const BranchFailure.serverError());
+    } catch (_) {
+      return Err(const BranchFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<Branch, BranchFailure>> loadBranchByUID(UniqueID uid) async {
     try {
       final snapshot =
@@ -221,6 +253,38 @@ class BranchRepository implements IBranchRepository {
   }
 
   @override
+  Future<Result<bool, BranchFailure>> loadLikeStatus(
+    UniqueID userUID,
+    UniqueID branchUID,
+  ) async {
+    try {
+      final documentSnapshot = await _firestore
+          .collection(branchesLikesPath)
+          .doc(branchUID.getOrCrash())
+          .get();
+
+      if (!documentSnapshot.exists) {
+        return Ok(false);
+      }
+
+      final data = documentSnapshot.data();
+      if (data != null) {
+        final isLiked = data[userUID.getOrCrash()] as bool;
+
+        return Ok(isLiked);
+      }
+      return Ok(false);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const BranchFailure.permissionDenied());
+      }
+      return Err(const BranchFailure.serverError());
+    } catch (_) {
+      return Err(const BranchFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<List<Branch>, BranchFailure>> loadNextBranches(
     UniqueID previousBranchUID, {
     UniqueID? lastBranchUID,
@@ -278,7 +342,7 @@ class BranchRepository implements IBranchRepository {
     UniqueID authorUID,
     UniqueID previousBranchUID, {
     UniqueID? lastBranchUID,
-    bool notAuthorUID = false,
+    bool sameAuthor = true,
   }) async {
     try {
       final branchesCollection = _firestore.collection(branchesPath);
@@ -299,15 +363,15 @@ class BranchRepository implements IBranchRepository {
         );
       }
 
-      if (notAuthorUID) {
+      if (sameAuthor) {
+        query = query
+            .where('authorUID', isEqualTo: authorUID.getOrCrash())
+            .where('isPublished', isEqualTo: true);
+      } else {
         query = query
             .where('authorUID', isNotEqualTo: authorUID.getOrCrash())
             .where('isPublished', isEqualTo: true)
             .orderBy('authorUID', descending: true);
-      } else {
-        query = query
-            .where('authorUID', isEqualTo: authorUID.getOrCrash())
-            .where('isPublished', isEqualTo: true);
       }
 
       final querySnapshot = await query
@@ -379,34 +443,34 @@ class BranchRepository implements IBranchRepository {
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userUID register inside tree_bookmarks collection
-        final treeBookmarksReference = _firestore
+        // Check userUID register inside branch_bookmarks collection
+        final branchBookmarksReference = _firestore
             .collection(branchesBookmarksPath)
             .doc(branchUID.getOrCrash());
 
-        final sbrSnapshot = await transaction.get(treeBookmarksReference);
+        final sbrSnapshot = await transaction.get(branchBookmarksReference);
         final dbIsBookmarked =
             sbrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
 
         if (isBookmarked != dbIsBookmarked) {
-          // Update tree bokmarks count
+          // Update branch bokmarks count
           // TODO(SSebigo): make sure firebase rules
           // match to prevent fraudulent updates
-          final treeReference =
+          final branchReference =
               _firestore.collection(branchesPath).doc(branchUID.getOrCrash());
 
-          final srSnapshot = await transaction.get(treeReference);
+          final srSnapshot = await transaction.get(branchReference);
           final bookmarksCount = srSnapshot.data()?['bookmarksCount'] as int;
 
           transaction
             ..set(
-              treeBookmarksReference,
+              branchBookmarksReference,
               <String, dynamic>{
                 userUID.getOrCrash(): isBookmarked,
               },
               SetOptions(merge: true),
             )
-            ..update(treeReference, <String, dynamic>{
+            ..update(branchReference, <String, dynamic>{
               'bookmarksCount':
                   isBookmarked ? bookmarksCount + 1 : bookmarksCount - 1,
             });
@@ -432,34 +496,34 @@ class BranchRepository implements IBranchRepository {
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userUID register inside tree_likes collection
-        final treeLikesReference = _firestore
+        // Check userUID register inside branch_likes collection
+        final branchLikesReference = _firestore
             .collection(branchesLikesPath)
             .doc(branchUID.getOrCrash());
 
-        final slrSnapshot = await transaction.get(treeLikesReference);
+        final slrSnapshot = await transaction.get(branchLikesReference);
         final dbIsLiked =
             slrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
 
         if (isLiked != dbIsLiked) {
-          // Update tree likes count
+          // Update branch likes count
           // TODO(SSebigo): make sure firebase rules
           // match to prevent fraudulent updates
-          final treeReference =
+          final branchReference =
               _firestore.collection(branchesPath).doc(branchUID.getOrCrash());
 
-          final srSnapshot = await transaction.get(treeReference);
+          final srSnapshot = await transaction.get(branchReference);
           final likesCount = srSnapshot.data()?['likesCount'] as int;
 
           transaction
             ..set(
-              treeLikesReference,
+              branchLikesReference,
               <String, dynamic>{
                 userUID.getOrCrash(): isLiked,
               },
               SetOptions(merge: true),
             )
-            ..update(treeReference, <String, dynamic>{
+            ..update(branchReference, <String, dynamic>{
               'likesCount': isLiked ? likesCount + 1 : likesCount - 1,
             });
         }
@@ -483,32 +547,32 @@ class BranchRepository implements IBranchRepository {
   ) async {
     try {
       final result = await _firestore.runTransaction((transaction) async {
-        // Check userUID register inside tree_views collection
-        final treeViewsReference = _firestore
+        // Check userUID register inside branch_views collection
+        final branchViewsReference = _firestore
             .collection(branchesViewsPath)
             .doc(branchUID.getOrCrash());
 
-        final svrSnapshot = await transaction.get(treeViewsReference);
+        final svrSnapshot = await transaction.get(branchViewsReference);
         final viewed =
             svrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
 
         if (!viewed) {
-          // Update tree views count
+          // Update branch views count
           // TODO(SSebigo): make sure firebase rules
           // match to prevent fraudulent updates
-          final treeReference =
+          final branchReference =
               _firestore.collection(branchesPath).doc(branchUID.getOrCrash());
 
-          final srSnapshot = await transaction.get(treeReference);
+          final srSnapshot = await transaction.get(branchReference);
           final viewsCount = srSnapshot.data()?['viewsCount'] as int;
 
           transaction
             ..set(
-              treeViewsReference,
+              branchViewsReference,
               <String, dynamic>{userUID.getOrCrash(): true},
               SetOptions(merge: true),
             )
-            ..update(treeReference, <String, dynamic>{
+            ..update(branchReference, <String, dynamic>{
               'viewsCount': viewsCount + 1,
             });
         }
