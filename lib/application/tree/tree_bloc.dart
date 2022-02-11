@@ -51,7 +51,7 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
 
           emit(
             state.copyWith(
-              isLiked: !value.isBookmarked,
+              isBookmarked: !value.isBookmarked,
               failureOption: const None(),
               tree: state.tree.copyWith(
                 bookmarksCount: !value.isBookmarked
