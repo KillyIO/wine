@@ -7,9 +7,8 @@ import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/presentation/branch/widgets/branch_app_bar.dart';
 import 'package:wine/presentation/branch/widgets/branch_details.dart';
 import 'package:wine/presentation/branch/widgets/next_branches.dart';
-import 'package:wine/presentation/core/branch/branch_index.dart';
-import 'package:wine/presentation/core/branch/branch_leaf.dart';
-import 'package:wine/presentation/core/branch/branch_title.dart';
+import 'package:wine/presentation/core/branch/branch_leaf_body.dart';
+import 'package:wine/presentation/core/branch/branch_leaf_head.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -125,96 +124,106 @@ class _BranchLayoutState extends State<BranchLayout> {
                   .add(const BranchEvent.toggleDetails()),
               child: ListView(
                 controller: _scrollController,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10, top: 50),
-                    child: BlocBuilder<BranchBloc, BranchState>(
-                      builder: (context, state) {
-                        return BranchIndex(index: state.branch.index);
-                      },
-                    ),
-                  ),
                   BlocBuilder<BranchBloc, BranchState>(
                     builder: (context, state) {
-                      return BranchTitle(
+                      return BranchLeafHead(
+                        coverURL: state.branch.coverURL.getOrNull(),
                         title: state.branch.title.getOrNull(),
+                        index: state.branch.index,
                       );
                     },
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 75),
-                    child: BlocBuilder<BranchBloc, BranchState>(
-                      builder: (context, state) {
-                        return MeasuredSize(
-                          onChange: (size) => setState(() => _size = size),
-                          child: BranchLeaf(
-                            leafController: state.leafController,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 50),
-                    child: BlocBuilder<BranchBloc, BranchState>(
-                      builder: (context, state) {
-                        return DefaultButton(
-                          color: pastelPink,
-                          hasRoundedCorners: true,
-                          title: 'WRITE NEXT BRANCH',
-                          onPressed: () => handleAuthGuardedNavigation(
-                            context,
-                            navigateTo: TypewriterBranchNew(
-                              branch: state.branch,
-                              type: TypewriterType.branch,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 50),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Text('AD'),
-                        // TODO(SSebigo): add ad banner
-                        Container(
-                          color: Colors.black54,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 50),
+                          child: BlocBuilder<BranchBloc, BranchState>(
+                            builder: (context, state) {
+                              return MeasuredSize(
+                                onChange: (size) =>
+                                    setState(() => _size = size),
+                                child: BranchLeafBody(
+                                  leafController: state.leafController,
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: BlocBuilder<BranchBloc, BranchState>(
+                            builder: (context, state) {
+                              return DefaultButton(
+                                color: pastelPink,
+                                hasRoundedCorners: true,
+                                title: 'WRITE NEXT BRANCH',
+                                width: mediaQuery.width,
+                                onPressed: () => handleAuthGuardedNavigation(
+                                  context,
+                                  navigateTo: TypewriterBranchNew(
+                                    branch: state.branch,
+                                    type: TypewriterType.branch,
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Text('AD'),
+                              // TODO(SSebigo): add ad banner
+                              Container(
+                                color: Colors.black54,
+                                height: 50,
+                                width: mediaQuery.width,
+                              ),
+                            ],
+                          ),
+                        ),
+                        BlocBuilder<BranchBloc, BranchState>(
+                          builder: (context, state) {
+                            return NextBranches(
+                              branches: state.sameAuthorNextBranches,
+                              title:
+                                  'BRANCHES ${state.branch.index + 1} BY THE SAME AUTHOR',
+                              onRefreshPressed: () =>
+                                  context.read<BranchBloc>().add(
+                                        const BranchEvent
+                                            .refreshNextBranchesBySameAuthorPressed(),
+                                      ),
+                            );
+                          },
+                        ),
+                        const Divider(
+                          color: Colors.black26,
                           height: 50,
-                          width: mediaQuery.width,
+                          thickness: 2,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 25),
+                          child: BlocBuilder<BranchBloc, BranchState>(
+                            builder: (context, state) {
+                              return NextBranches(
+                                branches: state.nextBranches,
+                                title: 'BRANCHES ${state.branch.index + 1}',
+                                onRefreshPressed: () =>
+                                    context.read<BranchBloc>().add(
+                                          const BranchEvent
+                                              .refreshNextBranchesPressed(),
+                                        ),
+                              );
+                            },
+                          ),
                         ),
                       ],
-                    ),
-                  ),
-                  BlocBuilder<BranchBloc, BranchState>(
-                    builder: (context, state) {
-                      return SameAuthorNextBranches(
-                        branches: state.sameAuthorNextBranches,
-                        title:
-                            'BRANCHES ${state.branch.index + 1} BY THE SAME AUTHOR',
-                        onRefreshPressed: () {},
-                      );
-                    },
-                  ),
-                  const Divider(
-                    color: Colors.black26,
-                    height: 50,
-                    thickness: 2,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 25),
-                    child: BlocBuilder<BranchBloc, BranchState>(
-                      builder: (context, state) {
-                        return SameAuthorNextBranches(
-                          branches: state.nextBranches,
-                          title: 'BRANCHES ${state.branch.index + 1}',
-                          onRefreshPressed: () {},
-                        );
-                      },
                     ),
                   ),
                 ],
