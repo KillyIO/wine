@@ -26,15 +26,6 @@ class BranchTitle extends StatelessWidget {
         ),
       );
     }
-    return Center(
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.black26,
-        ),
-        height: 15,
-        width: MediaQuery.of(context).size.width * .5,
-      ),
-    );
+    return Container();
   }
 }
