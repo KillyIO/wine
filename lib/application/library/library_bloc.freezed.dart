@@ -24,8 +24,8 @@ class _$LibraryEventTearOff {
     );
   }
 
-  BranchModified branchModified(Branch branch) {
-    return BranchModified(
+  BranchUpdated branchUpdated(Branch branch) {
+    return BranchUpdated(
       branch,
     );
   }
@@ -50,8 +50,8 @@ class _$LibraryEventTearOff {
     );
   }
 
-  TreeModified treeModified(Tree tree) {
-    return TreeModified(
+  TreeUpdated treeUpdated(Tree tree) {
+    return TreeUpdated(
       tree,
     );
   }
@@ -71,36 +71,36 @@ mixin _$LibraryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) =>
@@ -108,12 +108,12 @@ mixin _$LibraryEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) =>
@@ -121,12 +121,12 @@ mixin _$LibraryEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) =>
@@ -134,12 +134,12 @@ mixin _$LibraryEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -228,12 +228,12 @@ class _$BranchDeleted implements BranchDeleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return branchDeleted(uid);
@@ -243,12 +243,12 @@ class _$BranchDeleted implements BranchDeleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return branchDeleted?.call(uid);
@@ -258,12 +258,12 @@ class _$BranchDeleted implements BranchDeleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -277,12 +277,12 @@ class _$BranchDeleted implements BranchDeleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -293,12 +293,12 @@ class _$BranchDeleted implements BranchDeleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -309,12 +309,12 @@ class _$BranchDeleted implements BranchDeleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -336,31 +336,30 @@ abstract class BranchDeleted implements LibraryEvent {
 }
 
 /// @nodoc
-abstract class $BranchModifiedCopyWith<$Res> {
-  factory $BranchModifiedCopyWith(
-          BranchModified value, $Res Function(BranchModified) then) =
-      _$BranchModifiedCopyWithImpl<$Res>;
+abstract class $BranchUpdatedCopyWith<$Res> {
+  factory $BranchUpdatedCopyWith(
+          BranchUpdated value, $Res Function(BranchUpdated) then) =
+      _$BranchUpdatedCopyWithImpl<$Res>;
   $Res call({Branch branch});
 
   $BranchCopyWith<$Res> get branch;
 }
 
 /// @nodoc
-class _$BranchModifiedCopyWithImpl<$Res>
-    extends _$LibraryEventCopyWithImpl<$Res>
-    implements $BranchModifiedCopyWith<$Res> {
-  _$BranchModifiedCopyWithImpl(
-      BranchModified _value, $Res Function(BranchModified) _then)
-      : super(_value, (v) => _then(v as BranchModified));
+class _$BranchUpdatedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+    implements $BranchUpdatedCopyWith<$Res> {
+  _$BranchUpdatedCopyWithImpl(
+      BranchUpdated _value, $Res Function(BranchUpdated) _then)
+      : super(_value, (v) => _then(v as BranchUpdated));
 
   @override
-  BranchModified get _value => super._value as BranchModified;
+  BranchUpdated get _value => super._value as BranchUpdated;
 
   @override
   $Res call({
     Object? branch = freezed,
   }) {
-    return _then(BranchModified(
+    return _then(BranchUpdated(
       branch == freezed
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
@@ -378,22 +377,22 @@ class _$BranchModifiedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BranchModified implements BranchModified {
-  const _$BranchModified(this.branch);
+class _$BranchUpdated implements BranchUpdated {
+  const _$BranchUpdated(this.branch);
 
   @override
   final Branch branch;
 
   @override
   String toString() {
-    return 'LibraryEvent.branchModified(branch: $branch)';
+    return 'LibraryEvent.branchUpdated(branch: $branch)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is BranchModified &&
+            other is BranchUpdated &&
             const DeepCollectionEquality().equals(other.branch, branch));
   }
 
@@ -403,54 +402,54 @@ class _$BranchModified implements BranchModified {
 
   @JsonKey(ignore: true)
   @override
-  $BranchModifiedCopyWith<BranchModified> get copyWith =>
-      _$BranchModifiedCopyWithImpl<BranchModified>(this, _$identity);
+  $BranchUpdatedCopyWith<BranchUpdated> get copyWith =>
+      _$BranchUpdatedCopyWithImpl<BranchUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
-    return branchModified(branch);
+    return branchUpdated(branch);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
-    return branchModified?.call(branch);
+    return branchUpdated?.call(branch);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
-    if (branchModified != null) {
-      return branchModified(branch);
+    if (branchUpdated != null) {
+      return branchUpdated(branch);
     }
     return orElse();
   }
@@ -459,61 +458,61 @@ class _$BranchModified implements BranchModified {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
-    return branchModified(this);
+    return branchUpdated(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
-    return branchModified?.call(this);
+    return branchUpdated?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
-    if (branchModified != null) {
-      return branchModified(this);
+    if (branchUpdated != null) {
+      return branchUpdated(this);
     }
     return orElse();
   }
 }
 
-abstract class BranchModified implements LibraryEvent {
-  const factory BranchModified(Branch branch) = _$BranchModified;
+abstract class BranchUpdated implements LibraryEvent {
+  const factory BranchUpdated(Branch branch) = _$BranchUpdated;
 
   Branch get branch;
   @JsonKey(ignore: true)
-  $BranchModifiedCopyWith<BranchModified> get copyWith =>
+  $BranchUpdatedCopyWith<BranchUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -556,12 +555,12 @@ class _$Init implements Init {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return init();
@@ -571,12 +570,12 @@ class _$Init implements Init {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return init?.call();
@@ -586,12 +585,12 @@ class _$Init implements Init {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -605,12 +604,12 @@ class _$Init implements Init {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -621,12 +620,12 @@ class _$Init implements Init {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -637,12 +636,12 @@ class _$Init implements Init {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -725,12 +724,12 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return pageViewIndexChanged(index);
@@ -740,12 +739,12 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return pageViewIndexChanged?.call(index);
@@ -755,12 +754,12 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -774,12 +773,12 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -790,12 +789,12 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -806,12 +805,12 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -874,12 +873,12 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return sessionFetched();
@@ -889,12 +888,12 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return sessionFetched?.call();
@@ -904,12 +903,12 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -923,12 +922,12 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -939,12 +938,12 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -955,12 +954,12 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -1041,12 +1040,12 @@ class _$TreeDeleted implements TreeDeleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return treeDeleted(uid);
@@ -1056,12 +1055,12 @@ class _$TreeDeleted implements TreeDeleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return treeDeleted?.call(uid);
@@ -1071,12 +1070,12 @@ class _$TreeDeleted implements TreeDeleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -1090,12 +1089,12 @@ class _$TreeDeleted implements TreeDeleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -1106,12 +1105,12 @@ class _$TreeDeleted implements TreeDeleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -1122,12 +1121,12 @@ class _$TreeDeleted implements TreeDeleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
@@ -1149,30 +1148,30 @@ abstract class TreeDeleted implements LibraryEvent {
 }
 
 /// @nodoc
-abstract class $TreeModifiedCopyWith<$Res> {
-  factory $TreeModifiedCopyWith(
-          TreeModified value, $Res Function(TreeModified) then) =
-      _$TreeModifiedCopyWithImpl<$Res>;
+abstract class $TreeUpdatedCopyWith<$Res> {
+  factory $TreeUpdatedCopyWith(
+          TreeUpdated value, $Res Function(TreeUpdated) then) =
+      _$TreeUpdatedCopyWithImpl<$Res>;
   $Res call({Tree tree});
 
   $TreeCopyWith<$Res> get tree;
 }
 
 /// @nodoc
-class _$TreeModifiedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
-    implements $TreeModifiedCopyWith<$Res> {
-  _$TreeModifiedCopyWithImpl(
-      TreeModified _value, $Res Function(TreeModified) _then)
-      : super(_value, (v) => _then(v as TreeModified));
+class _$TreeUpdatedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+    implements $TreeUpdatedCopyWith<$Res> {
+  _$TreeUpdatedCopyWithImpl(
+      TreeUpdated _value, $Res Function(TreeUpdated) _then)
+      : super(_value, (v) => _then(v as TreeUpdated));
 
   @override
-  TreeModified get _value => super._value as TreeModified;
+  TreeUpdated get _value => super._value as TreeUpdated;
 
   @override
   $Res call({
     Object? tree = freezed,
   }) {
-    return _then(TreeModified(
+    return _then(TreeUpdated(
       tree == freezed
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
@@ -1190,22 +1189,22 @@ class _$TreeModifiedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TreeModified implements TreeModified {
-  const _$TreeModified(this.tree);
+class _$TreeUpdated implements TreeUpdated {
+  const _$TreeUpdated(this.tree);
 
   @override
   final Tree tree;
 
   @override
   String toString() {
-    return 'LibraryEvent.treeModified(tree: $tree)';
+    return 'LibraryEvent.treeUpdated(tree: $tree)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is TreeModified &&
+            other is TreeUpdated &&
             const DeepCollectionEquality().equals(other.tree, tree));
   }
 
@@ -1215,54 +1214,54 @@ class _$TreeModified implements TreeModified {
 
   @JsonKey(ignore: true)
   @override
-  $TreeModifiedCopyWith<TreeModified> get copyWith =>
-      _$TreeModifiedCopyWithImpl<TreeModified>(this, _$identity);
+  $TreeUpdatedCopyWith<TreeUpdated> get copyWith =>
+      _$TreeUpdatedCopyWithImpl<TreeUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
-    return treeModified(tree);
+    return treeUpdated(tree);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
-    return treeModified?.call(tree);
+    return treeUpdated?.call(tree);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
-    if (treeModified != null) {
-      return treeModified(tree);
+    if (treeUpdated != null) {
+      return treeUpdated(tree);
     }
     return orElse();
   }
@@ -1271,61 +1270,61 @@ class _$TreeModified implements TreeModified {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
-    return treeModified(this);
+    return treeUpdated(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
-    return treeModified?.call(this);
+    return treeUpdated?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
-    if (treeModified != null) {
-      return treeModified(this);
+    if (treeUpdated != null) {
+      return treeUpdated(this);
     }
     return orElse();
   }
 }
 
-abstract class TreeModified implements LibraryEvent {
-  const factory TreeModified(Tree tree) = _$TreeModified;
+abstract class TreeUpdated implements LibraryEvent {
+  const factory TreeUpdated(Tree tree) = _$TreeUpdated;
 
   Tree get tree;
   @JsonKey(ignore: true)
-  $TreeModifiedCopyWith<TreeModified> get copyWith =>
+  $TreeUpdatedCopyWith<TreeUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1398,12 +1397,12 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UniqueID uid) branchDeleted,
-    required TResult Function(Branch branch) branchModified,
+    required TResult Function(Branch branch) branchUpdated,
     required TResult Function() init,
     required TResult Function(int index) pageViewIndexChanged,
     required TResult Function() sessionFetched,
     required TResult Function(UniqueID uid) treeDeleted,
-    required TResult Function(Tree tree) treeModified,
+    required TResult Function(Tree tree) treeUpdated,
     required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return verticalNavbarIndexChanged(index);
@@ -1413,12 +1412,12 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return verticalNavbarIndexChanged?.call(index);
@@ -1428,12 +1427,12 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchModified,
+    TResult Function(Branch branch)? branchUpdated,
     TResult Function()? init,
     TResult Function(int index)? pageViewIndexChanged,
     TResult Function()? sessionFetched,
     TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeModified,
+    TResult Function(Tree tree)? treeUpdated,
     TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
@@ -1447,12 +1446,12 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BranchDeleted value) branchDeleted,
-    required TResult Function(BranchModified value) branchModified,
+    required TResult Function(BranchUpdated value) branchUpdated,
     required TResult Function(Init value) init,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TreeDeleted value) treeDeleted,
-    required TResult Function(TreeModified value) treeModified,
+    required TResult Function(TreeUpdated value) treeUpdated,
     required TResult Function(VerticalNavbarIndexChanged value)
         verticalNavbarIndexChanged,
   }) {
@@ -1463,12 +1462,12 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
@@ -1479,12 +1478,12 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchModified value)? branchModified,
+    TResult Function(BranchUpdated value)? branchUpdated,
     TResult Function(Init value)? init,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeModified value)? treeModified,
+    TResult Function(TreeUpdated value)? treeUpdated,
     TResult Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
     required TResult orElse(),

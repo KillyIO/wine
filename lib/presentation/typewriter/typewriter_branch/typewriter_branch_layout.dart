@@ -98,7 +98,7 @@ class TypewriterBranchLayout extends StatelessWidget {
             case TypewriterEndState.published:
               context
                   .read<LibraryBloc>()
-                  .add(LibraryEvent.branchModified(state.branch));
+                  .add(LibraryEvent.branchUpdated(state.branch));
 
               redirectDialog(
                 context,
@@ -119,7 +119,7 @@ class TypewriterBranchLayout extends StatelessWidget {
               if (state.isEdit) {
                 context
                     .read<LibraryBloc>()
-                    .add(LibraryEvent.branchModified(state.branch));
+                    .add(LibraryEvent.branchUpdated(state.branch));
               }
 
               redirectDialog(

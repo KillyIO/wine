@@ -47,7 +47,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         ),
       );
     });
-    on<BranchModified>((value, emit) async {
+    on<BranchUpdated>((value, emit) async {
       emit(
         state.copyWith(
           failureOption: const None(),
@@ -60,7 +60,12 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
       );
 
       final branches = state.branches;
-      branches[i] = value.branch;
+
+      if (i == -1) {
+        branches.insert(0, value.branch);
+      } else {
+        branches[i] = value.branch;
+      }
 
       emit(
         state.copyWith(
@@ -213,7 +218,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         ),
       );
     });
-    on<TreeModified>((value, emit) async {
+    on<TreeUpdated>((value, emit) async {
       emit(
         state.copyWith(
           failureOption: const None(),
