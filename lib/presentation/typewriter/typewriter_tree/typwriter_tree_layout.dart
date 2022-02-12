@@ -119,11 +119,9 @@ class TypewriterTreeLayout extends StatelessWidget {
               );
               break;
             case TypewriterEndState.saved:
-              if (state.isEdit) {
-                context
-                    .read<LibraryBloc>()
-                    .add(LibraryEvent.treeUpdated(state.tree));
-              }
+              context
+                  .read<LibraryBloc>()
+                  .add(LibraryEvent.treeUpdated(state.tree));
 
               redirectDialog(
                 context,
