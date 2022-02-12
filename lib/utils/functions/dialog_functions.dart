@@ -46,13 +46,15 @@ Future<void> redirectDialog(
 /// @nodoc
 Future<void> baseErrorDialog(
   BuildContext context,
-  List<String> errorMessages,
-) async {
+  List<String> errorMessages, {
+  String? buttonText,
+}) async {
   await showDialog<bool>(
     context: context,
     useRootNavigator: false,
     builder: (_) => ErrorDialog(
       key: const Key('dismiss_error_dialog'),
+      buttonText: buttonText,
       messages: errorMessages,
       onPressed: () async {
         await context.router.pop<bool>(true);
