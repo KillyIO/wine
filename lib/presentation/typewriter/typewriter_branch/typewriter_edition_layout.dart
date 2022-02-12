@@ -254,7 +254,7 @@ class TypewriterEditionLayout extends StatelessWidget {
           BlocBuilder<TypewriterBranchBloc, TypewriterBranchState>(
             builder: (context, state) {
               if (state.isEdit && !state.branch.isPublished) {
-                Padding(
+                return Padding(
                   padding: const EdgeInsets.only(bottom: 20),
                   child: DefaultButton(
                     color: error,
