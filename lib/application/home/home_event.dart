@@ -4,6 +4,9 @@ part of 'home_bloc.dart';
 @freezed
 class HomeEvent with _$HomeEvent {
   /// @nodoc
+  const factory HomeEvent.init() = Init;
+
+  /// @nodoc
   const factory HomeEvent.loadNewTree() = LoadNewTree;
 
   /// @nodoc

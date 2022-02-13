@@ -1,8 +1,10 @@
 import 'package:bloc/bloc.dart';
+import 'package:devicelocale/devicelocale.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/home.dart';
 
@@ -16,7 +18,51 @@ part 'home_bloc.freezed.dart';
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// @nodoc
-  HomeBloc() : super(HomeState.initial()) {
+  HomeBloc(
+    this._treeRepository,
+  ) : super(HomeState.initial()) {
+    on<Init>((_, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      final currentLocale =
+          (await Devicelocale.currentLocale)?.split(RegExp('[_-]')).first;
+
+      final time = timeFiltersTimestamps['today'];
+      final genre = state.genreFilterKey;
+      final language = currentLocale ?? 'en';
+
+      (await _treeRepository.loadTopTrees(
+        <String, dynamic>{
+          'time': time,
+          'genre': genre,
+          'language': language,
+        },
+      ))
+          .match(
+        (_) {
+          emit(
+            state.copyWith(
+              genreFilterKey: genre,
+              languageFilterKey: language,
+              timeFilterKey: 'today',
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
     on<LoadNewTree>((_, emit) {});
     on<LoadTopTree>((_, emit) {});
     on<LoadTreeByGenre>((value, emit) {});
@@ -34,7 +80,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(
           state.copyWith(
             currentPageViewIdx: newIdx,
-            failure: Option.none(),
+            failureOption: Option.none(),
           ),
         );
 
@@ -54,4 +100,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       }
     });
   }
+
+  final ITreeRepository _treeRepository;
 }
