@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -6,6 +7,7 @@ import 'package:wine/presentation/branch/widgets/branch_detail_container.dart';
 import 'package:wine/presentation/core/common/content_actions.dart';
 import 'package:wine/presentation/core/common/content_genres.dart';
 import 'package:wine/utils/constants/palette.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class BranchDetails extends StatelessWidget {
@@ -116,11 +118,18 @@ class BranchDetails extends StatelessWidget {
                           return state.isBookmarked;
                         },
                         onLikeTap: (isLiked) async {
-                          context.read<BranchBloc>().add(
-                                BranchEvent.likeButtonPressed(
-                                  isLiked: isLiked,
+                          await handleAuthGuardedAction(
+                            context,
+                            () => context.read<BranchBloc>().add(
+                                  BranchEvent.likeButtonPressed(
+                                    isLiked: isLiked,
+                                  ),
                                 ),
-                              );
+                            navigateTo: PageRouteInfo<dynamic>(
+                              context.router.root.current.name,
+                              path: context.router.root.current.path,
+                            ),
+                          );
 
                           return state.isLiked;
                         },
