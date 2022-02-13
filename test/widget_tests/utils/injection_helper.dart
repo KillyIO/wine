@@ -45,7 +45,7 @@ void setupInjection() {
     ..registerLazySingleton<IUserRepository>(() => _userRepository)
     ..registerLazySingleton<AuthBloc>(() => AuthBloc(_authFacade))
     ..registerLazySingleton<AuthDialogCubit>(AuthDialogCubit.new)
-    ..registerLazySingleton<HomeBloc>(HomeBloc.new)
+    ..registerLazySingleton<HomeBloc>(() => HomeBloc(_treeRepository))
     ..registerLazySingleton<LibraryBloc>(
       () => LibraryBloc(
         _branchRepository,
