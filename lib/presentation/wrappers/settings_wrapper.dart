@@ -13,7 +13,7 @@ class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<SettingsBloc>()..add(const SettingsEvent.initBloc()),
+      create: (_) => getIt<SettingsBloc>()..add(const SettingsEvent.init()),
       child: BlocListener<SettingsBloc, SettingsState>(
         listener: (context, state) {
           state.failureOption.when(
@@ -36,10 +36,6 @@ class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
                   orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
-                  sessionNotCreated: (_) async => baseErrorDialog(
-                    context,
-                    <String>['Session could not be created!'],
-                  ),
                   sessionNotDeleted: (_) async => baseErrorDialog(
                     context,
                     <String>['Session could not be deleted!'],

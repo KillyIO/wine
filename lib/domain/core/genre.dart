@@ -8,7 +8,7 @@ class Genre extends ValueObject<String> {
   /// @nodoc
   factory Genre(String input) {
     return Genre._(
-      validateGenre(input),
+      validateSelectionNotEmpty(input),
     );
   }
 

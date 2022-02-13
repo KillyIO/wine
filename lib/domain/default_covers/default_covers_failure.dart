@@ -6,16 +6,16 @@ part 'default_covers_failure.freezed.dart';
 @freezed
 class DefaultCoversFailure with _$DefaultCoversFailure {
   /// @nodoc
-  const factory DefaultCoversFailure.defaultCoverURLsNotCached() =
-      DefaultCoverURLsNotCached;
+  const factory DefaultCoversFailure.defaultCoversNotCached() =
+      DefaultCoversNotCached;
 
   /// @nodoc
-  const factory DefaultCoversFailure.defaultCoverURLsNotFetched() =
-      DefaultCoverURLsNotFetched;
+  const factory DefaultCoversFailure.defaultCoverNotFetched() =
+      DefaultCoverNotFetched;
 
   /// @nodoc
-  const factory DefaultCoversFailure.defaultCoverURLsNotLoaded() =
-      DefaultCoverURLsNotLoaded;
+  const factory DefaultCoversFailure.defaultCoversNotLoaded() =
+      DefaultCoversNotLoaded;
 
   /// @nodoc
   const factory DefaultCoversFailure.permissionDenied() = PermissionDenied;

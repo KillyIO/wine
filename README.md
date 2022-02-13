@@ -17,11 +17,11 @@ samples, guidance on mobile development, and a full API reference.
 
 ## VSCode Launch Config
 
+<details>
+<summary>VSCode Launch Config</summary>
+
 ```json
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
@@ -62,3 +62,4 @@ samples, guidance on mobile development, and a full API reference.
   ]
 }
 ```
+</details>

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'core_failure.dart';
@@ -23,14 +24,14 @@ class _$CoreFailureTearOff {
     );
   }
 
-  _DefaultCovers defaultCovers(DefaultCoversFailure f) {
-    return _DefaultCovers(
+  _Branch branch(BranchFailure f) {
+    return _Branch(
       f,
     );
   }
 
-  _Series series(SeriesFailure f) {
-    return _Series(
+  _DefaultCovers defaultCovers(DefaultCoversFailure f) {
+    return _DefaultCovers(
       f,
     );
   }
@@ -43,6 +44,12 @@ class _$CoreFailureTearOff {
 
   _Settings settings(SettingsFailure f) {
     return _Settings(
+      f,
+    );
+  }
+
+  _Tree tree(TreeFailure f) {
+    return _Tree(
       f,
     );
   }
@@ -62,30 +69,33 @@ mixin _$CoreFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) =>
@@ -93,30 +103,33 @@ mixin _$CoreFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) =>
@@ -211,10 +224,11 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return auth(f);
@@ -224,10 +238,11 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return auth?.call(f);
@@ -237,10 +252,11 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -254,10 +270,11 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return auth(this);
@@ -267,10 +284,11 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return auth?.call(this);
@@ -280,10 +298,11 @@ class _$_Auth implements _Auth {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -300,6 +319,175 @@ abstract class _Auth implements CoreFailure {
   AuthFailure get f;
   @JsonKey(ignore: true)
   _$AuthCopyWith<_Auth> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$BranchCopyWith<$Res> {
+  factory _$BranchCopyWith(_Branch value, $Res Function(_Branch) then) =
+      __$BranchCopyWithImpl<$Res>;
+  $Res call({BranchFailure f});
+
+  $BranchFailureCopyWith<$Res> get f;
+}
+
+/// @nodoc
+class __$BranchCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+    implements _$BranchCopyWith<$Res> {
+  __$BranchCopyWithImpl(_Branch _value, $Res Function(_Branch) _then)
+      : super(_value, (v) => _then(v as _Branch));
+
+  @override
+  _Branch get _value => super._value as _Branch;
+
+  @override
+  $Res call({
+    Object? f = freezed,
+  }) {
+    return _then(_Branch(
+      f == freezed
+          ? _value.f
+          : f // ignore: cast_nullable_to_non_nullable
+              as BranchFailure,
+    ));
+  }
+
+  @override
+  $BranchFailureCopyWith<$Res> get f {
+    return $BranchFailureCopyWith<$Res>(_value.f, (value) {
+      return _then(_value.copyWith(f: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Branch implements _Branch {
+  const _$_Branch(this.f);
+
+  @override
+  final BranchFailure f;
+
+  @override
+  String toString() {
+    return 'CoreFailure.branch(f: $f)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Branch &&
+            const DeepCollectionEquality().equals(other.f, f));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+
+  @JsonKey(ignore: true)
+  @override
+  _$BranchCopyWith<_Branch> get copyWith =>
+      __$BranchCopyWithImpl<_Branch>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AuthFailure f) auth,
+    required TResult Function(BranchFailure f) branch,
+    required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SessionsFailure f) sessions,
+    required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
+    required TResult Function(UserFailure f) user,
+  }) {
+    return branch(f);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return branch?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
+    TResult Function(UserFailure f)? user,
+    required TResult orElse(),
+  }) {
+    if (branch != null) {
+      return branch(f);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Auth value) auth,
+    required TResult Function(_Branch value) branch,
+    required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Sessions value) sessions,
+    required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
+    required TResult Function(_User value) user,
+  }) {
+    return branch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
+    TResult Function(_User value)? user,
+  }) {
+    return branch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
+    TResult Function(_User value)? user,
+    required TResult orElse(),
+  }) {
+    if (branch != null) {
+      return branch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Branch implements CoreFailure {
+  const factory _Branch(BranchFailure f) = _$_Branch;
+
+  BranchFailure get f;
+  @JsonKey(ignore: true)
+  _$BranchCopyWith<_Branch> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -376,10 +564,11 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return defaultCovers(f);
@@ -389,10 +578,11 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return defaultCovers?.call(f);
@@ -402,10 +592,11 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -419,10 +610,11 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return defaultCovers(this);
@@ -432,10 +624,11 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return defaultCovers?.call(this);
@@ -445,10 +638,11 @@ class _$_DefaultCovers implements _DefaultCovers {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -466,169 +660,6 @@ abstract class _DefaultCovers implements CoreFailure {
   @JsonKey(ignore: true)
   _$DefaultCoversCopyWith<_DefaultCovers> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$SeriesCopyWith<$Res> {
-  factory _$SeriesCopyWith(_Series value, $Res Function(_Series) then) =
-      __$SeriesCopyWithImpl<$Res>;
-  $Res call({SeriesFailure f});
-
-  $SeriesFailureCopyWith<$Res> get f;
-}
-
-/// @nodoc
-class __$SeriesCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-    implements _$SeriesCopyWith<$Res> {
-  __$SeriesCopyWithImpl(_Series _value, $Res Function(_Series) _then)
-      : super(_value, (v) => _then(v as _Series));
-
-  @override
-  _Series get _value => super._value as _Series;
-
-  @override
-  $Res call({
-    Object? f = freezed,
-  }) {
-    return _then(_Series(
-      f == freezed
-          ? _value.f
-          : f // ignore: cast_nullable_to_non_nullable
-              as SeriesFailure,
-    ));
-  }
-
-  @override
-  $SeriesFailureCopyWith<$Res> get f {
-    return $SeriesFailureCopyWith<$Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_Series implements _Series {
-  const _$_Series(this.f);
-
-  @override
-  final SeriesFailure f;
-
-  @override
-  String toString() {
-    return 'CoreFailure.series(f: $f)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Series &&
-            const DeepCollectionEquality().equals(other.f, f));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
-
-  @JsonKey(ignore: true)
-  @override
-  _$SeriesCopyWith<_Series> get copyWith =>
-      __$SeriesCopyWithImpl<_Series>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(AuthFailure f) auth,
-    required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
-    required TResult Function(SessionsFailure f) sessions,
-    required TResult Function(SettingsFailure f) settings,
-    required TResult Function(UserFailure f) user,
-  }) {
-    return series(f);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(UserFailure f)? user,
-  }) {
-    return series?.call(f);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(UserFailure f)? user,
-    required TResult orElse(),
-  }) {
-    if (series != null) {
-      return series(f);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Auth value) auth,
-    required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
-    required TResult Function(_Sessions value) sessions,
-    required TResult Function(_Settings value) settings,
-    required TResult Function(_User value) user,
-  }) {
-    return series(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_User value)? user,
-  }) {
-    return series?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_User value)? user,
-    required TResult orElse(),
-  }) {
-    if (series != null) {
-      return series(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Series implements CoreFailure {
-  const factory _Series(SeriesFailure f) = _$_Series;
-
-  SeriesFailure get f;
-  @JsonKey(ignore: true)
-  _$SeriesCopyWith<_Series> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -703,10 +734,11 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return sessions(f);
@@ -716,10 +748,11 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return sessions?.call(f);
@@ -729,10 +762,11 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -746,10 +780,11 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return sessions(this);
@@ -759,10 +794,11 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return sessions?.call(this);
@@ -772,10 +808,11 @@ class _$_Sessions implements _Sessions {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -867,10 +904,11 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return settings(f);
@@ -880,10 +918,11 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return settings?.call(f);
@@ -893,10 +932,11 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -910,10 +950,11 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return settings(this);
@@ -923,10 +964,11 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return settings?.call(this);
@@ -936,10 +978,11 @@ class _$_Settings implements _Settings {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {
@@ -957,6 +1000,175 @@ abstract class _Settings implements CoreFailure {
   @JsonKey(ignore: true)
   _$SettingsCopyWith<_Settings> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$TreeCopyWith<$Res> {
+  factory _$TreeCopyWith(_Tree value, $Res Function(_Tree) then) =
+      __$TreeCopyWithImpl<$Res>;
+  $Res call({TreeFailure f});
+
+  $TreeFailureCopyWith<$Res> get f;
+}
+
+/// @nodoc
+class __$TreeCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+    implements _$TreeCopyWith<$Res> {
+  __$TreeCopyWithImpl(_Tree _value, $Res Function(_Tree) _then)
+      : super(_value, (v) => _then(v as _Tree));
+
+  @override
+  _Tree get _value => super._value as _Tree;
+
+  @override
+  $Res call({
+    Object? f = freezed,
+  }) {
+    return _then(_Tree(
+      f == freezed
+          ? _value.f
+          : f // ignore: cast_nullable_to_non_nullable
+              as TreeFailure,
+    ));
+  }
+
+  @override
+  $TreeFailureCopyWith<$Res> get f {
+    return $TreeFailureCopyWith<$Res>(_value.f, (value) {
+      return _then(_value.copyWith(f: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Tree implements _Tree {
+  const _$_Tree(this.f);
+
+  @override
+  final TreeFailure f;
+
+  @override
+  String toString() {
+    return 'CoreFailure.tree(f: $f)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Tree &&
+            const DeepCollectionEquality().equals(other.f, f));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+
+  @JsonKey(ignore: true)
+  @override
+  _$TreeCopyWith<_Tree> get copyWith =>
+      __$TreeCopyWithImpl<_Tree>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AuthFailure f) auth,
+    required TResult Function(BranchFailure f) branch,
+    required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SessionsFailure f) sessions,
+    required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
+    required TResult Function(UserFailure f) user,
+  }) {
+    return tree(f);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return tree?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
+    TResult Function(UserFailure f)? user,
+    required TResult orElse(),
+  }) {
+    if (tree != null) {
+      return tree(f);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Auth value) auth,
+    required TResult Function(_Branch value) branch,
+    required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Sessions value) sessions,
+    required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
+    required TResult Function(_User value) user,
+  }) {
+    return tree(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
+    TResult Function(_User value)? user,
+  }) {
+    return tree?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
+    TResult Function(_User value)? user,
+    required TResult orElse(),
+  }) {
+    if (tree != null) {
+      return tree(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Tree implements CoreFailure {
+  const factory _Tree(TreeFailure f) = _$_Tree;
+
+  TreeFailure get f;
+  @JsonKey(ignore: true)
+  _$TreeCopyWith<_Tree> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1031,10 +1243,11 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
+    required TResult Function(BranchFailure f) branch,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
-    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
+    required TResult Function(TreeFailure f) tree,
     required TResult Function(UserFailure f) user,
   }) {
     return user(f);
@@ -1044,10 +1257,11 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
   }) {
     return user?.call(f);
@@ -1057,10 +1271,11 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
+    TResult Function(BranchFailure f)? branch,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
+    TResult Function(TreeFailure f)? tree,
     TResult Function(UserFailure f)? user,
     required TResult orElse(),
   }) {
@@ -1074,10 +1289,11 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
+    required TResult Function(_Branch value) branch,
     required TResult Function(_DefaultCovers value) defaultCovers,
-    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
+    required TResult Function(_Tree value) tree,
     required TResult Function(_User value) user,
   }) {
     return user(this);
@@ -1087,10 +1303,11 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
   }) {
     return user?.call(this);
@@ -1100,10 +1317,11 @@ class _$_User implements _User {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
+    TResult Function(_Branch value)? branch,
     TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
+    TResult Function(_Tree value)? tree,
     TResult Function(_User value)? user,
     required TResult orElse(),
   }) {

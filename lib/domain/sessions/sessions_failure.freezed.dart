@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'sessions_failure.dart';
@@ -17,10 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$SessionsFailureTearOff {
   const _$SessionsFailureTearOff();
 
-  SessionNotCreated sessionNotCreated() {
-    return const SessionNotCreated();
-  }
-
   SessionNotDeleted sessionNotDeleted() {
     return const SessionNotDeleted();
   }
@@ -29,8 +26,8 @@ class _$SessionsFailureTearOff {
     return const SessionNotFound();
   }
 
-  SessionNotUpdated sessionNotUpdated() {
-    return const SessionNotUpdated();
+  SessionNotInserted sessionNotInserted() {
+    return const SessionNotInserted();
   }
 }
 
@@ -41,51 +38,45 @@ const $SessionsFailure = _$SessionsFailureTearOff();
 mixin _$SessionsFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() sessionNotCreated,
     required TResult Function() sessionNotDeleted,
     required TResult Function() sessionNotFound,
-    required TResult Function() sessionNotUpdated,
+    required TResult Function() sessionNotInserted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
     TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
+    TResult Function()? sessionNotInserted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
     TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
+    TResult Function()? sessionNotInserted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SessionNotCreated value) sessionNotCreated,
     required TResult Function(SessionNotDeleted value) sessionNotDeleted,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SessionNotUpdated value) sessionNotUpdated,
+    required TResult Function(SessionNotInserted value) sessionNotInserted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
     TResult Function(SessionNotDeleted value)? sessionNotDeleted,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+    TResult Function(SessionNotInserted value)? sessionNotInserted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
     TResult Function(SessionNotDeleted value)? sessionNotDeleted,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+    TResult Function(SessionNotInserted value)? sessionNotInserted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,123 +97,6 @@ class _$SessionsFailureCopyWithImpl<$Res>
   final SessionsFailure _value;
   // ignore: unused_field
   final $Res Function(SessionsFailure) _then;
-}
-
-/// @nodoc
-abstract class $SessionNotCreatedCopyWith<$Res> {
-  factory $SessionNotCreatedCopyWith(
-          SessionNotCreated value, $Res Function(SessionNotCreated) then) =
-      _$SessionNotCreatedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SessionNotCreatedCopyWithImpl<$Res>
-    extends _$SessionsFailureCopyWithImpl<$Res>
-    implements $SessionNotCreatedCopyWith<$Res> {
-  _$SessionNotCreatedCopyWithImpl(
-      SessionNotCreated _value, $Res Function(SessionNotCreated) _then)
-      : super(_value, (v) => _then(v as SessionNotCreated));
-
-  @override
-  SessionNotCreated get _value => super._value as SessionNotCreated;
-}
-
-/// @nodoc
-
-class _$SessionNotCreated implements SessionNotCreated {
-  const _$SessionNotCreated();
-
-  @override
-  String toString() {
-    return 'SessionsFailure.sessionNotCreated()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SessionNotCreated);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() sessionNotCreated,
-    required TResult Function() sessionNotDeleted,
-    required TResult Function() sessionNotFound,
-    required TResult Function() sessionNotUpdated,
-  }) {
-    return sessionNotCreated();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
-    TResult Function()? sessionNotDeleted,
-    TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
-  }) {
-    return sessionNotCreated?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
-    TResult Function()? sessionNotDeleted,
-    TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
-    required TResult orElse(),
-  }) {
-    if (sessionNotCreated != null) {
-      return sessionNotCreated();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(SessionNotCreated value) sessionNotCreated,
-    required TResult Function(SessionNotDeleted value) sessionNotDeleted,
-    required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SessionNotUpdated value) sessionNotUpdated,
-  }) {
-    return sessionNotCreated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
-    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
-  }) {
-    return sessionNotCreated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
-    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
-    required TResult orElse(),
-  }) {
-    if (sessionNotCreated != null) {
-      return sessionNotCreated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SessionNotCreated implements SessionsFailure {
-  const factory SessionNotCreated() = _$SessionNotCreated;
 }
 
 /// @nodoc
@@ -266,10 +140,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() sessionNotCreated,
     required TResult Function() sessionNotDeleted,
     required TResult Function() sessionNotFound,
-    required TResult Function() sessionNotUpdated,
+    required TResult Function() sessionNotInserted,
   }) {
     return sessionNotDeleted();
   }
@@ -277,10 +150,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
     TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
+    TResult Function()? sessionNotInserted,
   }) {
     return sessionNotDeleted?.call();
   }
@@ -288,10 +160,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
     TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
+    TResult Function()? sessionNotInserted,
     required TResult orElse(),
   }) {
     if (sessionNotDeleted != null) {
@@ -303,10 +174,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SessionNotCreated value) sessionNotCreated,
     required TResult Function(SessionNotDeleted value) sessionNotDeleted,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SessionNotUpdated value) sessionNotUpdated,
+    required TResult Function(SessionNotInserted value) sessionNotInserted,
   }) {
     return sessionNotDeleted(this);
   }
@@ -314,10 +184,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
     TResult Function(SessionNotDeleted value)? sessionNotDeleted,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+    TResult Function(SessionNotInserted value)? sessionNotInserted,
   }) {
     return sessionNotDeleted?.call(this);
   }
@@ -325,10 +194,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
     TResult Function(SessionNotDeleted value)? sessionNotDeleted,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+    TResult Function(SessionNotInserted value)? sessionNotInserted,
     required TResult orElse(),
   }) {
     if (sessionNotDeleted != null) {
@@ -383,10 +251,9 @@ class _$SessionNotFound implements SessionNotFound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() sessionNotCreated,
     required TResult Function() sessionNotDeleted,
     required TResult Function() sessionNotFound,
-    required TResult Function() sessionNotUpdated,
+    required TResult Function() sessionNotInserted,
   }) {
     return sessionNotFound();
   }
@@ -394,10 +261,9 @@ class _$SessionNotFound implements SessionNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
     TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
+    TResult Function()? sessionNotInserted,
   }) {
     return sessionNotFound?.call();
   }
@@ -405,10 +271,9 @@ class _$SessionNotFound implements SessionNotFound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
     TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
+    TResult Function()? sessionNotInserted,
     required TResult orElse(),
   }) {
     if (sessionNotFound != null) {
@@ -420,10 +285,9 @@ class _$SessionNotFound implements SessionNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SessionNotCreated value) sessionNotCreated,
     required TResult Function(SessionNotDeleted value) sessionNotDeleted,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SessionNotUpdated value) sessionNotUpdated,
+    required TResult Function(SessionNotInserted value) sessionNotInserted,
   }) {
     return sessionNotFound(this);
   }
@@ -431,10 +295,9 @@ class _$SessionNotFound implements SessionNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
     TResult Function(SessionNotDeleted value)? sessionNotDeleted,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+    TResult Function(SessionNotInserted value)? sessionNotInserted,
   }) {
     return sessionNotFound?.call(this);
   }
@@ -442,10 +305,9 @@ class _$SessionNotFound implements SessionNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
     TResult Function(SessionNotDeleted value)? sessionNotDeleted,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+    TResult Function(SessionNotInserted value)? sessionNotInserted,
     required TResult orElse(),
   }) {
     if (sessionNotFound != null) {
@@ -460,38 +322,38 @@ abstract class SessionNotFound implements SessionsFailure {
 }
 
 /// @nodoc
-abstract class $SessionNotUpdatedCopyWith<$Res> {
-  factory $SessionNotUpdatedCopyWith(
-          SessionNotUpdated value, $Res Function(SessionNotUpdated) then) =
-      _$SessionNotUpdatedCopyWithImpl<$Res>;
+abstract class $SessionNotInsertedCopyWith<$Res> {
+  factory $SessionNotInsertedCopyWith(
+          SessionNotInserted value, $Res Function(SessionNotInserted) then) =
+      _$SessionNotInsertedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SessionNotUpdatedCopyWithImpl<$Res>
+class _$SessionNotInsertedCopyWithImpl<$Res>
     extends _$SessionsFailureCopyWithImpl<$Res>
-    implements $SessionNotUpdatedCopyWith<$Res> {
-  _$SessionNotUpdatedCopyWithImpl(
-      SessionNotUpdated _value, $Res Function(SessionNotUpdated) _then)
-      : super(_value, (v) => _then(v as SessionNotUpdated));
+    implements $SessionNotInsertedCopyWith<$Res> {
+  _$SessionNotInsertedCopyWithImpl(
+      SessionNotInserted _value, $Res Function(SessionNotInserted) _then)
+      : super(_value, (v) => _then(v as SessionNotInserted));
 
   @override
-  SessionNotUpdated get _value => super._value as SessionNotUpdated;
+  SessionNotInserted get _value => super._value as SessionNotInserted;
 }
 
 /// @nodoc
 
-class _$SessionNotUpdated implements SessionNotUpdated {
-  const _$SessionNotUpdated();
+class _$SessionNotInserted implements SessionNotInserted {
+  const _$SessionNotInserted();
 
   @override
   String toString() {
-    return 'SessionsFailure.sessionNotUpdated()';
+    return 'SessionsFailure.sessionNotInserted()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SessionNotUpdated);
+        (other.runtimeType == runtimeType && other is SessionNotInserted);
   }
 
   @override
@@ -500,36 +362,33 @@ class _$SessionNotUpdated implements SessionNotUpdated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() sessionNotCreated,
     required TResult Function() sessionNotDeleted,
     required TResult Function() sessionNotFound,
-    required TResult Function() sessionNotUpdated,
+    required TResult Function() sessionNotInserted,
   }) {
-    return sessionNotUpdated();
+    return sessionNotInserted();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
     TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
+    TResult Function()? sessionNotInserted,
   }) {
-    return sessionNotUpdated?.call();
+    return sessionNotInserted?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
     TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotUpdated,
+    TResult Function()? sessionNotInserted,
     required TResult orElse(),
   }) {
-    if (sessionNotUpdated != null) {
-      return sessionNotUpdated();
+    if (sessionNotInserted != null) {
+      return sessionNotInserted();
     }
     return orElse();
   }
@@ -537,41 +396,38 @@ class _$SessionNotUpdated implements SessionNotUpdated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SessionNotCreated value) sessionNotCreated,
     required TResult Function(SessionNotDeleted value) sessionNotDeleted,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SessionNotUpdated value) sessionNotUpdated,
+    required TResult Function(SessionNotInserted value) sessionNotInserted,
   }) {
-    return sessionNotUpdated(this);
+    return sessionNotInserted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
     TResult Function(SessionNotDeleted value)? sessionNotDeleted,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+    TResult Function(SessionNotInserted value)? sessionNotInserted,
   }) {
-    return sessionNotUpdated?.call(this);
+    return sessionNotInserted?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SessionNotCreated value)? sessionNotCreated,
     TResult Function(SessionNotDeleted value)? sessionNotDeleted,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+    TResult Function(SessionNotInserted value)? sessionNotInserted,
     required TResult orElse(),
   }) {
-    if (sessionNotUpdated != null) {
-      return sessionNotUpdated(this);
+    if (sessionNotInserted != null) {
+      return sessionNotInserted(this);
     }
     return orElse();
   }
 }
 
-abstract class SessionNotUpdated implements SessionsFailure {
-  const factory SessionNotUpdated() = _$SessionNotUpdated;
+abstract class SessionNotInserted implements SessionsFailure {
+  const factory SessionNotInserted() = _$SessionNotInserted;
 }

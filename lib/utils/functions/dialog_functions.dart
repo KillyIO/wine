@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +15,15 @@ Future<void> redirectDialog(
   List<String> messages,
   void Function() onNavigate,
 ) async {
-  final result = await showDialog<bool>(
+  bool? result = false;
+
+  final timer = Timer(const Duration(seconds: 4), () {
+    context.router.pop<bool>(true);
+
+    result = true;
+  });
+
+  result = await showDialog<bool>(
     context: context,
     barrierDismissible: false,
     useRootNavigator: false,
@@ -21,12 +31,14 @@ Future<void> redirectDialog(
       key: const Key('redirect_success_dialog'),
       messages: messages,
       onPressed: () async {
+        timer.cancel();
+
         await context.router.pop<bool>(true);
       },
     ),
   );
 
-  if (result != null && result) {
+  if (result != null && result!) {
     onNavigate();
   }
 }
@@ -34,13 +46,15 @@ Future<void> redirectDialog(
 /// @nodoc
 Future<void> baseErrorDialog(
   BuildContext context,
-  List<String> errorMessages,
-) async {
+  List<String> errorMessages, {
+  String? buttonText,
+}) async {
   await showDialog<bool>(
     context: context,
     useRootNavigator: false,
     builder: (_) => ErrorDialog(
       key: const Key('dismiss_error_dialog'),
+      buttonText: buttonText,
       messages: errorMessages,
       onPressed: () async {
         await context.router.pop<bool>(true);

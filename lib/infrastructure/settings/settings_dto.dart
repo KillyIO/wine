@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/settings/settings.dart';
-import 'package:wine/infrastructure/settings/hive_settings.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
 
 part 'settings_dto.freezed.dart';
 part 'settings_dto.g.dart';
@@ -10,35 +11,37 @@ part 'settings_dto.g.dart';
 class SettingsDTO with _$SettingsDTO {
   /// @nodoc
   factory SettingsDTO({
-    required bool? enableChaptersBookmarksCount,
-    required bool? enableChaptersLikesCount,
-    required bool? enableChaptersViewsCount,
-    required bool? enableSeriesBookmarksCount,
-    required bool? enableSeriesLikesCount,
-    required bool? enableSeriesViewsCount,
+    required bool? enableBranchesBookmarksCount,
+    required bool? enableBranchesLikesCount,
+    required bool? enableBranchesViewsCount,
+    required bool? enableTreesBookmarksCount,
+    required bool? enableTreesLikesCount,
+    required bool? enableTreesViewsCount,
+    String? uid,
   }) = _SettingsDTO;
 
   /// @nodoc
   factory SettingsDTO.fromDomain(Settings settings) {
     return SettingsDTO(
-      enableChaptersBookmarksCount: settings.enableChaptersBookmarksCount,
-      enableChaptersLikesCount: settings.enableChaptersLikesCount,
-      enableChaptersViewsCount: settings.enableChaptersViewsCount,
-      enableSeriesBookmarksCount: settings.enableSeriesBookmarksCount,
-      enableSeriesLikesCount: settings.enableSeriesLikesCount,
-      enableSeriesViewsCount: settings.enableSeriesViewsCount,
+      enableBranchesBookmarksCount: settings.enableBranchesBookmarksCount,
+      enableBranchesLikesCount: settings.enableBranchesLikesCount,
+      enableBranchesViewsCount: settings.enableBranchesViewsCount,
+      enableTreesBookmarksCount: settings.enableTreesBookmarksCount,
+      enableTreesLikesCount: settings.enableTreesLikesCount,
+      enableTreesViewsCount: settings.enableTreesViewsCount,
     );
   }
 
   /// @nodoc
-  factory SettingsDTO.fromAdapter(HiveSettings settings) {
+  factory SettingsDTO.fromAdapter(IsarSettings settings) {
     return SettingsDTO(
-      enableChaptersBookmarksCount: settings.enableChaptersBookmarksCount,
-      enableChaptersLikesCount: settings.enableChaptersLikesCount,
-      enableChaptersViewsCount: settings.enableChaptersViewsCount,
-      enableSeriesBookmarksCount: settings.enableSeriesBookmarksCount,
-      enableSeriesLikesCount: settings.enableSeriesLikesCount,
-      enableSeriesViewsCount: settings.enableSeriesViewsCount,
+      enableBranchesBookmarksCount: settings.enableBranchesBookmarksCount,
+      enableBranchesLikesCount: settings.enableBranchesLikesCount,
+      enableBranchesViewsCount: settings.enableBranchesViewsCount,
+      enableTreesBookmarksCount: settings.enableTreesBookmarksCount,
+      enableTreesLikesCount: settings.enableTreesLikesCount,
+      enableTreesViewsCount: settings.enableTreesViewsCount,
+      uid: settings.uid,
     );
   }
 
@@ -51,22 +54,23 @@ class SettingsDTO with _$SettingsDTO {
 extension SettingsDTOX on SettingsDTO {
   /// @nodoc
   Settings toDomain() => Settings(
-        enableChaptersBookmarksCount: enableChaptersBookmarksCount,
-        enableChaptersLikesCount: enableChaptersLikesCount,
-        enableChaptersViewsCount: enableChaptersViewsCount,
-        enableSeriesBookmarksCount: enableSeriesBookmarksCount,
-        enableSeriesLikesCount: enableSeriesLikesCount,
-        enableSeriesViewsCount: enableSeriesViewsCount,
+        enableBranchesBookmarksCount: enableBranchesBookmarksCount,
+        enableBranchesLikesCount: enableBranchesLikesCount,
+        enableBranchesViewsCount: enableBranchesViewsCount,
+        enableTreesBookmarksCount: enableTreesBookmarksCount,
+        enableTreesLikesCount: enableTreesLikesCount,
+        enableTreesViewsCount: enableTreesViewsCount,
       );
 
   /// @nodoc
-  HiveSettings toAdapter() => HiveSettings(
-        enableChaptersBookmarksCount: enableChaptersBookmarksCount,
-        enableChaptersLikesCount: enableChaptersLikesCount,
-        enableChaptersViewsCount: enableChaptersViewsCount,
-        enableSeriesBookmarksCount: enableSeriesBookmarksCount,
-        enableSeriesLikesCount: enableSeriesLikesCount,
-        enableSeriesViewsCount: enableSeriesViewsCount,
+  IsarSettings toAdapter() => IsarSettings(
+        enableBranchesBookmarksCount: enableBranchesBookmarksCount,
+        enableBranchesLikesCount: enableBranchesLikesCount,
+        enableBranchesViewsCount: enableBranchesViewsCount,
+        enableTreesBookmarksCount: enableTreesBookmarksCount,
+        enableTreesLikesCount: enableTreesLikesCount,
+        enableTreesViewsCount: enableTreesViewsCount,
+        uid: uid ?? UniqueID().getOrCrash(),
       );
 }
 
@@ -74,12 +78,12 @@ extension SettingsDTOX on SettingsDTO {
 extension SettingsMapX on Map {
   /// @nodoc
   Settings toDomain() => Settings(
-        enableChaptersBookmarksCount:
-            this['enableChaptersBookmarksCount'] as bool,
-        enableChaptersLikesCount: this['enableChaptersLikesCount'] as bool,
-        enableChaptersViewsCount: this['enableChaptersViewsCount'] as bool,
-        enableSeriesBookmarksCount: this['enableSeriesBookmarksCount'] as bool,
-        enableSeriesLikesCount: this['enableSeriesLikesCount'] as bool,
-        enableSeriesViewsCount: this['enableSeriesViewsCount'] as bool,
+        enableBranchesBookmarksCount:
+            this['enableBranchesBookmarksCount'] as bool,
+        enableBranchesLikesCount: this['enableBranchesLikesCount'] as bool,
+        enableBranchesViewsCount: this['enableBranchesViewsCount'] as bool,
+        enableTreesBookmarksCount: this['enableTreesBookmarksCount'] as bool,
+        enableTreesLikesCount: this['enableTreesLikesCount'] as bool,
+        enableTreesViewsCount: this['enableTreesViewsCount'] as bool,
       );
 }

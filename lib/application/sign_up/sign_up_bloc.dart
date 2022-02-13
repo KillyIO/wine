@@ -115,7 +115,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     });
     on<UserDetailsSaved>(
       (value, emit) async =>
-          (await _sessionsRepository.updateSession(value.user)).match(
+          (await _sessionsRepository.insertSession(value.user)).match(
         (_) {
           emit(
             state.copyWith(

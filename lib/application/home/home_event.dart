@@ -4,20 +4,19 @@ part of 'home_bloc.dart';
 @freezed
 class HomeEvent with _$HomeEvent {
   /// @nodoc
-  const factory HomeEvent.loadNewSeries() = LoadNewSeries;
+  const factory HomeEvent.loadNewTree() = LoadNewTree;
 
   /// @nodoc
-  const factory HomeEvent.loadSeriesByGenre(String key) = LoadSeriesByGenre;
+  const factory HomeEvent.loadTopTree() = LoadTopTree;
 
   /// @nodoc
-  const factory HomeEvent.loadSeriesByLanguage(String key) =
-      LoadSeriesByLanguage;
+  const factory HomeEvent.loadTreeByGenre(String key) = LoadTreeByGenre;
 
   /// @nodoc
-  const factory HomeEvent.loadSeriesByTime(String key) = LoadSeriesByTime;
+  const factory HomeEvent.loadTreeByLanguage(String key) = LoadTreeByLanguage;
 
   /// @nodoc
-  const factory HomeEvent.loadTopSeries() = LoadTopSeries;
+  const factory HomeEvent.loadTreeByTime(String key) = LoadTreeByTime;
 
   /// @nodoc
   const factory HomeEvent.pageViewIndexChanged(int index) =

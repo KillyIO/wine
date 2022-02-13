@@ -2,11 +2,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/unique_id.dart';
+import 'package:wine/domain/default_covers/default_cover.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/user/user.dart';
-import 'package:wine/infrastructure/settings/hive_settings.dart';
-import 'package:wine/infrastructure/user/hive_user.dart';
+import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
+import 'package:wine/infrastructure/user/isar_user.dart';
 
 const testConfirmPasssword = r'''wT-t"_fCznEH+tPMt7Y$JB''';
 const testEmailAddress = 'lphong.tieu.75@pickuplanet.com';
@@ -26,8 +29,8 @@ const testSubtitle = 'this is a subtitle';
 const testInvalidSubtitleTooLong =
     'this is a subtitle too long and should cause an error in the app';
 
-const testSeriesUid = '6ebf3f3e-b8e0-11eb-8529-0242ac130003';
-const testSummary = '''
+const testTreeUid = '6ebf3f3e-b8e0-11eb-8529-0242ac130003';
+const testSynopsis = '''
 congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem
 viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas
 pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices
@@ -42,7 +45,7 @@ lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus
 est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat
 vivamus at augue eget arcu dictum varius duis at consectetur lorem donec massa
 ''';
-const testInvalidSummaryTooLong = '''
+const testInvalidSynopsisTooLong = '''
 malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa
 massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit
 amet consectetur adipiscing elit pellentesque habitant morbi tristique
@@ -75,27 +78,33 @@ const testInvalidCoverURL =
 const testInvalidCoverPath = '///invalid/path//cover.jpeg';
 
 // SECTION Default Covers
-const testDefaultCovers = {
-  'key': 'key',
-  'coverURL': 'coverURL',
-};
+final testDefaultCover = DefaultCover(
+  key: 'key',
+  url: CoverURL(testCoverURL),
+);
+const testIsarDefaultCover = IsarDefaultCover(
+  id: 0,
+  key: 'key',
+  url: testCoverURL,
+);
 
 // SECTION Settings
 const testSettings = Settings(
-  enableChaptersBookmarksCount: false,
-  enableChaptersLikesCount: false,
-  enableChaptersViewsCount: false,
-  enableSeriesBookmarksCount: false,
-  enableSeriesLikesCount: false,
-  enableSeriesViewsCount: false,
+  enableBranchesBookmarksCount: false,
+  enableBranchesLikesCount: false,
+  enableBranchesViewsCount: false,
+  enableTreesBookmarksCount: false,
+  enableTreesLikesCount: false,
+  enableTreesViewsCount: false,
 );
-const testHiveSettings = HiveSettings(
-  enableChaptersBookmarksCount: false,
-  enableChaptersLikesCount: false,
-  enableChaptersViewsCount: false,
-  enableSeriesBookmarksCount: false,
-  enableSeriesLikesCount: false,
-  enableSeriesViewsCount: false,
+const testIsarSettings = IsarSettings(
+  enableBranchesBookmarksCount: false,
+  enableBranchesLikesCount: false,
+  enableBranchesViewsCount: false,
+  enableTreesBookmarksCount: false,
+  enableTreesLikesCount: false,
+  enableTreesViewsCount: false,
+  uid: testUserUid,
 );
 
 const testSessionAnonymous = <String, dynamic>{};
@@ -104,9 +113,11 @@ final testUser = User(
   uid: UniqueID.fromUniqueString(testUserUid),
   username: Username(testEmailAddress.split('@').first),
 );
-final testHiveUser = HiveUser(
+final testIsarUser = IsarUser(
   emailAddress: testEmailAddress,
+  id: 0,
   uid: testUserUid,
+  updatedAt: DateTime.now(),
   username: testEmailAddress.split('@').first,
 );
 final testUserFirestore = {

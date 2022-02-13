@@ -24,10 +24,32 @@ class LibraryLayout extends StatelessWidget {
               some: (value) => value.when(
                 ok: (_) {},
                 err: (err) => err.maybeMap(
-                  series: (f) => f.f.maybeMap(
-                    seriesNotFound: (_) async => baseErrorDialog(
+                  branch: (f) => f.f.maybeMap(
+                    permissionDenied: (_) async => baseErrorDialog(
                       context,
-                      <String>['Series not found!'],
+                      <String>['Forbidden action. Permission denied!'],
+                    ),
+                    serverError: (_) async => baseErrorDialog(
+                      context,
+                      <String>['A problem occurred on our end!'],
+                    ),
+                    unexpected: (_) async => baseErrorDialog(
+                      context,
+                      <String>['An unexpected error occured!'],
+                    ),
+                    orElse: () {},
+                  ),
+                  sessions: (f) => f.f.maybeMap(
+                    sessionNotFound: (_) async => baseErrorDialog(
+                      context,
+                      <String>['Session not found!'],
+                    ),
+                    orElse: () {},
+                  ),
+                  tree: (f) => f.f.maybeMap(
+                    permissionDenied: (_) async => baseErrorDialog(
+                      context,
+                      <String>['Forbidden action. Permission denied!'],
                     ),
                     serverError: (_) async => baseErrorDialog(
                       context,

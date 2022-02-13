@@ -11,7 +11,4 @@ class SetupState with _$SetupState {
 
   /// @nodoc
   const factory SetupState.initial() = _Initial;
-
-  /// @nodoc
-  const factory SetupState.onboarding() = _Onboarding;
 }

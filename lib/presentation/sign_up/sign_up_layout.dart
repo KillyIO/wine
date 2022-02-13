@@ -60,7 +60,7 @@ class SignUpLayout extends StatelessWidget {
                 orElse: () {},
               ),
               sessions: (f) => f.f.maybeMap(
-                sessionNotUpdated: (_) async => baseErrorDialog(
+                sessionNotInserted: (_) async => baseErrorDialog(
                   context,
                   <String>['Session could not be updated!'],
                 ),

@@ -217,9 +217,9 @@ void main() {
               .thenAnswer((_) => Stream.fromIterable([Option.some(testUser)]));
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(false);
-          when(_defaultCoversRepository.loadDefaultCoverURLs)
-              .thenAnswer((_) async => Ok(testDefaultCovers));
-          when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+          when(_defaultCoversRepository.loadDefaultCovers)
+              .thenAnswer((_) async => Ok([testDefaultCover]));
+          when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
               .thenAnswer((_) async => Ok(unit));
           when(_settingsRepository.fetchSettings)
               .thenAnswer((_) async => Ok(testSettings));
@@ -227,7 +227,7 @@ void main() {
               .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
-          when(() => _sessionsRepository.updateSession(testUser))
+          when(() => _sessionsRepository.insertSession(testUser))
               .thenAnswer((_) async => Ok(unit));
 
           final authBloc = getIt<AuthBloc>()

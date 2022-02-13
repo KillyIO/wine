@@ -5,7 +5,7 @@ void main() {
 
   // TODO(SSebigo): test when authenticated ACCOUNT button navigate to AccountPage
 
-  // TODO(SSebigo): test SERIES button navigate to SeriesSettingsPage
+  // TODO(SSebigo): test BRANCH button navigate to BranchSettingsPage
 
-  // TODO(SSebigo): test CHAPTER button navigate to ChapterSettingsPage
+  // TODO(SSebigo): test TREE button navigate to TreeSettingsPage
 }

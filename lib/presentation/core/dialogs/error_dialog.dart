@@ -80,7 +80,7 @@ class ErrorDialog extends StatelessWidget {
               child: TextButton(
                 onPressed: onPressed,
                 child: Text(
-                  buttonText ?? 'DISMISS',
+                  buttonText ?? 'OK',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,

@@ -1,41 +1,47 @@
 /// @nodoc
-const String homePath = '/';
+const String branchPagePath = '/branch/:id';
 
 /// @nodoc
-const String libraryPath = '/library';
+const String homePagePath = '/';
 
 /// @nodoc
-const String logInPath = '/log-in';
+const String libraryPagePath = '/library';
 
 /// @nodoc
-const String onboardingPath = '/onboarding';
+const String logInPagePath = '/log-in';
 
 /// @nodoc
-const String plusPath = '/plus';
+const String plusPagePath = '/plus';
 
 /// @nodoc
-const String seriesPath = '/series/:id';
+const String settingsPagePath = '/settings';
 
 /// @nodoc
-const String settingsPath = '/settings';
+const String settingsAccountPagePath = 'account';
 
 /// @nodoc
-const String settingsAccountPath = 'account';
+const String settingsBranchPagePath = 'branch';
 
 /// @nodoc
-const String settingsChapterPath = 'chapter';
+const String settingsTreePagePath = 'tree';
 
 /// @nodoc
-const String settingsSeriesPath = 'series';
+const String signUpPagePath = '/sign-up';
 
 /// @nodoc
-const String signUpPath = '/sign-up';
+const String treePagePath = '/tree/:id';
 
 /// @nodoc
-const String typewriterPath = '/typewriter';
+const String typewriterPageBranchUIDPath = '/branch/:id';
 
 /// @nodoc
-const String typewriterSeriesIDPath = '/series/:id';
+const String typewriterPageBranchNewPath = '/branch/new';
 
 /// @nodoc
-const String typewriterSeriesNewPath = '/series/new';
+const String typewriterPagePath = '/typewriter';
+
+/// @nodoc
+const String typewriterPageTreeUIDPath = '/tree/:id';
+
+/// @nodoc
+const String typewriterPageTreeNewPath = '/tree/new';

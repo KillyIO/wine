@@ -18,7 +18,6 @@ import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
-import 'package:wine/presentation/onboarding/onboarding_page.dart';
 import 'package:wine/presentation/routes/router.dart';
 
 import '../../mocks/domain_mocks.dart';
@@ -126,12 +125,12 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer(
               (_) async => Err(
-                const DefaultCoversFailure.defaultCoverURLsNotCached(),
+                const DefaultCoversFailure.defaultCoversNotCached(),
               ),
             );
 
@@ -165,9 +164,9 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(true);
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
+            when(_defaultCoversRepository.loadDefaultCovers).thenAnswer(
               (_) async =>
-                  Err(const DefaultCoversFailure.defaultCoverURLsNotLoaded()),
+                  Err(const DefaultCoversFailure.defaultCoversNotLoaded()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -200,7 +199,7 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(true);
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
+            when(_defaultCoversRepository.loadDefaultCovers).thenAnswer(
               (_) async => Err(const DefaultCoversFailure.serverError()),
             );
 
@@ -231,7 +230,7 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(true);
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
+            when(_defaultCoversRepository.loadDefaultCovers).thenAnswer(
               (_) async => Err(const DefaultCoversFailure.unexpected()),
             );
 
@@ -265,23 +264,20 @@ void main() {
         });
 
         testWidgets(
-          '''Should display ErrorDialog with SessionsFailure.sessionNotCreated message''',
+          '''Should display ErrorDialog with SessionsFailure.sessionNotInserted message''',
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
                 .thenAnswer((_) async => Ok(testSettings));
             when(_sessionsRepository.fetchSession).thenAnswer(
               (_) async => Err(const SessionsFailure.sessionNotFound()),
-            );
-            when(_sessionsRepository.createSession).thenAnswer(
-              (_) async => Err(const SessionsFailure.sessionNotCreated()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -314,9 +310,9 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
                 .thenAnswer((_) async => Ok(testSettings));
@@ -324,8 +320,8 @@ void main() {
                 .thenAnswer((_) async => Ok(testUser));
             when(() => _userRepository.loadUser(any()))
                 .thenAnswer((_) async => Ok(testUser));
-            when(() => _sessionsRepository.updateSession(any())).thenAnswer(
-              (_) async => Err(const SessionsFailure.sessionNotUpdated()),
+            when(() => _sessionsRepository.insertSession(any())).thenAnswer(
+              (_) async => Err(const SessionsFailure.sessionNotInserted()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -365,9 +361,9 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings).thenAnswer(
               (_) async => Err(const SettingsFailure.settingsNotFound()),
@@ -416,9 +412,9 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
                 .thenAnswer((_) async => Ok(testSettings));
@@ -452,35 +448,6 @@ void main() {
       });
     });
 
-    testWidgets('Should navigate to Onboarding page', (tester) async {
-      when(() => _authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
-      when(() => _authFacade.isLoggedIn).thenReturn(false);
-      when(_authFacade.logInAnonymously).thenAnswer((_) async => Ok(unit));
-      when(() => _authFacade.isAnonymous).thenReturn(true);
-      when(_settingsRepository.fetchSettings)
-          .thenAnswer((_) async => Ok(testSettings));
-      when(_sessionsRepository.fetchSession).thenAnswer(
-        (_) async => Err(const SessionsFailure.sessionNotFound()),
-      );
-      when(_sessionsRepository.createSession).thenAnswer((_) async => Ok(unit));
-
-      final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
-
-      await tester.pumpWidget(
-        TestRouterWidget(
-          appRouter: AppRouter(),
-          providers: [
-            BlocProvider<AuthBloc>(create: (_) => authBloc),
-            BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-          ],
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      expect(find.byType(OnboardingPage), findsOneWidget);
-    });
-
     group('AppBar -', () {
       testWidgets('Should find 3 buttons', (tester) async {
         when(() => _authFacade.authStateChanges)
@@ -506,12 +473,11 @@ void main() {
         );
 
         final homeFilterButton = find.byKey(const Key('home_filter_button'));
-        final homeNewSeriesButton =
-            find.byKey(const Key('home_new_series_button'));
+        final homeNewTreeButton = find.byKey(const Key('home_new_tree_button'));
         final homeMenuButton = find.byKey(const Key('home_menu_button'));
 
         expect(homeFilterButton, findsOneWidget);
-        expect(homeNewSeriesButton, findsOneWidget);
+        expect(homeNewTreeButton, findsOneWidget);
         expect(homeMenuButton, findsOneWidget);
       });
     });
@@ -568,10 +534,10 @@ void main() {
 
     // TODO(SSebigo): test "LIBRARY" button navigate to LibraryPage
 
-    // TODO(SSebigo): test series is displayed
+    // TODO(SSebigo): test tree is displayed
 
-    // TODO(SSebigo): test if more than 5 series shoud find top five series
+    // TODO(SSebigo): test if more than 5 tree shoud find top five tree
 
-    // TODO(SSebigo): test plus icon navigate to NewSeries
+    // TODO(SSebigo): test plus icon navigate to NewTree
   });
 }

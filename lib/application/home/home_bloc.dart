@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/core_failure.dart';
-import 'package:wine/domain/series/series.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/home.dart';
 
 part 'home_event.dart';
@@ -17,11 +17,11 @@ part 'home_bloc.freezed.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// @nodoc
   HomeBloc() : super(HomeState.initial()) {
-    on<LoadNewSeries>((_, emit) {});
-    on<LoadSeriesByGenre>((value, emit) {});
-    on<LoadSeriesByLanguage>((value, emit) {});
-    on<LoadSeriesByTime>((value, emit) {});
-    on<LoadTopSeries>((_, emit) {});
+    on<LoadNewTree>((_, emit) {});
+    on<LoadTopTree>((_, emit) {});
+    on<LoadTreeByGenre>((value, emit) {});
+    on<LoadTreeByLanguage>((value, emit) {});
+    on<LoadTreeByTime>((value, emit) {});
     on<PageViewIndexChanged>((value, emit) {
       if (state.currentPageViewIdx != value.index) {
         var newIdx = value.index;
@@ -40,13 +40,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
         switch (state.currentPageViewIdx) {
           case 0:
-            if (state.topSeriesList.isEmpty) {
-              add(const HomeEvent.loadTopSeries());
+            if (state.topTrees.isEmpty) {
+              add(const HomeEvent.loadTopTree());
             }
             break;
           case 1:
-            if (state.newSeriesList.isEmpty) {
-              add(const HomeEvent.loadNewSeries());
+            if (state.newTrees.isEmpty) {
+              add(const HomeEvent.loadNewTree());
             }
             break;
           default:

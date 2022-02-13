@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'value_failure.dart';
@@ -76,6 +77,12 @@ class _$ValueFailureTearOff {
       failedValue,
     );
   }
+
+  TooShortInput<T> tooShortInput<T>(T failedValue) {
+    return TooShortInput<T>(
+      failedValue,
+    );
+  }
 }
 
 /// @nodoc
@@ -95,6 +102,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -109,6 +117,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -123,6 +132,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +149,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -153,6 +164,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -167,6 +179,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -265,6 +278,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return emptyInput(failedValue);
   }
@@ -282,6 +296,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return emptyInput?.call(failedValue);
   }
@@ -299,6 +314,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (emptyInput != null) {
@@ -321,6 +337,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return emptyInput(this);
   }
@@ -338,6 +355,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return emptyInput?.call(this);
   }
@@ -355,6 +373,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (emptyInput != null) {
@@ -449,6 +468,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return emptySelection(failedValue);
   }
@@ -466,6 +486,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return emptySelection?.call(failedValue);
   }
@@ -483,6 +504,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (emptySelection != null) {
@@ -505,6 +527,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return emptySelection(this);
   }
@@ -522,6 +545,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return emptySelection?.call(this);
   }
@@ -539,6 +563,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (emptySelection != null) {
@@ -633,6 +658,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return invalidCoverFile(failureValue);
   }
@@ -650,6 +676,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return invalidCoverFile?.call(failureValue);
   }
@@ -667,6 +694,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidCoverFile != null) {
@@ -689,6 +717,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return invalidCoverFile(this);
   }
@@ -706,6 +735,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidCoverFile?.call(this);
   }
@@ -723,6 +753,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidCoverFile != null) {
@@ -817,6 +848,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return invalidCoverURL(failedValue);
   }
@@ -834,6 +866,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return invalidCoverURL?.call(failedValue);
   }
@@ -851,6 +884,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidCoverURL != null) {
@@ -873,6 +907,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return invalidCoverURL(this);
   }
@@ -890,6 +925,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidCoverURL?.call(this);
   }
@@ -907,6 +943,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidCoverURL != null) {
@@ -1001,6 +1038,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return invalidEmailAddress(failedValue);
   }
@@ -1018,6 +1056,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return invalidEmailAddress?.call(failedValue);
   }
@@ -1035,6 +1074,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidEmailAddress != null) {
@@ -1057,6 +1097,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return invalidEmailAddress(this);
   }
@@ -1074,6 +1115,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidEmailAddress?.call(this);
   }
@@ -1091,6 +1133,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidEmailAddress != null) {
@@ -1185,6 +1228,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return invalidPassword(failedValue);
   }
@@ -1202,6 +1246,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return invalidPassword?.call(failedValue);
   }
@@ -1219,6 +1264,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -1241,6 +1287,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return invalidPassword(this);
   }
@@ -1258,6 +1305,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidPassword?.call(this);
   }
@@ -1275,6 +1323,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -1371,6 +1420,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return invalidConfirmPassword(failedValue);
   }
@@ -1388,6 +1438,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return invalidConfirmPassword?.call(failedValue);
   }
@@ -1405,6 +1456,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidConfirmPassword != null) {
@@ -1427,6 +1479,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return invalidConfirmPassword(this);
   }
@@ -1444,6 +1497,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidConfirmPassword?.call(this);
   }
@@ -1461,6 +1515,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidConfirmPassword != null) {
@@ -1556,6 +1611,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return invalidUniqueID(failedValue);
   }
@@ -1573,6 +1629,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return invalidUniqueID?.call(failedValue);
   }
@@ -1590,6 +1647,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidUniqueID != null) {
@@ -1612,6 +1670,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return invalidUniqueID(this);
   }
@@ -1629,6 +1688,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidUniqueID?.call(this);
   }
@@ -1646,6 +1706,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidUniqueID != null) {
@@ -1740,6 +1801,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return invalidUsername(failedValue);
   }
@@ -1757,6 +1819,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return invalidUsername?.call(failedValue);
   }
@@ -1774,6 +1837,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidUsername != null) {
@@ -1796,6 +1860,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return invalidUsername(this);
   }
@@ -1813,6 +1878,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidUsername?.call(this);
   }
@@ -1830,6 +1896,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (invalidUsername != null) {
@@ -1924,6 +1991,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
     required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
   }) {
     return tooLongInput(failedValue);
   }
@@ -1941,6 +2009,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
   }) {
     return tooLongInput?.call(failedValue);
   }
@@ -1958,6 +2027,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
     TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
   }) {
     if (tooLongInput != null) {
@@ -1980,6 +2050,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
     return tooLongInput(this);
   }
@@ -1997,6 +2068,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return tooLongInput?.call(this);
   }
@@ -2014,6 +2086,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
     TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
   }) {
     if (tooLongInput != null) {
@@ -2029,5 +2102,195 @@ abstract class TooLongInput<T> implements ValueFailure<T> {
   T get failedValue;
   @JsonKey(ignore: true)
   $TooLongInputCopyWith<T, TooLongInput<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TooShortInputCopyWith<T, $Res> {
+  factory $TooShortInputCopyWith(
+          TooShortInput<T> value, $Res Function(TooShortInput<T>) then) =
+      _$TooShortInputCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$TooShortInputCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $TooShortInputCopyWith<T, $Res> {
+  _$TooShortInputCopyWithImpl(
+      TooShortInput<T> _value, $Res Function(TooShortInput<T>) _then)
+      : super(_value, (v) => _then(v as TooShortInput<T>));
+
+  @override
+  TooShortInput<T> get _value => super._value as TooShortInput<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(TooShortInput<T>(
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TooShortInput<T> implements TooShortInput<T> {
+  const _$TooShortInput(this.failedValue);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.tooShortInput(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TooShortInput<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  $TooShortInputCopyWith<T, TooShortInput<T>> get copyWith =>
+      _$TooShortInputCopyWithImpl<T, TooShortInput<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
+  }) {
+    return tooShortInput(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
+  }) {
+    return tooShortInput?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
+    required TResult orElse(),
+  }) {
+    if (tooShortInput != null) {
+      return tooShortInput(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
+  }) {
+    return tooShortInput(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
+  }) {
+    return tooShortInput?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
+    required TResult orElse(),
+  }) {
+    if (tooShortInput != null) {
+      return tooShortInput(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TooShortInput<T> implements ValueFailure<T> {
+  const factory TooShortInput(T failedValue) = _$TooShortInput<T>;
+
+  T get failedValue;
+  @JsonKey(ignore: true)
+  $TooShortInputCopyWith<T, TooShortInput<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

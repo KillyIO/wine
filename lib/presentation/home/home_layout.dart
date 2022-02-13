@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
-import 'package:wine/presentation/home/home_content_layout.dart';
 import 'package:wine/presentation/home/home_filters_menu_layout.dart';
 import 'package:wine/presentation/home/home_menu_layout.dart';
-import 'package:wine/presentation/home/home_onboarding_layout.dart';
-import 'package:wine/presentation/home/home_splash_layout.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
+import 'package:wine/presentation/home/widgets/home_content_layout.dart';
+import 'package:wine/presentation/home/widgets/home_splash_layout.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
@@ -41,11 +40,11 @@ class HomeLayout extends StatelessWidget {
                   ),
                 ),
                 defaultCovers: (f) => f.f.maybeMap(
-                  defaultCoverURLsNotCached: (_) => restartAppDialog(
+                  defaultCoversNotCached: (_) => restartAppDialog(
                     context,
                     <String>['Default covers could not be cached!'],
                   ),
-                  defaultCoverURLsNotLoaded: (_) => restartAppDialog(
+                  defaultCoversNotLoaded: (_) => restartAppDialog(
                     context,
                     <String>['Default covers could not be loaded!'],
                   ),
@@ -60,11 +59,11 @@ class HomeLayout extends StatelessWidget {
                   orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
-                  sessionNotCreated: (_) => restartAppDialog(
+                  sessionNotFound: (_) => restartAppDialog(
                     context,
-                    <String>['Session could not be created!'],
+                    <String>['Session not found!'],
                   ),
-                  sessionNotUpdated: (_) => restartAppDialog(
+                  sessionNotInserted: (_) => restartAppDialog(
                     context,
                     <String>['Session could not be updated!'],
                   ),
@@ -104,7 +103,6 @@ class HomeLayout extends StatelessWidget {
               content: (_) => const HomeContentLayout(),
               failure: (_) => Container(),
               initial: (_) => const HomeSplashLayout(),
-              onboarding: (_) => const HomeOnboardingLayout(),
             );
           },
         ),
@@ -113,7 +111,7 @@ class HomeLayout extends StatelessWidget {
         builder: (context, state) {
           return state.maybeMap(
             content: (_) => const HomeFiltersMenuLayout(),
-            orElse: () => Container(),
+            orElse: Container.new,
           );
         },
       ),
@@ -121,7 +119,7 @@ class HomeLayout extends StatelessWidget {
         builder: (context, state) {
           return state.maybeMap(
             content: (_) => const HomeMenuLayout(),
-            orElse: () => Container(),
+            orElse: Container.new,
           );
         },
       ),

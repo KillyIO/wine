@@ -1,89 +1,92 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
+import 'package:isar/isar.dart';
 import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
-import 'package:wine/infrastructure/settings/hive_settings.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
 import 'package:wine/infrastructure/settings/settings_dto.dart';
-import 'package:wine/utils/constants/boxes.dart';
 
 /// @nodoc
 @LazySingleton(
   as: ISettingsRepository,
-  env: [
-    Environment.dev,
-    Environment.prod,
-  ],
+  env: [Environment.dev, Environment.prod],
 )
 class SettingsRepository implements ISettingsRepository {
   /// @nodoc
   SettingsRepository(
     this._firebaseAuth,
-    this._hive,
+    this._isar,
   );
 
   final auth.FirebaseAuth _firebaseAuth;
-
-  /// @nodoc
-  final HiveInterface _hive;
+  final Isar _isar;
 
   @override
   Future<Result<Unit, SettingsFailure>> deleteSettings() async {
-    final box = await _hive.openBox<HiveSettings>(settingsBox);
-
     final firebaseUser = _firebaseAuth.currentUser;
 
     if (firebaseUser != null) {
-      await box.delete(firebaseUser.uid);
-    }
+      return _isar.writeTxn((isar) async {
+        final isDeleted = await isar.settings
+            .where()
+            .uidEqualTo(firebaseUser.uid)
+            .deleteFirst();
 
-    if (box.get(firebaseUser?.uid) != null) {
-      return Err(const SettingsFailure.settingsNotDeleted());
+        if (isDeleted) {
+          return Ok(unit);
+        }
+        return Err(const SettingsFailure.settingsNotDeleted());
+      });
     }
-    return Ok(unit);
+    return Err(const SettingsFailure.settingsNotDeleted());
   }
 
   @override
   Future<Result<Settings, SettingsFailure>> fetchSettings() async {
-    final box = await _hive.openBox<HiveSettings>(settingsBox);
-
     final firebaseUser = _firebaseAuth.currentUser;
 
-    final settings = box.get(firebaseUser?.uid);
+    if (firebaseUser != null) {
+      final settings =
+          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
 
-    if (settings != null) {
-      return Ok(settings.toDomain());
+      if (settings != null) {
+        return Ok(settings.toDomain());
+      }
     }
     return Err(const SettingsFailure.settingsNotFound());
   }
 
   @override
   Future<Result<Unit, SettingsFailure>> initializeSettings() async {
-    final box = await _hive.openBox<HiveSettings>(settingsBox);
-
     final firebaseUser = _firebaseAuth.currentUser;
 
-    const settings = Settings(
-      enableSeriesViewsCount: false,
-      enableSeriesLikesCount: false,
-      enableSeriesBookmarksCount: false,
-      enableChaptersViewsCount: false,
-      enableChaptersLikesCount: false,
-      enableChaptersBookmarksCount: false,
-    );
-
     if (firebaseUser != null) {
-      await box.put(
-        firebaseUser.uid,
-        SettingsDTO.fromDomain(settings).toAdapter(),
-      );
-    }
+      return _isar.writeTxn((isar) async {
+        final settings = await isar.settings
+            .where()
+            .uidEqualTo(firebaseUser.uid)
+            .findFirst();
 
-    if (box.get(firebaseUser?.uid) != null) {
-      return Ok(unit);
+        if (settings == null) {
+          await isar.settings.put(
+            SettingsDTO.fromDomain(
+              const Settings(
+                enableBranchesViewsCount: false,
+                enableBranchesLikesCount: false,
+                enableBranchesBookmarksCount: false,
+                enableTreesViewsCount: false,
+                enableTreesLikesCount: false,
+                enableTreesBookmarksCount: false,
+              ),
+            ).toAdapter().copyWith(uid: firebaseUser.uid),
+          );
+        }
+
+        return Ok(unit);
+      });
     }
     return Err(const SettingsFailure.settingsNotInitialized());
   }
@@ -92,18 +95,31 @@ class SettingsRepository implements ISettingsRepository {
   Future<Result<Unit, SettingsFailure>> updateSettings(
     Settings settings,
   ) async {
-    final box = await _hive.openBox<HiveSettings>(settingsBox);
-
     final firebaseUser = _firebaseAuth.currentUser;
 
-    final settingsAdapter = SettingsDTO.fromDomain(settings).toAdapter();
-
     if (firebaseUser != null) {
-      await box.put(firebaseUser.uid, settingsAdapter);
+      var isarSettings =
+          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
+
+      if (isarSettings == null) {
+        return Err(const SettingsFailure.settingsNotFound());
+      }
+
+      final settingsAdapter = SettingsDTO.fromDomain(settings)
+          .toAdapter()
+          .copyWith(id: isarSettings.id, uid: firebaseUser.uid);
+
+      await _isar.writeTxn((isar) async {
+        await isar.settings.put(settingsAdapter);
+      });
+
+      isarSettings =
+          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
+
+      if (isarSettings != null && isarSettings == settingsAdapter) {
+        return Ok(unit);
+      }
     }
-
-    if (box.get(firebaseUser?.uid) == settingsAdapter) return Ok(unit);
-
     return Err(const SettingsFailure.settingsNotUpdated());
   }
 }

@@ -24,7 +24,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     this._sessionsRepository,
     this._settingsRepository,
   ) : super(SettingsState.initial()) {
-    on<InitBloc>((_, emit) async {
+    on<Init>((_, emit) async {
       emit(
         state.copyWith(
           failureOption: const None(),
@@ -48,21 +48,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
       );
     });
-    on<LoggedOut>(
-      (_, emit) async => (await _sessionsRepository.createSession()).match(
-        (_) {
-          add(const SettingsEvent.sessionCreated());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      ),
-    );
     on<LogOutPressed>((_, emit) async {
       emit(
         state.copyWith(
@@ -85,8 +70,8 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
       );
     });
-    on<SessionCreated>(
-      (_, emit) async => (await _settingsRepository.initializeSettings()).match(
+    on<SessionDeleted>(
+      (_, emit) async => (await _authFacade.logOut()).match(
         (_) {
           emit(
             state.copyWith(
@@ -94,21 +79,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
               isProcessing: false,
             ),
           );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.settings(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      ),
-    );
-    on<SessionDeleted>(
-      (_, emit) async => (await _authFacade.logOut()).match(
-        (_) {
-          add(const SettingsEvent.loggedOut());
         },
         (failure) {
           emit(

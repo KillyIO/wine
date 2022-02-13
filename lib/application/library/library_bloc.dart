@@ -2,17 +2,19 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
+import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/branch/i_branch_repository.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/domain/series/i_series_repository.dart';
-import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/tree/i_tree_repository.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/utils/constants/library.dart';
 
+part 'library_bloc.freezed.dart';
 part 'library_event.dart';
 part 'library_state.dart';
-part 'library_bloc.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
@@ -21,13 +23,63 @@ part 'library_bloc.freezed.dart';
 class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
   /// @nodoc
   LibraryBloc(
-    this._seriesRepository,
+    this._branchRepository,
     this._sessionsRepository,
+    this._treeRepository,
   ) : super(LibraryState.initial()) {
-    on<ChapterDeleted>((value, emit) async {});
-    on<InitBloc>((_, emit) async {
+    on<BranchDeleted>((value, emit) async {
       emit(
         state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      final branches = state.branches
+          .where((s) => s.uid.getOrCrash() != value.uid.getOrCrash())
+          .toList();
+
+      emit(
+        state.copyWith(
+          branches: branches,
+          failureOption: const None(),
+          isProcessing: false,
+        ),
+      );
+    });
+    on<BranchUpdated>((value, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      final i = state.branches.indexWhere(
+        (e) => e.uid.getOrCrash() == value.branch.uid.getOrCrash(),
+      );
+
+      final branches = state.branches;
+
+      if (i == -1) {
+        branches.insert(0, value.branch);
+      } else {
+        branches[i] = value.branch;
+      }
+
+      emit(
+        state.copyWith(
+          branches: branches,
+          failureOption: const None(),
+          isProcessing: false,
+        ),
+      );
+    });
+    on<Init>((_, emit) async {
+      emit(
+        state.copyWith(
+          currentPageViewIdx: 0,
+          currentVerticalNavbarIdx: 0,
           failureOption: const None(),
           isProcessing: true,
         ),
@@ -54,7 +106,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         },
       );
     });
-    on<PageViewIndexChanged>((value, emit) {
+    on<PageViewIndexChanged>((value, emit) async {
       if (state.currentPageViewIdx != value.index) {
         var newIdx = value.index;
         if (value.index > libraryPageViewKeys.length - 1) {
@@ -72,14 +124,81 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
 
         switch (state.currentPageViewIdx) {
           case 0:
+            if (state.trees.isEmpty) {
+              (await _treeRepository.loadTreesByUserUID(state.session.uid))
+                  .match(
+                (trees) {
+                  emit(
+                    state.copyWith(
+                      failureOption: Option.none(),
+                      isProcessing: false,
+                      trees: trees,
+                    ),
+                  );
+                },
+                (failure) {
+                  emit(
+                    state.copyWith(
+                      failureOption:
+                          Option.some(Err(CoreFailure.tree(failure))),
+                      isProcessing: false,
+                    ),
+                  );
+                },
+              );
+            }
             break;
           case 1:
+            if (state.branches.isEmpty) {
+              (await _branchRepository.loadBranchesByUserUID(state.session.uid))
+                  .match(
+                (branches) {
+                  emit(
+                    state.copyWith(
+                      branches: branches,
+                      failureOption: Option.none(),
+                      isProcessing: false,
+                    ),
+                  );
+                },
+                (failure) {
+                  emit(
+                    state.copyWith(
+                      failureOption:
+                          Option.some(Err(CoreFailure.branch(failure))),
+                      isProcessing: false,
+                    ),
+                  );
+                },
+              );
+            }
             break;
           default:
         }
       }
     });
-    on<SeriesDeleted>((value, emit) async {
+    on<SessionFetched>((_, emit) async {
+      (await _treeRepository.loadTreesByUserUID(state.session.uid)).match(
+        (trees) {
+          emit(
+            state.copyWith(
+              failureOption: Option.none(),
+              isProcessing: false,
+              trees: trees,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<TreeDeleted>((value, emit) async {
       emit(
         state.copyWith(
           failureOption: const None(),
@@ -87,7 +206,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         ),
       );
 
-      final seriesList = state.seriesList
+      final trees = state.trees
           .where((s) => s.uid.getOrCrash() != value.uid.getOrCrash())
           .toList();
 
@@ -95,29 +214,31 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         state.copyWith(
           failureOption: const None(),
           isProcessing: false,
-          seriesList: seriesList,
+          trees: trees,
         ),
       );
     });
-    on<SessionFetched>((_, emit) async {
-      (await _seriesRepository.loadSeriesByUserID(state.session.uid)).match(
-        (series) {
-          emit(
-            state.copyWith(
-              failureOption: Option.none(),
-              isProcessing: false,
-              seriesList: series,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.series(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
+    on<TreeUpdated>((value, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      final i = state.trees.indexWhere(
+        (e) => e.uid.getOrCrash() == value.tree.uid.getOrCrash(),
+      );
+
+      final trees = state.trees;
+      trees[i] = value.tree;
+
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: false,
+          trees: trees,
+        ),
       );
     });
     on<VerticalNavbarIndexChanged>((value, emit) {
@@ -139,6 +260,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
     });
   }
 
-  final ISeriesRepository _seriesRepository;
+  final IBranchRepository _branchRepository;
   final ISessionsRepository _sessionsRepository;
+  final ITreeRepository _treeRepository;
 }

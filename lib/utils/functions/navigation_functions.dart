@@ -11,39 +11,26 @@ import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/web/auth_dialog.dart';
 
 /// @nodoc
-void handleAuthRedirect(
-  BuildContext context, {
+Future<void> handleAuthGuardedAction(
+  BuildContext context,
+  VoidCallback event, {
   required PageRouteInfo<dynamic> navigateTo,
-  bool useRoot = true,
-}) {
-  final mediaQuery = MediaQuery.of(context).size;
-  final deviceType = getDeviceType(mediaQuery);
+}) async {
+  final state = context.read<AuthBloc>().state;
 
-  // We do something for monile just in case...
-  if (deviceType == DeviceScreenType.mobile) {
-    if (useRoot) {
-      context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
-        ..router.root.replace(navigateTo);
-    } else {
-      context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
-        ..router.replace(navigateTo);
-    }
-  } else {
-    if (useRoot) {
-      context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
-        ..router.root.pop<bool>(true);
-    } else {
-      context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
-        ..router.pop<bool>(true);
-    }
-  }
+  await state.maybeMap(
+    authenticated: (_) {
+      event();
+    },
+    orElse: () async => handleAuthRedirect(
+      context,
+      navigateTo: navigateTo,
+      popUntil: true,
+    ),
+  );
 }
 
-/// @nodoc
+/// Redirect to the login page on registration required events.
 Future<void> handleAuthGuardedNavigation(
   BuildContext context, {
   required PageRouteInfo<dynamic> navigateTo,
@@ -106,4 +93,50 @@ Future<void> handleAuthGuardedNavigation(
       }
     },
   );
+}
+
+/// Manages how to redirect on different devices after authentication.
+void handleAuthRedirect(
+  BuildContext context, {
+  required PageRouteInfo<dynamic> navigateTo,
+  bool useRoot = true,
+  bool popUntil = false,
+}) {
+  final mediaQuery = MediaQuery.of(context).size;
+  final deviceType = getDeviceType(mediaQuery);
+
+  // We do something for mobile just in case...
+  if (deviceType == DeviceScreenType.mobile) {
+    if (useRoot) {
+      if (popUntil) {
+        context
+          ..read<AuthBloc>().add(const AuthEvent.authChanged())
+          ..router.root.popUntilRouteWithName(navigateTo.routeName);
+      } else {
+        context
+          ..read<AuthBloc>().add(const AuthEvent.authChanged())
+          ..router.root.replace(navigateTo);
+      }
+    } else {
+      if (popUntil) {
+        context
+          ..read<AuthBloc>().add(const AuthEvent.authChanged())
+          ..router.popUntilRouteWithName(navigateTo.routeName);
+      } else {
+        context
+          ..read<AuthBloc>().add(const AuthEvent.authChanged())
+          ..router.replace(navigateTo);
+      }
+    }
+  } else {
+    if (useRoot) {
+      context
+        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        ..router.root.pop<bool>(true);
+    } else {
+      context
+        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        ..router.pop<bool>(true);
+    }
+  }
 }
