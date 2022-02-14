@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/domain/tree/tree.dart';
+import 'package:wine/presentation/home/home_trees_ayout.dart';
 
 /// @nodoc
 class HomePageViewBuilder extends StatelessWidget {
   /// @nodoc
-  HomePageViewBuilder({
+  const HomePageViewBuilder({
     Key? key,
     required this.controller,
   }) : super(key: key);
@@ -13,19 +15,28 @@ class HomePageViewBuilder extends StatelessWidget {
   /// @nodoc
   final PageController controller;
 
-  // TODO(SSebigo): add real layouts
-  final List<Widget> _pageViewLayouts = <Widget>[Container(), Container()];
-
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: PageView.builder(
-        controller: controller,
-        itemBuilder: (context, index) =>
-            _pageViewLayouts[index % _pageViewLayouts.length],
-        onPageChanged: (index) => context.read<HomeBloc>().add(
-              HomeEvent.pageViewIndexChanged(index % _pageViewLayouts.length),
-            ),
+      child: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          return PageView.builder(
+            controller: controller,
+            itemBuilder: (_, i) => [
+              HomeTreesLayout(
+                timeKey: state.timeFilterKey,
+                trees: state.topTrees,
+              ),
+              HomeTreesLayout(
+                timeKey: state.timeFilterKey,
+                trees: state.newTrees,
+              ),
+            ][i % 2],
+            onPageChanged: (i) => context
+                .read<HomeBloc>()
+                .add(HomeEvent.pageViewIndexChanged(i % 2)),
+          );
+        },
       ),
     );
   }

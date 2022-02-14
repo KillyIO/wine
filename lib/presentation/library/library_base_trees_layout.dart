@@ -54,7 +54,7 @@ class LibraryBaseTreesLayout extends StatelessWidget {
         }
         return ScrollConfiguration(
           behavior: const ScrollBehavior(),
-          child: MasonryGridView.count(
+          child: AlignedGridView.count(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 20,
