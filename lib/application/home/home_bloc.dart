@@ -32,36 +32,50 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       final currentLocale =
           (await Devicelocale.currentLocale)?.split(RegExp('[_-]')).first;
 
-      final time = timeFiltersTimestamps['today'];
       final genre = state.genreFilterKey;
       final language = currentLocale ?? 'en';
 
-      (await _treeRepository.loadTopTrees(
-        <String, dynamic>{
-          'time': time,
-          'genre': genre,
-          'language': language,
-        },
-      ))
-          .match(
-        (_) {
-          emit(
-            state.copyWith(
-              genreFilterKey: genre,
-              languageFilterKey: language,
-              timeFilterKey: 'today',
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.tree(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
+      emit(
+        state.copyWith(
+          genreFilterKey: genre,
+          languageFilterKey: language,
+        ),
       );
+
+      for (final time in timeFilterKeys) {
+        (await _treeRepository.loadTopTrees(
+          <String, dynamic>{
+            'time': timeFiltersTimestamps[time],
+            'genre': genre,
+            'language': language,
+          },
+        ))
+            .match(
+          (trees) {
+            // Sort trees to get the most liked first
+            trees.sort((t1, t2) => t2.likesCount.compareTo(t1.likesCount));
+
+            emit(
+              state.copyWith(
+                timeFilterKey: time,
+                topTrees: trees,
+              ),
+            );
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.tree(failure))),
+                isProcessing: false,
+              ),
+            );
+          },
+        );
+
+        if (state.topTrees.isNotEmpty) {
+          break;
+        }
+      }
     });
     on<LoadNewTree>((_, emit) {});
     on<LoadTopTree>((_, emit) {});
