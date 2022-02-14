@@ -146,17 +146,31 @@ class TreeRepository implements ITreeRepository {
     UniqueID? lastTreeUID,
   }) async {
     try {
-      var query = _firestore
-          .collection(treesPath)
-          .where('isPublish', isEqualTo: true)
-          .where('language', isEqualTo: filters['language']);
+      final treesCollection = _firestore.collection(treesPath);
 
-      if ((filters['genre'] as String).isNotEmpty) {
-        query = query.where('genre', isEqualTo: filters['genre']);
+      Query? query;
+      if (lastTreeUID != null) {
+        final lastDocument =
+            await treesCollection.doc(lastTreeUID.getOrCrash()).get();
+
+        query = treesCollection
+            .startAfterDocument(lastDocument)
+            .where('isPublished', isEqualTo: true);
+      } else {
+        query = treesCollection.where('isPublished', isEqualTo: true);
       }
 
+      query = query.where('language', isEqualTo: filters['language']);
+
+      if ((filters['genre'] as String).isNotEmpty) {
+        query = query.where('genre', arrayContains: filters['genre']);
+      }
+
+      final timestamp =
+          Timestamp.fromMillisecondsSinceEpoch(filters['time'] as int);
+
       final snapshot = await query
-          .where('updatedAt', isGreaterThanOrEqualTo: filters['time'])
+          .where('updatedAt', isGreaterThanOrEqualTo: timestamp)
           .orderBy('updatedAt')
           .orderBy('likesCount', descending: true)
           .limit(20)
