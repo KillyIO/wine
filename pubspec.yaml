@@ -10,42 +10,41 @@ environment:
 
 dependencies:
   assorted_layout_widgets: ^5.5.0
-  auto_route: ^3.2.2
+  auto_route: ^3.2.3+1
   cached_network_image: ^3.2.0
-  cloud_firestore: ^3.1.7
+  cloud_firestore: ^3.1.8
   cupertino_icons: ^1.0.4
   devicelocale: ^0.5.0
   equatable: ^2.0.3
-  firebase_auth: ^3.3.6
+  firebase_auth: ^3.3.7
   firebase_core: ^1.12.0
-  firebase_storage: ^10.2.6
+  firebase_storage: ^10.2.7
   flare_flutter: ^3.0.2
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
-  flutter_native_splash: ^2.0.2
-  flutter_quill: ^3.9.9
+  flutter_native_splash: ^2.0.4
+  flutter_quill: ^4.0.1
   flutter_staggered_grid_view: ^0.6.1
   freezed_annotation: ^1.1.0
   get_it: ^7.2.0
   google_sign_in: ^5.2.3
   image_cropper: ^1.4.1
-  image_picker: ^0.8.4+6
+  image_picker: ^0.8.4+8
   injectable: ^1.5.3
   intl: ^0.17.0
-  introduction_screen: ^2.1.0
-  isar: ^2.1.4
-  isar_flutter_libs: ^2.1.4
+  isar: ^2.2.0+1
+  isar_flutter_libs: ^2.2.0+1
   json_annotation: ^4.4.0
   like_button: ^2.0.4
   line_icons: ^2.0.1
   logger: ^1.1.0
   measured_size: ^1.0.0
-  oxidized: ^5.1.0
-  path_provider: ^2.0.8
+  oxidized: ^5.2.0
+  path_provider: ^2.0.9
   percent_indicator: ^4.0.0
   readmore: ^2.1.0
-  responsive_builder: ^0.4.1
+  responsive_builder: ^0.4.2
   shimmer: ^2.0.0
   simple_gesture_detector: ^0.2.0
   string_validator: ^0.3.0
@@ -57,17 +56,17 @@ dependency_overrides:
   analyzer: ^3.2.0
 
 dev_dependencies:
-  auto_route_generator: ^3.2.1
+  auto_route_generator: ^3.2.3
   bloc_test: ^9.0.2
   build_runner: ^2.1.7
   fake_cloud_firestore: ^1.2.0
   flutter_flavorizr: ^2.1.2
+  flutter_launcher_icons_maker: ^0.10.2
   flutter_test:
     sdk: flutter
-  fluttericon: ^2.0.0
   freezed: ^1.1.1
   injectable_generator: ^1.5.3
-  isar_generator: ^2.1.4
+  isar_generator: ^2.2.0+1
   json_serializable: ^6.1.4
   mocktail: ^0.2.0
   very_good_analysis: ^2.4.0
@@ -102,6 +101,13 @@ flavorizr:
       ios:
         bundleId: "io.killy.wine"
         generateDummyAssets: false
+
+# Add macos & windows when ready
+flutter_icons:
+  android: true
+  ios: true
+  web: true
+  image_path: "assets/launcher/ic_launcher.png"
 
 flutter:
   uses-material-design: true
