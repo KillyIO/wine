@@ -1,23 +1,19 @@
-# wine
+## A collaborative social reading platorm.
 
-Collaborative story writing app based on a tree of possibilities.
+[![license](https://img.shields.io/crates/l/wine)](https://github.com/KillyIO/wine/blob/main/LICENSE)
 
-## Getting Started
+The idea for users to write next **branches**.
 
-This project is a starting point for a Flutter application.
+This way it is possible to create an infinite amount of alternative stories (*a tree of possiblities*).
 
-A few resources to get you started if this is your first Flutter project:
+### Features
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [X] create, update and delete a **tree**
+- [X] create, update and delete a **branch**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## For web (not available)
 
-## For web
-
-Create a file ```web/index.html``` and copy the ```html``` code below into it, make sure to provide your Google ```client id```.
+Create file ```web/index.html``` and copy the code below.
 
 <details>
 <summary>index.html</summary>
@@ -129,13 +125,15 @@ Create a file ```web/index.html``` and copy the ```html``` code below into it, m
 ```
 </details>
 
+> Because [Isar](https://pub.dev/packages/isar) does not support web *yet*, so does **WINE**.
+
 
 ## VSCode launch config
 
-If you would like to launch ```wine``` from VSCode, copy the config below into ```.vscode/launch.json```.
+If you'd like to launch **WINE** from VSCode, copy the config below into ```.vscode/launch.json```.
 
 <details>
-<summary>config</summary>
+<summary>launch.json</summary>
 
 ```json
 {
@@ -180,3 +178,10 @@ If you would like to launch ```wine``` from VSCode, copy the config below into `
 }
 ```
 </details>
+
+### Misc
+
+|WINE wording   |Common wording   |
+|---------------|-----------------|
+|branch         |chapter/story    |
+|tree           |series           |
