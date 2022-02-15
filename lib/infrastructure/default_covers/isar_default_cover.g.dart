@@ -6,7 +6,7 @@ part of 'isar_default_cover.dart';
 // IsarCollectionGenerator
 // **************************************************************************
 
-// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast
 
 extension GetIsarDefaultCoverCollection on Isar {
   IsarCollection<IsarDefaultCover> get defaultCovers {
@@ -17,10 +17,12 @@ extension GetIsarDefaultCoverCollection on Isar {
 final IsarDefaultCoverSchema = CollectionSchema(
   name: 'IsarDefaultCover',
   schema:
-      '{"name":"IsarDefaultCover","properties":[{"name":"hashCode","type":"Long"},{"name":"key","type":"String"},{"name":"stringify","type":"Byte"},{"name":"url","type":"String"}],"indexes":[{"name":"key","unique":false,"properties":[{"name":"key","type":"Hash","caseSensitive":true}]}],"links":[]}',
-  adapter: const _IsarDefaultCoverAdapter(),
+      '{"name":"IsarDefaultCover","idName":"id","properties":[{"name":"hashCode","type":"Long"},{"name":"key","type":"String"},{"name":"stringify","type":"Bool"},{"name":"url","type":"String"}],"indexes":[{"name":"key","unique":false,"properties":[{"name":"key","type":"Hash","caseSensitive":true}]}],"links":[]}',
+  nativeAdapter: const _IsarDefaultCoverNativeAdapter(),
+  webAdapter: const _IsarDefaultCoverWebAdapter(),
   idName: 'id',
   propertyIds: {'hashCode': 0, 'key': 1, 'stringify': 2, 'url': 3},
+  listProperties: {},
   indexIds: {'key': 0},
   indexTypes: {
     'key': [
@@ -30,39 +32,96 @@ final IsarDefaultCoverSchema = CollectionSchema(
   linkIds: {},
   backlinkIds: {},
   linkedCollections: [],
-  getId: (obj) => obj.id,
+  getId: (obj) {
+    if (obj.id == Isar.autoIncrement) {
+      return null;
+    } else {
+      return obj.id;
+    }
+  },
   setId: null,
   getLinks: (obj) => [],
-  version: 1,
+  version: 2,
 );
 
-class _IsarDefaultCoverAdapter extends IsarTypeAdapter<IsarDefaultCover> {
-  const _IsarDefaultCoverAdapter();
+class _IsarDefaultCoverWebAdapter extends IsarWebTypeAdapter<IsarDefaultCover> {
+  const _IsarDefaultCoverWebAdapter();
+
+  @override
+  Object serialize(
+      IsarCollection<IsarDefaultCover> collection, IsarDefaultCover object) {
+    final jsObj = IsarNative.newJsObject();
+    IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
+    IsarNative.jsObjectSet(jsObj, 'id', object.id);
+    IsarNative.jsObjectSet(jsObj, 'key', object.key);
+    IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
+    IsarNative.jsObjectSet(jsObj, 'url', object.url);
+    return jsObj;
+  }
+
+  @override
+  IsarDefaultCover deserialize(
+      IsarCollection<IsarDefaultCover> collection, dynamic jsObj) {
+    final object = IsarDefaultCover(
+      id: IsarNative.jsObjectGet(jsObj, 'id'),
+      key: IsarNative.jsObjectGet(jsObj, 'key') ?? '',
+      url: IsarNative.jsObjectGet(jsObj, 'url') ?? '',
+    );
+    return object;
+  }
+
+  @override
+  P deserializeProperty<P>(Object jsObj, String propertyName) {
+    switch (propertyName) {
+      case 'hashCode':
+        return (IsarNative.jsObjectGet(jsObj, 'hashCode') ??
+            double.negativeInfinity) as P;
+      case 'id':
+        return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
+      case 'key':
+        return (IsarNative.jsObjectGet(jsObj, 'key') ?? '') as P;
+      case 'stringify':
+        return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
+      case 'url':
+        return (IsarNative.jsObjectGet(jsObj, 'url') ?? '') as P;
+      default:
+        throw 'Illegal propertyName';
+    }
+  }
+
+  @override
+  void attachLinks(Isar isar, int id, IsarDefaultCover object) {}
+}
+
+class _IsarDefaultCoverNativeAdapter
+    extends IsarNativeTypeAdapter<IsarDefaultCover> {
+  const _IsarDefaultCoverNativeAdapter();
 
   @override
   void serialize(
       IsarCollection<IsarDefaultCover> collection,
       IsarRawObject rawObj,
       IsarDefaultCover object,
+      int staticSize,
       List<int> offsets,
       AdapterAlloc alloc) {
     var dynamicSize = 0;
     final value0 = object.hashCode;
     final _hashCode = value0;
     final value1 = object.key;
-    final _key = BinaryWriter.utf8Encoder.convert(value1);
-    dynamicSize += _key.length;
+    final _key = IsarBinaryWriter.utf8Encoder.convert(value1);
+    dynamicSize += (_key.length) as int;
     final value2 = object.stringify;
     final _stringify = value2;
     final value3 = object.url;
-    final _url = BinaryWriter.utf8Encoder.convert(value3);
-    dynamicSize += _url.length;
-    final size = dynamicSize + 27;
+    final _url = IsarBinaryWriter.utf8Encoder.convert(value3);
+    dynamicSize += (_url.length) as int;
+    final size = staticSize + dynamicSize;
 
     rawObj.buffer = alloc(size);
     rawObj.buffer_length = size;
-    final buffer = bufAsBytes(rawObj.buffer, size);
-    final writer = BinaryWriter(buffer, 27);
+    final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
+    final writer = IsarBinaryWriter(buffer, staticSize);
     writer.writeLong(offsets[0], _hashCode);
     writer.writeBytes(offsets[1], _key);
     writer.writeBool(offsets[2], _stringify);
@@ -71,7 +130,7 @@ class _IsarDefaultCoverAdapter extends IsarTypeAdapter<IsarDefaultCover> {
 
   @override
   IsarDefaultCover deserialize(IsarCollection<IsarDefaultCover> collection,
-      int id, BinaryReader reader, List<int> offsets) {
+      int id, IsarBinaryReader reader, List<int> offsets) {
     final object = IsarDefaultCover(
       id: id,
       key: reader.readString(offsets[1]),
@@ -82,7 +141,7 @@ class _IsarDefaultCoverAdapter extends IsarTypeAdapter<IsarDefaultCover> {
 
   @override
   P deserializeProperty<P>(
-      int id, BinaryReader reader, int propertyIndex, int offset) {
+      int id, IsarBinaryReader reader, int propertyIndex, int offset) {
     switch (propertyIndex) {
       case -1:
         return id as P;
@@ -98,6 +157,9 @@ class _IsarDefaultCoverAdapter extends IsarTypeAdapter<IsarDefaultCover> {
         throw 'Illegal propertyIndex';
     }
   }
+
+  @override
+  void attachLinks(Isar isar, int id, IsarDefaultCover object) {}
 }
 
 extension IsarDefaultCoverQueryWhereSort
