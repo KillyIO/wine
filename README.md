@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/KillyIO/wine/blob/main/assets/launcher/ic_launcher.png" width="250" height="250">
+  <img src="https://github.com/KillyIO/wine/blob/main/assets/launcher/ic_launcher.png" width="200" height="200">
 </p>
 
 ---
@@ -231,7 +231,7 @@ Create file ```web/index.html``` and copy the code below:
 ```
 </details>
 
-> Unstable [Isar](https://pub.dev/packages/isar) web still beta.
+> Unstable, [Isar](https://pub.dev/packages/isar) web is still beta.
 
 
 ## VSCode launch config
