@@ -7,7 +7,7 @@
 ## A collaborative social reading platorm.
 
 [![license](https://img.shields.io/crates/l/wine)](https://github.com/KillyIO/wine/blob/main/LICENSE)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md) 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 The idea is for users to write next **branches**.
 
