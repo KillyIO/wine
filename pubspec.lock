@@ -525,7 +525,7 @@ packages:
     source: hosted
     version: "0.10.2"
   flutter_native_splash:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: flutter_native_splash
       url: "https://pub.dartlang.org"
