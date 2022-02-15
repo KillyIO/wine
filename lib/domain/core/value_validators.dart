@@ -1,123 +1,156 @@
-import 'package:dartz/dartz.dart';
-import 'package:flutter_stringprocess/flutter_stringprocess.dart';
-import 'package:wine/domain/core/failures.dart';
-import 'package:wine/utils/constants.dart';
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:oxidized/oxidized.dart';
+import 'package:string_validator/string_validator.dart';
+import 'package:stringr/stringr.dart';
+
+import 'package:wine/domain/core/value_failure.dart';
+import 'package:wine/infrastructure/core/string_helpers.dart';
+import 'package:wine/utils/constants/branch.dart';
+import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/tree.dart';
 
 /// @nodoc
-final StringProcessor tps = StringProcessor();
-
-/// @nodoc
-Either<ValueFailure<String>, String> validateEmailAddress(String input) {
-  const emailRegex =
-      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-  if (RegExp(emailRegex).hasMatch(input)) {
-    return right(input);
-  } else {
-    return left(ValueFailure.invalidEmailAddress(failedValue: input));
+Result<String, ValueFailure<String>> validateConfirmPassword(
+  String input,
+  String input2,
+) {
+  if (input == input2) {
+    return Ok(input);
   }
+  return Err(ValueFailure.invalidConfirmPassword(input));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validatePassword(
-  String input, [
-  String input2,
-]) {
+Result<String, ValueFailure<String>> validateCoverFile(String path) {
+  final isImage = path.isImage;
+
+  if (isImage != null && isImage && File(path).existsSync()) {
+    return Ok(path);
+  }
+  return Err(ValueFailure.invalidCoverFile(path));
+}
+
+/// @nodoc
+Result<String, ValueFailure<String>> validateCoverURL(String input) {
+  if (isURL(input)) {
+    return Ok(input);
+  }
+  return Err(ValueFailure.invalidCoverURL(input));
+}
+
+/// @nodoc
+Result<String, ValueFailure<String>> validateEmailAddress(String input) {
+  if (isEmail(input)) {
+    return Ok(input);
+  }
+  return Err(ValueFailure.invalidEmailAddress(input));
+}
+
+/// @nodoc
+Result<String, ValueFailure<String>> validateLeaf(
+  String input,
+  List<dynamic> json,
+) {
+  if (input.isEmpty) {
+    return Err(ValueFailure.emptyInput(jsonEncode(json)));
+  }
+  if (input.countWords() < leafMinWords) {
+    return Err(ValueFailure.tooShortInput(jsonEncode(json)));
+  }
+  if (input.countWords() > leafMaxWords) {
+    return Err(ValueFailure.tooLongInput(jsonEncode(json)));
+  }
+  return Ok(jsonEncode(json));
+}
+
+/// @nodoc
+Result<String, ValueFailure<String>> validatePassword(String input) {
   const passwordRegex =
       r'^(?=.*\d)(?=.*[~!@#$%^&*()_\-+=|\\{}[\]:;<>?/])(?=.*[A-Z])(?=.*[a-z])\S{6,256}$';
-  if (input2 != null) {
-    if (RegExp(passwordRegex).hasMatch(input) && input == input2) {
-      return right(input);
-    } else {
-      return left(ValueFailure.invalidConfirmPassword(failedValue: input));
-    }
-  } else {
-    if (RegExp(passwordRegex).hasMatch(input)) {
-      return right(input);
-    } else {
-      return left(ValueFailure.invalidPassword(failedValue: input));
-    }
+  if (RegExp(passwordRegex).hasMatch(input)) {
+    return Ok(input);
   }
+  return Err(ValueFailure.invalidPassword(input));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateUsername(String input) {
-  if (input != null && input.isNotEmpty) {
-    return right(input);
-  } else {
-    return left(ValueFailure.invalidUsername(failedValue: input));
+Result<String, ValueFailure<String>> validateSelectionNotEmpty(String input) {
+  if (input.isNotEmpty) {
+    return Ok(input);
   }
+  return Err(ValueFailure.emptySelection(input));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateTitle(String input) {
-  if (input == null || input.isEmpty) {
-    return left(ValueFailure.emptyInput(failedValue: input));
-  } else if (tps.getWordCount(input) > Constants.seriesTitleMaxWords) {
-    return left(ValueFailure.longInput(failedValue: input));
-  } else {
-    return right(input);
+Result<String, ValueFailure<String>> validateSubtitle(String input) {
+  if (input.countWords() > subtitleMaxWords) {
+    return Err(ValueFailure.tooLongInput(input));
   }
+  return Ok(input);
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateSubtitle(String input) {
-  if (tps.getWordCount(input) > Constants.seriesSubtitleMaxWords) {
-    return left(ValueFailure.longInput(failedValue: input));
-  } else {
-    return right(input);
+Result<String, ValueFailure<String>> validateSynopsis(String input) {
+  if (input.isEmpty) {
+    return Err(ValueFailure.emptyInput(input));
+  } else if (input.countWords() > synopsisMaxWords) {
+    return Err(ValueFailure.tooLongInput(input));
   }
+  return Ok(input);
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateSummary(String input) {
-  if (input == null || input.isEmpty) {
-    return left(ValueFailure.emptyInput(failedValue: input));
-  } else if (tps.getWordCount(input) > Constants.seriesSummaryMaxWords) {
-    return left(ValueFailure.longInput(failedValue: input));
-  } else {
-    return right(input);
+Result<String, ValueFailure<String>> validateTitle(String input) {
+  if (input.isEmpty) {
+    return Err(ValueFailure.emptyInput(input));
+  } else if (input.countWords() > titleMaxWords) {
+    return Err(ValueFailure.tooLongInput(input));
   }
+  return Ok(input);
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateGenre(
-  String input, {
-  bool isOptional,
-}) {
-  if ((input != null && input.isNotEmpty) || isOptional) {
-    return right(input);
-  } else {
-    return left(ValueFailure.emptySelection(failedValue: input));
+Result<String, ValueFailure<String>> validateUniqueID(String input) {
+  if (input.isNotEmpty) {
+    return Ok(input);
   }
+  return Err(ValueFailure.invalidUniqueID(input));
 }
 
-/// @nodoc
-Either<ValueFailure<String>, String> validateLanguage(String input) {
-  if (input != null && input.isNotEmpty) {
-    return right(input);
-  } else {
-    return left(ValueFailure.emptySelection(failedValue: input));
-  }
-}
+/// List of potentially malicious usernames.
+/// Blacklisted usernames.
+final maliciousUsernames = <String>[
+  'root',
+  'admin',
+  'user',
+  'test',
+  'ubuntu',
+  'ubnt',
+  'support',
+  'oracle',
+  'pi',
+  'guest',
+  'postgres',
+  'ftpuser',
+  'usuario',
+  'nagios',
+  '1234',
+  'ftp',
+  'operator',
+  'git',
+  'hadoop',
+  'ts3',
+];
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateCopyrights(String input) {
-  if (input != null && input.isNotEmpty) {
-    return right(input);
-  } else {
-    return left(ValueFailure.emptySelection(failedValue: input));
+Result<String, ValueFailure<String>> validateUsername(String input) {
+  if (input.isNotEmpty &&
+      RegExp(r'^(?=[a-zA-Z0-9._]{4,32}$)(?!.*[_.]{2})[^_.].*[^_.]$')
+          .hasMatch(input) &&
+      !maliciousUsernames.contains(input)) {
+    return Ok(input);
   }
-}
-
-/// @nodoc
-Either<ValueFailure<String>, String> validateStory(String input) {
-  if (input == null || input.isEmpty) {
-    return left(ValueFailure.emptyInput(failedValue: input));
-  } else if (tps.getWordCount(input) < Constants.chapterStoryMinWords) {
-    return left(ValueFailure.shortInput(failedValue: input));
-  } else if (tps.getWordCount(input) > Constants.chapterStoryMaxWords) {
-    return left(ValueFailure.longInput(failedValue: input));
-  } else {
-    return right(input);
-  }
+  return Err(ValueFailure.invalidUsername(input));
 }

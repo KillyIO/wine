@@ -1,31 +1,34 @@
-/// Build flavors.
+/// @nodoc
 enum Flavor {
-  /// Build for beta testers.
-  beta,
-
-  /// Build for developers and internal testing.
+  /// @nodoc
   development,
 
-  /// Build for final users.
+  /// @nodoc
   production,
 }
 
-/// [F] is class containing values that depend on the build type.
+/// @nodoc
+extension FlavorName on Flavor {
+  /// @nodoc
+  String get name => toString().split('.').last;
+}
+
+/// @nodoc
 class F {
   /// @nodoc
-  static Flavor appFlavor;
+  static Flavor? appFlavor;
 
-  /// App title.
+  /// @nodoc
+  static String get name => appFlavor?.name ?? '';
+
+  /// @nodoc
   static String get title {
     switch (appFlavor) {
-      case Flavor.beta:
-        return 'WINE Beta';
       case Flavor.development:
         return 'WINE Dev';
       case Flavor.production:
+      case null:
         return 'WINE';
-      default:
-        return 'title';
     }
   }
 }

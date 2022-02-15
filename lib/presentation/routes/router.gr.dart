@@ -1,262 +1,522 @@
+// **************************************************************************
+// AutoRouteGenerator
+// **************************************************************************
+
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
+//
+// ignore_for_file: type=lint
 
-// ignore_for_file: public_member_api_docs
+import 'package:auto_route/auto_route.dart' as _i14;
+import 'package:flutter/foundation.dart' as _i16;
+import 'package:flutter/material.dart' as _i15;
+import 'package:wine/domain/branch/branch.dart' as _i17;
+import 'package:wine/domain/core/typewriter_type.dart' as _i19;
+import 'package:wine/domain/tree/tree.dart' as _i18;
+import 'package:wine/presentation/branch/branch_page.dart' as _i1;
+import 'package:wine/presentation/home/home_page.dart' as _i2;
+import 'package:wine/presentation/library/library_page.dart' as _i3;
+import 'package:wine/presentation/log_in/log_in_page.dart' as _i4;
+import 'package:wine/presentation/plus/plus_page.dart' as _i5;
+import 'package:wine/presentation/settings/settings_account/settings_account_page.dart'
+    as _i10;
+import 'package:wine/presentation/settings/settings_branch/settings_branch_page.dart'
+    as _i11;
+import 'package:wine/presentation/settings/settings_page.dart' as _i13;
+import 'package:wine/presentation/settings/settings_tree/settings_tree_page.dart'
+    as _i12;
+import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i8;
+import 'package:wine/presentation/tree/tree_page.dart' as _i6;
+import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i9;
+import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i7;
 
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+class AppRouter extends _i14.RootStackRouter {
+  AppRouter([_i15.GlobalKey<_i15.NavigatorState>? navigatorKey])
+      : super(navigatorKey);
 
-import '../../domain/enums/editor_content_origin.dart';
-import '../../domain/models/chapter.dart';
-import '../../domain/models/series.dart';
-import '../pages/chapter_editor_page.dart';
-import '../pages/chapter_page.dart';
-import '../pages/chapter_settings_page.dart';
-import '../pages/copyrights_page.dart';
-import '../pages/create_account_page.dart';
-import '../pages/genres_page.dart';
-import '../pages/home_page.dart';
-import '../pages/library_page.dart';
-import '../pages/onboarding_page.dart';
-import '../pages/plus_page.dart';
-import '../pages/series_editor_page.dart';
-import '../pages/series_page.dart';
-import '../pages/series_settings_page.dart';
-import '../pages/settings_page.dart';
-import '../pages/sign_in_page.dart';
-import '../pages/splash_page.dart';
-import '../pages/verify_email_page.dart';
-
-class Routes {
-  static const String chapterEditorPage = '/chapter-editor-page';
-  static const String chapterPage = '/chapter-page';
-  static const String chapterSettingsPage = '/chapter-settings-page';
-  static const String copyrightsPage = '/copyrights-page';
-  static const String createAccountPage = '/create-account-page';
-  static const String genresPage = '/genres-page';
-  static const String homePage = '/home-page';
-  static const String libraryPage = '/library-page';
-  static const String seriesEditorPage = '/series-editor-page';
-  static const String onboardingPage = '/onboarding-page';
-  static const String plusPage = '/plus-page';
-  static const String seriesPage = '/series-page';
-  static const String seriesSettingsPage = '/series-settings-page';
-  static const String settingsPage = '/settings-page';
-  static const String signInPage = '/sign-in-page';
-  static const String splashPage = '/';
-  static const String verifyEmailPage = '/verify-email-page';
-  static const all = <String>{
-    chapterEditorPage,
-    chapterPage,
-    chapterSettingsPage,
-    copyrightsPage,
-    createAccountPage,
-    genresPage,
-    homePage,
-    libraryPage,
-    seriesEditorPage,
-    onboardingPage,
-    plusPage,
-    seriesPage,
-    seriesSettingsPage,
-    settingsPage,
-    signInPage,
-    splashPage,
-    verifyEmailPage,
+  @override
+  final Map<String, _i14.PageFactory> pagesMap = {
+    BranchRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<BranchRouteArgs>(
+          orElse: () => BranchRouteArgs(uid: pathParams.getString('id')));
+      return _i14.AdaptivePage<_i1.BranchPage>(
+          routeData: routeData,
+          child: _i1.BranchPage(
+              key: args.key, branch: args.branch, uid: args.uid));
+    },
+    HomeRoute.name: (routeData) {
+      return _i14.AdaptivePage<_i2.HomePage>(
+          routeData: routeData, child: const _i2.HomePage());
+    },
+    LibraryRoute.name: (routeData) {
+      return _i14.AdaptivePage<_i3.LibraryPage>(
+          routeData: routeData, child: const _i3.LibraryPage());
+    },
+    LogInRoute.name: (routeData) {
+      final args = routeData.argsAs<LogInRouteArgs>();
+      return _i14.AdaptivePage<_i4.LogInPage>(
+          routeData: routeData,
+          child: _i4.LogInPage(key: args.key, navigateTo: args.navigateTo));
+    },
+    PlusRoute.name: (routeData) {
+      return _i14.AdaptivePage<_i5.PlusPage>(
+          routeData: routeData, child: const _i5.PlusPage());
+    },
+    TreeRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TreeRouteArgs>(
+          orElse: () => TreeRouteArgs(uid: pathParams.getString('id')));
+      return _i14.AdaptivePage<_i6.TreePage>(
+          routeData: routeData,
+          child: _i6.TreePage(key: args.key, uid: args.uid, tree: args.tree));
+    },
+    SettingsWrapper.name: (routeData) {
+      return _i14.AdaptivePage<_i7.SettingsWrapper>(
+          routeData: routeData, child: const _i7.SettingsWrapper());
+    },
+    SignUpRoute.name: (routeData) {
+      final args = routeData.argsAs<SignUpRouteArgs>();
+      return _i14.AdaptivePage<_i8.SignUpPage>(
+          routeData: routeData,
+          child: _i8.SignUpPage(key: args.key, navigateTo: args.navigateTo));
+    },
+    TypewriterBranchUID.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TypewriterBranchUIDArgs>(
+          orElse: () =>
+              TypewriterBranchUIDArgs(uid: pathParams.optString('id')));
+      return _i14.AdaptivePage<_i9.TypewriterPage>(
+          routeData: routeData,
+          child: _i9.TypewriterPage(
+              key: args.key,
+              branch: args.branch,
+              uid: args.uid,
+              tree: args.tree,
+              type: args.type));
+    },
+    TypewriterBranchNew.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TypewriterBranchNewArgs>(
+          orElse: () =>
+              TypewriterBranchNewArgs(uid: pathParams.optString('id')));
+      return _i14.AdaptivePage<_i9.TypewriterPage>(
+          routeData: routeData,
+          child: _i9.TypewriterPage(
+              key: args.key,
+              branch: args.branch,
+              uid: args.uid,
+              tree: args.tree,
+              type: args.type));
+    },
+    TypewriterTreeUID.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TypewriterTreeUIDArgs>(
+          orElse: () => TypewriterTreeUIDArgs(uid: pathParams.optString('id')));
+      return _i14.AdaptivePage<_i9.TypewriterPage>(
+          routeData: routeData,
+          child: _i9.TypewriterPage(
+              key: args.key,
+              branch: args.branch,
+              uid: args.uid,
+              tree: args.tree,
+              type: args.type));
+    },
+    TypewriterTreeNew.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TypewriterTreeNewArgs>(
+          orElse: () => TypewriterTreeNewArgs(uid: pathParams.optString('id')));
+      return _i14.AdaptivePage<_i9.TypewriterPage>(
+          routeData: routeData,
+          child: _i9.TypewriterPage(
+              key: args.key,
+              branch: args.branch,
+              uid: args.uid,
+              tree: args.tree,
+              type: args.type));
+    },
+    SettingsAccountRoute.name: (routeData) {
+      return _i14.AdaptivePage<_i10.SettingsAccountPage>(
+          routeData: routeData, child: const _i10.SettingsAccountPage());
+    },
+    SettingsBranchRoute.name: (routeData) {
+      return _i14.AdaptivePage<_i11.SettingsBranchPage>(
+          routeData: routeData, child: const _i11.SettingsBranchPage());
+    },
+    SettingsTreeRoute.name: (routeData) {
+      return _i14.AdaptivePage<_i12.SettingsTreePage>(
+          routeData: routeData, child: const _i12.SettingsTreePage());
+    },
+    SettingsRoute.name: (routeData) {
+      return _i14.AdaptivePage<_i13.SettingsPage>(
+          routeData: routeData, child: const _i13.SettingsPage());
+    }
   };
+
+  @override
+  List<_i14.RouteConfig> get routes => [
+        _i14.RouteConfig(BranchRoute.name, path: '/branch/:id'),
+        _i14.RouteConfig(HomeRoute.name, path: '/'),
+        _i14.RouteConfig(LibraryRoute.name, path: '/library'),
+        _i14.RouteConfig(LogInRoute.name, path: '/log-in'),
+        _i14.RouteConfig(PlusRoute.name, path: '/plus'),
+        _i14.RouteConfig(TreeRoute.name, path: '/tree/:id'),
+        _i14.RouteConfig(SettingsWrapper.name, path: '/settings', children: [
+          _i14.RouteConfig(SettingsAccountRoute.name,
+              path: 'account', parent: SettingsWrapper.name),
+          _i14.RouteConfig(SettingsBranchRoute.name,
+              path: 'branch', parent: SettingsWrapper.name),
+          _i14.RouteConfig(SettingsTreeRoute.name,
+              path: 'tree', parent: SettingsWrapper.name),
+          _i14.RouteConfig(SettingsRoute.name,
+              path: '', parent: SettingsWrapper.name)
+        ]),
+        _i14.RouteConfig(SignUpRoute.name, path: '/sign-up'),
+        _i14.RouteConfig(TypewriterBranchUID.name,
+            path: '/typewriter/branch/:id'),
+        _i14.RouteConfig(TypewriterBranchNew.name,
+            path: '/typewriter/branch/new'),
+        _i14.RouteConfig(TypewriterTreeUID.name, path: '/typewriter/tree/:id'),
+        _i14.RouteConfig(TypewriterTreeNew.name, path: '/typewriter/tree/new')
+      ];
 }
 
-class WINERouter extends RouterBase {
-  @override
-  List<RouteDef> get routes => _routes;
-  final _routes = <RouteDef>[
-    RouteDef(Routes.chapterEditorPage, page: ChapterEditorPage),
-    RouteDef(Routes.chapterPage, page: ChapterPage),
-    RouteDef(Routes.chapterSettingsPage, page: ChapterSettingsPage),
-    RouteDef(Routes.copyrightsPage, page: CopyrightsPage),
-    RouteDef(Routes.createAccountPage, page: CreateAccountPage),
-    RouteDef(Routes.genresPage, page: GenresPage),
-    RouteDef(Routes.homePage, page: HomePage),
-    RouteDef(Routes.libraryPage, page: LibraryPage),
-    RouteDef(Routes.seriesEditorPage, page: SeriesEditorPage),
-    RouteDef(Routes.onboardingPage, page: OnboardingPage),
-    RouteDef(Routes.plusPage, page: PlusPage),
-    RouteDef(Routes.seriesPage, page: SeriesPage),
-    RouteDef(Routes.seriesSettingsPage, page: SeriesSettingsPage),
-    RouteDef(Routes.settingsPage, page: SettingsPage),
-    RouteDef(Routes.signInPage, page: SignInPage),
-    RouteDef(Routes.splashPage, page: SplashPage),
-    RouteDef(Routes.verifyEmailPage, page: VerifyEmailPage),
-  ];
-  @override
-  Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
-  final _pagesMap = <Type, AutoRouteFactory>{
-    ChapterEditorPage: (data) {
-      final args = data.getArgs<ChapterEditorPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => ChapterEditorPage(
-          key: args.key,
-          chapterDraft: args.chapterDraft,
-          editorContentOrigin: args.editorContentOrigin,
-          previousChapter: args.previousChapter,
-          seriesDraft: args.seriesDraft,
-        ),
-        settings: data,
-      );
-    },
-    ChapterPage: (data) {
-      final args = data.getArgs<ChapterPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => ChapterPage(
-          key: args.key,
-          chapter: args.chapter,
-        ),
-        settings: data,
-      );
-    },
-    ChapterSettingsPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => ChapterSettingsPage(),
-        settings: data,
-      );
-    },
-    CopyrightsPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => CopyrightsPage(),
-        settings: data,
-      );
-    },
-    CreateAccountPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => CreateAccountPage(),
-        settings: data,
-      );
-    },
-    GenresPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => GenresPage(),
-        settings: data,
-      );
-    },
-    HomePage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => HomePage(),
-        settings: data,
-      );
-    },
-    LibraryPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => LibraryPage(),
-        settings: data,
-      );
-    },
-    SeriesEditorPage: (data) {
-      final args = data.getArgs<SeriesEditorPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SeriesEditorPage(
-          key: args.key,
-          editorContentOrigin: args.editorContentOrigin,
-          seriesDraft: args.seriesDraft,
-        ),
-        settings: data,
-      );
-    },
-    OnboardingPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => OnboardingPage(),
-        settings: data,
-      );
-    },
-    PlusPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => PlusPage(),
-        settings: data,
-      );
-    },
-    SeriesPage: (data) {
-      final args = data.getArgs<SeriesPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SeriesPage(
-          key: args.key,
-          series: args.series,
-        ),
-        settings: data,
-      );
-    },
-    SeriesSettingsPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SeriesSettingsPage(),
-        settings: data,
-      );
-    },
-    SettingsPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SettingsPage(),
-        settings: data,
-      );
-    },
-    SignInPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SignInPage(),
-        settings: data,
-      );
-    },
-    SplashPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SplashPage(),
-        settings: data,
-      );
-    },
-    VerifyEmailPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => VerifyEmailPage(),
-        settings: data,
-      );
-    },
-  };
+/// generated route for
+/// [_i1.BranchPage]
+class BranchRoute extends _i14.PageRouteInfo<BranchRouteArgs> {
+  BranchRoute({_i16.Key? key, _i17.Branch? branch, required String uid})
+      : super(BranchRoute.name,
+            path: '/branch/:id',
+            args: BranchRouteArgs(key: key, branch: branch, uid: uid),
+            rawPathParams: {'id': uid});
+
+  static const String name = 'BranchRoute';
 }
 
-/// ************************************************************************
-/// Arguments holder classes
-/// *************************************************************************
+class BranchRouteArgs {
+  const BranchRouteArgs({this.key, this.branch, required this.uid});
 
-/// ChapterEditorPage arguments holder class
-class ChapterEditorPageArguments {
-  final Key key;
-  final Chapter chapterDraft;
-  final EditorContentOrigin editorContentOrigin;
-  final Chapter previousChapter;
-  final Series seriesDraft;
-  ChapterEditorPageArguments(
+  final _i16.Key? key;
+
+  final _i17.Branch? branch;
+
+  final String uid;
+
+  @override
+  String toString() {
+    return 'BranchRouteArgs{key: $key, branch: $branch, uid: $uid}';
+  }
+}
+
+/// generated route for
+/// [_i2.HomePage]
+class HomeRoute extends _i14.PageRouteInfo<void> {
+  const HomeRoute() : super(HomeRoute.name, path: '/');
+
+  static const String name = 'HomeRoute';
+}
+
+/// generated route for
+/// [_i3.LibraryPage]
+class LibraryRoute extends _i14.PageRouteInfo<void> {
+  const LibraryRoute() : super(LibraryRoute.name, path: '/library');
+
+  static const String name = 'LibraryRoute';
+}
+
+/// generated route for
+/// [_i4.LogInPage]
+class LogInRoute extends _i14.PageRouteInfo<LogInRouteArgs> {
+  LogInRoute({_i16.Key? key, required _i14.PageRouteInfo<dynamic> navigateTo})
+      : super(LogInRoute.name,
+            path: '/log-in',
+            args: LogInRouteArgs(key: key, navigateTo: navigateTo));
+
+  static const String name = 'LogInRoute';
+}
+
+class LogInRouteArgs {
+  const LogInRouteArgs({this.key, required this.navigateTo});
+
+  final _i16.Key? key;
+
+  final _i14.PageRouteInfo<dynamic> navigateTo;
+
+  @override
+  String toString() {
+    return 'LogInRouteArgs{key: $key, navigateTo: $navigateTo}';
+  }
+}
+
+/// generated route for
+/// [_i5.PlusPage]
+class PlusRoute extends _i14.PageRouteInfo<void> {
+  const PlusRoute() : super(PlusRoute.name, path: '/plus');
+
+  static const String name = 'PlusRoute';
+}
+
+/// generated route for
+/// [_i6.TreePage]
+class TreeRoute extends _i14.PageRouteInfo<TreeRouteArgs> {
+  TreeRoute({_i16.Key? key, required String uid, _i18.Tree? tree})
+      : super(TreeRoute.name,
+            path: '/tree/:id',
+            args: TreeRouteArgs(key: key, uid: uid, tree: tree),
+            rawPathParams: {'id': uid});
+
+  static const String name = 'TreeRoute';
+}
+
+class TreeRouteArgs {
+  const TreeRouteArgs({this.key, required this.uid, this.tree});
+
+  final _i16.Key? key;
+
+  final String uid;
+
+  final _i18.Tree? tree;
+
+  @override
+  String toString() {
+    return 'TreeRouteArgs{key: $key, uid: $uid, tree: $tree}';
+  }
+}
+
+/// generated route for
+/// [_i7.SettingsWrapper]
+class SettingsWrapper extends _i14.PageRouteInfo<void> {
+  const SettingsWrapper({List<_i14.PageRouteInfo>? children})
+      : super(SettingsWrapper.name,
+            path: '/settings', initialChildren: children);
+
+  static const String name = 'SettingsWrapper';
+}
+
+/// generated route for
+/// [_i8.SignUpPage]
+class SignUpRoute extends _i14.PageRouteInfo<SignUpRouteArgs> {
+  SignUpRoute({_i16.Key? key, required _i14.PageRouteInfo<dynamic> navigateTo})
+      : super(SignUpRoute.name,
+            path: '/sign-up',
+            args: SignUpRouteArgs(key: key, navigateTo: navigateTo));
+
+  static const String name = 'SignUpRoute';
+}
+
+class SignUpRouteArgs {
+  const SignUpRouteArgs({this.key, required this.navigateTo});
+
+  final _i16.Key? key;
+
+  final _i14.PageRouteInfo<dynamic> navigateTo;
+
+  @override
+  String toString() {
+    return 'SignUpRouteArgs{key: $key, navigateTo: $navigateTo}';
+  }
+}
+
+/// generated route for
+/// [_i9.TypewriterPage]
+class TypewriterBranchUID extends _i14.PageRouteInfo<TypewriterBranchUIDArgs> {
+  TypewriterBranchUID(
+      {_i16.Key? key,
+      _i17.Branch? branch,
+      String? uid,
+      _i18.Tree? tree,
+      _i19.TypewriterType type = _i19.TypewriterType.unknown})
+      : super(TypewriterBranchUID.name,
+            path: '/typewriter/branch/:id',
+            args: TypewriterBranchUIDArgs(
+                key: key, branch: branch, uid: uid, tree: tree, type: type),
+            rawPathParams: {'id': uid});
+
+  static const String name = 'TypewriterBranchUID';
+}
+
+class TypewriterBranchUIDArgs {
+  const TypewriterBranchUIDArgs(
       {this.key,
-      this.chapterDraft,
-      @required this.editorContentOrigin,
-      this.previousChapter,
-      this.seriesDraft});
+      this.branch,
+      this.uid,
+      this.tree,
+      this.type = _i19.TypewriterType.unknown});
+
+  final _i16.Key? key;
+
+  final _i17.Branch? branch;
+
+  final String? uid;
+
+  final _i18.Tree? tree;
+
+  final _i19.TypewriterType type;
+
+  @override
+  String toString() {
+    return 'TypewriterBranchUIDArgs{key: $key, branch: $branch, uid: $uid, tree: $tree, type: $type}';
+  }
 }
 
-/// ChapterPage arguments holder class
-class ChapterPageArguments {
-  final Key key;
-  final Chapter chapter;
-  ChapterPageArguments({this.key, @required this.chapter});
+/// generated route for
+/// [_i9.TypewriterPage]
+class TypewriterBranchNew extends _i14.PageRouteInfo<TypewriterBranchNewArgs> {
+  TypewriterBranchNew(
+      {_i16.Key? key,
+      _i17.Branch? branch,
+      String? uid,
+      _i18.Tree? tree,
+      _i19.TypewriterType type = _i19.TypewriterType.unknown})
+      : super(TypewriterBranchNew.name,
+            path: '/typewriter/branch/new',
+            args: TypewriterBranchNewArgs(
+                key: key, branch: branch, uid: uid, tree: tree, type: type),
+            rawPathParams: {'id': uid});
+
+  static const String name = 'TypewriterBranchNew';
 }
 
-/// SeriesEditorPage arguments holder class
-class SeriesEditorPageArguments {
-  final Key key;
-  final EditorContentOrigin editorContentOrigin;
-  final Series seriesDraft;
-  SeriesEditorPageArguments(
-      {this.key, @required this.editorContentOrigin, this.seriesDraft});
+class TypewriterBranchNewArgs {
+  const TypewriterBranchNewArgs(
+      {this.key,
+      this.branch,
+      this.uid,
+      this.tree,
+      this.type = _i19.TypewriterType.unknown});
+
+  final _i16.Key? key;
+
+  final _i17.Branch? branch;
+
+  final String? uid;
+
+  final _i18.Tree? tree;
+
+  final _i19.TypewriterType type;
+
+  @override
+  String toString() {
+    return 'TypewriterBranchNewArgs{key: $key, branch: $branch, uid: $uid, tree: $tree, type: $type}';
+  }
 }
 
-/// SeriesPage arguments holder class
-class SeriesPageArguments {
-  final Key key;
-  final Series series;
-  SeriesPageArguments({this.key, @required this.series});
+/// generated route for
+/// [_i9.TypewriterPage]
+class TypewriterTreeUID extends _i14.PageRouteInfo<TypewriterTreeUIDArgs> {
+  TypewriterTreeUID(
+      {_i16.Key? key,
+      _i17.Branch? branch,
+      String? uid,
+      _i18.Tree? tree,
+      _i19.TypewriterType type = _i19.TypewriterType.unknown})
+      : super(TypewriterTreeUID.name,
+            path: '/typewriter/tree/:id',
+            args: TypewriterTreeUIDArgs(
+                key: key, branch: branch, uid: uid, tree: tree, type: type),
+            rawPathParams: {'id': uid});
+
+  static const String name = 'TypewriterTreeUID';
+}
+
+class TypewriterTreeUIDArgs {
+  const TypewriterTreeUIDArgs(
+      {this.key,
+      this.branch,
+      this.uid,
+      this.tree,
+      this.type = _i19.TypewriterType.unknown});
+
+  final _i16.Key? key;
+
+  final _i17.Branch? branch;
+
+  final String? uid;
+
+  final _i18.Tree? tree;
+
+  final _i19.TypewriterType type;
+
+  @override
+  String toString() {
+    return 'TypewriterTreeUIDArgs{key: $key, branch: $branch, uid: $uid, tree: $tree, type: $type}';
+  }
+}
+
+/// generated route for
+/// [_i9.TypewriterPage]
+class TypewriterTreeNew extends _i14.PageRouteInfo<TypewriterTreeNewArgs> {
+  TypewriterTreeNew(
+      {_i16.Key? key,
+      _i17.Branch? branch,
+      String? uid,
+      _i18.Tree? tree,
+      _i19.TypewriterType type = _i19.TypewriterType.unknown})
+      : super(TypewriterTreeNew.name,
+            path: '/typewriter/tree/new',
+            args: TypewriterTreeNewArgs(
+                key: key, branch: branch, uid: uid, tree: tree, type: type),
+            rawPathParams: {'id': uid});
+
+  static const String name = 'TypewriterTreeNew';
+}
+
+class TypewriterTreeNewArgs {
+  const TypewriterTreeNewArgs(
+      {this.key,
+      this.branch,
+      this.uid,
+      this.tree,
+      this.type = _i19.TypewriterType.unknown});
+
+  final _i16.Key? key;
+
+  final _i17.Branch? branch;
+
+  final String? uid;
+
+  final _i18.Tree? tree;
+
+  final _i19.TypewriterType type;
+
+  @override
+  String toString() {
+    return 'TypewriterTreeNewArgs{key: $key, branch: $branch, uid: $uid, tree: $tree, type: $type}';
+  }
+}
+
+/// generated route for
+/// [_i10.SettingsAccountPage]
+class SettingsAccountRoute extends _i14.PageRouteInfo<void> {
+  const SettingsAccountRoute()
+      : super(SettingsAccountRoute.name, path: 'account');
+
+  static const String name = 'SettingsAccountRoute';
+}
+
+/// generated route for
+/// [_i11.SettingsBranchPage]
+class SettingsBranchRoute extends _i14.PageRouteInfo<void> {
+  const SettingsBranchRoute() : super(SettingsBranchRoute.name, path: 'branch');
+
+  static const String name = 'SettingsBranchRoute';
+}
+
+/// generated route for
+/// [_i12.SettingsTreePage]
+class SettingsTreeRoute extends _i14.PageRouteInfo<void> {
+  const SettingsTreeRoute() : super(SettingsTreeRoute.name, path: 'tree');
+
+  static const String name = 'SettingsTreeRoute';
+}
+
+/// generated route for
+/// [_i13.SettingsPage]
+class SettingsRoute extends _i14.PageRouteInfo<void> {
+  const SettingsRoute() : super(SettingsRoute.name, path: '');
+
+  static const String name = 'SettingsRoute';
 }
