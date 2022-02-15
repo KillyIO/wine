@@ -85,15 +85,14 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
   Future<Result<List<DefaultCover>, DefaultCoversFailure>>
       loadDefaultCovers() async {
     try {
-      final querySnapshot =
-          await _firestore.collection(defaultCoversPath).get();
+      final snapshot = await _firestore.collection(defaultCoversPath).get();
 
-      if (querySnapshot.docs.isEmpty) {
+      if (snapshot.docs.isEmpty) {
         return Err(const DefaultCoversFailure.defaultCoversNotLoaded());
       }
 
       final data = <DefaultCover>[];
-      for (final document in querySnapshot.docs) {
+      for (final document in snapshot.docs) {
         final map = document.data();
 
         data.add(

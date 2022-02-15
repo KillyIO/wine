@@ -18,6 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$HomeEventTearOff {
   const _$HomeEventTearOff();
 
+  Init init() {
+    return const Init();
+  }
+
   LoadNewTree loadNewTree() {
     return const LoadNewTree();
   }
@@ -58,6 +62,7 @@ const $HomeEvent = _$HomeEventTearOff();
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loadNewTree,
     required TResult Function() loadTopTree,
     required TResult Function(String key) loadTreeByGenre,
@@ -68,6 +73,7 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -78,6 +84,7 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -89,6 +96,7 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Init value) init,
     required TResult Function(LoadNewTree value) loadNewTree,
     required TResult Function(LoadTopTree value) loadTopTree,
     required TResult Function(LoadTreeByGenre value) loadTreeByGenre,
@@ -99,6 +107,7 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -109,6 +118,7 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -133,6 +143,138 @@ class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
   final HomeEvent _value;
   // ignore: unused_field
   final $Res Function(HomeEvent) _then;
+}
+
+/// @nodoc
+abstract class $InitCopyWith<$Res> {
+  factory $InitCopyWith(Init value, $Res Function(Init) then) =
+      _$InitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$InitCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+    implements $InitCopyWith<$Res> {
+  _$InitCopyWithImpl(Init _value, $Res Function(Init) _then)
+      : super(_value, (v) => _then(v as Init));
+
+  @override
+  Init get _value => super._value as Init;
+}
+
+/// @nodoc
+
+class _$Init implements Init {
+  const _$Init();
+
+  @override
+  String toString() {
+    return 'HomeEvent.init()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Init);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loadNewTree,
+    required TResult Function() loadTopTree,
+    required TResult Function(String key) loadTreeByGenre,
+    required TResult Function(String key) loadTreeByLanguage,
+    required TResult Function(String key) loadTreeByTime,
+    required TResult Function(int index) pageViewIndexChanged,
+  }) {
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loadNewTree,
+    TResult Function()? loadTopTree,
+    TResult Function(String key)? loadTreeByGenre,
+    TResult Function(String key)? loadTreeByLanguage,
+    TResult Function(String key)? loadTreeByTime,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return init?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loadNewTree,
+    TResult Function()? loadTopTree,
+    TResult Function(String key)? loadTreeByGenre,
+    TResult Function(String key)? loadTreeByLanguage,
+    TResult Function(String key)? loadTreeByTime,
+    TResult Function(int index)? pageViewIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Init value) init,
+    required TResult Function(LoadNewTree value) loadNewTree,
+    required TResult Function(LoadTopTree value) loadTopTree,
+    required TResult Function(LoadTreeByGenre value) loadTreeByGenre,
+    required TResult Function(LoadTreeByLanguage value) loadTreeByLanguage,
+    required TResult Function(LoadTreeByTime value) loadTreeByTime,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+  }) {
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Init value)? init,
+    TResult Function(LoadNewTree value)? loadNewTree,
+    TResult Function(LoadTopTree value)? loadTopTree,
+    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Init value)? init,
+    TResult Function(LoadNewTree value)? loadNewTree,
+    TResult Function(LoadTopTree value)? loadTopTree,
+    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Init implements HomeEvent {
+  const factory Init() = _$Init;
 }
 
 /// @nodoc
@@ -175,6 +317,7 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loadNewTree,
     required TResult Function() loadTopTree,
     required TResult Function(String key) loadTreeByGenre,
@@ -188,6 +331,7 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -201,6 +345,7 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -218,6 +363,7 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Init value) init,
     required TResult Function(LoadNewTree value) loadNewTree,
     required TResult Function(LoadTopTree value) loadTopTree,
     required TResult Function(LoadTreeByGenre value) loadTreeByGenre,
@@ -231,6 +377,7 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -244,6 +391,7 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -303,6 +451,7 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loadNewTree,
     required TResult Function() loadTopTree,
     required TResult Function(String key) loadTreeByGenre,
@@ -316,6 +465,7 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -329,6 +479,7 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -346,6 +497,7 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Init value) init,
     required TResult Function(LoadNewTree value) loadNewTree,
     required TResult Function(LoadTopTree value) loadTopTree,
     required TResult Function(LoadTreeByGenre value) loadTreeByGenre,
@@ -359,6 +511,7 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -372,6 +525,7 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -455,6 +609,7 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loadNewTree,
     required TResult Function() loadTopTree,
     required TResult Function(String key) loadTreeByGenre,
@@ -468,6 +623,7 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -481,6 +637,7 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -498,6 +655,7 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Init value) init,
     required TResult Function(LoadNewTree value) loadNewTree,
     required TResult Function(LoadTopTree value) loadTopTree,
     required TResult Function(LoadTreeByGenre value) loadTreeByGenre,
@@ -511,6 +669,7 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -524,6 +683,7 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -613,6 +773,7 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loadNewTree,
     required TResult Function() loadTopTree,
     required TResult Function(String key) loadTreeByGenre,
@@ -626,6 +787,7 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -639,6 +801,7 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -656,6 +819,7 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Init value) init,
     required TResult Function(LoadNewTree value) loadNewTree,
     required TResult Function(LoadTopTree value) loadTopTree,
     required TResult Function(LoadTreeByGenre value) loadTreeByGenre,
@@ -669,6 +833,7 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -682,6 +847,7 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -770,6 +936,7 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loadNewTree,
     required TResult Function() loadTopTree,
     required TResult Function(String key) loadTreeByGenre,
@@ -783,6 +950,7 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -796,6 +964,7 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -813,6 +982,7 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Init value) init,
     required TResult Function(LoadNewTree value) loadNewTree,
     required TResult Function(LoadTopTree value) loadTopTree,
     required TResult Function(LoadTreeByGenre value) loadTreeByGenre,
@@ -826,6 +996,7 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -839,6 +1010,7 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -929,6 +1101,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() init,
     required TResult Function() loadNewTree,
     required TResult Function() loadTopTree,
     required TResult Function(String key) loadTreeByGenre,
@@ -942,6 +1115,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -955,6 +1129,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
     TResult Function()? loadNewTree,
     TResult Function()? loadTopTree,
     TResult Function(String key)? loadTreeByGenre,
@@ -972,6 +1147,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Init value) init,
     required TResult Function(LoadNewTree value) loadNewTree,
     required TResult Function(LoadTopTree value) loadTopTree,
     required TResult Function(LoadTreeByGenre value) loadTreeByGenre,
@@ -985,6 +1161,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -998,6 +1175,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Init value)? init,
     TResult Function(LoadNewTree value)? loadNewTree,
     TResult Function(LoadTopTree value)? loadTopTree,
     TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
@@ -1028,16 +1206,18 @@ class _$HomeStateTearOff {
 
   _HomeState call(
       {required int currentPageViewIdx,
-      required Option<Result<Unit, CoreFailure>> failure,
+      required Option<Result<Unit, CoreFailure>> failureOption,
       required String genreFilterKey,
+      required bool isProcessing,
       required String languageFilterKey,
       required List<Tree> newTrees,
       required String timeFilterKey,
       required List<Tree> topTrees}) {
     return _HomeState(
       currentPageViewIdx: currentPageViewIdx,
-      failure: failure,
+      failureOption: failureOption,
       genreFilterKey: genreFilterKey,
+      isProcessing: isProcessing,
       languageFilterKey: languageFilterKey,
       newTrees: newTrees,
       timeFilterKey: timeFilterKey,
@@ -1052,9 +1232,10 @@ const $HomeState = _$HomeStateTearOff();
 /// @nodoc
 mixin _$HomeState {
   int get currentPageViewIdx => throw _privateConstructorUsedError;
-  Option<Result<Unit, CoreFailure>> get failure =>
+  Option<Result<Unit, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   String get genreFilterKey => throw _privateConstructorUsedError;
+  bool get isProcessing => throw _privateConstructorUsedError;
   String get languageFilterKey => throw _privateConstructorUsedError;
   List<Tree> get newTrees => throw _privateConstructorUsedError;
   String get timeFilterKey => throw _privateConstructorUsedError;
@@ -1071,8 +1252,9 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res>;
   $Res call(
       {int currentPageViewIdx,
-      Option<Result<Unit, CoreFailure>> failure,
+      Option<Result<Unit, CoreFailure>> failureOption,
       String genreFilterKey,
+      bool isProcessing,
       String languageFilterKey,
       List<Tree> newTrees,
       String timeFilterKey,
@@ -1090,8 +1272,9 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
   @override
   $Res call({
     Object? currentPageViewIdx = freezed,
-    Object? failure = freezed,
+    Object? failureOption = freezed,
     Object? genreFilterKey = freezed,
+    Object? isProcessing = freezed,
     Object? languageFilterKey = freezed,
     Object? newTrees = freezed,
     Object? timeFilterKey = freezed,
@@ -1102,14 +1285,18 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
               as int,
-      failure: failure == freezed
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
+      failureOption: failureOption == freezed
+          ? _value.failureOption
+          : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<Unit, CoreFailure>>,
       genreFilterKey: genreFilterKey == freezed
           ? _value.genreFilterKey
           : genreFilterKey // ignore: cast_nullable_to_non_nullable
               as String,
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
+              as bool,
       languageFilterKey: languageFilterKey == freezed
           ? _value.languageFilterKey
           : languageFilterKey // ignore: cast_nullable_to_non_nullable
@@ -1138,8 +1325,9 @@ abstract class _$HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   @override
   $Res call(
       {int currentPageViewIdx,
-      Option<Result<Unit, CoreFailure>> failure,
+      Option<Result<Unit, CoreFailure>> failureOption,
       String genreFilterKey,
+      bool isProcessing,
       String languageFilterKey,
       List<Tree> newTrees,
       String timeFilterKey,
@@ -1158,8 +1346,9 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? currentPageViewIdx = freezed,
-    Object? failure = freezed,
+    Object? failureOption = freezed,
     Object? genreFilterKey = freezed,
+    Object? isProcessing = freezed,
     Object? languageFilterKey = freezed,
     Object? newTrees = freezed,
     Object? timeFilterKey = freezed,
@@ -1170,14 +1359,18 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
               as int,
-      failure: failure == freezed
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
+      failureOption: failureOption == freezed
+          ? _value.failureOption
+          : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<Unit, CoreFailure>>,
       genreFilterKey: genreFilterKey == freezed
           ? _value.genreFilterKey
           : genreFilterKey // ignore: cast_nullable_to_non_nullable
               as String,
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
+              as bool,
       languageFilterKey: languageFilterKey == freezed
           ? _value.languageFilterKey
           : languageFilterKey // ignore: cast_nullable_to_non_nullable
@@ -1203,8 +1396,9 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 class _$_HomeState implements _HomeState {
   const _$_HomeState(
       {required this.currentPageViewIdx,
-      required this.failure,
+      required this.failureOption,
       required this.genreFilterKey,
+      required this.isProcessing,
       required this.languageFilterKey,
       required this.newTrees,
       required this.timeFilterKey,
@@ -1213,9 +1407,11 @@ class _$_HomeState implements _HomeState {
   @override
   final int currentPageViewIdx;
   @override
-  final Option<Result<Unit, CoreFailure>> failure;
+  final Option<Result<Unit, CoreFailure>> failureOption;
   @override
   final String genreFilterKey;
+  @override
+  final bool isProcessing;
   @override
   final String languageFilterKey;
   @override
@@ -1227,7 +1423,7 @@ class _$_HomeState implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(currentPageViewIdx: $currentPageViewIdx, failure: $failure, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, newTrees: $newTrees, timeFilterKey: $timeFilterKey, topTrees: $topTrees)';
+    return 'HomeState(currentPageViewIdx: $currentPageViewIdx, failureOption: $failureOption, genreFilterKey: $genreFilterKey, isProcessing: $isProcessing, languageFilterKey: $languageFilterKey, newTrees: $newTrees, timeFilterKey: $timeFilterKey, topTrees: $topTrees)';
   }
 
   @override
@@ -1237,9 +1433,12 @@ class _$_HomeState implements _HomeState {
             other is _HomeState &&
             const DeepCollectionEquality()
                 .equals(other.currentPageViewIdx, currentPageViewIdx) &&
-            const DeepCollectionEquality().equals(other.failure, failure) &&
+            const DeepCollectionEquality()
+                .equals(other.failureOption, failureOption) &&
             const DeepCollectionEquality()
                 .equals(other.genreFilterKey, genreFilterKey) &&
+            const DeepCollectionEquality()
+                .equals(other.isProcessing, isProcessing) &&
             const DeepCollectionEquality()
                 .equals(other.languageFilterKey, languageFilterKey) &&
             const DeepCollectionEquality().equals(other.newTrees, newTrees) &&
@@ -1252,8 +1451,9 @@ class _$_HomeState implements _HomeState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(currentPageViewIdx),
-      const DeepCollectionEquality().hash(failure),
+      const DeepCollectionEquality().hash(failureOption),
       const DeepCollectionEquality().hash(genreFilterKey),
+      const DeepCollectionEquality().hash(isProcessing),
       const DeepCollectionEquality().hash(languageFilterKey),
       const DeepCollectionEquality().hash(newTrees),
       const DeepCollectionEquality().hash(timeFilterKey),
@@ -1268,8 +1468,9 @@ class _$_HomeState implements _HomeState {
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required int currentPageViewIdx,
-      required Option<Result<Unit, CoreFailure>> failure,
+      required Option<Result<Unit, CoreFailure>> failureOption,
       required String genreFilterKey,
+      required bool isProcessing,
       required String languageFilterKey,
       required List<Tree> newTrees,
       required String timeFilterKey,
@@ -1278,9 +1479,11 @@ abstract class _HomeState implements HomeState {
   @override
   int get currentPageViewIdx;
   @override
-  Option<Result<Unit, CoreFailure>> get failure;
+  Option<Result<Unit, CoreFailure>> get failureOption;
   @override
   String get genreFilterKey;
+  @override
+  bool get isProcessing;
   @override
   String get languageFilterKey;
   @override

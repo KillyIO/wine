@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/presentation/home/home_filters_menu_layout.dart';
 import 'package:wine/presentation/home/home_menu_layout.dart';
@@ -100,7 +101,11 @@ class HomeLayout extends StatelessWidget {
         child: BlocBuilder<SetupBloc, SetupState>(
           builder: (context, state) {
             return state.map(
-              content: (_) => const HomeContentLayout(),
+              content: (_) {
+                context.read<HomeBloc>().add(const HomeEvent.init());
+
+                return const HomeContentLayout();
+              },
               failure: (_) => Container(),
               initial: (_) => const HomeSplashLayout(),
             );

@@ -6,8 +6,9 @@ class HomeState with _$HomeState {
   /// @nodoc
   const factory HomeState({
     required int currentPageViewIdx,
-    required Option<Result<Unit, CoreFailure>> failure,
+    required Option<Result<Unit, CoreFailure>> failureOption,
     required String genreFilterKey,
+    required bool isProcessing,
     required String languageFilterKey,
     required List<Tree> newTrees,
     required String timeFilterKey,
@@ -17,8 +18,9 @@ class HomeState with _$HomeState {
   /// @nodoc
   factory HomeState.initial() => const HomeState(
         currentPageViewIdx: 0,
-        failure: None(),
+        failureOption: None(),
         genreFilterKey: '',
+        isProcessing: false,
         languageFilterKey: '',
         newTrees: <Tree>[],
         timeFilterKey: '',

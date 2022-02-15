@@ -141,6 +141,66 @@ class TreeRepository implements ITreeRepository {
   }
 
   @override
+  Future<Result<List<Tree>, TreeFailure>> loadTopTrees(
+    Map<String, dynamic> filters, {
+    UniqueID? lastTreeUID,
+  }) async {
+    try {
+      final treesCollection = _firestore.collection(treesPath);
+
+      Query? query;
+      if (lastTreeUID != null) {
+        final lastDocument =
+            await treesCollection.doc(lastTreeUID.getOrCrash()).get();
+
+        query = treesCollection
+            .startAfterDocument(lastDocument)
+            .where('isPublished', isEqualTo: true);
+      } else {
+        query = treesCollection.where('isPublished', isEqualTo: true);
+      }
+
+      query = query.where('language', isEqualTo: filters['language']);
+
+      if ((filters['genre'] as String).isNotEmpty) {
+        query = query.where('genre', arrayContains: filters['genre']);
+      }
+
+      final timestamp =
+          Timestamp.fromMillisecondsSinceEpoch(filters['time'] as int);
+
+      final snapshot = await query
+          .where('updatedAt', isGreaterThanOrEqualTo: timestamp)
+          .orderBy('updatedAt')
+          .orderBy('likesCount', descending: true)
+          .limit(20)
+          .withConverter<Tree>(
+            fromFirestore: (snapshot, _) {
+              if (snapshot.exists) {
+                return TreeDTO.fromJson(snapshot.data()!).toDomain();
+              }
+              return Tree.empty();
+            },
+            toFirestore: (value, _) => TreeDTO.fromDomain(value).toJson(),
+          )
+          .get();
+
+      final trees = <Tree>[];
+      for (final doc in snapshot.docs) {
+        trees.add(doc.data());
+      }
+      return Ok(trees);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const TreeFailure.permissionDenied());
+      }
+      return Err(const TreeFailure.serverError());
+    } catch (_) {
+      return Err(const TreeFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<Tree, TreeFailure>> loadTreeByUID(UniqueID uid) async {
     try {
       final snapshot =
@@ -181,7 +241,7 @@ class TreeRepository implements ITreeRepository {
         query = treeCollection.where('authorUID', isEqualTo: uid.getOrCrash());
       }
 
-      final querySnapshot = await query
+      final snapshot = await query
           .orderBy('updatedAt', descending: true)
           .limit(20)
           .withConverter<Tree>(
@@ -195,11 +255,11 @@ class TreeRepository implements ITreeRepository {
           )
           .get();
 
-      final tree = <Tree>[];
-      for (final doc in querySnapshot.docs) {
-        tree.add(doc.data());
+      final trees = <Tree>[];
+      for (final doc in snapshot.docs) {
+        trees.add(doc.data());
       }
-      return Ok(tree);
+      return Ok(trees);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
         return Err(const TreeFailure.permissionDenied());

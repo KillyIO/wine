@@ -6,7 +6,7 @@ part of 'isar_user.dart';
 // IsarCollectionGenerator
 // **************************************************************************
 
-// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast
 
 extension GetIsarUserCollection on Isar {
   IsarCollection<IsarUser> get users {
@@ -17,8 +17,9 @@ extension GetIsarUserCollection on Isar {
 final IsarUserSchema = CollectionSchema(
   name: 'IsarUser',
   schema:
-      '{"name":"IsarUser","properties":[{"name":"emailAddress","type":"String"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Byte"},{"name":"uid","type":"String"},{"name":"updatedAt","type":"Long"},{"name":"username","type":"String"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
-  adapter: const _IsarUserAdapter(),
+      '{"name":"IsarUser","idName":"id","properties":[{"name":"emailAddress","type":"String"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Bool"},{"name":"uid","type":"String"},{"name":"updatedAt","type":"Long"},{"name":"username","type":"String"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
+  nativeAdapter: const _IsarUserNativeAdapter(),
+  webAdapter: const _IsarUserWebAdapter(),
   idName: 'id',
   propertyIds: {
     'emailAddress': 0,
@@ -28,6 +29,7 @@ final IsarUserSchema = CollectionSchema(
     'updatedAt': 4,
     'username': 5
   },
+  listProperties: {},
   indexIds: {'uid': 0},
   indexTypes: {
     'uid': [
@@ -37,40 +39,112 @@ final IsarUserSchema = CollectionSchema(
   linkIds: {},
   backlinkIds: {},
   linkedCollections: [],
-  getId: (obj) => obj.id,
+  getId: (obj) {
+    if (obj.id == Isar.autoIncrement) {
+      return null;
+    } else {
+      return obj.id;
+    }
+  },
   setId: null,
   getLinks: (obj) => [],
-  version: 1,
+  version: 2,
 );
 
-class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
-  const _IsarUserAdapter();
+class _IsarUserWebAdapter extends IsarWebTypeAdapter<IsarUser> {
+  const _IsarUserWebAdapter();
+
+  @override
+  Object serialize(IsarCollection<IsarUser> collection, IsarUser object) {
+    final jsObj = IsarNative.newJsObject();
+    IsarNative.jsObjectSet(jsObj, 'emailAddress', object.emailAddress);
+    IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
+    IsarNative.jsObjectSet(jsObj, 'id', object.id);
+    IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
+    IsarNative.jsObjectSet(jsObj, 'uid', object.uid);
+    IsarNative.jsObjectSet(
+        jsObj, 'updatedAt', object.updatedAt.toUtc().millisecondsSinceEpoch);
+    IsarNative.jsObjectSet(jsObj, 'username', object.username);
+    return jsObj;
+  }
+
+  @override
+  IsarUser deserialize(IsarCollection<IsarUser> collection, dynamic jsObj) {
+    final object = IsarUser(
+      emailAddress: IsarNative.jsObjectGet(jsObj, 'emailAddress') ?? '',
+      id: IsarNative.jsObjectGet(jsObj, 'id'),
+      uid: IsarNative.jsObjectGet(jsObj, 'uid') ?? '',
+      updatedAt: IsarNative.jsObjectGet(jsObj, 'updatedAt') != null
+          ? DateTime.fromMillisecondsSinceEpoch(
+                  IsarNative.jsObjectGet(jsObj, 'updatedAt'),
+                  isUtc: true)
+              .toLocal()
+          : DateTime.fromMillisecondsSinceEpoch(0),
+      username: IsarNative.jsObjectGet(jsObj, 'username') ?? '',
+    );
+    return object;
+  }
+
+  @override
+  P deserializeProperty<P>(Object jsObj, String propertyName) {
+    switch (propertyName) {
+      case 'emailAddress':
+        return (IsarNative.jsObjectGet(jsObj, 'emailAddress') ?? '') as P;
+      case 'hashCode':
+        return (IsarNative.jsObjectGet(jsObj, 'hashCode') ??
+            double.negativeInfinity) as P;
+      case 'id':
+        return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
+      case 'stringify':
+        return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
+      case 'uid':
+        return (IsarNative.jsObjectGet(jsObj, 'uid') ?? '') as P;
+      case 'updatedAt':
+        return (IsarNative.jsObjectGet(jsObj, 'updatedAt') != null
+            ? DateTime.fromMillisecondsSinceEpoch(
+                    IsarNative.jsObjectGet(jsObj, 'updatedAt'),
+                    isUtc: true)
+                .toLocal()
+            : DateTime.fromMillisecondsSinceEpoch(0)) as P;
+      case 'username':
+        return (IsarNative.jsObjectGet(jsObj, 'username') ?? '') as P;
+      default:
+        throw 'Illegal propertyName';
+    }
+  }
+
+  @override
+  void attachLinks(Isar isar, int id, IsarUser object) {}
+}
+
+class _IsarUserNativeAdapter extends IsarNativeTypeAdapter<IsarUser> {
+  const _IsarUserNativeAdapter();
 
   @override
   void serialize(IsarCollection<IsarUser> collection, IsarRawObject rawObj,
-      IsarUser object, List<int> offsets, AdapterAlloc alloc) {
+      IsarUser object, int staticSize, List<int> offsets, AdapterAlloc alloc) {
     var dynamicSize = 0;
     final value0 = object.emailAddress;
-    final _emailAddress = BinaryWriter.utf8Encoder.convert(value0);
-    dynamicSize += _emailAddress.length;
+    final _emailAddress = IsarBinaryWriter.utf8Encoder.convert(value0);
+    dynamicSize += (_emailAddress.length) as int;
     final value1 = object.hashCode;
     final _hashCode = value1;
     final value2 = object.stringify;
     final _stringify = value2;
     final value3 = object.uid;
-    final _uid = BinaryWriter.utf8Encoder.convert(value3);
-    dynamicSize += _uid.length;
+    final _uid = IsarBinaryWriter.utf8Encoder.convert(value3);
+    dynamicSize += (_uid.length) as int;
     final value4 = object.updatedAt;
     final _updatedAt = value4;
     final value5 = object.username;
-    final _username = BinaryWriter.utf8Encoder.convert(value5);
-    dynamicSize += _username.length;
-    final size = dynamicSize + 43;
+    final _username = IsarBinaryWriter.utf8Encoder.convert(value5);
+    dynamicSize += (_username.length) as int;
+    final size = staticSize + dynamicSize;
 
     rawObj.buffer = alloc(size);
     rawObj.buffer_length = size;
-    final buffer = bufAsBytes(rawObj.buffer, size);
-    final writer = BinaryWriter(buffer, 43);
+    final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
+    final writer = IsarBinaryWriter(buffer, staticSize);
     writer.writeBytes(offsets[0], _emailAddress);
     writer.writeLong(offsets[1], _hashCode);
     writer.writeBool(offsets[2], _stringify);
@@ -81,7 +155,7 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
 
   @override
   IsarUser deserialize(IsarCollection<IsarUser> collection, int id,
-      BinaryReader reader, List<int> offsets) {
+      IsarBinaryReader reader, List<int> offsets) {
     final object = IsarUser(
       emailAddress: reader.readString(offsets[0]),
       id: id,
@@ -94,7 +168,7 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
 
   @override
   P deserializeProperty<P>(
-      int id, BinaryReader reader, int propertyIndex, int offset) {
+      int id, IsarBinaryReader reader, int propertyIndex, int offset) {
     switch (propertyIndex) {
       case -1:
         return id as P;
@@ -114,6 +188,9 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
         throw 'Illegal propertyIndex';
     }
   }
+
+  @override
+  void attachLinks(Isar isar, int id, IsarUser object) {}
 }
 
 extension IsarUserQueryWhereSort on QueryBuilder<IsarUser, IsarUser, QWhere> {

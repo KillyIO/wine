@@ -1,7 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/presentation/home/widgets/home_filter_button.dart';
 
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/genres.dart';
+import 'package:wine/utils/constants/home.dart';
+import 'package:wine/utils/constants/languages.dart';
 import 'package:wine/utils/responsive/drawer_responsive.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';
 
@@ -42,7 +48,82 @@ class HomeFiltersMenuLayout extends StatelessWidget {
             ),
           ),
           body: SafeArea(
-            child: Container(),
+            child: ListView(
+              children: [
+                const ListTile(
+                  title: Text(
+                    'TIME',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ),
+                BlocBuilder<HomeBloc, HomeState>(
+                  builder: (context, state) {
+                    return Column(
+                      children: timeFilterKeys
+                          .map(
+                            (e) => HomeFilterButton(
+                              isActive: e == state.timeFilterKey,
+                              onPressed: () {},
+                              title: e,
+                            ),
+                          )
+                          .toList(),
+                    );
+                  },
+                ),
+                const ListTile(
+                  title: Text(
+                    'GENRE',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ),
+                BlocBuilder<HomeBloc, HomeState>(
+                  builder: (context, state) {
+                    return Column(
+                      children: genresKeys
+                          .map(
+                            (e) => HomeFilterButton(
+                              isActive: e == state.genreFilterKey,
+                              onPressed: () {},
+                              title: e,
+                            ),
+                          )
+                          .toList(),
+                    );
+                  },
+                ),
+                const ListTile(
+                  title: Text(
+                    'LANGUAGE',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ),
+                BlocBuilder<HomeBloc, HomeState>(
+                  builder: (context, state) {
+                    return Column(
+                      children: isoCountryCodes
+                          .map(
+                            (e) => HomeFilterButton(
+                              isActive: e == state.languageFilterKey,
+                              onPressed: () {},
+                              title: e,
+                            ),
+                          )
+                          .toList(),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

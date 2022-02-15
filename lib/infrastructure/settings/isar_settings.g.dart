@@ -6,7 +6,7 @@ part of 'isar_settings.dart';
 // IsarCollectionGenerator
 // **************************************************************************
 
-// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast
 
 extension GetIsarSettingsCollection on Isar {
   IsarCollection<IsarSettings> get settings {
@@ -17,8 +17,9 @@ extension GetIsarSettingsCollection on Isar {
 final IsarSettingsSchema = CollectionSchema(
   name: 'IsarSettings',
   schema:
-      '{"name":"IsarSettings","properties":[{"name":"enableBranchesBookmarksCount","type":"Byte"},{"name":"enableBranchesLikesCount","type":"Byte"},{"name":"enableBranchesViewsCount","type":"Byte"},{"name":"enableTreesBookmarksCount","type":"Byte"},{"name":"enableTreesLikesCount","type":"Byte"},{"name":"enableTreesViewsCount","type":"Byte"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Byte"},{"name":"uid","type":"String"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
-  adapter: const _IsarSettingsAdapter(),
+      '{"name":"IsarSettings","idName":"id","properties":[{"name":"enableBranchesBookmarksCount","type":"Bool"},{"name":"enableBranchesLikesCount","type":"Bool"},{"name":"enableBranchesViewsCount","type":"Bool"},{"name":"enableTreesBookmarksCount","type":"Bool"},{"name":"enableTreesLikesCount","type":"Bool"},{"name":"enableTreesViewsCount","type":"Bool"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Bool"},{"name":"uid","type":"String"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
+  nativeAdapter: const _IsarSettingsNativeAdapter(),
+  webAdapter: const _IsarSettingsWebAdapter(),
   idName: 'id',
   propertyIds: {
     'enableBranchesBookmarksCount': 0,
@@ -31,6 +32,7 @@ final IsarSettingsSchema = CollectionSchema(
     'stringify': 7,
     'uid': 8
   },
+  listProperties: {},
   indexIds: {'uid': 0},
   indexTypes: {
     'uid': [
@@ -40,18 +42,112 @@ final IsarSettingsSchema = CollectionSchema(
   linkIds: {},
   backlinkIds: {},
   linkedCollections: [],
-  getId: (obj) => obj.id,
+  getId: (obj) {
+    if (obj.id == Isar.autoIncrement) {
+      return null;
+    } else {
+      return obj.id;
+    }
+  },
   setId: null,
   getLinks: (obj) => [],
-  version: 1,
+  version: 2,
 );
 
-class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
-  const _IsarSettingsAdapter();
+class _IsarSettingsWebAdapter extends IsarWebTypeAdapter<IsarSettings> {
+  const _IsarSettingsWebAdapter();
 
   @override
-  void serialize(IsarCollection<IsarSettings> collection, IsarRawObject rawObj,
-      IsarSettings object, List<int> offsets, AdapterAlloc alloc) {
+  Object serialize(
+      IsarCollection<IsarSettings> collection, IsarSettings object) {
+    final jsObj = IsarNative.newJsObject();
+    IsarNative.jsObjectSet(jsObj, 'enableBranchesBookmarksCount',
+        object.enableBranchesBookmarksCount);
+    IsarNative.jsObjectSet(
+        jsObj, 'enableBranchesLikesCount', object.enableBranchesLikesCount);
+    IsarNative.jsObjectSet(
+        jsObj, 'enableBranchesViewsCount', object.enableBranchesViewsCount);
+    IsarNative.jsObjectSet(
+        jsObj, 'enableTreesBookmarksCount', object.enableTreesBookmarksCount);
+    IsarNative.jsObjectSet(
+        jsObj, 'enableTreesLikesCount', object.enableTreesLikesCount);
+    IsarNative.jsObjectSet(
+        jsObj, 'enableTreesViewsCount', object.enableTreesViewsCount);
+    IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
+    IsarNative.jsObjectSet(jsObj, 'id', object.id);
+    IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
+    IsarNative.jsObjectSet(jsObj, 'uid', object.uid);
+    return jsObj;
+  }
+
+  @override
+  IsarSettings deserialize(
+      IsarCollection<IsarSettings> collection, dynamic jsObj) {
+    final object = IsarSettings(
+      enableBranchesBookmarksCount:
+          IsarNative.jsObjectGet(jsObj, 'enableBranchesBookmarksCount'),
+      enableBranchesLikesCount:
+          IsarNative.jsObjectGet(jsObj, 'enableBranchesLikesCount'),
+      enableBranchesViewsCount:
+          IsarNative.jsObjectGet(jsObj, 'enableBranchesViewsCount'),
+      enableTreesBookmarksCount:
+          IsarNative.jsObjectGet(jsObj, 'enableTreesBookmarksCount'),
+      enableTreesLikesCount:
+          IsarNative.jsObjectGet(jsObj, 'enableTreesLikesCount'),
+      enableTreesViewsCount:
+          IsarNative.jsObjectGet(jsObj, 'enableTreesViewsCount'),
+      id: IsarNative.jsObjectGet(jsObj, 'id'),
+      uid: IsarNative.jsObjectGet(jsObj, 'uid') ?? '',
+    );
+    return object;
+  }
+
+  @override
+  P deserializeProperty<P>(Object jsObj, String propertyName) {
+    switch (propertyName) {
+      case 'enableBranchesBookmarksCount':
+        return (IsarNative.jsObjectGet(jsObj, 'enableBranchesBookmarksCount'))
+            as P;
+      case 'enableBranchesLikesCount':
+        return (IsarNative.jsObjectGet(jsObj, 'enableBranchesLikesCount')) as P;
+      case 'enableBranchesViewsCount':
+        return (IsarNative.jsObjectGet(jsObj, 'enableBranchesViewsCount')) as P;
+      case 'enableTreesBookmarksCount':
+        return (IsarNative.jsObjectGet(jsObj, 'enableTreesBookmarksCount'))
+            as P;
+      case 'enableTreesLikesCount':
+        return (IsarNative.jsObjectGet(jsObj, 'enableTreesLikesCount')) as P;
+      case 'enableTreesViewsCount':
+        return (IsarNative.jsObjectGet(jsObj, 'enableTreesViewsCount')) as P;
+      case 'hashCode':
+        return (IsarNative.jsObjectGet(jsObj, 'hashCode') ??
+            double.negativeInfinity) as P;
+      case 'id':
+        return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
+      case 'stringify':
+        return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
+      case 'uid':
+        return (IsarNative.jsObjectGet(jsObj, 'uid') ?? '') as P;
+      default:
+        throw 'Illegal propertyName';
+    }
+  }
+
+  @override
+  void attachLinks(Isar isar, int id, IsarSettings object) {}
+}
+
+class _IsarSettingsNativeAdapter extends IsarNativeTypeAdapter<IsarSettings> {
+  const _IsarSettingsNativeAdapter();
+
+  @override
+  void serialize(
+      IsarCollection<IsarSettings> collection,
+      IsarRawObject rawObj,
+      IsarSettings object,
+      int staticSize,
+      List<int> offsets,
+      AdapterAlloc alloc) {
     var dynamicSize = 0;
     final value0 = object.enableBranchesBookmarksCount;
     final _enableBranchesBookmarksCount = value0;
@@ -70,14 +166,14 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
     final value7 = object.stringify;
     final _stringify = value7;
     final value8 = object.uid;
-    final _uid = BinaryWriter.utf8Encoder.convert(value8);
-    dynamicSize += _uid.length;
-    final size = dynamicSize + 25;
+    final _uid = IsarBinaryWriter.utf8Encoder.convert(value8);
+    dynamicSize += (_uid.length) as int;
+    final size = staticSize + dynamicSize;
 
     rawObj.buffer = alloc(size);
     rawObj.buffer_length = size;
-    final buffer = bufAsBytes(rawObj.buffer, size);
-    final writer = BinaryWriter(buffer, 25);
+    final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
+    final writer = IsarBinaryWriter(buffer, staticSize);
     writer.writeBool(offsets[0], _enableBranchesBookmarksCount);
     writer.writeBool(offsets[1], _enableBranchesLikesCount);
     writer.writeBool(offsets[2], _enableBranchesViewsCount);
@@ -91,7 +187,7 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
 
   @override
   IsarSettings deserialize(IsarCollection<IsarSettings> collection, int id,
-      BinaryReader reader, List<int> offsets) {
+      IsarBinaryReader reader, List<int> offsets) {
     final object = IsarSettings(
       enableBranchesBookmarksCount: reader.readBoolOrNull(offsets[0]),
       enableBranchesLikesCount: reader.readBoolOrNull(offsets[1]),
@@ -107,7 +203,7 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
 
   @override
   P deserializeProperty<P>(
-      int id, BinaryReader reader, int propertyIndex, int offset) {
+      int id, IsarBinaryReader reader, int propertyIndex, int offset) {
     switch (propertyIndex) {
       case -1:
         return id as P;
@@ -133,6 +229,9 @@ class _IsarSettingsAdapter extends IsarTypeAdapter<IsarSettings> {
         throw 'Illegal propertyIndex';
     }
   }
+
+  @override
+  void attachLinks(Isar isar, int id, IsarSettings object) {}
 }
 
 extension IsarSettingsQueryWhereSort

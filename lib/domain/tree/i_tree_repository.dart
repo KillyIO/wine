@@ -26,6 +26,12 @@ abstract class ITreeRepository {
   );
 
   /// @nodoc
+  Future<Result<List<Tree>, TreeFailure>> loadTopTrees(
+    Map<String, dynamic> filters, {
+    UniqueID? lastTreeUID,
+  });
+
+  /// @nodoc
   Future<Result<Tree, TreeFailure>> loadTreeByUID(UniqueID uid);
 
   /// @nodoc

@@ -33,7 +33,7 @@ class BranchRepository implements IBranchRepository {
     UniqueID treeUID,
   ) async {
     try {
-      final querySnapshot = await _firestore
+      final snapshot = await _firestore
           .collection(branchesPath)
           .where('treeUID', isEqualTo: treeUID.getOrCrash())
           .where('index', isEqualTo: 1)
@@ -49,7 +49,7 @@ class BranchRepository implements IBranchRepository {
           )
           .get();
 
-      if (querySnapshot.docs.isEmpty) {
+      if (snapshot.docs.isEmpty) {
         return Ok(unit);
       }
       return Err(const BranchFailure.branchOneAlreadyExists());
@@ -170,7 +170,7 @@ class BranchRepository implements IBranchRepository {
     int index,
   ) async {
     try {
-      final querySnapshot = await _firestore
+      final snapshot = await _firestore
           .collection(branchesPath)
           .where('treeUID', isEqualTo: treeUID.getOrCrash())
           .where('index', isEqualTo: index)
@@ -185,11 +185,11 @@ class BranchRepository implements IBranchRepository {
           )
           .get();
 
-      if (querySnapshot.docs.isEmpty) {
+      if (snapshot.docs.isEmpty) {
         return Err(const BranchFailure.branchNotFound());
       }
 
-      final branch = querySnapshot.docs.first.data();
+      final branch = snapshot.docs.first.data();
 
       return Ok(branch);
     } on FirebaseException catch (e) {
@@ -223,7 +223,7 @@ class BranchRepository implements IBranchRepository {
             branchesCollection.where('authorUID', isEqualTo: uid.getOrCrash());
       }
 
-      final querySnapshot = await query
+      final snapshot = await query
           .orderBy('updatedAt', descending: true)
           .limit(20)
           .withConverter<Branch>(
@@ -238,7 +238,7 @@ class BranchRepository implements IBranchRepository {
           .get();
 
       final branch = <Branch>[];
-      for (final doc in querySnapshot.docs) {
+      for (final doc in snapshot.docs) {
         branch.add(doc.data());
       }
       return Ok(branch);
@@ -308,7 +308,7 @@ class BranchRepository implements IBranchRepository {
         );
       }
 
-      final querySnapshot = await query
+      final snapshot = await query
           .orderBy('updatedAt', descending: true)
           .limit(20)
           .withConverter<Branch>(
@@ -323,7 +323,7 @@ class BranchRepository implements IBranchRepository {
           .get();
 
       final branch = <Branch>[];
-      for (final doc in querySnapshot.docs) {
+      for (final doc in snapshot.docs) {
         branch.add(doc.data());
       }
       return Ok(branch);
@@ -374,7 +374,7 @@ class BranchRepository implements IBranchRepository {
             .orderBy('authorUID', descending: true);
       }
 
-      final querySnapshot = await query
+      final snapshot = await query
           .orderBy('updatedAt', descending: true)
           .limit(20)
           .withConverter<Branch>(
@@ -389,7 +389,7 @@ class BranchRepository implements IBranchRepository {
           .get();
 
       final branch = <Branch>[];
-      for (final doc in querySnapshot.docs) {
+      for (final doc in snapshot.docs) {
         branch.add(doc.data());
       }
       return Ok(branch);
