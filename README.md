@@ -15,8 +15,11 @@ This way it is possible to create an infinite amount of alternative stories (a *
 
 ### Features
 
+- [X] login, signup and logout
 - [X] create, update and delete a **tree**
 - [X] create, update and delete a **branch**
+- [X] liking and bookmarking **trees**
+- [X] liking and bookmarking in **branches**
 
 ## Firebase
 
@@ -30,7 +33,7 @@ You'll have to run the **cli** twice to generate **dev** and **prod**.
 
 ### Option 2
 
-Create file ```lib\development_firebase_options.dart``` for **dev** and/or ```lib\production_firebase_options.dart``` for **prod** then copy the following config.
+Create file ```lib\development_firebase_options.dart``` for **dev** and/or ```lib\production_firebase_options.dart``` for **prod** then copy the following config:
 
 <details>
 <summary>development_firebase_options.dart/production_firebase_options.dart</summary>
@@ -116,7 +119,7 @@ class DefaultFirebaseOptions {
 
 ## For web
 
-Create file ```web/index.html``` and copy the code below.
+Create file ```web/index.html``` and copy the code below:
 
 <details>
 <summary>index.html</summary>
