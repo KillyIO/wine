@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+    match /databases/{database}/documents {
+        function isSignedIn() {
+            return request.auth.uid != null;
+        } //Allow creating a new user to anyone who is authenticated
+
+        function allowBranchesUpdate() {
+            return isSignedIn() && (request.auth.uid == resource.data.authorUID || request.resource.data.keys().hasOnly(['bookmarksCount', 'likesCount', 'viewsCount']));
+        }
+
+        function allowTreesUpdate() {
+            return isSignedIn() && (request.auth.uid == resource.data.authorUID || request.resource.data.keys().hasOnly(['bookmarksCount', 'likesCount', 'viewsCount']));
+        }
+        
+        match /users/{document=**} {
+            allow create, read: if isSignedIn(); //Allow create if signed in 
+            allow update, delete: if isSignedIn() && request.auth.uid == resource.data.uid; // Allow delete only if the uid matches (same user)
+        }
+
+        match /username_uid_map/{document=**} {
+            allow read: if true;
+            allow create: if isSignedIn();  //Once a uid mapping is created it cannot be deleted or updated from the app
+            allow update: if isSignedIn() && request.auth.uid == resource.data.uid;
+        }
+        
+        match /branches/{document=**} {
+            allow create, read: if isSignedIn();
+            allow update: if allowBranchesUpdate(); // Only the original creator of the series can modiy or delete his/her series
+            allow delete: if isSignedIn() && request.auth.uid == resource.data.authorUID && resource.data.isPublished == false; // Only the original creator of the chapter can modiy or delete his/her series
+        }
+
+        match /branches_bookmarks/{document=**} {
+            allow create, read: if isSignedIn();
+            allow update: if isSignedIn() && request.resource.data.keys().hasOnly([request.auth.uid]);
+        }
+
+        match /branches_likes/{document=**} {
+            allow create, read: if isSignedIn();
+            allow update: if isSignedIn() && request.resource.data.keys().hasOnly([request.auth.uid]);
+        }
+
+        match /branches_views/{document=**} {
+            allow create, read: if isSignedIn();
+            allow update: if isSignedIn() && request.resource.data.keys().hasOnly([request.auth.uid]);
+        }
+
+        match /trees/{document=**} {
+            allow create, read: if isSignedIn();
+            allow update: if allowTreesUpdate(); // Only the original creator of the series can modiy or delete his/her series
+            allow delete: if isSignedIn() && request.auth.uid == resource.data.authorUID && resource.data.isPublished == false; // Only the original creator of the series can modiy or delete his/her series
+        }
+
+        match /trees_bookmarks/{document=**} {
+            allow create, read: if isSignedIn();
+            allow update: if isSignedIn() && request.resource.data.keys().hasOnly([request.auth.uid]);
+        }
+
+        match /trees_likes/{document=**} {
+            allow create, read: if isSignedIn();
+            allow update: if isSignedIn() && request.resource.data.keys().hasOnly([request.auth.uid]);
+        }
+
+        match /trees_views/{document=**} {
+            allow create, read: if isSignedIn();
+            allow update: if isSignedIn() && request.resource.data.keys().hasOnly([request.auth.uid]);
+        }
+
+        match /default_covers/{document=**} {
+            allow read: if isSignedIn();
+        }
+	}
+}
