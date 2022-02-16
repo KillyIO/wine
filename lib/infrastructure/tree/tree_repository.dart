@@ -171,7 +171,7 @@ class TreeRepository implements ITreeRepository {
 
       final snapshot = await query
           .where('updatedAt', isGreaterThanOrEqualTo: timestamp)
-          .orderBy('updatedAt')
+          .orderBy('updatedAt', descending: true)
           .orderBy('likesCount', descending: true)
           .limit(20)
           .withConverter<Tree>(

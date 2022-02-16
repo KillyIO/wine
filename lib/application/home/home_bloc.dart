@@ -52,9 +52,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ))
             .match(
           (trees) {
-            // Sort trees to get the most liked first
-            trees.sort((t1, t2) => t2.likesCount.compareTo(t1.likesCount));
-
             emit(
               state.copyWith(
                 timeFilterKey: time,

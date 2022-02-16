@@ -21,6 +21,53 @@ This way it is possible to create an infinite amount of alternative stories (a *
 - [X] liking and bookmarking **trees**
 - [X] liking and bookmarking in **branches**
 
+### Screenshots
+
+<details>
+<summary>Authentication pages</summary>
+
+|Login|Sign up|
+|-----|-------|
+|<img src="screenshots/login.jpg"  width="200" />|<img src="screenshots/sign_up.jpg"  width="200" />|
+
+</details>
+
+<details>
+<summary>Home pages</summary>
+
+|Home (top trees)|
+|----------------|
+|<img src="screenshots/top_trees.jpg"  width="200" />|
+
+</details>
+
+<details>
+<summary>Library pages</summary>
+
+|Library (trees)|Library (branches)|
+|---------------|------------------|
+|<img src="screenshots/library_trees.jpg"  width="200" />|<img src="screenshots/library_branches.jpg"  width="200" />|
+
+</details>
+
+<details>
+<summary>Tree page</summary>
+
+|Tree|
+|----|
+|<img src="screenshots/tree.jpg"  width="200" />|
+
+</details>
+
+<details>
+<summary>Branch page</summary>
+
+|Branch 1|Branch 2|Branch 3|
+|--------|--------|--------|
+|<img src="screenshots/branch_1.jpg"  width="200" />|<img src="screenshots/branch_2.jpg"  width="200" />|<img src="screenshots/branch_3.jpg"  width="200" />|
+
+</details>
+
 ## Firebase
 
 ### Option 1 (Recommended)
