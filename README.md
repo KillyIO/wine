@@ -25,7 +25,9 @@ This way it is possible to create an infinite amount of alternative stories (a *
 
 ### Option 1 (Recommended)
 
-Follow this [doc](https://firebase.flutter.dev/docs/cli) to generate Firebase Options then rename the generated file to ```lib\development_firebase_options.dart``` for **dev** and/or ```lib\production_firebase_options.dart``` for **prod**.
+Make sure to follow this [guide](https://firebase.google.com/docs/cli) to install Firebase CLI.
+
+Follow this [guide](https://firebase.flutter.dev/docs/cli) to generate Firebase Options then rename the generated file to ```lib\development_firebase_options.dart``` for **dev** and/or ```lib\production_firebase_options.dart``` for **prod**.
 
 You'll have to run the **cli** twice to generate **dev** and **prod**.
 
@@ -117,7 +119,7 @@ class DefaultFirebaseOptions {
 
 ## For web
 
-Create file ```web/index.html``` and copy the code below:
+Create file ```web/index.html``` and then copy the following code:
 
 <details>
 <summary>index.html</summary>
