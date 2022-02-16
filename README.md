@@ -23,8 +23,6 @@ This way it is possible to create an infinite amount of alternative stories (a *
 
 ## Firebase
 
-2 options:
-
 ### Option 1 (Recommended)
 
 Follow this [doc](https://firebase.flutter.dev/docs/cli) to generate Firebase Options then rename the generated file to ```lib\development_firebase_options.dart``` for **dev** and/or ```lib\production_firebase_options.dart``` for **prod**.
