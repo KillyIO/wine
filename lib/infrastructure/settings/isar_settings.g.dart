@@ -688,6 +688,9 @@ extension IsarSettingsQueryFilter
   }
 }
 
+extension IsarSettingsQueryLinks
+    on QueryBuilder<IsarSettings, IsarSettings, QFilterCondition> {}
+
 extension IsarSettingsQueryWhereSortBy
     on QueryBuilder<IsarSettings, IsarSettings, QSortBy> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>

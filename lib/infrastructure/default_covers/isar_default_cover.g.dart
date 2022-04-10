@@ -624,6 +624,9 @@ extension IsarDefaultCoverQueryFilter
   }
 }
 
+extension IsarDefaultCoverQueryLinks
+    on QueryBuilder<IsarDefaultCover, IsarDefaultCover, QFilterCondition> {}
+
 extension IsarDefaultCoverQueryWhereSortBy
     on QueryBuilder<IsarDefaultCover, IsarDefaultCover, QSortBy> {
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterSortBy>

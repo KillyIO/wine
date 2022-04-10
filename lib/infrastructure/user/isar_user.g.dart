@@ -786,6 +786,9 @@ extension IsarUserQueryFilter
   }
 }
 
+extension IsarUserQueryLinks
+    on QueryBuilder<IsarUser, IsarUser, QFilterCondition> {}
+
 extension IsarUserQueryWhereSortBy
     on QueryBuilder<IsarUser, IsarUser, QSortBy> {
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByEmailAddress() {

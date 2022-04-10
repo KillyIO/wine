@@ -60,7 +60,7 @@ class TypewriterBranchBloc
       if (pickedFile != null) {
         final image = File(pickedFile.path);
 
-        final croppedFile = await ImageCropper.cropImage(
+        final croppedFile = await ImageCropper().cropImage(
           sourcePath: image.path,
           maxWidth: maxWidth,
           maxHeight: maxHeight,
