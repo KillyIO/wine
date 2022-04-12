@@ -1,10 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/presentation/core/tree/tree_card.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/assets/images.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class HomeTreesLayout extends StatelessWidget {
@@ -64,9 +64,8 @@ class HomeTreesLayout extends StatelessWidget {
       itemBuilder: (_, i) => TreeCard(
         coverURL: trees[i].coverURL.getOrNull(),
         language: trees[i].language.getOrNull(),
-        onPressed: () => handleAuthGuardedNavigation(
-          context,
-          navigateTo: TreeRoute(
+        onPressed: () => context.router.root.push(
+          TreeRoute(
             tree: trees[i],
             uid: trees[i].uid.getOrCrash(),
           ),
