@@ -2056,14 +2056,14 @@ class _$TreeStateTearOff {
 
   _TreeState call(
       {required bool authorIsUser,
-      required User author,
+      required User? author,
       Branch? branchOne,
       Branch? branchResume,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isBookmarked,
       required bool isLiked,
       required bool isProcessing,
-      required User session,
+      required User? session,
       required Settings settings,
       required Tree tree}) {
     return _TreeState(
@@ -2088,7 +2088,7 @@ const $TreeState = _$TreeStateTearOff();
 /// @nodoc
 mixin _$TreeState {
   bool get authorIsUser => throw _privateConstructorUsedError;
-  User get author => throw _privateConstructorUsedError;
+  User? get author => throw _privateConstructorUsedError;
   Branch? get branchOne => throw _privateConstructorUsedError;
   Branch? get branchResume => throw _privateConstructorUsedError;
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
@@ -2096,7 +2096,7 @@ mixin _$TreeState {
   bool get isBookmarked => throw _privateConstructorUsedError;
   bool get isLiked => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
-  User get session => throw _privateConstructorUsedError;
+  User? get session => throw _privateConstructorUsedError;
   Settings get settings => throw _privateConstructorUsedError;
   Tree get tree => throw _privateConstructorUsedError;
 
@@ -2111,21 +2111,21 @@ abstract class $TreeStateCopyWith<$Res> {
       _$TreeStateCopyWithImpl<$Res>;
   $Res call(
       {bool authorIsUser,
-      User author,
+      User? author,
       Branch? branchOne,
       Branch? branchResume,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
       bool isProcessing,
-      User session,
+      User? session,
       Settings settings,
       Tree tree});
 
-  $UserCopyWith<$Res> get author;
+  $UserCopyWith<$Res>? get author;
   $BranchCopyWith<$Res>? get branchOne;
   $BranchCopyWith<$Res>? get branchResume;
-  $UserCopyWith<$Res> get session;
+  $UserCopyWith<$Res>? get session;
   $SettingsCopyWith<$Res> get settings;
   $TreeCopyWith<$Res> get tree;
 }
@@ -2160,7 +2160,7 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       branchOne: branchOne == freezed
           ? _value.branchOne
           : branchOne // ignore: cast_nullable_to_non_nullable
@@ -2188,7 +2188,7 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
       session: session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       settings: settings == freezed
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -2201,8 +2201,12 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
   }
 
   @override
-  $UserCopyWith<$Res> get author {
-    return $UserCopyWith<$Res>(_value.author, (value) {
+  $UserCopyWith<$Res>? get author {
+    if (_value.author == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.author!, (value) {
       return _then(_value.copyWith(author: value));
     });
   }
@@ -2230,8 +2234,12 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
   }
 
   @override
-  $UserCopyWith<$Res> get session {
-    return $UserCopyWith<$Res>(_value.session, (value) {
+  $UserCopyWith<$Res>? get session {
+    if (_value.session == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.session!, (value) {
       return _then(_value.copyWith(session: value));
     });
   }
@@ -2259,25 +2267,25 @@ abstract class _$TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
   @override
   $Res call(
       {bool authorIsUser,
-      User author,
+      User? author,
       Branch? branchOne,
       Branch? branchResume,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
       bool isProcessing,
-      User session,
+      User? session,
       Settings settings,
       Tree tree});
 
   @override
-  $UserCopyWith<$Res> get author;
+  $UserCopyWith<$Res>? get author;
   @override
   $BranchCopyWith<$Res>? get branchOne;
   @override
   $BranchCopyWith<$Res>? get branchResume;
   @override
-  $UserCopyWith<$Res> get session;
+  $UserCopyWith<$Res>? get session;
   @override
   $SettingsCopyWith<$Res> get settings;
   @override
@@ -2315,7 +2323,7 @@ class __$TreeStateCopyWithImpl<$Res> extends _$TreeStateCopyWithImpl<$Res>
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       branchOne: branchOne == freezed
           ? _value.branchOne
           : branchOne // ignore: cast_nullable_to_non_nullable
@@ -2343,7 +2351,7 @@ class __$TreeStateCopyWithImpl<$Res> extends _$TreeStateCopyWithImpl<$Res>
       session: session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       settings: settings == freezed
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -2375,7 +2383,7 @@ class _$_TreeState implements _TreeState {
   @override
   final bool authorIsUser;
   @override
-  final User author;
+  final User? author;
   @override
   final Branch? branchOne;
   @override
@@ -2389,7 +2397,7 @@ class _$_TreeState implements _TreeState {
   @override
   final bool isProcessing;
   @override
-  final User session;
+  final User? session;
   @override
   final Settings settings;
   @override
@@ -2447,21 +2455,21 @@ class _$_TreeState implements _TreeState {
 abstract class _TreeState implements TreeState {
   const factory _TreeState(
       {required bool authorIsUser,
-      required User author,
+      required User? author,
       Branch? branchOne,
       Branch? branchResume,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isBookmarked,
       required bool isLiked,
       required bool isProcessing,
-      required User session,
+      required User? session,
       required Settings settings,
       required Tree tree}) = _$_TreeState;
 
   @override
   bool get authorIsUser;
   @override
-  User get author;
+  User? get author;
   @override
   Branch? get branchOne;
   @override
@@ -2475,7 +2483,7 @@ abstract class _TreeState implements TreeState {
   @override
   bool get isProcessing;
   @override
-  User get session;
+  User? get session;
   @override
   Settings get settings;
   @override

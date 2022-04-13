@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -32,21 +34,25 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         ),
       );
 
-      (await _sessionsRepository.fetchSession()).match(
-        (user) {
-          emit(state.copyWith(username: user.username.getOrCrash()));
+      if (!_authFacade.isAnonymous) {
+        (await _sessionsRepository.fetchSession()).match(
+          (user) {
+            emit(state.copyWith(username: user.username.getOrCrash()));
 
-          add(const SettingsEvent.sessionFetched());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
+            add(const SettingsEvent.sessionFetched());
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+                isProcessing: false,
+              ),
+            );
+          },
+        );
+      } else {
+        await _fetchSettings(emit);
+      }
     });
     on<LogOutPressed>((_, emit) async {
       emit(
@@ -90,29 +96,31 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
       ),
     );
-    on<SessionFetched>(
-      (_, emit) async => (await _settingsRepository.fetchSettings()).match(
-        (settings) {
-          emit(
-            state.copyWith(
-              isProcessing: false,
-              settings: settings,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.settings(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      ),
-    );
+    on<SessionFetched>((_, emit) async => await _fetchSettings(emit));
   }
 
   final IAuthFacade _authFacade;
   final ISessionsRepository _sessionsRepository;
   final ISettingsRepository _settingsRepository;
+
+  FutureOr<void> _fetchSettings(Emitter<SettingsState> emit) async {
+    (await _settingsRepository.fetchSettings()).match(
+      (settings) {
+        emit(
+          state.copyWith(
+            isProcessing: false,
+            settings: settings,
+          ),
+        );
+      },
+      (failure) {
+        emit(
+          state.copyWith(
+            failureOption: Option.some(Err(CoreFailure.settings(failure))),
+            isProcessing: false,
+          ),
+        );
+      },
+    );
+  }
 }

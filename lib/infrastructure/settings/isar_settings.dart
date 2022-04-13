@@ -16,7 +16,6 @@ class IsarSettings extends Equatable {
     this.enableTreesLikesCount,
     this.enableTreesViewsCount,
     this.id,
-    required this.uid,
   });
 
   /// @nodoc
@@ -29,7 +28,6 @@ class IsarSettings extends Equatable {
       enableTreesLikesCount: map['enableTreesLikesCount'] as bool,
       enableTreesViewsCount: map['enableTreesViewsCount'] as bool,
       id: map['id'] as int,
-      uid: map['uid'] as String,
     );
   }
 
@@ -55,10 +53,6 @@ class IsarSettings extends Equatable {
   final int? id;
 
   /// @nodoc
-  @Index()
-  final String uid;
-
-  /// @nodoc
   IsarSettings copyWith({
     bool? enableBranchesBookmarksCount,
     bool? enableBranchesLikesCount,
@@ -67,7 +61,6 @@ class IsarSettings extends Equatable {
     bool? enableTreesLikesCount,
     bool? enableTreesViewsCount,
     int? id,
-    String? uid,
   }) {
     return IsarSettings(
       enableBranchesBookmarksCount:
@@ -83,7 +76,6 @@ class IsarSettings extends Equatable {
       enableTreesViewsCount:
           enableTreesViewsCount ?? this.enableTreesViewsCount,
       id: id ?? this.id,
-      uid: uid ?? this.uid,
     );
   }
 
@@ -97,7 +89,6 @@ class IsarSettings extends Equatable {
       'enableTreesLikesCount': enableTreesLikesCount,
       'enableTreesViewsCount': enableTreesViewsCount,
       'id': id,
-      'uid': uid,
     };
   }
 
@@ -122,7 +113,6 @@ class IsarSettings extends Equatable {
         enableTreesLikesCount,
         enableTreesViewsCount,
         id,
-        uid,
       ];
 
   @override

@@ -83,8 +83,20 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         },
       );
     });
-    on<SettingsFetched>((_, emit) async => await _fetchSession(emit));
-    on<SettingsInitialized>((_, emit) async => await _fetchSession(emit));
+    on<SettingsFetched>((_, emit) async {
+      if (!_authFacade.isAnonymous) {
+        await _fetchSession(emit);
+      } else {
+        emit(const SetupState.content());
+      }
+    });
+    on<SettingsInitialized>((_, emit) async {
+      if (!_authFacade.isAnonymous) {
+        await _fetchSession(emit);
+      } else {
+        emit(const SetupState.content());
+      }
+    });
     on<SettingsNotFound>(
       (_, emit) async => (await _settingsRepository.initializeSettings()).match(
         (_) {
@@ -119,7 +131,7 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
       (session) {
         add(SetupEvent.sessionFetched(session));
       },
-      (_) {
+      (failure) {
         emit(const SetupState.content());
       },
     );

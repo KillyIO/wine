@@ -17,7 +17,6 @@ class SettingsDTO with _$SettingsDTO {
     required bool? enableTreesBookmarksCount,
     required bool? enableTreesLikesCount,
     required bool? enableTreesViewsCount,
-    String? uid,
   }) = _SettingsDTO;
 
   /// @nodoc
@@ -41,7 +40,6 @@ class SettingsDTO with _$SettingsDTO {
       enableTreesBookmarksCount: settings.enableTreesBookmarksCount,
       enableTreesLikesCount: settings.enableTreesLikesCount,
       enableTreesViewsCount: settings.enableTreesViewsCount,
-      uid: settings.uid,
     );
   }
 
@@ -70,7 +68,6 @@ extension SettingsDTOX on SettingsDTO {
         enableTreesBookmarksCount: enableTreesBookmarksCount,
         enableTreesLikesCount: enableTreesLikesCount,
         enableTreesViewsCount: enableTreesViewsCount,
-        uid: uid ?? UniqueID().getOrCrash(),
       );
 }
 

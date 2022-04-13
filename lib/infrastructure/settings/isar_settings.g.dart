@@ -17,7 +17,7 @@ extension GetIsarSettingsCollection on Isar {
 final IsarSettingsSchema = CollectionSchema(
   name: 'IsarSettings',
   schema:
-      '{"name":"IsarSettings","idName":"id","properties":[{"name":"enableBranchesBookmarksCount","type":"Bool"},{"name":"enableBranchesLikesCount","type":"Bool"},{"name":"enableBranchesViewsCount","type":"Bool"},{"name":"enableTreesBookmarksCount","type":"Bool"},{"name":"enableTreesLikesCount","type":"Bool"},{"name":"enableTreesViewsCount","type":"Bool"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Bool"},{"name":"uid","type":"String"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
+      '{"name":"IsarSettings","idName":"id","properties":[{"name":"enableBranchesBookmarksCount","type":"Bool"},{"name":"enableBranchesLikesCount","type":"Bool"},{"name":"enableBranchesViewsCount","type":"Bool"},{"name":"enableTreesBookmarksCount","type":"Bool"},{"name":"enableTreesLikesCount","type":"Bool"},{"name":"enableTreesViewsCount","type":"Bool"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Bool"}],"indexes":[],"links":[]}',
   nativeAdapter: const _IsarSettingsNativeAdapter(),
   webAdapter: const _IsarSettingsWebAdapter(),
   idName: 'id',
@@ -29,16 +29,11 @@ final IsarSettingsSchema = CollectionSchema(
     'enableTreesLikesCount': 4,
     'enableTreesViewsCount': 5,
     'hashCode': 6,
-    'stringify': 7,
-    'uid': 8
+    'stringify': 7
   },
   listProperties: {},
-  indexIds: {'uid': 0},
-  indexTypes: {
-    'uid': [
-      NativeIndexType.stringHash,
-    ]
-  },
+  indexIds: {},
+  indexTypes: {},
   linkIds: {},
   backlinkIds: {},
   linkedCollections: [],
@@ -76,7 +71,6 @@ class _IsarSettingsWebAdapter extends IsarWebTypeAdapter<IsarSettings> {
     IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
     IsarNative.jsObjectSet(jsObj, 'id', object.id);
     IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
-    IsarNative.jsObjectSet(jsObj, 'uid', object.uid);
     return jsObj;
   }
 
@@ -97,7 +91,6 @@ class _IsarSettingsWebAdapter extends IsarWebTypeAdapter<IsarSettings> {
       enableTreesViewsCount:
           IsarNative.jsObjectGet(jsObj, 'enableTreesViewsCount'),
       id: IsarNative.jsObjectGet(jsObj, 'id'),
-      uid: IsarNative.jsObjectGet(jsObj, 'uid') ?? '',
     );
     return object;
   }
@@ -126,8 +119,6 @@ class _IsarSettingsWebAdapter extends IsarWebTypeAdapter<IsarSettings> {
         return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
       case 'stringify':
         return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
-      case 'uid':
-        return (IsarNative.jsObjectGet(jsObj, 'uid') ?? '') as P;
       default:
         throw 'Illegal propertyName';
     }
@@ -165,9 +156,6 @@ class _IsarSettingsNativeAdapter extends IsarNativeTypeAdapter<IsarSettings> {
     final _hashCode = value6;
     final value7 = object.stringify;
     final _stringify = value7;
-    final value8 = object.uid;
-    final _uid = IsarBinaryWriter.utf8Encoder.convert(value8);
-    dynamicSize += (_uid.length) as int;
     final size = staticSize + dynamicSize;
 
     rawObj.buffer = alloc(size);
@@ -182,7 +170,6 @@ class _IsarSettingsNativeAdapter extends IsarNativeTypeAdapter<IsarSettings> {
     writer.writeBool(offsets[5], _enableTreesViewsCount);
     writer.writeLong(offsets[6], _hashCode);
     writer.writeBool(offsets[7], _stringify);
-    writer.writeBytes(offsets[8], _uid);
   }
 
   @override
@@ -196,7 +183,6 @@ class _IsarSettingsNativeAdapter extends IsarNativeTypeAdapter<IsarSettings> {
       enableTreesLikesCount: reader.readBoolOrNull(offsets[4]),
       enableTreesViewsCount: reader.readBoolOrNull(offsets[5]),
       id: id,
-      uid: reader.readString(offsets[8]),
     );
     return object;
   }
@@ -223,8 +209,6 @@ class _IsarSettingsNativeAdapter extends IsarNativeTypeAdapter<IsarSettings> {
         return (reader.readLong(offset)) as P;
       case 7:
         return (reader.readBool(offset)) as P;
-      case 8:
-        return (reader.readString(offset)) as P;
       default:
         throw 'Illegal propertyIndex';
     }
@@ -238,10 +222,6 @@ extension IsarSettingsQueryWhereSort
     on QueryBuilder<IsarSettings, IsarSettings, QWhere> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhere> anyId() {
     return addWhereClauseInternal(const WhereClause(indexName: null));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterWhere> anyUid() {
-    return addWhereClauseInternal(const WhereClause(indexName: 'uid'));
   }
 }
 
@@ -318,42 +298,6 @@ extension IsarSettingsQueryWhere
       upper: [upperId],
       includeUpper: includeUpper,
     ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> uidEqualTo(
-      String uid) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: 'uid',
-      lower: [uid],
-      includeLower: true,
-      upper: [uid],
-      includeUpper: true,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> uidNotEqualTo(
-      String uid) {
-    if (whereSortInternal == Sort.asc) {
-      return addWhereClauseInternal(WhereClause(
-        indexName: 'uid',
-        upper: [uid],
-        includeUpper: false,
-      )).addWhereClauseInternal(WhereClause(
-        indexName: 'uid',
-        lower: [uid],
-        includeLower: false,
-      ));
-    } else {
-      return addWhereClauseInternal(WhereClause(
-        indexName: 'uid',
-        lower: [uid],
-        includeLower: false,
-      )).addWhereClauseInternal(WhereClause(
-        indexName: 'uid',
-        upper: [uid],
-        includeUpper: false,
-      ));
-    }
   }
 }
 
@@ -582,110 +526,6 @@ extension IsarSettingsQueryFilter
       value: value,
     ));
   }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidEqualTo(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'uid',
-      value: value,
-      caseSensitive: caseSensitive,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      uidGreaterThan(
-    String value, {
-    bool caseSensitive = true,
-    bool include = false,
-  }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.gt,
-      include: include,
-      property: 'uid',
-      value: value,
-      caseSensitive: caseSensitive,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidLessThan(
-    String value, {
-    bool caseSensitive = true,
-    bool include = false,
-  }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.lt,
-      include: include,
-      property: 'uid',
-      value: value,
-      caseSensitive: caseSensitive,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidBetween(
-    String lower,
-    String upper, {
-    bool caseSensitive = true,
-    bool includeLower = true,
-    bool includeUpper = true,
-  }) {
-    return addFilterConditionInternal(FilterCondition.between(
-      property: 'uid',
-      lower: lower,
-      includeLower: includeLower,
-      upper: upper,
-      includeUpper: includeUpper,
-      caseSensitive: caseSensitive,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidStartsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.startsWith,
-      property: 'uid',
-      value: value,
-      caseSensitive: caseSensitive,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidEndsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.endsWith,
-      property: 'uid',
-      value: value,
-      caseSensitive: caseSensitive,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidContains(
-      String value,
-      {bool caseSensitive = true}) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.contains,
-      property: 'uid',
-      value: value,
-      caseSensitive: caseSensitive,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> uidMatches(
-      String pattern,
-      {bool caseSensitive = true}) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.matches,
-      property: 'uid',
-      value: pattern,
-      caseSensitive: caseSensitive,
-    ));
-  }
 }
 
 extension IsarSettingsQueryLinks
@@ -776,14 +616,6 @@ extension IsarSettingsQueryWhereSortBy
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortByStringifyDesc() {
     return addSortByInternal('stringify', Sort.desc);
   }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortByUid() {
-    return addSortByInternal('uid', Sort.asc);
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortByUidDesc() {
-    return addSortByInternal('uid', Sort.desc);
-  }
 }
 
 extension IsarSettingsQueryWhereSortThenBy
@@ -871,14 +703,6 @@ extension IsarSettingsQueryWhereSortThenBy
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenByStringifyDesc() {
     return addSortByInternal('stringify', Sort.desc);
   }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenByUid() {
-    return addSortByInternal('uid', Sort.asc);
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenByUidDesc() {
-    return addSortByInternal('uid', Sort.desc);
-  }
 }
 
 extension IsarSettingsQueryWhereDistinct
@@ -924,11 +748,6 @@ extension IsarSettingsQueryWhereDistinct
   QueryBuilder<IsarSettings, IsarSettings, QDistinct> distinctByStringify() {
     return addDistinctByInternal('stringify');
   }
-
-  QueryBuilder<IsarSettings, IsarSettings, QDistinct> distinctByUid(
-      {bool caseSensitive = true}) {
-    return addDistinctByInternal('uid', caseSensitive: caseSensitive);
-  }
 }
 
 extension IsarSettingsQueryProperty
@@ -973,9 +792,5 @@ extension IsarSettingsQueryProperty
 
   QueryBuilder<IsarSettings, bool, QQueryOperations> stringifyProperty() {
     return addPropertyNameInternal('stringify');
-  }
-
-  QueryBuilder<IsarSettings, String, QQueryOperations> uidProperty() {
-    return addPropertyNameInternal('uid');
   }
 }

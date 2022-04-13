@@ -26,49 +26,39 @@ class SettingsRepository implements ISettingsRepository {
 
   @override
   Future<Result<Unit, SettingsFailure>> deleteSettings() async {
-    final firebaseUser = _firebaseAuth.currentUser;
-
-    if (firebaseUser != null) {
+    try {
       return _isar.writeTxn((isar) async {
-        final isDeleted = await isar.settings
-            .where()
-            .uidEqualTo(firebaseUser.uid)
-            .deleteFirst();
+        final isDeleted = await isar.settings.delete(0);
 
         if (isDeleted) {
           return Ok(unit);
         }
         return Err(const SettingsFailure.settingsNotDeleted());
       });
+    } catch (e) {
+      return Err(const SettingsFailure.settingsNotDeleted());
     }
-    return Err(const SettingsFailure.settingsNotDeleted());
   }
 
   @override
   Future<Result<Settings, SettingsFailure>> fetchSettings() async {
-    final firebaseUser = _firebaseAuth.currentUser;
-
-    if (firebaseUser != null) {
-      final settings =
-          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
+    try {
+      final settings = await _isar.settings.get(0);
 
       if (settings != null) {
         return Ok(settings.toDomain());
       }
+      return Err(const SettingsFailure.settingsNotFound());
+    } catch (e) {
+      return Err(const SettingsFailure.settingsNotFound());
     }
-    return Err(const SettingsFailure.settingsNotFound());
   }
 
   @override
   Future<Result<Unit, SettingsFailure>> initializeSettings() async {
-    final firebaseUser = _firebaseAuth.currentUser;
-
-    if (firebaseUser != null) {
+    try {
       return _isar.writeTxn((isar) async {
-        final settings = await isar.settings
-            .where()
-            .uidEqualTo(firebaseUser.uid)
-            .findFirst();
+        final settings = await isar.settings.get(0);
 
         if (settings == null) {
           await isar.settings.put(
@@ -81,25 +71,23 @@ class SettingsRepository implements ISettingsRepository {
                 enableTreesLikesCount: false,
                 enableTreesBookmarksCount: false,
               ),
-            ).toAdapter().copyWith(uid: firebaseUser.uid),
+            ).toAdapter().copyWith(id: 0),
           );
         }
 
         return Ok(unit);
       });
+    } catch (e) {
+      return Err(const SettingsFailure.settingsNotInitialized());
     }
-    return Err(const SettingsFailure.settingsNotInitialized());
   }
 
   @override
   Future<Result<Unit, SettingsFailure>> updateSettings(
     Settings settings,
   ) async {
-    final firebaseUser = _firebaseAuth.currentUser;
-
-    if (firebaseUser != null) {
-      var isarSettings =
-          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
+    try {
+      var isarSettings = await _isar.settings.get(0);
 
       if (isarSettings == null) {
         return Err(const SettingsFailure.settingsNotFound());
@@ -107,19 +95,20 @@ class SettingsRepository implements ISettingsRepository {
 
       final settingsAdapter = SettingsDTO.fromDomain(settings)
           .toAdapter()
-          .copyWith(id: isarSettings.id, uid: firebaseUser.uid);
+          .copyWith(id: isarSettings.id);
 
       await _isar.writeTxn((isar) async {
         await isar.settings.put(settingsAdapter);
       });
 
-      isarSettings =
-          await _isar.settings.where().uidEqualTo(firebaseUser.uid).findFirst();
+      isarSettings = await _isar.settings.get(0);
 
       if (isarSettings != null && isarSettings == settingsAdapter) {
         return Ok(unit);
       }
+      return Err(const SettingsFailure.settingsNotUpdated());
+    } catch (e) {
+      return Err(const SettingsFailure.settingsNotUpdated());
     }
-    return Err(const SettingsFailure.settingsNotUpdated());
   }
 }

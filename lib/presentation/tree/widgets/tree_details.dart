@@ -51,8 +51,9 @@ class TreeDetails extends StatelessWidget {
                       child: BlocBuilder<TreeBloc, TreeState>(
                         builder: (context, state) {
                           return TreeAuthorUsername(
-                            authorUsername: state.author.username.getOrNull() ??
-                                state.session.username.getOrNull(),
+                            authorUsername:
+                                state.author?.username.getOrNull() ??
+                                    state.session?.username.getOrNull(),
                           );
                         },
                       ),

@@ -6,14 +6,14 @@ class TreeState with _$TreeState {
   /// @nodoc
   const factory TreeState({
     required bool authorIsUser,
-    required User author,
+    required User? author,
     Branch? branchOne,
     Branch? branchResume,
     required Option<Result<None, CoreFailure>> failureOption,
     required bool isBookmarked,
     required bool isLiked,
     required bool isProcessing,
-    required User session,
+    required User? session,
     required Settings settings,
     required Tree tree,
   }) = _TreeState;
@@ -21,12 +21,12 @@ class TreeState with _$TreeState {
   /// @nodoc
   factory TreeState.initial() => TreeState(
         authorIsUser: false,
-        author: User.empty(),
+        author: null,
         failureOption: const None(),
         isBookmarked: false,
         isLiked: false,
         isProcessing: false,
-        session: User.empty(),
+        session: null,
         settings: Settings.empty(),
         tree: Tree.empty(),
       );

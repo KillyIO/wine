@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:oxidized/oxidized.dart';
+import 'package:wine/domain/core/unique_id.dart';
 
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
@@ -59,10 +60,17 @@ class SessionsRepository implements ISessionsRepository {
 
   @override
   Future<Result<Unit, SessionsFailure>> insertSession(User user) async {
+    var tmpUser = user;
     final firebaseUser = _firebaseAuth.currentUser;
 
     if (firebaseUser != null) {
-      var userAdapter = UserDTO.fromDomain(user).toAdapter();
+      if (firebaseUser.isAnonymous) {
+        tmpUser = tmpUser.copyWith(
+          uid: UniqueID.fromUniqueString(firebaseUser.uid),
+        );
+      }
+
+      var userAdapter = UserDTO.fromDomain(tmpUser).toAdapter();
       var session =
           await _isar.users.where().uidEqualTo(firebaseUser.uid).findFirst();
 

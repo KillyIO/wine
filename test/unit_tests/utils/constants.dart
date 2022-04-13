@@ -104,7 +104,7 @@ const testIsarSettings = IsarSettings(
   enableTreesBookmarksCount: false,
   enableTreesLikesCount: false,
   enableTreesViewsCount: false,
-  uid: testUserUid,
+  id: 0,
 );
 
 const testSessionAnonymous = <String, dynamic>{};

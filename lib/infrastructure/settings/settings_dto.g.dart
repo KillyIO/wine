@@ -15,7 +15,6 @@ _$_SettingsDTO _$$_SettingsDTOFromJson(Map<String, dynamic> json) =>
       enableTreesBookmarksCount: json['enableTreesBookmarksCount'] as bool?,
       enableTreesLikesCount: json['enableTreesLikesCount'] as bool?,
       enableTreesViewsCount: json['enableTreesViewsCount'] as bool?,
-      uid: json['uid'] as String?,
     );
 
 Map<String, dynamic> _$$_SettingsDTOToJson(_$_SettingsDTO instance) =>
@@ -26,5 +25,4 @@ Map<String, dynamic> _$$_SettingsDTOToJson(_$_SettingsDTO instance) =>
       'enableTreesBookmarksCount': instance.enableTreesBookmarksCount,
       'enableTreesLikesCount': instance.enableTreesLikesCount,
       'enableTreesViewsCount': instance.enableTreesViewsCount,
-      'uid': instance.uid,
     };
