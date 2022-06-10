@@ -1,4 +1,4 @@
-part of 'auth_dialog_cubit.dart';
+part of 'auth_dialog_cubit.application.dart';
 
 /// @nodoc
 @freezed

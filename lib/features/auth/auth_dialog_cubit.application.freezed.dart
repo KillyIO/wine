@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'auth_dialog_cubit.dart';
+part of 'auth_dialog_cubit.application.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,27 +12,7 @@ part of 'auth_dialog_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AuthDialogStateTearOff {
-  const _$AuthDialogStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _LogIn logIn() {
-    return const _LogIn();
-  }
-
-  _SignUp signUp() {
-    return const _SignUp();
-  }
-}
-
-/// @nodoc
-const $AuthDialogState = _$AuthDialogStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AuthDialogState {
@@ -100,19 +80,20 @@ class _$AuthDialogStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -128,7 +109,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -208,19 +189,19 @@ abstract class _Initial implements AuthDialogState {
 }
 
 /// @nodoc
-abstract class _$LogInCopyWith<$Res> {
-  factory _$LogInCopyWith(_LogIn value, $Res Function(_LogIn) then) =
-      __$LogInCopyWithImpl<$Res>;
+abstract class _$$_LogInCopyWith<$Res> {
+  factory _$$_LogInCopyWith(_$_LogIn value, $Res Function(_$_LogIn) then) =
+      __$$_LogInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LogInCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
-    implements _$LogInCopyWith<$Res> {
-  __$LogInCopyWithImpl(_LogIn _value, $Res Function(_LogIn) _then)
-      : super(_value, (v) => _then(v as _LogIn));
+class __$$_LogInCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
+    implements _$$_LogInCopyWith<$Res> {
+  __$$_LogInCopyWithImpl(_$_LogIn _value, $Res Function(_$_LogIn) _then)
+      : super(_value, (v) => _then(v as _$_LogIn));
 
   @override
-  _LogIn get _value => super._value as _LogIn;
+  _$_LogIn get _value => super._value as _$_LogIn;
 }
 
 /// @nodoc
@@ -236,7 +217,7 @@ class _$_LogIn implements _LogIn {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LogIn);
+        (other.runtimeType == runtimeType && other is _$_LogIn);
   }
 
   @override
@@ -316,19 +297,19 @@ abstract class _LogIn implements AuthDialogState {
 }
 
 /// @nodoc
-abstract class _$SignUpCopyWith<$Res> {
-  factory _$SignUpCopyWith(_SignUp value, $Res Function(_SignUp) then) =
-      __$SignUpCopyWithImpl<$Res>;
+abstract class _$$_SignUpCopyWith<$Res> {
+  factory _$$_SignUpCopyWith(_$_SignUp value, $Res Function(_$_SignUp) then) =
+      __$$_SignUpCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignUpCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
-    implements _$SignUpCopyWith<$Res> {
-  __$SignUpCopyWithImpl(_SignUp _value, $Res Function(_SignUp) _then)
-      : super(_value, (v) => _then(v as _SignUp));
+class __$$_SignUpCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
+    implements _$$_SignUpCopyWith<$Res> {
+  __$$_SignUpCopyWithImpl(_$_SignUp _value, $Res Function(_$_SignUp) _then)
+      : super(_value, (v) => _then(v as _$_SignUp));
 
   @override
-  _SignUp get _value => super._value as _SignUp;
+  _$_SignUp get _value => super._value as _$_SignUp;
 }
 
 /// @nodoc
@@ -344,7 +325,7 @@ class _$_SignUp implements _SignUp {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignUp);
+        (other.runtimeType == runtimeType && other is _$_SignUp);
   }
 
   @override
