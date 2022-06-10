@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
-import 'package:wine/presentation/home/home_filters_menu_layout.dart';
-import 'package:wine/presentation/home/home_menu_layout.dart';
-import 'package:wine/presentation/home/widgets/home_app_bar.dart';
-import 'package:wine/presentation/home/widgets/home_content_layout.dart';
-import 'package:wine/presentation/home/widgets/home_splash_layout.dart';
+import 'package:wine/features/home/home_app_bar.widget.dart';
+import 'package:wine/features/home/home_bloc.application.dart';
+import 'package:wine/features/home/home_content.layout.dart';
+import 'package:wine/features/home/home_filters_menu.layout.dart';
+import 'package:wine/features/home/home_menu.layout.dart';
+import 'package:wine/features/home/home_splash.layout.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
 class HomeLayout extends StatelessWidget {
   /// @nodoc
-  const HomeLayout({Key? key}) : super(key: key);
+  const HomeLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

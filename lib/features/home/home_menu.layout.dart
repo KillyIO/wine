@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
+import 'package:wine/features/home/home_menu_tile.widget.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
@@ -10,7 +10,7 @@ import 'package:wine/utils/responsive/home_responsive.dart';
 /// @nodoc
 class HomeMenuLayout extends StatelessWidget {
   /// @nodoc
-  const HomeMenuLayout({Key? key}) : super(key: key);
+  const HomeMenuLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

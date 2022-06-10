@@ -8,9 +8,9 @@ import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/home.dart';
 
-part 'home_event.dart';
-part 'home_state.dart';
-part 'home_bloc.freezed.dart';
+part 'home_event.application.dart';
+part 'home_state.application.dart';
+part 'home_bloc.application.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
@@ -74,11 +74,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         }
       }
     });
-    on<LoadNewTree>((_, emit) {});
-    on<LoadTopTree>((_, emit) {});
-    on<LoadTreeByGenre>((value, emit) {});
-    on<LoadTreeByLanguage>((value, emit) {});
-    on<LoadTreeByTime>((value, emit) {});
     on<PageViewIndexChanged>((value, emit) {
       if (state.currentPageViewIdx != value.index) {
         var newIdx = value.index;
@@ -110,6 +105,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         }
       }
     });
+    on<LoadNewTree>((_, emit) {});
+    on<LoadTopTree>((_, emit) {});
+    on<LoadTreeByGenre>((value, emit) {});
+    on<LoadTreeByLanguage>((value, emit) {});
+    on<LoadTreeByTime>((value, emit) {});
   }
 
   final ITreeRepository _treeRepository;

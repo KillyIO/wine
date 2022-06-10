@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/presentation/home/home_trees_ayout.dart';
+import 'package:wine/features/home/home_bloc.application.dart';
+import 'package:wine/features/home/home_trees.layout.dart';
 
 /// @nodoc
 class HomePageViewBuilder extends StatelessWidget {

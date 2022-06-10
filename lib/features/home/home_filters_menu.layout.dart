@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/presentation/home/widgets/home_filter_button.dart';
+import 'package:wine/features/home/home_bloc.application.dart';
+import 'package:wine/features/home/home_filter_button.widget.dart';
 
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/genres.dart';
@@ -14,7 +14,7 @@ import 'package:wine/utils/responsive/home_responsive.dart';
 /// @nodoc
 class HomeFiltersMenuLayout extends StatelessWidget {
   /// @nodoc
-  const HomeFiltersMenuLayout({Key? key}) : super(key: key);
+  const HomeFiltersMenuLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

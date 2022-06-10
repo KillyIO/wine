@@ -4,10 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 
-import 'package:wine/application/auth/auth_bloc.dart';
-import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/domain/auth/auth_failure.dart';
-import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
@@ -16,8 +12,12 @@ import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
+import 'package:wine/features/auth/auth_bloc.application.dart';
+import 'package:wine/features/auth/auth_failure.domain.dart';
+import 'package:wine/features/auth/i_auth_facade.domain.dart';
+import 'package:wine/features/home/home_app_bar.widget.dart';
+import 'package:wine/features/home/home_bloc.application.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/presentation/routes/router.dart';
 
 import '../../mocks/domain_mocks.dart';

@@ -1,10 +1,14 @@
-part of 'home_bloc.dart';
+part of 'home_bloc.application.dart';
 
 /// @nodoc
 @freezed
 class HomeEvent with _$HomeEvent {
   /// @nodoc
   const factory HomeEvent.init() = Init;
+
+  /// @nodoc
+  const factory HomeEvent.pageViewIndexChanged(int index) =
+      PageViewIndexChanged;
 
   /// @nodoc
   const factory HomeEvent.loadNewTree() = LoadNewTree;
@@ -20,8 +24,4 @@ class HomeEvent with _$HomeEvent {
 
   /// @nodoc
   const factory HomeEvent.loadTreeByTime(String key) = LoadTreeByTime;
-
-  /// @nodoc
-  const factory HomeEvent.pageViewIndexChanged(int index) =
-      PageViewIndexChanged;
 }
