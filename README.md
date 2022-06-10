@@ -167,7 +167,7 @@ class DefaultFirebaseOptions {
 Finally, in your Firebase project:
 
 - enable **email/password**, **Google** and **anonymous** authentication
-- copy ```firestore.rules``` content create your own rules
+- copy ```firestore.rules``` content or create your own rules
 
 ## For web
 
