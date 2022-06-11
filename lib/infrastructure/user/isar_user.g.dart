@@ -6,20 +6,16 @@ part of 'isar_user.dart';
 // IsarCollectionGenerator
 // **************************************************************************
 
-// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, unused_local_variable
 
 extension GetIsarUserCollection on Isar {
-  IsarCollection<IsarUser> get users {
-    return getCollection('IsarUser');
-  }
+  IsarCollection<IsarUser> get users => getCollection();
 }
 
-final IsarUserSchema = CollectionSchema(
+const IsarUserSchema = CollectionSchema(
   name: 'IsarUser',
   schema:
       '{"name":"IsarUser","idName":"id","properties":[{"name":"emailAddress","type":"String"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Bool"},{"name":"uid","type":"String"},{"name":"updatedAt","type":"Long"},{"name":"username","type":"String"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
-  nativeAdapter: const _IsarUserNativeAdapter(),
-  webAdapter: const _IsarUserWebAdapter(),
   idName: 'id',
   propertyIds: {
     'emailAddress': 0,
@@ -31,278 +27,257 @@ final IsarUserSchema = CollectionSchema(
   },
   listProperties: {},
   indexIds: {'uid': 0},
-  indexTypes: {
+  indexValueTypes: {
     'uid': [
-      NativeIndexType.stringHash,
+      IndexValueType.stringHash,
     ]
   },
   linkIds: {},
-  backlinkIds: {},
-  linkedCollections: [],
-  getId: (obj) {
-    if (obj.id == Isar.autoIncrement) {
-      return null;
-    } else {
-      return obj.id;
-    }
-  },
-  setId: null,
-  getLinks: (obj) => [],
-  version: 2,
+  backlinkLinkNames: {},
+  getId: _isarUserGetId,
+  getLinks: _isarUserGetLinks,
+  attachLinks: _isarUserAttachLinks,
+  serializeNative: _isarUserSerializeNative,
+  deserializeNative: _isarUserDeserializeNative,
+  deserializePropNative: _isarUserDeserializePropNative,
+  serializeWeb: _isarUserSerializeWeb,
+  deserializeWeb: _isarUserDeserializeWeb,
+  deserializePropWeb: _isarUserDeserializePropWeb,
+  version: 3,
 );
 
-class _IsarUserWebAdapter extends IsarWebTypeAdapter<IsarUser> {
-  const _IsarUserWebAdapter();
-
-  @override
-  Object serialize(IsarCollection<IsarUser> collection, IsarUser object) {
-    final jsObj = IsarNative.newJsObject();
-    IsarNative.jsObjectSet(jsObj, 'emailAddress', object.emailAddress);
-    IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
-    IsarNative.jsObjectSet(jsObj, 'id', object.id);
-    IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
-    IsarNative.jsObjectSet(jsObj, 'uid', object.uid);
-    IsarNative.jsObjectSet(
-        jsObj, 'updatedAt', object.updatedAt.toUtc().millisecondsSinceEpoch);
-    IsarNative.jsObjectSet(jsObj, 'username', object.username);
-    return jsObj;
+int? _isarUserGetId(IsarUser object) {
+  if (object.id == Isar.autoIncrement) {
+    return null;
+  } else {
+    return object.id;
   }
+}
 
-  @override
-  IsarUser deserialize(IsarCollection<IsarUser> collection, dynamic jsObj) {
-    final object = IsarUser(
-      emailAddress: IsarNative.jsObjectGet(jsObj, 'emailAddress') ?? '',
-      id: IsarNative.jsObjectGet(jsObj, 'id'),
-      uid: IsarNative.jsObjectGet(jsObj, 'uid') ?? '',
-      updatedAt: IsarNative.jsObjectGet(jsObj, 'updatedAt') != null
+List<IsarLinkBase> _isarUserGetLinks(IsarUser object) {
+  return [];
+}
+
+void _isarUserSerializeNative(
+    IsarCollection<IsarUser> collection,
+    IsarRawObject rawObj,
+    IsarUser object,
+    int staticSize,
+    List<int> offsets,
+    AdapterAlloc alloc) {
+  var dynamicSize = 0;
+  final value0 = object.emailAddress;
+  final _emailAddress = IsarBinaryWriter.utf8Encoder.convert(value0);
+  dynamicSize += (_emailAddress.length) as int;
+  final value1 = object.hashCode;
+  final _hashCode = value1;
+  final value2 = object.stringify;
+  final _stringify = value2;
+  final value3 = object.uid;
+  final _uid = IsarBinaryWriter.utf8Encoder.convert(value3);
+  dynamicSize += (_uid.length) as int;
+  final value4 = object.updatedAt;
+  final _updatedAt = value4;
+  final value5 = object.username;
+  final _username = IsarBinaryWriter.utf8Encoder.convert(value5);
+  dynamicSize += (_username.length) as int;
+  final size = staticSize + dynamicSize;
+
+  rawObj.buffer = alloc(size);
+  rawObj.buffer_length = size;
+  final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
+  final writer = IsarBinaryWriter(buffer, staticSize);
+  writer.writeBytes(offsets[0], _emailAddress);
+  writer.writeLong(offsets[1], _hashCode);
+  writer.writeBool(offsets[2], _stringify);
+  writer.writeBytes(offsets[3], _uid);
+  writer.writeDateTime(offsets[4], _updatedAt);
+  writer.writeBytes(offsets[5], _username);
+}
+
+IsarUser _isarUserDeserializeNative(IsarCollection<IsarUser> collection, int id,
+    IsarBinaryReader reader, List<int> offsets) {
+  final object = IsarUser(
+    emailAddress: reader.readString(offsets[0]),
+    id: id,
+    uid: reader.readString(offsets[3]),
+    updatedAt: reader.readDateTime(offsets[4]),
+    username: reader.readString(offsets[5]),
+  );
+  return object;
+}
+
+P _isarUserDeserializePropNative<P>(
+    int id, IsarBinaryReader reader, int propertyIndex, int offset) {
+  switch (propertyIndex) {
+    case -1:
+      return id as P;
+    case 0:
+      return (reader.readString(offset)) as P;
+    case 1:
+      return (reader.readLong(offset)) as P;
+    case 2:
+      return (reader.readBool(offset)) as P;
+    case 3:
+      return (reader.readString(offset)) as P;
+    case 4:
+      return (reader.readDateTime(offset)) as P;
+    case 5:
+      return (reader.readString(offset)) as P;
+    default:
+      throw 'Illegal propertyIndex';
+  }
+}
+
+dynamic _isarUserSerializeWeb(
+    IsarCollection<IsarUser> collection, IsarUser object) {
+  final jsObj = IsarNative.newJsObject();
+  IsarNative.jsObjectSet(jsObj, 'emailAddress', object.emailAddress);
+  IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
+  IsarNative.jsObjectSet(jsObj, 'id', object.id);
+  IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
+  IsarNative.jsObjectSet(jsObj, 'uid', object.uid);
+  IsarNative.jsObjectSet(
+      jsObj, 'updatedAt', object.updatedAt.toUtc().millisecondsSinceEpoch);
+  IsarNative.jsObjectSet(jsObj, 'username', object.username);
+  return jsObj;
+}
+
+IsarUser _isarUserDeserializeWeb(
+    IsarCollection<IsarUser> collection, dynamic jsObj) {
+  final object = IsarUser(
+    emailAddress: IsarNative.jsObjectGet(jsObj, 'emailAddress') ?? '',
+    id: IsarNative.jsObjectGet(jsObj, 'id'),
+    uid: IsarNative.jsObjectGet(jsObj, 'uid') ?? '',
+    updatedAt: IsarNative.jsObjectGet(jsObj, 'updatedAt') != null
+        ? DateTime.fromMillisecondsSinceEpoch(
+                IsarNative.jsObjectGet(jsObj, 'updatedAt'),
+                isUtc: true)
+            .toLocal()
+        : DateTime.fromMillisecondsSinceEpoch(0),
+    username: IsarNative.jsObjectGet(jsObj, 'username') ?? '',
+  );
+  return object;
+}
+
+P _isarUserDeserializePropWeb<P>(Object jsObj, String propertyName) {
+  switch (propertyName) {
+    case 'emailAddress':
+      return (IsarNative.jsObjectGet(jsObj, 'emailAddress') ?? '') as P;
+    case 'hashCode':
+      return (IsarNative.jsObjectGet(jsObj, 'hashCode') ??
+          double.negativeInfinity) as P;
+    case 'id':
+      return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
+    case 'stringify':
+      return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
+    case 'uid':
+      return (IsarNative.jsObjectGet(jsObj, 'uid') ?? '') as P;
+    case 'updatedAt':
+      return (IsarNative.jsObjectGet(jsObj, 'updatedAt') != null
           ? DateTime.fromMillisecondsSinceEpoch(
                   IsarNative.jsObjectGet(jsObj, 'updatedAt'),
                   isUtc: true)
               .toLocal()
-          : DateTime.fromMillisecondsSinceEpoch(0),
-      username: IsarNative.jsObjectGet(jsObj, 'username') ?? '',
-    );
-    return object;
+          : DateTime.fromMillisecondsSinceEpoch(0)) as P;
+    case 'username':
+      return (IsarNative.jsObjectGet(jsObj, 'username') ?? '') as P;
+    default:
+      throw 'Illegal propertyName';
   }
-
-  @override
-  P deserializeProperty<P>(Object jsObj, String propertyName) {
-    switch (propertyName) {
-      case 'emailAddress':
-        return (IsarNative.jsObjectGet(jsObj, 'emailAddress') ?? '') as P;
-      case 'hashCode':
-        return (IsarNative.jsObjectGet(jsObj, 'hashCode') ??
-            double.negativeInfinity) as P;
-      case 'id':
-        return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
-      case 'stringify':
-        return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
-      case 'uid':
-        return (IsarNative.jsObjectGet(jsObj, 'uid') ?? '') as P;
-      case 'updatedAt':
-        return (IsarNative.jsObjectGet(jsObj, 'updatedAt') != null
-            ? DateTime.fromMillisecondsSinceEpoch(
-                    IsarNative.jsObjectGet(jsObj, 'updatedAt'),
-                    isUtc: true)
-                .toLocal()
-            : DateTime.fromMillisecondsSinceEpoch(0)) as P;
-      case 'username':
-        return (IsarNative.jsObjectGet(jsObj, 'username') ?? '') as P;
-      default:
-        throw 'Illegal propertyName';
-    }
-  }
-
-  @override
-  void attachLinks(Isar isar, int id, IsarUser object) {}
 }
 
-class _IsarUserNativeAdapter extends IsarNativeTypeAdapter<IsarUser> {
-  const _IsarUserNativeAdapter();
-
-  @override
-  void serialize(IsarCollection<IsarUser> collection, IsarRawObject rawObj,
-      IsarUser object, int staticSize, List<int> offsets, AdapterAlloc alloc) {
-    var dynamicSize = 0;
-    final value0 = object.emailAddress;
-    final _emailAddress = IsarBinaryWriter.utf8Encoder.convert(value0);
-    dynamicSize += (_emailAddress.length) as int;
-    final value1 = object.hashCode;
-    final _hashCode = value1;
-    final value2 = object.stringify;
-    final _stringify = value2;
-    final value3 = object.uid;
-    final _uid = IsarBinaryWriter.utf8Encoder.convert(value3);
-    dynamicSize += (_uid.length) as int;
-    final value4 = object.updatedAt;
-    final _updatedAt = value4;
-    final value5 = object.username;
-    final _username = IsarBinaryWriter.utf8Encoder.convert(value5);
-    dynamicSize += (_username.length) as int;
-    final size = staticSize + dynamicSize;
-
-    rawObj.buffer = alloc(size);
-    rawObj.buffer_length = size;
-    final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
-    final writer = IsarBinaryWriter(buffer, staticSize);
-    writer.writeBytes(offsets[0], _emailAddress);
-    writer.writeLong(offsets[1], _hashCode);
-    writer.writeBool(offsets[2], _stringify);
-    writer.writeBytes(offsets[3], _uid);
-    writer.writeDateTime(offsets[4], _updatedAt);
-    writer.writeBytes(offsets[5], _username);
-  }
-
-  @override
-  IsarUser deserialize(IsarCollection<IsarUser> collection, int id,
-      IsarBinaryReader reader, List<int> offsets) {
-    final object = IsarUser(
-      emailAddress: reader.readString(offsets[0]),
-      id: id,
-      uid: reader.readString(offsets[3]),
-      updatedAt: reader.readDateTime(offsets[4]),
-      username: reader.readString(offsets[5]),
-    );
-    return object;
-  }
-
-  @override
-  P deserializeProperty<P>(
-      int id, IsarBinaryReader reader, int propertyIndex, int offset) {
-    switch (propertyIndex) {
-      case -1:
-        return id as P;
-      case 0:
-        return (reader.readString(offset)) as P;
-      case 1:
-        return (reader.readLong(offset)) as P;
-      case 2:
-        return (reader.readBool(offset)) as P;
-      case 3:
-        return (reader.readString(offset)) as P;
-      case 4:
-        return (reader.readDateTime(offset)) as P;
-      case 5:
-        return (reader.readString(offset)) as P;
-      default:
-        throw 'Illegal propertyIndex';
-    }
-  }
-
-  @override
-  void attachLinks(Isar isar, int id, IsarUser object) {}
-}
+void _isarUserAttachLinks(IsarCollection col, int id, IsarUser object) {}
 
 extension IsarUserQueryWhereSort on QueryBuilder<IsarUser, IsarUser, QWhere> {
   QueryBuilder<IsarUser, IsarUser, QAfterWhere> anyId() {
-    return addWhereClauseInternal(const WhereClause(indexName: null));
+    return addWhereClauseInternal(const IdWhereClause.any());
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterWhere> anyUid() {
-    return addWhereClauseInternal(const WhereClause(indexName: 'uid'));
+    return addWhereClauseInternal(const IndexWhereClause.any(indexName: 'uid'));
   }
 }
 
 extension IsarUserQueryWhere on QueryBuilder<IsarUser, IsarUser, QWhereClause> {
-  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idEqualTo(int? id) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: null,
-      lower: [id],
+  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idEqualTo(int id) {
+    return addWhereClauseInternal(IdWhereClause.between(
+      lower: id,
       includeLower: true,
-      upper: [id],
+      upper: id,
       includeUpper: true,
     ));
   }
 
-  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idNotEqualTo(int? id) {
+  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idNotEqualTo(int id) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClauseInternal(WhereClause(
-        indexName: null,
-        upper: [id],
-        includeUpper: false,
-      )).addWhereClauseInternal(WhereClause(
-        indexName: null,
-        lower: [id],
-        includeLower: false,
-      ));
+      return addWhereClauseInternal(
+        IdWhereClause.lessThan(upper: id, includeUpper: false),
+      ).addWhereClauseInternal(
+        IdWhereClause.greaterThan(lower: id, includeLower: false),
+      );
     } else {
-      return addWhereClauseInternal(WhereClause(
-        indexName: null,
-        lower: [id],
-        includeLower: false,
-      )).addWhereClauseInternal(WhereClause(
-        indexName: null,
-        upper: [id],
-        includeUpper: false,
-      ));
+      return addWhereClauseInternal(
+        IdWhereClause.greaterThan(lower: id, includeLower: false),
+      ).addWhereClauseInternal(
+        IdWhereClause.lessThan(upper: id, includeUpper: false),
+      );
     }
   }
 
-  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idGreaterThan(
-    int? id, {
-    bool include = false,
-  }) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: null,
-      lower: [id],
-      includeLower: include,
-    ));
+  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idGreaterThan(int id,
+      {bool include = false}) {
+    return addWhereClauseInternal(
+      IdWhereClause.greaterThan(lower: id, includeLower: include),
+    );
   }
 
-  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idLessThan(
-    int? id, {
-    bool include = false,
-  }) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: null,
-      upper: [id],
-      includeUpper: include,
-    ));
+  QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idLessThan(int id,
+      {bool include = false}) {
+    return addWhereClauseInternal(
+      IdWhereClause.lessThan(upper: id, includeUpper: include),
+    );
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> idBetween(
-    int? lowerId,
-    int? upperId, {
+    int lowerId,
+    int upperId, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: null,
-      lower: [lowerId],
+    return addWhereClauseInternal(IdWhereClause.between(
+      lower: lowerId,
       includeLower: includeLower,
-      upper: [upperId],
+      upper: upperId,
       includeUpper: includeUpper,
     ));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> uidEqualTo(String uid) {
-    return addWhereClauseInternal(WhereClause(
+    return addWhereClauseInternal(IndexWhereClause.equalTo(
       indexName: 'uid',
-      lower: [uid],
-      includeLower: true,
-      upper: [uid],
-      includeUpper: true,
+      value: [uid],
     ));
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> uidNotEqualTo(
       String uid) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClauseInternal(WhereClause(
+      return addWhereClauseInternal(IndexWhereClause.lessThan(
         indexName: 'uid',
         upper: [uid],
         includeUpper: false,
-      )).addWhereClauseInternal(WhereClause(
+      )).addWhereClauseInternal(IndexWhereClause.greaterThan(
         indexName: 'uid',
         lower: [uid],
         includeLower: false,
       ));
     } else {
-      return addWhereClauseInternal(WhereClause(
+      return addWhereClauseInternal(IndexWhereClause.greaterThan(
         indexName: 'uid',
         lower: [uid],
         includeLower: false,
-      )).addWhereClauseInternal(WhereClause(
+      )).addWhereClauseInternal(IndexWhereClause.lessThan(
         indexName: 'uid',
         upper: [uid],
         includeUpper: false,
@@ -474,8 +449,7 @@ extension IsarUserQueryFilter
     ));
   }
 
-  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idEqualTo(
-      int? value) {
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idEqualTo(int value) {
     return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'id',
@@ -484,7 +458,7 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idGreaterThan(
-    int? value, {
+    int value, {
     bool include = false,
   }) {
     return addFilterConditionInternal(FilterCondition(
@@ -496,7 +470,7 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idLessThan(
-    int? value, {
+    int value, {
     bool include = false,
   }) {
     return addFilterConditionInternal(FilterCondition(
@@ -508,8 +482,8 @@ extension IsarUserQueryFilter
   }
 
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> idBetween(
-    int? lower,
-    int? upper, {
+    int lower,
+    int upper, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {

@@ -12,99 +12,7 @@ part of 'typewriter_branch_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TypewriterBranchEventTearOff {
-  const _$TypewriterBranchEventTearOff();
-
-  AddCoverPressed addCoverPressed() {
-    return const AddCoverPressed();
-  }
-
-  BranchOneExistenceChecked branchOneExistenceChecked() {
-    return const BranchOneExistenceChecked();
-  }
-
-  DeleteButtonPressed deleteButtonPressed() {
-    return const DeleteButtonPressed();
-  }
-
-  GenreAdded genreAdded(String genre) {
-    return GenreAdded(
-      genre,
-    );
-  }
-
-  GenreRemoved genreRemoved(String genre) {
-    return GenreRemoved(
-      genre,
-    );
-  }
-
-  IsNSFWChanged isNSFWChanged({required bool isNSFW}) {
-    return IsNSFWChanged(
-      isNSFW: isNSFW,
-    );
-  }
-
-  LanguageSelected languageSelected(String language) {
-    return LanguageSelected(
-      language,
-    );
-  }
-
-  LaunchAsNewBranch launchAsNewBranch({Branch? previousBranch, Tree? tree}) {
-    return LaunchAsNewBranch(
-      previousBranch: previousBranch,
-      tree: tree,
-    );
-  }
-
-  LaunchWithUID launchWithUID(UniqueID uid, {Branch? branch}) {
-    return LaunchWithUID(
-      uid,
-      branch: branch,
-    );
-  }
-
-  LeafChanged leafChanged() {
-    return const LeafChanged();
-  }
-
-  LicenceSelected licenceSelected(String licence) {
-    return LicenceSelected(
-      licence,
-    );
-  }
-
-  PageViewIndexChanged pageViewIndexChanged(int index) {
-    return PageViewIndexChanged(
-      index,
-    );
-  }
-
-  PublishButtonPressed publishButtonPressed() {
-    return const PublishButtonPressed();
-  }
-
-  SaveButtonPressed saveButtonPressed() {
-    return const SaveButtonPressed();
-  }
-
-  SessionFetched sessionFetched() {
-    return const SessionFetched();
-  }
-
-  TitleChanged titleChanged(String title) {
-    return TitleChanged(
-      title,
-    );
-  }
-}
-
-/// @nodoc
-const $TypewriterBranchEvent = _$TypewriterBranchEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TypewriterBranchEvent {
@@ -254,22 +162,22 @@ class _$TypewriterBranchEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $AddCoverPressedCopyWith<$Res> {
-  factory $AddCoverPressedCopyWith(
-          AddCoverPressed value, $Res Function(AddCoverPressed) then) =
-      _$AddCoverPressedCopyWithImpl<$Res>;
+abstract class _$$AddCoverPressedCopyWith<$Res> {
+  factory _$$AddCoverPressedCopyWith(
+          _$AddCoverPressed value, $Res Function(_$AddCoverPressed) then) =
+      __$$AddCoverPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AddCoverPressedCopyWithImpl<$Res>
+class __$$AddCoverPressedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $AddCoverPressedCopyWith<$Res> {
-  _$AddCoverPressedCopyWithImpl(
-      AddCoverPressed _value, $Res Function(AddCoverPressed) _then)
-      : super(_value, (v) => _then(v as AddCoverPressed));
+    implements _$$AddCoverPressedCopyWith<$Res> {
+  __$$AddCoverPressedCopyWithImpl(
+      _$AddCoverPressed _value, $Res Function(_$AddCoverPressed) _then)
+      : super(_value, (v) => _then(v as _$AddCoverPressed));
 
   @override
-  AddCoverPressed get _value => super._value as AddCoverPressed;
+  _$AddCoverPressed get _value => super._value as _$AddCoverPressed;
 }
 
 /// @nodoc
@@ -285,7 +193,7 @@ class _$AddCoverPressed implements AddCoverPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AddCoverPressed);
+        (other.runtimeType == runtimeType && other is _$AddCoverPressed);
   }
 
   @override
@@ -447,23 +355,24 @@ abstract class AddCoverPressed implements TypewriterBranchEvent {
 }
 
 /// @nodoc
-abstract class $BranchOneExistenceCheckedCopyWith<$Res> {
-  factory $BranchOneExistenceCheckedCopyWith(BranchOneExistenceChecked value,
-          $Res Function(BranchOneExistenceChecked) then) =
-      _$BranchOneExistenceCheckedCopyWithImpl<$Res>;
+abstract class _$$BranchOneExistenceCheckedCopyWith<$Res> {
+  factory _$$BranchOneExistenceCheckedCopyWith(
+          _$BranchOneExistenceChecked value,
+          $Res Function(_$BranchOneExistenceChecked) then) =
+      __$$BranchOneExistenceCheckedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BranchOneExistenceCheckedCopyWithImpl<$Res>
+class __$$BranchOneExistenceCheckedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $BranchOneExistenceCheckedCopyWith<$Res> {
-  _$BranchOneExistenceCheckedCopyWithImpl(BranchOneExistenceChecked _value,
-      $Res Function(BranchOneExistenceChecked) _then)
-      : super(_value, (v) => _then(v as BranchOneExistenceChecked));
+    implements _$$BranchOneExistenceCheckedCopyWith<$Res> {
+  __$$BranchOneExistenceCheckedCopyWithImpl(_$BranchOneExistenceChecked _value,
+      $Res Function(_$BranchOneExistenceChecked) _then)
+      : super(_value, (v) => _then(v as _$BranchOneExistenceChecked));
 
   @override
-  BranchOneExistenceChecked get _value =>
-      super._value as BranchOneExistenceChecked;
+  _$BranchOneExistenceChecked get _value =>
+      super._value as _$BranchOneExistenceChecked;
 }
 
 /// @nodoc
@@ -480,7 +389,7 @@ class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is BranchOneExistenceChecked);
+            other is _$BranchOneExistenceChecked);
   }
 
   @override
@@ -642,22 +551,22 @@ abstract class BranchOneExistenceChecked implements TypewriterBranchEvent {
 }
 
 /// @nodoc
-abstract class $DeleteButtonPressedCopyWith<$Res> {
-  factory $DeleteButtonPressedCopyWith(
-          DeleteButtonPressed value, $Res Function(DeleteButtonPressed) then) =
-      _$DeleteButtonPressedCopyWithImpl<$Res>;
+abstract class _$$DeleteButtonPressedCopyWith<$Res> {
+  factory _$$DeleteButtonPressedCopyWith(_$DeleteButtonPressed value,
+          $Res Function(_$DeleteButtonPressed) then) =
+      __$$DeleteButtonPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeleteButtonPressedCopyWithImpl<$Res>
+class __$$DeleteButtonPressedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $DeleteButtonPressedCopyWith<$Res> {
-  _$DeleteButtonPressedCopyWithImpl(
-      DeleteButtonPressed _value, $Res Function(DeleteButtonPressed) _then)
-      : super(_value, (v) => _then(v as DeleteButtonPressed));
+    implements _$$DeleteButtonPressedCopyWith<$Res> {
+  __$$DeleteButtonPressedCopyWithImpl(
+      _$DeleteButtonPressed _value, $Res Function(_$DeleteButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$DeleteButtonPressed));
 
   @override
-  DeleteButtonPressed get _value => super._value as DeleteButtonPressed;
+  _$DeleteButtonPressed get _value => super._value as _$DeleteButtonPressed;
 }
 
 /// @nodoc
@@ -673,7 +582,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DeleteButtonPressed);
+        (other.runtimeType == runtimeType && other is _$DeleteButtonPressed);
   }
 
   @override
@@ -835,28 +744,29 @@ abstract class DeleteButtonPressed implements TypewriterBranchEvent {
 }
 
 /// @nodoc
-abstract class $GenreAddedCopyWith<$Res> {
-  factory $GenreAddedCopyWith(
-          GenreAdded value, $Res Function(GenreAdded) then) =
-      _$GenreAddedCopyWithImpl<$Res>;
+abstract class _$$GenreAddedCopyWith<$Res> {
+  factory _$$GenreAddedCopyWith(
+          _$GenreAdded value, $Res Function(_$GenreAdded) then) =
+      __$$GenreAddedCopyWithImpl<$Res>;
   $Res call({String genre});
 }
 
 /// @nodoc
-class _$GenreAddedCopyWithImpl<$Res>
+class __$$GenreAddedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $GenreAddedCopyWith<$Res> {
-  _$GenreAddedCopyWithImpl(GenreAdded _value, $Res Function(GenreAdded) _then)
-      : super(_value, (v) => _then(v as GenreAdded));
+    implements _$$GenreAddedCopyWith<$Res> {
+  __$$GenreAddedCopyWithImpl(
+      _$GenreAdded _value, $Res Function(_$GenreAdded) _then)
+      : super(_value, (v) => _then(v as _$GenreAdded));
 
   @override
-  GenreAdded get _value => super._value as GenreAdded;
+  _$GenreAdded get _value => super._value as _$GenreAdded;
 
   @override
   $Res call({
     Object? genre = freezed,
   }) {
-    return _then(GenreAdded(
+    return _then(_$GenreAdded(
       genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
@@ -882,7 +792,7 @@ class _$GenreAdded implements GenreAdded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GenreAdded &&
+            other is _$GenreAdded &&
             const DeepCollectionEquality().equals(other.genre, genre));
   }
 
@@ -892,8 +802,8 @@ class _$GenreAdded implements GenreAdded {
 
   @JsonKey(ignore: true)
   @override
-  $GenreAddedCopyWith<GenreAdded> get copyWith =>
-      _$GenreAddedCopyWithImpl<GenreAdded>(this, _$identity);
+  _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
+      __$$GenreAddedCopyWithImpl<_$GenreAdded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1047,38 +957,38 @@ class _$GenreAdded implements GenreAdded {
 }
 
 abstract class GenreAdded implements TypewriterBranchEvent {
-  const factory GenreAdded(String genre) = _$GenreAdded;
+  const factory GenreAdded(final String genre) = _$GenreAdded;
 
-  String get genre;
+  String get genre => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GenreAddedCopyWith<GenreAdded> get copyWith =>
+  _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GenreRemovedCopyWith<$Res> {
-  factory $GenreRemovedCopyWith(
-          GenreRemoved value, $Res Function(GenreRemoved) then) =
-      _$GenreRemovedCopyWithImpl<$Res>;
+abstract class _$$GenreRemovedCopyWith<$Res> {
+  factory _$$GenreRemovedCopyWith(
+          _$GenreRemoved value, $Res Function(_$GenreRemoved) then) =
+      __$$GenreRemovedCopyWithImpl<$Res>;
   $Res call({String genre});
 }
 
 /// @nodoc
-class _$GenreRemovedCopyWithImpl<$Res>
+class __$$GenreRemovedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $GenreRemovedCopyWith<$Res> {
-  _$GenreRemovedCopyWithImpl(
-      GenreRemoved _value, $Res Function(GenreRemoved) _then)
-      : super(_value, (v) => _then(v as GenreRemoved));
+    implements _$$GenreRemovedCopyWith<$Res> {
+  __$$GenreRemovedCopyWithImpl(
+      _$GenreRemoved _value, $Res Function(_$GenreRemoved) _then)
+      : super(_value, (v) => _then(v as _$GenreRemoved));
 
   @override
-  GenreRemoved get _value => super._value as GenreRemoved;
+  _$GenreRemoved get _value => super._value as _$GenreRemoved;
 
   @override
   $Res call({
     Object? genre = freezed,
   }) {
-    return _then(GenreRemoved(
+    return _then(_$GenreRemoved(
       genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
@@ -1104,7 +1014,7 @@ class _$GenreRemoved implements GenreRemoved {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GenreRemoved &&
+            other is _$GenreRemoved &&
             const DeepCollectionEquality().equals(other.genre, genre));
   }
 
@@ -1114,8 +1024,8 @@ class _$GenreRemoved implements GenreRemoved {
 
   @JsonKey(ignore: true)
   @override
-  $GenreRemovedCopyWith<GenreRemoved> get copyWith =>
-      _$GenreRemovedCopyWithImpl<GenreRemoved>(this, _$identity);
+  _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
+      __$$GenreRemovedCopyWithImpl<_$GenreRemoved>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1269,38 +1179,38 @@ class _$GenreRemoved implements GenreRemoved {
 }
 
 abstract class GenreRemoved implements TypewriterBranchEvent {
-  const factory GenreRemoved(String genre) = _$GenreRemoved;
+  const factory GenreRemoved(final String genre) = _$GenreRemoved;
 
-  String get genre;
+  String get genre => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GenreRemovedCopyWith<GenreRemoved> get copyWith =>
+  _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $IsNSFWChangedCopyWith<$Res> {
-  factory $IsNSFWChangedCopyWith(
-          IsNSFWChanged value, $Res Function(IsNSFWChanged) then) =
-      _$IsNSFWChangedCopyWithImpl<$Res>;
+abstract class _$$IsNSFWChangedCopyWith<$Res> {
+  factory _$$IsNSFWChangedCopyWith(
+          _$IsNSFWChanged value, $Res Function(_$IsNSFWChanged) then) =
+      __$$IsNSFWChangedCopyWithImpl<$Res>;
   $Res call({bool isNSFW});
 }
 
 /// @nodoc
-class _$IsNSFWChangedCopyWithImpl<$Res>
+class __$$IsNSFWChangedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $IsNSFWChangedCopyWith<$Res> {
-  _$IsNSFWChangedCopyWithImpl(
-      IsNSFWChanged _value, $Res Function(IsNSFWChanged) _then)
-      : super(_value, (v) => _then(v as IsNSFWChanged));
+    implements _$$IsNSFWChangedCopyWith<$Res> {
+  __$$IsNSFWChangedCopyWithImpl(
+      _$IsNSFWChanged _value, $Res Function(_$IsNSFWChanged) _then)
+      : super(_value, (v) => _then(v as _$IsNSFWChanged));
 
   @override
-  IsNSFWChanged get _value => super._value as IsNSFWChanged;
+  _$IsNSFWChanged get _value => super._value as _$IsNSFWChanged;
 
   @override
   $Res call({
     Object? isNSFW = freezed,
   }) {
-    return _then(IsNSFWChanged(
+    return _then(_$IsNSFWChanged(
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
@@ -1326,7 +1236,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is IsNSFWChanged &&
+            other is _$IsNSFWChanged &&
             const DeepCollectionEquality().equals(other.isNSFW, isNSFW));
   }
 
@@ -1336,8 +1246,8 @@ class _$IsNSFWChanged implements IsNSFWChanged {
 
   @JsonKey(ignore: true)
   @override
-  $IsNSFWChangedCopyWith<IsNSFWChanged> get copyWith =>
-      _$IsNSFWChangedCopyWithImpl<IsNSFWChanged>(this, _$identity);
+  _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
+      __$$IsNSFWChangedCopyWithImpl<_$IsNSFWChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1491,38 +1401,38 @@ class _$IsNSFWChanged implements IsNSFWChanged {
 }
 
 abstract class IsNSFWChanged implements TypewriterBranchEvent {
-  const factory IsNSFWChanged({required bool isNSFW}) = _$IsNSFWChanged;
+  const factory IsNSFWChanged({required final bool isNSFW}) = _$IsNSFWChanged;
 
-  bool get isNSFW;
+  bool get isNSFW => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $IsNSFWChangedCopyWith<IsNSFWChanged> get copyWith =>
+  _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LanguageSelectedCopyWith<$Res> {
-  factory $LanguageSelectedCopyWith(
-          LanguageSelected value, $Res Function(LanguageSelected) then) =
-      _$LanguageSelectedCopyWithImpl<$Res>;
+abstract class _$$LanguageSelectedCopyWith<$Res> {
+  factory _$$LanguageSelectedCopyWith(
+          _$LanguageSelected value, $Res Function(_$LanguageSelected) then) =
+      __$$LanguageSelectedCopyWithImpl<$Res>;
   $Res call({String language});
 }
 
 /// @nodoc
-class _$LanguageSelectedCopyWithImpl<$Res>
+class __$$LanguageSelectedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $LanguageSelectedCopyWith<$Res> {
-  _$LanguageSelectedCopyWithImpl(
-      LanguageSelected _value, $Res Function(LanguageSelected) _then)
-      : super(_value, (v) => _then(v as LanguageSelected));
+    implements _$$LanguageSelectedCopyWith<$Res> {
+  __$$LanguageSelectedCopyWithImpl(
+      _$LanguageSelected _value, $Res Function(_$LanguageSelected) _then)
+      : super(_value, (v) => _then(v as _$LanguageSelected));
 
   @override
-  LanguageSelected get _value => super._value as LanguageSelected;
+  _$LanguageSelected get _value => super._value as _$LanguageSelected;
 
   @override
   $Res call({
     Object? language = freezed,
   }) {
-    return _then(LanguageSelected(
+    return _then(_$LanguageSelected(
       language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
@@ -1548,7 +1458,7 @@ class _$LanguageSelected implements LanguageSelected {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LanguageSelected &&
+            other is _$LanguageSelected &&
             const DeepCollectionEquality().equals(other.language, language));
   }
 
@@ -1558,8 +1468,8 @@ class _$LanguageSelected implements LanguageSelected {
 
   @JsonKey(ignore: true)
   @override
-  $LanguageSelectedCopyWith<LanguageSelected> get copyWith =>
-      _$LanguageSelectedCopyWithImpl<LanguageSelected>(this, _$identity);
+  _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
+      __$$LanguageSelectedCopyWithImpl<_$LanguageSelected>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1713,19 +1623,19 @@ class _$LanguageSelected implements LanguageSelected {
 }
 
 abstract class LanguageSelected implements TypewriterBranchEvent {
-  const factory LanguageSelected(String language) = _$LanguageSelected;
+  const factory LanguageSelected(final String language) = _$LanguageSelected;
 
-  String get language;
+  String get language => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LanguageSelectedCopyWith<LanguageSelected> get copyWith =>
+  _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LaunchAsNewBranchCopyWith<$Res> {
-  factory $LaunchAsNewBranchCopyWith(
-          LaunchAsNewBranch value, $Res Function(LaunchAsNewBranch) then) =
-      _$LaunchAsNewBranchCopyWithImpl<$Res>;
+abstract class _$$LaunchAsNewBranchCopyWith<$Res> {
+  factory _$$LaunchAsNewBranchCopyWith(
+          _$LaunchAsNewBranch value, $Res Function(_$LaunchAsNewBranch) then) =
+      __$$LaunchAsNewBranchCopyWithImpl<$Res>;
   $Res call({Branch? previousBranch, Tree? tree});
 
   $BranchCopyWith<$Res>? get previousBranch;
@@ -1733,22 +1643,22 @@ abstract class $LaunchAsNewBranchCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LaunchAsNewBranchCopyWithImpl<$Res>
+class __$$LaunchAsNewBranchCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $LaunchAsNewBranchCopyWith<$Res> {
-  _$LaunchAsNewBranchCopyWithImpl(
-      LaunchAsNewBranch _value, $Res Function(LaunchAsNewBranch) _then)
-      : super(_value, (v) => _then(v as LaunchAsNewBranch));
+    implements _$$LaunchAsNewBranchCopyWith<$Res> {
+  __$$LaunchAsNewBranchCopyWithImpl(
+      _$LaunchAsNewBranch _value, $Res Function(_$LaunchAsNewBranch) _then)
+      : super(_value, (v) => _then(v as _$LaunchAsNewBranch));
 
   @override
-  LaunchAsNewBranch get _value => super._value as LaunchAsNewBranch;
+  _$LaunchAsNewBranch get _value => super._value as _$LaunchAsNewBranch;
 
   @override
   $Res call({
     Object? previousBranch = freezed,
     Object? tree = freezed,
   }) {
-    return _then(LaunchAsNewBranch(
+    return _then(_$LaunchAsNewBranch(
       previousBranch: previousBranch == freezed
           ? _value.previousBranch
           : previousBranch // ignore: cast_nullable_to_non_nullable
@@ -1802,7 +1712,7 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LaunchAsNewBranch &&
+            other is _$LaunchAsNewBranch &&
             const DeepCollectionEquality()
                 .equals(other.previousBranch, previousBranch) &&
             const DeepCollectionEquality().equals(other.tree, tree));
@@ -1816,8 +1726,8 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
 
   @JsonKey(ignore: true)
   @override
-  $LaunchAsNewBranchCopyWith<LaunchAsNewBranch> get copyWith =>
-      _$LaunchAsNewBranchCopyWithImpl<LaunchAsNewBranch>(this, _$identity);
+  _$$LaunchAsNewBranchCopyWith<_$LaunchAsNewBranch> get copyWith =>
+      __$$LaunchAsNewBranchCopyWithImpl<_$LaunchAsNewBranch>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1971,43 +1881,43 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
 }
 
 abstract class LaunchAsNewBranch implements TypewriterBranchEvent {
-  const factory LaunchAsNewBranch({Branch? previousBranch, Tree? tree}) =
-      _$LaunchAsNewBranch;
+  const factory LaunchAsNewBranch(
+      {final Branch? previousBranch, final Tree? tree}) = _$LaunchAsNewBranch;
 
-  Branch? get previousBranch;
-  Tree? get tree;
+  Branch? get previousBranch => throw _privateConstructorUsedError;
+  Tree? get tree => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LaunchAsNewBranchCopyWith<LaunchAsNewBranch> get copyWith =>
+  _$$LaunchAsNewBranchCopyWith<_$LaunchAsNewBranch> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LaunchWithUIDCopyWith<$Res> {
-  factory $LaunchWithUIDCopyWith(
-          LaunchWithUID value, $Res Function(LaunchWithUID) then) =
-      _$LaunchWithUIDCopyWithImpl<$Res>;
+abstract class _$$LaunchWithUIDCopyWith<$Res> {
+  factory _$$LaunchWithUIDCopyWith(
+          _$LaunchWithUID value, $Res Function(_$LaunchWithUID) then) =
+      __$$LaunchWithUIDCopyWithImpl<$Res>;
   $Res call({UniqueID uid, Branch? branch});
 
   $BranchCopyWith<$Res>? get branch;
 }
 
 /// @nodoc
-class _$LaunchWithUIDCopyWithImpl<$Res>
+class __$$LaunchWithUIDCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $LaunchWithUIDCopyWith<$Res> {
-  _$LaunchWithUIDCopyWithImpl(
-      LaunchWithUID _value, $Res Function(LaunchWithUID) _then)
-      : super(_value, (v) => _then(v as LaunchWithUID));
+    implements _$$LaunchWithUIDCopyWith<$Res> {
+  __$$LaunchWithUIDCopyWithImpl(
+      _$LaunchWithUID _value, $Res Function(_$LaunchWithUID) _then)
+      : super(_value, (v) => _then(v as _$LaunchWithUID));
 
   @override
-  LaunchWithUID get _value => super._value as LaunchWithUID;
+  _$LaunchWithUID get _value => super._value as _$LaunchWithUID;
 
   @override
   $Res call({
     Object? uid = freezed,
     Object? branch = freezed,
   }) {
-    return _then(LaunchWithUID(
+    return _then(_$LaunchWithUID(
       uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -2050,7 +1960,7 @@ class _$LaunchWithUID implements LaunchWithUID {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LaunchWithUID &&
+            other is _$LaunchWithUID &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.branch, branch));
   }
@@ -2063,8 +1973,8 @@ class _$LaunchWithUID implements LaunchWithUID {
 
   @JsonKey(ignore: true)
   @override
-  $LaunchWithUIDCopyWith<LaunchWithUID> get copyWith =>
-      _$LaunchWithUIDCopyWithImpl<LaunchWithUID>(this, _$identity);
+  _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
+      __$$LaunchWithUIDCopyWithImpl<_$LaunchWithUID>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2218,32 +2128,33 @@ class _$LaunchWithUID implements LaunchWithUID {
 }
 
 abstract class LaunchWithUID implements TypewriterBranchEvent {
-  const factory LaunchWithUID(UniqueID uid, {Branch? branch}) = _$LaunchWithUID;
+  const factory LaunchWithUID(final UniqueID uid, {final Branch? branch}) =
+      _$LaunchWithUID;
 
-  UniqueID get uid;
-  Branch? get branch;
+  UniqueID get uid => throw _privateConstructorUsedError;
+  Branch? get branch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LaunchWithUIDCopyWith<LaunchWithUID> get copyWith =>
+  _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LeafChangedCopyWith<$Res> {
-  factory $LeafChangedCopyWith(
-          LeafChanged value, $Res Function(LeafChanged) then) =
-      _$LeafChangedCopyWithImpl<$Res>;
+abstract class _$$LeafChangedCopyWith<$Res> {
+  factory _$$LeafChangedCopyWith(
+          _$LeafChanged value, $Res Function(_$LeafChanged) then) =
+      __$$LeafChangedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LeafChangedCopyWithImpl<$Res>
+class __$$LeafChangedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $LeafChangedCopyWith<$Res> {
-  _$LeafChangedCopyWithImpl(
-      LeafChanged _value, $Res Function(LeafChanged) _then)
-      : super(_value, (v) => _then(v as LeafChanged));
+    implements _$$LeafChangedCopyWith<$Res> {
+  __$$LeafChangedCopyWithImpl(
+      _$LeafChanged _value, $Res Function(_$LeafChanged) _then)
+      : super(_value, (v) => _then(v as _$LeafChanged));
 
   @override
-  LeafChanged get _value => super._value as LeafChanged;
+  _$LeafChanged get _value => super._value as _$LeafChanged;
 }
 
 /// @nodoc
@@ -2259,7 +2170,7 @@ class _$LeafChanged implements LeafChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LeafChanged);
+        (other.runtimeType == runtimeType && other is _$LeafChanged);
   }
 
   @override
@@ -2421,29 +2332,29 @@ abstract class LeafChanged implements TypewriterBranchEvent {
 }
 
 /// @nodoc
-abstract class $LicenceSelectedCopyWith<$Res> {
-  factory $LicenceSelectedCopyWith(
-          LicenceSelected value, $Res Function(LicenceSelected) then) =
-      _$LicenceSelectedCopyWithImpl<$Res>;
+abstract class _$$LicenceSelectedCopyWith<$Res> {
+  factory _$$LicenceSelectedCopyWith(
+          _$LicenceSelected value, $Res Function(_$LicenceSelected) then) =
+      __$$LicenceSelectedCopyWithImpl<$Res>;
   $Res call({String licence});
 }
 
 /// @nodoc
-class _$LicenceSelectedCopyWithImpl<$Res>
+class __$$LicenceSelectedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $LicenceSelectedCopyWith<$Res> {
-  _$LicenceSelectedCopyWithImpl(
-      LicenceSelected _value, $Res Function(LicenceSelected) _then)
-      : super(_value, (v) => _then(v as LicenceSelected));
+    implements _$$LicenceSelectedCopyWith<$Res> {
+  __$$LicenceSelectedCopyWithImpl(
+      _$LicenceSelected _value, $Res Function(_$LicenceSelected) _then)
+      : super(_value, (v) => _then(v as _$LicenceSelected));
 
   @override
-  LicenceSelected get _value => super._value as LicenceSelected;
+  _$LicenceSelected get _value => super._value as _$LicenceSelected;
 
   @override
   $Res call({
     Object? licence = freezed,
   }) {
-    return _then(LicenceSelected(
+    return _then(_$LicenceSelected(
       licence == freezed
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
@@ -2469,7 +2380,7 @@ class _$LicenceSelected implements LicenceSelected {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LicenceSelected &&
+            other is _$LicenceSelected &&
             const DeepCollectionEquality().equals(other.licence, licence));
   }
 
@@ -2479,8 +2390,8 @@ class _$LicenceSelected implements LicenceSelected {
 
   @JsonKey(ignore: true)
   @override
-  $LicenceSelectedCopyWith<LicenceSelected> get copyWith =>
-      _$LicenceSelectedCopyWithImpl<LicenceSelected>(this, _$identity);
+  _$$LicenceSelectedCopyWith<_$LicenceSelected> get copyWith =>
+      __$$LicenceSelectedCopyWithImpl<_$LicenceSelected>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2634,38 +2545,38 @@ class _$LicenceSelected implements LicenceSelected {
 }
 
 abstract class LicenceSelected implements TypewriterBranchEvent {
-  const factory LicenceSelected(String licence) = _$LicenceSelected;
+  const factory LicenceSelected(final String licence) = _$LicenceSelected;
 
-  String get licence;
+  String get licence => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LicenceSelectedCopyWith<LicenceSelected> get copyWith =>
+  _$$LicenceSelectedCopyWith<_$LicenceSelected> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PageViewIndexChangedCopyWith<$Res> {
-  factory $PageViewIndexChangedCopyWith(PageViewIndexChanged value,
-          $Res Function(PageViewIndexChanged) then) =
-      _$PageViewIndexChangedCopyWithImpl<$Res>;
+abstract class _$$PageViewIndexChangedCopyWith<$Res> {
+  factory _$$PageViewIndexChangedCopyWith(_$PageViewIndexChanged value,
+          $Res Function(_$PageViewIndexChanged) then) =
+      __$$PageViewIndexChangedCopyWithImpl<$Res>;
   $Res call({int index});
 }
 
 /// @nodoc
-class _$PageViewIndexChangedCopyWithImpl<$Res>
+class __$$PageViewIndexChangedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $PageViewIndexChangedCopyWith<$Res> {
-  _$PageViewIndexChangedCopyWithImpl(
-      PageViewIndexChanged _value, $Res Function(PageViewIndexChanged) _then)
-      : super(_value, (v) => _then(v as PageViewIndexChanged));
+    implements _$$PageViewIndexChangedCopyWith<$Res> {
+  __$$PageViewIndexChangedCopyWithImpl(_$PageViewIndexChanged _value,
+      $Res Function(_$PageViewIndexChanged) _then)
+      : super(_value, (v) => _then(v as _$PageViewIndexChanged));
 
   @override
-  PageViewIndexChanged get _value => super._value as PageViewIndexChanged;
+  _$PageViewIndexChanged get _value => super._value as _$PageViewIndexChanged;
 
   @override
   $Res call({
     Object? index = freezed,
   }) {
-    return _then(PageViewIndexChanged(
+    return _then(_$PageViewIndexChanged(
       index == freezed
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -2691,7 +2602,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PageViewIndexChanged &&
+            other is _$PageViewIndexChanged &&
             const DeepCollectionEquality().equals(other.index, index));
   }
 
@@ -2701,8 +2612,8 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 
   @JsonKey(ignore: true)
   @override
-  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
-      _$PageViewIndexChangedCopyWithImpl<PageViewIndexChanged>(
+  _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
+      __$$PageViewIndexChangedCopyWithImpl<_$PageViewIndexChanged>(
           this, _$identity);
 
   @override
@@ -2857,31 +2768,31 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 }
 
 abstract class PageViewIndexChanged implements TypewriterBranchEvent {
-  const factory PageViewIndexChanged(int index) = _$PageViewIndexChanged;
+  const factory PageViewIndexChanged(final int index) = _$PageViewIndexChanged;
 
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+  _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PublishButtonPressedCopyWith<$Res> {
-  factory $PublishButtonPressedCopyWith(PublishButtonPressed value,
-          $Res Function(PublishButtonPressed) then) =
-      _$PublishButtonPressedCopyWithImpl<$Res>;
+abstract class _$$PublishButtonPressedCopyWith<$Res> {
+  factory _$$PublishButtonPressedCopyWith(_$PublishButtonPressed value,
+          $Res Function(_$PublishButtonPressed) then) =
+      __$$PublishButtonPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PublishButtonPressedCopyWithImpl<$Res>
+class __$$PublishButtonPressedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $PublishButtonPressedCopyWith<$Res> {
-  _$PublishButtonPressedCopyWithImpl(
-      PublishButtonPressed _value, $Res Function(PublishButtonPressed) _then)
-      : super(_value, (v) => _then(v as PublishButtonPressed));
+    implements _$$PublishButtonPressedCopyWith<$Res> {
+  __$$PublishButtonPressedCopyWithImpl(_$PublishButtonPressed _value,
+      $Res Function(_$PublishButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$PublishButtonPressed));
 
   @override
-  PublishButtonPressed get _value => super._value as PublishButtonPressed;
+  _$PublishButtonPressed get _value => super._value as _$PublishButtonPressed;
 }
 
 /// @nodoc
@@ -2897,7 +2808,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is PublishButtonPressed);
+        (other.runtimeType == runtimeType && other is _$PublishButtonPressed);
   }
 
   @override
@@ -3059,22 +2970,22 @@ abstract class PublishButtonPressed implements TypewriterBranchEvent {
 }
 
 /// @nodoc
-abstract class $SaveButtonPressedCopyWith<$Res> {
-  factory $SaveButtonPressedCopyWith(
-          SaveButtonPressed value, $Res Function(SaveButtonPressed) then) =
-      _$SaveButtonPressedCopyWithImpl<$Res>;
+abstract class _$$SaveButtonPressedCopyWith<$Res> {
+  factory _$$SaveButtonPressedCopyWith(
+          _$SaveButtonPressed value, $Res Function(_$SaveButtonPressed) then) =
+      __$$SaveButtonPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SaveButtonPressedCopyWithImpl<$Res>
+class __$$SaveButtonPressedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $SaveButtonPressedCopyWith<$Res> {
-  _$SaveButtonPressedCopyWithImpl(
-      SaveButtonPressed _value, $Res Function(SaveButtonPressed) _then)
-      : super(_value, (v) => _then(v as SaveButtonPressed));
+    implements _$$SaveButtonPressedCopyWith<$Res> {
+  __$$SaveButtonPressedCopyWithImpl(
+      _$SaveButtonPressed _value, $Res Function(_$SaveButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$SaveButtonPressed));
 
   @override
-  SaveButtonPressed get _value => super._value as SaveButtonPressed;
+  _$SaveButtonPressed get _value => super._value as _$SaveButtonPressed;
 }
 
 /// @nodoc
@@ -3090,7 +3001,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SaveButtonPressed);
+        (other.runtimeType == runtimeType && other is _$SaveButtonPressed);
   }
 
   @override
@@ -3252,22 +3163,22 @@ abstract class SaveButtonPressed implements TypewriterBranchEvent {
 }
 
 /// @nodoc
-abstract class $SessionFetchedCopyWith<$Res> {
-  factory $SessionFetchedCopyWith(
-          SessionFetched value, $Res Function(SessionFetched) then) =
-      _$SessionFetchedCopyWithImpl<$Res>;
+abstract class _$$SessionFetchedCopyWith<$Res> {
+  factory _$$SessionFetchedCopyWith(
+          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
+      __$$SessionFetchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SessionFetchedCopyWithImpl<$Res>
+class __$$SessionFetchedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $SessionFetchedCopyWith<$Res> {
-  _$SessionFetchedCopyWithImpl(
-      SessionFetched _value, $Res Function(SessionFetched) _then)
-      : super(_value, (v) => _then(v as SessionFetched));
+    implements _$$SessionFetchedCopyWith<$Res> {
+  __$$SessionFetchedCopyWithImpl(
+      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
+      : super(_value, (v) => _then(v as _$SessionFetched));
 
   @override
-  SessionFetched get _value => super._value as SessionFetched;
+  _$SessionFetched get _value => super._value as _$SessionFetched;
 }
 
 /// @nodoc
@@ -3283,7 +3194,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SessionFetched);
+        (other.runtimeType == runtimeType && other is _$SessionFetched);
   }
 
   @override
@@ -3445,29 +3356,29 @@ abstract class SessionFetched implements TypewriterBranchEvent {
 }
 
 /// @nodoc
-abstract class $TitleChangedCopyWith<$Res> {
-  factory $TitleChangedCopyWith(
-          TitleChanged value, $Res Function(TitleChanged) then) =
-      _$TitleChangedCopyWithImpl<$Res>;
+abstract class _$$TitleChangedCopyWith<$Res> {
+  factory _$$TitleChangedCopyWith(
+          _$TitleChanged value, $Res Function(_$TitleChanged) then) =
+      __$$TitleChangedCopyWithImpl<$Res>;
   $Res call({String title});
 }
 
 /// @nodoc
-class _$TitleChangedCopyWithImpl<$Res>
+class __$$TitleChangedCopyWithImpl<$Res>
     extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements $TitleChangedCopyWith<$Res> {
-  _$TitleChangedCopyWithImpl(
-      TitleChanged _value, $Res Function(TitleChanged) _then)
-      : super(_value, (v) => _then(v as TitleChanged));
+    implements _$$TitleChangedCopyWith<$Res> {
+  __$$TitleChangedCopyWithImpl(
+      _$TitleChanged _value, $Res Function(_$TitleChanged) _then)
+      : super(_value, (v) => _then(v as _$TitleChanged));
 
   @override
-  TitleChanged get _value => super._value as TitleChanged;
+  _$TitleChanged get _value => super._value as _$TitleChanged;
 
   @override
   $Res call({
     Object? title = freezed,
   }) {
-    return _then(TitleChanged(
+    return _then(_$TitleChanged(
       title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -3493,7 +3404,7 @@ class _$TitleChanged implements TitleChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is TitleChanged &&
+            other is _$TitleChanged &&
             const DeepCollectionEquality().equals(other.title, title));
   }
 
@@ -3503,8 +3414,8 @@ class _$TitleChanged implements TitleChanged {
 
   @JsonKey(ignore: true)
   @override
-  $TitleChangedCopyWith<TitleChanged> get copyWith =>
-      _$TitleChangedCopyWithImpl<TitleChanged>(this, _$identity);
+  _$$TitleChangedCopyWith<_$TitleChanged> get copyWith =>
+      __$$TitleChangedCopyWithImpl<_$TitleChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3658,62 +3569,13 @@ class _$TitleChanged implements TitleChanged {
 }
 
 abstract class TitleChanged implements TypewriterBranchEvent {
-  const factory TitleChanged(String title) = _$TitleChanged;
+  const factory TitleChanged(final String title) = _$TitleChanged;
 
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TitleChangedCopyWith<TitleChanged> get copyWith =>
+  _$$TitleChangedCopyWith<_$TitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$TypewriterBranchStateTearOff {
-  const _$TypewriterBranchStateTearOff();
-
-  _TypewriterBranchState call(
-      {required Branch branch,
-      required String coverURL,
-      required int currentPageViewIdx,
-      required TypewriterEndState endState,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required List<Genre> genres,
-      required bool isEdit,
-      required bool isNSFW,
-      required bool isProcessing,
-      required Language language,
-      required Leaf leaf,
-      required QuillController leafController,
-      required int leafWordCount,
-      required Licence licence,
-      required bool showErrorMessages,
-      required Title title,
-      required TextEditingController titleController,
-      required int titleWordCount}) {
-    return _TypewriterBranchState(
-      branch: branch,
-      coverURL: coverURL,
-      currentPageViewIdx: currentPageViewIdx,
-      endState: endState,
-      failureOption: failureOption,
-      genres: genres,
-      isEdit: isEdit,
-      isNSFW: isNSFW,
-      isProcessing: isProcessing,
-      language: language,
-      leaf: leaf,
-      leafController: leafController,
-      leafWordCount: leafWordCount,
-      licence: licence,
-      showErrorMessages: showErrorMessages,
-      title: title,
-      titleController: titleController,
-      titleWordCount: titleWordCount,
-    );
-  }
-}
-
-/// @nodoc
-const $TypewriterBranchState = _$TypewriterBranchStateTearOff();
 
 /// @nodoc
 mixin _$TypewriterBranchState {
@@ -3721,7 +3583,7 @@ mixin _$TypewriterBranchState {
   String get coverURL => throw _privateConstructorUsedError;
   int get currentPageViewIdx => throw _privateConstructorUsedError;
   TypewriterEndState get endState => throw _privateConstructorUsedError;
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
+  Option<Result<None, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
   bool get isEdit => throw _privateConstructorUsedError;
@@ -3753,7 +3615,7 @@ abstract class $TypewriterBranchStateCopyWith<$Res> {
       String coverURL,
       int currentPageViewIdx,
       TypewriterEndState endState,
-      Option<Result<None<Object>, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
       bool isNSFW,
@@ -3821,7 +3683,7 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None<Object>, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       genres: genres == freezed
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -3886,18 +3748,18 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TypewriterBranchStateCopyWith<$Res>
+abstract class _$$_TypewriterBranchStateCopyWith<$Res>
     implements $TypewriterBranchStateCopyWith<$Res> {
-  factory _$TypewriterBranchStateCopyWith(_TypewriterBranchState value,
-          $Res Function(_TypewriterBranchState) then) =
-      __$TypewriterBranchStateCopyWithImpl<$Res>;
+  factory _$$_TypewriterBranchStateCopyWith(_$_TypewriterBranchState value,
+          $Res Function(_$_TypewriterBranchState) then) =
+      __$$_TypewriterBranchStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {Branch branch,
       String coverURL,
       int currentPageViewIdx,
       TypewriterEndState endState,
-      Option<Result<None<Object>, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
       bool isNSFW,
@@ -3917,15 +3779,16 @@ abstract class _$TypewriterBranchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TypewriterBranchStateCopyWithImpl<$Res>
+class __$$_TypewriterBranchStateCopyWithImpl<$Res>
     extends _$TypewriterBranchStateCopyWithImpl<$Res>
-    implements _$TypewriterBranchStateCopyWith<$Res> {
-  __$TypewriterBranchStateCopyWithImpl(_TypewriterBranchState _value,
-      $Res Function(_TypewriterBranchState) _then)
-      : super(_value, (v) => _then(v as _TypewriterBranchState));
+    implements _$$_TypewriterBranchStateCopyWith<$Res> {
+  __$$_TypewriterBranchStateCopyWithImpl(_$_TypewriterBranchState _value,
+      $Res Function(_$_TypewriterBranchState) _then)
+      : super(_value, (v) => _then(v as _$_TypewriterBranchState));
 
   @override
-  _TypewriterBranchState get _value => super._value as _TypewriterBranchState;
+  _$_TypewriterBranchState get _value =>
+      super._value as _$_TypewriterBranchState;
 
   @override
   $Res call({
@@ -3948,7 +3811,7 @@ class __$TypewriterBranchStateCopyWithImpl<$Res>
     Object? titleController = freezed,
     Object? titleWordCount = freezed,
   }) {
-    return _then(_TypewriterBranchState(
+    return _then(_$_TypewriterBranchState(
       branch: branch == freezed
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
@@ -3968,9 +3831,9 @@ class __$TypewriterBranchStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None<Object>, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       genres: genres == freezed
-          ? _value.genres
+          ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
       isEdit: isEdit == freezed
@@ -4034,7 +3897,7 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
       required this.currentPageViewIdx,
       required this.endState,
       required this.failureOption,
-      required this.genres,
+      required final List<Genre> genres,
       required this.isEdit,
       required this.isNSFW,
       required this.isProcessing,
@@ -4046,7 +3909,8 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
       required this.showErrorMessages,
       required this.title,
       required this.titleController,
-      required this.titleWordCount});
+      required this.titleWordCount})
+      : _genres = genres;
 
   @override
   final Branch branch;
@@ -4057,9 +3921,14 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
   @override
   final TypewriterEndState endState;
   @override
-  final Option<Result<None<Object>, CoreFailure>> failureOption;
+  final Option<Result<None, CoreFailure>> failureOption;
+  final List<Genre> _genres;
   @override
-  final List<Genre> genres;
+  List<Genre> get genres {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
+
   @override
   final bool isEdit;
   @override
@@ -4094,7 +3963,7 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TypewriterBranchState &&
+            other is _$_TypewriterBranchState &&
             const DeepCollectionEquality().equals(other.branch, branch) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
             const DeepCollectionEquality()
@@ -4102,7 +3971,7 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
             const DeepCollectionEquality().equals(other.endState, endState) &&
             const DeepCollectionEquality()
                 .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other._genres, _genres) &&
             const DeepCollectionEquality().equals(other.isEdit, isEdit) &&
             const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
             const DeepCollectionEquality()
@@ -4131,7 +4000,7 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
       const DeepCollectionEquality().hash(currentPageViewIdx),
       const DeepCollectionEquality().hash(endState),
       const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(genres),
+      const DeepCollectionEquality().hash(_genres),
       const DeepCollectionEquality().hash(isEdit),
       const DeepCollectionEquality().hash(isNSFW),
       const DeepCollectionEquality().hash(isProcessing),
@@ -4147,70 +4016,72 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
 
   @JsonKey(ignore: true)
   @override
-  _$TypewriterBranchStateCopyWith<_TypewriterBranchState> get copyWith =>
-      __$TypewriterBranchStateCopyWithImpl<_TypewriterBranchState>(
+  _$$_TypewriterBranchStateCopyWith<_$_TypewriterBranchState> get copyWith =>
+      __$$_TypewriterBranchStateCopyWithImpl<_$_TypewriterBranchState>(
           this, _$identity);
 }
 
 abstract class _TypewriterBranchState implements TypewriterBranchState {
   const factory _TypewriterBranchState(
-      {required Branch branch,
-      required String coverURL,
-      required int currentPageViewIdx,
-      required TypewriterEndState endState,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required List<Genre> genres,
-      required bool isEdit,
-      required bool isNSFW,
-      required bool isProcessing,
-      required Language language,
-      required Leaf leaf,
-      required QuillController leafController,
-      required int leafWordCount,
-      required Licence licence,
-      required bool showErrorMessages,
-      required Title title,
-      required TextEditingController titleController,
-      required int titleWordCount}) = _$_TypewriterBranchState;
+      {required final Branch branch,
+      required final String coverURL,
+      required final int currentPageViewIdx,
+      required final TypewriterEndState endState,
+      required final Option<Result<None, CoreFailure>> failureOption,
+      required final List<Genre> genres,
+      required final bool isEdit,
+      required final bool isNSFW,
+      required final bool isProcessing,
+      required final Language language,
+      required final Leaf leaf,
+      required final QuillController leafController,
+      required final int leafWordCount,
+      required final Licence licence,
+      required final bool showErrorMessages,
+      required final Title title,
+      required final TextEditingController titleController,
+      required final int titleWordCount}) = _$_TypewriterBranchState;
 
   @override
-  Branch get branch;
+  Branch get branch => throw _privateConstructorUsedError;
   @override
-  String get coverURL;
+  String get coverURL => throw _privateConstructorUsedError;
   @override
-  int get currentPageViewIdx;
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
   @override
-  TypewriterEndState get endState;
+  TypewriterEndState get endState => throw _privateConstructorUsedError;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption;
+  Option<Result<None, CoreFailure>> get failureOption =>
+      throw _privateConstructorUsedError;
   @override
-  List<Genre> get genres;
+  List<Genre> get genres => throw _privateConstructorUsedError;
   @override
-  bool get isEdit;
+  bool get isEdit => throw _privateConstructorUsedError;
   @override
-  bool get isNSFW;
+  bool get isNSFW => throw _privateConstructorUsedError;
   @override
-  bool get isProcessing;
+  bool get isProcessing => throw _privateConstructorUsedError;
   @override
-  Language get language;
+  Language get language => throw _privateConstructorUsedError;
   @override
-  Leaf get leaf;
+  Leaf get leaf => throw _privateConstructorUsedError;
   @override
-  QuillController get leafController;
+  QuillController get leafController => throw _privateConstructorUsedError;
   @override
-  int get leafWordCount;
+  int get leafWordCount => throw _privateConstructorUsedError;
   @override
-  Licence get licence;
+  Licence get licence => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  Title get title;
+  Title get title => throw _privateConstructorUsedError;
   @override
-  TextEditingController get titleController;
+  TextEditingController get titleController =>
+      throw _privateConstructorUsedError;
   @override
-  int get titleWordCount;
+  int get titleWordCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TypewriterBranchStateCopyWith<_TypewriterBranchState> get copyWith =>
+  _$$_TypewriterBranchStateCopyWith<_$_TypewriterBranchState> get copyWith =>
       throw _privateConstructorUsedError;
 }

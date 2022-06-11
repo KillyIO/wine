@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/infrastructure/settings/isar_settings.dart';
 

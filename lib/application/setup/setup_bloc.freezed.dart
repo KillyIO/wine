@@ -12,57 +12,7 @@ part of 'setup_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SetupEventTearOff {
-  const _$SetupEventTearOff();
-
-  AppLaunched appLaunched() {
-    return const AppLaunched();
-  }
-
-  Authenticated authenticated() {
-    return const Authenticated();
-  }
-
-  DefaultCoversCached defaultCoversCached() {
-    return const DefaultCoversCached();
-  }
-
-  DefaultCoversLoaded defaultCoversLoaded(List<DefaultCover> defaultCovers) {
-    return DefaultCoversLoaded(
-      defaultCovers,
-    );
-  }
-
-  SessionFetched sessionFetched(User session) {
-    return SessionFetched(
-      session,
-    );
-  }
-
-  SettingsFetched settingsFetched() {
-    return const SettingsFetched();
-  }
-
-  SettingsInitialized settingsInitialized() {
-    return const SettingsInitialized();
-  }
-
-  SettingsNotFound settingsNotFound() {
-    return const SettingsNotFound();
-  }
-
-  UserLoaded userLoaded(User user) {
-    return UserLoaded(
-      user,
-    );
-  }
-}
-
-/// @nodoc
-const $SetupEvent = _$SetupEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SetupEvent {
@@ -166,21 +116,21 @@ class _$SetupEventCopyWithImpl<$Res> implements $SetupEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $AppLaunchedCopyWith<$Res> {
-  factory $AppLaunchedCopyWith(
-          AppLaunched value, $Res Function(AppLaunched) then) =
-      _$AppLaunchedCopyWithImpl<$Res>;
+abstract class _$$AppLaunchedCopyWith<$Res> {
+  factory _$$AppLaunchedCopyWith(
+          _$AppLaunched value, $Res Function(_$AppLaunched) then) =
+      __$$AppLaunchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AppLaunchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
-    implements $AppLaunchedCopyWith<$Res> {
-  _$AppLaunchedCopyWithImpl(
-      AppLaunched _value, $Res Function(AppLaunched) _then)
-      : super(_value, (v) => _then(v as AppLaunched));
+class __$$AppLaunchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
+    implements _$$AppLaunchedCopyWith<$Res> {
+  __$$AppLaunchedCopyWithImpl(
+      _$AppLaunched _value, $Res Function(_$AppLaunched) _then)
+      : super(_value, (v) => _then(v as _$AppLaunched));
 
   @override
-  AppLaunched get _value => super._value as AppLaunched;
+  _$AppLaunched get _value => super._value as _$AppLaunched;
 }
 
 /// @nodoc
@@ -202,7 +152,7 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AppLaunched);
+        (other.runtimeType == runtimeType && other is _$AppLaunched);
   }
 
   @override
@@ -319,21 +269,21 @@ abstract class AppLaunched implements SetupEvent {
 }
 
 /// @nodoc
-abstract class $AuthenticatedCopyWith<$Res> {
-  factory $AuthenticatedCopyWith(
-          Authenticated value, $Res Function(Authenticated) then) =
-      _$AuthenticatedCopyWithImpl<$Res>;
+abstract class _$$AuthenticatedCopyWith<$Res> {
+  factory _$$AuthenticatedCopyWith(
+          _$Authenticated value, $Res Function(_$Authenticated) then) =
+      __$$AuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthenticatedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
-    implements $AuthenticatedCopyWith<$Res> {
-  _$AuthenticatedCopyWithImpl(
-      Authenticated _value, $Res Function(Authenticated) _then)
-      : super(_value, (v) => _then(v as Authenticated));
+class __$$AuthenticatedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
+    implements _$$AuthenticatedCopyWith<$Res> {
+  __$$AuthenticatedCopyWithImpl(
+      _$Authenticated _value, $Res Function(_$Authenticated) _then)
+      : super(_value, (v) => _then(v as _$Authenticated));
 
   @override
-  Authenticated get _value => super._value as Authenticated;
+  _$Authenticated get _value => super._value as _$Authenticated;
 }
 
 /// @nodoc
@@ -355,7 +305,7 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Authenticated);
+        (other.runtimeType == runtimeType && other is _$Authenticated);
   }
 
   @override
@@ -472,22 +422,22 @@ abstract class Authenticated implements SetupEvent {
 }
 
 /// @nodoc
-abstract class $DefaultCoversCachedCopyWith<$Res> {
-  factory $DefaultCoversCachedCopyWith(
-          DefaultCoversCached value, $Res Function(DefaultCoversCached) then) =
-      _$DefaultCoversCachedCopyWithImpl<$Res>;
+abstract class _$$DefaultCoversCachedCopyWith<$Res> {
+  factory _$$DefaultCoversCachedCopyWith(_$DefaultCoversCached value,
+          $Res Function(_$DefaultCoversCached) then) =
+      __$$DefaultCoversCachedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DefaultCoversCachedCopyWithImpl<$Res>
+class __$$DefaultCoversCachedCopyWithImpl<$Res>
     extends _$SetupEventCopyWithImpl<$Res>
-    implements $DefaultCoversCachedCopyWith<$Res> {
-  _$DefaultCoversCachedCopyWithImpl(
-      DefaultCoversCached _value, $Res Function(DefaultCoversCached) _then)
-      : super(_value, (v) => _then(v as DefaultCoversCached));
+    implements _$$DefaultCoversCachedCopyWith<$Res> {
+  __$$DefaultCoversCachedCopyWithImpl(
+      _$DefaultCoversCached _value, $Res Function(_$DefaultCoversCached) _then)
+      : super(_value, (v) => _then(v as _$DefaultCoversCached));
 
   @override
-  DefaultCoversCached get _value => super._value as DefaultCoversCached;
+  _$DefaultCoversCached get _value => super._value as _$DefaultCoversCached;
 }
 
 /// @nodoc
@@ -512,7 +462,7 @@ class _$DefaultCoversCached
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DefaultCoversCached);
+        (other.runtimeType == runtimeType && other is _$DefaultCoversCached);
   }
 
   @override
@@ -629,31 +579,31 @@ abstract class DefaultCoversCached implements SetupEvent {
 }
 
 /// @nodoc
-abstract class $DefaultCoversLoadedCopyWith<$Res> {
-  factory $DefaultCoversLoadedCopyWith(
-          DefaultCoversLoaded value, $Res Function(DefaultCoversLoaded) then) =
-      _$DefaultCoversLoadedCopyWithImpl<$Res>;
+abstract class _$$DefaultCoversLoadedCopyWith<$Res> {
+  factory _$$DefaultCoversLoadedCopyWith(_$DefaultCoversLoaded value,
+          $Res Function(_$DefaultCoversLoaded) then) =
+      __$$DefaultCoversLoadedCopyWithImpl<$Res>;
   $Res call({List<DefaultCover> defaultCovers});
 }
 
 /// @nodoc
-class _$DefaultCoversLoadedCopyWithImpl<$Res>
+class __$$DefaultCoversLoadedCopyWithImpl<$Res>
     extends _$SetupEventCopyWithImpl<$Res>
-    implements $DefaultCoversLoadedCopyWith<$Res> {
-  _$DefaultCoversLoadedCopyWithImpl(
-      DefaultCoversLoaded _value, $Res Function(DefaultCoversLoaded) _then)
-      : super(_value, (v) => _then(v as DefaultCoversLoaded));
+    implements _$$DefaultCoversLoadedCopyWith<$Res> {
+  __$$DefaultCoversLoadedCopyWithImpl(
+      _$DefaultCoversLoaded _value, $Res Function(_$DefaultCoversLoaded) _then)
+      : super(_value, (v) => _then(v as _$DefaultCoversLoaded));
 
   @override
-  DefaultCoversLoaded get _value => super._value as DefaultCoversLoaded;
+  _$DefaultCoversLoaded get _value => super._value as _$DefaultCoversLoaded;
 
   @override
   $Res call({
     Object? defaultCovers = freezed,
   }) {
-    return _then(DefaultCoversLoaded(
+    return _then(_$DefaultCoversLoaded(
       defaultCovers == freezed
-          ? _value.defaultCovers
+          ? _value._defaultCovers
           : defaultCovers // ignore: cast_nullable_to_non_nullable
               as List<DefaultCover>,
     ));
@@ -665,10 +615,15 @@ class _$DefaultCoversLoadedCopyWithImpl<$Res>
 class _$DefaultCoversLoaded
     with DiagnosticableTreeMixin
     implements DefaultCoversLoaded {
-  const _$DefaultCoversLoaded(this.defaultCovers);
+  const _$DefaultCoversLoaded(final List<DefaultCover> defaultCovers)
+      : _defaultCovers = defaultCovers;
 
+  final List<DefaultCover> _defaultCovers;
   @override
-  final List<DefaultCover> defaultCovers;
+  List<DefaultCover> get defaultCovers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_defaultCovers);
+  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -687,19 +642,20 @@ class _$DefaultCoversLoaded
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DefaultCoversLoaded &&
+            other is _$DefaultCoversLoaded &&
             const DeepCollectionEquality()
-                .equals(other.defaultCovers, defaultCovers));
+                .equals(other._defaultCovers, _defaultCovers));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(defaultCovers));
+      runtimeType, const DeepCollectionEquality().hash(_defaultCovers));
 
   @JsonKey(ignore: true)
   @override
-  $DefaultCoversLoadedCopyWith<DefaultCoversLoaded> get copyWith =>
-      _$DefaultCoversLoadedCopyWithImpl<DefaultCoversLoaded>(this, _$identity);
+  _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
+      __$$DefaultCoversLoadedCopyWithImpl<_$DefaultCoversLoaded>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -808,40 +764,41 @@ class _$DefaultCoversLoaded
 }
 
 abstract class DefaultCoversLoaded implements SetupEvent {
-  const factory DefaultCoversLoaded(List<DefaultCover> defaultCovers) =
+  const factory DefaultCoversLoaded(final List<DefaultCover> defaultCovers) =
       _$DefaultCoversLoaded;
 
-  List<DefaultCover> get defaultCovers;
+  List<DefaultCover> get defaultCovers => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DefaultCoversLoadedCopyWith<DefaultCoversLoaded> get copyWith =>
+  _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SessionFetchedCopyWith<$Res> {
-  factory $SessionFetchedCopyWith(
-          SessionFetched value, $Res Function(SessionFetched) then) =
-      _$SessionFetchedCopyWithImpl<$Res>;
+abstract class _$$SessionFetchedCopyWith<$Res> {
+  factory _$$SessionFetchedCopyWith(
+          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
+      __$$SessionFetchedCopyWithImpl<$Res>;
   $Res call({User session});
 
   $UserCopyWith<$Res> get session;
 }
 
 /// @nodoc
-class _$SessionFetchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
-    implements $SessionFetchedCopyWith<$Res> {
-  _$SessionFetchedCopyWithImpl(
-      SessionFetched _value, $Res Function(SessionFetched) _then)
-      : super(_value, (v) => _then(v as SessionFetched));
+class __$$SessionFetchedCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res>
+    implements _$$SessionFetchedCopyWith<$Res> {
+  __$$SessionFetchedCopyWithImpl(
+      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
+      : super(_value, (v) => _then(v as _$SessionFetched));
 
   @override
-  SessionFetched get _value => super._value as SessionFetched;
+  _$SessionFetched get _value => super._value as _$SessionFetched;
 
   @override
   $Res call({
     Object? session = freezed,
   }) {
-    return _then(SessionFetched(
+    return _then(_$SessionFetched(
       session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
@@ -882,7 +839,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SessionFetched &&
+            other is _$SessionFetched &&
             const DeepCollectionEquality().equals(other.session, session));
   }
 
@@ -892,8 +849,8 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
 
   @JsonKey(ignore: true)
   @override
-  $SessionFetchedCopyWith<SessionFetched> get copyWith =>
-      _$SessionFetchedCopyWithImpl<SessionFetched>(this, _$identity);
+  _$$SessionFetchedCopyWith<_$SessionFetched> get copyWith =>
+      __$$SessionFetchedCopyWithImpl<_$SessionFetched>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1002,30 +959,31 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
 }
 
 abstract class SessionFetched implements SetupEvent {
-  const factory SessionFetched(User session) = _$SessionFetched;
+  const factory SessionFetched(final User session) = _$SessionFetched;
 
-  User get session;
+  User get session => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SessionFetchedCopyWith<SessionFetched> get copyWith =>
+  _$$SessionFetchedCopyWith<_$SessionFetched> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SettingsFetchedCopyWith<$Res> {
-  factory $SettingsFetchedCopyWith(
-          SettingsFetched value, $Res Function(SettingsFetched) then) =
-      _$SettingsFetchedCopyWithImpl<$Res>;
+abstract class _$$SettingsFetchedCopyWith<$Res> {
+  factory _$$SettingsFetchedCopyWith(
+          _$SettingsFetched value, $Res Function(_$SettingsFetched) then) =
+      __$$SettingsFetchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsFetchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
-    implements $SettingsFetchedCopyWith<$Res> {
-  _$SettingsFetchedCopyWithImpl(
-      SettingsFetched _value, $Res Function(SettingsFetched) _then)
-      : super(_value, (v) => _then(v as SettingsFetched));
+class __$$SettingsFetchedCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res>
+    implements _$$SettingsFetchedCopyWith<$Res> {
+  __$$SettingsFetchedCopyWithImpl(
+      _$SettingsFetched _value, $Res Function(_$SettingsFetched) _then)
+      : super(_value, (v) => _then(v as _$SettingsFetched));
 
   @override
-  SettingsFetched get _value => super._value as SettingsFetched;
+  _$SettingsFetched get _value => super._value as _$SettingsFetched;
 }
 
 /// @nodoc
@@ -1049,7 +1007,7 @@ class _$SettingsFetched
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SettingsFetched);
+        (other.runtimeType == runtimeType && other is _$SettingsFetched);
   }
 
   @override
@@ -1166,22 +1124,22 @@ abstract class SettingsFetched implements SetupEvent {
 }
 
 /// @nodoc
-abstract class $SettingsInitializedCopyWith<$Res> {
-  factory $SettingsInitializedCopyWith(
-          SettingsInitialized value, $Res Function(SettingsInitialized) then) =
-      _$SettingsInitializedCopyWithImpl<$Res>;
+abstract class _$$SettingsInitializedCopyWith<$Res> {
+  factory _$$SettingsInitializedCopyWith(_$SettingsInitialized value,
+          $Res Function(_$SettingsInitialized) then) =
+      __$$SettingsInitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsInitializedCopyWithImpl<$Res>
+class __$$SettingsInitializedCopyWithImpl<$Res>
     extends _$SetupEventCopyWithImpl<$Res>
-    implements $SettingsInitializedCopyWith<$Res> {
-  _$SettingsInitializedCopyWithImpl(
-      SettingsInitialized _value, $Res Function(SettingsInitialized) _then)
-      : super(_value, (v) => _then(v as SettingsInitialized));
+    implements _$$SettingsInitializedCopyWith<$Res> {
+  __$$SettingsInitializedCopyWithImpl(
+      _$SettingsInitialized _value, $Res Function(_$SettingsInitialized) _then)
+      : super(_value, (v) => _then(v as _$SettingsInitialized));
 
   @override
-  SettingsInitialized get _value => super._value as SettingsInitialized;
+  _$SettingsInitialized get _value => super._value as _$SettingsInitialized;
 }
 
 /// @nodoc
@@ -1206,7 +1164,7 @@ class _$SettingsInitialized
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SettingsInitialized);
+        (other.runtimeType == runtimeType && other is _$SettingsInitialized);
   }
 
   @override
@@ -1323,22 +1281,22 @@ abstract class SettingsInitialized implements SetupEvent {
 }
 
 /// @nodoc
-abstract class $SettingsNotFoundCopyWith<$Res> {
-  factory $SettingsNotFoundCopyWith(
-          SettingsNotFound value, $Res Function(SettingsNotFound) then) =
-      _$SettingsNotFoundCopyWithImpl<$Res>;
+abstract class _$$SettingsNotFoundCopyWith<$Res> {
+  factory _$$SettingsNotFoundCopyWith(
+          _$SettingsNotFound value, $Res Function(_$SettingsNotFound) then) =
+      __$$SettingsNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsNotFoundCopyWithImpl<$Res>
+class __$$SettingsNotFoundCopyWithImpl<$Res>
     extends _$SetupEventCopyWithImpl<$Res>
-    implements $SettingsNotFoundCopyWith<$Res> {
-  _$SettingsNotFoundCopyWithImpl(
-      SettingsNotFound _value, $Res Function(SettingsNotFound) _then)
-      : super(_value, (v) => _then(v as SettingsNotFound));
+    implements _$$SettingsNotFoundCopyWith<$Res> {
+  __$$SettingsNotFoundCopyWithImpl(
+      _$SettingsNotFound _value, $Res Function(_$SettingsNotFound) _then)
+      : super(_value, (v) => _then(v as _$SettingsNotFound));
 
   @override
-  SettingsNotFound get _value => super._value as SettingsNotFound;
+  _$SettingsNotFound get _value => super._value as _$SettingsNotFound;
 }
 
 /// @nodoc
@@ -1362,7 +1320,7 @@ class _$SettingsNotFound
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SettingsNotFound);
+        (other.runtimeType == runtimeType && other is _$SettingsNotFound);
   }
 
   @override
@@ -1479,29 +1437,30 @@ abstract class SettingsNotFound implements SetupEvent {
 }
 
 /// @nodoc
-abstract class $UserLoadedCopyWith<$Res> {
-  factory $UserLoadedCopyWith(
-          UserLoaded value, $Res Function(UserLoaded) then) =
-      _$UserLoadedCopyWithImpl<$Res>;
+abstract class _$$UserLoadedCopyWith<$Res> {
+  factory _$$UserLoadedCopyWith(
+          _$UserLoaded value, $Res Function(_$UserLoaded) then) =
+      __$$UserLoadedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UserLoadedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
-    implements $UserLoadedCopyWith<$Res> {
-  _$UserLoadedCopyWithImpl(UserLoaded _value, $Res Function(UserLoaded) _then)
-      : super(_value, (v) => _then(v as UserLoaded));
+class __$$UserLoadedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
+    implements _$$UserLoadedCopyWith<$Res> {
+  __$$UserLoadedCopyWithImpl(
+      _$UserLoaded _value, $Res Function(_$UserLoaded) _then)
+      : super(_value, (v) => _then(v as _$UserLoaded));
 
   @override
-  UserLoaded get _value => super._value as UserLoaded;
+  _$UserLoaded get _value => super._value as _$UserLoaded;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(UserLoaded(
+    return _then(_$UserLoaded(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -1542,7 +1501,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UserLoaded &&
+            other is _$UserLoaded &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -1552,8 +1511,8 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
 
   @JsonKey(ignore: true)
   @override
-  $UserLoadedCopyWith<UserLoaded> get copyWith =>
-      _$UserLoadedCopyWithImpl<UserLoaded>(this, _$identity);
+  _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
+      __$$UserLoadedCopyWithImpl<_$UserLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1662,35 +1621,13 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
 }
 
 abstract class UserLoaded implements SetupEvent {
-  const factory UserLoaded(User user) = _$UserLoaded;
+  const factory UserLoaded(final User user) = _$UserLoaded;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserLoadedCopyWith<UserLoaded> get copyWith =>
+  _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SetupStateTearOff {
-  const _$SetupStateTearOff();
-
-  _Content content() {
-    return const _Content();
-  }
-
-  _Failure failure(CoreFailure failure) {
-    return _Failure(
-      failure,
-    );
-  }
-
-  _Initial initial() {
-    return const _Initial();
-  }
-}
-
-/// @nodoc
-const $SetupState = _$SetupStateTearOff();
 
 /// @nodoc
 mixin _$SetupState {
@@ -1757,19 +1694,20 @@ class _$SetupStateCopyWithImpl<$Res> implements $SetupStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ContentCopyWith<$Res> {
-  factory _$ContentCopyWith(_Content value, $Res Function(_Content) then) =
-      __$ContentCopyWithImpl<$Res>;
+abstract class _$$_ContentCopyWith<$Res> {
+  factory _$$_ContentCopyWith(
+          _$_Content value, $Res Function(_$_Content) then) =
+      __$$_ContentCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ContentCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
-    implements _$ContentCopyWith<$Res> {
-  __$ContentCopyWithImpl(_Content _value, $Res Function(_Content) _then)
-      : super(_value, (v) => _then(v as _Content));
+class __$$_ContentCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
+    implements _$$_ContentCopyWith<$Res> {
+  __$$_ContentCopyWithImpl(_$_Content _value, $Res Function(_$_Content) _then)
+      : super(_value, (v) => _then(v as _$_Content));
 
   @override
-  _Content get _value => super._value as _Content;
+  _$_Content get _value => super._value as _$_Content;
 }
 
 /// @nodoc
@@ -1791,7 +1729,7 @@ class _$_Content with DiagnosticableTreeMixin implements _Content {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Content);
+        (other.runtimeType == runtimeType && other is _$_Content);
   }
 
   @override
@@ -1871,40 +1809,32 @@ abstract class _Content implements SetupState {
 }
 
 /// @nodoc
-abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
-      __$FailureCopyWithImpl<$Res>;
+abstract class _$$_FailureCopyWith<$Res> {
+  factory _$$_FailureCopyWith(
+          _$_Failure value, $Res Function(_$_Failure) then) =
+      __$$_FailureCopyWithImpl<$Res>;
   $Res call({CoreFailure failure});
-
-  $CoreFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
-    implements _$FailureCopyWith<$Res> {
-  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
-      : super(_value, (v) => _then(v as _Failure));
+class __$$_FailureCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
+    implements _$$_FailureCopyWith<$Res> {
+  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
+      : super(_value, (v) => _then(v as _$_Failure));
 
   @override
-  _Failure get _value => super._value as _Failure;
+  _$_Failure get _value => super._value as _$_Failure;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_Failure(
+    return _then(_$_Failure(
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as CoreFailure,
     ));
-  }
-
-  @override
-  $CoreFailureCopyWith<$Res> get failure {
-    return $CoreFailureCopyWith<$Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
   }
 }
 
@@ -1933,7 +1863,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Failure &&
+            other is _$_Failure &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -1943,8 +1873,8 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
 
   @JsonKey(ignore: true)
   @override
-  _$FailureCopyWith<_Failure> get copyWith =>
-      __$FailureCopyWithImpl<_Failure>(this, _$identity);
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+      __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2016,28 +1946,29 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
 }
 
 abstract class _Failure implements SetupState {
-  const factory _Failure(CoreFailure failure) = _$_Failure;
+  const factory _Failure(final CoreFailure failure) = _$_Failure;
 
-  CoreFailure get failure;
+  CoreFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FailureCopyWith<_Failure> get copyWith =>
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -2059,7 +1990,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override

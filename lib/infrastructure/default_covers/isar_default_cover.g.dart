@@ -6,279 +6,248 @@ part of 'isar_default_cover.dart';
 // IsarCollectionGenerator
 // **************************************************************************
 
-// ignore_for_file: duplicate_ignore, non_constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, unused_local_variable
 
 extension GetIsarDefaultCoverCollection on Isar {
-  IsarCollection<IsarDefaultCover> get defaultCovers {
-    return getCollection('IsarDefaultCover');
-  }
+  IsarCollection<IsarDefaultCover> get defaultCovers => getCollection();
 }
 
-final IsarDefaultCoverSchema = CollectionSchema(
+const IsarDefaultCoverSchema = CollectionSchema(
   name: 'IsarDefaultCover',
   schema:
       '{"name":"IsarDefaultCover","idName":"id","properties":[{"name":"hashCode","type":"Long"},{"name":"key","type":"String"},{"name":"stringify","type":"Bool"},{"name":"url","type":"String"}],"indexes":[{"name":"key","unique":false,"properties":[{"name":"key","type":"Hash","caseSensitive":true}]}],"links":[]}',
-  nativeAdapter: const _IsarDefaultCoverNativeAdapter(),
-  webAdapter: const _IsarDefaultCoverWebAdapter(),
   idName: 'id',
   propertyIds: {'hashCode': 0, 'key': 1, 'stringify': 2, 'url': 3},
   listProperties: {},
   indexIds: {'key': 0},
-  indexTypes: {
+  indexValueTypes: {
     'key': [
-      NativeIndexType.stringHash,
+      IndexValueType.stringHash,
     ]
   },
   linkIds: {},
-  backlinkIds: {},
-  linkedCollections: [],
-  getId: (obj) {
-    if (obj.id == Isar.autoIncrement) {
-      return null;
-    } else {
-      return obj.id;
-    }
-  },
-  setId: null,
-  getLinks: (obj) => [],
-  version: 2,
+  backlinkLinkNames: {},
+  getId: _isarDefaultCoverGetId,
+  getLinks: _isarDefaultCoverGetLinks,
+  attachLinks: _isarDefaultCoverAttachLinks,
+  serializeNative: _isarDefaultCoverSerializeNative,
+  deserializeNative: _isarDefaultCoverDeserializeNative,
+  deserializePropNative: _isarDefaultCoverDeserializePropNative,
+  serializeWeb: _isarDefaultCoverSerializeWeb,
+  deserializeWeb: _isarDefaultCoverDeserializeWeb,
+  deserializePropWeb: _isarDefaultCoverDeserializePropWeb,
+  version: 3,
 );
 
-class _IsarDefaultCoverWebAdapter extends IsarWebTypeAdapter<IsarDefaultCover> {
-  const _IsarDefaultCoverWebAdapter();
-
-  @override
-  Object serialize(
-      IsarCollection<IsarDefaultCover> collection, IsarDefaultCover object) {
-    final jsObj = IsarNative.newJsObject();
-    IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
-    IsarNative.jsObjectSet(jsObj, 'id', object.id);
-    IsarNative.jsObjectSet(jsObj, 'key', object.key);
-    IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
-    IsarNative.jsObjectSet(jsObj, 'url', object.url);
-    return jsObj;
+int? _isarDefaultCoverGetId(IsarDefaultCover object) {
+  if (object.id == Isar.autoIncrement) {
+    return null;
+  } else {
+    return object.id;
   }
-
-  @override
-  IsarDefaultCover deserialize(
-      IsarCollection<IsarDefaultCover> collection, dynamic jsObj) {
-    final object = IsarDefaultCover(
-      id: IsarNative.jsObjectGet(jsObj, 'id'),
-      key: IsarNative.jsObjectGet(jsObj, 'key') ?? '',
-      url: IsarNative.jsObjectGet(jsObj, 'url') ?? '',
-    );
-    return object;
-  }
-
-  @override
-  P deserializeProperty<P>(Object jsObj, String propertyName) {
-    switch (propertyName) {
-      case 'hashCode':
-        return (IsarNative.jsObjectGet(jsObj, 'hashCode') ??
-            double.negativeInfinity) as P;
-      case 'id':
-        return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
-      case 'key':
-        return (IsarNative.jsObjectGet(jsObj, 'key') ?? '') as P;
-      case 'stringify':
-        return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
-      case 'url':
-        return (IsarNative.jsObjectGet(jsObj, 'url') ?? '') as P;
-      default:
-        throw 'Illegal propertyName';
-    }
-  }
-
-  @override
-  void attachLinks(Isar isar, int id, IsarDefaultCover object) {}
 }
 
-class _IsarDefaultCoverNativeAdapter
-    extends IsarNativeTypeAdapter<IsarDefaultCover> {
-  const _IsarDefaultCoverNativeAdapter();
-
-  @override
-  void serialize(
-      IsarCollection<IsarDefaultCover> collection,
-      IsarRawObject rawObj,
-      IsarDefaultCover object,
-      int staticSize,
-      List<int> offsets,
-      AdapterAlloc alloc) {
-    var dynamicSize = 0;
-    final value0 = object.hashCode;
-    final _hashCode = value0;
-    final value1 = object.key;
-    final _key = IsarBinaryWriter.utf8Encoder.convert(value1);
-    dynamicSize += (_key.length) as int;
-    final value2 = object.stringify;
-    final _stringify = value2;
-    final value3 = object.url;
-    final _url = IsarBinaryWriter.utf8Encoder.convert(value3);
-    dynamicSize += (_url.length) as int;
-    final size = staticSize + dynamicSize;
-
-    rawObj.buffer = alloc(size);
-    rawObj.buffer_length = size;
-    final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
-    final writer = IsarBinaryWriter(buffer, staticSize);
-    writer.writeLong(offsets[0], _hashCode);
-    writer.writeBytes(offsets[1], _key);
-    writer.writeBool(offsets[2], _stringify);
-    writer.writeBytes(offsets[3], _url);
-  }
-
-  @override
-  IsarDefaultCover deserialize(IsarCollection<IsarDefaultCover> collection,
-      int id, IsarBinaryReader reader, List<int> offsets) {
-    final object = IsarDefaultCover(
-      id: id,
-      key: reader.readString(offsets[1]),
-      url: reader.readString(offsets[3]),
-    );
-    return object;
-  }
-
-  @override
-  P deserializeProperty<P>(
-      int id, IsarBinaryReader reader, int propertyIndex, int offset) {
-    switch (propertyIndex) {
-      case -1:
-        return id as P;
-      case 0:
-        return (reader.readLong(offset)) as P;
-      case 1:
-        return (reader.readString(offset)) as P;
-      case 2:
-        return (reader.readBool(offset)) as P;
-      case 3:
-        return (reader.readString(offset)) as P;
-      default:
-        throw 'Illegal propertyIndex';
-    }
-  }
-
-  @override
-  void attachLinks(Isar isar, int id, IsarDefaultCover object) {}
+List<IsarLinkBase> _isarDefaultCoverGetLinks(IsarDefaultCover object) {
+  return [];
 }
+
+void _isarDefaultCoverSerializeNative(
+    IsarCollection<IsarDefaultCover> collection,
+    IsarRawObject rawObj,
+    IsarDefaultCover object,
+    int staticSize,
+    List<int> offsets,
+    AdapterAlloc alloc) {
+  var dynamicSize = 0;
+  final value0 = object.hashCode;
+  final _hashCode = value0;
+  final value1 = object.key;
+  final _key = IsarBinaryWriter.utf8Encoder.convert(value1);
+  dynamicSize += (_key.length) as int;
+  final value2 = object.stringify;
+  final _stringify = value2;
+  final value3 = object.url;
+  final _url = IsarBinaryWriter.utf8Encoder.convert(value3);
+  dynamicSize += (_url.length) as int;
+  final size = staticSize + dynamicSize;
+
+  rawObj.buffer = alloc(size);
+  rawObj.buffer_length = size;
+  final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
+  final writer = IsarBinaryWriter(buffer, staticSize);
+  writer.writeLong(offsets[0], _hashCode);
+  writer.writeBytes(offsets[1], _key);
+  writer.writeBool(offsets[2], _stringify);
+  writer.writeBytes(offsets[3], _url);
+}
+
+IsarDefaultCover _isarDefaultCoverDeserializeNative(
+    IsarCollection<IsarDefaultCover> collection,
+    int id,
+    IsarBinaryReader reader,
+    List<int> offsets) {
+  final object = IsarDefaultCover(
+    id: id,
+    key: reader.readString(offsets[1]),
+    url: reader.readString(offsets[3]),
+  );
+  return object;
+}
+
+P _isarDefaultCoverDeserializePropNative<P>(
+    int id, IsarBinaryReader reader, int propertyIndex, int offset) {
+  switch (propertyIndex) {
+    case -1:
+      return id as P;
+    case 0:
+      return (reader.readLong(offset)) as P;
+    case 1:
+      return (reader.readString(offset)) as P;
+    case 2:
+      return (reader.readBool(offset)) as P;
+    case 3:
+      return (reader.readString(offset)) as P;
+    default:
+      throw 'Illegal propertyIndex';
+  }
+}
+
+dynamic _isarDefaultCoverSerializeWeb(
+    IsarCollection<IsarDefaultCover> collection, IsarDefaultCover object) {
+  final jsObj = IsarNative.newJsObject();
+  IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
+  IsarNative.jsObjectSet(jsObj, 'id', object.id);
+  IsarNative.jsObjectSet(jsObj, 'key', object.key);
+  IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
+  IsarNative.jsObjectSet(jsObj, 'url', object.url);
+  return jsObj;
+}
+
+IsarDefaultCover _isarDefaultCoverDeserializeWeb(
+    IsarCollection<IsarDefaultCover> collection, dynamic jsObj) {
+  final object = IsarDefaultCover(
+    id: IsarNative.jsObjectGet(jsObj, 'id'),
+    key: IsarNative.jsObjectGet(jsObj, 'key') ?? '',
+    url: IsarNative.jsObjectGet(jsObj, 'url') ?? '',
+  );
+  return object;
+}
+
+P _isarDefaultCoverDeserializePropWeb<P>(Object jsObj, String propertyName) {
+  switch (propertyName) {
+    case 'hashCode':
+      return (IsarNative.jsObjectGet(jsObj, 'hashCode') ??
+          double.negativeInfinity) as P;
+    case 'id':
+      return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
+    case 'key':
+      return (IsarNative.jsObjectGet(jsObj, 'key') ?? '') as P;
+    case 'stringify':
+      return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
+    case 'url':
+      return (IsarNative.jsObjectGet(jsObj, 'url') ?? '') as P;
+    default:
+      throw 'Illegal propertyName';
+  }
+}
+
+void _isarDefaultCoverAttachLinks(
+    IsarCollection col, int id, IsarDefaultCover object) {}
 
 extension IsarDefaultCoverQueryWhereSort
     on QueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhere> {
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhere> anyId() {
-    return addWhereClauseInternal(const WhereClause(indexName: null));
+    return addWhereClauseInternal(const IdWhereClause.any());
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhere> anyKey() {
-    return addWhereClauseInternal(const WhereClause(indexName: 'key'));
+    return addWhereClauseInternal(const IndexWhereClause.any(indexName: 'key'));
   }
 }
 
 extension IsarDefaultCoverQueryWhere
     on QueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhereClause> {
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause> idEqualTo(
-      int? id) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: null,
-      lower: [id],
+      int id) {
+    return addWhereClauseInternal(IdWhereClause.between(
+      lower: id,
       includeLower: true,
-      upper: [id],
+      upper: id,
       includeUpper: true,
     ));
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
-      idNotEqualTo(int? id) {
+      idNotEqualTo(int id) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClauseInternal(WhereClause(
-        indexName: null,
-        upper: [id],
-        includeUpper: false,
-      )).addWhereClauseInternal(WhereClause(
-        indexName: null,
-        lower: [id],
-        includeLower: false,
-      ));
+      return addWhereClauseInternal(
+        IdWhereClause.lessThan(upper: id, includeUpper: false),
+      ).addWhereClauseInternal(
+        IdWhereClause.greaterThan(lower: id, includeLower: false),
+      );
     } else {
-      return addWhereClauseInternal(WhereClause(
-        indexName: null,
-        lower: [id],
-        includeLower: false,
-      )).addWhereClauseInternal(WhereClause(
-        indexName: null,
-        upper: [id],
-        includeUpper: false,
-      ));
+      return addWhereClauseInternal(
+        IdWhereClause.greaterThan(lower: id, includeLower: false),
+      ).addWhereClauseInternal(
+        IdWhereClause.lessThan(upper: id, includeUpper: false),
+      );
     }
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
-      idGreaterThan(
-    int? id, {
-    bool include = false,
-  }) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: null,
-      lower: [id],
-      includeLower: include,
-    ));
+      idGreaterThan(int id, {bool include = false}) {
+    return addWhereClauseInternal(
+      IdWhereClause.greaterThan(lower: id, includeLower: include),
+    );
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
-      idLessThan(
-    int? id, {
-    bool include = false,
-  }) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: null,
-      upper: [id],
-      includeUpper: include,
-    ));
+      idLessThan(int id, {bool include = false}) {
+    return addWhereClauseInternal(
+      IdWhereClause.lessThan(upper: id, includeUpper: include),
+    );
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause> idBetween(
-    int? lowerId,
-    int? upperId, {
+    int lowerId,
+    int upperId, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addWhereClauseInternal(WhereClause(
-      indexName: null,
-      lower: [lowerId],
+    return addWhereClauseInternal(IdWhereClause.between(
+      lower: lowerId,
       includeLower: includeLower,
-      upper: [upperId],
+      upper: upperId,
       includeUpper: includeUpper,
     ));
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
       keyEqualTo(String key) {
-    return addWhereClauseInternal(WhereClause(
+    return addWhereClauseInternal(IndexWhereClause.equalTo(
       indexName: 'key',
-      lower: [key],
-      includeLower: true,
-      upper: [key],
-      includeUpper: true,
+      value: [key],
     ));
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
       keyNotEqualTo(String key) {
     if (whereSortInternal == Sort.asc) {
-      return addWhereClauseInternal(WhereClause(
+      return addWhereClauseInternal(IndexWhereClause.lessThan(
         indexName: 'key',
         upper: [key],
         includeUpper: false,
-      )).addWhereClauseInternal(WhereClause(
+      )).addWhereClauseInternal(IndexWhereClause.greaterThan(
         indexName: 'key',
         lower: [key],
         includeLower: false,
       ));
     } else {
-      return addWhereClauseInternal(WhereClause(
+      return addWhereClauseInternal(IndexWhereClause.greaterThan(
         indexName: 'key',
         lower: [key],
         includeLower: false,
-      )).addWhereClauseInternal(WhereClause(
+      )).addWhereClauseInternal(IndexWhereClause.lessThan(
         indexName: 'key',
         upper: [key],
         includeUpper: false,
@@ -350,7 +319,7 @@ extension IsarDefaultCoverQueryFilter
   }
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
-      idEqualTo(int? value) {
+      idEqualTo(int value) {
     return addFilterConditionInternal(FilterCondition(
       type: ConditionType.eq,
       property: 'id',
@@ -360,7 +329,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       idGreaterThan(
-    int? value, {
+    int value, {
     bool include = false,
   }) {
     return addFilterConditionInternal(FilterCondition(
@@ -373,7 +342,7 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       idLessThan(
-    int? value, {
+    int value, {
     bool include = false,
   }) {
     return addFilterConditionInternal(FilterCondition(
@@ -386,8 +355,8 @@ extension IsarDefaultCoverQueryFilter
 
   QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterFilterCondition>
       idBetween(
-    int? lower,
-    int? upper, {
+    int lower,
+    int upper, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {

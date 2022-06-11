@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/features/auth/auth_bloc.application.dart';
 
-import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/routes/router.dart';
 
 /// @nodoc

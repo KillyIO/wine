@@ -12,46 +12,7 @@ part of 'tree.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TreeTearOff {
-  const _$TreeTearOff();
-
-  _Tree call(
-      {required UniqueID authorUID,
-      required int bookmarksCount,
-      required CoverURL coverURL,
-      required List<Genre> genres,
-      required bool isNSFW,
-      required bool isPublished,
-      required Language language,
-      required int likesCount,
-      Subtitle? subtitle,
-      required Synopsis synopsis,
-      required Title title,
-      required UniqueID uid,
-      required int viewsCount}) {
-    return _Tree(
-      authorUID: authorUID,
-      bookmarksCount: bookmarksCount,
-      coverURL: coverURL,
-      genres: genres,
-      isNSFW: isNSFW,
-      isPublished: isPublished,
-      language: language,
-      likesCount: likesCount,
-      subtitle: subtitle,
-      synopsis: synopsis,
-      title: title,
-      uid: uid,
-      viewsCount: viewsCount,
-    );
-  }
-}
-
-/// @nodoc
-const $Tree = _$TreeTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Tree {
@@ -175,9 +136,9 @@ class _$TreeCopyWithImpl<$Res> implements $TreeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
-  factory _$TreeCopyWith(_Tree value, $Res Function(_Tree) then) =
-      __$TreeCopyWithImpl<$Res>;
+abstract class _$$_TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
+  factory _$$_TreeCopyWith(_$_Tree value, $Res Function(_$_Tree) then) =
+      __$$_TreeCopyWithImpl<$Res>;
   @override
   $Res call(
       {UniqueID authorUID,
@@ -196,13 +157,13 @@ abstract class _$TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res>
-    implements _$TreeCopyWith<$Res> {
-  __$TreeCopyWithImpl(_Tree _value, $Res Function(_Tree) _then)
-      : super(_value, (v) => _then(v as _Tree));
+class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res>
+    implements _$$_TreeCopyWith<$Res> {
+  __$$_TreeCopyWithImpl(_$_Tree _value, $Res Function(_$_Tree) _then)
+      : super(_value, (v) => _then(v as _$_Tree));
 
   @override
-  _Tree get _value => super._value as _Tree;
+  _$_Tree get _value => super._value as _$_Tree;
 
   @override
   $Res call({
@@ -220,7 +181,7 @@ class __$TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res>
     Object? uid = freezed,
     Object? viewsCount = freezed,
   }) {
-    return _then(_Tree(
+    return _then(_$_Tree(
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
@@ -234,7 +195,7 @@ class __$TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res>
           : coverURL // ignore: cast_nullable_to_non_nullable
               as CoverURL,
       genres: genres == freezed
-          ? _value.genres
+          ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
       isNSFW: isNSFW == freezed
@@ -284,7 +245,7 @@ class _$_Tree implements _Tree {
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
-      required this.genres,
+      required final List<Genre> genres,
       required this.isNSFW,
       required this.isPublished,
       required this.language,
@@ -293,7 +254,8 @@ class _$_Tree implements _Tree {
       required this.synopsis,
       required this.title,
       required this.uid,
-      required this.viewsCount});
+      required this.viewsCount})
+      : _genres = genres;
 
   @override
   final UniqueID authorUID;
@@ -301,8 +263,13 @@ class _$_Tree implements _Tree {
   final int bookmarksCount;
   @override
   final CoverURL coverURL;
+  final List<Genre> _genres;
   @override
-  final List<Genre> genres;
+  List<Genre> get genres {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
+
   @override
   final bool isNSFW;
   @override
@@ -331,12 +298,12 @@ class _$_Tree implements _Tree {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Tree &&
+            other is _$_Tree &&
             const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
             const DeepCollectionEquality()
                 .equals(other.bookmarksCount, bookmarksCount) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
-            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other._genres, _genres) &&
             const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
             const DeepCollectionEquality()
                 .equals(other.isPublished, isPublished) &&
@@ -357,7 +324,7 @@ class _$_Tree implements _Tree {
       const DeepCollectionEquality().hash(authorUID),
       const DeepCollectionEquality().hash(bookmarksCount),
       const DeepCollectionEquality().hash(coverURL),
-      const DeepCollectionEquality().hash(genres),
+      const DeepCollectionEquality().hash(_genres),
       const DeepCollectionEquality().hash(isNSFW),
       const DeepCollectionEquality().hash(isPublished),
       const DeepCollectionEquality().hash(language),
@@ -370,53 +337,53 @@ class _$_Tree implements _Tree {
 
   @JsonKey(ignore: true)
   @override
-  _$TreeCopyWith<_Tree> get copyWith =>
-      __$TreeCopyWithImpl<_Tree>(this, _$identity);
+  _$$_TreeCopyWith<_$_Tree> get copyWith =>
+      __$$_TreeCopyWithImpl<_$_Tree>(this, _$identity);
 }
 
 abstract class _Tree implements Tree {
   factory _Tree(
-      {required UniqueID authorUID,
-      required int bookmarksCount,
-      required CoverURL coverURL,
-      required List<Genre> genres,
-      required bool isNSFW,
-      required bool isPublished,
-      required Language language,
-      required int likesCount,
-      Subtitle? subtitle,
-      required Synopsis synopsis,
-      required Title title,
-      required UniqueID uid,
-      required int viewsCount}) = _$_Tree;
+      {required final UniqueID authorUID,
+      required final int bookmarksCount,
+      required final CoverURL coverURL,
+      required final List<Genre> genres,
+      required final bool isNSFW,
+      required final bool isPublished,
+      required final Language language,
+      required final int likesCount,
+      final Subtitle? subtitle,
+      required final Synopsis synopsis,
+      required final Title title,
+      required final UniqueID uid,
+      required final int viewsCount}) = _$_Tree;
 
   @override
-  UniqueID get authorUID;
+  UniqueID get authorUID => throw _privateConstructorUsedError;
   @override
-  int get bookmarksCount;
+  int get bookmarksCount => throw _privateConstructorUsedError;
   @override
-  CoverURL get coverURL;
+  CoverURL get coverURL => throw _privateConstructorUsedError;
   @override
-  List<Genre> get genres;
+  List<Genre> get genres => throw _privateConstructorUsedError;
   @override
-  bool get isNSFW;
+  bool get isNSFW => throw _privateConstructorUsedError;
   @override
-  bool get isPublished;
+  bool get isPublished => throw _privateConstructorUsedError;
   @override
-  Language get language;
+  Language get language => throw _privateConstructorUsedError;
   @override
-  int get likesCount;
+  int get likesCount => throw _privateConstructorUsedError;
   @override
-  Subtitle? get subtitle;
+  Subtitle? get subtitle => throw _privateConstructorUsedError;
   @override
-  Synopsis get synopsis;
+  Synopsis get synopsis => throw _privateConstructorUsedError;
   @override
-  Title get title;
+  Title get title => throw _privateConstructorUsedError;
   @override
-  UniqueID get uid;
+  UniqueID get uid => throw _privateConstructorUsedError;
   @override
-  int get viewsCount;
+  int get viewsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TreeCopyWith<_Tree> get copyWith => throw _privateConstructorUsedError;
+  _$$_TreeCopyWith<_$_Tree> get copyWith => throw _privateConstructorUsedError;
 }

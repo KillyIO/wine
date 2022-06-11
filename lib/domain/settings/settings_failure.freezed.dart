@@ -12,31 +12,7 @@ part of 'settings_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SettingsFailureTearOff {
-  const _$SettingsFailureTearOff();
-
-  SettingsNotDeleted settingsNotDeleted() {
-    return const SettingsNotDeleted();
-  }
-
-  SettingsNotFound settingsNotFound() {
-    return const SettingsNotFound();
-  }
-
-  SettingsNotInitialized settingsNotInitialized() {
-    return const SettingsNotInitialized();
-  }
-
-  SettingsNotUpdated settingsNotUpdated() {
-    return const SettingsNotUpdated();
-  }
-}
-
-/// @nodoc
-const $SettingsFailure = _$SettingsFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SettingsFailure {
@@ -111,22 +87,22 @@ class _$SettingsFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $SettingsNotDeletedCopyWith<$Res> {
-  factory $SettingsNotDeletedCopyWith(
-          SettingsNotDeleted value, $Res Function(SettingsNotDeleted) then) =
-      _$SettingsNotDeletedCopyWithImpl<$Res>;
+abstract class _$$SettingsNotDeletedCopyWith<$Res> {
+  factory _$$SettingsNotDeletedCopyWith(_$SettingsNotDeleted value,
+          $Res Function(_$SettingsNotDeleted) then) =
+      __$$SettingsNotDeletedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsNotDeletedCopyWithImpl<$Res>
+class __$$SettingsNotDeletedCopyWithImpl<$Res>
     extends _$SettingsFailureCopyWithImpl<$Res>
-    implements $SettingsNotDeletedCopyWith<$Res> {
-  _$SettingsNotDeletedCopyWithImpl(
-      SettingsNotDeleted _value, $Res Function(SettingsNotDeleted) _then)
-      : super(_value, (v) => _then(v as SettingsNotDeleted));
+    implements _$$SettingsNotDeletedCopyWith<$Res> {
+  __$$SettingsNotDeletedCopyWithImpl(
+      _$SettingsNotDeleted _value, $Res Function(_$SettingsNotDeleted) _then)
+      : super(_value, (v) => _then(v as _$SettingsNotDeleted));
 
   @override
-  SettingsNotDeleted get _value => super._value as SettingsNotDeleted;
+  _$SettingsNotDeleted get _value => super._value as _$SettingsNotDeleted;
 }
 
 /// @nodoc
@@ -142,7 +118,7 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SettingsNotDeleted);
+        (other.runtimeType == runtimeType && other is _$SettingsNotDeleted);
   }
 
   @override
@@ -229,22 +205,22 @@ abstract class SettingsNotDeleted implements SettingsFailure {
 }
 
 /// @nodoc
-abstract class $SettingsNotFoundCopyWith<$Res> {
-  factory $SettingsNotFoundCopyWith(
-          SettingsNotFound value, $Res Function(SettingsNotFound) then) =
-      _$SettingsNotFoundCopyWithImpl<$Res>;
+abstract class _$$SettingsNotFoundCopyWith<$Res> {
+  factory _$$SettingsNotFoundCopyWith(
+          _$SettingsNotFound value, $Res Function(_$SettingsNotFound) then) =
+      __$$SettingsNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsNotFoundCopyWithImpl<$Res>
+class __$$SettingsNotFoundCopyWithImpl<$Res>
     extends _$SettingsFailureCopyWithImpl<$Res>
-    implements $SettingsNotFoundCopyWith<$Res> {
-  _$SettingsNotFoundCopyWithImpl(
-      SettingsNotFound _value, $Res Function(SettingsNotFound) _then)
-      : super(_value, (v) => _then(v as SettingsNotFound));
+    implements _$$SettingsNotFoundCopyWith<$Res> {
+  __$$SettingsNotFoundCopyWithImpl(
+      _$SettingsNotFound _value, $Res Function(_$SettingsNotFound) _then)
+      : super(_value, (v) => _then(v as _$SettingsNotFound));
 
   @override
-  SettingsNotFound get _value => super._value as SettingsNotFound;
+  _$SettingsNotFound get _value => super._value as _$SettingsNotFound;
 }
 
 /// @nodoc
@@ -260,7 +236,7 @@ class _$SettingsNotFound implements SettingsNotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SettingsNotFound);
+        (other.runtimeType == runtimeType && other is _$SettingsNotFound);
   }
 
   @override
@@ -347,22 +323,23 @@ abstract class SettingsNotFound implements SettingsFailure {
 }
 
 /// @nodoc
-abstract class $SettingsNotInitializedCopyWith<$Res> {
-  factory $SettingsNotInitializedCopyWith(SettingsNotInitialized value,
-          $Res Function(SettingsNotInitialized) then) =
-      _$SettingsNotInitializedCopyWithImpl<$Res>;
+abstract class _$$SettingsNotInitializedCopyWith<$Res> {
+  factory _$$SettingsNotInitializedCopyWith(_$SettingsNotInitialized value,
+          $Res Function(_$SettingsNotInitialized) then) =
+      __$$SettingsNotInitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsNotInitializedCopyWithImpl<$Res>
+class __$$SettingsNotInitializedCopyWithImpl<$Res>
     extends _$SettingsFailureCopyWithImpl<$Res>
-    implements $SettingsNotInitializedCopyWith<$Res> {
-  _$SettingsNotInitializedCopyWithImpl(SettingsNotInitialized _value,
-      $Res Function(SettingsNotInitialized) _then)
-      : super(_value, (v) => _then(v as SettingsNotInitialized));
+    implements _$$SettingsNotInitializedCopyWith<$Res> {
+  __$$SettingsNotInitializedCopyWithImpl(_$SettingsNotInitialized _value,
+      $Res Function(_$SettingsNotInitialized) _then)
+      : super(_value, (v) => _then(v as _$SettingsNotInitialized));
 
   @override
-  SettingsNotInitialized get _value => super._value as SettingsNotInitialized;
+  _$SettingsNotInitialized get _value =>
+      super._value as _$SettingsNotInitialized;
 }
 
 /// @nodoc
@@ -378,7 +355,7 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SettingsNotInitialized);
+        (other.runtimeType == runtimeType && other is _$SettingsNotInitialized);
   }
 
   @override
@@ -465,22 +442,22 @@ abstract class SettingsNotInitialized implements SettingsFailure {
 }
 
 /// @nodoc
-abstract class $SettingsNotUpdatedCopyWith<$Res> {
-  factory $SettingsNotUpdatedCopyWith(
-          SettingsNotUpdated value, $Res Function(SettingsNotUpdated) then) =
-      _$SettingsNotUpdatedCopyWithImpl<$Res>;
+abstract class _$$SettingsNotUpdatedCopyWith<$Res> {
+  factory _$$SettingsNotUpdatedCopyWith(_$SettingsNotUpdated value,
+          $Res Function(_$SettingsNotUpdated) then) =
+      __$$SettingsNotUpdatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsNotUpdatedCopyWithImpl<$Res>
+class __$$SettingsNotUpdatedCopyWithImpl<$Res>
     extends _$SettingsFailureCopyWithImpl<$Res>
-    implements $SettingsNotUpdatedCopyWith<$Res> {
-  _$SettingsNotUpdatedCopyWithImpl(
-      SettingsNotUpdated _value, $Res Function(SettingsNotUpdated) _then)
-      : super(_value, (v) => _then(v as SettingsNotUpdated));
+    implements _$$SettingsNotUpdatedCopyWith<$Res> {
+  __$$SettingsNotUpdatedCopyWithImpl(
+      _$SettingsNotUpdated _value, $Res Function(_$SettingsNotUpdated) _then)
+      : super(_value, (v) => _then(v as _$SettingsNotUpdated));
 
   @override
-  SettingsNotUpdated get _value => super._value as SettingsNotUpdated;
+  _$SettingsNotUpdated get _value => super._value as _$SettingsNotUpdated;
 }
 
 /// @nodoc
@@ -496,7 +473,7 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SettingsNotUpdated);
+        (other.runtimeType == runtimeType && other is _$SettingsNotUpdated);
   }
 
   @override

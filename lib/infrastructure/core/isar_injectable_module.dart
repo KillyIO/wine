@@ -22,6 +22,7 @@ abstract class IIsarInjectableModule {
     final isar = await Isar.open(
       schemas: [IsarDefaultCoverSchema, IsarSettingsSchema, IsarUserSchema],
       directory: (await getApplicationDocumentsDirectory()).path,
+      inspector: true,
     );
 
     return isar;

@@ -3,8 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
-import 'package:wine/domain/auth/auth_failure.dart';
-import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
@@ -13,6 +11,8 @@ import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
+import 'package:wine/features/auth/auth_failure.domain.dart';
+import 'package:wine/features/auth/i_auth_facade.domain.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
 import '../../mocks/default_covers_mock.dart';

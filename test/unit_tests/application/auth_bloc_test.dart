@@ -2,8 +2,8 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/application/auth/auth_bloc.dart';
-import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/features/auth/auth_bloc.application.dart';
+import 'package:wine/features/auth/i_auth_facade.domain.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
 import '../utils/constants.dart';

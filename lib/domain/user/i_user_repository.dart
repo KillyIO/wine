@@ -1,8 +1,8 @@
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
+import 'package:wine/features/auth/username.fomain.dart';
 
 /// @nodoc
 abstract class IUserRepository {

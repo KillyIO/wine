@@ -12,39 +12,7 @@ part of 'default_covers_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DefaultCoversFailureTearOff {
-  const _$DefaultCoversFailureTearOff();
-
-  DefaultCoversNotCached defaultCoversNotCached() {
-    return const DefaultCoversNotCached();
-  }
-
-  DefaultCoverNotFetched defaultCoverNotFetched() {
-    return const DefaultCoverNotFetched();
-  }
-
-  DefaultCoversNotLoaded defaultCoversNotLoaded() {
-    return const DefaultCoversNotLoaded();
-  }
-
-  PermissionDenied permissionDenied() {
-    return const PermissionDenied();
-  }
-
-  ServerError serverError() {
-    return const ServerError();
-  }
-
-  Unexpected unexpected() {
-    return const Unexpected();
-  }
-}
-
-/// @nodoc
-const $DefaultCoversFailure = _$DefaultCoversFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DefaultCoversFailure {
@@ -133,22 +101,23 @@ class _$DefaultCoversFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $DefaultCoversNotCachedCopyWith<$Res> {
-  factory $DefaultCoversNotCachedCopyWith(DefaultCoversNotCached value,
-          $Res Function(DefaultCoversNotCached) then) =
-      _$DefaultCoversNotCachedCopyWithImpl<$Res>;
+abstract class _$$DefaultCoversNotCachedCopyWith<$Res> {
+  factory _$$DefaultCoversNotCachedCopyWith(_$DefaultCoversNotCached value,
+          $Res Function(_$DefaultCoversNotCached) then) =
+      __$$DefaultCoversNotCachedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DefaultCoversNotCachedCopyWithImpl<$Res>
+class __$$DefaultCoversNotCachedCopyWithImpl<$Res>
     extends _$DefaultCoversFailureCopyWithImpl<$Res>
-    implements $DefaultCoversNotCachedCopyWith<$Res> {
-  _$DefaultCoversNotCachedCopyWithImpl(DefaultCoversNotCached _value,
-      $Res Function(DefaultCoversNotCached) _then)
-      : super(_value, (v) => _then(v as DefaultCoversNotCached));
+    implements _$$DefaultCoversNotCachedCopyWith<$Res> {
+  __$$DefaultCoversNotCachedCopyWithImpl(_$DefaultCoversNotCached _value,
+      $Res Function(_$DefaultCoversNotCached) _then)
+      : super(_value, (v) => _then(v as _$DefaultCoversNotCached));
 
   @override
-  DefaultCoversNotCached get _value => super._value as DefaultCoversNotCached;
+  _$DefaultCoversNotCached get _value =>
+      super._value as _$DefaultCoversNotCached;
 }
 
 /// @nodoc
@@ -164,7 +133,7 @@ class _$DefaultCoversNotCached implements DefaultCoversNotCached {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DefaultCoversNotCached);
+        (other.runtimeType == runtimeType && other is _$DefaultCoversNotCached);
   }
 
   @override
@@ -265,22 +234,23 @@ abstract class DefaultCoversNotCached implements DefaultCoversFailure {
 }
 
 /// @nodoc
-abstract class $DefaultCoverNotFetchedCopyWith<$Res> {
-  factory $DefaultCoverNotFetchedCopyWith(DefaultCoverNotFetched value,
-          $Res Function(DefaultCoverNotFetched) then) =
-      _$DefaultCoverNotFetchedCopyWithImpl<$Res>;
+abstract class _$$DefaultCoverNotFetchedCopyWith<$Res> {
+  factory _$$DefaultCoverNotFetchedCopyWith(_$DefaultCoverNotFetched value,
+          $Res Function(_$DefaultCoverNotFetched) then) =
+      __$$DefaultCoverNotFetchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DefaultCoverNotFetchedCopyWithImpl<$Res>
+class __$$DefaultCoverNotFetchedCopyWithImpl<$Res>
     extends _$DefaultCoversFailureCopyWithImpl<$Res>
-    implements $DefaultCoverNotFetchedCopyWith<$Res> {
-  _$DefaultCoverNotFetchedCopyWithImpl(DefaultCoverNotFetched _value,
-      $Res Function(DefaultCoverNotFetched) _then)
-      : super(_value, (v) => _then(v as DefaultCoverNotFetched));
+    implements _$$DefaultCoverNotFetchedCopyWith<$Res> {
+  __$$DefaultCoverNotFetchedCopyWithImpl(_$DefaultCoverNotFetched _value,
+      $Res Function(_$DefaultCoverNotFetched) _then)
+      : super(_value, (v) => _then(v as _$DefaultCoverNotFetched));
 
   @override
-  DefaultCoverNotFetched get _value => super._value as DefaultCoverNotFetched;
+  _$DefaultCoverNotFetched get _value =>
+      super._value as _$DefaultCoverNotFetched;
 }
 
 /// @nodoc
@@ -296,7 +266,7 @@ class _$DefaultCoverNotFetched implements DefaultCoverNotFetched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DefaultCoverNotFetched);
+        (other.runtimeType == runtimeType && other is _$DefaultCoverNotFetched);
   }
 
   @override
@@ -397,22 +367,23 @@ abstract class DefaultCoverNotFetched implements DefaultCoversFailure {
 }
 
 /// @nodoc
-abstract class $DefaultCoversNotLoadedCopyWith<$Res> {
-  factory $DefaultCoversNotLoadedCopyWith(DefaultCoversNotLoaded value,
-          $Res Function(DefaultCoversNotLoaded) then) =
-      _$DefaultCoversNotLoadedCopyWithImpl<$Res>;
+abstract class _$$DefaultCoversNotLoadedCopyWith<$Res> {
+  factory _$$DefaultCoversNotLoadedCopyWith(_$DefaultCoversNotLoaded value,
+          $Res Function(_$DefaultCoversNotLoaded) then) =
+      __$$DefaultCoversNotLoadedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DefaultCoversNotLoadedCopyWithImpl<$Res>
+class __$$DefaultCoversNotLoadedCopyWithImpl<$Res>
     extends _$DefaultCoversFailureCopyWithImpl<$Res>
-    implements $DefaultCoversNotLoadedCopyWith<$Res> {
-  _$DefaultCoversNotLoadedCopyWithImpl(DefaultCoversNotLoaded _value,
-      $Res Function(DefaultCoversNotLoaded) _then)
-      : super(_value, (v) => _then(v as DefaultCoversNotLoaded));
+    implements _$$DefaultCoversNotLoadedCopyWith<$Res> {
+  __$$DefaultCoversNotLoadedCopyWithImpl(_$DefaultCoversNotLoaded _value,
+      $Res Function(_$DefaultCoversNotLoaded) _then)
+      : super(_value, (v) => _then(v as _$DefaultCoversNotLoaded));
 
   @override
-  DefaultCoversNotLoaded get _value => super._value as DefaultCoversNotLoaded;
+  _$DefaultCoversNotLoaded get _value =>
+      super._value as _$DefaultCoversNotLoaded;
 }
 
 /// @nodoc
@@ -428,7 +399,7 @@ class _$DefaultCoversNotLoaded implements DefaultCoversNotLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DefaultCoversNotLoaded);
+        (other.runtimeType == runtimeType && other is _$DefaultCoversNotLoaded);
   }
 
   @override
@@ -529,22 +500,22 @@ abstract class DefaultCoversNotLoaded implements DefaultCoversFailure {
 }
 
 /// @nodoc
-abstract class $PermissionDeniedCopyWith<$Res> {
-  factory $PermissionDeniedCopyWith(
-          PermissionDenied value, $Res Function(PermissionDenied) then) =
-      _$PermissionDeniedCopyWithImpl<$Res>;
+abstract class _$$PermissionDeniedCopyWith<$Res> {
+  factory _$$PermissionDeniedCopyWith(
+          _$PermissionDenied value, $Res Function(_$PermissionDenied) then) =
+      __$$PermissionDeniedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PermissionDeniedCopyWithImpl<$Res>
+class __$$PermissionDeniedCopyWithImpl<$Res>
     extends _$DefaultCoversFailureCopyWithImpl<$Res>
-    implements $PermissionDeniedCopyWith<$Res> {
-  _$PermissionDeniedCopyWithImpl(
-      PermissionDenied _value, $Res Function(PermissionDenied) _then)
-      : super(_value, (v) => _then(v as PermissionDenied));
+    implements _$$PermissionDeniedCopyWith<$Res> {
+  __$$PermissionDeniedCopyWithImpl(
+      _$PermissionDenied _value, $Res Function(_$PermissionDenied) _then)
+      : super(_value, (v) => _then(v as _$PermissionDenied));
 
   @override
-  PermissionDenied get _value => super._value as PermissionDenied;
+  _$PermissionDenied get _value => super._value as _$PermissionDenied;
 }
 
 /// @nodoc
@@ -560,7 +531,7 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is PermissionDenied);
+        (other.runtimeType == runtimeType && other is _$PermissionDenied);
   }
 
   @override
@@ -661,22 +632,22 @@ abstract class PermissionDenied implements DefaultCoversFailure {
 }
 
 /// @nodoc
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(
-          ServerError value, $Res Function(ServerError) then) =
-      _$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorCopyWith<$Res> {
+  factory _$$ServerErrorCopyWith(
+          _$ServerError value, $Res Function(_$ServerError) then) =
+      __$$ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerErrorCopyWithImpl<$Res>
+class __$$ServerErrorCopyWithImpl<$Res>
     extends _$DefaultCoversFailureCopyWithImpl<$Res>
-    implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError _value, $Res Function(ServerError) _then)
-      : super(_value, (v) => _then(v as ServerError));
+    implements _$$ServerErrorCopyWith<$Res> {
+  __$$ServerErrorCopyWithImpl(
+      _$ServerError _value, $Res Function(_$ServerError) _then)
+      : super(_value, (v) => _then(v as _$ServerError));
 
   @override
-  ServerError get _value => super._value as ServerError;
+  _$ServerError get _value => super._value as _$ServerError;
 }
 
 /// @nodoc
@@ -692,7 +663,7 @@ class _$ServerError implements ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ServerError);
+        (other.runtimeType == runtimeType && other is _$ServerError);
   }
 
   @override
@@ -793,21 +764,22 @@ abstract class ServerError implements DefaultCoversFailure {
 }
 
 /// @nodoc
-abstract class $UnexpectedCopyWith<$Res> {
-  factory $UnexpectedCopyWith(
-          Unexpected value, $Res Function(Unexpected) then) =
-      _$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$UnexpectedCopyWith<$Res> {
+  factory _$$UnexpectedCopyWith(
+          _$Unexpected value, $Res Function(_$Unexpected) then) =
+      __$$UnexpectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnexpectedCopyWithImpl<$Res>
+class __$$UnexpectedCopyWithImpl<$Res>
     extends _$DefaultCoversFailureCopyWithImpl<$Res>
-    implements $UnexpectedCopyWith<$Res> {
-  _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
-      : super(_value, (v) => _then(v as Unexpected));
+    implements _$$UnexpectedCopyWith<$Res> {
+  __$$UnexpectedCopyWithImpl(
+      _$Unexpected _value, $Res Function(_$Unexpected) _then)
+      : super(_value, (v) => _then(v as _$Unexpected));
 
   @override
-  Unexpected get _value => super._value as Unexpected;
+  _$Unexpected get _value => super._value as _$Unexpected;
 }
 
 /// @nodoc
@@ -823,7 +795,7 @@ class _$Unexpected implements Unexpected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Unexpected);
+        (other.runtimeType == runtimeType && other is _$Unexpected);
   }
 
   @override

@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
-import 'package:wine/domain/auth/email_address.dart';
-import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/features/auth/email_address.domain.dart';
+import 'package:wine/features/auth/username.fomain.dart';
 
 part 'isar_user.g.dart';
 

@@ -12,88 +12,7 @@ part of 'typewriter_tree_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TypewriterTreeEventTearOff {
-  const _$TypewriterTreeEventTearOff();
-
-  AddCoverPressed addCoverPressed() {
-    return const AddCoverPressed();
-  }
-
-  DeleteButtonPressed deleteButtonPressed() {
-    return const DeleteButtonPressed();
-  }
-
-  GenreAdded genreAdded(String genre) {
-    return GenreAdded(
-      genre,
-    );
-  }
-
-  GenreRemoved genreRemoved(String genre) {
-    return GenreRemoved(
-      genre,
-    );
-  }
-
-  IsNSFWChanged isNSFWChanged({required bool isNSFW}) {
-    return IsNSFWChanged(
-      isNSFW: isNSFW,
-    );
-  }
-
-  LanguageSelected languageSelected(String language) {
-    return LanguageSelected(
-      language,
-    );
-  }
-
-  LaunchAsNewTree launchAsNewTree() {
-    return const LaunchAsNewTree();
-  }
-
-  LaunchWithUID launchWithUID(UniqueID uid, {Tree? tree}) {
-    return LaunchWithUID(
-      uid,
-      tree: tree,
-    );
-  }
-
-  PublishButtonPressed publishButtonPressed() {
-    return const PublishButtonPressed();
-  }
-
-  SaveButtonPressed saveButtonPressed() {
-    return const SaveButtonPressed();
-  }
-
-  SessionFetched sessionFetched() {
-    return const SessionFetched();
-  }
-
-  SubtitleChanged subtitleChanged(String subtitle) {
-    return SubtitleChanged(
-      subtitle,
-    );
-  }
-
-  SynopsisChanged synopsisChanged(String synopsis) {
-    return SynopsisChanged(
-      synopsis,
-    );
-  }
-
-  TitleChanged titleChanged(String title) {
-    return TitleChanged(
-      title,
-    );
-  }
-}
-
-/// @nodoc
-const $TypewriterTreeEvent = _$TypewriterTreeEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TypewriterTreeEvent {
@@ -227,22 +146,22 @@ class _$TypewriterTreeEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $AddCoverPressedCopyWith<$Res> {
-  factory $AddCoverPressedCopyWith(
-          AddCoverPressed value, $Res Function(AddCoverPressed) then) =
-      _$AddCoverPressedCopyWithImpl<$Res>;
+abstract class _$$AddCoverPressedCopyWith<$Res> {
+  factory _$$AddCoverPressedCopyWith(
+          _$AddCoverPressed value, $Res Function(_$AddCoverPressed) then) =
+      __$$AddCoverPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AddCoverPressedCopyWithImpl<$Res>
+class __$$AddCoverPressedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $AddCoverPressedCopyWith<$Res> {
-  _$AddCoverPressedCopyWithImpl(
-      AddCoverPressed _value, $Res Function(AddCoverPressed) _then)
-      : super(_value, (v) => _then(v as AddCoverPressed));
+    implements _$$AddCoverPressedCopyWith<$Res> {
+  __$$AddCoverPressedCopyWithImpl(
+      _$AddCoverPressed _value, $Res Function(_$AddCoverPressed) _then)
+      : super(_value, (v) => _then(v as _$AddCoverPressed));
 
   @override
-  AddCoverPressed get _value => super._value as AddCoverPressed;
+  _$AddCoverPressed get _value => super._value as _$AddCoverPressed;
 }
 
 /// @nodoc
@@ -258,7 +177,7 @@ class _$AddCoverPressed implements AddCoverPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AddCoverPressed);
+        (other.runtimeType == runtimeType && other is _$AddCoverPressed);
   }
 
   @override
@@ -404,22 +323,22 @@ abstract class AddCoverPressed implements TypewriterTreeEvent {
 }
 
 /// @nodoc
-abstract class $DeleteButtonPressedCopyWith<$Res> {
-  factory $DeleteButtonPressedCopyWith(
-          DeleteButtonPressed value, $Res Function(DeleteButtonPressed) then) =
-      _$DeleteButtonPressedCopyWithImpl<$Res>;
+abstract class _$$DeleteButtonPressedCopyWith<$Res> {
+  factory _$$DeleteButtonPressedCopyWith(_$DeleteButtonPressed value,
+          $Res Function(_$DeleteButtonPressed) then) =
+      __$$DeleteButtonPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeleteButtonPressedCopyWithImpl<$Res>
+class __$$DeleteButtonPressedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $DeleteButtonPressedCopyWith<$Res> {
-  _$DeleteButtonPressedCopyWithImpl(
-      DeleteButtonPressed _value, $Res Function(DeleteButtonPressed) _then)
-      : super(_value, (v) => _then(v as DeleteButtonPressed));
+    implements _$$DeleteButtonPressedCopyWith<$Res> {
+  __$$DeleteButtonPressedCopyWithImpl(
+      _$DeleteButtonPressed _value, $Res Function(_$DeleteButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$DeleteButtonPressed));
 
   @override
-  DeleteButtonPressed get _value => super._value as DeleteButtonPressed;
+  _$DeleteButtonPressed get _value => super._value as _$DeleteButtonPressed;
 }
 
 /// @nodoc
@@ -435,7 +354,7 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DeleteButtonPressed);
+        (other.runtimeType == runtimeType && other is _$DeleteButtonPressed);
   }
 
   @override
@@ -581,28 +500,29 @@ abstract class DeleteButtonPressed implements TypewriterTreeEvent {
 }
 
 /// @nodoc
-abstract class $GenreAddedCopyWith<$Res> {
-  factory $GenreAddedCopyWith(
-          GenreAdded value, $Res Function(GenreAdded) then) =
-      _$GenreAddedCopyWithImpl<$Res>;
+abstract class _$$GenreAddedCopyWith<$Res> {
+  factory _$$GenreAddedCopyWith(
+          _$GenreAdded value, $Res Function(_$GenreAdded) then) =
+      __$$GenreAddedCopyWithImpl<$Res>;
   $Res call({String genre});
 }
 
 /// @nodoc
-class _$GenreAddedCopyWithImpl<$Res>
+class __$$GenreAddedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $GenreAddedCopyWith<$Res> {
-  _$GenreAddedCopyWithImpl(GenreAdded _value, $Res Function(GenreAdded) _then)
-      : super(_value, (v) => _then(v as GenreAdded));
+    implements _$$GenreAddedCopyWith<$Res> {
+  __$$GenreAddedCopyWithImpl(
+      _$GenreAdded _value, $Res Function(_$GenreAdded) _then)
+      : super(_value, (v) => _then(v as _$GenreAdded));
 
   @override
-  GenreAdded get _value => super._value as GenreAdded;
+  _$GenreAdded get _value => super._value as _$GenreAdded;
 
   @override
   $Res call({
     Object? genre = freezed,
   }) {
-    return _then(GenreAdded(
+    return _then(_$GenreAdded(
       genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
@@ -628,7 +548,7 @@ class _$GenreAdded implements GenreAdded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GenreAdded &&
+            other is _$GenreAdded &&
             const DeepCollectionEquality().equals(other.genre, genre));
   }
 
@@ -638,8 +558,8 @@ class _$GenreAdded implements GenreAdded {
 
   @JsonKey(ignore: true)
   @override
-  $GenreAddedCopyWith<GenreAdded> get copyWith =>
-      _$GenreAddedCopyWithImpl<GenreAdded>(this, _$identity);
+  _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
+      __$$GenreAddedCopyWithImpl<_$GenreAdded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -777,38 +697,38 @@ class _$GenreAdded implements GenreAdded {
 }
 
 abstract class GenreAdded implements TypewriterTreeEvent {
-  const factory GenreAdded(String genre) = _$GenreAdded;
+  const factory GenreAdded(final String genre) = _$GenreAdded;
 
-  String get genre;
+  String get genre => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GenreAddedCopyWith<GenreAdded> get copyWith =>
+  _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GenreRemovedCopyWith<$Res> {
-  factory $GenreRemovedCopyWith(
-          GenreRemoved value, $Res Function(GenreRemoved) then) =
-      _$GenreRemovedCopyWithImpl<$Res>;
+abstract class _$$GenreRemovedCopyWith<$Res> {
+  factory _$$GenreRemovedCopyWith(
+          _$GenreRemoved value, $Res Function(_$GenreRemoved) then) =
+      __$$GenreRemovedCopyWithImpl<$Res>;
   $Res call({String genre});
 }
 
 /// @nodoc
-class _$GenreRemovedCopyWithImpl<$Res>
+class __$$GenreRemovedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $GenreRemovedCopyWith<$Res> {
-  _$GenreRemovedCopyWithImpl(
-      GenreRemoved _value, $Res Function(GenreRemoved) _then)
-      : super(_value, (v) => _then(v as GenreRemoved));
+    implements _$$GenreRemovedCopyWith<$Res> {
+  __$$GenreRemovedCopyWithImpl(
+      _$GenreRemoved _value, $Res Function(_$GenreRemoved) _then)
+      : super(_value, (v) => _then(v as _$GenreRemoved));
 
   @override
-  GenreRemoved get _value => super._value as GenreRemoved;
+  _$GenreRemoved get _value => super._value as _$GenreRemoved;
 
   @override
   $Res call({
     Object? genre = freezed,
   }) {
-    return _then(GenreRemoved(
+    return _then(_$GenreRemoved(
       genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
@@ -834,7 +754,7 @@ class _$GenreRemoved implements GenreRemoved {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GenreRemoved &&
+            other is _$GenreRemoved &&
             const DeepCollectionEquality().equals(other.genre, genre));
   }
 
@@ -844,8 +764,8 @@ class _$GenreRemoved implements GenreRemoved {
 
   @JsonKey(ignore: true)
   @override
-  $GenreRemovedCopyWith<GenreRemoved> get copyWith =>
-      _$GenreRemovedCopyWithImpl<GenreRemoved>(this, _$identity);
+  _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
+      __$$GenreRemovedCopyWithImpl<_$GenreRemoved>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -983,38 +903,38 @@ class _$GenreRemoved implements GenreRemoved {
 }
 
 abstract class GenreRemoved implements TypewriterTreeEvent {
-  const factory GenreRemoved(String genre) = _$GenreRemoved;
+  const factory GenreRemoved(final String genre) = _$GenreRemoved;
 
-  String get genre;
+  String get genre => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GenreRemovedCopyWith<GenreRemoved> get copyWith =>
+  _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $IsNSFWChangedCopyWith<$Res> {
-  factory $IsNSFWChangedCopyWith(
-          IsNSFWChanged value, $Res Function(IsNSFWChanged) then) =
-      _$IsNSFWChangedCopyWithImpl<$Res>;
+abstract class _$$IsNSFWChangedCopyWith<$Res> {
+  factory _$$IsNSFWChangedCopyWith(
+          _$IsNSFWChanged value, $Res Function(_$IsNSFWChanged) then) =
+      __$$IsNSFWChangedCopyWithImpl<$Res>;
   $Res call({bool isNSFW});
 }
 
 /// @nodoc
-class _$IsNSFWChangedCopyWithImpl<$Res>
+class __$$IsNSFWChangedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $IsNSFWChangedCopyWith<$Res> {
-  _$IsNSFWChangedCopyWithImpl(
-      IsNSFWChanged _value, $Res Function(IsNSFWChanged) _then)
-      : super(_value, (v) => _then(v as IsNSFWChanged));
+    implements _$$IsNSFWChangedCopyWith<$Res> {
+  __$$IsNSFWChangedCopyWithImpl(
+      _$IsNSFWChanged _value, $Res Function(_$IsNSFWChanged) _then)
+      : super(_value, (v) => _then(v as _$IsNSFWChanged));
 
   @override
-  IsNSFWChanged get _value => super._value as IsNSFWChanged;
+  _$IsNSFWChanged get _value => super._value as _$IsNSFWChanged;
 
   @override
   $Res call({
     Object? isNSFW = freezed,
   }) {
-    return _then(IsNSFWChanged(
+    return _then(_$IsNSFWChanged(
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
@@ -1040,7 +960,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is IsNSFWChanged &&
+            other is _$IsNSFWChanged &&
             const DeepCollectionEquality().equals(other.isNSFW, isNSFW));
   }
 
@@ -1050,8 +970,8 @@ class _$IsNSFWChanged implements IsNSFWChanged {
 
   @JsonKey(ignore: true)
   @override
-  $IsNSFWChangedCopyWith<IsNSFWChanged> get copyWith =>
-      _$IsNSFWChangedCopyWithImpl<IsNSFWChanged>(this, _$identity);
+  _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
+      __$$IsNSFWChangedCopyWithImpl<_$IsNSFWChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1189,38 +1109,38 @@ class _$IsNSFWChanged implements IsNSFWChanged {
 }
 
 abstract class IsNSFWChanged implements TypewriterTreeEvent {
-  const factory IsNSFWChanged({required bool isNSFW}) = _$IsNSFWChanged;
+  const factory IsNSFWChanged({required final bool isNSFW}) = _$IsNSFWChanged;
 
-  bool get isNSFW;
+  bool get isNSFW => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $IsNSFWChangedCopyWith<IsNSFWChanged> get copyWith =>
+  _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LanguageSelectedCopyWith<$Res> {
-  factory $LanguageSelectedCopyWith(
-          LanguageSelected value, $Res Function(LanguageSelected) then) =
-      _$LanguageSelectedCopyWithImpl<$Res>;
+abstract class _$$LanguageSelectedCopyWith<$Res> {
+  factory _$$LanguageSelectedCopyWith(
+          _$LanguageSelected value, $Res Function(_$LanguageSelected) then) =
+      __$$LanguageSelectedCopyWithImpl<$Res>;
   $Res call({String language});
 }
 
 /// @nodoc
-class _$LanguageSelectedCopyWithImpl<$Res>
+class __$$LanguageSelectedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $LanguageSelectedCopyWith<$Res> {
-  _$LanguageSelectedCopyWithImpl(
-      LanguageSelected _value, $Res Function(LanguageSelected) _then)
-      : super(_value, (v) => _then(v as LanguageSelected));
+    implements _$$LanguageSelectedCopyWith<$Res> {
+  __$$LanguageSelectedCopyWithImpl(
+      _$LanguageSelected _value, $Res Function(_$LanguageSelected) _then)
+      : super(_value, (v) => _then(v as _$LanguageSelected));
 
   @override
-  LanguageSelected get _value => super._value as LanguageSelected;
+  _$LanguageSelected get _value => super._value as _$LanguageSelected;
 
   @override
   $Res call({
     Object? language = freezed,
   }) {
-    return _then(LanguageSelected(
+    return _then(_$LanguageSelected(
       language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
@@ -1246,7 +1166,7 @@ class _$LanguageSelected implements LanguageSelected {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LanguageSelected &&
+            other is _$LanguageSelected &&
             const DeepCollectionEquality().equals(other.language, language));
   }
 
@@ -1256,8 +1176,8 @@ class _$LanguageSelected implements LanguageSelected {
 
   @JsonKey(ignore: true)
   @override
-  $LanguageSelectedCopyWith<LanguageSelected> get copyWith =>
-      _$LanguageSelectedCopyWithImpl<LanguageSelected>(this, _$identity);
+  _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
+      __$$LanguageSelectedCopyWithImpl<_$LanguageSelected>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1395,31 +1315,31 @@ class _$LanguageSelected implements LanguageSelected {
 }
 
 abstract class LanguageSelected implements TypewriterTreeEvent {
-  const factory LanguageSelected(String language) = _$LanguageSelected;
+  const factory LanguageSelected(final String language) = _$LanguageSelected;
 
-  String get language;
+  String get language => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LanguageSelectedCopyWith<LanguageSelected> get copyWith =>
+  _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LaunchAsNewTreeCopyWith<$Res> {
-  factory $LaunchAsNewTreeCopyWith(
-          LaunchAsNewTree value, $Res Function(LaunchAsNewTree) then) =
-      _$LaunchAsNewTreeCopyWithImpl<$Res>;
+abstract class _$$LaunchAsNewTreeCopyWith<$Res> {
+  factory _$$LaunchAsNewTreeCopyWith(
+          _$LaunchAsNewTree value, $Res Function(_$LaunchAsNewTree) then) =
+      __$$LaunchAsNewTreeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LaunchAsNewTreeCopyWithImpl<$Res>
+class __$$LaunchAsNewTreeCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $LaunchAsNewTreeCopyWith<$Res> {
-  _$LaunchAsNewTreeCopyWithImpl(
-      LaunchAsNewTree _value, $Res Function(LaunchAsNewTree) _then)
-      : super(_value, (v) => _then(v as LaunchAsNewTree));
+    implements _$$LaunchAsNewTreeCopyWith<$Res> {
+  __$$LaunchAsNewTreeCopyWithImpl(
+      _$LaunchAsNewTree _value, $Res Function(_$LaunchAsNewTree) _then)
+      : super(_value, (v) => _then(v as _$LaunchAsNewTree));
 
   @override
-  LaunchAsNewTree get _value => super._value as LaunchAsNewTree;
+  _$LaunchAsNewTree get _value => super._value as _$LaunchAsNewTree;
 }
 
 /// @nodoc
@@ -1435,7 +1355,7 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LaunchAsNewTree);
+        (other.runtimeType == runtimeType && other is _$LaunchAsNewTree);
   }
 
   @override
@@ -1581,32 +1501,32 @@ abstract class LaunchAsNewTree implements TypewriterTreeEvent {
 }
 
 /// @nodoc
-abstract class $LaunchWithUIDCopyWith<$Res> {
-  factory $LaunchWithUIDCopyWith(
-          LaunchWithUID value, $Res Function(LaunchWithUID) then) =
-      _$LaunchWithUIDCopyWithImpl<$Res>;
+abstract class _$$LaunchWithUIDCopyWith<$Res> {
+  factory _$$LaunchWithUIDCopyWith(
+          _$LaunchWithUID value, $Res Function(_$LaunchWithUID) then) =
+      __$$LaunchWithUIDCopyWithImpl<$Res>;
   $Res call({UniqueID uid, Tree? tree});
 
   $TreeCopyWith<$Res>? get tree;
 }
 
 /// @nodoc
-class _$LaunchWithUIDCopyWithImpl<$Res>
+class __$$LaunchWithUIDCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $LaunchWithUIDCopyWith<$Res> {
-  _$LaunchWithUIDCopyWithImpl(
-      LaunchWithUID _value, $Res Function(LaunchWithUID) _then)
-      : super(_value, (v) => _then(v as LaunchWithUID));
+    implements _$$LaunchWithUIDCopyWith<$Res> {
+  __$$LaunchWithUIDCopyWithImpl(
+      _$LaunchWithUID _value, $Res Function(_$LaunchWithUID) _then)
+      : super(_value, (v) => _then(v as _$LaunchWithUID));
 
   @override
-  LaunchWithUID get _value => super._value as LaunchWithUID;
+  _$LaunchWithUID get _value => super._value as _$LaunchWithUID;
 
   @override
   $Res call({
     Object? uid = freezed,
     Object? tree = freezed,
   }) {
-    return _then(LaunchWithUID(
+    return _then(_$LaunchWithUID(
       uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -1649,7 +1569,7 @@ class _$LaunchWithUID implements LaunchWithUID {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LaunchWithUID &&
+            other is _$LaunchWithUID &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.tree, tree));
   }
@@ -1662,8 +1582,8 @@ class _$LaunchWithUID implements LaunchWithUID {
 
   @JsonKey(ignore: true)
   @override
-  $LaunchWithUIDCopyWith<LaunchWithUID> get copyWith =>
-      _$LaunchWithUIDCopyWithImpl<LaunchWithUID>(this, _$identity);
+  _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
+      __$$LaunchWithUIDCopyWithImpl<_$LaunchWithUID>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1801,32 +1721,33 @@ class _$LaunchWithUID implements LaunchWithUID {
 }
 
 abstract class LaunchWithUID implements TypewriterTreeEvent {
-  const factory LaunchWithUID(UniqueID uid, {Tree? tree}) = _$LaunchWithUID;
+  const factory LaunchWithUID(final UniqueID uid, {final Tree? tree}) =
+      _$LaunchWithUID;
 
-  UniqueID get uid;
-  Tree? get tree;
+  UniqueID get uid => throw _privateConstructorUsedError;
+  Tree? get tree => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LaunchWithUIDCopyWith<LaunchWithUID> get copyWith =>
+  _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PublishButtonPressedCopyWith<$Res> {
-  factory $PublishButtonPressedCopyWith(PublishButtonPressed value,
-          $Res Function(PublishButtonPressed) then) =
-      _$PublishButtonPressedCopyWithImpl<$Res>;
+abstract class _$$PublishButtonPressedCopyWith<$Res> {
+  factory _$$PublishButtonPressedCopyWith(_$PublishButtonPressed value,
+          $Res Function(_$PublishButtonPressed) then) =
+      __$$PublishButtonPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PublishButtonPressedCopyWithImpl<$Res>
+class __$$PublishButtonPressedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $PublishButtonPressedCopyWith<$Res> {
-  _$PublishButtonPressedCopyWithImpl(
-      PublishButtonPressed _value, $Res Function(PublishButtonPressed) _then)
-      : super(_value, (v) => _then(v as PublishButtonPressed));
+    implements _$$PublishButtonPressedCopyWith<$Res> {
+  __$$PublishButtonPressedCopyWithImpl(_$PublishButtonPressed _value,
+      $Res Function(_$PublishButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$PublishButtonPressed));
 
   @override
-  PublishButtonPressed get _value => super._value as PublishButtonPressed;
+  _$PublishButtonPressed get _value => super._value as _$PublishButtonPressed;
 }
 
 /// @nodoc
@@ -1842,7 +1763,7 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is PublishButtonPressed);
+        (other.runtimeType == runtimeType && other is _$PublishButtonPressed);
   }
 
   @override
@@ -1988,22 +1909,22 @@ abstract class PublishButtonPressed implements TypewriterTreeEvent {
 }
 
 /// @nodoc
-abstract class $SaveButtonPressedCopyWith<$Res> {
-  factory $SaveButtonPressedCopyWith(
-          SaveButtonPressed value, $Res Function(SaveButtonPressed) then) =
-      _$SaveButtonPressedCopyWithImpl<$Res>;
+abstract class _$$SaveButtonPressedCopyWith<$Res> {
+  factory _$$SaveButtonPressedCopyWith(
+          _$SaveButtonPressed value, $Res Function(_$SaveButtonPressed) then) =
+      __$$SaveButtonPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SaveButtonPressedCopyWithImpl<$Res>
+class __$$SaveButtonPressedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $SaveButtonPressedCopyWith<$Res> {
-  _$SaveButtonPressedCopyWithImpl(
-      SaveButtonPressed _value, $Res Function(SaveButtonPressed) _then)
-      : super(_value, (v) => _then(v as SaveButtonPressed));
+    implements _$$SaveButtonPressedCopyWith<$Res> {
+  __$$SaveButtonPressedCopyWithImpl(
+      _$SaveButtonPressed _value, $Res Function(_$SaveButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$SaveButtonPressed));
 
   @override
-  SaveButtonPressed get _value => super._value as SaveButtonPressed;
+  _$SaveButtonPressed get _value => super._value as _$SaveButtonPressed;
 }
 
 /// @nodoc
@@ -2019,7 +1940,7 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SaveButtonPressed);
+        (other.runtimeType == runtimeType && other is _$SaveButtonPressed);
   }
 
   @override
@@ -2165,22 +2086,22 @@ abstract class SaveButtonPressed implements TypewriterTreeEvent {
 }
 
 /// @nodoc
-abstract class $SessionFetchedCopyWith<$Res> {
-  factory $SessionFetchedCopyWith(
-          SessionFetched value, $Res Function(SessionFetched) then) =
-      _$SessionFetchedCopyWithImpl<$Res>;
+abstract class _$$SessionFetchedCopyWith<$Res> {
+  factory _$$SessionFetchedCopyWith(
+          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
+      __$$SessionFetchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SessionFetchedCopyWithImpl<$Res>
+class __$$SessionFetchedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $SessionFetchedCopyWith<$Res> {
-  _$SessionFetchedCopyWithImpl(
-      SessionFetched _value, $Res Function(SessionFetched) _then)
-      : super(_value, (v) => _then(v as SessionFetched));
+    implements _$$SessionFetchedCopyWith<$Res> {
+  __$$SessionFetchedCopyWithImpl(
+      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
+      : super(_value, (v) => _then(v as _$SessionFetched));
 
   @override
-  SessionFetched get _value => super._value as SessionFetched;
+  _$SessionFetched get _value => super._value as _$SessionFetched;
 }
 
 /// @nodoc
@@ -2196,7 +2117,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SessionFetched);
+        (other.runtimeType == runtimeType && other is _$SessionFetched);
   }
 
   @override
@@ -2342,29 +2263,29 @@ abstract class SessionFetched implements TypewriterTreeEvent {
 }
 
 /// @nodoc
-abstract class $SubtitleChangedCopyWith<$Res> {
-  factory $SubtitleChangedCopyWith(
-          SubtitleChanged value, $Res Function(SubtitleChanged) then) =
-      _$SubtitleChangedCopyWithImpl<$Res>;
+abstract class _$$SubtitleChangedCopyWith<$Res> {
+  factory _$$SubtitleChangedCopyWith(
+          _$SubtitleChanged value, $Res Function(_$SubtitleChanged) then) =
+      __$$SubtitleChangedCopyWithImpl<$Res>;
   $Res call({String subtitle});
 }
 
 /// @nodoc
-class _$SubtitleChangedCopyWithImpl<$Res>
+class __$$SubtitleChangedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $SubtitleChangedCopyWith<$Res> {
-  _$SubtitleChangedCopyWithImpl(
-      SubtitleChanged _value, $Res Function(SubtitleChanged) _then)
-      : super(_value, (v) => _then(v as SubtitleChanged));
+    implements _$$SubtitleChangedCopyWith<$Res> {
+  __$$SubtitleChangedCopyWithImpl(
+      _$SubtitleChanged _value, $Res Function(_$SubtitleChanged) _then)
+      : super(_value, (v) => _then(v as _$SubtitleChanged));
 
   @override
-  SubtitleChanged get _value => super._value as SubtitleChanged;
+  _$SubtitleChanged get _value => super._value as _$SubtitleChanged;
 
   @override
   $Res call({
     Object? subtitle = freezed,
   }) {
-    return _then(SubtitleChanged(
+    return _then(_$SubtitleChanged(
       subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -2390,7 +2311,7 @@ class _$SubtitleChanged implements SubtitleChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SubtitleChanged &&
+            other is _$SubtitleChanged &&
             const DeepCollectionEquality().equals(other.subtitle, subtitle));
   }
 
@@ -2400,8 +2321,8 @@ class _$SubtitleChanged implements SubtitleChanged {
 
   @JsonKey(ignore: true)
   @override
-  $SubtitleChangedCopyWith<SubtitleChanged> get copyWith =>
-      _$SubtitleChangedCopyWithImpl<SubtitleChanged>(this, _$identity);
+  _$$SubtitleChangedCopyWith<_$SubtitleChanged> get copyWith =>
+      __$$SubtitleChangedCopyWithImpl<_$SubtitleChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2539,38 +2460,38 @@ class _$SubtitleChanged implements SubtitleChanged {
 }
 
 abstract class SubtitleChanged implements TypewriterTreeEvent {
-  const factory SubtitleChanged(String subtitle) = _$SubtitleChanged;
+  const factory SubtitleChanged(final String subtitle) = _$SubtitleChanged;
 
-  String get subtitle;
+  String get subtitle => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubtitleChangedCopyWith<SubtitleChanged> get copyWith =>
+  _$$SubtitleChangedCopyWith<_$SubtitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SynopsisChangedCopyWith<$Res> {
-  factory $SynopsisChangedCopyWith(
-          SynopsisChanged value, $Res Function(SynopsisChanged) then) =
-      _$SynopsisChangedCopyWithImpl<$Res>;
+abstract class _$$SynopsisChangedCopyWith<$Res> {
+  factory _$$SynopsisChangedCopyWith(
+          _$SynopsisChanged value, $Res Function(_$SynopsisChanged) then) =
+      __$$SynopsisChangedCopyWithImpl<$Res>;
   $Res call({String synopsis});
 }
 
 /// @nodoc
-class _$SynopsisChangedCopyWithImpl<$Res>
+class __$$SynopsisChangedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $SynopsisChangedCopyWith<$Res> {
-  _$SynopsisChangedCopyWithImpl(
-      SynopsisChanged _value, $Res Function(SynopsisChanged) _then)
-      : super(_value, (v) => _then(v as SynopsisChanged));
+    implements _$$SynopsisChangedCopyWith<$Res> {
+  __$$SynopsisChangedCopyWithImpl(
+      _$SynopsisChanged _value, $Res Function(_$SynopsisChanged) _then)
+      : super(_value, (v) => _then(v as _$SynopsisChanged));
 
   @override
-  SynopsisChanged get _value => super._value as SynopsisChanged;
+  _$SynopsisChanged get _value => super._value as _$SynopsisChanged;
 
   @override
   $Res call({
     Object? synopsis = freezed,
   }) {
-    return _then(SynopsisChanged(
+    return _then(_$SynopsisChanged(
       synopsis == freezed
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
@@ -2596,7 +2517,7 @@ class _$SynopsisChanged implements SynopsisChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SynopsisChanged &&
+            other is _$SynopsisChanged &&
             const DeepCollectionEquality().equals(other.synopsis, synopsis));
   }
 
@@ -2606,8 +2527,8 @@ class _$SynopsisChanged implements SynopsisChanged {
 
   @JsonKey(ignore: true)
   @override
-  $SynopsisChangedCopyWith<SynopsisChanged> get copyWith =>
-      _$SynopsisChangedCopyWithImpl<SynopsisChanged>(this, _$identity);
+  _$$SynopsisChangedCopyWith<_$SynopsisChanged> get copyWith =>
+      __$$SynopsisChangedCopyWithImpl<_$SynopsisChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2745,38 +2666,38 @@ class _$SynopsisChanged implements SynopsisChanged {
 }
 
 abstract class SynopsisChanged implements TypewriterTreeEvent {
-  const factory SynopsisChanged(String synopsis) = _$SynopsisChanged;
+  const factory SynopsisChanged(final String synopsis) = _$SynopsisChanged;
 
-  String get synopsis;
+  String get synopsis => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SynopsisChangedCopyWith<SynopsisChanged> get copyWith =>
+  _$$SynopsisChangedCopyWith<_$SynopsisChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TitleChangedCopyWith<$Res> {
-  factory $TitleChangedCopyWith(
-          TitleChanged value, $Res Function(TitleChanged) then) =
-      _$TitleChangedCopyWithImpl<$Res>;
+abstract class _$$TitleChangedCopyWith<$Res> {
+  factory _$$TitleChangedCopyWith(
+          _$TitleChanged value, $Res Function(_$TitleChanged) then) =
+      __$$TitleChangedCopyWithImpl<$Res>;
   $Res call({String title});
 }
 
 /// @nodoc
-class _$TitleChangedCopyWithImpl<$Res>
+class __$$TitleChangedCopyWithImpl<$Res>
     extends _$TypewriterTreeEventCopyWithImpl<$Res>
-    implements $TitleChangedCopyWith<$Res> {
-  _$TitleChangedCopyWithImpl(
-      TitleChanged _value, $Res Function(TitleChanged) _then)
-      : super(_value, (v) => _then(v as TitleChanged));
+    implements _$$TitleChangedCopyWith<$Res> {
+  __$$TitleChangedCopyWithImpl(
+      _$TitleChanged _value, $Res Function(_$TitleChanged) _then)
+      : super(_value, (v) => _then(v as _$TitleChanged));
 
   @override
-  TitleChanged get _value => super._value as TitleChanged;
+  _$TitleChanged get _value => super._value as _$TitleChanged;
 
   @override
   $Res call({
     Object? title = freezed,
   }) {
-    return _then(TitleChanged(
+    return _then(_$TitleChanged(
       title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -2802,7 +2723,7 @@ class _$TitleChanged implements TitleChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is TitleChanged &&
+            other is _$TitleChanged &&
             const DeepCollectionEquality().equals(other.title, title));
   }
 
@@ -2812,8 +2733,8 @@ class _$TitleChanged implements TitleChanged {
 
   @JsonKey(ignore: true)
   @override
-  $TitleChangedCopyWith<TitleChanged> get copyWith =>
-      _$TitleChangedCopyWithImpl<TitleChanged>(this, _$identity);
+  _$$TitleChangedCopyWith<_$TitleChanged> get copyWith =>
+      __$$TitleChangedCopyWithImpl<_$TitleChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2951,70 +2872,19 @@ class _$TitleChanged implements TitleChanged {
 }
 
 abstract class TitleChanged implements TypewriterTreeEvent {
-  const factory TitleChanged(String title) = _$TitleChanged;
+  const factory TitleChanged(final String title) = _$TitleChanged;
 
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TitleChangedCopyWith<TitleChanged> get copyWith =>
+  _$$TitleChangedCopyWith<_$TitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$TypewriterTreeStateTearOff {
-  const _$TypewriterTreeStateTearOff();
-
-  _TypewriterTreeState call(
-      {required String coverURL,
-      required TypewriterEndState endState,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required List<Genre> genres,
-      required bool isEdit,
-      required bool isNSFW,
-      required bool isProcessing,
-      required Language language,
-      required bool showErrorMessages,
-      required Subtitle subtitle,
-      required TextEditingController subtitleController,
-      required int subtitleWordCount,
-      required Synopsis synopsis,
-      required TextEditingController synopsisController,
-      required int synopsisWordCount,
-      required Title title,
-      required TextEditingController titleController,
-      required int titleWordCount,
-      required Tree tree}) {
-    return _TypewriterTreeState(
-      coverURL: coverURL,
-      endState: endState,
-      failureOption: failureOption,
-      genres: genres,
-      isEdit: isEdit,
-      isNSFW: isNSFW,
-      isProcessing: isProcessing,
-      language: language,
-      showErrorMessages: showErrorMessages,
-      subtitle: subtitle,
-      subtitleController: subtitleController,
-      subtitleWordCount: subtitleWordCount,
-      synopsis: synopsis,
-      synopsisController: synopsisController,
-      synopsisWordCount: synopsisWordCount,
-      title: title,
-      titleController: titleController,
-      titleWordCount: titleWordCount,
-      tree: tree,
-    );
-  }
-}
-
-/// @nodoc
-const $TypewriterTreeState = _$TypewriterTreeStateTearOff();
 
 /// @nodoc
 mixin _$TypewriterTreeState {
   String get coverURL => throw _privateConstructorUsedError;
   TypewriterEndState get endState => throw _privateConstructorUsedError;
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
+  Option<Result<None, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
   bool get isEdit => throw _privateConstructorUsedError;
@@ -3049,7 +2919,7 @@ abstract class $TypewriterTreeStateCopyWith<$Res> {
   $Res call(
       {String coverURL,
       TypewriterEndState endState,
-      Option<Result<None<Object>, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
       bool isNSFW,
@@ -3113,7 +2983,7 @@ class _$TypewriterTreeStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None<Object>, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       genres: genres == freezed
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -3190,16 +3060,16 @@ class _$TypewriterTreeStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TypewriterTreeStateCopyWith<$Res>
+abstract class _$$_TypewriterTreeStateCopyWith<$Res>
     implements $TypewriterTreeStateCopyWith<$Res> {
-  factory _$TypewriterTreeStateCopyWith(_TypewriterTreeState value,
-          $Res Function(_TypewriterTreeState) then) =
-      __$TypewriterTreeStateCopyWithImpl<$Res>;
+  factory _$$_TypewriterTreeStateCopyWith(_$_TypewriterTreeState value,
+          $Res Function(_$_TypewriterTreeState) then) =
+      __$$_TypewriterTreeStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String coverURL,
       TypewriterEndState endState,
-      Option<Result<None<Object>, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
       bool isNSFW,
@@ -3222,15 +3092,15 @@ abstract class _$TypewriterTreeStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TypewriterTreeStateCopyWithImpl<$Res>
+class __$$_TypewriterTreeStateCopyWithImpl<$Res>
     extends _$TypewriterTreeStateCopyWithImpl<$Res>
-    implements _$TypewriterTreeStateCopyWith<$Res> {
-  __$TypewriterTreeStateCopyWithImpl(
-      _TypewriterTreeState _value, $Res Function(_TypewriterTreeState) _then)
-      : super(_value, (v) => _then(v as _TypewriterTreeState));
+    implements _$$_TypewriterTreeStateCopyWith<$Res> {
+  __$$_TypewriterTreeStateCopyWithImpl(_$_TypewriterTreeState _value,
+      $Res Function(_$_TypewriterTreeState) _then)
+      : super(_value, (v) => _then(v as _$_TypewriterTreeState));
 
   @override
-  _TypewriterTreeState get _value => super._value as _TypewriterTreeState;
+  _$_TypewriterTreeState get _value => super._value as _$_TypewriterTreeState;
 
   @override
   $Res call({
@@ -3254,7 +3124,7 @@ class __$TypewriterTreeStateCopyWithImpl<$Res>
     Object? titleWordCount = freezed,
     Object? tree = freezed,
   }) {
-    return _then(_TypewriterTreeState(
+    return _then(_$_TypewriterTreeState(
       coverURL: coverURL == freezed
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
@@ -3266,9 +3136,9 @@ class __$TypewriterTreeStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None<Object>, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       genres: genres == freezed
-          ? _value.genres
+          ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
       isEdit: isEdit == freezed
@@ -3342,7 +3212,7 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
       {required this.coverURL,
       required this.endState,
       required this.failureOption,
-      required this.genres,
+      required final List<Genre> genres,
       required this.isEdit,
       required this.isNSFW,
       required this.isProcessing,
@@ -3357,16 +3227,22 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
       required this.title,
       required this.titleController,
       required this.titleWordCount,
-      required this.tree});
+      required this.tree})
+      : _genres = genres;
 
   @override
   final String coverURL;
   @override
   final TypewriterEndState endState;
   @override
-  final Option<Result<None<Object>, CoreFailure>> failureOption;
+  final Option<Result<None, CoreFailure>> failureOption;
+  final List<Genre> _genres;
   @override
-  final List<Genre> genres;
+  List<Genre> get genres {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
+
   @override
   final bool isEdit;
   @override
@@ -3407,12 +3283,12 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TypewriterTreeState &&
+            other is _$_TypewriterTreeState &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
             const DeepCollectionEquality().equals(other.endState, endState) &&
             const DeepCollectionEquality()
                 .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other._genres, _genres) &&
             const DeepCollectionEquality().equals(other.isEdit, isEdit) &&
             const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
             const DeepCollectionEquality()
@@ -3444,7 +3320,7 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
         const DeepCollectionEquality().hash(coverURL),
         const DeepCollectionEquality().hash(endState),
         const DeepCollectionEquality().hash(failureOption),
-        const DeepCollectionEquality().hash(genres),
+        const DeepCollectionEquality().hash(_genres),
         const DeepCollectionEquality().hash(isEdit),
         const DeepCollectionEquality().hash(isNSFW),
         const DeepCollectionEquality().hash(isProcessing),
@@ -3464,73 +3340,77 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
 
   @JsonKey(ignore: true)
   @override
-  _$TypewriterTreeStateCopyWith<_TypewriterTreeState> get copyWith =>
-      __$TypewriterTreeStateCopyWithImpl<_TypewriterTreeState>(
+  _$$_TypewriterTreeStateCopyWith<_$_TypewriterTreeState> get copyWith =>
+      __$$_TypewriterTreeStateCopyWithImpl<_$_TypewriterTreeState>(
           this, _$identity);
 }
 
 abstract class _TypewriterTreeState implements TypewriterTreeState {
   const factory _TypewriterTreeState(
-      {required String coverURL,
-      required TypewriterEndState endState,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required List<Genre> genres,
-      required bool isEdit,
-      required bool isNSFW,
-      required bool isProcessing,
-      required Language language,
-      required bool showErrorMessages,
-      required Subtitle subtitle,
-      required TextEditingController subtitleController,
-      required int subtitleWordCount,
-      required Synopsis synopsis,
-      required TextEditingController synopsisController,
-      required int synopsisWordCount,
-      required Title title,
-      required TextEditingController titleController,
-      required int titleWordCount,
-      required Tree tree}) = _$_TypewriterTreeState;
+      {required final String coverURL,
+      required final TypewriterEndState endState,
+      required final Option<Result<None, CoreFailure>> failureOption,
+      required final List<Genre> genres,
+      required final bool isEdit,
+      required final bool isNSFW,
+      required final bool isProcessing,
+      required final Language language,
+      required final bool showErrorMessages,
+      required final Subtitle subtitle,
+      required final TextEditingController subtitleController,
+      required final int subtitleWordCount,
+      required final Synopsis synopsis,
+      required final TextEditingController synopsisController,
+      required final int synopsisWordCount,
+      required final Title title,
+      required final TextEditingController titleController,
+      required final int titleWordCount,
+      required final Tree tree}) = _$_TypewriterTreeState;
 
   @override
-  String get coverURL;
+  String get coverURL => throw _privateConstructorUsedError;
   @override
-  TypewriterEndState get endState;
+  TypewriterEndState get endState => throw _privateConstructorUsedError;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption;
+  Option<Result<None, CoreFailure>> get failureOption =>
+      throw _privateConstructorUsedError;
   @override
-  List<Genre> get genres;
+  List<Genre> get genres => throw _privateConstructorUsedError;
   @override
-  bool get isEdit;
+  bool get isEdit => throw _privateConstructorUsedError;
   @override
-  bool get isNSFW;
+  bool get isNSFW => throw _privateConstructorUsedError;
   @override
-  bool get isProcessing;
+  bool get isProcessing => throw _privateConstructorUsedError;
   @override
-  Language get language;
+  Language get language => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  Subtitle get subtitle;
+  Subtitle get subtitle => throw _privateConstructorUsedError;
   @override
-  TextEditingController get subtitleController;
+  TextEditingController get subtitleController =>
+      throw _privateConstructorUsedError;
   @override
-  int get subtitleWordCount;
+  int get subtitleWordCount => throw _privateConstructorUsedError;
   @override
-  Synopsis get synopsis;
+  Synopsis get synopsis => throw _privateConstructorUsedError;
   @override
-  TextEditingController get synopsisController;
+  TextEditingController get synopsisController =>
+      throw _privateConstructorUsedError;
   @override
-  int get synopsisWordCount;
+  int get synopsisWordCount => throw _privateConstructorUsedError;
   @override
-  Title get title;
+  Title get title => throw _privateConstructorUsedError;
   @override
-  TextEditingController get titleController;
+  TextEditingController get titleController =>
+      throw _privateConstructorUsedError;
   @override
-  int get titleWordCount;
+  int get titleWordCount => throw _privateConstructorUsedError;
   @override
-  Tree get tree;
+  Tree get tree => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TypewriterTreeStateCopyWith<_TypewriterTreeState> get copyWith =>
+  _$$_TypewriterTreeStateCopyWith<_$_TypewriterTreeState> get copyWith =>
       throw _privateConstructorUsedError;
 }

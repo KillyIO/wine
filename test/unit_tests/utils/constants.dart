@@ -1,12 +1,12 @@
 // SECTION valid inputs
 import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
-import 'package:wine/domain/auth/email_address.dart';
-import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/default_covers/default_cover.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/features/auth/email_address.domain.dart';
+import 'package:wine/features/auth/username.fomain.dart';
 import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
 import 'package:wine/infrastructure/settings/isar_settings.dart';
 import 'package:wine/infrastructure/user/isar_user.dart';

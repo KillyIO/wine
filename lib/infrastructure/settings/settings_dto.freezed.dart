@@ -12,40 +12,11 @@ part of 'settings_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SettingsDTO _$SettingsDTOFromJson(Map<String, dynamic> json) {
   return _SettingsDTO.fromJson(json);
 }
-
-/// @nodoc
-class _$SettingsDTOTearOff {
-  const _$SettingsDTOTearOff();
-
-  _SettingsDTO call(
-      {required bool? enableBranchesBookmarksCount,
-      required bool? enableBranchesLikesCount,
-      required bool? enableBranchesViewsCount,
-      required bool? enableTreesBookmarksCount,
-      required bool? enableTreesLikesCount,
-      required bool? enableTreesViewsCount}) {
-    return _SettingsDTO(
-      enableBranchesBookmarksCount: enableBranchesBookmarksCount,
-      enableBranchesLikesCount: enableBranchesLikesCount,
-      enableBranchesViewsCount: enableBranchesViewsCount,
-      enableTreesBookmarksCount: enableTreesBookmarksCount,
-      enableTreesLikesCount: enableTreesLikesCount,
-      enableTreesViewsCount: enableTreesViewsCount,
-    );
-  }
-
-  SettingsDTO fromJson(Map<String, Object?> json) {
-    return SettingsDTO.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SettingsDTO = _$SettingsDTOTearOff();
 
 /// @nodoc
 mixin _$SettingsDTO {
@@ -123,11 +94,11 @@ class _$SettingsDTOCopyWithImpl<$Res> implements $SettingsDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SettingsDTOCopyWith<$Res>
+abstract class _$$_SettingsDTOCopyWith<$Res>
     implements $SettingsDTOCopyWith<$Res> {
-  factory _$SettingsDTOCopyWith(
-          _SettingsDTO value, $Res Function(_SettingsDTO) then) =
-      __$SettingsDTOCopyWithImpl<$Res>;
+  factory _$$_SettingsDTOCopyWith(
+          _$_SettingsDTO value, $Res Function(_$_SettingsDTO) then) =
+      __$$_SettingsDTOCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool? enableBranchesBookmarksCount,
@@ -139,14 +110,14 @@ abstract class _$SettingsDTOCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SettingsDTOCopyWithImpl<$Res> extends _$SettingsDTOCopyWithImpl<$Res>
-    implements _$SettingsDTOCopyWith<$Res> {
-  __$SettingsDTOCopyWithImpl(
-      _SettingsDTO _value, $Res Function(_SettingsDTO) _then)
-      : super(_value, (v) => _then(v as _SettingsDTO));
+class __$$_SettingsDTOCopyWithImpl<$Res> extends _$SettingsDTOCopyWithImpl<$Res>
+    implements _$$_SettingsDTOCopyWith<$Res> {
+  __$$_SettingsDTOCopyWithImpl(
+      _$_SettingsDTO _value, $Res Function(_$_SettingsDTO) _then)
+      : super(_value, (v) => _then(v as _$_SettingsDTO));
 
   @override
-  _SettingsDTO get _value => super._value as _SettingsDTO;
+  _$_SettingsDTO get _value => super._value as _$_SettingsDTO;
 
   @override
   $Res call({
@@ -157,7 +128,7 @@ class __$SettingsDTOCopyWithImpl<$Res> extends _$SettingsDTOCopyWithImpl<$Res>
     Object? enableTreesLikesCount = freezed,
     Object? enableTreesViewsCount = freezed,
   }) {
-    return _then(_SettingsDTO(
+    return _then(_$_SettingsDTO(
       enableBranchesBookmarksCount: enableBranchesBookmarksCount == freezed
           ? _value.enableBranchesBookmarksCount
           : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
@@ -222,7 +193,7 @@ class _$_SettingsDTO implements _SettingsDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsDTO &&
+            other is _$_SettingsDTO &&
             const DeepCollectionEquality().equals(
                 other.enableBranchesBookmarksCount,
                 enableBranchesBookmarksCount) &&
@@ -238,6 +209,7 @@ class _$_SettingsDTO implements _SettingsDTO {
                 .equals(other.enableTreesViewsCount, enableTreesViewsCount));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -250,8 +222,8 @@ class _$_SettingsDTO implements _SettingsDTO {
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsDTOCopyWith<_SettingsDTO> get copyWith =>
-      __$SettingsDTOCopyWithImpl<_SettingsDTO>(this, _$identity);
+  _$$_SettingsDTOCopyWith<_$_SettingsDTO> get copyWith =>
+      __$$_SettingsDTOCopyWithImpl<_$_SettingsDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -261,30 +233,30 @@ class _$_SettingsDTO implements _SettingsDTO {
 
 abstract class _SettingsDTO implements SettingsDTO {
   factory _SettingsDTO(
-      {required bool? enableBranchesBookmarksCount,
-      required bool? enableBranchesLikesCount,
-      required bool? enableBranchesViewsCount,
-      required bool? enableTreesBookmarksCount,
-      required bool? enableTreesLikesCount,
-      required bool? enableTreesViewsCount}) = _$_SettingsDTO;
+      {required final bool? enableBranchesBookmarksCount,
+      required final bool? enableBranchesLikesCount,
+      required final bool? enableBranchesViewsCount,
+      required final bool? enableTreesBookmarksCount,
+      required final bool? enableTreesLikesCount,
+      required final bool? enableTreesViewsCount}) = _$_SettingsDTO;
 
   factory _SettingsDTO.fromJson(Map<String, dynamic> json) =
       _$_SettingsDTO.fromJson;
 
   @override
-  bool? get enableBranchesBookmarksCount;
+  bool? get enableBranchesBookmarksCount => throw _privateConstructorUsedError;
   @override
-  bool? get enableBranchesLikesCount;
+  bool? get enableBranchesLikesCount => throw _privateConstructorUsedError;
   @override
-  bool? get enableBranchesViewsCount;
+  bool? get enableBranchesViewsCount => throw _privateConstructorUsedError;
   @override
-  bool? get enableTreesBookmarksCount;
+  bool? get enableTreesBookmarksCount => throw _privateConstructorUsedError;
   @override
-  bool? get enableTreesLikesCount;
+  bool? get enableTreesLikesCount => throw _privateConstructorUsedError;
   @override
-  bool? get enableTreesViewsCount;
+  bool? get enableTreesViewsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SettingsDTOCopyWith<_SettingsDTO> get copyWith =>
+  _$$_SettingsDTOCopyWith<_$_SettingsDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,30 +12,11 @@ part of 'default_cover_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DefaultCoverDTO _$DefaultCoverDTOFromJson(Map<String, dynamic> json) {
   return _DefaultCoverDTO.fromJson(json);
 }
-
-/// @nodoc
-class _$DefaultCoverDTOTearOff {
-  const _$DefaultCoverDTOTearOff();
-
-  _DefaultCoverDTO call({required String key, required String url}) {
-    return _DefaultCoverDTO(
-      key: key,
-      url: url,
-    );
-  }
-
-  DefaultCoverDTO fromJson(Map<String, Object?> json) {
-    return DefaultCoverDTO.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DefaultCoverDTO = _$DefaultCoverDTOTearOff();
 
 /// @nodoc
 mixin _$DefaultCoverDTO {
@@ -84,32 +65,32 @@ class _$DefaultCoverDTOCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultCoverDTOCopyWith<$Res>
+abstract class _$$_DefaultCoverDTOCopyWith<$Res>
     implements $DefaultCoverDTOCopyWith<$Res> {
-  factory _$DefaultCoverDTOCopyWith(
-          _DefaultCoverDTO value, $Res Function(_DefaultCoverDTO) then) =
-      __$DefaultCoverDTOCopyWithImpl<$Res>;
+  factory _$$_DefaultCoverDTOCopyWith(
+          _$_DefaultCoverDTO value, $Res Function(_$_DefaultCoverDTO) then) =
+      __$$_DefaultCoverDTOCopyWithImpl<$Res>;
   @override
   $Res call({String key, String url});
 }
 
 /// @nodoc
-class __$DefaultCoverDTOCopyWithImpl<$Res>
+class __$$_DefaultCoverDTOCopyWithImpl<$Res>
     extends _$DefaultCoverDTOCopyWithImpl<$Res>
-    implements _$DefaultCoverDTOCopyWith<$Res> {
-  __$DefaultCoverDTOCopyWithImpl(
-      _DefaultCoverDTO _value, $Res Function(_DefaultCoverDTO) _then)
-      : super(_value, (v) => _then(v as _DefaultCoverDTO));
+    implements _$$_DefaultCoverDTOCopyWith<$Res> {
+  __$$_DefaultCoverDTOCopyWithImpl(
+      _$_DefaultCoverDTO _value, $Res Function(_$_DefaultCoverDTO) _then)
+      : super(_value, (v) => _then(v as _$_DefaultCoverDTO));
 
   @override
-  _DefaultCoverDTO get _value => super._value as _DefaultCoverDTO;
+  _$_DefaultCoverDTO get _value => super._value as _$_DefaultCoverDTO;
 
   @override
   $Res call({
     Object? key = freezed,
     Object? url = freezed,
   }) {
-    return _then(_DefaultCoverDTO(
+    return _then(_$_DefaultCoverDTO(
       key: key == freezed
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -144,11 +125,12 @@ class _$_DefaultCoverDTO implements _DefaultCoverDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DefaultCoverDTO &&
+            other is _$_DefaultCoverDTO &&
             const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other.url, url));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -157,8 +139,8 @@ class _$_DefaultCoverDTO implements _DefaultCoverDTO {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultCoverDTOCopyWith<_DefaultCoverDTO> get copyWith =>
-      __$DefaultCoverDTOCopyWithImpl<_DefaultCoverDTO>(this, _$identity);
+  _$$_DefaultCoverDTOCopyWith<_$_DefaultCoverDTO> get copyWith =>
+      __$$_DefaultCoverDTOCopyWithImpl<_$_DefaultCoverDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -167,18 +149,19 @@ class _$_DefaultCoverDTO implements _DefaultCoverDTO {
 }
 
 abstract class _DefaultCoverDTO implements DefaultCoverDTO {
-  factory _DefaultCoverDTO({required String key, required String url}) =
-      _$_DefaultCoverDTO;
+  factory _DefaultCoverDTO(
+      {required final String key,
+      required final String url}) = _$_DefaultCoverDTO;
 
   factory _DefaultCoverDTO.fromJson(Map<String, dynamic> json) =
       _$_DefaultCoverDTO.fromJson;
 
   @override
-  String get key;
+  String get key => throw _privateConstructorUsedError;
   @override
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultCoverDTOCopyWith<_DefaultCoverDTO> get copyWith =>
+  _$$_DefaultCoverDTOCopyWith<_$_DefaultCoverDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

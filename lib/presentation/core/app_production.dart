@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:wine/application/auth/auth_bloc.dart';
-import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
+import 'package:wine/features/auth/auth_bloc.application.dart';
+import 'package:wine/features/home/home_bloc.application.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
@@ -12,7 +12,7 @@ import 'package:wine/utils/themes.dart';
 /// @nodoc
 class AppProduction extends StatelessWidget {
   /// @nodoc
-  AppProduction({Key? key}) : super(key: key);
+  AppProduction({super.key});
 
   // /// @nodoc
   // final FirebaseAnalytics analytics = FirebaseAnalytics();

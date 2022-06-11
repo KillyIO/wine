@@ -12,22 +12,7 @@ part of 'default_cover.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DefaultCoverTearOff {
-  const _$DefaultCoverTearOff();
-
-  _DefaultCover call({required String key, required CoverURL url}) {
-    return _DefaultCover(
-      key: key,
-      url: url,
-    );
-  }
-}
-
-/// @nodoc
-const $DefaultCover = _$DefaultCoverTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DefaultCover {
@@ -74,31 +59,32 @@ class _$DefaultCoverCopyWithImpl<$Res> implements $DefaultCoverCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultCoverCopyWith<$Res>
+abstract class _$$_DefaultCoverCopyWith<$Res>
     implements $DefaultCoverCopyWith<$Res> {
-  factory _$DefaultCoverCopyWith(
-          _DefaultCover value, $Res Function(_DefaultCover) then) =
-      __$DefaultCoverCopyWithImpl<$Res>;
+  factory _$$_DefaultCoverCopyWith(
+          _$_DefaultCover value, $Res Function(_$_DefaultCover) then) =
+      __$$_DefaultCoverCopyWithImpl<$Res>;
   @override
   $Res call({String key, CoverURL url});
 }
 
 /// @nodoc
-class __$DefaultCoverCopyWithImpl<$Res> extends _$DefaultCoverCopyWithImpl<$Res>
-    implements _$DefaultCoverCopyWith<$Res> {
-  __$DefaultCoverCopyWithImpl(
-      _DefaultCover _value, $Res Function(_DefaultCover) _then)
-      : super(_value, (v) => _then(v as _DefaultCover));
+class __$$_DefaultCoverCopyWithImpl<$Res>
+    extends _$DefaultCoverCopyWithImpl<$Res>
+    implements _$$_DefaultCoverCopyWith<$Res> {
+  __$$_DefaultCoverCopyWithImpl(
+      _$_DefaultCover _value, $Res Function(_$_DefaultCover) _then)
+      : super(_value, (v) => _then(v as _$_DefaultCover));
 
   @override
-  _DefaultCover get _value => super._value as _DefaultCover;
+  _$_DefaultCover get _value => super._value as _$_DefaultCover;
 
   @override
   $Res call({
     Object? key = freezed,
     Object? url = freezed,
   }) {
-    return _then(_DefaultCover(
+    return _then(_$_DefaultCover(
       key: key == freezed
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -130,7 +116,7 @@ class _$_DefaultCover implements _DefaultCover {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DefaultCover &&
+            other is _$_DefaultCover &&
             const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other.url, url));
   }
@@ -143,20 +129,21 @@ class _$_DefaultCover implements _DefaultCover {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultCoverCopyWith<_DefaultCover> get copyWith =>
-      __$DefaultCoverCopyWithImpl<_DefaultCover>(this, _$identity);
+  _$$_DefaultCoverCopyWith<_$_DefaultCover> get copyWith =>
+      __$$_DefaultCoverCopyWithImpl<_$_DefaultCover>(this, _$identity);
 }
 
 abstract class _DefaultCover implements DefaultCover {
-  factory _DefaultCover({required String key, required CoverURL url}) =
-      _$_DefaultCover;
+  factory _DefaultCover(
+      {required final String key,
+      required final CoverURL url}) = _$_DefaultCover;
 
   @override
-  String get key;
+  String get key => throw _privateConstructorUsedError;
   @override
-  CoverURL get url;
+  CoverURL get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultCoverCopyWith<_DefaultCover> get copyWith =>
+  _$$_DefaultCoverCopyWith<_$_DefaultCover> get copyWith =>
       throw _privateConstructorUsedError;
 }

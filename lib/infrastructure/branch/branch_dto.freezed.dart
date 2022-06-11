@@ -12,62 +12,11 @@ part of 'branch_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 BranchDTO _$BranchDTOFromJson(Map<String, dynamic> json) {
   return _BranchDTO.fromJson(json);
 }
-
-/// @nodoc
-class _$BranchDTOTearOff {
-  const _$BranchDTOTearOff();
-
-  _BranchDTO call(
-      {required String authorUID,
-      required int bookmarksCount,
-      required String coverURL,
-      required List<String> genres,
-      required int index,
-      required bool isNSFW,
-      required bool isPublished,
-      required String language,
-      required String leaf,
-      required String licence,
-      required int likesCount,
-      required String? previousBranchUID,
-      required String title,
-      required String treeUID,
-      required String uid,
-      @ServerTimestampConverter() required FieldValue updatedAt,
-      required int viewsCount}) {
-    return _BranchDTO(
-      authorUID: authorUID,
-      bookmarksCount: bookmarksCount,
-      coverURL: coverURL,
-      genres: genres,
-      index: index,
-      isNSFW: isNSFW,
-      isPublished: isPublished,
-      language: language,
-      leaf: leaf,
-      licence: licence,
-      likesCount: likesCount,
-      previousBranchUID: previousBranchUID,
-      title: title,
-      treeUID: treeUID,
-      uid: uid,
-      updatedAt: updatedAt,
-      viewsCount: viewsCount,
-    );
-  }
-
-  BranchDTO fromJson(Map<String, Object?> json) {
-    return BranchDTO.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $BranchDTO = _$BranchDTOTearOff();
 
 /// @nodoc
 mixin _$BranchDTO {
@@ -222,10 +171,10 @@ class _$BranchDTOCopyWithImpl<$Res> implements $BranchDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
-  factory _$BranchDTOCopyWith(
-          _BranchDTO value, $Res Function(_BranchDTO) then) =
-      __$BranchDTOCopyWithImpl<$Res>;
+abstract class _$$_BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
+  factory _$$_BranchDTOCopyWith(
+          _$_BranchDTO value, $Res Function(_$_BranchDTO) then) =
+      __$$_BranchDTOCopyWithImpl<$Res>;
   @override
   $Res call(
       {String authorUID,
@@ -248,13 +197,14 @@ abstract class _$BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
-    implements _$BranchDTOCopyWith<$Res> {
-  __$BranchDTOCopyWithImpl(_BranchDTO _value, $Res Function(_BranchDTO) _then)
-      : super(_value, (v) => _then(v as _BranchDTO));
+class __$$_BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
+    implements _$$_BranchDTOCopyWith<$Res> {
+  __$$_BranchDTOCopyWithImpl(
+      _$_BranchDTO _value, $Res Function(_$_BranchDTO) _then)
+      : super(_value, (v) => _then(v as _$_BranchDTO));
 
   @override
-  _BranchDTO get _value => super._value as _BranchDTO;
+  _$_BranchDTO get _value => super._value as _$_BranchDTO;
 
   @override
   $Res call({
@@ -276,7 +226,7 @@ class __$BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? viewsCount = freezed,
   }) {
-    return _then(_BranchDTO(
+    return _then(_$_BranchDTO(
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
@@ -290,7 +240,7 @@ class __$BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
       genres: genres == freezed
-          ? _value.genres
+          ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<String>,
       index: index == freezed
@@ -356,7 +306,7 @@ class _$_BranchDTO implements _BranchDTO {
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
-      required this.genres,
+      required final List<String> genres,
       required this.index,
       required this.isNSFW,
       required this.isPublished,
@@ -369,7 +319,8 @@ class _$_BranchDTO implements _BranchDTO {
       required this.treeUID,
       required this.uid,
       @ServerTimestampConverter() required this.updatedAt,
-      required this.viewsCount});
+      required this.viewsCount})
+      : _genres = genres;
 
   factory _$_BranchDTO.fromJson(Map<String, dynamic> json) =>
       _$$_BranchDTOFromJson(json);
@@ -380,8 +331,13 @@ class _$_BranchDTO implements _BranchDTO {
   final int bookmarksCount;
   @override
   final String coverURL;
+  final List<String> _genres;
   @override
-  final List<String> genres;
+  List<String> get genres {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
+
   @override
   final int index;
   @override
@@ -419,12 +375,12 @@ class _$_BranchDTO implements _BranchDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BranchDTO &&
+            other is _$_BranchDTO &&
             const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
             const DeepCollectionEquality()
                 .equals(other.bookmarksCount, bookmarksCount) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
-            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other._genres, _genres) &&
             const DeepCollectionEquality().equals(other.index, index) &&
             const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
             const DeepCollectionEquality()
@@ -444,13 +400,14 @@ class _$_BranchDTO implements _BranchDTO {
                 .equals(other.viewsCount, viewsCount));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(authorUID),
       const DeepCollectionEquality().hash(bookmarksCount),
       const DeepCollectionEquality().hash(coverURL),
-      const DeepCollectionEquality().hash(genres),
+      const DeepCollectionEquality().hash(_genres),
       const DeepCollectionEquality().hash(index),
       const DeepCollectionEquality().hash(isNSFW),
       const DeepCollectionEquality().hash(isPublished),
@@ -467,8 +424,8 @@ class _$_BranchDTO implements _BranchDTO {
 
   @JsonKey(ignore: true)
   @override
-  _$BranchDTOCopyWith<_BranchDTO> get copyWith =>
-      __$BranchDTOCopyWithImpl<_BranchDTO>(this, _$identity);
+  _$$_BranchDTOCopyWith<_$_BranchDTO> get copyWith =>
+      __$$_BranchDTOCopyWithImpl<_$_BranchDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -478,64 +435,64 @@ class _$_BranchDTO implements _BranchDTO {
 
 abstract class _BranchDTO implements BranchDTO {
   factory _BranchDTO(
-      {required String authorUID,
-      required int bookmarksCount,
-      required String coverURL,
-      required List<String> genres,
-      required int index,
-      required bool isNSFW,
-      required bool isPublished,
-      required String language,
-      required String leaf,
-      required String licence,
-      required int likesCount,
-      required String? previousBranchUID,
-      required String title,
-      required String treeUID,
-      required String uid,
-      @ServerTimestampConverter() required FieldValue updatedAt,
-      required int viewsCount}) = _$_BranchDTO;
+      {required final String authorUID,
+      required final int bookmarksCount,
+      required final String coverURL,
+      required final List<String> genres,
+      required final int index,
+      required final bool isNSFW,
+      required final bool isPublished,
+      required final String language,
+      required final String leaf,
+      required final String licence,
+      required final int likesCount,
+      required final String? previousBranchUID,
+      required final String title,
+      required final String treeUID,
+      required final String uid,
+      @ServerTimestampConverter() required final FieldValue updatedAt,
+      required final int viewsCount}) = _$_BranchDTO;
 
   factory _BranchDTO.fromJson(Map<String, dynamic> json) =
       _$_BranchDTO.fromJson;
 
   @override
-  String get authorUID;
+  String get authorUID => throw _privateConstructorUsedError;
   @override
-  int get bookmarksCount;
+  int get bookmarksCount => throw _privateConstructorUsedError;
   @override
-  String get coverURL;
+  String get coverURL => throw _privateConstructorUsedError;
   @override
-  List<String> get genres;
+  List<String> get genres => throw _privateConstructorUsedError;
   @override
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @override
-  bool get isNSFW;
+  bool get isNSFW => throw _privateConstructorUsedError;
   @override
-  bool get isPublished;
+  bool get isPublished => throw _privateConstructorUsedError;
   @override
-  String get language;
+  String get language => throw _privateConstructorUsedError;
   @override
-  String get leaf;
+  String get leaf => throw _privateConstructorUsedError;
   @override
-  String get licence;
+  String get licence => throw _privateConstructorUsedError;
   @override
-  int get likesCount;
+  int get likesCount => throw _privateConstructorUsedError;
   @override
-  String? get previousBranchUID;
+  String? get previousBranchUID => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get treeUID;
+  String get treeUID => throw _privateConstructorUsedError;
   @override
-  String get uid;
+  String get uid => throw _privateConstructorUsedError;
   @override
   @ServerTimestampConverter()
-  FieldValue get updatedAt;
+  FieldValue get updatedAt => throw _privateConstructorUsedError;
   @override
-  int get viewsCount;
+  int get viewsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$BranchDTOCopyWith<_BranchDTO> get copyWith =>
+  _$$_BranchDTOCopyWith<_$_BranchDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

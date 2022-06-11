@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
-import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/presentation/routes/router.dart';
 
 import 'package:wine/utils/constants/core.dart';
@@ -12,9 +11,9 @@ import 'package:wine/utils/responsive/home_responsive.dart';
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// @nodoc
   const HomeAppBar({
-    Key? key,
+    super.key,
     this.preferredSize = const Size.fromHeight(defaultAppBarHeight),
-  }) : super(key: key);
+  });
 
   @override
   final Size preferredSize;

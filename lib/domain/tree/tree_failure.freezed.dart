@@ -12,35 +12,7 @@ part of 'tree_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TreeFailureTearOff {
-  const _$TreeFailureTearOff();
-
-  CoverNotUploaded coverNotUploaded() {
-    return const CoverNotUploaded();
-  }
-
-  PermissionDenied permissionDenied() {
-    return const PermissionDenied();
-  }
-
-  ServerError serverError() {
-    return const ServerError();
-  }
-
-  TreeNotFound treeNotFound() {
-    return const TreeNotFound();
-  }
-
-  Unexpected unexpected() {
-    return const Unexpected();
-  }
-}
-
-/// @nodoc
-const $TreeFailure = _$TreeFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TreeFailure {
@@ -119,22 +91,22 @@ class _$TreeFailureCopyWithImpl<$Res> implements $TreeFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $CoverNotUploadedCopyWith<$Res> {
-  factory $CoverNotUploadedCopyWith(
-          CoverNotUploaded value, $Res Function(CoverNotUploaded) then) =
-      _$CoverNotUploadedCopyWithImpl<$Res>;
+abstract class _$$CoverNotUploadedCopyWith<$Res> {
+  factory _$$CoverNotUploadedCopyWith(
+          _$CoverNotUploaded value, $Res Function(_$CoverNotUploaded) then) =
+      __$$CoverNotUploadedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CoverNotUploadedCopyWithImpl<$Res>
+class __$$CoverNotUploadedCopyWithImpl<$Res>
     extends _$TreeFailureCopyWithImpl<$Res>
-    implements $CoverNotUploadedCopyWith<$Res> {
-  _$CoverNotUploadedCopyWithImpl(
-      CoverNotUploaded _value, $Res Function(CoverNotUploaded) _then)
-      : super(_value, (v) => _then(v as CoverNotUploaded));
+    implements _$$CoverNotUploadedCopyWith<$Res> {
+  __$$CoverNotUploadedCopyWithImpl(
+      _$CoverNotUploaded _value, $Res Function(_$CoverNotUploaded) _then)
+      : super(_value, (v) => _then(v as _$CoverNotUploaded));
 
   @override
-  CoverNotUploaded get _value => super._value as CoverNotUploaded;
+  _$CoverNotUploaded get _value => super._value as _$CoverNotUploaded;
 }
 
 /// @nodoc
@@ -150,7 +122,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is CoverNotUploaded);
+        (other.runtimeType == runtimeType && other is _$CoverNotUploaded);
   }
 
   @override
@@ -242,22 +214,22 @@ abstract class CoverNotUploaded implements TreeFailure {
 }
 
 /// @nodoc
-abstract class $PermissionDeniedCopyWith<$Res> {
-  factory $PermissionDeniedCopyWith(
-          PermissionDenied value, $Res Function(PermissionDenied) then) =
-      _$PermissionDeniedCopyWithImpl<$Res>;
+abstract class _$$PermissionDeniedCopyWith<$Res> {
+  factory _$$PermissionDeniedCopyWith(
+          _$PermissionDenied value, $Res Function(_$PermissionDenied) then) =
+      __$$PermissionDeniedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PermissionDeniedCopyWithImpl<$Res>
+class __$$PermissionDeniedCopyWithImpl<$Res>
     extends _$TreeFailureCopyWithImpl<$Res>
-    implements $PermissionDeniedCopyWith<$Res> {
-  _$PermissionDeniedCopyWithImpl(
-      PermissionDenied _value, $Res Function(PermissionDenied) _then)
-      : super(_value, (v) => _then(v as PermissionDenied));
+    implements _$$PermissionDeniedCopyWith<$Res> {
+  __$$PermissionDeniedCopyWithImpl(
+      _$PermissionDenied _value, $Res Function(_$PermissionDenied) _then)
+      : super(_value, (v) => _then(v as _$PermissionDenied));
 
   @override
-  PermissionDenied get _value => super._value as PermissionDenied;
+  _$PermissionDenied get _value => super._value as _$PermissionDenied;
 }
 
 /// @nodoc
@@ -273,7 +245,7 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is PermissionDenied);
+        (other.runtimeType == runtimeType && other is _$PermissionDenied);
   }
 
   @override
@@ -365,21 +337,21 @@ abstract class PermissionDenied implements TreeFailure {
 }
 
 /// @nodoc
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(
-          ServerError value, $Res Function(ServerError) then) =
-      _$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorCopyWith<$Res> {
+  factory _$$ServerErrorCopyWith(
+          _$ServerError value, $Res Function(_$ServerError) then) =
+      __$$ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerErrorCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
-    implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError _value, $Res Function(ServerError) _then)
-      : super(_value, (v) => _then(v as ServerError));
+class __$$ServerErrorCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
+    implements _$$ServerErrorCopyWith<$Res> {
+  __$$ServerErrorCopyWithImpl(
+      _$ServerError _value, $Res Function(_$ServerError) _then)
+      : super(_value, (v) => _then(v as _$ServerError));
 
   @override
-  ServerError get _value => super._value as ServerError;
+  _$ServerError get _value => super._value as _$ServerError;
 }
 
 /// @nodoc
@@ -395,7 +367,7 @@ class _$ServerError implements ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ServerError);
+        (other.runtimeType == runtimeType && other is _$ServerError);
   }
 
   @override
@@ -487,21 +459,21 @@ abstract class ServerError implements TreeFailure {
 }
 
 /// @nodoc
-abstract class $TreeNotFoundCopyWith<$Res> {
-  factory $TreeNotFoundCopyWith(
-          TreeNotFound value, $Res Function(TreeNotFound) then) =
-      _$TreeNotFoundCopyWithImpl<$Res>;
+abstract class _$$TreeNotFoundCopyWith<$Res> {
+  factory _$$TreeNotFoundCopyWith(
+          _$TreeNotFound value, $Res Function(_$TreeNotFound) then) =
+      __$$TreeNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$TreeNotFoundCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
-    implements $TreeNotFoundCopyWith<$Res> {
-  _$TreeNotFoundCopyWithImpl(
-      TreeNotFound _value, $Res Function(TreeNotFound) _then)
-      : super(_value, (v) => _then(v as TreeNotFound));
+class __$$TreeNotFoundCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
+    implements _$$TreeNotFoundCopyWith<$Res> {
+  __$$TreeNotFoundCopyWithImpl(
+      _$TreeNotFound _value, $Res Function(_$TreeNotFound) _then)
+      : super(_value, (v) => _then(v as _$TreeNotFound));
 
   @override
-  TreeNotFound get _value => super._value as TreeNotFound;
+  _$TreeNotFound get _value => super._value as _$TreeNotFound;
 }
 
 /// @nodoc
@@ -517,7 +489,7 @@ class _$TreeNotFound implements TreeNotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is TreeNotFound);
+        (other.runtimeType == runtimeType && other is _$TreeNotFound);
   }
 
   @override
@@ -609,20 +581,21 @@ abstract class TreeNotFound implements TreeFailure {
 }
 
 /// @nodoc
-abstract class $UnexpectedCopyWith<$Res> {
-  factory $UnexpectedCopyWith(
-          Unexpected value, $Res Function(Unexpected) then) =
-      _$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$UnexpectedCopyWith<$Res> {
+  factory _$$UnexpectedCopyWith(
+          _$Unexpected value, $Res Function(_$Unexpected) then) =
+      __$$UnexpectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnexpectedCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
-    implements $UnexpectedCopyWith<$Res> {
-  _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
-      : super(_value, (v) => _then(v as Unexpected));
+class __$$UnexpectedCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
+    implements _$$UnexpectedCopyWith<$Res> {
+  __$$UnexpectedCopyWithImpl(
+      _$Unexpected _value, $Res Function(_$Unexpected) _then)
+      : super(_value, (v) => _then(v as _$Unexpected));
 
   @override
-  Unexpected get _value => super._value as Unexpected;
+  _$Unexpected get _value => super._value as _$Unexpected;
 }
 
 /// @nodoc
@@ -638,7 +611,7 @@ class _$Unexpected implements Unexpected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Unexpected);
+        (other.runtimeType == runtimeType && other is _$Unexpected);
   }
 
   @override

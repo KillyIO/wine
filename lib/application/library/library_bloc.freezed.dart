@@ -12,59 +12,7 @@ part of 'library_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LibraryEventTearOff {
-  const _$LibraryEventTearOff();
-
-  BranchDeleted branchDeleted(UniqueID uid) {
-    return BranchDeleted(
-      uid,
-    );
-  }
-
-  BranchUpdated branchUpdated(Branch branch) {
-    return BranchUpdated(
-      branch,
-    );
-  }
-
-  Init init() {
-    return const Init();
-  }
-
-  PageViewIndexChanged pageViewIndexChanged(int index) {
-    return PageViewIndexChanged(
-      index,
-    );
-  }
-
-  SessionFetched sessionFetched() {
-    return const SessionFetched();
-  }
-
-  TreeDeleted treeDeleted(UniqueID uid) {
-    return TreeDeleted(
-      uid,
-    );
-  }
-
-  TreeUpdated treeUpdated(Tree tree) {
-    return TreeUpdated(
-      tree,
-    );
-  }
-
-  VerticalNavbarIndexChanged verticalNavbarIndexChanged(int index) {
-    return VerticalNavbarIndexChanged(
-      index,
-    );
-  }
-}
-
-/// @nodoc
-const $LibraryEvent = _$LibraryEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LibraryEvent {
@@ -164,28 +112,29 @@ class _$LibraryEventCopyWithImpl<$Res> implements $LibraryEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $BranchDeletedCopyWith<$Res> {
-  factory $BranchDeletedCopyWith(
-          BranchDeleted value, $Res Function(BranchDeleted) then) =
-      _$BranchDeletedCopyWithImpl<$Res>;
+abstract class _$$BranchDeletedCopyWith<$Res> {
+  factory _$$BranchDeletedCopyWith(
+          _$BranchDeleted value, $Res Function(_$BranchDeleted) then) =
+      __$$BranchDeletedCopyWithImpl<$Res>;
   $Res call({UniqueID uid});
 }
 
 /// @nodoc
-class _$BranchDeletedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
-    implements $BranchDeletedCopyWith<$Res> {
-  _$BranchDeletedCopyWithImpl(
-      BranchDeleted _value, $Res Function(BranchDeleted) _then)
-      : super(_value, (v) => _then(v as BranchDeleted));
+class __$$BranchDeletedCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res>
+    implements _$$BranchDeletedCopyWith<$Res> {
+  __$$BranchDeletedCopyWithImpl(
+      _$BranchDeleted _value, $Res Function(_$BranchDeleted) _then)
+      : super(_value, (v) => _then(v as _$BranchDeleted));
 
   @override
-  BranchDeleted get _value => super._value as BranchDeleted;
+  _$BranchDeleted get _value => super._value as _$BranchDeleted;
 
   @override
   $Res call({
     Object? uid = freezed,
   }) {
-    return _then(BranchDeleted(
+    return _then(_$BranchDeleted(
       uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -211,7 +160,7 @@ class _$BranchDeleted implements BranchDeleted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is BranchDeleted &&
+            other is _$BranchDeleted &&
             const DeepCollectionEquality().equals(other.uid, uid));
   }
 
@@ -221,8 +170,8 @@ class _$BranchDeleted implements BranchDeleted {
 
   @JsonKey(ignore: true)
   @override
-  $BranchDeletedCopyWith<BranchDeleted> get copyWith =>
-      _$BranchDeletedCopyWithImpl<BranchDeleted>(this, _$identity);
+  _$$BranchDeletedCopyWith<_$BranchDeleted> get copyWith =>
+      __$$BranchDeletedCopyWithImpl<_$BranchDeleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -327,39 +276,40 @@ class _$BranchDeleted implements BranchDeleted {
 }
 
 abstract class BranchDeleted implements LibraryEvent {
-  const factory BranchDeleted(UniqueID uid) = _$BranchDeleted;
+  const factory BranchDeleted(final UniqueID uid) = _$BranchDeleted;
 
-  UniqueID get uid;
+  UniqueID get uid => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BranchDeletedCopyWith<BranchDeleted> get copyWith =>
+  _$$BranchDeletedCopyWith<_$BranchDeleted> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BranchUpdatedCopyWith<$Res> {
-  factory $BranchUpdatedCopyWith(
-          BranchUpdated value, $Res Function(BranchUpdated) then) =
-      _$BranchUpdatedCopyWithImpl<$Res>;
+abstract class _$$BranchUpdatedCopyWith<$Res> {
+  factory _$$BranchUpdatedCopyWith(
+          _$BranchUpdated value, $Res Function(_$BranchUpdated) then) =
+      __$$BranchUpdatedCopyWithImpl<$Res>;
   $Res call({Branch branch});
 
   $BranchCopyWith<$Res> get branch;
 }
 
 /// @nodoc
-class _$BranchUpdatedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
-    implements $BranchUpdatedCopyWith<$Res> {
-  _$BranchUpdatedCopyWithImpl(
-      BranchUpdated _value, $Res Function(BranchUpdated) _then)
-      : super(_value, (v) => _then(v as BranchUpdated));
+class __$$BranchUpdatedCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res>
+    implements _$$BranchUpdatedCopyWith<$Res> {
+  __$$BranchUpdatedCopyWithImpl(
+      _$BranchUpdated _value, $Res Function(_$BranchUpdated) _then)
+      : super(_value, (v) => _then(v as _$BranchUpdated));
 
   @override
-  BranchUpdated get _value => super._value as BranchUpdated;
+  _$BranchUpdated get _value => super._value as _$BranchUpdated;
 
   @override
   $Res call({
     Object? branch = freezed,
   }) {
-    return _then(BranchUpdated(
+    return _then(_$BranchUpdated(
       branch == freezed
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
@@ -392,7 +342,7 @@ class _$BranchUpdated implements BranchUpdated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is BranchUpdated &&
+            other is _$BranchUpdated &&
             const DeepCollectionEquality().equals(other.branch, branch));
   }
 
@@ -402,8 +352,8 @@ class _$BranchUpdated implements BranchUpdated {
 
   @JsonKey(ignore: true)
   @override
-  $BranchUpdatedCopyWith<BranchUpdated> get copyWith =>
-      _$BranchUpdatedCopyWithImpl<BranchUpdated>(this, _$identity);
+  _$$BranchUpdatedCopyWith<_$BranchUpdated> get copyWith =>
+      __$$BranchUpdatedCopyWithImpl<_$BranchUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -508,28 +458,28 @@ class _$BranchUpdated implements BranchUpdated {
 }
 
 abstract class BranchUpdated implements LibraryEvent {
-  const factory BranchUpdated(Branch branch) = _$BranchUpdated;
+  const factory BranchUpdated(final Branch branch) = _$BranchUpdated;
 
-  Branch get branch;
+  Branch get branch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BranchUpdatedCopyWith<BranchUpdated> get copyWith =>
+  _$$BranchUpdatedCopyWith<_$BranchUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InitCopyWith<$Res> {
-  factory $InitCopyWith(Init value, $Res Function(Init) then) =
-      _$InitCopyWithImpl<$Res>;
+abstract class _$$InitCopyWith<$Res> {
+  factory _$$InitCopyWith(_$Init value, $Res Function(_$Init) then) =
+      __$$InitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
-    implements $InitCopyWith<$Res> {
-  _$InitCopyWithImpl(Init _value, $Res Function(Init) _then)
-      : super(_value, (v) => _then(v as Init));
+class __$$InitCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+    implements _$$InitCopyWith<$Res> {
+  __$$InitCopyWithImpl(_$Init _value, $Res Function(_$Init) _then)
+      : super(_value, (v) => _then(v as _$Init));
 
   @override
-  Init get _value => super._value as Init;
+  _$Init get _value => super._value as _$Init;
 }
 
 /// @nodoc
@@ -545,7 +495,7 @@ class _$Init implements Init {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Init);
+        (other.runtimeType == runtimeType && other is _$Init);
   }
 
   @override
@@ -658,29 +608,29 @@ abstract class Init implements LibraryEvent {
 }
 
 /// @nodoc
-abstract class $PageViewIndexChangedCopyWith<$Res> {
-  factory $PageViewIndexChangedCopyWith(PageViewIndexChanged value,
-          $Res Function(PageViewIndexChanged) then) =
-      _$PageViewIndexChangedCopyWithImpl<$Res>;
+abstract class _$$PageViewIndexChangedCopyWith<$Res> {
+  factory _$$PageViewIndexChangedCopyWith(_$PageViewIndexChanged value,
+          $Res Function(_$PageViewIndexChanged) then) =
+      __$$PageViewIndexChangedCopyWithImpl<$Res>;
   $Res call({int index});
 }
 
 /// @nodoc
-class _$PageViewIndexChangedCopyWithImpl<$Res>
+class __$$PageViewIndexChangedCopyWithImpl<$Res>
     extends _$LibraryEventCopyWithImpl<$Res>
-    implements $PageViewIndexChangedCopyWith<$Res> {
-  _$PageViewIndexChangedCopyWithImpl(
-      PageViewIndexChanged _value, $Res Function(PageViewIndexChanged) _then)
-      : super(_value, (v) => _then(v as PageViewIndexChanged));
+    implements _$$PageViewIndexChangedCopyWith<$Res> {
+  __$$PageViewIndexChangedCopyWithImpl(_$PageViewIndexChanged _value,
+      $Res Function(_$PageViewIndexChanged) _then)
+      : super(_value, (v) => _then(v as _$PageViewIndexChanged));
 
   @override
-  PageViewIndexChanged get _value => super._value as PageViewIndexChanged;
+  _$PageViewIndexChanged get _value => super._value as _$PageViewIndexChanged;
 
   @override
   $Res call({
     Object? index = freezed,
   }) {
-    return _then(PageViewIndexChanged(
+    return _then(_$PageViewIndexChanged(
       index == freezed
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -706,7 +656,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PageViewIndexChanged &&
+            other is _$PageViewIndexChanged &&
             const DeepCollectionEquality().equals(other.index, index));
   }
 
@@ -716,8 +666,8 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 
   @JsonKey(ignore: true)
   @override
-  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
-      _$PageViewIndexChangedCopyWithImpl<PageViewIndexChanged>(
+  _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
+      __$$PageViewIndexChangedCopyWithImpl<_$PageViewIndexChanged>(
           this, _$identity);
 
   @override
@@ -823,31 +773,31 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 }
 
 abstract class PageViewIndexChanged implements LibraryEvent {
-  const factory PageViewIndexChanged(int index) = _$PageViewIndexChanged;
+  const factory PageViewIndexChanged(final int index) = _$PageViewIndexChanged;
 
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+  _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SessionFetchedCopyWith<$Res> {
-  factory $SessionFetchedCopyWith(
-          SessionFetched value, $Res Function(SessionFetched) then) =
-      _$SessionFetchedCopyWithImpl<$Res>;
+abstract class _$$SessionFetchedCopyWith<$Res> {
+  factory _$$SessionFetchedCopyWith(
+          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
+      __$$SessionFetchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SessionFetchedCopyWithImpl<$Res>
+class __$$SessionFetchedCopyWithImpl<$Res>
     extends _$LibraryEventCopyWithImpl<$Res>
-    implements $SessionFetchedCopyWith<$Res> {
-  _$SessionFetchedCopyWithImpl(
-      SessionFetched _value, $Res Function(SessionFetched) _then)
-      : super(_value, (v) => _then(v as SessionFetched));
+    implements _$$SessionFetchedCopyWith<$Res> {
+  __$$SessionFetchedCopyWithImpl(
+      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
+      : super(_value, (v) => _then(v as _$SessionFetched));
 
   @override
-  SessionFetched get _value => super._value as SessionFetched;
+  _$SessionFetched get _value => super._value as _$SessionFetched;
 }
 
 /// @nodoc
@@ -863,7 +813,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SessionFetched);
+        (other.runtimeType == runtimeType && other is _$SessionFetched);
   }
 
   @override
@@ -976,28 +926,28 @@ abstract class SessionFetched implements LibraryEvent {
 }
 
 /// @nodoc
-abstract class $TreeDeletedCopyWith<$Res> {
-  factory $TreeDeletedCopyWith(
-          TreeDeleted value, $Res Function(TreeDeleted) then) =
-      _$TreeDeletedCopyWithImpl<$Res>;
+abstract class _$$TreeDeletedCopyWith<$Res> {
+  factory _$$TreeDeletedCopyWith(
+          _$TreeDeleted value, $Res Function(_$TreeDeleted) then) =
+      __$$TreeDeletedCopyWithImpl<$Res>;
   $Res call({UniqueID uid});
 }
 
 /// @nodoc
-class _$TreeDeletedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
-    implements $TreeDeletedCopyWith<$Res> {
-  _$TreeDeletedCopyWithImpl(
-      TreeDeleted _value, $Res Function(TreeDeleted) _then)
-      : super(_value, (v) => _then(v as TreeDeleted));
+class __$$TreeDeletedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+    implements _$$TreeDeletedCopyWith<$Res> {
+  __$$TreeDeletedCopyWithImpl(
+      _$TreeDeleted _value, $Res Function(_$TreeDeleted) _then)
+      : super(_value, (v) => _then(v as _$TreeDeleted));
 
   @override
-  TreeDeleted get _value => super._value as TreeDeleted;
+  _$TreeDeleted get _value => super._value as _$TreeDeleted;
 
   @override
   $Res call({
     Object? uid = freezed,
   }) {
-    return _then(TreeDeleted(
+    return _then(_$TreeDeleted(
       uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -1023,7 +973,7 @@ class _$TreeDeleted implements TreeDeleted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is TreeDeleted &&
+            other is _$TreeDeleted &&
             const DeepCollectionEquality().equals(other.uid, uid));
   }
 
@@ -1033,8 +983,8 @@ class _$TreeDeleted implements TreeDeleted {
 
   @JsonKey(ignore: true)
   @override
-  $TreeDeletedCopyWith<TreeDeleted> get copyWith =>
-      _$TreeDeletedCopyWithImpl<TreeDeleted>(this, _$identity);
+  _$$TreeDeletedCopyWith<_$TreeDeleted> get copyWith =>
+      __$$TreeDeletedCopyWithImpl<_$TreeDeleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1139,39 +1089,39 @@ class _$TreeDeleted implements TreeDeleted {
 }
 
 abstract class TreeDeleted implements LibraryEvent {
-  const factory TreeDeleted(UniqueID uid) = _$TreeDeleted;
+  const factory TreeDeleted(final UniqueID uid) = _$TreeDeleted;
 
-  UniqueID get uid;
+  UniqueID get uid => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TreeDeletedCopyWith<TreeDeleted> get copyWith =>
+  _$$TreeDeletedCopyWith<_$TreeDeleted> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TreeUpdatedCopyWith<$Res> {
-  factory $TreeUpdatedCopyWith(
-          TreeUpdated value, $Res Function(TreeUpdated) then) =
-      _$TreeUpdatedCopyWithImpl<$Res>;
+abstract class _$$TreeUpdatedCopyWith<$Res> {
+  factory _$$TreeUpdatedCopyWith(
+          _$TreeUpdated value, $Res Function(_$TreeUpdated) then) =
+      __$$TreeUpdatedCopyWithImpl<$Res>;
   $Res call({Tree tree});
 
   $TreeCopyWith<$Res> get tree;
 }
 
 /// @nodoc
-class _$TreeUpdatedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
-    implements $TreeUpdatedCopyWith<$Res> {
-  _$TreeUpdatedCopyWithImpl(
-      TreeUpdated _value, $Res Function(TreeUpdated) _then)
-      : super(_value, (v) => _then(v as TreeUpdated));
+class __$$TreeUpdatedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+    implements _$$TreeUpdatedCopyWith<$Res> {
+  __$$TreeUpdatedCopyWithImpl(
+      _$TreeUpdated _value, $Res Function(_$TreeUpdated) _then)
+      : super(_value, (v) => _then(v as _$TreeUpdated));
 
   @override
-  TreeUpdated get _value => super._value as TreeUpdated;
+  _$TreeUpdated get _value => super._value as _$TreeUpdated;
 
   @override
   $Res call({
     Object? tree = freezed,
   }) {
-    return _then(TreeUpdated(
+    return _then(_$TreeUpdated(
       tree == freezed
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
@@ -1204,7 +1154,7 @@ class _$TreeUpdated implements TreeUpdated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is TreeUpdated &&
+            other is _$TreeUpdated &&
             const DeepCollectionEquality().equals(other.tree, tree));
   }
 
@@ -1214,8 +1164,8 @@ class _$TreeUpdated implements TreeUpdated {
 
   @JsonKey(ignore: true)
   @override
-  $TreeUpdatedCopyWith<TreeUpdated> get copyWith =>
-      _$TreeUpdatedCopyWithImpl<TreeUpdated>(this, _$identity);
+  _$$TreeUpdatedCopyWith<_$TreeUpdated> get copyWith =>
+      __$$TreeUpdatedCopyWithImpl<_$TreeUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1320,39 +1270,41 @@ class _$TreeUpdated implements TreeUpdated {
 }
 
 abstract class TreeUpdated implements LibraryEvent {
-  const factory TreeUpdated(Tree tree) = _$TreeUpdated;
+  const factory TreeUpdated(final Tree tree) = _$TreeUpdated;
 
-  Tree get tree;
+  Tree get tree => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TreeUpdatedCopyWith<TreeUpdated> get copyWith =>
+  _$$TreeUpdatedCopyWith<_$TreeUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VerticalNavbarIndexChangedCopyWith<$Res> {
-  factory $VerticalNavbarIndexChangedCopyWith(VerticalNavbarIndexChanged value,
-          $Res Function(VerticalNavbarIndexChanged) then) =
-      _$VerticalNavbarIndexChangedCopyWithImpl<$Res>;
+abstract class _$$VerticalNavbarIndexChangedCopyWith<$Res> {
+  factory _$$VerticalNavbarIndexChangedCopyWith(
+          _$VerticalNavbarIndexChanged value,
+          $Res Function(_$VerticalNavbarIndexChanged) then) =
+      __$$VerticalNavbarIndexChangedCopyWithImpl<$Res>;
   $Res call({int index});
 }
 
 /// @nodoc
-class _$VerticalNavbarIndexChangedCopyWithImpl<$Res>
+class __$$VerticalNavbarIndexChangedCopyWithImpl<$Res>
     extends _$LibraryEventCopyWithImpl<$Res>
-    implements $VerticalNavbarIndexChangedCopyWith<$Res> {
-  _$VerticalNavbarIndexChangedCopyWithImpl(VerticalNavbarIndexChanged _value,
-      $Res Function(VerticalNavbarIndexChanged) _then)
-      : super(_value, (v) => _then(v as VerticalNavbarIndexChanged));
+    implements _$$VerticalNavbarIndexChangedCopyWith<$Res> {
+  __$$VerticalNavbarIndexChangedCopyWithImpl(
+      _$VerticalNavbarIndexChanged _value,
+      $Res Function(_$VerticalNavbarIndexChanged) _then)
+      : super(_value, (v) => _then(v as _$VerticalNavbarIndexChanged));
 
   @override
-  VerticalNavbarIndexChanged get _value =>
-      super._value as VerticalNavbarIndexChanged;
+  _$VerticalNavbarIndexChanged get _value =>
+      super._value as _$VerticalNavbarIndexChanged;
 
   @override
   $Res call({
     Object? index = freezed,
   }) {
-    return _then(VerticalNavbarIndexChanged(
+    return _then(_$VerticalNavbarIndexChanged(
       index == freezed
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -1378,7 +1330,7 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is VerticalNavbarIndexChanged &&
+            other is _$VerticalNavbarIndexChanged &&
             const DeepCollectionEquality().equals(other.index, index));
   }
 
@@ -1388,10 +1340,9 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
 
   @JsonKey(ignore: true)
   @override
-  $VerticalNavbarIndexChangedCopyWith<VerticalNavbarIndexChanged>
-      get copyWith =>
-          _$VerticalNavbarIndexChangedCopyWithImpl<VerticalNavbarIndexChanged>(
-              this, _$identity);
+  _$$VerticalNavbarIndexChangedCopyWith<_$VerticalNavbarIndexChanged>
+      get copyWith => __$$VerticalNavbarIndexChangedCopyWithImpl<
+          _$VerticalNavbarIndexChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1496,45 +1447,14 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
 }
 
 abstract class VerticalNavbarIndexChanged implements LibraryEvent {
-  const factory VerticalNavbarIndexChanged(int index) =
+  const factory VerticalNavbarIndexChanged(final int index) =
       _$VerticalNavbarIndexChanged;
 
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VerticalNavbarIndexChangedCopyWith<VerticalNavbarIndexChanged>
+  _$$VerticalNavbarIndexChangedCopyWith<_$VerticalNavbarIndexChanged>
       get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$LibraryStateTearOff {
-  const _$LibraryStateTearOff();
-
-  _LibraryState call(
-      {required List<Branch> bookmarkedBranches,
-      required List<Tree> bookmarkedTree,
-      required List<Branch> branches,
-      required int currentPageViewIdx,
-      required int currentVerticalNavbarIdx,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required bool isProcessing,
-      required User session,
-      required List<Tree> trees}) {
-    return _LibraryState(
-      bookmarkedBranches: bookmarkedBranches,
-      bookmarkedTree: bookmarkedTree,
-      branches: branches,
-      currentPageViewIdx: currentPageViewIdx,
-      currentVerticalNavbarIdx: currentVerticalNavbarIdx,
-      failureOption: failureOption,
-      isProcessing: isProcessing,
-      session: session,
-      trees: trees,
-    );
-  }
-}
-
-/// @nodoc
-const $LibraryState = _$LibraryStateTearOff();
 
 /// @nodoc
 mixin _$LibraryState {
@@ -1543,7 +1463,7 @@ mixin _$LibraryState {
   List<Branch> get branches => throw _privateConstructorUsedError;
   int get currentPageViewIdx => throw _privateConstructorUsedError;
   int get currentVerticalNavbarIdx => throw _privateConstructorUsedError;
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
+  Option<Result<None, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
   User get session => throw _privateConstructorUsedError;
@@ -1565,7 +1485,7 @@ abstract class $LibraryStateCopyWith<$Res> {
       List<Branch> branches,
       int currentPageViewIdx,
       int currentVerticalNavbarIdx,
-      Option<Result<None<Object>, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       bool isProcessing,
       User session,
       List<Tree> trees});
@@ -1617,7 +1537,7 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None<Object>, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -1642,11 +1562,11 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$LibraryStateCopyWith<$Res>
+abstract class _$$_LibraryStateCopyWith<$Res>
     implements $LibraryStateCopyWith<$Res> {
-  factory _$LibraryStateCopyWith(
-          _LibraryState value, $Res Function(_LibraryState) then) =
-      __$LibraryStateCopyWithImpl<$Res>;
+  factory _$$_LibraryStateCopyWith(
+          _$_LibraryState value, $Res Function(_$_LibraryState) then) =
+      __$$_LibraryStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<Branch> bookmarkedBranches,
@@ -1654,7 +1574,7 @@ abstract class _$LibraryStateCopyWith<$Res>
       List<Branch> branches,
       int currentPageViewIdx,
       int currentVerticalNavbarIdx,
-      Option<Result<None<Object>, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       bool isProcessing,
       User session,
       List<Tree> trees});
@@ -1664,14 +1584,15 @@ abstract class _$LibraryStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
-    implements _$LibraryStateCopyWith<$Res> {
-  __$LibraryStateCopyWithImpl(
-      _LibraryState _value, $Res Function(_LibraryState) _then)
-      : super(_value, (v) => _then(v as _LibraryState));
+class __$$_LibraryStateCopyWithImpl<$Res>
+    extends _$LibraryStateCopyWithImpl<$Res>
+    implements _$$_LibraryStateCopyWith<$Res> {
+  __$$_LibraryStateCopyWithImpl(
+      _$_LibraryState _value, $Res Function(_$_LibraryState) _then)
+      : super(_value, (v) => _then(v as _$_LibraryState));
 
   @override
-  _LibraryState get _value => super._value as _LibraryState;
+  _$_LibraryState get _value => super._value as _$_LibraryState;
 
   @override
   $Res call({
@@ -1685,17 +1606,17 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
     Object? session = freezed,
     Object? trees = freezed,
   }) {
-    return _then(_LibraryState(
+    return _then(_$_LibraryState(
       bookmarkedBranches: bookmarkedBranches == freezed
-          ? _value.bookmarkedBranches
+          ? _value._bookmarkedBranches
           : bookmarkedBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
       bookmarkedTree: bookmarkedTree == freezed
-          ? _value.bookmarkedTree
+          ? _value._bookmarkedTree
           : bookmarkedTree // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
       branches: branches == freezed
-          ? _value.branches
+          ? _value._branches
           : branches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
       currentPageViewIdx: currentPageViewIdx == freezed
@@ -1709,7 +1630,7 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None<Object>, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -1719,7 +1640,7 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
           : session // ignore: cast_nullable_to_non_nullable
               as User,
       trees: trees == freezed
-          ? _value.trees
+          ? _value._trees
           : trees // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
     ));
@@ -1730,34 +1651,57 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
 
 class _$_LibraryState implements _LibraryState {
   const _$_LibraryState(
-      {required this.bookmarkedBranches,
-      required this.bookmarkedTree,
-      required this.branches,
+      {required final List<Branch> bookmarkedBranches,
+      required final List<Tree> bookmarkedTree,
+      required final List<Branch> branches,
       required this.currentPageViewIdx,
       required this.currentVerticalNavbarIdx,
       required this.failureOption,
       required this.isProcessing,
       required this.session,
-      required this.trees});
+      required final List<Tree> trees})
+      : _bookmarkedBranches = bookmarkedBranches,
+        _bookmarkedTree = bookmarkedTree,
+        _branches = branches,
+        _trees = trees;
 
+  final List<Branch> _bookmarkedBranches;
   @override
-  final List<Branch> bookmarkedBranches;
+  List<Branch> get bookmarkedBranches {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bookmarkedBranches);
+  }
+
+  final List<Tree> _bookmarkedTree;
   @override
-  final List<Tree> bookmarkedTree;
+  List<Tree> get bookmarkedTree {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bookmarkedTree);
+  }
+
+  final List<Branch> _branches;
   @override
-  final List<Branch> branches;
+  List<Branch> get branches {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_branches);
+  }
+
   @override
   final int currentPageViewIdx;
   @override
   final int currentVerticalNavbarIdx;
   @override
-  final Option<Result<None<Object>, CoreFailure>> failureOption;
+  final Option<Result<None, CoreFailure>> failureOption;
   @override
   final bool isProcessing;
   @override
   final User session;
+  final List<Tree> _trees;
   @override
-  final List<Tree> trees;
+  List<Tree> get trees {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_trees);
+  }
 
   @override
   String toString() {
@@ -1768,12 +1712,12 @@ class _$_LibraryState implements _LibraryState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LibraryState &&
+            other is _$_LibraryState &&
             const DeepCollectionEquality()
-                .equals(other.bookmarkedBranches, bookmarkedBranches) &&
+                .equals(other._bookmarkedBranches, _bookmarkedBranches) &&
             const DeepCollectionEquality()
-                .equals(other.bookmarkedTree, bookmarkedTree) &&
-            const DeepCollectionEquality().equals(other.branches, branches) &&
+                .equals(other._bookmarkedTree, _bookmarkedTree) &&
+            const DeepCollectionEquality().equals(other._branches, _branches) &&
             const DeepCollectionEquality()
                 .equals(other.currentPageViewIdx, currentPageViewIdx) &&
             const DeepCollectionEquality().equals(
@@ -1783,60 +1727,61 @@ class _$_LibraryState implements _LibraryState {
             const DeepCollectionEquality()
                 .equals(other.isProcessing, isProcessing) &&
             const DeepCollectionEquality().equals(other.session, session) &&
-            const DeepCollectionEquality().equals(other.trees, trees));
+            const DeepCollectionEquality().equals(other._trees, _trees));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(bookmarkedBranches),
-      const DeepCollectionEquality().hash(bookmarkedTree),
-      const DeepCollectionEquality().hash(branches),
+      const DeepCollectionEquality().hash(_bookmarkedBranches),
+      const DeepCollectionEquality().hash(_bookmarkedTree),
+      const DeepCollectionEquality().hash(_branches),
       const DeepCollectionEquality().hash(currentPageViewIdx),
       const DeepCollectionEquality().hash(currentVerticalNavbarIdx),
       const DeepCollectionEquality().hash(failureOption),
       const DeepCollectionEquality().hash(isProcessing),
       const DeepCollectionEquality().hash(session),
-      const DeepCollectionEquality().hash(trees));
+      const DeepCollectionEquality().hash(_trees));
 
   @JsonKey(ignore: true)
   @override
-  _$LibraryStateCopyWith<_LibraryState> get copyWith =>
-      __$LibraryStateCopyWithImpl<_LibraryState>(this, _$identity);
+  _$$_LibraryStateCopyWith<_$_LibraryState> get copyWith =>
+      __$$_LibraryStateCopyWithImpl<_$_LibraryState>(this, _$identity);
 }
 
 abstract class _LibraryState implements LibraryState {
   const factory _LibraryState(
-      {required List<Branch> bookmarkedBranches,
-      required List<Tree> bookmarkedTree,
-      required List<Branch> branches,
-      required int currentPageViewIdx,
-      required int currentVerticalNavbarIdx,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required bool isProcessing,
-      required User session,
-      required List<Tree> trees}) = _$_LibraryState;
+      {required final List<Branch> bookmarkedBranches,
+      required final List<Tree> bookmarkedTree,
+      required final List<Branch> branches,
+      required final int currentPageViewIdx,
+      required final int currentVerticalNavbarIdx,
+      required final Option<Result<None, CoreFailure>> failureOption,
+      required final bool isProcessing,
+      required final User session,
+      required final List<Tree> trees}) = _$_LibraryState;
 
   @override
-  List<Branch> get bookmarkedBranches;
+  List<Branch> get bookmarkedBranches => throw _privateConstructorUsedError;
   @override
-  List<Tree> get bookmarkedTree;
+  List<Tree> get bookmarkedTree => throw _privateConstructorUsedError;
   @override
-  List<Branch> get branches;
+  List<Branch> get branches => throw _privateConstructorUsedError;
   @override
-  int get currentPageViewIdx;
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
   @override
-  int get currentVerticalNavbarIdx;
+  int get currentVerticalNavbarIdx => throw _privateConstructorUsedError;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption;
+  Option<Result<None, CoreFailure>> get failureOption =>
+      throw _privateConstructorUsedError;
   @override
-  bool get isProcessing;
+  bool get isProcessing => throw _privateConstructorUsedError;
   @override
-  User get session;
+  User get session => throw _privateConstructorUsedError;
   @override
-  List<Tree> get trees;
+  List<Tree> get trees => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LibraryStateCopyWith<_LibraryState> get copyWith =>
+  _$$_LibraryStateCopyWith<_$_LibraryState> get copyWith =>
       throw _privateConstructorUsedError;
 }

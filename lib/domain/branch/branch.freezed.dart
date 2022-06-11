@@ -12,52 +12,7 @@ part of 'branch.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$BranchTearOff {
-  const _$BranchTearOff();
-
-  _Branch call(
-      {required UniqueID authorUID,
-      required int bookmarksCount,
-      required CoverURL coverURL,
-      required List<Genre> genres,
-      required int index,
-      required bool isNSFW,
-      required bool isPublished,
-      required Language language,
-      required Leaf leaf,
-      required Licence licence,
-      required int likesCount,
-      required UniqueID? previousBranchUID,
-      required Title title,
-      required UniqueID treeUID,
-      required UniqueID uid,
-      required int viewsCount}) {
-    return _Branch(
-      authorUID: authorUID,
-      bookmarksCount: bookmarksCount,
-      coverURL: coverURL,
-      genres: genres,
-      index: index,
-      isNSFW: isNSFW,
-      isPublished: isPublished,
-      language: language,
-      leaf: leaf,
-      licence: licence,
-      likesCount: likesCount,
-      previousBranchUID: previousBranchUID,
-      title: title,
-      treeUID: treeUID,
-      uid: uid,
-      viewsCount: viewsCount,
-    );
-  }
-}
-
-/// @nodoc
-const $Branch = _$BranchTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Branch {
@@ -202,9 +157,9 @@ class _$BranchCopyWithImpl<$Res> implements $BranchCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
-  factory _$BranchCopyWith(_Branch value, $Res Function(_Branch) then) =
-      __$BranchCopyWithImpl<$Res>;
+abstract class _$$_BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
+  factory _$$_BranchCopyWith(_$_Branch value, $Res Function(_$_Branch) then) =
+      __$$_BranchCopyWithImpl<$Res>;
   @override
   $Res call(
       {UniqueID authorUID,
@@ -226,13 +181,13 @@ abstract class _$BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
-    implements _$BranchCopyWith<$Res> {
-  __$BranchCopyWithImpl(_Branch _value, $Res Function(_Branch) _then)
-      : super(_value, (v) => _then(v as _Branch));
+class __$$_BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
+    implements _$$_BranchCopyWith<$Res> {
+  __$$_BranchCopyWithImpl(_$_Branch _value, $Res Function(_$_Branch) _then)
+      : super(_value, (v) => _then(v as _$_Branch));
 
   @override
-  _Branch get _value => super._value as _Branch;
+  _$_Branch get _value => super._value as _$_Branch;
 
   @override
   $Res call({
@@ -253,7 +208,7 @@ class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
     Object? uid = freezed,
     Object? viewsCount = freezed,
   }) {
-    return _then(_Branch(
+    return _then(_$_Branch(
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
@@ -267,7 +222,7 @@ class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
           : coverURL // ignore: cast_nullable_to_non_nullable
               as CoverURL,
       genres: genres == freezed
-          ? _value.genres
+          ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
       index: index == freezed
@@ -329,7 +284,7 @@ class _$_Branch implements _Branch {
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
-      required this.genres,
+      required final List<Genre> genres,
       required this.index,
       required this.isNSFW,
       required this.isPublished,
@@ -341,7 +296,8 @@ class _$_Branch implements _Branch {
       required this.title,
       required this.treeUID,
       required this.uid,
-      required this.viewsCount});
+      required this.viewsCount})
+      : _genres = genres;
 
   @override
   final UniqueID authorUID;
@@ -349,8 +305,13 @@ class _$_Branch implements _Branch {
   final int bookmarksCount;
   @override
   final CoverURL coverURL;
+  final List<Genre> _genres;
   @override
-  final List<Genre> genres;
+  List<Genre> get genres {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
+
   @override
   final int index;
   @override
@@ -385,12 +346,12 @@ class _$_Branch implements _Branch {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Branch &&
+            other is _$_Branch &&
             const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
             const DeepCollectionEquality()
                 .equals(other.bookmarksCount, bookmarksCount) &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
-            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other._genres, _genres) &&
             const DeepCollectionEquality().equals(other.index, index) &&
             const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
             const DeepCollectionEquality()
@@ -415,7 +376,7 @@ class _$_Branch implements _Branch {
       const DeepCollectionEquality().hash(authorUID),
       const DeepCollectionEquality().hash(bookmarksCount),
       const DeepCollectionEquality().hash(coverURL),
-      const DeepCollectionEquality().hash(genres),
+      const DeepCollectionEquality().hash(_genres),
       const DeepCollectionEquality().hash(index),
       const DeepCollectionEquality().hash(isNSFW),
       const DeepCollectionEquality().hash(isPublished),
@@ -431,62 +392,63 @@ class _$_Branch implements _Branch {
 
   @JsonKey(ignore: true)
   @override
-  _$BranchCopyWith<_Branch> get copyWith =>
-      __$BranchCopyWithImpl<_Branch>(this, _$identity);
+  _$$_BranchCopyWith<_$_Branch> get copyWith =>
+      __$$_BranchCopyWithImpl<_$_Branch>(this, _$identity);
 }
 
 abstract class _Branch implements Branch {
   factory _Branch(
-      {required UniqueID authorUID,
-      required int bookmarksCount,
-      required CoverURL coverURL,
-      required List<Genre> genres,
-      required int index,
-      required bool isNSFW,
-      required bool isPublished,
-      required Language language,
-      required Leaf leaf,
-      required Licence licence,
-      required int likesCount,
-      required UniqueID? previousBranchUID,
-      required Title title,
-      required UniqueID treeUID,
-      required UniqueID uid,
-      required int viewsCount}) = _$_Branch;
+      {required final UniqueID authorUID,
+      required final int bookmarksCount,
+      required final CoverURL coverURL,
+      required final List<Genre> genres,
+      required final int index,
+      required final bool isNSFW,
+      required final bool isPublished,
+      required final Language language,
+      required final Leaf leaf,
+      required final Licence licence,
+      required final int likesCount,
+      required final UniqueID? previousBranchUID,
+      required final Title title,
+      required final UniqueID treeUID,
+      required final UniqueID uid,
+      required final int viewsCount}) = _$_Branch;
 
   @override
-  UniqueID get authorUID;
+  UniqueID get authorUID => throw _privateConstructorUsedError;
   @override
-  int get bookmarksCount;
+  int get bookmarksCount => throw _privateConstructorUsedError;
   @override
-  CoverURL get coverURL;
+  CoverURL get coverURL => throw _privateConstructorUsedError;
   @override
-  List<Genre> get genres;
+  List<Genre> get genres => throw _privateConstructorUsedError;
   @override
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @override
-  bool get isNSFW;
+  bool get isNSFW => throw _privateConstructorUsedError;
   @override
-  bool get isPublished;
+  bool get isPublished => throw _privateConstructorUsedError;
   @override
-  Language get language;
+  Language get language => throw _privateConstructorUsedError;
   @override
-  Leaf get leaf;
+  Leaf get leaf => throw _privateConstructorUsedError;
   @override
-  Licence get licence;
+  Licence get licence => throw _privateConstructorUsedError;
   @override
-  int get likesCount;
+  int get likesCount => throw _privateConstructorUsedError;
   @override
-  UniqueID? get previousBranchUID;
+  UniqueID? get previousBranchUID => throw _privateConstructorUsedError;
   @override
-  Title get title;
+  Title get title => throw _privateConstructorUsedError;
   @override
-  UniqueID get treeUID;
+  UniqueID get treeUID => throw _privateConstructorUsedError;
   @override
-  UniqueID get uid;
+  UniqueID get uid => throw _privateConstructorUsedError;
   @override
-  int get viewsCount;
+  int get viewsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$BranchCopyWith<_Branch> get copyWith => throw _privateConstructorUsedError;
+  _$$_BranchCopyWith<_$_Branch> get copyWith =>
+      throw _privateConstructorUsedError;
 }

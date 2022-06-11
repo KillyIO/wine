@@ -1,7 +1,5 @@
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/core/value_failure.dart';
-import 'package:wine/domain/core/value_object.dart';
-import 'package:wine/domain/core/value_validators.dart';
+import 'package:wine/features/core/value_object.domain.dart';
 
 /// @nodoc
 class ConfirmPassword extends ValueObject<String> {

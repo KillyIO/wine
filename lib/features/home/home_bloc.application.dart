@@ -3,7 +3,6 @@ import 'package:devicelocale/devicelocale.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/home.dart';

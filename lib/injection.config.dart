@@ -12,10 +12,7 @@ import 'package:google_sign_in/google_sign_in.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:isar/isar.dart' as _i16;
 
-import 'application/auth/auth_bloc.dart' as _i17;
-import 'application/auth/auth_dialog/auth_dialog_cubit.dart' as _i3;
 import 'application/branch/branch_bloc.dart' as _i33;
-import 'application/home/home_bloc.dart' as _i18;
 import 'application/library/library_bloc.dart' as _i25;
 import 'application/log_in/log_in_bloc.dart' as _i26;
 import 'application/settings/settings_bloc.dart' as _i27;
@@ -26,14 +23,17 @@ import 'application/typewriter/typewriter_branch/typewriter_branch_bloc.dart'
     as _i31;
 import 'application/typewriter/typewriter_tree/typewriter_tree_bloc.dart'
     as _i32;
-import 'domain/auth/i_auth_facade.dart' as _i8;
 import 'domain/branch/i_branch_repository.dart' as _i10;
 import 'domain/default_covers/i_default_covers_repository.dart' as _i19;
 import 'domain/sessions/i_sessions_repository.dart' as _i21;
 import 'domain/settings/i_settings_repository.dart' as _i23;
 import 'domain/tree/i_tree_repository.dart' as _i12;
 import 'domain/user/i_user_repository.dart' as _i14;
-import 'infrastructure/auth/firebase_auth_facade.dart' as _i9;
+import 'features/auth/auth_bloc.application.dart' as _i17;
+import 'features/auth/auth_dialog_cubit.application.dart' as _i3;
+import 'features/auth/firebase_auth_facade.infrastructure.dart' as _i9;
+import 'features/auth/i_auth_facade.domain.dart' as _i8;
+import 'features/home/home_bloc.application.dart' as _i18;
 import 'infrastructure/branch/branch_repository.dart' as _i11;
 import 'infrastructure/core/firebase_injectable_module.dart' as _i34;
 import 'infrastructure/core/isar_injectable_module.dart' as _i35;

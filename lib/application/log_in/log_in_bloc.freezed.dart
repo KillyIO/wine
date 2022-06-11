@@ -12,83 +12,7 @@ part of 'log_in_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LogInEventTearOff {
-  const _$LogInEventTearOff();
-
-  CredentialAlreadyInUse credentialAlreadyInUse() {
-    return const CredentialAlreadyInUse();
-  }
-
-  CustomUsernameGenerated customUsernameGenerated(User user) {
-    return CustomUsernameGenerated(
-      user,
-    );
-  }
-
-  EmailAddressChanged emailAddressChanged(String emailAddressStr) {
-    return EmailAddressChanged(
-      emailAddressStr,
-    );
-  }
-
-  LoggedInWithEmailAndPassword loggedInWithEmailAndPassword() {
-    return const LoggedInWithEmailAndPassword();
-  }
-
-  LoggedInWithGoogle loggedInWithGoogle() {
-    return const LoggedInWithGoogle();
-  }
-
-  LogInWithEmailAndPasswordPressed logInWithEmailAndPasswordPressed() {
-    return const LogInWithEmailAndPasswordPressed();
-  }
-
-  LogInWithGooglePressed logInWithGooglePressed() {
-    return const LogInWithGooglePressed();
-  }
-
-  PasswordChanged passwordChanged(String passwordStr) {
-    return PasswordChanged(
-      passwordStr,
-    );
-  }
-
-  UserDetailsSaved userDetailsSaved(User user) {
-    return UserDetailsSaved(
-      user,
-    );
-  }
-
-  UserLoaded userLoaded(User user) {
-    return UserLoaded(
-      user,
-    );
-  }
-
-  UsernameAvailabilityConfirmed usernameAvailabilityConfirmed(User user) {
-    return UsernameAvailabilityConfirmed(
-      user,
-    );
-  }
-
-  UsernameSaved usernameSaved(User user) {
-    return UsernameSaved(
-      user,
-    );
-  }
-
-  UserNotFound userNotFound(User user) {
-    return UserNotFound(
-      user,
-    );
-  }
-}
-
-/// @nodoc
-const $LogInEvent = _$LogInEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LogInEvent {
@@ -227,22 +151,23 @@ class _$LogInEventCopyWithImpl<$Res> implements $LogInEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $CredentialAlreadyInUseCopyWith<$Res> {
-  factory $CredentialAlreadyInUseCopyWith(CredentialAlreadyInUse value,
-          $Res Function(CredentialAlreadyInUse) then) =
-      _$CredentialAlreadyInUseCopyWithImpl<$Res>;
+abstract class _$$CredentialAlreadyInUseCopyWith<$Res> {
+  factory _$$CredentialAlreadyInUseCopyWith(_$CredentialAlreadyInUse value,
+          $Res Function(_$CredentialAlreadyInUse) then) =
+      __$$CredentialAlreadyInUseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CredentialAlreadyInUseCopyWithImpl<$Res>
+class __$$CredentialAlreadyInUseCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $CredentialAlreadyInUseCopyWith<$Res> {
-  _$CredentialAlreadyInUseCopyWithImpl(CredentialAlreadyInUse _value,
-      $Res Function(CredentialAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as CredentialAlreadyInUse));
+    implements _$$CredentialAlreadyInUseCopyWith<$Res> {
+  __$$CredentialAlreadyInUseCopyWithImpl(_$CredentialAlreadyInUse _value,
+      $Res Function(_$CredentialAlreadyInUse) _then)
+      : super(_value, (v) => _then(v as _$CredentialAlreadyInUse));
 
   @override
-  CredentialAlreadyInUse get _value => super._value as CredentialAlreadyInUse;
+  _$CredentialAlreadyInUse get _value =>
+      super._value as _$CredentialAlreadyInUse;
 }
 
 /// @nodoc
@@ -258,7 +183,7 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is CredentialAlreadyInUse);
+        (other.runtimeType == runtimeType && other is _$CredentialAlreadyInUse);
   }
 
   @override
@@ -410,31 +335,32 @@ abstract class CredentialAlreadyInUse implements LogInEvent {
 }
 
 /// @nodoc
-abstract class $CustomUsernameGeneratedCopyWith<$Res> {
-  factory $CustomUsernameGeneratedCopyWith(CustomUsernameGenerated value,
-          $Res Function(CustomUsernameGenerated) then) =
-      _$CustomUsernameGeneratedCopyWithImpl<$Res>;
+abstract class _$$CustomUsernameGeneratedCopyWith<$Res> {
+  factory _$$CustomUsernameGeneratedCopyWith(_$CustomUsernameGenerated value,
+          $Res Function(_$CustomUsernameGenerated) then) =
+      __$$CustomUsernameGeneratedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$CustomUsernameGeneratedCopyWithImpl<$Res>
+class __$$CustomUsernameGeneratedCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $CustomUsernameGeneratedCopyWith<$Res> {
-  _$CustomUsernameGeneratedCopyWithImpl(CustomUsernameGenerated _value,
-      $Res Function(CustomUsernameGenerated) _then)
-      : super(_value, (v) => _then(v as CustomUsernameGenerated));
+    implements _$$CustomUsernameGeneratedCopyWith<$Res> {
+  __$$CustomUsernameGeneratedCopyWithImpl(_$CustomUsernameGenerated _value,
+      $Res Function(_$CustomUsernameGenerated) _then)
+      : super(_value, (v) => _then(v as _$CustomUsernameGenerated));
 
   @override
-  CustomUsernameGenerated get _value => super._value as CustomUsernameGenerated;
+  _$CustomUsernameGenerated get _value =>
+      super._value as _$CustomUsernameGenerated;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(CustomUsernameGenerated(
+    return _then(_$CustomUsernameGenerated(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -467,7 +393,7 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CustomUsernameGenerated &&
+            other is _$CustomUsernameGenerated &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -477,8 +403,8 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
 
   @JsonKey(ignore: true)
   @override
-  $CustomUsernameGeneratedCopyWith<CustomUsernameGenerated> get copyWith =>
-      _$CustomUsernameGeneratedCopyWithImpl<CustomUsernameGenerated>(
+  _$$CustomUsernameGeneratedCopyWith<_$CustomUsernameGenerated> get copyWith =>
+      __$$CustomUsernameGeneratedCopyWithImpl<_$CustomUsernameGenerated>(
           this, _$identity);
 
   @override
@@ -623,38 +549,39 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
 }
 
 abstract class CustomUsernameGenerated implements LogInEvent {
-  const factory CustomUsernameGenerated(User user) = _$CustomUsernameGenerated;
+  const factory CustomUsernameGenerated(final User user) =
+      _$CustomUsernameGenerated;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CustomUsernameGeneratedCopyWith<CustomUsernameGenerated> get copyWith =>
+  _$$CustomUsernameGeneratedCopyWith<_$CustomUsernameGenerated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EmailAddressChangedCopyWith<$Res> {
-  factory $EmailAddressChangedCopyWith(
-          EmailAddressChanged value, $Res Function(EmailAddressChanged) then) =
-      _$EmailAddressChangedCopyWithImpl<$Res>;
+abstract class _$$EmailAddressChangedCopyWith<$Res> {
+  factory _$$EmailAddressChangedCopyWith(_$EmailAddressChanged value,
+          $Res Function(_$EmailAddressChanged) then) =
+      __$$EmailAddressChangedCopyWithImpl<$Res>;
   $Res call({String emailAddressStr});
 }
 
 /// @nodoc
-class _$EmailAddressChangedCopyWithImpl<$Res>
+class __$$EmailAddressChangedCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $EmailAddressChangedCopyWith<$Res> {
-  _$EmailAddressChangedCopyWithImpl(
-      EmailAddressChanged _value, $Res Function(EmailAddressChanged) _then)
-      : super(_value, (v) => _then(v as EmailAddressChanged));
+    implements _$$EmailAddressChangedCopyWith<$Res> {
+  __$$EmailAddressChangedCopyWithImpl(
+      _$EmailAddressChanged _value, $Res Function(_$EmailAddressChanged) _then)
+      : super(_value, (v) => _then(v as _$EmailAddressChanged));
 
   @override
-  EmailAddressChanged get _value => super._value as EmailAddressChanged;
+  _$EmailAddressChanged get _value => super._value as _$EmailAddressChanged;
 
   @override
   $Res call({
     Object? emailAddressStr = freezed,
   }) {
-    return _then(EmailAddressChanged(
+    return _then(_$EmailAddressChanged(
       emailAddressStr == freezed
           ? _value.emailAddressStr
           : emailAddressStr // ignore: cast_nullable_to_non_nullable
@@ -680,7 +607,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is EmailAddressChanged &&
+            other is _$EmailAddressChanged &&
             const DeepCollectionEquality()
                 .equals(other.emailAddressStr, emailAddressStr));
   }
@@ -691,8 +618,9 @@ class _$EmailAddressChanged implements EmailAddressChanged {
 
   @JsonKey(ignore: true)
   @override
-  $EmailAddressChangedCopyWith<EmailAddressChanged> get copyWith =>
-      _$EmailAddressChangedCopyWithImpl<EmailAddressChanged>(this, _$identity);
+  _$$EmailAddressChangedCopyWith<_$EmailAddressChanged> get copyWith =>
+      __$$EmailAddressChangedCopyWithImpl<_$EmailAddressChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -836,35 +764,35 @@ class _$EmailAddressChanged implements EmailAddressChanged {
 }
 
 abstract class EmailAddressChanged implements LogInEvent {
-  const factory EmailAddressChanged(String emailAddressStr) =
+  const factory EmailAddressChanged(final String emailAddressStr) =
       _$EmailAddressChanged;
 
-  String get emailAddressStr;
+  String get emailAddressStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EmailAddressChangedCopyWith<EmailAddressChanged> get copyWith =>
+  _$$EmailAddressChangedCopyWith<_$EmailAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoggedInWithEmailAndPasswordCopyWith<$Res> {
-  factory $LoggedInWithEmailAndPasswordCopyWith(
-          LoggedInWithEmailAndPassword value,
-          $Res Function(LoggedInWithEmailAndPassword) then) =
-      _$LoggedInWithEmailAndPasswordCopyWithImpl<$Res>;
+abstract class _$$LoggedInWithEmailAndPasswordCopyWith<$Res> {
+  factory _$$LoggedInWithEmailAndPasswordCopyWith(
+          _$LoggedInWithEmailAndPassword value,
+          $Res Function(_$LoggedInWithEmailAndPassword) then) =
+      __$$LoggedInWithEmailAndPasswordCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoggedInWithEmailAndPasswordCopyWithImpl<$Res>
+class __$$LoggedInWithEmailAndPasswordCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $LoggedInWithEmailAndPasswordCopyWith<$Res> {
-  _$LoggedInWithEmailAndPasswordCopyWithImpl(
-      LoggedInWithEmailAndPassword _value,
-      $Res Function(LoggedInWithEmailAndPassword) _then)
-      : super(_value, (v) => _then(v as LoggedInWithEmailAndPassword));
+    implements _$$LoggedInWithEmailAndPasswordCopyWith<$Res> {
+  __$$LoggedInWithEmailAndPasswordCopyWithImpl(
+      _$LoggedInWithEmailAndPassword _value,
+      $Res Function(_$LoggedInWithEmailAndPassword) _then)
+      : super(_value, (v) => _then(v as _$LoggedInWithEmailAndPassword));
 
   @override
-  LoggedInWithEmailAndPassword get _value =>
-      super._value as LoggedInWithEmailAndPassword;
+  _$LoggedInWithEmailAndPassword get _value =>
+      super._value as _$LoggedInWithEmailAndPassword;
 }
 
 /// @nodoc
@@ -881,7 +809,7 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LoggedInWithEmailAndPassword);
+            other is _$LoggedInWithEmailAndPassword);
   }
 
   @override
@@ -1033,22 +961,22 @@ abstract class LoggedInWithEmailAndPassword implements LogInEvent {
 }
 
 /// @nodoc
-abstract class $LoggedInWithGoogleCopyWith<$Res> {
-  factory $LoggedInWithGoogleCopyWith(
-          LoggedInWithGoogle value, $Res Function(LoggedInWithGoogle) then) =
-      _$LoggedInWithGoogleCopyWithImpl<$Res>;
+abstract class _$$LoggedInWithGoogleCopyWith<$Res> {
+  factory _$$LoggedInWithGoogleCopyWith(_$LoggedInWithGoogle value,
+          $Res Function(_$LoggedInWithGoogle) then) =
+      __$$LoggedInWithGoogleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoggedInWithGoogleCopyWithImpl<$Res>
+class __$$LoggedInWithGoogleCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $LoggedInWithGoogleCopyWith<$Res> {
-  _$LoggedInWithGoogleCopyWithImpl(
-      LoggedInWithGoogle _value, $Res Function(LoggedInWithGoogle) _then)
-      : super(_value, (v) => _then(v as LoggedInWithGoogle));
+    implements _$$LoggedInWithGoogleCopyWith<$Res> {
+  __$$LoggedInWithGoogleCopyWithImpl(
+      _$LoggedInWithGoogle _value, $Res Function(_$LoggedInWithGoogle) _then)
+      : super(_value, (v) => _then(v as _$LoggedInWithGoogle));
 
   @override
-  LoggedInWithGoogle get _value => super._value as LoggedInWithGoogle;
+  _$LoggedInWithGoogle get _value => super._value as _$LoggedInWithGoogle;
 }
 
 /// @nodoc
@@ -1064,7 +992,7 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LoggedInWithGoogle);
+        (other.runtimeType == runtimeType && other is _$LoggedInWithGoogle);
   }
 
   @override
@@ -1216,25 +1144,25 @@ abstract class LoggedInWithGoogle implements LogInEvent {
 }
 
 /// @nodoc
-abstract class $LogInWithEmailAndPasswordPressedCopyWith<$Res> {
-  factory $LogInWithEmailAndPasswordPressedCopyWith(
-          LogInWithEmailAndPasswordPressed value,
-          $Res Function(LogInWithEmailAndPasswordPressed) then) =
-      _$LogInWithEmailAndPasswordPressedCopyWithImpl<$Res>;
+abstract class _$$LogInWithEmailAndPasswordPressedCopyWith<$Res> {
+  factory _$$LogInWithEmailAndPasswordPressedCopyWith(
+          _$LogInWithEmailAndPasswordPressed value,
+          $Res Function(_$LogInWithEmailAndPasswordPressed) then) =
+      __$$LogInWithEmailAndPasswordPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LogInWithEmailAndPasswordPressedCopyWithImpl<$Res>
+class __$$LogInWithEmailAndPasswordPressedCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $LogInWithEmailAndPasswordPressedCopyWith<$Res> {
-  _$LogInWithEmailAndPasswordPressedCopyWithImpl(
-      LogInWithEmailAndPasswordPressed _value,
-      $Res Function(LogInWithEmailAndPasswordPressed) _then)
-      : super(_value, (v) => _then(v as LogInWithEmailAndPasswordPressed));
+    implements _$$LogInWithEmailAndPasswordPressedCopyWith<$Res> {
+  __$$LogInWithEmailAndPasswordPressedCopyWithImpl(
+      _$LogInWithEmailAndPasswordPressed _value,
+      $Res Function(_$LogInWithEmailAndPasswordPressed) _then)
+      : super(_value, (v) => _then(v as _$LogInWithEmailAndPasswordPressed));
 
   @override
-  LogInWithEmailAndPasswordPressed get _value =>
-      super._value as LogInWithEmailAndPasswordPressed;
+  _$LogInWithEmailAndPasswordPressed get _value =>
+      super._value as _$LogInWithEmailAndPasswordPressed;
 }
 
 /// @nodoc
@@ -1252,7 +1180,7 @@ class _$LogInWithEmailAndPasswordPressed
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LogInWithEmailAndPasswordPressed);
+            other is _$LogInWithEmailAndPasswordPressed);
   }
 
   @override
@@ -1405,22 +1333,23 @@ abstract class LogInWithEmailAndPasswordPressed implements LogInEvent {
 }
 
 /// @nodoc
-abstract class $LogInWithGooglePressedCopyWith<$Res> {
-  factory $LogInWithGooglePressedCopyWith(LogInWithGooglePressed value,
-          $Res Function(LogInWithGooglePressed) then) =
-      _$LogInWithGooglePressedCopyWithImpl<$Res>;
+abstract class _$$LogInWithGooglePressedCopyWith<$Res> {
+  factory _$$LogInWithGooglePressedCopyWith(_$LogInWithGooglePressed value,
+          $Res Function(_$LogInWithGooglePressed) then) =
+      __$$LogInWithGooglePressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LogInWithGooglePressedCopyWithImpl<$Res>
+class __$$LogInWithGooglePressedCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $LogInWithGooglePressedCopyWith<$Res> {
-  _$LogInWithGooglePressedCopyWithImpl(LogInWithGooglePressed _value,
-      $Res Function(LogInWithGooglePressed) _then)
-      : super(_value, (v) => _then(v as LogInWithGooglePressed));
+    implements _$$LogInWithGooglePressedCopyWith<$Res> {
+  __$$LogInWithGooglePressedCopyWithImpl(_$LogInWithGooglePressed _value,
+      $Res Function(_$LogInWithGooglePressed) _then)
+      : super(_value, (v) => _then(v as _$LogInWithGooglePressed));
 
   @override
-  LogInWithGooglePressed get _value => super._value as LogInWithGooglePressed;
+  _$LogInWithGooglePressed get _value =>
+      super._value as _$LogInWithGooglePressed;
 }
 
 /// @nodoc
@@ -1436,7 +1365,7 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LogInWithGooglePressed);
+        (other.runtimeType == runtimeType && other is _$LogInWithGooglePressed);
   }
 
   @override
@@ -1588,28 +1517,29 @@ abstract class LogInWithGooglePressed implements LogInEvent {
 }
 
 /// @nodoc
-abstract class $PasswordChangedCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(
-          PasswordChanged value, $Res Function(PasswordChanged) then) =
-      _$PasswordChangedCopyWithImpl<$Res>;
+abstract class _$$PasswordChangedCopyWith<$Res> {
+  factory _$$PasswordChangedCopyWith(
+          _$PasswordChanged value, $Res Function(_$PasswordChanged) then) =
+      __$$PasswordChangedCopyWithImpl<$Res>;
   $Res call({String passwordStr});
 }
 
 /// @nodoc
-class _$PasswordChangedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
-    implements $PasswordChangedCopyWith<$Res> {
-  _$PasswordChangedCopyWithImpl(
-      PasswordChanged _value, $Res Function(PasswordChanged) _then)
-      : super(_value, (v) => _then(v as PasswordChanged));
+class __$$PasswordChangedCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res>
+    implements _$$PasswordChangedCopyWith<$Res> {
+  __$$PasswordChangedCopyWithImpl(
+      _$PasswordChanged _value, $Res Function(_$PasswordChanged) _then)
+      : super(_value, (v) => _then(v as _$PasswordChanged));
 
   @override
-  PasswordChanged get _value => super._value as PasswordChanged;
+  _$PasswordChanged get _value => super._value as _$PasswordChanged;
 
   @override
   $Res call({
     Object? passwordStr = freezed,
   }) {
-    return _then(PasswordChanged(
+    return _then(_$PasswordChanged(
       passwordStr == freezed
           ? _value.passwordStr
           : passwordStr // ignore: cast_nullable_to_non_nullable
@@ -1635,7 +1565,7 @@ class _$PasswordChanged implements PasswordChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PasswordChanged &&
+            other is _$PasswordChanged &&
             const DeepCollectionEquality()
                 .equals(other.passwordStr, passwordStr));
   }
@@ -1646,8 +1576,8 @@ class _$PasswordChanged implements PasswordChanged {
 
   @JsonKey(ignore: true)
   @override
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
-      _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
+  _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
+      __$$PasswordChangedCopyWithImpl<_$PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1791,40 +1721,40 @@ class _$PasswordChanged implements PasswordChanged {
 }
 
 abstract class PasswordChanged implements LogInEvent {
-  const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
+  const factory PasswordChanged(final String passwordStr) = _$PasswordChanged;
 
-  String get passwordStr;
+  String get passwordStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
+  _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserDetailsSavedCopyWith<$Res> {
-  factory $UserDetailsSavedCopyWith(
-          UserDetailsSaved value, $Res Function(UserDetailsSaved) then) =
-      _$UserDetailsSavedCopyWithImpl<$Res>;
+abstract class _$$UserDetailsSavedCopyWith<$Res> {
+  factory _$$UserDetailsSavedCopyWith(
+          _$UserDetailsSaved value, $Res Function(_$UserDetailsSaved) then) =
+      __$$UserDetailsSavedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UserDetailsSavedCopyWithImpl<$Res>
+class __$$UserDetailsSavedCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $UserDetailsSavedCopyWith<$Res> {
-  _$UserDetailsSavedCopyWithImpl(
-      UserDetailsSaved _value, $Res Function(UserDetailsSaved) _then)
-      : super(_value, (v) => _then(v as UserDetailsSaved));
+    implements _$$UserDetailsSavedCopyWith<$Res> {
+  __$$UserDetailsSavedCopyWithImpl(
+      _$UserDetailsSaved _value, $Res Function(_$UserDetailsSaved) _then)
+      : super(_value, (v) => _then(v as _$UserDetailsSaved));
 
   @override
-  UserDetailsSaved get _value => super._value as UserDetailsSaved;
+  _$UserDetailsSaved get _value => super._value as _$UserDetailsSaved;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(UserDetailsSaved(
+    return _then(_$UserDetailsSaved(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -1857,7 +1787,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UserDetailsSaved &&
+            other is _$UserDetailsSaved &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -1867,8 +1797,8 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 
   @JsonKey(ignore: true)
   @override
-  $UserDetailsSavedCopyWith<UserDetailsSaved> get copyWith =>
-      _$UserDetailsSavedCopyWithImpl<UserDetailsSaved>(this, _$identity);
+  _$$UserDetailsSavedCopyWith<_$UserDetailsSaved> get copyWith =>
+      __$$UserDetailsSavedCopyWithImpl<_$UserDetailsSaved>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2012,38 +1942,39 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 }
 
 abstract class UserDetailsSaved implements LogInEvent {
-  const factory UserDetailsSaved(User user) = _$UserDetailsSaved;
+  const factory UserDetailsSaved(final User user) = _$UserDetailsSaved;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserDetailsSavedCopyWith<UserDetailsSaved> get copyWith =>
+  _$$UserDetailsSavedCopyWith<_$UserDetailsSaved> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserLoadedCopyWith<$Res> {
-  factory $UserLoadedCopyWith(
-          UserLoaded value, $Res Function(UserLoaded) then) =
-      _$UserLoadedCopyWithImpl<$Res>;
+abstract class _$$UserLoadedCopyWith<$Res> {
+  factory _$$UserLoadedCopyWith(
+          _$UserLoaded value, $Res Function(_$UserLoaded) then) =
+      __$$UserLoadedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UserLoadedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
-    implements $UserLoadedCopyWith<$Res> {
-  _$UserLoadedCopyWithImpl(UserLoaded _value, $Res Function(UserLoaded) _then)
-      : super(_value, (v) => _then(v as UserLoaded));
+class __$$UserLoadedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+    implements _$$UserLoadedCopyWith<$Res> {
+  __$$UserLoadedCopyWithImpl(
+      _$UserLoaded _value, $Res Function(_$UserLoaded) _then)
+      : super(_value, (v) => _then(v as _$UserLoaded));
 
   @override
-  UserLoaded get _value => super._value as UserLoaded;
+  _$UserLoaded get _value => super._value as _$UserLoaded;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(UserLoaded(
+    return _then(_$UserLoaded(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2076,7 +2007,7 @@ class _$UserLoaded implements UserLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UserLoaded &&
+            other is _$UserLoaded &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -2086,8 +2017,8 @@ class _$UserLoaded implements UserLoaded {
 
   @JsonKey(ignore: true)
   @override
-  $UserLoadedCopyWith<UserLoaded> get copyWith =>
-      _$UserLoadedCopyWithImpl<UserLoaded>(this, _$identity);
+  _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
+      __$$UserLoadedCopyWithImpl<_$UserLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2231,43 +2162,43 @@ class _$UserLoaded implements UserLoaded {
 }
 
 abstract class UserLoaded implements LogInEvent {
-  const factory UserLoaded(User user) = _$UserLoaded;
+  const factory UserLoaded(final User user) = _$UserLoaded;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserLoadedCopyWith<UserLoaded> get copyWith =>
+  _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UsernameAvailabilityConfirmedCopyWith<$Res> {
-  factory $UsernameAvailabilityConfirmedCopyWith(
-          UsernameAvailabilityConfirmed value,
-          $Res Function(UsernameAvailabilityConfirmed) then) =
-      _$UsernameAvailabilityConfirmedCopyWithImpl<$Res>;
+abstract class _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
+  factory _$$UsernameAvailabilityConfirmedCopyWith(
+          _$UsernameAvailabilityConfirmed value,
+          $Res Function(_$UsernameAvailabilityConfirmed) then) =
+      __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
+class __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $UsernameAvailabilityConfirmedCopyWith<$Res> {
-  _$UsernameAvailabilityConfirmedCopyWithImpl(
-      UsernameAvailabilityConfirmed _value,
-      $Res Function(UsernameAvailabilityConfirmed) _then)
-      : super(_value, (v) => _then(v as UsernameAvailabilityConfirmed));
+    implements _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
+  __$$UsernameAvailabilityConfirmedCopyWithImpl(
+      _$UsernameAvailabilityConfirmed _value,
+      $Res Function(_$UsernameAvailabilityConfirmed) _then)
+      : super(_value, (v) => _then(v as _$UsernameAvailabilityConfirmed));
 
   @override
-  UsernameAvailabilityConfirmed get _value =>
-      super._value as UsernameAvailabilityConfirmed;
+  _$UsernameAvailabilityConfirmed get _value =>
+      super._value as _$UsernameAvailabilityConfirmed;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(UsernameAvailabilityConfirmed(
+    return _then(_$UsernameAvailabilityConfirmed(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2300,7 +2231,7 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UsernameAvailabilityConfirmed &&
+            other is _$UsernameAvailabilityConfirmed &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -2310,9 +2241,9 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
 
   @JsonKey(ignore: true)
   @override
-  $UsernameAvailabilityConfirmedCopyWith<UsernameAvailabilityConfirmed>
-      get copyWith => _$UsernameAvailabilityConfirmedCopyWithImpl<
-          UsernameAvailabilityConfirmed>(this, _$identity);
+  _$$UsernameAvailabilityConfirmedCopyWith<_$UsernameAvailabilityConfirmed>
+      get copyWith => __$$UsernameAvailabilityConfirmedCopyWithImpl<
+          _$UsernameAvailabilityConfirmed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2456,40 +2387,40 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
 }
 
 abstract class UsernameAvailabilityConfirmed implements LogInEvent {
-  const factory UsernameAvailabilityConfirmed(User user) =
+  const factory UsernameAvailabilityConfirmed(final User user) =
       _$UsernameAvailabilityConfirmed;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UsernameAvailabilityConfirmedCopyWith<UsernameAvailabilityConfirmed>
+  _$$UsernameAvailabilityConfirmedCopyWith<_$UsernameAvailabilityConfirmed>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UsernameSavedCopyWith<$Res> {
-  factory $UsernameSavedCopyWith(
-          UsernameSaved value, $Res Function(UsernameSaved) then) =
-      _$UsernameSavedCopyWithImpl<$Res>;
+abstract class _$$UsernameSavedCopyWith<$Res> {
+  factory _$$UsernameSavedCopyWith(
+          _$UsernameSaved value, $Res Function(_$UsernameSaved) then) =
+      __$$UsernameSavedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UsernameSavedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
-    implements $UsernameSavedCopyWith<$Res> {
-  _$UsernameSavedCopyWithImpl(
-      UsernameSaved _value, $Res Function(UsernameSaved) _then)
-      : super(_value, (v) => _then(v as UsernameSaved));
+class __$$UsernameSavedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+    implements _$$UsernameSavedCopyWith<$Res> {
+  __$$UsernameSavedCopyWithImpl(
+      _$UsernameSaved _value, $Res Function(_$UsernameSaved) _then)
+      : super(_value, (v) => _then(v as _$UsernameSaved));
 
   @override
-  UsernameSaved get _value => super._value as UsernameSaved;
+  _$UsernameSaved get _value => super._value as _$UsernameSaved;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(UsernameSaved(
+    return _then(_$UsernameSaved(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2522,7 +2453,7 @@ class _$UsernameSaved implements UsernameSaved {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UsernameSaved &&
+            other is _$UsernameSaved &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -2532,8 +2463,8 @@ class _$UsernameSaved implements UsernameSaved {
 
   @JsonKey(ignore: true)
   @override
-  $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
-      _$UsernameSavedCopyWithImpl<UsernameSaved>(this, _$identity);
+  _$$UsernameSavedCopyWith<_$UsernameSaved> get copyWith =>
+      __$$UsernameSavedCopyWithImpl<_$UsernameSaved>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2677,39 +2608,39 @@ class _$UsernameSaved implements UsernameSaved {
 }
 
 abstract class UsernameSaved implements LogInEvent {
-  const factory UsernameSaved(User user) = _$UsernameSaved;
+  const factory UsernameSaved(final User user) = _$UsernameSaved;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
+  _$$UsernameSavedCopyWith<_$UsernameSaved> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserNotFoundCopyWith<$Res> {
-  factory $UserNotFoundCopyWith(
-          UserNotFound value, $Res Function(UserNotFound) then) =
-      _$UserNotFoundCopyWithImpl<$Res>;
+abstract class _$$UserNotFoundCopyWith<$Res> {
+  factory _$$UserNotFoundCopyWith(
+          _$UserNotFound value, $Res Function(_$UserNotFound) then) =
+      __$$UserNotFoundCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UserNotFoundCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
-    implements $UserNotFoundCopyWith<$Res> {
-  _$UserNotFoundCopyWithImpl(
-      UserNotFound _value, $Res Function(UserNotFound) _then)
-      : super(_value, (v) => _then(v as UserNotFound));
+class __$$UserNotFoundCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+    implements _$$UserNotFoundCopyWith<$Res> {
+  __$$UserNotFoundCopyWithImpl(
+      _$UserNotFound _value, $Res Function(_$UserNotFound) _then)
+      : super(_value, (v) => _then(v as _$UserNotFound));
 
   @override
-  UserNotFound get _value => super._value as UserNotFound;
+  _$UserNotFound get _value => super._value as _$UserNotFound;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(UserNotFound(
+    return _then(_$UserNotFound(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2742,7 +2673,7 @@ class _$UserNotFound implements UserNotFound {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UserNotFound &&
+            other is _$UserNotFound &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -2752,8 +2683,8 @@ class _$UserNotFound implements UserNotFound {
 
   @JsonKey(ignore: true)
   @override
-  $UserNotFoundCopyWith<UserNotFound> get copyWith =>
-      _$UserNotFoundCopyWithImpl<UserNotFound>(this, _$identity);
+  _$$UserNotFoundCopyWith<_$UserNotFound> get copyWith =>
+      __$$UserNotFoundCopyWithImpl<_$UserNotFound>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2897,43 +2828,18 @@ class _$UserNotFound implements UserNotFound {
 }
 
 abstract class UserNotFound implements LogInEvent {
-  const factory UserNotFound(User user) = _$UserNotFound;
+  const factory UserNotFound(final User user) = _$UserNotFound;
 
-  User get user;
+  User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserNotFoundCopyWith<UserNotFound> get copyWith =>
+  _$$UserNotFoundCopyWith<_$UserNotFound> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$LogInStateTearOff {
-  const _$LogInStateTearOff();
-
-  _LogInState call(
-      {required EmailAddress emailAddress,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required bool isAuthenticated,
-      required bool isProcessing,
-      required Password password,
-      required bool showErrorMessages}) {
-    return _LogInState(
-      emailAddress: emailAddress,
-      failureOption: failureOption,
-      isAuthenticated: isAuthenticated,
-      isProcessing: isProcessing,
-      password: password,
-      showErrorMessages: showErrorMessages,
-    );
-  }
-}
-
-/// @nodoc
-const $LogInState = _$LogInStateTearOff();
-
-/// @nodoc
 mixin _$LogInState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
+  Option<Result<None, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -2952,7 +2858,7 @@ abstract class $LogInStateCopyWith<$Res> {
       _$LogInStateCopyWithImpl<$Res>;
   $Res call(
       {EmailAddress emailAddress,
-      Option<Result<None<Object>, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -2984,7 +2890,7 @@ class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None<Object>, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -3006,14 +2912,15 @@ class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$LogInStateCopyWith<$Res> implements $LogInStateCopyWith<$Res> {
-  factory _$LogInStateCopyWith(
-          _LogInState value, $Res Function(_LogInState) then) =
-      __$LogInStateCopyWithImpl<$Res>;
+abstract class _$$_LogInStateCopyWith<$Res>
+    implements $LogInStateCopyWith<$Res> {
+  factory _$$_LogInStateCopyWith(
+          _$_LogInState value, $Res Function(_$_LogInState) then) =
+      __$$_LogInStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {EmailAddress emailAddress,
-      Option<Result<None<Object>, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -3021,14 +2928,14 @@ abstract class _$LogInStateCopyWith<$Res> implements $LogInStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
-    implements _$LogInStateCopyWith<$Res> {
-  __$LogInStateCopyWithImpl(
-      _LogInState _value, $Res Function(_LogInState) _then)
-      : super(_value, (v) => _then(v as _LogInState));
+class __$$_LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
+    implements _$$_LogInStateCopyWith<$Res> {
+  __$$_LogInStateCopyWithImpl(
+      _$_LogInState _value, $Res Function(_$_LogInState) _then)
+      : super(_value, (v) => _then(v as _$_LogInState));
 
   @override
-  _LogInState get _value => super._value as _LogInState;
+  _$_LogInState get _value => super._value as _$_LogInState;
 
   @override
   $Res call({
@@ -3039,7 +2946,7 @@ class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
     Object? password = freezed,
     Object? showErrorMessages = freezed,
   }) {
-    return _then(_LogInState(
+    return _then(_$_LogInState(
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
@@ -3047,7 +2954,7 @@ class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None<Object>, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -3082,7 +2989,7 @@ class _$_LogInState implements _LogInState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Result<None<Object>, CoreFailure>> failureOption;
+  final Option<Result<None, CoreFailure>> failureOption;
   @override
   final bool isAuthenticated;
   @override
@@ -3101,7 +3008,7 @@ class _$_LogInState implements _LogInState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LogInState &&
+            other is _$_LogInState &&
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
             const DeepCollectionEquality()
@@ -3127,33 +3034,34 @@ class _$_LogInState implements _LogInState {
 
   @JsonKey(ignore: true)
   @override
-  _$LogInStateCopyWith<_LogInState> get copyWith =>
-      __$LogInStateCopyWithImpl<_LogInState>(this, _$identity);
+  _$$_LogInStateCopyWith<_$_LogInState> get copyWith =>
+      __$$_LogInStateCopyWithImpl<_$_LogInState>(this, _$identity);
 }
 
 abstract class _LogInState implements LogInState {
   const factory _LogInState(
-      {required EmailAddress emailAddress,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required bool isAuthenticated,
-      required bool isProcessing,
-      required Password password,
-      required bool showErrorMessages}) = _$_LogInState;
+      {required final EmailAddress emailAddress,
+      required final Option<Result<None, CoreFailure>> failureOption,
+      required final bool isAuthenticated,
+      required final bool isProcessing,
+      required final Password password,
+      required final bool showErrorMessages}) = _$_LogInState;
 
   @override
-  EmailAddress get emailAddress;
+  EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption;
+  Option<Result<None, CoreFailure>> get failureOption =>
+      throw _privateConstructorUsedError;
   @override
-  bool get isAuthenticated;
+  bool get isAuthenticated => throw _privateConstructorUsedError;
   @override
-  bool get isProcessing;
+  bool get isProcessing => throw _privateConstructorUsedError;
   @override
-  Password get password;
+  Password get password => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LogInStateCopyWith<_LogInState> get copyWith =>
+  _$$_LogInStateCopyWith<_$_LogInState> get copyWith =>
       throw _privateConstructorUsedError;
 }

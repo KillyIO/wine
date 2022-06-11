@@ -5,17 +5,16 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:uuid/uuid.dart';
-import 'package:wine/domain/auth/auth_failure.dart' as auth_failure;
-
-import 'package:wine/domain/auth/email_address.dart';
-import 'package:wine/domain/auth/i_auth_facade.dart';
-import 'package:wine/domain/auth/password.dart';
-import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
+import 'package:wine/features/auth/auth_failure.domain.dart' as auth_failure;
+import 'package:wine/features/auth/email_address.domain.dart';
+import 'package:wine/features/auth/i_auth_facade.domain.dart';
+import 'package:wine/features/auth/password.domain.dart';
+import 'package:wine/features/auth/username.fomain.dart';
 
 part 'log_in_bloc.freezed.dart';
 part 'log_in_event.dart';

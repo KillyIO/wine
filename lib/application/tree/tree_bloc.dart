@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/branch/i_branch_repository.dart';
 import 'package:wine/domain/core/core_failure.dart';
@@ -16,6 +15,7 @@ import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/features/auth/i_auth_facade.domain.dart';
 
 part 'tree_bloc.freezed.dart';
 part 'tree_event.dart';
