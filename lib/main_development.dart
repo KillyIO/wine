@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/development_firebase_options.dart';
+import 'package:wine/features/core/app_development.widget.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/core/app_development.dart';
 import 'package:wine/simple_bloc_observer.dart';
 
 Future<void> main() async {

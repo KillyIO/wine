@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/core/cover_url.dart';
-import 'package:wine/domain/core/value_failure.dart';
+import 'package:wine/features/core/cover_url.domain.dart';
+import 'package:wine/features/core/value_failure.domain.dart';
 
 import '../../utils/constants.dart';
 

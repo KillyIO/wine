@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
-import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
@@ -12,6 +11,7 @@ import 'package:wine/features/auth/auth_failure.domain.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/auth/password.domain.dart';
+import 'package:wine/features/core/core_failure.domain.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
 import '../../mocks/domain_mocks.dart';

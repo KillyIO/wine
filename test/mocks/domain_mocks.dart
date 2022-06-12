@@ -1,9 +1,9 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/password.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
+import 'package:wine/features/core/unique_id.domain.dart';
 
 class MockEmailAddress extends Mock implements EmailAddress {}
 

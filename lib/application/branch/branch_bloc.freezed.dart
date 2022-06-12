@@ -3280,7 +3280,7 @@ mixin _$BranchState {
   bool get authorIsUser => throw _privateConstructorUsedError;
   User get author => throw _privateConstructorUsedError;
   Branch get branch => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isBookmarked => throw _privateConstructorUsedError;
   bool get isLiked => throw _privateConstructorUsedError;
@@ -3307,7 +3307,7 @@ abstract class $BranchStateCopyWith<$Res> {
       {bool authorIsUser,
       User author,
       Branch branch,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
       bool isProcessing,
@@ -3366,7 +3366,7 @@ class _$BranchStateCopyWithImpl<$Res> implements $BranchStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isBookmarked: isBookmarked == freezed
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
@@ -3450,7 +3450,7 @@ abstract class _$$_BranchStateCopyWith<$Res>
       {bool authorIsUser,
       User author,
       Branch branch,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
       bool isProcessing,
@@ -3515,7 +3515,7 @@ class __$$_BranchStateCopyWithImpl<$Res> extends _$BranchStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isBookmarked: isBookmarked == freezed
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
@@ -3588,7 +3588,7 @@ class _$_BranchState implements _BranchState {
   @override
   final Branch branch;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isBookmarked;
   @override
@@ -3684,7 +3684,7 @@ abstract class _BranchState implements BranchState {
       {required final bool authorIsUser,
       required final User author,
       required final Branch branch,
-      required final Option<Result<None, CoreFailure>> failureOption,
+      required final Option<Result<None<Object>, CoreFailure>> failureOption,
       required final bool isBookmarked,
       required final bool isLiked,
       required final bool isProcessing,
@@ -3703,7 +3703,7 @@ abstract class _BranchState implements BranchState {
   @override
   Branch get branch => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isBookmarked => throw _privateConstructorUsedError;
