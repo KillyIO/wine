@@ -15,6 +15,8 @@ import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
+import 'package:wine/features/core/core_failure.domain.dart';
+import 'package:wine/features/core/unique_id.domain.dart';
 
 part 'branch_event.dart';
 part 'branch_state.dart';

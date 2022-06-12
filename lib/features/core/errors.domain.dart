@@ -1,4 +1,4 @@
-import 'package:wine/domain/core/value_failure.dart';
+import 'package:wine/features/core/value_failure.domain.dart';
 
 /// @nodoc
 class UnexpectedValueError {

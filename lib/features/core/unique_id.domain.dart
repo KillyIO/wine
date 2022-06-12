@@ -1,9 +1,8 @@
 import 'package:oxidized/oxidized.dart';
 import 'package:uuid/uuid.dart';
-
-import 'package:wine/domain/core/value_failure.dart';
-import 'package:wine/domain/core/value_object.dart';
-import 'package:wine/domain/core/value_validators.dart';
+import 'package:wine/features/core/value_failure.domain.dart';
+import 'package:wine/features/core/value_object.domain.dart';
+import 'package:wine/features/core/value_validators.domain.dart';
 
 /// @nodoc
 class UniqueID extends ValueObject<String> {
