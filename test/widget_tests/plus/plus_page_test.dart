@@ -21,7 +21,7 @@ import 'package:wine/presentation/web/auth_dialog.dart';
 
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
-import '../utils/test_router_widget.dart';
+import '../utils/test_router.presentation.dart';
 
 void main() {
   const desktopWidth = 1280;

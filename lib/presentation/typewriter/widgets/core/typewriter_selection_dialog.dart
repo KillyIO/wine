@@ -5,14 +5,14 @@ import 'package:wine/utils/constants/palette.dart';
 class TypewriterSelectionDialog extends StatelessWidget {
   /// @nodoc
   const TypewriterSelectionDialog({
-    Key? key,
+    super.key,
     required this.items,
     this.onInfoPressed,
     required this.onPressed,
     this.selectedItem,
     this.selectedItems,
     required this.title,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final List<String> items;
@@ -46,14 +46,14 @@ class TypewriterSelectionDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       elevation: 10,
-      child: Container(
+      child: DecoratedBox(
         decoration: const BoxDecoration(
           color: Colors.white,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Container(
+            ColoredBox(
               color: Colors.black,
               child: ListTile(
                 tileColor: Colors.black,
@@ -79,7 +79,7 @@ class TypewriterSelectionDialog extends StatelessWidget {
             ),
             ListView.separated(
               shrinkWrap: true,
-              itemBuilder: (_, int i) => Container(
+              itemBuilder: (_, int i) => ColoredBox(
                 color: _itemColor(items[i]),
                 child: ListTile(
                   title: Text(

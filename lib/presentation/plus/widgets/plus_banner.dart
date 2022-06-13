@@ -5,7 +5,7 @@ import 'package:wine/utils/responsive/plus_responsive.dart';
 /// @nodoc
 class PlusBanner extends StatelessWidget {
   /// @nodoc
-  const PlusBanner({Key? key}) : super(key: key);
+  const PlusBanner({super.key});
 
   @override
   Widget build(BuildContext context) {

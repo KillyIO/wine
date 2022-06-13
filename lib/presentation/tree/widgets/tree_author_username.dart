@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class TreeAuthorUsername extends StatelessWidget {
   /// @nodoc
   const TreeAuthorUsername({
-    Key? key,
+    super.key,
     required this.authorUsername,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final String? authorUsername;

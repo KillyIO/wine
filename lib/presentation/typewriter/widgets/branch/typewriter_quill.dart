@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' hide Text;
-import 'package:wine/presentation/core/labels/text_field_label.dart';
+import 'package:wine/core/labels/text_field_label.presentation.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
 class TypewriterQuill extends StatelessWidget {
   /// @nodoc
   const TypewriterQuill({
-    Key? key,
+    super.key,
     required this.controller,
     required this.errorMessage,
     required this.hintText,
     required this.label,
     required this.wordCount,
     required this.wordCountError,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final QuillController controller;
@@ -40,7 +40,7 @@ class TypewriterQuill extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextFieldLabel(title: label),
-        Container(
+        DecoratedBox(
           decoration: const BoxDecoration(
             border: Border.symmetric(
               horizontal: BorderSide(
@@ -65,7 +65,7 @@ class TypewriterQuill extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: Container(
+          child: DecoratedBox(
             decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(

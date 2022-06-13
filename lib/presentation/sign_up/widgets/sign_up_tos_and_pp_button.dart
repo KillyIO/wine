@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// @nodoc
 class SignUpTOSAndPPButton extends StatelessWidget {
   /// @nodoc
-  const SignUpTOSAndPPButton({Key? key}) : super(key: key);
+  const SignUpTOSAndPPButton({super.key});
 
   @override
   Widget build(BuildContext context) {

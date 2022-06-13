@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:wine/presentation/core/dialogs/error_dialog.dart';
+import 'package:wine/core/dialogs/error_dialog.presentation.dart';
 
 import '../../utils/test_widget.dart';
 

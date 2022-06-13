@@ -2032,10 +2032,6 @@ abstract class $TreeStateCopyWith<$Res> {
       Settings settings,
       Tree tree});
 
-  $UserCopyWith<$Res>? get author;
-  $BranchCopyWith<$Res>? get branchOne;
-  $BranchCopyWith<$Res>? get branchResume;
-  $UserCopyWith<$Res>? get session;
   $SettingsCopyWith<$Res> get settings;
   $TreeCopyWith<$Res> get tree;
 }
@@ -2111,50 +2107,6 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
   }
 
   @override
-  $UserCopyWith<$Res>? get author {
-    if (_value.author == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.author!, (value) {
-      return _then(_value.copyWith(author: value));
-    });
-  }
-
-  @override
-  $BranchCopyWith<$Res>? get branchOne {
-    if (_value.branchOne == null) {
-      return null;
-    }
-
-    return $BranchCopyWith<$Res>(_value.branchOne!, (value) {
-      return _then(_value.copyWith(branchOne: value));
-    });
-  }
-
-  @override
-  $BranchCopyWith<$Res>? get branchResume {
-    if (_value.branchResume == null) {
-      return null;
-    }
-
-    return $BranchCopyWith<$Res>(_value.branchResume!, (value) {
-      return _then(_value.copyWith(branchResume: value));
-    });
-  }
-
-  @override
-  $UserCopyWith<$Res>? get session {
-    if (_value.session == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.session!, (value) {
-      return _then(_value.copyWith(session: value));
-    });
-  }
-
-  @override
   $SettingsCopyWith<$Res> get settings {
     return $SettingsCopyWith<$Res>(_value.settings, (value) {
       return _then(_value.copyWith(settings: value));
@@ -2188,14 +2140,6 @@ abstract class _$$_TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
       Settings settings,
       Tree tree});
 
-  @override
-  $UserCopyWith<$Res>? get author;
-  @override
-  $BranchCopyWith<$Res>? get branchOne;
-  @override
-  $BranchCopyWith<$Res>? get branchResume;
-  @override
-  $UserCopyWith<$Res>? get session;
   @override
   $SettingsCopyWith<$Res> get settings;
   @override

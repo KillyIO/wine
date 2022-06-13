@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/domain/core/cover_url.dart';
+import 'package:wine/core/cover_url.domain.dart';
 
 part 'default_cover.freezed.dart';
 

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class LogInSocialMediaButton extends StatelessWidget {
   /// @nodoc
   const LogInSocialMediaButton({
-    Key? key,
+    super.key,
     this.onPressed,
     required this.icon,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final VoidCallback? onPressed;

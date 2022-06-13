@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class TypewriterGenres extends StatelessWidget {
   /// @nodoc
   const TypewriterGenres({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.genres,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final void Function(String) onPressed;
@@ -22,7 +22,7 @@ class TypewriterGenres extends StatelessWidget {
       child: Column(
         children: <Widget>[
           for (final genre in genres)
-            Container(
+            DecoratedBox(
               decoration: const BoxDecoration(
                 border: Border(
                   bottom: BorderSide(),

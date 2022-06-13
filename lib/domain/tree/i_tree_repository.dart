@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/core/unique_id.dart';
+import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/domain/tree/tree_failure.dart';
 

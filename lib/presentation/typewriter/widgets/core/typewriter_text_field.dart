@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:wine/presentation/core/labels/text_field_label.dart';
+import 'package:wine/core/labels/text_field_label.presentation.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
 class TypewriterTextField extends StatelessWidget {
   /// @nodoc
   const TypewriterTextField({
-    Key? key,
+    super.key,
     this.controller,
     required this.hintText,
     this.keyboardType = TextInputType.text,
@@ -17,7 +17,7 @@ class TypewriterTextField extends StatelessWidget {
     required this.validator,
     required this.wordCount,
     required this.wordCountError,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final TextEditingController? controller;

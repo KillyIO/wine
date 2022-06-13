@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class TypewriterSwitchListTile extends StatelessWidget {
   /// @nodoc
   const TypewriterSwitchListTile({
-    Key? key,
+    super.key,
     required this.title,
     required this.onInfoPressed,
     required this.value,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final String title;
@@ -27,7 +27,7 @@ class TypewriterSwitchListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
-      child: Container(
+      child: ColoredBox(
         color: Colors.black,
         child: ListTile(
           title: Row(

@@ -1638,7 +1638,6 @@ abstract class _$$LaunchAsNewBranchCopyWith<$Res> {
       __$$LaunchAsNewBranchCopyWithImpl<$Res>;
   $Res call({Branch? previousBranch, Tree? tree});
 
-  $BranchCopyWith<$Res>? get previousBranch;
   $TreeCopyWith<$Res>? get tree;
 }
 
@@ -1668,17 +1667,6 @@ class __$$LaunchAsNewBranchCopyWithImpl<$Res>
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree?,
     ));
-  }
-
-  @override
-  $BranchCopyWith<$Res>? get previousBranch {
-    if (_value.previousBranch == null) {
-      return null;
-    }
-
-    return $BranchCopyWith<$Res>(_value.previousBranch!, (value) {
-      return _then(_value.copyWith(previousBranch: value));
-    });
   }
 
   @override
@@ -1897,8 +1885,6 @@ abstract class _$$LaunchWithUIDCopyWith<$Res> {
           _$LaunchWithUID value, $Res Function(_$LaunchWithUID) then) =
       __$$LaunchWithUIDCopyWithImpl<$Res>;
   $Res call({UniqueID uid, Branch? branch});
-
-  $BranchCopyWith<$Res>? get branch;
 }
 
 /// @nodoc
@@ -1927,17 +1913,6 @@ class __$$LaunchWithUIDCopyWithImpl<$Res>
           : branch // ignore: cast_nullable_to_non_nullable
               as Branch?,
     ));
-  }
-
-  @override
-  $BranchCopyWith<$Res>? get branch {
-    if (_value.branch == null) {
-      return null;
-    }
-
-    return $BranchCopyWith<$Res>(_value.branch!, (value) {
-      return _then(_value.copyWith(branch: value));
-    });
   }
 }
 
@@ -3629,8 +3604,6 @@ abstract class $TypewriterBranchStateCopyWith<$Res> {
       Title title,
       TextEditingController titleController,
       int titleWordCount});
-
-  $BranchCopyWith<$Res> get branch;
 }
 
 /// @nodoc
@@ -3738,13 +3711,6 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
               as int,
     ));
   }
-
-  @override
-  $BranchCopyWith<$Res> get branch {
-    return $BranchCopyWith<$Res>(_value.branch, (value) {
-      return _then(_value.copyWith(branch: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -3773,9 +3739,6 @@ abstract class _$$_TypewriterBranchStateCopyWith<$Res>
       Title title,
       TextEditingController titleController,
       int titleWordCount});
-
-  @override
-  $BranchCopyWith<$Res> get branch;
 }
 
 /// @nodoc

@@ -5,9 +5,9 @@ import 'package:readmore/readmore.dart';
 class TreeTitle extends StatelessWidget {
   /// @nodoc
   const TreeTitle({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final String? title;

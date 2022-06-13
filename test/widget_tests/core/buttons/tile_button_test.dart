@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:wine/presentation/core/buttons/tile_button.dart';
+import 'package:wine/core/buttons/tile_button.presentation.dart';
 
 import '../../utils/test_widget.dart';
 

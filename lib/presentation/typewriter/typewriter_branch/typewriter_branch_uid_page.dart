@@ -4,7 +4,7 @@ import 'package:wine/application/typewriter/typewriter_branch/typewriter_branch_
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_layout.dart';
+import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_layout.presentation.dart';
 
 /// @nodoc
 class TypewriterBranchUIDPage extends StatelessWidget {

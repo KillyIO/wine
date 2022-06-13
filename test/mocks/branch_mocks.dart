@@ -1,4 +1,4 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:wine/infrastructure/branch/branch_repository.dart';
+import 'package:wine/features/branch/branch_repository.infrastructure.dart';
 
 class MockBranchRepository extends Mock implements BranchRepository {}

@@ -7,10 +7,10 @@ import 'package:string_validator/string_validator.dart';
 class TypewriterCover extends StatelessWidget {
   /// @nodoc
   const TypewriterCover({
-    Key? key,
+    super.key,
     required this.coverURL,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final String coverURL;

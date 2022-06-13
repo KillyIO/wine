@@ -5,7 +5,7 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/tree/tree.dart';
 
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/typewriter/typewriter_tree/typwriter_tree_layout.dart';
+import 'package:wine/presentation/typewriter/typewriter_tree/typwriter_tree_layout.presentation.dart';
 
 /// @nodoc
 class TypewriterTreeUIDPage extends StatelessWidget {

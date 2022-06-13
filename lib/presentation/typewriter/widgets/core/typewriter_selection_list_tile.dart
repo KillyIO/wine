@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class TypewriterSelectionListTile extends StatelessWidget {
   /// @nodoc
   const TypewriterSelectionListTile({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.selectedItem,
     required this.title,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final String? selectedItem;
@@ -23,7 +23,7 @@ class TypewriterSelectionListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
 
-    return Container(
+    return ColoredBox(
       color: Colors.black,
       child: ListTile(
         onTap: onPressed,

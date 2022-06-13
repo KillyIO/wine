@@ -2,14 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/branch/branch.dart';
-import 'package:wine/domain/branch/i_branch_repository.dart';
-import 'package:wine/domain/core/core_failure.dart';
-import 'package:wine/domain/core/unique_id.dart';
+import 'package:wine/core/core_failure.domain.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
-import 'package:wine/domain/user/user.dart';
 import 'package:wine/utils/constants/library.dart';
 
 part 'library_bloc.freezed.dart';

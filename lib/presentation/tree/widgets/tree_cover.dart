@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class TreeCover extends StatelessWidget {
   /// @nodoc
   const TreeCover({
-    Key? key,
+    super.key,
     required this.coverURL,
     required this.treeUID,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final String? coverURL;

@@ -2,14 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:wine/presentation/core/buttons/asset_button.dart';
+import 'package:wine/core/buttons/asset_button.presentation.dart';
 import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
 
 /// @nodoc
 class SettingsTreePage extends StatelessWidget {
   /// @nodoc
-  const SettingsTreePage({Key? key}) : super(key: key);
+  const SettingsTreePage({super.key});
 
   @override
   Widget build(BuildContext context) {

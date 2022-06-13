@@ -290,8 +290,6 @@ abstract class _$$BranchUpdatedCopyWith<$Res> {
           _$BranchUpdated value, $Res Function(_$BranchUpdated) then) =
       __$$BranchUpdatedCopyWithImpl<$Res>;
   $Res call({Branch branch});
-
-  $BranchCopyWith<$Res> get branch;
 }
 
 /// @nodoc
@@ -315,13 +313,6 @@ class __$$BranchUpdatedCopyWithImpl<$Res>
           : branch // ignore: cast_nullable_to_non_nullable
               as Branch,
     ));
-  }
-
-  @override
-  $BranchCopyWith<$Res> get branch {
-    return $BranchCopyWith<$Res>(_value.branch, (value) {
-      return _then(_value.copyWith(branch: value));
-    });
   }
 }
 
@@ -1463,7 +1454,7 @@ mixin _$LibraryState {
   List<Branch> get branches => throw _privateConstructorUsedError;
   int get currentPageViewIdx => throw _privateConstructorUsedError;
   int get currentVerticalNavbarIdx => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
   User get session => throw _privateConstructorUsedError;
@@ -1485,12 +1476,10 @@ abstract class $LibraryStateCopyWith<$Res> {
       List<Branch> branches,
       int currentPageViewIdx,
       int currentVerticalNavbarIdx,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isProcessing,
       User session,
       List<Tree> trees});
-
-  $UserCopyWith<$Res> get session;
 }
 
 /// @nodoc
@@ -1537,7 +1526,7 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -1551,13 +1540,6 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
           : trees // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get session {
-    return $UserCopyWith<$Res>(_value.session, (value) {
-      return _then(_value.copyWith(session: value));
-    });
   }
 }
 
@@ -1574,13 +1556,10 @@ abstract class _$$_LibraryStateCopyWith<$Res>
       List<Branch> branches,
       int currentPageViewIdx,
       int currentVerticalNavbarIdx,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isProcessing,
       User session,
       List<Tree> trees});
-
-  @override
-  $UserCopyWith<$Res> get session;
 }
 
 /// @nodoc
@@ -1630,7 +1609,7 @@ class __$$_LibraryStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -1691,7 +1670,7 @@ class _$_LibraryState implements _LibraryState {
   @override
   final int currentVerticalNavbarIdx;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isProcessing;
   @override
@@ -1756,7 +1735,7 @@ abstract class _LibraryState implements LibraryState {
       required final List<Branch> branches,
       required final int currentPageViewIdx,
       required final int currentVerticalNavbarIdx,
-      required final Option<Result<None, CoreFailure>> failureOption,
+      required final Option<Result<None<Object>, CoreFailure>> failureOption,
       required final bool isProcessing,
       required final User session,
       required final List<Tree> trees}) = _$_LibraryState;
@@ -1772,7 +1751,7 @@ abstract class _LibraryState implements LibraryState {
   @override
   int get currentVerticalNavbarIdx => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isProcessing => throw _privateConstructorUsedError;

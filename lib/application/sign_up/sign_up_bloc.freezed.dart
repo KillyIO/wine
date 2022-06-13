@@ -974,8 +974,6 @@ abstract class _$$UserDetailsSavedCopyWith<$Res> {
           _$UserDetailsSaved value, $Res Function(_$UserDetailsSaved) then) =
       __$$UserDetailsSavedCopyWithImpl<$Res>;
   $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -999,13 +997,6 @@ class __$$UserDetailsSavedCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 
@@ -1319,8 +1310,6 @@ abstract class _$$UsernameSavedCopyWith<$Res> {
           _$UsernameSaved value, $Res Function(_$UsernameSaved) then) =
       __$$UsernameSavedCopyWithImpl<$Res>;
   $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -1344,13 +1333,6 @@ class __$$UsernameSavedCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 

@@ -779,8 +779,6 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
           _$SessionFetched value, $Res Function(_$SessionFetched) then) =
       __$$SessionFetchedCopyWithImpl<$Res>;
   $Res call({User session});
-
-  $UserCopyWith<$Res> get session;
 }
 
 /// @nodoc
@@ -804,13 +802,6 @@ class __$$SessionFetchedCopyWithImpl<$Res>
           : session // ignore: cast_nullable_to_non_nullable
               as User,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get session {
-    return $UserCopyWith<$Res>(_value.session, (value) {
-      return _then(_value.copyWith(session: value));
-    });
   }
 }
 
@@ -1442,8 +1433,6 @@ abstract class _$$UserLoadedCopyWith<$Res> {
           _$UserLoaded value, $Res Function(_$UserLoaded) then) =
       __$$UserLoadedCopyWithImpl<$Res>;
   $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -1466,13 +1455,6 @@ class __$$UserLoadedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 

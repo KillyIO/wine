@@ -3,14 +3,14 @@ import 'package:devicelocale/devicelocale.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
+import 'package:wine/core/core_failure.domain.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
-import 'package:wine/features/core/core_failure.domain.dart';
 import 'package:wine/utils/constants/home.dart';
 
+part 'home_bloc.application.freezed.dart';
 part 'home_event.application.dart';
 part 'home_state.application.dart';
-part 'home_bloc.application.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)

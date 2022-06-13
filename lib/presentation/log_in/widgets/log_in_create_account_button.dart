@@ -7,9 +7,9 @@ import 'package:wine/utils/constants/palette.dart';
 class LogInCreateAccountButton extends StatelessWidget {
   /// @nodoc
   const LogInCreateAccountButton({
-    Key? key,
+    super.key,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final VoidCallback? onPressed;
