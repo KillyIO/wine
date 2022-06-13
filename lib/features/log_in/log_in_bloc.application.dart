@@ -16,9 +16,9 @@ import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/auth/password.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
 
-part 'log_in_bloc.freezed.dart';
-part 'log_in_event.dart';
-part 'log_in_state.dart';
+part 'log_in_bloc.application.freezed.dart';
+part 'log_in_event.application.dart';
+part 'log_in_state.application.dart';
 
 /// @nodoc
 @Environment(Environment.dev)

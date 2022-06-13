@@ -1,4 +1,4 @@
-part of 'log_in_bloc.dart';
+part of 'log_in_bloc.application.dart';
 
 /// @nodoc
 @freezed

@@ -13,7 +13,6 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:isar/isar.dart' as _i14;
 
 import 'application/library/library_bloc.dart' as _i24;
-import 'application/log_in/log_in_bloc.dart' as _i25;
 import 'application/settings/settings_bloc.dart' as _i26;
 import 'application/setup/setup_bloc.dart' as _i27;
 import 'application/sign_up/sign_up_bloc.dart' as _i28;
@@ -36,6 +35,7 @@ import 'features/branch/branch_bloc.application.dart' as _i32;
 import 'features/branch/branch_repository.infrastructure.dart' as _i11;
 import 'features/branch/i_branch_repository.domain.dart' as _i10;
 import 'features/home/home_bloc.application.dart' as _i17;
+import 'features/log_in/log_in_bloc.application.dart' as _i25;
 import 'infrastructure/default_covers/default_covers_repository.dart' as _i19;
 import 'infrastructure/sessions/sessions_repository.dart' as _i21;
 import 'infrastructure/settings/settings_repository.dart' as _i23;
