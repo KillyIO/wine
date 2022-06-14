@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
-import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/domain/user/user.dart';
+import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
+import 'package:wine/features/user/user.domain.dart';
 
-part 'isar_user.g.dart';
+part 'isar_user.infrastructure.g.dart';
 
 /// @nodoc
 @Collection(accessor: 'users')

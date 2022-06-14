@@ -1,7 +1,7 @@
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/core/value_failure.domain.dart';
-import 'package:wine/features/core/value_object.domain.dart';
-import 'package:wine/features/core/value_validators.domain.dart';
+import 'package:wine/core/value_failure.domain.dart';
+import 'package:wine/core/value_object.domain.dart';
+import 'package:wine/core/value_validators.domain.dart';
 
 /// @nodoc
 class Language extends ValueObject<String> {

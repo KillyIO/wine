@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:wine/domain/user/user.dart';
-import 'package:wine/infrastructure/user/user_dto.dart';
+import 'package:wine/features/user/user.domain.dart';
+import 'package:wine/features/user/user_dto.infrastructure.dart';
 import 'package:wine/utils/paths/users.dart';
 
 /// @nodoc

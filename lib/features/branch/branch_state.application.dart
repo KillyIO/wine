@@ -1,4 +1,4 @@
-part of 'branch_bloc.dart';
+part of 'branch_bloc.application.dart';
 
 /// @nodoc
 @freezed

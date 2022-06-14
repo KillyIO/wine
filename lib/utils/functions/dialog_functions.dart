@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 
-import 'package:wine/presentation/core/dialogs/error_dialog.dart';
-import 'package:wine/presentation/core/dialogs/success_dialog.dart';
+import 'package:wine/core/dialogs/error_dialog.presentation.dart';
+import 'package:wine/core/dialogs/success_dialog.presentation.dart';
 
 /// Used when an action requiring a redirection occurs,
 /// e.g. LogIn, SignUp, LogOut.

@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/domain/user/user.dart';
+import 'package:wine/core/converter.infrastructure.dart';
+import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
-import 'package:wine/infrastructure/core/converter.dart';
-import 'package:wine/infrastructure/user/isar_user.dart';
+import 'package:wine/features/user/isar_user.infrastructure.dart';
+import 'package:wine/features/user/user.domain.dart';
 
-part 'user_dto.freezed.dart';
-part 'user_dto.g.dart';
+part 'user_dto.infrastructure.freezed.dart';
+part 'user_dto.infrastructure.g.dart';
 
 /// @nodoc
 @freezed

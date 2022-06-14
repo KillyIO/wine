@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:path/path.dart' as p;
 import 'package:string_validator/string_validator.dart';
+import 'package:wine/core/cover_url.domain.dart';
 import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/features/branch/branch_dto.infrastructure.dart';

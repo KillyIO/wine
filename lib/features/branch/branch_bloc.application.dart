@@ -2,17 +2,21 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
+import 'package:wine/core/core_failure.domain.dart';
+import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/branch/branch.domain.dart';
+import 'package:wine/features/branch/i_branch_repository.domain.dart';
+import 'package:wine/features/user/i_user_repository.domain.dart';
+import 'package:wine/features/user/user.domain.dart';
 
 part 'branch_event.application.dart';
 part 'branch_state.application.dart';

@@ -4,8 +4,8 @@ import 'dart:io';
 import 'package:oxidized/oxidized.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
-import 'package:wine/features/core/string_helpers.infrastructure.dart';
-import 'package:wine/features/core/value_failure.domain.dart';
+import 'package:wine/core/string_helpers.infrastructure.dart';
+import 'package:wine/core/value_failure.domain.dart';
 
 import 'package:wine/utils/constants/branch.dart';
 import 'package:wine/utils/constants/core.dart';

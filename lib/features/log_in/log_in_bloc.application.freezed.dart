@@ -340,6 +340,8 @@ abstract class _$$CustomUsernameGeneratedCopyWith<$Res> {
           $Res Function(_$CustomUsernameGenerated) then) =
       __$$CustomUsernameGeneratedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -364,6 +366,13 @@ class __$$CustomUsernameGeneratedCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -1726,6 +1735,8 @@ abstract class _$$UserDetailsSavedCopyWith<$Res> {
           _$UserDetailsSaved value, $Res Function(_$UserDetailsSaved) then) =
       __$$UserDetailsSavedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -1749,6 +1760,13 @@ class __$$UserDetailsSavedCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -1938,6 +1956,8 @@ abstract class _$$UserLoadedCopyWith<$Res> {
           _$UserLoaded value, $Res Function(_$UserLoaded) then) =
       __$$UserLoadedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -1960,6 +1980,13 @@ class __$$UserLoadedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -2150,6 +2177,8 @@ abstract class _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
           $Res Function(_$UsernameAvailabilityConfirmed) then) =
       __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -2175,6 +2204,13 @@ class __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -2366,6 +2402,8 @@ abstract class _$$UsernameSavedCopyWith<$Res> {
           _$UsernameSaved value, $Res Function(_$UsernameSaved) then) =
       __$$UsernameSavedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -2388,6 +2426,13 @@ class __$$UsernameSavedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -2577,6 +2622,8 @@ abstract class _$$UserNotFoundCopyWith<$Res> {
           _$UserNotFound value, $Res Function(_$UserNotFound) then) =
       __$$UserNotFoundCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -2599,6 +2646,13 @@ class __$$UserNotFoundCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -2785,7 +2839,7 @@ abstract class UserNotFound implements LogInEvent {
 /// @nodoc
 mixin _$LogInState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -2804,7 +2858,7 @@ abstract class $LogInStateCopyWith<$Res> {
       _$LogInStateCopyWithImpl<$Res>;
   $Res call(
       {EmailAddress emailAddress,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -2836,7 +2890,7 @@ class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -2866,7 +2920,7 @@ abstract class _$$_LogInStateCopyWith<$Res>
   @override
   $Res call(
       {EmailAddress emailAddress,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -2900,7 +2954,7 @@ class __$$_LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -2935,7 +2989,7 @@ class _$_LogInState implements _LogInState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isAuthenticated;
   @override
@@ -2987,7 +3041,7 @@ class _$_LogInState implements _LogInState {
 abstract class _LogInState implements LogInState {
   const factory _LogInState(
       {required final EmailAddress emailAddress,
-      required final Option<Result<None, CoreFailure>> failureOption,
+      required final Option<Result<None<Object>, CoreFailure>> failureOption,
       required final bool isAuthenticated,
       required final bool isProcessing,
       required final Password password,
@@ -2996,7 +3050,7 @@ abstract class _LogInState implements LogInState {
   @override
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isAuthenticated => throw _privateConstructorUsedError;
