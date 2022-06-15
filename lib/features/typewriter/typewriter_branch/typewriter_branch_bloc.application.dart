@@ -1,9 +1,11 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart' hide Title;
+import 'package:flutter_quill/flutter_quill.dart' hide Leaf;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -22,28 +24,30 @@ import 'package:wine/core/typewriter_end_state.domain.dart';
 import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/tree/i_tree_repository.domain.dart';
-import 'package:wine/features/tree/subtitle.domain.dart';
-import 'package:wine/features/tree/synopsis.domain.dart';
 import 'package:wine/features/tree/tree.domain.dart';
+import 'package:wine/features/branch/branch.domain.dart';
+import 'package:wine/features/branch/i_branch_repository.domain.dart';
+import 'package:wine/features/branch/leaf.domain.dart';
+import 'package:wine/features/branch/licence.domain.dart';
 import 'package:wine/utils/constants/cover.dart';
+import 'package:wine/utils/constants/typewriter.dart';
 
-part 'typewriter_tree_bloc.freezed.dart';
-part 'typewriter_tree_event.dart';
-part 'typewriter_tree_state.dart';
+part 'typewriter_branch_bloc.application.freezed.dart';
+part 'typewriter_branch_event.application.dart';
+part 'typewriter_branch_state.application.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
 @Environment(Environment.prod)
 @injectable
-class TypewriterTreeBloc
-    extends Bloc<TypewriterTreeEvent, TypewriterTreeState> {
+class TypewriterBranchBloc
+    extends Bloc<TypewriterBranchEvent, TypewriterBranchState> {
   /// @nodoc
-  TypewriterTreeBloc(
+  TypewriterBranchBloc(
+    this._branchRepository,
     this._defaultCoversRepository,
     this._sessionsRepository,
-    this._treeRepository,
-  ) : super(TypewriterTreeState.initial()) {
+  ) : super(TypewriterBranchState.initial()) {
     on<AddCoverPressed>((_, emit) async {
       final imagePicker = ImagePicker();
 
@@ -70,19 +74,19 @@ class TypewriterTreeBloc
           final appDocDir = await getApplicationDocumentsDirectory();
           final coverPath =
               appDocDir.uri.resolve(p.basename(croppedFile.path)).path;
-          final coverFile = await croppedFile.copy(coverPath);
 
           emit(
             state.copyWith(
-              coverURL: coverFile.path,
+              coverURL: coverPath,
               failureOption: const None(),
             ),
           );
         }
       }
     });
+    on<BranchOneExistenceChecked>((_, emit) async => await _publish(emit));
     on<DeleteButtonPressed>((_, emit) async {
-      (await _treeRepository.deleteTree(state.tree.uid)).match(
+      (await _branchRepository.deleteBranch(state.branch.uid)).match(
         (_) {
           emit(
             state.copyWith(
@@ -94,7 +98,7 @@ class TypewriterTreeBloc
         (failure) {
           emit(
             state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              failureOption: Option.some(Err(CoreFailure.branch(failure))),
             ),
           );
         },
@@ -138,7 +142,7 @@ class TypewriterTreeBloc
         ),
       ),
     );
-    on<LaunchAsNewTree>((_, emit) async {
+    on<LaunchAsNewBranch>((value, emit) async {
       emit(
         state.copyWith(
           failureOption: Option.none(),
@@ -150,12 +154,22 @@ class TypewriterTreeBloc
         (user) {
           emit(
             state.copyWith(
-              tree: state.tree.copyWith(authorUID: user.uid),
+              branch: state.branch.copyWith(
+                authorUID: user.uid,
+                index: (value.previousBranch?.index ?? 0) + 1,
+                previousBranchUID: value.previousBranch?.uid,
+                treeUID: value.tree?.uid ?? value.previousBranch!.treeUID,
+              ),
               failureOption: const None(),
+              genres: value.tree?.genres ?? value.previousBranch!.genres,
+              isNSFW: value.tree?.isNSFW ?? value.previousBranch!.isNSFW,
+              language: value.tree?.language ?? value.previousBranch!.language,
+              leafController: QuillController.basic()
+                ..changes.listen((_) => add(const LeafChanged())),
             ),
           );
 
-          add(const TypewriterTreeEvent.sessionFetched());
+          add(const TypewriterBranchEvent.sessionFetched());
         },
         (failure) {
           emit(
@@ -175,63 +189,76 @@ class TypewriterTreeBloc
         ),
       );
 
-      final tree = value.tree;
-      if (tree != null) {
+      final branch = value.branch;
+      if (branch != null) {
+        final quillController = (branch.leaf.getOrNull() != null
+            ? QuillController(
+                document: Document.fromJson(
+                  jsonDecode(branch.leaf.getOrNull()!) as List<dynamic>,
+                ),
+                selection: const TextSelection.collapsed(offset: 0),
+              )
+            : QuillController.basic())
+          ..changes.listen((_) => add(const LeafChanged()));
+
         emit(
           state.copyWith(
-            coverURL: tree.coverURL.getOrCrash(),
-            genres: tree.genres,
+            branch: branch,
+            coverURL: branch.coverURL.getOrCrash(),
+            genres: branch.genres,
             isEdit: true,
-            isNSFW: tree.isNSFW,
+            isNSFW: branch.isNSFW,
             isProcessing: false,
-            language: tree.language,
-            tree: tree,
-            subtitle: tree.subtitle ?? Subtitle(''),
-            subtitleWordCount: tree.subtitle?.getOrNull()?.countWords() ?? 0,
-            subtitleController:
-                TextEditingController(text: tree.subtitle?.getOrNull()),
-            synopsis: tree.synopsis,
-            synopsisWordCount: tree.synopsis.getOrNull()?.countWords() ?? 0,
-            synopsisController:
-                TextEditingController(text: tree.synopsis.getOrNull()),
-            title: tree.title,
-            titleWordCount: tree.title.getOrNull()?.countWords() ?? 0,
+            language: branch.language,
+            leaf: branch.leaf,
+            leafWordCount:
+                quillController.document.toPlainText().trim().countWords(),
+            leafController: quillController,
+            licence: branch.licence,
+            title: branch.title,
+            titleWordCount: branch.title.getOrNull()?.countWords() ?? 0,
             titleController:
-                TextEditingController(text: tree.title.getOrNull()),
+                TextEditingController(text: branch.title.getOrNull()),
           ),
         );
       } else {
-        (await _treeRepository.loadTreeByUID(value.uid)).match(
-          (tree) {
+        (await _branchRepository.loadBranchByUID(value.uid)).match(
+          (branch_) {
+            final quillController = (branch_.leaf.getOrNull() != null
+                ? QuillController(
+                    document: Document.fromJson(
+                      jsonDecode(branch_.leaf.getOrNull()!) as List<dynamic>,
+                    ),
+                    selection: const TextSelection.collapsed(offset: 0),
+                  )
+                : QuillController.basic())
+              ..changes.listen((_) => add(const LeafChanged()));
+
             emit(
               state.copyWith(
-                coverURL: tree.coverURL.getOrCrash(),
-                genres: tree.genres,
+                branch: branch_,
+                coverURL: branch_.coverURL.getOrCrash(),
+                genres: branch_.genres,
                 isEdit: true,
-                isNSFW: tree.isNSFW,
+                isNSFW: branch_.isNSFW,
                 isProcessing: false,
-                language: tree.language,
-                tree: tree,
-                subtitle: tree.subtitle ?? Subtitle(''),
-                subtitleWordCount:
-                    tree.subtitle?.getOrNull()?.countWords() ?? 0,
-                subtitleController:
-                    TextEditingController(text: tree.subtitle?.getOrNull()),
-                synopsis: tree.synopsis,
-                synopsisWordCount: tree.synopsis.getOrNull()?.countWords() ?? 0,
-                synopsisController:
-                    TextEditingController(text: tree.synopsis.getOrNull()),
-                title: tree.title,
-                titleWordCount: tree.title.getOrNull()?.countWords() ?? 0,
+                language: branch_.language,
+                leaf: branch_.leaf,
+                leafWordCount:
+                    quillController.document.toPlainText().trim().countWords(),
+                leafController: quillController,
+                licence: branch_.licence,
+                title: branch_.title,
+                titleWordCount: branch_.title.getOrNull()?.countWords() ?? 0,
                 titleController:
-                    TextEditingController(text: tree.title.getOrNull()),
+                    TextEditingController(text: branch_.title.getOrNull()),
               ),
             );
           },
           (failure) {
             emit(
               state.copyWith(
-                failureOption: Option.some(Err(CoreFailure.tree(failure))),
+                failureOption: Option.some(Err(CoreFailure.branch(failure))),
                 isProcessing: false,
               ),
             );
@@ -239,26 +266,53 @@ class TypewriterTreeBloc
         );
       }
     });
+    on<LeafChanged>((_, emit) {
+      final valuePlainText = state.leafController.document.toPlainText();
+      final valueJson = state.leafController.document.toDelta().toJson();
+
+      final leafTrim = valuePlainText.trim();
+      final wordCount = leafTrim.countWords();
+
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          leaf: Leaf(valuePlainText, valueJson),
+          leafWordCount: wordCount,
+        ),
+      );
+    });
+    on<LicenceSelected>(
+      (value, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          licence: Licence(value.licence),
+        ),
+      ),
+    );
+    on<PageViewIndexChanged>((value, emit) {
+      if (state.currentPageViewIdx != value.index) {
+        var newIdx = value.index;
+        if (value.index > typewriterBranchPageViewKeys.length - 1) {
+          newIdx = 0;
+        }
+        if (value.index < 0) {
+          newIdx = typewriterBranchPageViewKeys.length - 1;
+        }
+        emit(
+          state.copyWith(
+            currentPageViewIdx: newIdx,
+            failureOption: Option.none(),
+          ),
+        );
+      }
+    });
     on<PublishButtonPressed>((_, emit) async {
       final isValid = state.genres.isNotEmpty &&
           state.language.isValid &&
-          state.synopsis.isValid &&
+          state.leaf.isValid &&
           state.title.isValid;
 
       if (isValid) {
-        final tree = state.tree.copyWith(
-          coverURL: isURL(state.coverURL)
-              ? CoverURL(state.coverURL)
-              : CoverURL.fromFile(state.coverURL),
-          genres: state.genres,
-          isNSFW: state.isNSFW,
-          language: state.language,
-          isPublished: true,
-          subtitle: state.subtitle,
-          synopsis: state.synopsis,
-          title: state.title,
-        );
-
         emit(
           state.copyWith(
             failureOption: Option.none(),
@@ -266,22 +320,35 @@ class TypewriterTreeBloc
           ),
         );
 
-        await _publishOrSave(
-          state.isEdit,
-          TypewriterEndState.published,
-          tree,
-          emit,
-        );
+        if (state.branch.previousBranchUID == null) {
+          (await _branchRepository
+                  .checkBranchOneAlreadyExists(state.branch.treeUID))
+              .match(
+            (_) {
+              add(const TypewriterBranchEvent.branchOneExistenceChecked());
+            },
+            (failure) {
+              emit(
+                state.copyWith(
+                  failureOption: Option.some(Err(CoreFailure.branch(failure))),
+                  isProcessing: false,
+                ),
+              );
+            },
+          );
+        } else {
+          await _publish(emit);
+        }
       }
     });
     on<SaveButtonPressed>((_, emit) async {
-      final tree = state.tree.copyWith(
+      final branch = state.branch.copyWith(
         coverURL: CoverURL(state.coverURL),
         genres: state.genres,
         isNSFW: state.isNSFW,
         language: Language.forSaving(state.language.value),
-        subtitle: state.subtitle,
-        synopsis: Synopsis.forSaving(state.synopsis.value),
+        leaf: Leaf.forSaving(state.leaf.value),
+        licence: Licence.forSaving(state.licence.value),
         title: Title.forSaving(state.title.value),
       );
 
@@ -295,7 +362,7 @@ class TypewriterTreeBloc
       await _publishOrSave(
         state.isEdit,
         TypewriterEndState.saved,
-        tree,
+        branch,
         emit,
       );
     });
@@ -324,30 +391,6 @@ class TypewriterTreeBloc
         },
       );
     });
-    on<SubtitleChanged>((value, emit) {
-      final subtitleTrim = value.subtitle.trim();
-      final wordCount = subtitleTrim.countWords();
-
-      emit(
-        state.copyWith(
-          failureOption: const None(),
-          subtitle: Subtitle(subtitleTrim),
-          subtitleWordCount: wordCount,
-        ),
-      );
-    });
-    on<SynopsisChanged>((value, emit) {
-      final synopsisTrim = value.synopsis.trim();
-      final wordCount = synopsisTrim.countWords();
-
-      emit(
-        state.copyWith(
-          failureOption: const None(),
-          synopsis: Synopsis(synopsisTrim),
-          synopsisWordCount: wordCount,
-        ),
-      );
-    });
     on<TitleChanged>((value, emit) {
       final titleTrim = value.title.trim();
       final wordCount = titleTrim.countWords();
@@ -355,6 +398,7 @@ class TypewriterTreeBloc
       emit(
         state.copyWith(
           failureOption: const None(),
+          isProcessing: false,
           title: Title(titleTrim),
           titleWordCount: wordCount,
         ),
@@ -362,53 +406,82 @@ class TypewriterTreeBloc
     });
   }
 
+  final IBranchRepository _branchRepository;
   final IDefaultCoversRepository _defaultCoversRepository;
   final ISessionsRepository _sessionsRepository;
-  final ITreeRepository _treeRepository;
+
+  FutureOr<void> _publish(Emitter<TypewriterBranchState> emit) async {
+    final branch = state.branch.copyWith(
+      coverURL: isURL(state.coverURL)
+          ? CoverURL(state.coverURL)
+          : CoverURL.fromFile(state.coverURL),
+      genres: state.genres,
+      isNSFW: state.isNSFW,
+      language: state.language,
+      leaf: state.leaf,
+      licence: state.licence,
+      isPublished: true,
+      title: state.title,
+    );
+
+    emit(
+      state.copyWith(
+        failureOption: Option.none(),
+        isProcessing: true,
+      ),
+    );
+
+    await _publishOrSave(
+      state.isEdit,
+      TypewriterEndState.published,
+      branch,
+      emit,
+    );
+  }
 
   FutureOr<void> _publishOrSave(
     bool isEdit,
     TypewriterEndState endState,
-    Tree tree,
-    Emitter<TypewriterTreeState> emit,
+    Branch branch,
+    Emitter<TypewriterBranchState> emit,
   ) async {
     if (state.isEdit) {
-      (await _treeRepository.updateTree(tree)).match(
-        (tree_) {
+      (await _branchRepository.updateBranch(branch)).match(
+        (branch) {
           emit(
             state.copyWith(
+              branch: branch,
               endState: endState,
               failureOption: const None(),
               isProcessing: false,
-              tree: tree_,
             ),
           );
         },
         (failure) {
           emit(
             state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              failureOption: Option.some(Err(CoreFailure.branch(failure))),
               isProcessing: false,
             ),
           );
         },
       );
     } else {
-      (await _treeRepository.createTree(tree)).match(
-        (tree_) {
+      (await _branchRepository.createBranch(branch)).match(
+        (branch) {
           emit(
             state.copyWith(
+              branch: branch,
               endState: endState,
               failureOption: const None(),
               isProcessing: false,
-              tree: tree_,
             ),
           );
         },
         (failure) {
           emit(
             state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              failureOption: Option.some(Err(CoreFailure.branch(failure))),
               isProcessing: false,
             ),
           );

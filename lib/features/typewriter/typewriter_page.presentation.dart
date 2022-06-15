@@ -5,10 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/core/typewriter_type.domain.dart';
 import 'package:wine/features/tree/tree.domain.dart';
-import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_new_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_branch_uid_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_new_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_tree/typewriter_tree_uid_page.dart';
+import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_new_page.presentation.dart';
+import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_uid_page.presentation.dart';
+import 'package:wine/features/typewriter/typewriter_tree/typewriter_tree_new_page.presentation.dart';
+import 'package:wine/features/typewriter/typewriter_tree/typewriter_tree_uid_page.presentation.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 

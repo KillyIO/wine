@@ -1,11 +1,13 @@
-part of 'typewriter_tree_bloc.dart';
+part of 'typewriter_branch_bloc.application.dart';
 
 /// @nodoc
 @freezed
-class TypewriterTreeState with _$TypewriterTreeState {
+class TypewriterBranchState with _$TypewriterBranchState {
   /// @nodoc
-  const factory TypewriterTreeState({
+  const factory TypewriterBranchState({
+    required Branch branch,
     required String coverURL,
+    required int currentPageViewIdx,
     required TypewriterEndState endState,
     required Option<Result<None, CoreFailure>> failureOption,
     required List<Genre> genres,
@@ -13,22 +15,21 @@ class TypewriterTreeState with _$TypewriterTreeState {
     required bool isNSFW,
     required bool isProcessing,
     required Language language,
+    required Leaf leaf,
+    required QuillController leafController,
+    required int leafWordCount,
+    required Licence licence,
     required bool showErrorMessages,
-    required Subtitle subtitle,
-    required TextEditingController subtitleController,
-    required int subtitleWordCount,
-    required Synopsis synopsis,
-    required TextEditingController synopsisController,
-    required int synopsisWordCount,
     required Title title,
     required TextEditingController titleController,
     required int titleWordCount,
-    required Tree tree,
-  }) = _TypewriterTreeState;
+  }) = _TypewriterBranchState;
 
   /// @nodoc
-  factory TypewriterTreeState.initial() => TypewriterTreeState(
+  factory TypewriterBranchState.initial() => TypewriterBranchState(
+        branch: Branch.empty(),
         coverURL: '',
+        currentPageViewIdx: 0,
         endState: TypewriterEndState.unknown,
         failureOption: const None(),
         genres: <Genre>[],
@@ -36,16 +37,13 @@ class TypewriterTreeState with _$TypewriterTreeState {
         isNSFW: false,
         isProcessing: false,
         language: Language(''),
+        leaf: Leaf('', const <dynamic>[]),
+        leafController: QuillController.basic(),
+        leafWordCount: 0,
+        licence: Licence(''),
         showErrorMessages: false,
-        subtitle: Subtitle(''),
-        subtitleController: TextEditingController(),
-        subtitleWordCount: 0,
-        synopsis: Synopsis(''),
-        synopsisController: TextEditingController(),
-        synopsisWordCount: 0,
         title: Title(''),
         titleController: TextEditingController(),
         titleWordCount: 0,
-        tree: Tree.empty(),
       );
 }

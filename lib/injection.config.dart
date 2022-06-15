@@ -12,10 +12,6 @@ import 'package:google_sign_in/google_sign_in.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:isar/isar.dart' as _i16;
 
-import 'application/typewriter/typewriter_branch/typewriter_branch_bloc.dart'
-    as _i31;
-import 'application/typewriter/typewriter_tree/typewriter_tree_bloc.dart'
-    as _i32;
 import 'core/firebase_injectable_module.infrastructure.dart' as _i34;
 import 'core/isar_injectable_module.infrastructure.dart' as _i35;
 import 'features/auth/auth_bloc.application.dart' as _i17;
@@ -42,6 +38,10 @@ import 'features/sign_up/sign_up_bloc.application.dart' as _i29;
 import 'features/tree/i_tree_repository.domain.dart' as _i12;
 import 'features/tree/tree_bloc.application.dart' as _i30;
 import 'features/tree/tree_repository.infrastructure.dart' as _i13;
+import 'features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart'
+    as _i31;
+import 'features/typewriter/typewriter_tree/typewriter_tree_bloc.application.dart'
+    as _i32;
 import 'features/user/i_user_repository.domain.dart' as _i14;
 import 'features/user/user_repository.infrastructure.dart' as _i15;
 

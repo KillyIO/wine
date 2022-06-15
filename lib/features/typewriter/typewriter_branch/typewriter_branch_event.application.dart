@@ -1,4 +1,4 @@
-part of 'typewriter_branch_bloc.dart';
+part of 'typewriter_branch_bloc.application.dart';
 
 /// @nodoc
 @freezed

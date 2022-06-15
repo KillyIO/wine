@@ -8,7 +8,7 @@ import 'package:wine/features/auth/auth_dialog_cubit.application.dart';
 import 'package:wine/features/log_in/log_in_bloc.application.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/routes/router.dart';
-import 'package:wine/presentation/web/auth_dialog.dart';
+import 'package:wine/features/web/auth_dialog.presentation.dart';
 
 /// @nodoc
 Future<void> handleAuthGuardedAction(

@@ -29,8 +29,10 @@ import 'package:wine/features/settings/settings_tree/settings_tree_page.presenta
 import 'package:wine/features/sign_up/sign_up_page.presentation.dart' as _i8;
 import 'package:wine/features/tree/tree.domain.dart' as _i17;
 import 'package:wine/features/tree/tree_page.presentation.dart' as _i6;
-import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i9;
-import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i7;
+import 'package:wine/features/typewriter/typewriter_page.presentation.dart'
+    as _i9;
+import 'package:wine/features/wrappers/settings_wrapper.presentation.dart'
+    as _i7;
 
 class AppRouter extends _i14.RootStackRouter {
   AppRouter([_i15.GlobalKey<_i15.NavigatorState>? navigatorKey])
