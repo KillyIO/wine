@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:wine/domain/tree/subtitle.dart';
-import 'package:wine/domain/tree/synopsis.dart';
-import 'package:wine/domain/tree/tree.dart';
+import 'package:wine/features/tree/subtitle.domain.dart';
+import 'package:wine/features/tree/synopsis.domain.dart';
+import 'package:wine/features/tree/tree.domain.dart';
 import 'package:wine/features/core/cover_url.domain.dart';
 import 'package:wine/features/core/genre.domain.dart';
 import 'package:wine/features/core/language.domain.dart';

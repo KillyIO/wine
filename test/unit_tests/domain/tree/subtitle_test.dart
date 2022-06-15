@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/tree/subtitle.dart';
+import 'package:wine/features/tree/subtitle.domain.dart';
 import 'package:wine/features/core/value_failure.domain.dart';
 
 import '../../utils/constants.dart';

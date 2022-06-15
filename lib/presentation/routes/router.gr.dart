@@ -13,7 +13,6 @@
 import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:flutter/material.dart' as _i15;
 import 'package:wine/core/typewriter_type.domain.dart' as _i18;
-import 'package:wine/domain/tree/tree.dart' as _i17;
 import 'package:wine/features/branch/branch.domain.dart' as _i16;
 import 'package:wine/features/branch/branch_page.presentation.dart' as _i1;
 import 'package:wine/features/home/home_page.presentation.dart' as _i2;
@@ -28,6 +27,7 @@ import 'package:wine/features/settings/settings_page.presentation.dart' as _i13;
 import 'package:wine/features/settings/settings_tree/settings_tree_page.presentation.dart'
     as _i12;
 import 'package:wine/features/sign_up/sign_up_page.presentation.dart' as _i8;
+import 'package:wine/features/tree/tree.domain.dart' as _i17;
 import 'package:wine/features/tree/tree_page.presentation.dart' as _i6;
 import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i9;
 import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i7;

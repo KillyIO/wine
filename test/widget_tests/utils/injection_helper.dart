@@ -6,7 +6,7 @@ import 'package:wine/features/branch/i_branch_repository.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
-import 'package:wine/domain/tree/i_tree_repository.dart';
+import 'package:wine/features/tree/i_tree_repository.domain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/auth/auth_bloc.application.dart';
 import 'package:wine/features/auth/auth_dialog_cubit.application.dart';

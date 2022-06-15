@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/core/unique_id.domain.dart';
-import 'package:wine/domain/tree/tree.dart';
-import 'package:wine/domain/tree/tree_failure.dart';
+import 'package:wine/features/tree/tree.domain.dart';
+import 'package:wine/features/tree/tree_failure.domain.dart';
 
 /// @nodoc
 abstract class ITreeRepository {

@@ -4,10 +4,10 @@ import 'package:wine/core/genre.domain.dart';
 import 'package:wine/core/language.domain.dart';
 import 'package:wine/core/title.domain.dart';
 import 'package:wine/core/unique_id.domain.dart';
-import 'package:wine/domain/tree/subtitle.dart';
-import 'package:wine/domain/tree/synopsis.dart';
+import 'package:wine/features/tree/subtitle.domain.dart';
+import 'package:wine/features/tree/synopsis.domain.dart';
 
-part 'tree.freezed.dart';
+part 'tree.domain.freezed.dart';
 
 /// @nodoc
 @freezed

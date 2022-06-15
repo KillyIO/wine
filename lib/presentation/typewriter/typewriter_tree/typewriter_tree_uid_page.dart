@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/typewriter/typewriter_tree/typewriter_tree_bloc.dart';
 import 'package:wine/core/unique_id.domain.dart';
-import 'package:wine/domain/tree/tree.dart';
+import 'package:wine/features/tree/tree.domain.dart';
 
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/typewriter/typewriter_tree/typwriter_tree_layout.presentation.dart';

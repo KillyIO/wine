@@ -18,7 +18,6 @@ import 'application/typewriter/typewriter_tree/typewriter_tree_bloc.dart'
     as _i32;
 import 'core/firebase_injectable_module.infrastructure.dart' as _i34;
 import 'core/isar_injectable_module.infrastructure.dart' as _i35;
-import 'domain/tree/i_tree_repository.dart' as _i12;
 import 'features/auth/auth_bloc.application.dart' as _i17;
 import 'features/auth/auth_dialog_cubit.application.dart' as _i3;
 import 'features/auth/firebase_auth_facade.infrastructure.dart' as _i9;
@@ -40,6 +39,7 @@ import 'features/settings/settings_bloc.application.dart' as _i27;
 import 'features/settings/settings_repository.infrastructure.dart' as _i24;
 import 'features/setup/setup_bloc.application.dart' as _i28;
 import 'features/sign_up/sign_up_bloc.application.dart' as _i29;
+import 'features/tree/i_tree_repository.domain.dart' as _i12;
 import 'features/tree/tree_bloc.application.dart' as _i30;
 import 'features/tree/tree_repository.infrastructure.dart' as _i13;
 import 'features/user/i_user_repository.domain.dart' as _i14;

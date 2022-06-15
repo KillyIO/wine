@@ -7,8 +7,8 @@ import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/features/branch/i_branch_repository.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/domain/tree/i_tree_repository.dart';
-import 'package:wine/domain/tree/tree.dart';
+import 'package:wine/features/tree/i_tree_repository.domain.dart';
+import 'package:wine/features/tree/tree.domain.dart';
 import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/utils/constants/library.dart';
 
