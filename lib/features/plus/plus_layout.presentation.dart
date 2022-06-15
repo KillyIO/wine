@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
-import 'package:wine/presentation/core/buttons/tile_button.dart';
-import 'package:wine/presentation/plus/widgets/plus_banner.dart';
+import 'package:wine/core/buttons/tile_button.presentation.dart';
+import 'package:wine/features/plus/plus_banner.presentation.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
@@ -11,7 +11,7 @@ import 'package:wine/utils/functions/navigation_functions.dart';
 /// @nodoc
 class PlusLayout extends StatelessWidget {
   /// @nodoc
-  const PlusLayout({Key? key}) : super(key: key);
+  const PlusLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
