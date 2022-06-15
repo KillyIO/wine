@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wine/core/core_failure.domain.dart';
-import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/auth/auth_failure.domain.dart' as auth_failure;
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';

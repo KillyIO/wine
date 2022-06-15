@@ -3,9 +3,9 @@ import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:oxidized/oxidized.dart';
 
-import 'package:wine/domain/settings/i_settings_repository.dart';
-import 'package:wine/domain/settings/settings.dart';
-import 'package:wine/domain/settings/settings_failure.dart';
+import 'package:wine/features/settings/i_settings_repository.domain.dart';
+import 'package:wine/features/settings/settings.domain.dart';
+import 'package:wine/features/settings/settings_failure.domain.dart';
 import 'package:wine/features/settings/isar_settings.infrastructure.dart';
 import 'package:wine/features/settings/settings_dto.infrastructure.dart';
 

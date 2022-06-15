@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/core/core_failure.domain.dart';
-import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/features/auth/confirm_password.domain.dart';

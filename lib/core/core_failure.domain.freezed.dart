@@ -447,6 +447,8 @@ abstract class _$$_DefaultCoversCopyWith<$Res> {
           _$_DefaultCovers value, $Res Function(_$_DefaultCovers) then) =
       __$$_DefaultCoversCopyWithImpl<$Res>;
   $Res call({DefaultCoversFailure f});
+
+  $DefaultCoversFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
@@ -470,6 +472,13 @@ class __$$_DefaultCoversCopyWithImpl<$Res>
           : f // ignore: cast_nullable_to_non_nullable
               as DefaultCoversFailure,
     ));
+  }
+
+  @override
+  $DefaultCoversFailureCopyWith<$Res> get f {
+    return $DefaultCoversFailureCopyWith<$Res>(_value.f, (value) {
+      return _then(_value.copyWith(f: value));
+    });
   }
 }
 
@@ -611,8 +620,6 @@ abstract class _$$_SessionsCopyWith<$Res> {
           _$_Sessions value, $Res Function(_$_Sessions) then) =
       __$$_SessionsCopyWithImpl<$Res>;
   $Res call({SessionsFailure f});
-
-  $SessionsFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
@@ -635,13 +642,6 @@ class __$$_SessionsCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
           : f // ignore: cast_nullable_to_non_nullable
               as SessionsFailure,
     ));
-  }
-
-  @override
-  $SessionsFailureCopyWith<$Res> get f {
-    return $SessionsFailureCopyWith<$Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
-    });
   }
 }
 

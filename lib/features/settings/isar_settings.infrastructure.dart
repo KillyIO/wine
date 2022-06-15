@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
-import 'package:wine/domain/settings/settings.dart';
+import 'package:wine/features/settings/settings.domain.dart';
 
 part 'isar_settings.infrastructure.g.dart';
 

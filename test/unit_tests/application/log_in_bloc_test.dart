@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
-import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/domain/user/user_failure.dart';

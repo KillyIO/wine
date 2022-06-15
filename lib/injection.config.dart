@@ -12,9 +12,9 @@ import 'package:google_sign_in/google_sign_in.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:isar/isar.dart' as _i16;
 
-import 'application/library/library_bloc.dart' as _i24;
-import 'application/setup/setup_bloc.dart' as _i27;
-import 'application/sign_up/sign_up_bloc.dart' as _i28;
+import 'application/library/library_bloc.dart' as _i17;
+import 'application/setup/setup_bloc.dart' as _i28;
+import 'application/sign_up/sign_up_bloc.dart' as _i20;
 import 'application/tree/tree_bloc.dart' as _i29;
 import 'application/typewriter/typewriter_branch/typewriter_branch_bloc.dart'
     as _i30;
@@ -22,10 +22,8 @@ import 'application/typewriter/typewriter_tree/typewriter_tree_bloc.dart'
     as _i31;
 import 'core/firebase_injectable_module.infrastructure.dart' as _i33;
 import 'core/isar_injectable_module.infrastructure.dart' as _i34;
-import 'domain/sessions/i_sessions_repository.dart' as _i20;
-import 'domain/settings/i_settings_repository.dart' as _i22;
 import 'domain/tree/i_tree_repository.dart' as _i12;
-import 'features/auth/auth_bloc.application.dart' as _i17;
+import 'features/auth/auth_bloc.application.dart' as _i21;
 import 'features/auth/auth_dialog_cubit.application.dart' as _i3;
 import 'features/auth/firebase_auth_facade.infrastructure.dart' as _i9;
 import 'features/auth/i_auth_facade.domain.dart' as _i8;
@@ -33,14 +31,17 @@ import 'features/branch/branch_bloc.application.dart' as _i32;
 import 'features/branch/branch_repository.infrastructure.dart' as _i11;
 import 'features/branch/i_branch_repository.domain.dart' as _i10;
 import 'features/default_covers/default_covers_repository.infrastructure.dart'
-    as _i18;
-import 'features/home/home_bloc.application.dart' as _i19;
-import 'features/log_in/log_in_bloc.application.dart' as _i25;
-import 'features/settings/settings_bloc.application.dart' as _i26;
-import 'features/settings/settings_repository.infrastructure.dart' as _i23;
+    as _i24;
+import 'features/default_covers/i_default_covers_repository.domain.dart'
+    as _i23;
+import 'features/home/home_bloc.application.dart' as _i22;
+import 'features/log_in/log_in_bloc.application.dart' as _i18;
+import 'features/settings/i_settings_repository.domain.dart' as _i25;
+import 'features/settings/settings_bloc.application.dart' as _i27;
+import 'features/settings/settings_repository.infrastructure.dart' as _i26;
 import 'features/user/i_user_repository.domain.dart' as _i14;
 import 'features/user/user_repository.infrastructure.dart' as _i15;
-import 'infrastructure/sessions/sessions_repository.dart' as _i21;
+import 'infrastructure/sessions/sessions_repository.dart' as _i19;
 import 'infrastructure/tree/tree_repository.dart' as _i13;
 
 const String _dev = 'dev';
@@ -80,67 +81,67 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   await gh.lazySingletonAsync<_i16.Isar>(() => iIsarInjectableModule.isar,
       registerFor: {_dev, _prod}, preResolve: true);
-  gh.factory<_i17.AuthBloc>(() => _i17.AuthBloc(get<_i8.IAuthFacade>()),
+  gh.factory<_i17.LibraryBloc>(
+      () => _i17.LibraryBloc(
+          get<dynamic>(), get<dynamic>(), get<_i12.ITreeRepository>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i18.DefaultCoversRepository>(
-      () => _i18.DefaultCoversRepository(
+  gh.factory<_i18.LogInBloc>(
+      () => _i18.LogInBloc(
+          get<_i8.IAuthFacade>(), get<dynamic>(), get<_i14.IUserRepository>()),
+      registerFor: {_dev, _prod});
+  gh.lazySingleton<_i19.SessionsRepository>(
+      () => _i19.SessionsRepository(get<_i4.FirebaseAuth>(), get<_i16.Isar>()),
+      registerFor: {_dev, _prod});
+  gh.factory<_i20.SignUpBloc>(
+      () => _i20.SignUpBloc(
+          get<_i8.IAuthFacade>(), get<dynamic>(), get<_i14.IUserRepository>()),
+      registerFor: {_dev, _prod});
+  gh.factory<_i21.AuthBloc>(() => _i21.AuthBloc(get<_i8.IAuthFacade>()),
+      registerFor: {_dev, _prod});
+  gh.factory<_i22.HomeBloc>(() => _i22.HomeBloc(get<_i12.ITreeRepository>()),
+      registerFor: {_dev, _prod});
+  gh.lazySingleton<_i23.IDefaultCoversRepository>(
+      () => _i24.DefaultCoversRepository(
           get<_i5.FirebaseFirestore>(), get<_i16.Isar>()),
       registerFor: {_dev, _prod});
-  gh.factory<_i19.HomeBloc>(() => _i19.HomeBloc(get<_i12.ITreeRepository>()),
+  gh.lazySingleton<_i25.ISettingsRepository>(
+      () => _i26.SettingsRepository(get<_i4.FirebaseAuth>(), get<_i16.Isar>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i20.ISessionsRepository>(
-      () => _i21.SessionsRepository(get<_i4.FirebaseAuth>(), get<_i16.Isar>()),
+  gh.factory<_i27.SettingsBloc>(
+      () => _i27.SettingsBloc(get<_i8.IAuthFacade>(), get<dynamic>(),
+          get<_i25.ISettingsRepository>()),
       registerFor: {_dev, _prod});
-  gh.lazySingleton<_i22.ISettingsRepository>(
-      () => _i23.SettingsRepository(get<_i4.FirebaseAuth>(), get<_i16.Isar>()),
-      registerFor: {_dev, _prod});
-  gh.factory<_i24.LibraryBloc>(
-      () => _i24.LibraryBloc(get<dynamic>(), get<_i20.ISessionsRepository>(),
-          get<_i12.ITreeRepository>()),
-      registerFor: {_dev, _prod});
-  gh.factory<_i25.LogInBloc>(
-      () => _i25.LogInBloc(get<_i8.IAuthFacade>(),
-          get<_i20.ISessionsRepository>(), get<_i14.IUserRepository>()),
-      registerFor: {_dev, _prod});
-  gh.factory<_i26.SettingsBloc>(
-      () => _i26.SettingsBloc(get<_i8.IAuthFacade>(),
-          get<_i20.ISessionsRepository>(), get<_i22.ISettingsRepository>()),
-      registerFor: {_dev, _prod});
-  gh.factory<_i27.SetupBloc>(
-      () => _i27.SetupBloc(
+  gh.factory<_i28.SetupBloc>(
+      () => _i28.SetupBloc(
           get<_i8.IAuthFacade>(),
+          get<_i23.IDefaultCoversRepository>(),
           get<dynamic>(),
-          get<_i20.ISessionsRepository>(),
-          get<_i22.ISettingsRepository>(),
+          get<_i25.ISettingsRepository>(),
           get<_i14.IUserRepository>()),
-      registerFor: {_dev, _prod});
-  gh.factory<_i28.SignUpBloc>(
-      () => _i28.SignUpBloc(get<_i8.IAuthFacade>(),
-          get<_i20.ISessionsRepository>(), get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i29.TreeBloc>(
       () => _i29.TreeBloc(
           get<_i8.IAuthFacade>(),
           get<_i10.IBranchRepository>(),
-          get<_i20.ISessionsRepository>(),
-          get<_i22.ISettingsRepository>(),
+          get<dynamic>(),
+          get<_i25.ISettingsRepository>(),
           get<_i12.ITreeRepository>(),
           get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i30.TypewriterBranchBloc>(
       () => _i30.TypewriterBranchBloc(get<_i10.IBranchRepository>(),
-          get<dynamic>(), get<_i20.ISessionsRepository>()),
+          get<_i23.IDefaultCoversRepository>(), get<dynamic>()),
       registerFor: {_dev, _prod});
   gh.factory<_i31.TypewriterTreeBloc>(
-      () => _i31.TypewriterTreeBloc(get<dynamic>(),
-          get<_i20.ISessionsRepository>(), get<_i12.ITreeRepository>()),
+      () => _i31.TypewriterTreeBloc(get<_i23.IDefaultCoversRepository>(),
+          get<dynamic>(), get<_i12.ITreeRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i32.BranchBloc>(
       () => _i32.BranchBloc(
           get<_i8.IAuthFacade>(),
           get<_i10.IBranchRepository>(),
-          get<_i20.ISessionsRepository>(),
-          get<_i22.ISettingsRepository>(),
+          get<dynamic>(),
+          get<_i25.ISettingsRepository>(),
           get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   return get;
