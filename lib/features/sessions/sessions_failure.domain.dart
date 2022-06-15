@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'sessions_failure.freezed.dart';
+part 'sessions_failure.domain.freezed.dart';
 
 /// Collection of failures
 ///

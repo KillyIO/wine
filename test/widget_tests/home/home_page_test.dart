@@ -7,7 +7,7 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/features/default_covers/default_covers_failure.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/domain/sessions/sessions_failure.dart';
+import 'package:wine/features/sessions/sessions_failure.domain.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
 import 'package:wine/features/settings/settings_failure.domain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
