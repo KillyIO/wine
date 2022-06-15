@@ -7,7 +7,7 @@ import 'package:wine/core/typewriter_end_state.domain.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
 import 'package:wine/core/dialogs/warning_dialog.presentation.dart';
 import 'package:wine/core/labels/text_field_label.presentation.dart';
-import 'package:wine/presentation/routes/router.dart';
+import 'package:wine/core/routes/router.dart';
 import 'package:wine/core/typewriter/typewriter_cover.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_genres.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_selection_dialog.presentation.dart';

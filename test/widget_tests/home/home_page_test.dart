@@ -18,7 +18,7 @@ import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/home/home_app_bar.presentation.dart';
 import 'package:wine/features/home/home_bloc.application.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/routes/router.dart';
+import 'package:wine/core/routes/router.dart';
 
 import '../../mocks/domain_mocks.dart';
 import '../../unit_tests/utils/constants.dart';

@@ -6,7 +6,7 @@ import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_blo
 import 'package:wine/core/typewriter_end_state.domain.dart';
 import 'package:wine/core/page_view/horizontal_page_view_navbar.presentation.dart';
 import 'package:wine/features/typewriter/typewriter_branch/typewriter_page_view_builder.presentation.dart';
-import 'package:wine/presentation/routes/router.dart';
+import 'package:wine/core/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/constants/typewriter.dart';

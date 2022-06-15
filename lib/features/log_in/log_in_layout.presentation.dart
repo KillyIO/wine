@@ -8,7 +8,7 @@ import 'package:wine/features/log_in/log_in_bloc.application.dart';
 import 'package:wine/features/log_in/log_in_create_account_button.presentation.dart';
 import 'package:wine/features/log_in/log_in_separator.presentation.dart';
 import 'package:wine/features/log_in/log_in_social_media_button.presentation.dart';
-import 'package:wine/presentation/routes/router.dart';
+import 'package:wine/core/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
