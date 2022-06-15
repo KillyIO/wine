@@ -58,7 +58,7 @@ extension DefaultCoverDTOX on DefaultCoverDTO {
 }
 
 /// @nodoc
-extension DefaultCoverMapX on Map {
+extension DefaultCoverMapX on Map<dynamic, dynamic> {
   /// @nodoc
   DefaultCover toDomain() => DefaultCover(
         key: this['key'] as String,

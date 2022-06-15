@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
+import 'package:wine/features/user/user.domain.dart';
 
 part 'auth_event.application.dart';
 part 'auth_state.application.dart';
@@ -31,7 +33,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   final IAuthFacade _authFacade;
 
-  StreamSubscription? _authSubscription;
+  StreamSubscription<Option<User>>? _authSubscription;
 
   @override
   Future<void> close() {

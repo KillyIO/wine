@@ -129,7 +129,7 @@ extension BranchDTOX on BranchDTO {
 }
 
 /// @nodoc
-extension BranchMapX on Map {
+extension BranchMapX on Map<dynamic, dynamic> {
   /// @nodoc
   Branch toDomain() => Branch(
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),

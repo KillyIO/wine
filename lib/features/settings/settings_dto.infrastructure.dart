@@ -71,7 +71,7 @@ extension SettingsDTOX on SettingsDTO {
 }
 
 /// @nodoc
-extension SettingsMapX on Map {
+extension SettingsMapX on Map<dynamic, dynamic> {
   /// @nodoc
   Settings toDomain() => Settings(
         enableBranchesBookmarksCount:

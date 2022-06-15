@@ -6,7 +6,7 @@ class UnexpectedValueError {
   UnexpectedValueError(this.valueFailure);
 
   /// @nodoc
-  final ValueFailure valueFailure;
+  final ValueFailure<dynamic> valueFailure;
 
   @override
   String toString() {

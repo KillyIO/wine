@@ -73,7 +73,7 @@ extension UserDTOX on UserDTO {
 }
 
 /// @nodoc
-extension UserMapX on Map {
+extension UserMapX on Map<dynamic, dynamic> {
   /// @nodoc
   User toDomain() => User(
         emailAddress: EmailAddress(this['emailAddress'] as String),

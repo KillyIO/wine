@@ -102,7 +102,7 @@ extension TreeDTOX on TreeDTO {
 }
 
 /// @nodoc
-extension TreeMapX on Map {
+extension TreeMapX on Map<dynamic, dynamic> {
   /// @nodoc
   Tree toDomain() => Tree(
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
