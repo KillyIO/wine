@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/domain/settings/settings.dart';
-import 'package:wine/infrastructure/settings/isar_settings.dart';
+import 'package:wine/features/settings/isar_settings.infrastructure.dart';
 
-part 'settings_dto.freezed.dart';
-part 'settings_dto.g.dart';
+part 'settings_dto.infrastructure.freezed.dart';
+part 'settings_dto.infrastructure.g.dart';
 
 /// @nodoc
 @freezed

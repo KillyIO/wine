@@ -974,6 +974,8 @@ abstract class _$$UserDetailsSavedCopyWith<$Res> {
           _$UserDetailsSaved value, $Res Function(_$UserDetailsSaved) then) =
       __$$UserDetailsSavedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -997,6 +999,13 @@ class __$$UserDetailsSavedCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -1310,6 +1319,8 @@ abstract class _$$UsernameSavedCopyWith<$Res> {
           _$UsernameSaved value, $Res Function(_$UsernameSaved) then) =
       __$$UsernameSavedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -1333,6 +1344,13 @@ class __$$UsernameSavedCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -1669,7 +1687,7 @@ abstract class UsernameChanged implements SignUpEvent {
 mixin _$SignUpState {
   ConfirmPassword get confirmPassword => throw _privateConstructorUsedError;
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -1690,7 +1708,7 @@ abstract class $SignUpStateCopyWith<$Res> {
   $Res call(
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -1729,7 +1747,7 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -1764,7 +1782,7 @@ abstract class _$$_SignUpStateCopyWith<$Res>
   $Res call(
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -1805,7 +1823,7 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -1848,7 +1866,7 @@ class _$_SignUpState implements _SignUpState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isAuthenticated;
   @override
@@ -1908,7 +1926,7 @@ abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
       {required final ConfirmPassword confirmPassword,
       required final EmailAddress emailAddress,
-      required final Option<Result<None, CoreFailure>> failureOption,
+      required final Option<Result<None<Object>, CoreFailure>> failureOption,
       required final bool isAuthenticated,
       required final bool isProcessing,
       required final Password password,
@@ -1920,7 +1938,7 @@ abstract class _SignUpState implements SignUpState {
   @override
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isAuthenticated => throw _privateConstructorUsedError;

@@ -2884,7 +2884,7 @@ abstract class TitleChanged implements TypewriterTreeEvent {
 mixin _$TypewriterTreeState {
   String get coverURL => throw _privateConstructorUsedError;
   TypewriterEndState get endState => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
   bool get isEdit => throw _privateConstructorUsedError;
@@ -2919,7 +2919,7 @@ abstract class $TypewriterTreeStateCopyWith<$Res> {
   $Res call(
       {String coverURL,
       TypewriterEndState endState,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
       bool isNSFW,
@@ -2983,7 +2983,7 @@ class _$TypewriterTreeStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       genres: genres == freezed
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -3069,7 +3069,7 @@ abstract class _$$_TypewriterTreeStateCopyWith<$Res>
   $Res call(
       {String coverURL,
       TypewriterEndState endState,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
       bool isNSFW,
@@ -3136,7 +3136,7 @@ class __$$_TypewriterTreeStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       genres: genres == freezed
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -3235,7 +3235,7 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
   @override
   final TypewriterEndState endState;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   final List<Genre> _genres;
   @override
   List<Genre> get genres {
@@ -3349,7 +3349,7 @@ abstract class _TypewriterTreeState implements TypewriterTreeState {
   const factory _TypewriterTreeState(
       {required final String coverURL,
       required final TypewriterEndState endState,
-      required final Option<Result<None, CoreFailure>> failureOption,
+      required final Option<Result<None<Object>, CoreFailure>> failureOption,
       required final List<Genre> genres,
       required final bool isEdit,
       required final bool isNSFW,
@@ -3372,7 +3372,7 @@ abstract class _TypewriterTreeState implements TypewriterTreeState {
   @override
   TypewriterEndState get endState => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   List<Genre> get genres => throw _privateConstructorUsedError;

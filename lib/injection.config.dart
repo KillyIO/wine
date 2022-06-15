@@ -13,7 +13,6 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:isar/isar.dart' as _i16;
 
 import 'application/library/library_bloc.dart' as _i25;
-import 'application/settings/settings_bloc.dart' as _i27;
 import 'application/setup/setup_bloc.dart' as _i28;
 import 'application/sign_up/sign_up_bloc.dart' as _i29;
 import 'application/tree/tree_bloc.dart' as _i30;
@@ -36,11 +35,12 @@ import 'features/branch/branch_repository.infrastructure.dart' as _i11;
 import 'features/branch/i_branch_repository.domain.dart' as _i10;
 import 'features/home/home_bloc.application.dart' as _i18;
 import 'features/log_in/log_in_bloc.application.dart' as _i26;
+import 'features/settings/settings_bloc.application.dart' as _i27;
+import 'features/settings/settings_repository.infrastructure.dart' as _i24;
 import 'features/user/i_user_repository.domain.dart' as _i14;
 import 'features/user/user_repository.infrastructure.dart' as _i15;
 import 'infrastructure/default_covers/default_covers_repository.dart' as _i20;
 import 'infrastructure/sessions/sessions_repository.dart' as _i22;
-import 'infrastructure/settings/settings_repository.dart' as _i24;
 import 'infrastructure/tree/tree_repository.dart' as _i13;
 
 const String _dev = 'dev';
@@ -112,24 +112,24 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
           get<_i19.IDefaultCoversRepository>(),
           get<_i21.ISessionsRepository>(),
           get<_i23.ISettingsRepository>(),
-          get<dynamic>()),
+          get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i29.SignUpBloc>(
       () => _i29.SignUpBloc(get<_i8.IAuthFacade>(),
-          get<_i21.ISessionsRepository>(), get<dynamic>()),
+          get<_i21.ISessionsRepository>(), get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i30.TreeBloc>(
       () => _i30.TreeBloc(
           get<_i8.IAuthFacade>(),
-          get<dynamic>(),
+          get<_i10.IBranchRepository>(),
           get<_i21.ISessionsRepository>(),
           get<_i23.ISettingsRepository>(),
           get<_i12.ITreeRepository>(),
-          get<dynamic>()),
+          get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i31.TypewriterBranchBloc>(
       () => _i31.TypewriterBranchBloc(
-          get<dynamic>(),
+          get<_i10.IBranchRepository>(),
           get<_i19.IDefaultCoversRepository>(),
           get<_i21.ISessionsRepository>()),
       registerFor: {_dev, _prod});

@@ -4,15 +4,14 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/core/core_failure.domain.dart';
 import 'package:wine/domain/default_covers/default_cover.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
-import 'package:wine/domain/user/i_user_repository.dart';
-import 'package:wine/domain/user/user.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
+import 'package:wine/features/user/i_user_repository.domain.dart';
+import 'package:wine/features/user/user.domain.dart';
 
 part 'setup_bloc.freezed.dart';
 part 'setup_event.dart';

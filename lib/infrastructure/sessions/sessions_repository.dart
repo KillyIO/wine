@@ -2,13 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/core/unique_id.dart';
-
+import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
-import 'package:wine/domain/user/user.dart';
-import 'package:wine/infrastructure/user/isar_user.dart';
-import 'package:wine/infrastructure/user/user_dto.dart';
+import 'package:wine/features/user/isar_user.infrastructure.dart';
+import 'package:wine/features/user/user.domain.dart';
+import 'package:wine/features/user/user_dto.infrastructure.dart';
 
 /// @nodoc
 @LazySingleton(

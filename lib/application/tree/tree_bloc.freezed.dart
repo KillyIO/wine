@@ -2001,7 +2001,7 @@ mixin _$TreeState {
   User? get author => throw _privateConstructorUsedError;
   Branch? get branchOne => throw _privateConstructorUsedError;
   Branch? get branchResume => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isBookmarked => throw _privateConstructorUsedError;
   bool get isLiked => throw _privateConstructorUsedError;
@@ -2024,7 +2024,7 @@ abstract class $TreeStateCopyWith<$Res> {
       User? author,
       Branch? branchOne,
       Branch? branchResume,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
       bool isProcessing,
@@ -2032,6 +2032,10 @@ abstract class $TreeStateCopyWith<$Res> {
       Settings settings,
       Tree tree});
 
+  $UserCopyWith<$Res>? get author;
+  $BranchCopyWith<$Res>? get branchOne;
+  $BranchCopyWith<$Res>? get branchResume;
+  $UserCopyWith<$Res>? get session;
   $SettingsCopyWith<$Res> get settings;
   $TreeCopyWith<$Res> get tree;
 }
@@ -2078,7 +2082,7 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isBookmarked: isBookmarked == freezed
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
@@ -2107,6 +2111,50 @@ class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
   }
 
   @override
+  $UserCopyWith<$Res>? get author {
+    if (_value.author == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.author!, (value) {
+      return _then(_value.copyWith(author: value));
+    });
+  }
+
+  @override
+  $BranchCopyWith<$Res>? get branchOne {
+    if (_value.branchOne == null) {
+      return null;
+    }
+
+    return $BranchCopyWith<$Res>(_value.branchOne!, (value) {
+      return _then(_value.copyWith(branchOne: value));
+    });
+  }
+
+  @override
+  $BranchCopyWith<$Res>? get branchResume {
+    if (_value.branchResume == null) {
+      return null;
+    }
+
+    return $BranchCopyWith<$Res>(_value.branchResume!, (value) {
+      return _then(_value.copyWith(branchResume: value));
+    });
+  }
+
+  @override
+  $UserCopyWith<$Res>? get session {
+    if (_value.session == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.session!, (value) {
+      return _then(_value.copyWith(session: value));
+    });
+  }
+
+  @override
   $SettingsCopyWith<$Res> get settings {
     return $SettingsCopyWith<$Res>(_value.settings, (value) {
       return _then(_value.copyWith(settings: value));
@@ -2132,7 +2180,7 @@ abstract class _$$_TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
       User? author,
       Branch? branchOne,
       Branch? branchResume,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
       bool isProcessing,
@@ -2140,6 +2188,14 @@ abstract class _$$_TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
       Settings settings,
       Tree tree});
 
+  @override
+  $UserCopyWith<$Res>? get author;
+  @override
+  $BranchCopyWith<$Res>? get branchOne;
+  @override
+  $BranchCopyWith<$Res>? get branchResume;
+  @override
+  $UserCopyWith<$Res>? get session;
   @override
   $SettingsCopyWith<$Res> get settings;
   @override
@@ -2190,7 +2246,7 @@ class __$$_TreeStateCopyWithImpl<$Res> extends _$TreeStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isBookmarked: isBookmarked == freezed
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
@@ -2244,7 +2300,7 @@ class _$_TreeState implements _TreeState {
   @override
   final Branch? branchResume;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isBookmarked;
   @override
@@ -2313,7 +2369,7 @@ abstract class _TreeState implements TreeState {
       required final User? author,
       final Branch? branchOne,
       final Branch? branchResume,
-      required final Option<Result<None, CoreFailure>> failureOption,
+      required final Option<Result<None<Object>, CoreFailure>> failureOption,
       required final bool isBookmarked,
       required final bool isLiked,
       required final bool isProcessing,
@@ -2330,7 +2386,7 @@ abstract class _TreeState implements TreeState {
   @override
   Branch? get branchResume => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isBookmarked => throw _privateConstructorUsedError;

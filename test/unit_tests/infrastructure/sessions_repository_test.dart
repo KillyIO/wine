@@ -8,7 +8,7 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/infrastructure/sessions/sessions_repository.dart';
-import 'package:wine/infrastructure/user/isar_user.dart';
+import 'package:wine/features/user/isar_user.infrastructure.dart';
 
 import '../../mocks/firebase_auth_mocks.dart';
 import '../../mocks/isar_mocks.dart';

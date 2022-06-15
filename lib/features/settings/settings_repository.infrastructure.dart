@@ -6,8 +6,8 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
-import 'package:wine/infrastructure/settings/isar_settings.dart';
-import 'package:wine/infrastructure/settings/settings_dto.dart';
+import 'package:wine/features/settings/isar_settings.infrastructure.dart';
+import 'package:wine/features/settings/settings_dto.infrastructure.dart';
 
 /// @nodoc
 @LazySingleton(

@@ -17,15 +17,15 @@ import 'package:wine/features/branch/branch.domain.dart' as _i16;
 import 'package:wine/features/branch/branch_page.presentation.dart' as _i1;
 import 'package:wine/features/home/home_page.presentation.dart' as _i2;
 import 'package:wine/features/log_in/log_in_page.presentation.dart' as _i4;
+import 'package:wine/features/settings/settings_account/settings_account_page.presentation.dart'
+    as _i10;
+import 'package:wine/features/settings/settings_branch/settings_branch_page.presentation.dart'
+    as _i11;
+import 'package:wine/features/settings/settings_page.presentation.dart' as _i13;
+import 'package:wine/features/settings/settings_tree/settings_tree_page.presentation.dart'
+    as _i12;
 import 'package:wine/presentation/library/library_page.dart' as _i3;
 import 'package:wine/presentation/plus/plus_page.dart' as _i5;
-import 'package:wine/presentation/settings/settings_account/settings_account_page.dart'
-    as _i10;
-import 'package:wine/presentation/settings/settings_branch/settings_branch_page.dart'
-    as _i11;
-import 'package:wine/presentation/settings/settings_page.dart' as _i13;
-import 'package:wine/presentation/settings/settings_tree/settings_tree_page.dart'
-    as _i12;
 import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i8;
 import 'package:wine/presentation/tree/tree_page.dart' as _i6;
 import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i9;
@@ -324,7 +324,7 @@ class SignUpRouteArgs {
 class TypewriterBranchUID extends _i14.PageRouteInfo<TypewriterBranchUIDArgs> {
   TypewriterBranchUID(
       {_i15.Key? key,
-      dynamic branch,
+      _i16.Branch? branch,
       String? uid,
       _i17.Tree? tree,
       dynamic type = TypewriterType.unknown})
@@ -347,7 +347,7 @@ class TypewriterBranchUIDArgs {
 
   final _i15.Key? key;
 
-  final dynamic branch;
+  final _i16.Branch? branch;
 
   final String? uid;
 
@@ -366,7 +366,7 @@ class TypewriterBranchUIDArgs {
 class TypewriterBranchNew extends _i14.PageRouteInfo<TypewriterBranchNewArgs> {
   TypewriterBranchNew(
       {_i15.Key? key,
-      dynamic branch,
+      _i16.Branch? branch,
       String? uid,
       _i17.Tree? tree,
       dynamic type = TypewriterType.unknown})
@@ -389,7 +389,7 @@ class TypewriterBranchNewArgs {
 
   final _i15.Key? key;
 
-  final dynamic branch;
+  final _i16.Branch? branch;
 
   final String? uid;
 
@@ -408,7 +408,7 @@ class TypewriterBranchNewArgs {
 class TypewriterTreeUID extends _i14.PageRouteInfo<TypewriterTreeUIDArgs> {
   TypewriterTreeUID(
       {_i15.Key? key,
-      dynamic branch,
+      _i16.Branch? branch,
       String? uid,
       _i17.Tree? tree,
       dynamic type = TypewriterType.unknown})
@@ -431,7 +431,7 @@ class TypewriterTreeUIDArgs {
 
   final _i15.Key? key;
 
-  final dynamic branch;
+  final _i16.Branch? branch;
 
   final String? uid;
 
@@ -450,7 +450,7 @@ class TypewriterTreeUIDArgs {
 class TypewriterTreeNew extends _i14.PageRouteInfo<TypewriterTreeNewArgs> {
   TypewriterTreeNew(
       {_i15.Key? key,
-      dynamic branch,
+      _i16.Branch? branch,
       String? uid,
       _i17.Tree? tree,
       dynamic type = TypewriterType.unknown})
@@ -473,7 +473,7 @@ class TypewriterTreeNewArgs {
 
   final _i15.Key? key;
 
-  final dynamic branch;
+  final _i16.Branch? branch;
 
   final String? uid;
 

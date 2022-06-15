@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/typewriter/typewriter_tree/typewriter_tree_bloc.dart';
-import 'package:wine/domain/core/typewriter_end_state.dart';
+import 'package:wine/core/typewriter_end_state.domain.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/dialogs/warning_dialog.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';

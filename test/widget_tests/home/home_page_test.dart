@@ -10,7 +10,7 @@ import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
-import 'package:wine/domain/user/i_user_repository.dart';
+import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/features/auth/auth_bloc.application.dart';
 import 'package:wine/features/auth/auth_failure.domain.dart';

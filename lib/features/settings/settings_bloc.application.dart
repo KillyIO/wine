@@ -5,15 +5,15 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 
-import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/core/core_failure.domain.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 
-part 'settings_bloc.freezed.dart';
-part 'settings_event.dart';
-part 'settings_state.dart';
+part 'settings_bloc.application.freezed.dart';
+part 'settings_event.application.dart';
+part 'settings_state.application.dart';
 
 /// @nodoc
 @Environment(Environment.dev)

@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
 import 'package:wine/domain/settings/settings.dart';
 
-part 'isar_settings.g.dart';
+part 'isar_settings.infrastructure.g.dart';
 
 /// @nodoc
 @Collection(accessor: 'settings')

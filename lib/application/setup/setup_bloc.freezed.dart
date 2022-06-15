@@ -779,6 +779,8 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
           _$SessionFetched value, $Res Function(_$SessionFetched) then) =
       __$$SessionFetchedCopyWithImpl<$Res>;
   $Res call({User session});
+
+  $UserCopyWith<$Res> get session;
 }
 
 /// @nodoc
@@ -802,6 +804,13 @@ class __$$SessionFetchedCopyWithImpl<$Res>
           : session // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get session {
+    return $UserCopyWith<$Res>(_value.session, (value) {
+      return _then(_value.copyWith(session: value));
+    });
   }
 }
 
@@ -1433,6 +1442,8 @@ abstract class _$$UserLoadedCopyWith<$Res> {
           _$UserLoaded value, $Res Function(_$UserLoaded) then) =
       __$$UserLoadedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -1455,6 +1466,13 @@ class __$$UserLoadedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -1796,6 +1814,8 @@ abstract class _$$_FailureCopyWith<$Res> {
           _$_Failure value, $Res Function(_$_Failure) then) =
       __$$_FailureCopyWithImpl<$Res>;
   $Res call({CoreFailure failure});
+
+  $CoreFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -1817,6 +1837,13 @@ class __$$_FailureCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
           : failure // ignore: cast_nullable_to_non_nullable
               as CoreFailure,
     ));
+  }
+
+  @override
+  $CoreFailureCopyWith<$Res> get failure {
+    return $CoreFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
   }
 }
 

@@ -1638,6 +1638,7 @@ abstract class _$$LaunchAsNewBranchCopyWith<$Res> {
       __$$LaunchAsNewBranchCopyWithImpl<$Res>;
   $Res call({Branch? previousBranch, Tree? tree});
 
+  $BranchCopyWith<$Res>? get previousBranch;
   $TreeCopyWith<$Res>? get tree;
 }
 
@@ -1667,6 +1668,17 @@ class __$$LaunchAsNewBranchCopyWithImpl<$Res>
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree?,
     ));
+  }
+
+  @override
+  $BranchCopyWith<$Res>? get previousBranch {
+    if (_value.previousBranch == null) {
+      return null;
+    }
+
+    return $BranchCopyWith<$Res>(_value.previousBranch!, (value) {
+      return _then(_value.copyWith(previousBranch: value));
+    });
   }
 
   @override
@@ -1885,6 +1897,8 @@ abstract class _$$LaunchWithUIDCopyWith<$Res> {
           _$LaunchWithUID value, $Res Function(_$LaunchWithUID) then) =
       __$$LaunchWithUIDCopyWithImpl<$Res>;
   $Res call({UniqueID uid, Branch? branch});
+
+  $BranchCopyWith<$Res>? get branch;
 }
 
 /// @nodoc
@@ -1913,6 +1927,17 @@ class __$$LaunchWithUIDCopyWithImpl<$Res>
           : branch // ignore: cast_nullable_to_non_nullable
               as Branch?,
     ));
+  }
+
+  @override
+  $BranchCopyWith<$Res>? get branch {
+    if (_value.branch == null) {
+      return null;
+    }
+
+    return $BranchCopyWith<$Res>(_value.branch!, (value) {
+      return _then(_value.copyWith(branch: value));
+    });
   }
 }
 
@@ -3558,7 +3583,7 @@ mixin _$TypewriterBranchState {
   String get coverURL => throw _privateConstructorUsedError;
   int get currentPageViewIdx => throw _privateConstructorUsedError;
   TypewriterEndState get endState => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
   bool get isEdit => throw _privateConstructorUsedError;
@@ -3590,7 +3615,7 @@ abstract class $TypewriterBranchStateCopyWith<$Res> {
       String coverURL,
       int currentPageViewIdx,
       TypewriterEndState endState,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
       bool isNSFW,
@@ -3604,6 +3629,8 @@ abstract class $TypewriterBranchStateCopyWith<$Res> {
       Title title,
       TextEditingController titleController,
       int titleWordCount});
+
+  $BranchCopyWith<$Res> get branch;
 }
 
 /// @nodoc
@@ -3656,7 +3683,7 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       genres: genres == freezed
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -3711,6 +3738,13 @@ class _$TypewriterBranchStateCopyWithImpl<$Res>
               as int,
     ));
   }
+
+  @override
+  $BranchCopyWith<$Res> get branch {
+    return $BranchCopyWith<$Res>(_value.branch, (value) {
+      return _then(_value.copyWith(branch: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -3725,7 +3759,7 @@ abstract class _$$_TypewriterBranchStateCopyWith<$Res>
       String coverURL,
       int currentPageViewIdx,
       TypewriterEndState endState,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
       bool isNSFW,
@@ -3739,6 +3773,9 @@ abstract class _$$_TypewriterBranchStateCopyWith<$Res>
       Title title,
       TextEditingController titleController,
       int titleWordCount});
+
+  @override
+  $BranchCopyWith<$Res> get branch;
 }
 
 /// @nodoc
@@ -3794,7 +3831,7 @@ class __$$_TypewriterBranchStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       genres: genres == freezed
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -3884,7 +3921,7 @@ class _$_TypewriterBranchState implements _TypewriterBranchState {
   @override
   final TypewriterEndState endState;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   final List<Genre> _genres;
   @override
   List<Genre> get genres {
@@ -3990,7 +4027,7 @@ abstract class _TypewriterBranchState implements TypewriterBranchState {
       required final String coverURL,
       required final int currentPageViewIdx,
       required final TypewriterEndState endState,
-      required final Option<Result<None, CoreFailure>> failureOption,
+      required final Option<Result<None<Object>, CoreFailure>> failureOption,
       required final List<Genre> genres,
       required final bool isEdit,
       required final bool isNSFW,
@@ -4014,7 +4051,7 @@ abstract class _TypewriterBranchState implements TypewriterBranchState {
   @override
   TypewriterEndState get endState => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   List<Genre> get genres => throw _privateConstructorUsedError;
