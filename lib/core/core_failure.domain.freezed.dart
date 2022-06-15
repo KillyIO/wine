@@ -447,8 +447,6 @@ abstract class _$$_DefaultCoversCopyWith<$Res> {
           _$_DefaultCovers value, $Res Function(_$_DefaultCovers) then) =
       __$$_DefaultCoversCopyWithImpl<$Res>;
   $Res call({DefaultCoversFailure f});
-
-  $DefaultCoversFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
@@ -472,13 +470,6 @@ class __$$_DefaultCoversCopyWithImpl<$Res>
           : f // ignore: cast_nullable_to_non_nullable
               as DefaultCoversFailure,
     ));
-  }
-
-  @override
-  $DefaultCoversFailureCopyWith<$Res> get f {
-    return $DefaultCoversFailureCopyWith<$Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
-    });
   }
 }
 

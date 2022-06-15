@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'default_cover_dto.dart';
+part of 'default_cover_dto.infrastructure.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

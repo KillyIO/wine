@@ -1,6 +1,6 @@
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/default_covers/default_cover.dart';
-import 'package:wine/domain/default_covers/default_covers_failure.dart';
+import 'package:wine/features/default_covers/default_cover.domain.dart';
+import 'package:wine/features/default_covers/default_covers_failure.domain.dart';
 
 /// @nodoc
 abstract class IDefaultCoversRepository {

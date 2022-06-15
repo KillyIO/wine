@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'isar_default_cover.dart';
+part of 'isar_default_cover.infrastructure.dart';
 
 // **************************************************************************
 // IsarCollectionGenerator

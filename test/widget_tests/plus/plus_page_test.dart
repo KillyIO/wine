@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/application/log_in/log_in_bloc.dart';
-import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
+import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';

@@ -22,7 +22,7 @@ import 'package:wine/core/language.domain.dart';
 import 'package:wine/core/title.domain.dart';
 import 'package:wine/core/typewriter_end_state.domain.dart';
 import 'package:wine/core/unique_id.domain.dart';
-import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
+import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/features/branch/branch.domain.dart';

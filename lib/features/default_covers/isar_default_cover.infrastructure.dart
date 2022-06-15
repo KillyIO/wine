@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
 import 'package:wine/core/cover_url.domain.dart';
-import 'package:wine/domain/default_covers/default_cover.dart';
+import 'package:wine/features/default_covers/default_cover.domain.dart';
 
-part 'isar_default_cover.g.dart';
+part 'isar_default_cover.infrastructure.g.dart';
 
 /// @nodoc
 @Collection(accessor: 'defaultCovers')

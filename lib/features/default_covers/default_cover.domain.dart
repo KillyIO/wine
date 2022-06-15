@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/core/cover_url.domain.dart';
 
-part 'default_cover.freezed.dart';
+part 'default_cover.domain.freezed.dart';
 
 /// @nodoc
 @freezed

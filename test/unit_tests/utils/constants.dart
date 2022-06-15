@@ -2,12 +2,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
 import 'package:wine/core/cover_url.domain.dart';
 import 'package:wine/core/unique_id.domain.dart';
-import 'package:wine/domain/default_covers/default_cover.dart';
+import 'package:wine/features/default_covers/default_cover.domain.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
-import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
+import 'package:wine/features/default_covers/isar_default_cover.infrastructure.dart';
 import 'package:wine/features/settings/isar_settings.infrastructure.dart';
 import 'package:wine/features/user/isar_user.infrastructure.dart';
 
