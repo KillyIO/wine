@@ -1,11 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
 import 'package:wine/core/dialogs/warning_dialog.presentation.dart';
 import 'package:wine/core/labels/text_field_label.presentation.dart';
-import 'package:wine/features/typewriter/typewriter_branch/typewriter_quill.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_cover.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_genres.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_selection_dialog.presentation.dart';
@@ -13,6 +11,8 @@ import 'package:wine/core/typewriter/typewriter_selection_list_tile.presentation
 import 'package:wine/core/typewriter/typewriter_switch_list_tile.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_text_field.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_top_title.presentation.dart';
+import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart';
+import 'package:wine/features/typewriter/typewriter_branch/typewriter_quill.presentation.dart';
 import 'package:wine/utils/constants/branch.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/genres.dart';
@@ -23,7 +23,7 @@ import 'package:wine/utils/constants/palette.dart';
 /// @nodoc
 class TypewriterEditionLayout extends StatelessWidget {
   /// @nodoc
-  const TypewriterEditionLayout({Key? key}) : super(key: key);
+  const TypewriterEditionLayout({super.key});
 
   String _getLeafErrorMessage(int wordCount) {
     if (wordCount > 0) {

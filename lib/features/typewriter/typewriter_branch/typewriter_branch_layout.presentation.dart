@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/core/page_view/horizontal_page_view_navbar.presentation.dart';
+import 'package:wine/core/routes/router.dart';
+import 'package:wine/core/typewriter_end_state.domain.dart';
 import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart';
-import 'package:wine/core/typewriter_end_state.domain.dart';
-import 'package:wine/core/page_view/horizontal_page_view_navbar.presentation.dart';
 import 'package:wine/features/typewriter/typewriter_branch/typewriter_page_view_builder.presentation.dart';
-import 'package:wine/core/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/constants/typewriter.dart';
@@ -16,7 +16,7 @@ import 'package:wine/utils/functions/navigation_functions.dart';
 /// @nodoc
 class TypewriterBranchLayout extends StatelessWidget {
   /// @nodoc
-  TypewriterBranchLayout({Key? key}) : super(key: key);
+  TypewriterBranchLayout({super.key});
 
   final PageController _pageController = PageController(initialPage: 1000);
 

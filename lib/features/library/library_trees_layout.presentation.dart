@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
-import 'package:wine/features/tree/tree.domain.dart';
 import 'package:wine/features/library/library_base_trees_layout.presentation.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/features/library/library_vertical_navbar.presentation.dart';
+import 'package:wine/features/tree/tree.domain.dart';
 import 'package:wine/utils/constants/library.dart';
 
 /// @nodoc
 class LibraryTreesLayout extends StatelessWidget {
   /// @nodoc
-  const LibraryTreesLayout({Key? key}) : super(key: key);
+  const LibraryTreesLayout({super.key});
 
   List<Tree> _getTrees(LibraryState state, String type) {
     switch (type) {

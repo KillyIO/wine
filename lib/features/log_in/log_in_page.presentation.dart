@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/features/log_in/log_in_bloc.application.dart';
-import 'package:wine/injection.dart';
-
 import 'package:wine/features/log_in/log_in_layout.presentation.dart';
+import 'package:wine/injection.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
@@ -13,9 +12,9 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 class LogInPage extends StatelessWidget {
   /// @nodoc
   const LogInPage({
-    Key? key,
+    super.key,
     required this.navigateTo,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;

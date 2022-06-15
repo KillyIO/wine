@@ -4,12 +4,11 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-
 import 'package:wine/core/core_failure.domain.dart';
+import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
 import 'package:wine/features/settings/settings.domain.dart';
-import 'package:wine/features/auth/i_auth_facade.domain.dart';
 
 part 'settings_bloc.application.freezed.dart';
 part 'settings_event.application.dart';

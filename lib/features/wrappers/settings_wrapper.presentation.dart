@@ -8,7 +8,7 @@ import 'package:wine/utils/functions/dialog_functions.dart';
 /// @nodoc
 class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
   /// @nodoc
-  const SettingsWrapper({Key? key}) : super(key: key);
+  const SettingsWrapper({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {

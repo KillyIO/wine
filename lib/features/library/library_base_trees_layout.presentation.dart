@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
-import 'package:wine/core/typewriter_type.domain.dart';
-import 'package:wine/features/tree/tree.domain.dart';
-import 'package:wine/core/tree/tree_card.presentation.dart';
 import 'package:wine/core/routes/router.dart';
+import 'package:wine/core/tree/tree_card.presentation.dart';
+import 'package:wine/core/typewriter_type.domain.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
+import 'package:wine/features/tree/tree.domain.dart';
 import 'package:wine/utils/assets/images.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
 
@@ -13,10 +13,10 @@ import 'package:wine/utils/functions/navigation_functions.dart';
 class LibraryBaseTreesLayout extends StatelessWidget {
   /// @nodoc
   const LibraryBaseTreesLayout({
-    Key? key,
+    super.key,
     required this.trees,
     required this.type,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final List<Tree> trees;

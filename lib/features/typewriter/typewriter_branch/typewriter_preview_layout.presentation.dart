@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart';
 import 'package:wine/core/branch/branch_leaf_body.presentation.dart';
 import 'package:wine/core/branch/branch_leaf_head.presentation.dart';
+import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart';
 
 /// @nodoc
 class TypewriterPreviewLayout extends StatelessWidget {
   /// @nodoc
-  const TypewriterPreviewLayout({Key? key}) : super(key: key);
+  const TypewriterPreviewLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

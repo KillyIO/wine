@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/features/branch/leaf.domain.dart';
-import 'package:wine/features/branch/licence.domain.dart';
 import 'package:wine/core/cover_url.domain.dart';
 import 'package:wine/core/genre.domain.dart';
 import 'package:wine/core/language.domain.dart';
 import 'package:wine/core/title.domain.dart';
 import 'package:wine/core/unique_id.domain.dart';
+import 'package:wine/features/branch/leaf.domain.dart';
+import 'package:wine/features/branch/licence.domain.dart';
 
 part 'branch.domain.freezed.dart';
 

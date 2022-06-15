@@ -12,7 +12,7 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 /// @nodoc
 class LibraryPage extends StatefulWidget {
   /// @nodoc
-  const LibraryPage({Key? key}) : super(key: key);
+  const LibraryPage({super.key});
 
   @override
   State<LibraryPage> createState() => _LibraryPageState();

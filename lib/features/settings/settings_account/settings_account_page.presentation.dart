@@ -9,7 +9,7 @@ import 'package:wine/utils/constants/core.dart';
 /// @nodoc
 class SettingsAccountPage extends StatelessWidget {
   /// @nodoc
-  const SettingsAccountPage({Key? key}) : super(key: key);
+  const SettingsAccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,21 +3,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-
-import 'package:wine/features/log_in/log_in_bloc.application.dart';
-import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/settings/i_settings_repository.domain.dart';
-import 'package:wine/features/user/i_user_repository.domain.dart';
+import 'package:wine/core/routes/router.dart';
 import 'package:wine/features/auth/auth_bloc.application.dart';
 import 'package:wine/features/auth/auth_dialog_cubit.application.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
+import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/home/home_bloc.application.dart';
-import 'package:wine/injection.dart';
 import 'package:wine/features/library/library_page.presentation.dart';
+import 'package:wine/features/log_in/log_in_bloc.application.dart';
 import 'package:wine/features/log_in/log_in_page.presentation.dart';
-import 'package:wine/core/routes/router.dart';
+import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
+import 'package:wine/features/settings/i_settings_repository.domain.dart';
+import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/web/auth_dialog.presentation.dart';
+import 'package:wine/injection.dart';
 
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
@@ -115,7 +114,8 @@ void main() {
         'plus_library_button should display AuthDialog',
         (tester) async {
           tester.binding.window.devicePixelRatioTestValue = 2.625;
-          tester.binding.window.textScaleFactorTestValue = .5;
+          tester.binding.window.platformDispatcher.textScaleFactorTestValue =
+              .5;
 
           final dpi = tester.binding.window.devicePixelRatio;
 
@@ -163,7 +163,8 @@ void main() {
         'plus_library_button should navigate to LogInPage',
         (tester) async {
           tester.binding.window.devicePixelRatioTestValue = 2.625;
-          tester.binding.window.textScaleFactorTestValue = .5;
+          tester.binding.window.platformDispatcher.textScaleFactorTestValue =
+              .5;
 
           final dpi = tester.binding.window.devicePixelRatio;
 
@@ -206,7 +207,8 @@ void main() {
         'plus_library_button should navigate to LibraryPage',
         (tester) async {
           tester.binding.window.devicePixelRatioTestValue = 2.625;
-          tester.binding.window.textScaleFactorTestValue = .5;
+          tester.binding.window.platformDispatcher.textScaleFactorTestValue =
+              .5;
 
           final dpi = tester.binding.window.devicePixelRatio;
 

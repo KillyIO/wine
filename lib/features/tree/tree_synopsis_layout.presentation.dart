@@ -6,7 +6,7 @@ import 'package:wine/features/tree/tree_synopsis.presentation.dart';
 /// @nodoc
 class TreeSynopsisLayout extends StatelessWidget {
   /// @nodoc
-  const TreeSynopsisLayout({Key? key}) : super(key: key);
+  const TreeSynopsisLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

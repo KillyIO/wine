@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/core/page_view/horizontal_page_view_navbar.presentation.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/features/library/library_page_view_builder.presentation.dart';
 import 'package:wine/utils/constants/library.dart';
 import 'package:wine/utils/constants/palette.dart';
@@ -10,7 +10,7 @@ import 'package:wine/utils/functions/dialog_functions.dart';
 /// @nodoc
 class LibraryLayout extends StatelessWidget {
   /// @nodoc
-  LibraryLayout({Key? key}) : super(key: key);
+  LibraryLayout({super.key});
 
   final PageController _pageController = PageController(initialPage: 1000);
 

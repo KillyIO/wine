@@ -3,11 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/tree/tree_bloc.application.dart';
 import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/features/tree/tree.domain.dart';
-import 'package:wine/injection.dart';
+import 'package:wine/features/tree/tree_bloc.application.dart';
 import 'package:wine/features/tree/tree_layout.presentation.dart';
+import 'package:wine/injection.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
@@ -15,10 +15,10 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 class TreePage extends StatelessWidget {
   /// @nodoc
   const TreePage({
-    Key? key,
+    super.key,
     @PathParam('id') required this.uid,
     this.tree,
-  }) : super(key: key);
+  });
 
   /// nodoc
   final String uid;

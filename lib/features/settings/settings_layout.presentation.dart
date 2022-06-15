@@ -10,7 +10,7 @@ import 'package:wine/utils/functions/navigation_functions.dart';
 /// @nodoc
 class SettingsLayout extends StatelessWidget {
   /// @nodoc
-  const SettingsLayout({Key? key}) : super(key: key);
+  const SettingsLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

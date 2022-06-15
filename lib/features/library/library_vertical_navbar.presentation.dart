@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/core/navbars/vertical_navbar_button.presentation.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
 
 /// @nodoc
 class LibraryVerticalNavbar extends StatelessWidget {
   /// @nodoc
   const LibraryVerticalNavbar({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.items,
     required this.width,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final int currentIndex;

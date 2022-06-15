@@ -8,9 +8,9 @@ import 'package:wine/features/typewriter/typewriter_branch/typewriter_preview_la
 class TypewriterPageViewBuilder extends StatelessWidget {
   /// @nodoc
   TypewriterPageViewBuilder({
-    Key? key,
+    super.key,
     required this.pageController,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final PageController pageController;

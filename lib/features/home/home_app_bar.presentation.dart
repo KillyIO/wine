@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/setup/setup_bloc.application.dart';
-import 'package:wine/core/typewriter_type.domain.dart';
 import 'package:wine/core/routes/router.dart';
-
+import 'package:wine/core/typewriter_type.domain.dart';
+import 'package:wine/features/setup/setup_bloc.application.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';

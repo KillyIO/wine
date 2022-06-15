@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/features/library/library_base_branches_layout.presentation.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/features/library/library_vertical_navbar.presentation.dart';
 import 'package:wine/utils/constants/library.dart';
 
 /// @nodoc
 class LibraryBranchesLayout extends StatelessWidget {
   /// @nodoc
-  const LibraryBranchesLayout({Key? key}) : super(key: key);
+  const LibraryBranchesLayout({super.key});
 
   List<Branch> _getBranches(LibraryState state, String type) {
     switch (type) {

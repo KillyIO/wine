@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
+import 'package:wine/core/routes/router.dart';
 import 'package:wine/core/text_fields/authentication_text_field.presentation.dart';
 import 'package:wine/features/log_in/log_in_bloc.application.dart';
 import 'package:wine/features/log_in/log_in_create_account_button.presentation.dart';
 import 'package:wine/features/log_in/log_in_separator.presentation.dart';
 import 'package:wine/features/log_in/log_in_social_media_button.presentation.dart';
-import 'package:wine/core/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
@@ -18,11 +18,11 @@ import 'package:wine/utils/responsive/log_in_responsive.dart';
 class LogInLayout extends StatelessWidget {
   /// @nodoc
   const LogInLayout({
-    Key? key,
+    super.key,
     required this.navigateTo,
     this.onSignUpButtonPressed,
     this.useRoot = true,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;

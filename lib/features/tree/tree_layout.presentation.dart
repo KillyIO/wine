@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/tree/tree_bloc.application.dart';
 import 'package:wine/core/content_actions.presentation.dart';
 import 'package:wine/core/content_genres.presentation.dart';
+import 'package:wine/features/tree/tree_bloc.application.dart';
 import 'package:wine/features/tree/tree_branch_one.presentation.dart';
 import 'package:wine/features/tree/tree_details.presentation.dart';
 import 'package:wine/features/tree/tree_resume_reading.presentation.dart';
@@ -13,7 +13,7 @@ import 'package:wine/utils/functions/dialog_functions.dart';
 /// @nodoc
 class TreeLayout extends StatelessWidget {
   /// @nodoc
-  const TreeLayout({Key? key}) : super(key: key);
+  const TreeLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

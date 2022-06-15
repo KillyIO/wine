@@ -3,9 +3,9 @@ import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/core/unique_id.domain.dart';
+import 'package:wine/features/auth/username.fomain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user_failure.domain.dart';
-import 'package:wine/features/auth/username.fomain.dart';
 import 'package:wine/features/user/user_repository.infrastructure.dart';
 import 'package:wine/utils/paths/users.dart';
 

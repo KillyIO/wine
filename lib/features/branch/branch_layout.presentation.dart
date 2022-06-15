@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:measured_size/measured_size.dart';
 import 'package:time/time.dart';
-
 import 'package:wine/core/branch/branch_leaf_body.presentation.dart';
 import 'package:wine/core/branch/branch_leaf_head.presentation.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
+import 'package:wine/core/routes/router.dart';
 import 'package:wine/core/typewriter_type.domain.dart';
 import 'package:wine/features/branch/branch_app_bar.presentation.dart';
 import 'package:wine/features/branch/branch_bloc.application.dart';
 import 'package:wine/features/branch/branch_details.presentation.dart';
 import 'package:wine/features/branch/next_branches.presentation.dart';
-import 'package:wine/core/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';

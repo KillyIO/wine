@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/auth/username.fomain.dart';
 import 'package:wine/core/value_failure.domain.dart';
+import 'package:wine/features/auth/username.fomain.dart';
 
 import '../../utils/constants.dart';
 

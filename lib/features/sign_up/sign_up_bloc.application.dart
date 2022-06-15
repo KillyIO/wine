@@ -3,18 +3,18 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/core/core_failure.domain.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/user/i_user_repository.domain.dart';
-import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/features/auth/confirm_password.domain.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/auth/password.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
+import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
+import 'package:wine/features/user/i_user_repository.domain.dart';
+import 'package:wine/features/user/user.domain.dart';
 
+part 'sign_up_bloc.application.freezed.dart';
 part 'sign_up_event.application.dart';
 part 'sign_up_state.application.dart';
-part 'sign_up_bloc.application.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)

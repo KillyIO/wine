@@ -10,7 +10,7 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 /// @nodoc
 class SettingsPage extends StatelessWidget {
   /// @nodoc
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
