@@ -7,8 +7,8 @@ import 'package:wine/features/settings/settings_account/settings_account_page.pr
 import 'package:wine/features/settings/settings_branch/settings_branch_page.presentation.dart';
 import 'package:wine/features/settings/settings_page.presentation.dart';
 import 'package:wine/features/settings/settings_tree/settings_tree_page.presentation.dart';
+import 'package:wine/features/sign_up/sign_up_page.presentation.dart';
 import 'package:wine/presentation/library/library_page.dart';
-import 'package:wine/presentation/sign_up/sign_up_page.dart';
 import 'package:wine/presentation/tree/tree_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_page.dart';
 import 'package:wine/presentation/wrappers/settings_wrapper.dart';

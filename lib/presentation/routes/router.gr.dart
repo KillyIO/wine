@@ -17,6 +17,7 @@ import 'package:wine/features/branch/branch.domain.dart' as _i16;
 import 'package:wine/features/branch/branch_page.presentation.dart' as _i1;
 import 'package:wine/features/home/home_page.presentation.dart' as _i2;
 import 'package:wine/features/log_in/log_in_page.presentation.dart' as _i4;
+import 'package:wine/features/plus/plus_page.presentation.dart' as _i5;
 import 'package:wine/features/settings/settings_account/settings_account_page.presentation.dart'
     as _i10;
 import 'package:wine/features/settings/settings_branch/settings_branch_page.presentation.dart'
@@ -24,9 +25,8 @@ import 'package:wine/features/settings/settings_branch/settings_branch_page.pres
 import 'package:wine/features/settings/settings_page.presentation.dart' as _i13;
 import 'package:wine/features/settings/settings_tree/settings_tree_page.presentation.dart'
     as _i12;
+import 'package:wine/features/sign_up/sign_up_page.presentation.dart' as _i8;
 import 'package:wine/presentation/library/library_page.dart' as _i3;
-import 'package:wine/presentation/plus/plus_page.dart' as _i5;
-import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i8;
 import 'package:wine/presentation/tree/tree_page.dart' as _i6;
 import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i9;
 import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i7;

@@ -12,9 +12,9 @@ import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/auth/password.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
 
-part 'sign_up_event.dart';
-part 'sign_up_state.dart';
-part 'sign_up_bloc.freezed.dart';
+part 'sign_up_event.application.dart';
+part 'sign_up_state.application.dart';
+part 'sign_up_bloc.application.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)

@@ -1,4 +1,4 @@
-part of 'sign_up_bloc.dart';
+part of 'sign_up_bloc.application.dart';
 
 /// @nodoc
 @freezed

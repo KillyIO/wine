@@ -2,10 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:wine/application/sign_up/sign_up_bloc.dart';
+import 'package:wine/features/sign_up/sign_up_bloc.application.dart';
+import 'package:wine/features/sign_up/sign_up_layout.presentation.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/sign_up/sign_up_layout.presentation.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
@@ -13,9 +12,9 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 class SignUpPage extends StatelessWidget {
   /// @nodoc
   const SignUpPage({
-    Key? key,
+    super.key,
     required this.navigateTo,
-  }) : super(key: key);
+  });
 
   /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;

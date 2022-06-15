@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:wine/application/sign_up/sign_up_bloc.dart';
+import 'package:wine/features/sign_up/sign_up_bloc.application.dart';
 import 'package:wine/features/auth/auth_bloc.application.dart';
 import 'package:wine/features/auth/auth_dialog_cubit.application.dart';
 import 'package:wine/features/log_in/log_in_bloc.application.dart';
