@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/setup/setup_bloc.dart';
+import 'package:wine/features/setup/setup_bloc.application.dart';
 import 'package:wine/core/typewriter_type.domain.dart';
 import 'package:wine/presentation/routes/router.dart';
 

@@ -1,21 +1,20 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/core/core_failure.domain.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/settings/i_settings_repository.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/default_covers/default_cover.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
+import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
+import 'package:wine/features/settings/i_settings_repository.domain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user.domain.dart';
 
-part 'setup_bloc.freezed.dart';
-part 'setup_event.dart';
-part 'setup_state.dart';
+part 'setup_bloc.application.freezed.dart';
+part 'setup_event.application.dart';
+part 'setup_state.application.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
