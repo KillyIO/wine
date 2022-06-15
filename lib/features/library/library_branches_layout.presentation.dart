@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/domain/tree/tree.dart';
-import 'package:wine/presentation/library/library_base_trees_layout.presentation.dart';
-import 'package:wine/presentation/library/widgets/library_vertical_navbar.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
+import 'package:wine/features/branch/branch.domain.dart';
+import 'package:wine/features/library/library_base_branches_layout.presentation.dart';
+import 'package:wine/features/library/library_vertical_navbar.presentation.dart';
 import 'package:wine/utils/constants/library.dart';
 
 /// @nodoc
-class LibraryTreesLayout extends StatelessWidget {
+class LibraryBranchesLayout extends StatelessWidget {
   /// @nodoc
-  const LibraryTreesLayout({Key? key}) : super(key: key);
+  const LibraryBranchesLayout({Key? key}) : super(key: key);
 
-  List<Tree> _getTrees(LibraryState state, String type) {
+  List<Branch> _getBranches(LibraryState state, String type) {
     switch (type) {
       case 'published':
-        return state.trees.where((s) => s.isPublished == true).toList();
+        return state.branches.where((s) => s.isPublished == true).toList();
       case 'drafts':
-        return state.trees.where((s) => s.isPublished == false).toList();
+        return state.branches.where((s) => s.isPublished == false).toList();
       case 'bookmarks':
-        return state.bookmarkedTree;
+        return state.bookmarkedBranches;
       default:
-        return <Tree>[];
+        return <Branch>[];
     }
   }
 
@@ -30,11 +30,8 @@ class LibraryTreesLayout extends StatelessWidget {
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
+      children: [
         BlocBuilder<LibraryBloc, LibraryState>(
-          buildWhen: (previous, current) =>
-              current.currentVerticalNavbarIdx !=
-              previous.currentVerticalNavbarIdx,
           builder: (context, state) {
             return LibraryVerticalNavbar(
               currentIndex: state.currentVerticalNavbarIdx,
@@ -48,8 +45,8 @@ class LibraryTreesLayout extends StatelessWidget {
             padding: const EdgeInsets.only(right: 20),
             child: BlocBuilder<LibraryBloc, LibraryState>(
               builder: (context, state) {
-                return LibraryBaseTreesLayout(
-                  trees: _getTrees(
+                return LibraryBaseBranchesLayout(
+                  branches: _getBranches(
                     state,
                     libraryVerticalNavbarKeys[state.currentVerticalNavbarIdx],
                   ),

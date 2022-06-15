@@ -3,14 +3,18 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/core/core_failure.domain.dart';
+import 'package:wine/core/unique_id.domain.dart';
+import 'package:wine/features/branch/branch.domain.dart';
+import 'package:wine/features/branch/i_branch_repository.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
+import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/utils/constants/library.dart';
 
-part 'library_bloc.freezed.dart';
-part 'library_event.dart';
-part 'library_state.dart';
+part 'library_bloc.application.freezed.dart';
+part 'library_event.application.dart';
+part 'library_state.application.dart';
 
 /// @nodoc
 @Environment(Environment.dev)

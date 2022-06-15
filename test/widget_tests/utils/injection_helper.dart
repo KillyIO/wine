@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:wine/application/library/library_bloc.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/features/setup/setup_bloc.application.dart';
 import 'package:wine/features/branch/i_branch_repository.domain.dart';

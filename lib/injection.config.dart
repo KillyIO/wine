@@ -12,7 +12,6 @@ import 'package:google_sign_in/google_sign_in.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:isar/isar.dart' as _i16;
 
-import 'application/library/library_bloc.dart' as _i25;
 import 'application/tree/tree_bloc.dart' as _i30;
 import 'application/typewriter/typewriter_branch/typewriter_branch_bloc.dart'
     as _i31;
@@ -33,6 +32,7 @@ import 'features/default_covers/default_covers_repository.infrastructure.dart'
 import 'features/default_covers/i_default_covers_repository.domain.dart'
     as _i19;
 import 'features/home/home_bloc.application.dart' as _i18;
+import 'features/library/library_bloc.application.dart' as _i25;
 import 'features/log_in/log_in_bloc.application.dart' as _i26;
 import 'features/sessions/i_sessions_repository.domain.dart' as _i21;
 import 'features/sessions/sessions_repository.infrastructure.dart' as _i22;
@@ -97,8 +97,8 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i24.SettingsRepository(get<_i4.FirebaseAuth>(), get<_i16.Isar>()),
       registerFor: {_dev, _prod});
   gh.factory<_i25.LibraryBloc>(
-      () => _i25.LibraryBloc(get<dynamic>(), get<_i21.ISessionsRepository>(),
-          get<_i12.ITreeRepository>()),
+      () => _i25.LibraryBloc(get<_i10.IBranchRepository>(),
+          get<_i21.ISessionsRepository>(), get<_i12.ITreeRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i26.LogInBloc>(
       () => _i26.LogInBloc(get<_i8.IAuthFacade>(),

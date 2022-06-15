@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:wine/features/branch/branch_page.presentation.dart';
 import 'package:wine/features/home/home_page.presentation.dart';
+import 'package:wine/features/library/library_page.presentation.dart';
 import 'package:wine/features/log_in/log_in_page.presentation.dart';
 import 'package:wine/features/plus/plus_page.presentation.dart';
 import 'package:wine/features/settings/settings_account/settings_account_page.presentation.dart';
@@ -8,7 +9,6 @@ import 'package:wine/features/settings/settings_branch/settings_branch_page.pres
 import 'package:wine/features/settings/settings_page.presentation.dart';
 import 'package:wine/features/settings/settings_tree/settings_tree_page.presentation.dart';
 import 'package:wine/features/sign_up/sign_up_page.presentation.dart';
-import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/tree/tree_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_page.dart';
 import 'package:wine/presentation/wrappers/settings_wrapper.dart';

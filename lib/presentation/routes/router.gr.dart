@@ -12,10 +12,12 @@
 
 import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:flutter/material.dart' as _i15;
+import 'package:wine/core/typewriter_type.domain.dart' as _i18;
 import 'package:wine/domain/tree/tree.dart' as _i17;
 import 'package:wine/features/branch/branch.domain.dart' as _i16;
 import 'package:wine/features/branch/branch_page.presentation.dart' as _i1;
 import 'package:wine/features/home/home_page.presentation.dart' as _i2;
+import 'package:wine/features/library/library_page.presentation.dart' as _i3;
 import 'package:wine/features/log_in/log_in_page.presentation.dart' as _i4;
 import 'package:wine/features/plus/plus_page.presentation.dart' as _i5;
 import 'package:wine/features/settings/settings_account/settings_account_page.presentation.dart'
@@ -26,7 +28,6 @@ import 'package:wine/features/settings/settings_page.presentation.dart' as _i13;
 import 'package:wine/features/settings/settings_tree/settings_tree_page.presentation.dart'
     as _i12;
 import 'package:wine/features/sign_up/sign_up_page.presentation.dart' as _i8;
-import 'package:wine/presentation/library/library_page.dart' as _i3;
 import 'package:wine/presentation/tree/tree_page.dart' as _i6;
 import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i9;
 import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i7;
@@ -327,7 +328,7 @@ class TypewriterBranchUID extends _i14.PageRouteInfo<TypewriterBranchUIDArgs> {
       _i16.Branch? branch,
       String? uid,
       _i17.Tree? tree,
-      dynamic type = TypewriterType.unknown})
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterBranchUID.name,
             path: '/typewriter/branch/:id',
             args: TypewriterBranchUIDArgs(
@@ -343,7 +344,7 @@ class TypewriterBranchUIDArgs {
       this.branch,
       this.uid,
       this.tree,
-      this.type = TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
   final _i15.Key? key;
 
@@ -353,7 +354,7 @@ class TypewriterBranchUIDArgs {
 
   final _i17.Tree? tree;
 
-  final dynamic type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
@@ -369,7 +370,7 @@ class TypewriterBranchNew extends _i14.PageRouteInfo<TypewriterBranchNewArgs> {
       _i16.Branch? branch,
       String? uid,
       _i17.Tree? tree,
-      dynamic type = TypewriterType.unknown})
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterBranchNew.name,
             path: '/typewriter/branch/new',
             args: TypewriterBranchNewArgs(
@@ -385,7 +386,7 @@ class TypewriterBranchNewArgs {
       this.branch,
       this.uid,
       this.tree,
-      this.type = TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
   final _i15.Key? key;
 
@@ -395,7 +396,7 @@ class TypewriterBranchNewArgs {
 
   final _i17.Tree? tree;
 
-  final dynamic type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
@@ -411,7 +412,7 @@ class TypewriterTreeUID extends _i14.PageRouteInfo<TypewriterTreeUIDArgs> {
       _i16.Branch? branch,
       String? uid,
       _i17.Tree? tree,
-      dynamic type = TypewriterType.unknown})
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterTreeUID.name,
             path: '/typewriter/tree/:id',
             args: TypewriterTreeUIDArgs(
@@ -427,7 +428,7 @@ class TypewriterTreeUIDArgs {
       this.branch,
       this.uid,
       this.tree,
-      this.type = TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
   final _i15.Key? key;
 
@@ -437,7 +438,7 @@ class TypewriterTreeUIDArgs {
 
   final _i17.Tree? tree;
 
-  final dynamic type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
@@ -453,7 +454,7 @@ class TypewriterTreeNew extends _i14.PageRouteInfo<TypewriterTreeNewArgs> {
       _i16.Branch? branch,
       String? uid,
       _i17.Tree? tree,
-      dynamic type = TypewriterType.unknown})
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterTreeNew.name,
             path: '/typewriter/tree/new',
             args: TypewriterTreeNewArgs(
@@ -469,7 +470,7 @@ class TypewriterTreeNewArgs {
       this.branch,
       this.uid,
       this.tree,
-      this.type = TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
   final _i15.Key? key;
 
@@ -479,7 +480,7 @@ class TypewriterTreeNewArgs {
 
   final _i17.Tree? tree;
 
-  final dynamic type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {

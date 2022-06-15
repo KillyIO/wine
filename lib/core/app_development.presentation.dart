@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:wine/application/library/library_bloc.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/features/auth/auth_bloc.application.dart';
 import 'package:wine/features/home/home_bloc.application.dart';
 import 'package:wine/flavor_banner.dart';

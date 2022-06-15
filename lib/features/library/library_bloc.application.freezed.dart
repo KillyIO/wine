@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'library_bloc.dart';
+part of 'library_bloc.application.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -290,6 +290,8 @@ abstract class _$$BranchUpdatedCopyWith<$Res> {
           _$BranchUpdated value, $Res Function(_$BranchUpdated) then) =
       __$$BranchUpdatedCopyWithImpl<$Res>;
   $Res call({Branch branch});
+
+  $BranchCopyWith<$Res> get branch;
 }
 
 /// @nodoc
@@ -313,6 +315,13 @@ class __$$BranchUpdatedCopyWithImpl<$Res>
           : branch // ignore: cast_nullable_to_non_nullable
               as Branch,
     ));
+  }
+
+  @override
+  $BranchCopyWith<$Res> get branch {
+    return $BranchCopyWith<$Res>(_value.branch, (value) {
+      return _then(_value.copyWith(branch: value));
+    });
   }
 }
 
@@ -1480,6 +1489,8 @@ abstract class $LibraryStateCopyWith<$Res> {
       bool isProcessing,
       User session,
       List<Tree> trees});
+
+  $UserCopyWith<$Res> get session;
 }
 
 /// @nodoc
@@ -1541,6 +1552,13 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
               as List<Tree>,
     ));
   }
+
+  @override
+  $UserCopyWith<$Res> get session {
+    return $UserCopyWith<$Res>(_value.session, (value) {
+      return _then(_value.copyWith(session: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -1560,6 +1578,9 @@ abstract class _$$_LibraryStateCopyWith<$Res>
       bool isProcessing,
       User session,
       List<Tree> trees});
+
+  @override
+  $UserCopyWith<$Res> get session;
 }
 
 /// @nodoc

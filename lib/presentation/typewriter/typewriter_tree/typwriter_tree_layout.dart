@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/library/library_bloc.dart';
+import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/application/typewriter/typewriter_tree/typewriter_tree_bloc.dart';
 import 'package:wine/core/typewriter_end_state.domain.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
