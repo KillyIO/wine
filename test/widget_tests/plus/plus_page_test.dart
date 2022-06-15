@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 
-import 'package:wine/application/log_in/log_in_bloc.dart';
+import 'package:wine/features/log_in/log_in_bloc.application.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
@@ -14,14 +14,14 @@ import 'package:wine/features/auth/auth_dialog_cubit.application.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/home/home_bloc.application.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/library/library_page.dart';
-import 'package:wine/presentation/log_in/log_in_page.dart';
+import 'package:wine/features/library/library_page.presentation.dart';
+import 'package:wine/features/log_in/log_in_page.presentation.dart';
 import 'package:wine/core/routes/router.dart';
-import 'package:wine/presentation/web/auth_dialog.dart';
+import 'package:wine/features/web/auth_dialog.presentation.dart';
 
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
-import '../utils/test_router.presentation.dart';
+import '../utils/test_router_widget.dart';
 
 void main() {
   const desktopWidth = 1280;

@@ -3,6 +3,7 @@ import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/password.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
 import 'package:wine/core/unique_id.domain.dart';
+import 'package:wine/features/user/user.domain.dart';
 
 class MockEmailAddress extends Mock implements EmailAddress {}
 

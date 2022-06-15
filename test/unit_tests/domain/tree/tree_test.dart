@@ -2,11 +2,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/features/tree/subtitle.domain.dart';
 import 'package:wine/features/tree/synopsis.domain.dart';
 import 'package:wine/features/tree/tree.domain.dart';
-import 'package:wine/features/core/cover_url.domain.dart';
-import 'package:wine/features/core/genre.domain.dart';
-import 'package:wine/features/core/language.domain.dart';
-import 'package:wine/features/core/title.domain.dart';
-import 'package:wine/features/core/unique_id.domain.dart';
+import 'package:wine/core/cover_url.domain.dart';
+import 'package:wine/core/genre.domain.dart';
+import 'package:wine/core/language.domain.dart';
+import 'package:wine/core/title.domain.dart';
+import 'package:wine/core/unique_id.domain.dart';
 
 import '../../utils/constants.dart';
 

@@ -11,7 +11,7 @@ import 'package:wine/features/sessions/sessions_failure.domain.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
 import 'package:wine/features/settings/settings_failure.domain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
-import 'package:wine/domain/user/user_failure.dart';
+import 'package:wine/features/user/user_failure.domain.dart';
 import 'package:wine/features/auth/auth_bloc.application.dart';
 import 'package:wine/features/auth/auth_failure.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
@@ -23,8 +23,8 @@ import 'package:wine/core/routes/router.dart';
 import '../../mocks/domain_mocks.dart';
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
-import '../utils/test_router.presentation.dart';
-import '../utils/test.presentation.dart';
+import '../utils/test_router_widget.dart';
+import '../utils/test_widget.dart';
 
 void main() {
   late IAuthFacade _authFacade;

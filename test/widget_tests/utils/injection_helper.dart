@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:wine/features/library/library_bloc.application.dart';
-import 'package:wine/application/log_in/log_in_bloc.dart';
+import 'package:wine/features/log_in/log_in_bloc.application.dart';
 import 'package:wine/features/setup/setup_bloc.application.dart';
 import 'package:wine/features/branch/i_branch_repository.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';

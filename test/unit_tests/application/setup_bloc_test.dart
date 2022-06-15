@@ -12,7 +12,7 @@ import 'package:wine/features/settings/settings_failure.domain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/auth/auth_failure.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
-import 'package:wine/features/core/core_failure.domain.dart';
+import 'package:wine/core/core_failure.domain.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
 import '../../mocks/default_covers_mock.dart';
