@@ -1,4 +1,4 @@
-part of 'tree_bloc.dart';
+part of 'tree_bloc.application.dart';
 
 /// @nodoc
 @freezed

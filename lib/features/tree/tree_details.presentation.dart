@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/tree/tree_bloc.dart';
-import 'package:wine/presentation/tree/widgets/tree_author_username.dart';
-import 'package:wine/presentation/tree/widgets/tree_cover.dart';
-import 'package:wine/presentation/tree/widgets/tree_title.dart';
+import 'package:wine/features/tree/tree_bloc.application.dart';
+import 'package:wine/features/tree/tree_author_username.presentation.dart';
+import 'package:wine/features/tree/tree_cover.presentation.dart';
+import 'package:wine/features/tree/tree_title.presentation.dart';
 
 /// @nodoc
 class TreeDetails extends StatelessWidget {

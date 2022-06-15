@@ -17,9 +17,9 @@ import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 
-part 'tree_bloc.freezed.dart';
-part 'tree_event.dart';
-part 'tree_state.dart';
+part 'tree_bloc.application.freezed.dart';
+part 'tree_event.application.dart';
+part 'tree_state.application.dart';
 
 /// @nodoc
 @Environment(Environment.dev)

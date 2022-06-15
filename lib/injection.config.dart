@@ -12,7 +12,6 @@ import 'package:google_sign_in/google_sign_in.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:isar/isar.dart' as _i16;
 
-import 'application/tree/tree_bloc.dart' as _i30;
 import 'application/typewriter/typewriter_branch/typewriter_branch_bloc.dart'
     as _i31;
 import 'application/typewriter/typewriter_tree/typewriter_tree_bloc.dart'
@@ -41,9 +40,10 @@ import 'features/settings/settings_bloc.application.dart' as _i27;
 import 'features/settings/settings_repository.infrastructure.dart' as _i24;
 import 'features/setup/setup_bloc.application.dart' as _i28;
 import 'features/sign_up/sign_up_bloc.application.dart' as _i29;
+import 'features/tree/tree_bloc.application.dart' as _i30;
+import 'features/tree/tree_repository.infrastructure.dart' as _i13;
 import 'features/user/i_user_repository.domain.dart' as _i14;
 import 'features/user/user_repository.infrastructure.dart' as _i15;
-import 'infrastructure/tree/tree_repository.dart' as _i13;
 
 const String _dev = 'dev';
 const String _prod = 'prod';

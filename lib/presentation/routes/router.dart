@@ -9,7 +9,7 @@ import 'package:wine/features/settings/settings_branch/settings_branch_page.pres
 import 'package:wine/features/settings/settings_page.presentation.dart';
 import 'package:wine/features/settings/settings_tree/settings_tree_page.presentation.dart';
 import 'package:wine/features/sign_up/sign_up_page.presentation.dart';
-import 'package:wine/presentation/tree/tree_page.dart';
+import 'package:wine/features/tree/tree_page.presentation.dart';
 import 'package:wine/presentation/typewriter/typewriter_page.dart';
 import 'package:wine/presentation/wrappers/settings_wrapper.dart';
 import 'package:wine/utils/paths/router.dart';

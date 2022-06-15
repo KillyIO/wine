@@ -4,7 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/core/typewriter_type.domain.dart';
 import 'package:wine/domain/tree/tree.dart';
-import 'package:wine/presentation/core/tree/tree_card.dart';
+import 'package:wine/core/tree/tree_card.presentation.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/assets/images.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';

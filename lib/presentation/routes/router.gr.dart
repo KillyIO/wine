@@ -28,7 +28,7 @@ import 'package:wine/features/settings/settings_page.presentation.dart' as _i13;
 import 'package:wine/features/settings/settings_tree/settings_tree_page.presentation.dart'
     as _i12;
 import 'package:wine/features/sign_up/sign_up_page.presentation.dart' as _i8;
-import 'package:wine/presentation/tree/tree_page.dart' as _i6;
+import 'package:wine/features/tree/tree_page.presentation.dart' as _i6;
 import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i9;
 import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i7;
 
