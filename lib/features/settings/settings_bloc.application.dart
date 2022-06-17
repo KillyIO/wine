@@ -53,6 +53,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         await _fetchSettings(emit);
       }
     });
+    on<SessionFetched>((_, emit) async => await _fetchSettings(emit));
     on<LogOutPressed>((_, emit) async {
       emit(
         state.copyWith(
@@ -95,7 +96,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
       ),
     );
-    on<SessionFetched>((_, emit) async => await _fetchSettings(emit));
   }
 
   final IAuthFacade _authFacade;

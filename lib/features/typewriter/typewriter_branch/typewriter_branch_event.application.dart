@@ -4,11 +4,24 @@ part of 'typewriter_branch_bloc.application.dart';
 @freezed
 class TypewriterBranchEvent with _$TypewriterBranchEvent {
   /// @nodoc
-  const factory TypewriterBranchEvent.addCoverPressed() = AddCoverPressed;
+  const factory TypewriterBranchEvent.launchAsNewBranch({
+    Branch? previousBranch,
+    Tree? tree,
+  }) = LaunchAsNewBranch;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.sessionFetched() = SessionFetched;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.publishButtonPressed() =
+      PublishButtonPressed;
 
   /// @nodoc
   const factory TypewriterBranchEvent.branchOneExistenceChecked() =
       BranchOneExistenceChecked;
+
+  /// @nodoc
+  const factory TypewriterBranchEvent.addCoverPressed() = AddCoverPressed;
 
   /// @nodoc
   const factory TypewriterBranchEvent.deleteButtonPressed() =
@@ -29,12 +42,6 @@ class TypewriterBranchEvent with _$TypewriterBranchEvent {
       LanguageSelected;
 
   /// @nodoc
-  const factory TypewriterBranchEvent.launchAsNewBranch({
-    Branch? previousBranch,
-    Tree? tree,
-  }) = LaunchAsNewBranch;
-
-  /// @nodoc
   const factory TypewriterBranchEvent.launchWithUID(
     UniqueID uid, {
     Branch? branch,
@@ -52,14 +59,7 @@ class TypewriterBranchEvent with _$TypewriterBranchEvent {
       PageViewIndexChanged;
 
   /// @nodoc
-  const factory TypewriterBranchEvent.publishButtonPressed() =
-      PublishButtonPressed;
-
-  /// @nodoc
   const factory TypewriterBranchEvent.saveButtonPressed() = SaveButtonPressed;
-
-  /// @nodoc
-  const factory TypewriterBranchEvent.sessionFetched() = SessionFetched;
 
   /// @nodoc
   const factory TypewriterBranchEvent.titleChanged(String title) = TitleChanged;

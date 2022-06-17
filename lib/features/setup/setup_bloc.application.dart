@@ -59,17 +59,12 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         );
       }
     });
-    on<DefaultCoversCached>((_, __) async => _fetchSettings());
-    on<DefaultCoversLoaded>((value, emit) async {
-      (await _defaultCoversRepository.cacheDefaultCovers(value.defaultCovers))
-          .match(
-        (_) {
-          add(const SetupEvent.defaultCoversCached());
-        },
-        (failure) {
-          emit(SetupState.failure(CoreFailure.defaultCovers(failure)));
-        },
-      );
+    on<SettingsFetched>((_, emit) async {
+      if (!_authFacade.isAnonymous) {
+        await _fetchSession(emit);
+      } else {
+        emit(const SetupState.content());
+      }
     });
     on<SessionFetched>((value, emit) async {
       (await _userRepository.loadUser(value.session.uid)).match(
@@ -81,30 +76,6 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         },
       );
     });
-    on<SettingsFetched>((_, emit) async {
-      if (!_authFacade.isAnonymous) {
-        await _fetchSession(emit);
-      } else {
-        emit(const SetupState.content());
-      }
-    });
-    on<SettingsInitialized>((_, emit) async {
-      if (!_authFacade.isAnonymous) {
-        await _fetchSession(emit);
-      } else {
-        emit(const SetupState.content());
-      }
-    });
-    on<SettingsNotFound>(
-      (_, emit) async => (await _settingsRepository.initializeSettings()).match(
-        (_) {
-          add(const SetupEvent.settingsInitialized());
-        },
-        (failure) {
-          emit(SetupState.failure(CoreFailure.settings(failure)));
-        },
-      ),
-    );
     on<UserLoaded>(
       (value, emit) async =>
           (await _sessionsRepository.insertSession(value.user)).match(
@@ -116,6 +87,35 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         },
       ),
     );
+    on<SettingsNotFound>(
+      (_, emit) async => (await _settingsRepository.initializeSettings()).match(
+        (_) {
+          add(const SetupEvent.settingsInitialized());
+        },
+        (failure) {
+          emit(SetupState.failure(CoreFailure.settings(failure)));
+        },
+      ),
+    );
+    on<SettingsInitialized>((_, emit) async {
+      if (!_authFacade.isAnonymous) {
+        await _fetchSession(emit);
+      } else {
+        emit(const SetupState.content());
+      }
+    });
+    on<DefaultCoversLoaded>((value, emit) async {
+      (await _defaultCoversRepository.cacheDefaultCovers(value.defaultCovers))
+          .match(
+        (_) {
+          add(const SetupEvent.defaultCoversCached());
+        },
+        (failure) {
+          emit(SetupState.failure(CoreFailure.defaultCovers(failure)));
+        },
+      );
+    });
+    on<DefaultCoversCached>((_, __) async => _fetchSettings());
   }
 
   final IAuthFacade _authFacade;

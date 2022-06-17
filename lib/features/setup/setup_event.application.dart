@@ -10,7 +10,19 @@ class SetupEvent with _$SetupEvent {
   const factory SetupEvent.authenticated() = Authenticated;
 
   /// @nodoc
-  const factory SetupEvent.defaultCoversCached() = DefaultCoversCached;
+  const factory SetupEvent.settingsFetched() = SettingsFetched;
+
+  /// @nodoc
+  const factory SetupEvent.sessionFetched(User session) = SessionFetched;
+
+  /// @nodoc
+  const factory SetupEvent.userLoaded(User user) = UserLoaded;
+
+  /// @nodoc
+  const factory SetupEvent.settingsNotFound() = SettingsNotFound;
+
+  /// @nodoc
+  const factory SetupEvent.settingsInitialized() = SettingsInitialized;
 
   /// @nodoc
   const factory SetupEvent.defaultCoversLoaded(
@@ -18,17 +30,5 @@ class SetupEvent with _$SetupEvent {
   ) = DefaultCoversLoaded;
 
   /// @nodoc
-  const factory SetupEvent.sessionFetched(User session) = SessionFetched;
-
-  /// @nodoc
-  const factory SetupEvent.settingsFetched() = SettingsFetched;
-
-  /// @nodoc
-  const factory SetupEvent.settingsInitialized() = SettingsInitialized;
-
-  /// @nodoc
-  const factory SetupEvent.settingsNotFound() = SettingsNotFound;
-
-  /// @nodoc
-  const factory SetupEvent.userLoaded(User user) = UserLoaded;
+  const factory SetupEvent.defaultCoversCached() = DefaultCoversCached;
 }

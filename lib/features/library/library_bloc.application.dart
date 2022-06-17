@@ -27,6 +27,58 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
     this._sessionsRepository,
     this._treeRepository,
   ) : super(LibraryState.initial()) {
+    on<Init>((_, emit) async {
+      emit(
+        state.copyWith(
+          currentPageViewIdx: 0,
+          currentVerticalNavbarIdx: 0,
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      (await _sessionsRepository.fetchSession()).match(
+        (user) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              session: user,
+            ),
+          );
+
+          add(const LibraryEvent.sessionFetched());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<SessionFetched>((_, emit) async {
+      (await _treeRepository.loadTreesByUserUID(state.session.uid)).match(
+        (trees) {
+          emit(
+            state.copyWith(
+              failureOption: Option.none(),
+              isProcessing: false,
+              trees: trees,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
     on<BranchDeleted>((value, emit) async {
       emit(
         state.copyWith(
@@ -73,37 +125,6 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
           failureOption: const None(),
           isProcessing: false,
         ),
-      );
-    });
-    on<Init>((_, emit) async {
-      emit(
-        state.copyWith(
-          currentPageViewIdx: 0,
-          currentVerticalNavbarIdx: 0,
-          failureOption: const None(),
-          isProcessing: true,
-        ),
-      );
-
-      (await _sessionsRepository.fetchSession()).match(
-        (user) {
-          emit(
-            state.copyWith(
-              failureOption: const None(),
-              session: user,
-            ),
-          );
-
-          add(const LibraryEvent.sessionFetched());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
       );
     });
     on<PageViewIndexChanged>((value, emit) async {
@@ -176,27 +197,6 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
           default:
         }
       }
-    });
-    on<SessionFetched>((_, emit) async {
-      (await _treeRepository.loadTreesByUserUID(state.session.uid)).match(
-        (trees) {
-          emit(
-            state.copyWith(
-              failureOption: Option.none(),
-              isProcessing: false,
-              trees: trees,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.tree(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
     });
     on<TreeDeleted>((value, emit) async {
       emit(

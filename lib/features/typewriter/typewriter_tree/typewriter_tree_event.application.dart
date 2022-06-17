@@ -4,6 +4,12 @@ part of 'typewriter_tree_bloc.application.dart';
 @freezed
 class TypewriterTreeEvent with _$TypewriterTreeEvent {
   /// @nodoc
+  const factory TypewriterTreeEvent.launchAsNewTree() = LaunchAsNewTree;
+
+  /// @nodoc
+  const factory TypewriterTreeEvent.sessionFetched() = SessionFetched;
+
+  /// @nodoc
   const factory TypewriterTreeEvent.addCoverPressed() = AddCoverPressed;
 
   /// @nodoc
@@ -24,9 +30,6 @@ class TypewriterTreeEvent with _$TypewriterTreeEvent {
       LanguageSelected;
 
   /// @nodoc
-  const factory TypewriterTreeEvent.launchAsNewTree() = LaunchAsNewTree;
-
-  /// @nodoc
   const factory TypewriterTreeEvent.launchWithUID(UniqueID uid, {Tree? tree}) =
       LaunchWithUID;
 
@@ -36,9 +39,6 @@ class TypewriterTreeEvent with _$TypewriterTreeEvent {
 
   /// @nodoc
   const factory TypewriterTreeEvent.saveButtonPressed() = SaveButtonPressed;
-
-  /// @nodoc
-  const factory TypewriterTreeEvent.sessionFetched() = SessionFetched;
 
   /// @nodoc
   const factory TypewriterTreeEvent.subtitleChanged(String subtitle) =

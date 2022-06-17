@@ -101,8 +101,11 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
           get<_i21.ISessionsRepository>(), get<_i12.ITreeRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i26.LogInBloc>(
-      () => _i26.LogInBloc(get<_i8.IAuthFacade>(),
-          get<_i21.ISessionsRepository>(), get<_i14.IUserRepository>()),
+      () => _i26.LogInBloc(
+          get<_i8.IAuthFacade>(),
+          get<_i19.IDefaultCoversRepository>(),
+          get<_i21.ISessionsRepository>(),
+          get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i27.SettingsBloc>(
       () => _i27.SettingsBloc(get<_i8.IAuthFacade>(),
@@ -117,8 +120,11 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
           get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i29.SignUpBloc>(
-      () => _i29.SignUpBloc(get<_i8.IAuthFacade>(),
-          get<_i21.ISessionsRepository>(), get<_i14.IUserRepository>()),
+      () => _i29.SignUpBloc(
+          get<_i8.IAuthFacade>(),
+          get<_i19.IDefaultCoversRepository>(),
+          get<_i21.ISessionsRepository>(),
+          get<_i14.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i30.TreeBloc>(
       () => _i30.TreeBloc(

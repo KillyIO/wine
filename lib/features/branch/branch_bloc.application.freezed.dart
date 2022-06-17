@@ -18,130 +18,130 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$BranchEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() refreshNextBranchesBySameAuthorPressed,
     required TResult Function() refreshNextBranchesPressed,
     required TResult Function(int currentScrollPosition, int maxScrollPosition)
         scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
         refreshNextBranchesBySameAuthorPressed,
     required TResult Function(RefreshNextBranchesPressed value)
         refreshNextBranchesPressed,
     required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -161,624 +161,6 @@ class _$BranchEventCopyWithImpl<$Res> implements $BranchEventCopyWith<$Res> {
   final BranchEvent _value;
   // ignore: unused_field
   final $Res Function(BranchEvent) _then;
-}
-
-/// @nodoc
-abstract class _$$AuthorLoadedCopyWith<$Res> {
-  factory _$$AuthorLoadedCopyWith(
-          _$AuthorLoaded value, $Res Function(_$AuthorLoaded) then) =
-      __$$AuthorLoadedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AuthorLoadedCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$AuthorLoadedCopyWith<$Res> {
-  __$$AuthorLoadedCopyWithImpl(
-      _$AuthorLoaded _value, $Res Function(_$AuthorLoaded) _then)
-      : super(_value, (v) => _then(v as _$AuthorLoaded));
-
-  @override
-  _$AuthorLoaded get _value => super._value as _$AuthorLoaded;
-}
-
-/// @nodoc
-
-class _$AuthorLoaded implements AuthorLoaded {
-  const _$AuthorLoaded();
-
-  @override
-  String toString() {
-    return 'BranchEvent.authorLoaded()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AuthorLoaded);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return authorLoaded();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return authorLoaded?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (authorLoaded != null) {
-      return authorLoaded();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return authorLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return authorLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (authorLoaded != null) {
-      return authorLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AuthorLoaded implements BranchEvent {
-  const factory AuthorLoaded() = _$AuthorLoaded;
-}
-
-/// @nodoc
-abstract class _$$BookmarkButtonPressedCopyWith<$Res> {
-  factory _$$BookmarkButtonPressedCopyWith(_$BookmarkButtonPressed value,
-          $Res Function(_$BookmarkButtonPressed) then) =
-      __$$BookmarkButtonPressedCopyWithImpl<$Res>;
-  $Res call({bool isBookmarked});
-}
-
-/// @nodoc
-class __$$BookmarkButtonPressedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$BookmarkButtonPressedCopyWith<$Res> {
-  __$$BookmarkButtonPressedCopyWithImpl(_$BookmarkButtonPressed _value,
-      $Res Function(_$BookmarkButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$BookmarkButtonPressed));
-
-  @override
-  _$BookmarkButtonPressed get _value => super._value as _$BookmarkButtonPressed;
-
-  @override
-  $Res call({
-    Object? isBookmarked = freezed,
-  }) {
-    return _then(_$BookmarkButtonPressed(
-      isBookmarked: isBookmarked == freezed
-          ? _value.isBookmarked
-          : isBookmarked // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BookmarkButtonPressed implements BookmarkButtonPressed {
-  const _$BookmarkButtonPressed({required this.isBookmarked});
-
-  @override
-  final bool isBookmarked;
-
-  @override
-  String toString() {
-    return 'BranchEvent.bookmarkButtonPressed(isBookmarked: $isBookmarked)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BookmarkButtonPressed &&
-            const DeepCollectionEquality()
-                .equals(other.isBookmarked, isBookmarked));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(isBookmarked));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
-      __$$BookmarkButtonPressedCopyWithImpl<_$BookmarkButtonPressed>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return bookmarkButtonPressed(isBookmarked);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return bookmarkButtonPressed?.call(isBookmarked);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (bookmarkButtonPressed != null) {
-      return bookmarkButtonPressed(isBookmarked);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return bookmarkButtonPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return bookmarkButtonPressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (bookmarkButtonPressed != null) {
-      return bookmarkButtonPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BookmarkButtonPressed implements BranchEvent {
-  const factory BookmarkButtonPressed({required final bool isBookmarked}) =
-      _$BookmarkButtonPressed;
-
-  bool get isBookmarked => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$BranchSetCopyWith<$Res> {
-  factory _$$BranchSetCopyWith(
-          _$BranchSet value, $Res Function(_$BranchSet) then) =
-      __$$BranchSetCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$BranchSetCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$BranchSetCopyWith<$Res> {
-  __$$BranchSetCopyWithImpl(
-      _$BranchSet _value, $Res Function(_$BranchSet) _then)
-      : super(_value, (v) => _then(v as _$BranchSet));
-
-  @override
-  _$BranchSet get _value => super._value as _$BranchSet;
-}
-
-/// @nodoc
-
-class _$BranchSet implements BranchSet {
-  const _$BranchSet();
-
-  @override
-  String toString() {
-    return 'BranchEvent.branchSet()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BranchSet);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return branchSet();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return branchSet?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (branchSet != null) {
-      return branchSet();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return branchSet(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return branchSet?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (branchSet != null) {
-      return branchSet(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BranchSet implements BranchEvent {
-  const factory BranchSet() = _$BranchSet;
 }
 
 /// @nodoc
@@ -869,22 +251,22 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() refreshNextBranchesBySameAuthorPressed,
     required TResult Function() refreshNextBranchesPressed,
     required TResult Function(int currentScrollPosition, int maxScrollPosition)
         scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
   }) {
     return launchWithUID(uid, branch);
   }
@@ -892,22 +274,22 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
   }) {
     return launchWithUID?.call(uid, branch);
   }
@@ -915,22 +297,22 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (launchWithUID != null) {
@@ -942,25 +324,25 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
         refreshNextBranchesBySameAuthorPressed,
     required TResult Function(RefreshNextBranchesPressed value)
         refreshNextBranchesPressed,
     required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return launchWithUID(this);
   }
@@ -968,24 +350,24 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return launchWithUID?.call(this);
   }
@@ -993,24 +375,24 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (launchWithUID != null) {
@@ -1028,6 +410,1805 @@ abstract class LaunchWithUID implements BranchEvent {
   Branch? get branch => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BranchSetCopyWith<$Res> {
+  factory _$$BranchSetCopyWith(
+          _$BranchSet value, $Res Function(_$BranchSet) then) =
+      __$$BranchSetCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BranchSetCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$BranchSetCopyWith<$Res> {
+  __$$BranchSetCopyWithImpl(
+      _$BranchSet _value, $Res Function(_$BranchSet) _then)
+      : super(_value, (v) => _then(v as _$BranchSet));
+
+  @override
+  _$BranchSet get _value => super._value as _$BranchSet;
+}
+
+/// @nodoc
+
+class _$BranchSet implements BranchSet {
+  const _$BranchSet();
+
+  @override
+  String toString() {
+    return 'BranchEvent.branchSet()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$BranchSet);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return branchSet();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return branchSet?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (branchSet != null) {
+      return branchSet();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return branchSet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return branchSet?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (branchSet != null) {
+      return branchSet(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BranchSet implements BranchEvent {
+  const factory BranchSet() = _$BranchSet;
+}
+
+/// @nodoc
+abstract class _$$SessionFetchedCopyWith<$Res> {
+  factory _$$SessionFetchedCopyWith(
+          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
+      __$$SessionFetchedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SessionFetchedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$SessionFetchedCopyWith<$Res> {
+  __$$SessionFetchedCopyWithImpl(
+      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
+      : super(_value, (v) => _then(v as _$SessionFetched));
+
+  @override
+  _$SessionFetched get _value => super._value as _$SessionFetched;
+}
+
+/// @nodoc
+
+class _$SessionFetched implements SessionFetched {
+  const _$SessionFetched();
+
+  @override
+  String toString() {
+    return 'BranchEvent.sessionFetched()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SessionFetched);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return sessionFetched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return sessionFetched?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (sessionFetched != null) {
+      return sessionFetched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return sessionFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return sessionFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (sessionFetched != null) {
+      return sessionFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionFetched implements BranchEvent {
+  const factory SessionFetched() = _$SessionFetched;
+}
+
+/// @nodoc
+abstract class _$$AuthorLoadedCopyWith<$Res> {
+  factory _$$AuthorLoadedCopyWith(
+          _$AuthorLoaded value, $Res Function(_$AuthorLoaded) then) =
+      __$$AuthorLoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthorLoadedCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$AuthorLoadedCopyWith<$Res> {
+  __$$AuthorLoadedCopyWithImpl(
+      _$AuthorLoaded _value, $Res Function(_$AuthorLoaded) _then)
+      : super(_value, (v) => _then(v as _$AuthorLoaded));
+
+  @override
+  _$AuthorLoaded get _value => super._value as _$AuthorLoaded;
+}
+
+/// @nodoc
+
+class _$AuthorLoaded implements AuthorLoaded {
+  const _$AuthorLoaded();
+
+  @override
+  String toString() {
+    return 'BranchEvent.authorLoaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AuthorLoaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return authorLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return authorLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (authorLoaded != null) {
+      return authorLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return authorLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return authorLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (authorLoaded != null) {
+      return authorLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthorLoaded implements BranchEvent {
+  const factory AuthorLoaded() = _$AuthorLoaded;
+}
+
+/// @nodoc
+abstract class _$$SettingsFetchedCopyWith<$Res> {
+  factory _$$SettingsFetchedCopyWith(
+          _$SettingsFetched value, $Res Function(_$SettingsFetched) then) =
+      __$$SettingsFetchedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SettingsFetchedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$SettingsFetchedCopyWith<$Res> {
+  __$$SettingsFetchedCopyWithImpl(
+      _$SettingsFetched _value, $Res Function(_$SettingsFetched) _then)
+      : super(_value, (v) => _then(v as _$SettingsFetched));
+
+  @override
+  _$SettingsFetched get _value => super._value as _$SettingsFetched;
+}
+
+/// @nodoc
+
+class _$SettingsFetched implements SettingsFetched {
+  const _$SettingsFetched();
+
+  @override
+  String toString() {
+    return 'BranchEvent.settingsFetched()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SettingsFetched);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return settingsFetched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return settingsFetched?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (settingsFetched != null) {
+      return settingsFetched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return settingsFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return settingsFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (settingsFetched != null) {
+      return settingsFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SettingsFetched implements BranchEvent {
+  const factory SettingsFetched() = _$SettingsFetched;
+}
+
+/// @nodoc
+abstract class _$$NextBranchesBySameAuthorLoadedCopyWith<$Res> {
+  factory _$$NextBranchesBySameAuthorLoadedCopyWith(
+          _$NextBranchesBySameAuthorLoaded value,
+          $Res Function(_$NextBranchesBySameAuthorLoaded) then) =
+      __$$NextBranchesBySameAuthorLoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NextBranchesBySameAuthorLoadedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$NextBranchesBySameAuthorLoadedCopyWith<$Res> {
+  __$$NextBranchesBySameAuthorLoadedCopyWithImpl(
+      _$NextBranchesBySameAuthorLoaded _value,
+      $Res Function(_$NextBranchesBySameAuthorLoaded) _then)
+      : super(_value, (v) => _then(v as _$NextBranchesBySameAuthorLoaded));
+
+  @override
+  _$NextBranchesBySameAuthorLoaded get _value =>
+      super._value as _$NextBranchesBySameAuthorLoaded;
+}
+
+/// @nodoc
+
+class _$NextBranchesBySameAuthorLoaded
+    implements NextBranchesBySameAuthorLoaded {
+  const _$NextBranchesBySameAuthorLoaded();
+
+  @override
+  String toString() {
+    return 'BranchEvent.nextBranchesBySameAuthorLoaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NextBranchesBySameAuthorLoaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return nextBranchesBySameAuthorLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return nextBranchesBySameAuthorLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (nextBranchesBySameAuthorLoaded != null) {
+      return nextBranchesBySameAuthorLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return nextBranchesBySameAuthorLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return nextBranchesBySameAuthorLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (nextBranchesBySameAuthorLoaded != null) {
+      return nextBranchesBySameAuthorLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NextBranchesBySameAuthorLoaded implements BranchEvent {
+  const factory NextBranchesBySameAuthorLoaded() =
+      _$NextBranchesBySameAuthorLoaded;
+}
+
+/// @nodoc
+abstract class _$$NextBranchesLoadedCopyWith<$Res> {
+  factory _$$NextBranchesLoadedCopyWith(_$NextBranchesLoaded value,
+          $Res Function(_$NextBranchesLoaded) then) =
+      __$$NextBranchesLoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NextBranchesLoadedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$NextBranchesLoadedCopyWith<$Res> {
+  __$$NextBranchesLoadedCopyWithImpl(
+      _$NextBranchesLoaded _value, $Res Function(_$NextBranchesLoaded) _then)
+      : super(_value, (v) => _then(v as _$NextBranchesLoaded));
+
+  @override
+  _$NextBranchesLoaded get _value => super._value as _$NextBranchesLoaded;
+}
+
+/// @nodoc
+
+class _$NextBranchesLoaded implements NextBranchesLoaded {
+  const _$NextBranchesLoaded();
+
+  @override
+  String toString() {
+    return 'BranchEvent.nextBranchesLoaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NextBranchesLoaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return nextBranchesLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return nextBranchesLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (nextBranchesLoaded != null) {
+      return nextBranchesLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return nextBranchesLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return nextBranchesLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (nextBranchesLoaded != null) {
+      return nextBranchesLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NextBranchesLoaded implements BranchEvent {
+  const factory NextBranchesLoaded() = _$NextBranchesLoaded;
+}
+
+/// @nodoc
+abstract class _$$ViewsUpdatedCopyWith<$Res> {
+  factory _$$ViewsUpdatedCopyWith(
+          _$ViewsUpdated value, $Res Function(_$ViewsUpdated) then) =
+      __$$ViewsUpdatedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ViewsUpdatedCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$ViewsUpdatedCopyWith<$Res> {
+  __$$ViewsUpdatedCopyWithImpl(
+      _$ViewsUpdated _value, $Res Function(_$ViewsUpdated) _then)
+      : super(_value, (v) => _then(v as _$ViewsUpdated));
+
+  @override
+  _$ViewsUpdated get _value => super._value as _$ViewsUpdated;
+}
+
+/// @nodoc
+
+class _$ViewsUpdated implements ViewsUpdated {
+  const _$ViewsUpdated();
+
+  @override
+  String toString() {
+    return 'BranchEvent.viewsUpdated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ViewsUpdated);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return viewsUpdated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return viewsUpdated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (viewsUpdated != null) {
+      return viewsUpdated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return viewsUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return viewsUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (viewsUpdated != null) {
+      return viewsUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ViewsUpdated implements BranchEvent {
+  const factory ViewsUpdated() = _$ViewsUpdated;
+}
+
+/// @nodoc
+abstract class _$$LikeStatusLoadedCopyWith<$Res> {
+  factory _$$LikeStatusLoadedCopyWith(
+          _$LikeStatusLoaded value, $Res Function(_$LikeStatusLoaded) then) =
+      __$$LikeStatusLoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LikeStatusLoadedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$LikeStatusLoadedCopyWith<$Res> {
+  __$$LikeStatusLoadedCopyWithImpl(
+      _$LikeStatusLoaded _value, $Res Function(_$LikeStatusLoaded) _then)
+      : super(_value, (v) => _then(v as _$LikeStatusLoaded));
+
+  @override
+  _$LikeStatusLoaded get _value => super._value as _$LikeStatusLoaded;
+}
+
+/// @nodoc
+
+class _$LikeStatusLoaded implements LikeStatusLoaded {
+  const _$LikeStatusLoaded();
+
+  @override
+  String toString() {
+    return 'BranchEvent.likeStatusLoaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LikeStatusLoaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return likeStatusLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return likeStatusLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (likeStatusLoaded != null) {
+      return likeStatusLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return likeStatusLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return likeStatusLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (likeStatusLoaded != null) {
+      return likeStatusLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikeStatusLoaded implements BranchEvent {
+  const factory LikeStatusLoaded() = _$LikeStatusLoaded;
+}
+
+/// @nodoc
+abstract class _$$BookmarkButtonPressedCopyWith<$Res> {
+  factory _$$BookmarkButtonPressedCopyWith(_$BookmarkButtonPressed value,
+          $Res Function(_$BookmarkButtonPressed) then) =
+      __$$BookmarkButtonPressedCopyWithImpl<$Res>;
+  $Res call({bool isBookmarked});
+}
+
+/// @nodoc
+class __$$BookmarkButtonPressedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res>
+    implements _$$BookmarkButtonPressedCopyWith<$Res> {
+  __$$BookmarkButtonPressedCopyWithImpl(_$BookmarkButtonPressed _value,
+      $Res Function(_$BookmarkButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$BookmarkButtonPressed));
+
+  @override
+  _$BookmarkButtonPressed get _value => super._value as _$BookmarkButtonPressed;
+
+  @override
+  $Res call({
+    Object? isBookmarked = freezed,
+  }) {
+    return _then(_$BookmarkButtonPressed(
+      isBookmarked: isBookmarked == freezed
+          ? _value.isBookmarked
+          : isBookmarked // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BookmarkButtonPressed implements BookmarkButtonPressed {
+  const _$BookmarkButtonPressed({required this.isBookmarked});
+
+  @override
+  final bool isBookmarked;
+
+  @override
+  String toString() {
+    return 'BranchEvent.bookmarkButtonPressed(isBookmarked: $isBookmarked)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BookmarkButtonPressed &&
+            const DeepCollectionEquality()
+                .equals(other.isBookmarked, isBookmarked));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(isBookmarked));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
+      __$$BookmarkButtonPressedCopyWithImpl<_$BookmarkButtonPressed>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
+    required TResult Function() nextBranchesBySameAuthorLoaded,
+    required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
+    required TResult Function() refreshNextBranchesBySameAuthorPressed,
+    required TResult Function() refreshNextBranchesPressed,
+    required TResult Function(int currentScrollPosition, int maxScrollPosition)
+        scrolled,
+    required TResult Function() toggleDetails,
+  }) {
+    return bookmarkButtonPressed(isBookmarked);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+  }) {
+    return bookmarkButtonPressed?.call(isBookmarked);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
+    TResult Function()? nextBranchesBySameAuthorLoaded,
+    TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult Function()? refreshNextBranchesPressed,
+    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+        scrolled,
+    TResult Function()? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (bookmarkButtonPressed != null) {
+      return bookmarkButtonPressed(isBookmarked);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(NextBranchesBySameAuthorLoaded value)
+        nextBranchesBySameAuthorLoaded,
+    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
+    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
+        refreshNextBranchesBySameAuthorPressed,
+    required TResult Function(RefreshNextBranchesPressed value)
+        refreshNextBranchesPressed,
+    required TResult Function(Scrolled value) scrolled,
+    required TResult Function(ToggleDetails value) toggleDetails,
+  }) {
+    return bookmarkButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+  }) {
+    return bookmarkButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(NextBranchesBySameAuthorLoaded value)?
+        nextBranchesBySameAuthorLoaded,
+    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+        refreshNextBranchesBySameAuthorPressed,
+    TResult Function(RefreshNextBranchesPressed value)?
+        refreshNextBranchesPressed,
+    TResult Function(Scrolled value)? scrolled,
+    TResult Function(ToggleDetails value)? toggleDetails,
+    required TResult orElse(),
+  }) {
+    if (bookmarkButtonPressed != null) {
+      return bookmarkButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarkButtonPressed implements BranchEvent {
+  const factory BookmarkButtonPressed({required final bool isBookmarked}) =
+      _$BookmarkButtonPressed;
+
+  bool get isBookmarked => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1096,22 +2277,22 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() refreshNextBranchesBySameAuthorPressed,
     required TResult Function() refreshNextBranchesPressed,
     required TResult Function(int currentScrollPosition, int maxScrollPosition)
         scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
   }) {
     return likeButtonPressed(isLiked);
   }
@@ -1119,22 +2300,22 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
   }) {
     return likeButtonPressed?.call(isLiked);
   }
@@ -1142,22 +2323,22 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (likeButtonPressed != null) {
@@ -1169,25 +2350,25 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
         refreshNextBranchesBySameAuthorPressed,
     required TResult Function(RefreshNextBranchesPressed value)
         refreshNextBranchesPressed,
     required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return likeButtonPressed(this);
   }
@@ -1195,24 +2376,24 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return likeButtonPressed?.call(this);
   }
@@ -1220,24 +2401,24 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (likeButtonPressed != null) {
@@ -1255,600 +2436,6 @@ abstract class LikeButtonPressed implements BranchEvent {
   @JsonKey(ignore: true)
   _$$LikeButtonPressedCopyWith<_$LikeButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LikeStatusLoadedCopyWith<$Res> {
-  factory _$$LikeStatusLoadedCopyWith(
-          _$LikeStatusLoaded value, $Res Function(_$LikeStatusLoaded) then) =
-      __$$LikeStatusLoadedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LikeStatusLoadedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$LikeStatusLoadedCopyWith<$Res> {
-  __$$LikeStatusLoadedCopyWithImpl(
-      _$LikeStatusLoaded _value, $Res Function(_$LikeStatusLoaded) _then)
-      : super(_value, (v) => _then(v as _$LikeStatusLoaded));
-
-  @override
-  _$LikeStatusLoaded get _value => super._value as _$LikeStatusLoaded;
-}
-
-/// @nodoc
-
-class _$LikeStatusLoaded implements LikeStatusLoaded {
-  const _$LikeStatusLoaded();
-
-  @override
-  String toString() {
-    return 'BranchEvent.likeStatusLoaded()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LikeStatusLoaded);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return likeStatusLoaded();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return likeStatusLoaded?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (likeStatusLoaded != null) {
-      return likeStatusLoaded();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return likeStatusLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return likeStatusLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (likeStatusLoaded != null) {
-      return likeStatusLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LikeStatusLoaded implements BranchEvent {
-  const factory LikeStatusLoaded() = _$LikeStatusLoaded;
-}
-
-/// @nodoc
-abstract class _$$NextBranchesBySameAuthorLoadedCopyWith<$Res> {
-  factory _$$NextBranchesBySameAuthorLoadedCopyWith(
-          _$NextBranchesBySameAuthorLoaded value,
-          $Res Function(_$NextBranchesBySameAuthorLoaded) then) =
-      __$$NextBranchesBySameAuthorLoadedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NextBranchesBySameAuthorLoadedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$NextBranchesBySameAuthorLoadedCopyWith<$Res> {
-  __$$NextBranchesBySameAuthorLoadedCopyWithImpl(
-      _$NextBranchesBySameAuthorLoaded _value,
-      $Res Function(_$NextBranchesBySameAuthorLoaded) _then)
-      : super(_value, (v) => _then(v as _$NextBranchesBySameAuthorLoaded));
-
-  @override
-  _$NextBranchesBySameAuthorLoaded get _value =>
-      super._value as _$NextBranchesBySameAuthorLoaded;
-}
-
-/// @nodoc
-
-class _$NextBranchesBySameAuthorLoaded
-    implements NextBranchesBySameAuthorLoaded {
-  const _$NextBranchesBySameAuthorLoaded();
-
-  @override
-  String toString() {
-    return 'BranchEvent.nextBranchesBySameAuthorLoaded()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NextBranchesBySameAuthorLoaded);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return nextBranchesBySameAuthorLoaded();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return nextBranchesBySameAuthorLoaded?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (nextBranchesBySameAuthorLoaded != null) {
-      return nextBranchesBySameAuthorLoaded();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return nextBranchesBySameAuthorLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return nextBranchesBySameAuthorLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (nextBranchesBySameAuthorLoaded != null) {
-      return nextBranchesBySameAuthorLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NextBranchesBySameAuthorLoaded implements BranchEvent {
-  const factory NextBranchesBySameAuthorLoaded() =
-      _$NextBranchesBySameAuthorLoaded;
-}
-
-/// @nodoc
-abstract class _$$NextBranchesLoadedCopyWith<$Res> {
-  factory _$$NextBranchesLoadedCopyWith(_$NextBranchesLoaded value,
-          $Res Function(_$NextBranchesLoaded) then) =
-      __$$NextBranchesLoadedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NextBranchesLoadedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$NextBranchesLoadedCopyWith<$Res> {
-  __$$NextBranchesLoadedCopyWithImpl(
-      _$NextBranchesLoaded _value, $Res Function(_$NextBranchesLoaded) _then)
-      : super(_value, (v) => _then(v as _$NextBranchesLoaded));
-
-  @override
-  _$NextBranchesLoaded get _value => super._value as _$NextBranchesLoaded;
-}
-
-/// @nodoc
-
-class _$NextBranchesLoaded implements NextBranchesLoaded {
-  const _$NextBranchesLoaded();
-
-  @override
-  String toString() {
-    return 'BranchEvent.nextBranchesLoaded()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NextBranchesLoaded);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return nextBranchesLoaded();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return nextBranchesLoaded?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (nextBranchesLoaded != null) {
-      return nextBranchesLoaded();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return nextBranchesLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return nextBranchesLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (nextBranchesLoaded != null) {
-      return nextBranchesLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NextBranchesLoaded implements BranchEvent {
-  const factory NextBranchesLoaded() = _$NextBranchesLoaded;
 }
 
 /// @nodoc
@@ -1898,22 +2485,22 @@ class _$RefreshNextBranchesBySameAuthorPressed
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() refreshNextBranchesBySameAuthorPressed,
     required TResult Function() refreshNextBranchesPressed,
     required TResult Function(int currentScrollPosition, int maxScrollPosition)
         scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
   }) {
     return refreshNextBranchesBySameAuthorPressed();
   }
@@ -1921,22 +2508,22 @@ class _$RefreshNextBranchesBySameAuthorPressed
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
   }) {
     return refreshNextBranchesBySameAuthorPressed?.call();
   }
@@ -1944,22 +2531,22 @@ class _$RefreshNextBranchesBySameAuthorPressed
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (refreshNextBranchesBySameAuthorPressed != null) {
@@ -1971,25 +2558,25 @@ class _$RefreshNextBranchesBySameAuthorPressed
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
         refreshNextBranchesBySameAuthorPressed,
     required TResult Function(RefreshNextBranchesPressed value)
         refreshNextBranchesPressed,
     required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return refreshNextBranchesBySameAuthorPressed(this);
   }
@@ -1997,24 +2584,24 @@ class _$RefreshNextBranchesBySameAuthorPressed
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return refreshNextBranchesBySameAuthorPressed?.call(this);
   }
@@ -2022,24 +2609,24 @@ class _$RefreshNextBranchesBySameAuthorPressed
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (refreshNextBranchesBySameAuthorPressed != null) {
@@ -2099,22 +2686,22 @@ class _$RefreshNextBranchesPressed implements RefreshNextBranchesPressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() refreshNextBranchesBySameAuthorPressed,
     required TResult Function() refreshNextBranchesPressed,
     required TResult Function(int currentScrollPosition, int maxScrollPosition)
         scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
   }) {
     return refreshNextBranchesPressed();
   }
@@ -2122,22 +2709,22 @@ class _$RefreshNextBranchesPressed implements RefreshNextBranchesPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
   }) {
     return refreshNextBranchesPressed?.call();
   }
@@ -2145,22 +2732,22 @@ class _$RefreshNextBranchesPressed implements RefreshNextBranchesPressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (refreshNextBranchesPressed != null) {
@@ -2172,25 +2759,25 @@ class _$RefreshNextBranchesPressed implements RefreshNextBranchesPressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
         refreshNextBranchesBySameAuthorPressed,
     required TResult Function(RefreshNextBranchesPressed value)
         refreshNextBranchesPressed,
     required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return refreshNextBranchesPressed(this);
   }
@@ -2198,24 +2785,24 @@ class _$RefreshNextBranchesPressed implements RefreshNextBranchesPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return refreshNextBranchesPressed?.call(this);
   }
@@ -2223,24 +2810,24 @@ class _$RefreshNextBranchesPressed implements RefreshNextBranchesPressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (refreshNextBranchesPressed != null) {
@@ -2329,22 +2916,22 @@ class _$Scrolled implements Scrolled {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() refreshNextBranchesBySameAuthorPressed,
     required TResult Function() refreshNextBranchesPressed,
     required TResult Function(int currentScrollPosition, int maxScrollPosition)
         scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
   }) {
     return scrolled(currentScrollPosition, maxScrollPosition);
   }
@@ -2352,22 +2939,22 @@ class _$Scrolled implements Scrolled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
   }) {
     return scrolled?.call(currentScrollPosition, maxScrollPosition);
   }
@@ -2375,22 +2962,22 @@ class _$Scrolled implements Scrolled {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (scrolled != null) {
@@ -2402,25 +2989,25 @@ class _$Scrolled implements Scrolled {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
         refreshNextBranchesBySameAuthorPressed,
     required TResult Function(RefreshNextBranchesPressed value)
         refreshNextBranchesPressed,
     required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return scrolled(this);
   }
@@ -2428,24 +3015,24 @@ class _$Scrolled implements Scrolled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return scrolled?.call(this);
   }
@@ -2453,24 +3040,24 @@ class _$Scrolled implements Scrolled {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (scrolled != null) {
@@ -2490,398 +3077,6 @@ abstract class Scrolled implements BranchEvent {
   @JsonKey(ignore: true)
   _$$ScrolledCopyWith<_$Scrolled> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SessionFetchedCopyWith<$Res> {
-  factory _$$SessionFetchedCopyWith(
-          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
-      __$$SessionFetchedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$SessionFetchedCopyWith<$Res> {
-  __$$SessionFetchedCopyWithImpl(
-      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
-      : super(_value, (v) => _then(v as _$SessionFetched));
-
-  @override
-  _$SessionFetched get _value => super._value as _$SessionFetched;
-}
-
-/// @nodoc
-
-class _$SessionFetched implements SessionFetched {
-  const _$SessionFetched();
-
-  @override
-  String toString() {
-    return 'BranchEvent.sessionFetched()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionFetched);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return sessionFetched();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return sessionFetched?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (sessionFetched != null) {
-      return sessionFetched();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return sessionFetched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return sessionFetched?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (sessionFetched != null) {
-      return sessionFetched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SessionFetched implements BranchEvent {
-  const factory SessionFetched() = _$SessionFetched;
-}
-
-/// @nodoc
-abstract class _$$SettingsFetchedCopyWith<$Res> {
-  factory _$$SettingsFetchedCopyWith(
-          _$SettingsFetched value, $Res Function(_$SettingsFetched) then) =
-      __$$SettingsFetchedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SettingsFetchedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$SettingsFetchedCopyWith<$Res> {
-  __$$SettingsFetchedCopyWithImpl(
-      _$SettingsFetched _value, $Res Function(_$SettingsFetched) _then)
-      : super(_value, (v) => _then(v as _$SettingsFetched));
-
-  @override
-  _$SettingsFetched get _value => super._value as _$SettingsFetched;
-}
-
-/// @nodoc
-
-class _$SettingsFetched implements SettingsFetched {
-  const _$SettingsFetched();
-
-  @override
-  String toString() {
-    return 'BranchEvent.settingsFetched()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SettingsFetched);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return settingsFetched();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return settingsFetched?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (settingsFetched != null) {
-      return settingsFetched();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return settingsFetched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return settingsFetched?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (settingsFetched != null) {
-      return settingsFetched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SettingsFetched implements BranchEvent {
-  const factory SettingsFetched() = _$SettingsFetched;
 }
 
 /// @nodoc
@@ -2925,22 +3120,22 @@ class _$ToggleDetails implements ToggleDetails {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
+    required TResult Function() branchSet,
+    required TResult Function() sessionFetched,
+    required TResult Function() authorLoaded,
+    required TResult Function() settingsFetched,
     required TResult Function() nextBranchesBySameAuthorLoaded,
     required TResult Function() nextBranchesLoaded,
+    required TResult Function() viewsUpdated,
+    required TResult Function() likeStatusLoaded,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() refreshNextBranchesBySameAuthorPressed,
     required TResult Function() refreshNextBranchesPressed,
     required TResult Function(int currentScrollPosition, int maxScrollPosition)
         scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
     required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
   }) {
     return toggleDetails();
   }
@@ -2948,22 +3143,22 @@ class _$ToggleDetails implements ToggleDetails {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
   }) {
     return toggleDetails?.call();
   }
@@ -2971,22 +3166,22 @@ class _$ToggleDetails implements ToggleDetails {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
+    TResult Function()? branchSet,
+    TResult Function()? sessionFetched,
+    TResult Function()? authorLoaded,
+    TResult Function()? settingsFetched,
     TResult Function()? nextBranchesBySameAuthorLoaded,
     TResult Function()? nextBranchesLoaded,
+    TResult Function()? viewsUpdated,
+    TResult Function()? likeStatusLoaded,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? refreshNextBranchesBySameAuthorPressed,
     TResult Function()? refreshNextBranchesPressed,
     TResult Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
     TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
     required TResult orElse(),
   }) {
     if (toggleDetails != null) {
@@ -2998,25 +3193,25 @@ class _$ToggleDetails implements ToggleDetails {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
     required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BranchSet value) branchSet,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(AuthorLoaded value) authorLoaded,
+    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(NextBranchesBySameAuthorLoaded value)
         nextBranchesBySameAuthorLoaded,
     required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
+    required TResult Function(ViewsUpdated value) viewsUpdated,
+    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
+    required TResult Function(BookmarkButtonPressed value)
+        bookmarkButtonPressed,
+    required TResult Function(LikeButtonPressed value) likeButtonPressed,
     required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
         refreshNextBranchesBySameAuthorPressed,
     required TResult Function(RefreshNextBranchesPressed value)
         refreshNextBranchesPressed,
     required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
   }) {
     return toggleDetails(this);
   }
@@ -3024,24 +3219,24 @@ class _$ToggleDetails implements ToggleDetails {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
   }) {
     return toggleDetails?.call(this);
   }
@@ -3049,24 +3244,24 @@ class _$ToggleDetails implements ToggleDetails {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
     TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BranchSet value)? branchSet,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(AuthorLoaded value)? authorLoaded,
+    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
     TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult Function(ViewsUpdated value)? viewsUpdated,
+    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult Function(LikeButtonPressed value)? likeButtonPressed,
     TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
     TResult Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
     TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
     required TResult orElse(),
   }) {
     if (toggleDetails != null) {
@@ -3078,201 +3273,6 @@ class _$ToggleDetails implements ToggleDetails {
 
 abstract class ToggleDetails implements BranchEvent {
   const factory ToggleDetails() = _$ToggleDetails;
-}
-
-/// @nodoc
-abstract class _$$ViewsUpdatedCopyWith<$Res> {
-  factory _$$ViewsUpdatedCopyWith(
-          _$ViewsUpdated value, $Res Function(_$ViewsUpdated) then) =
-      __$$ViewsUpdatedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ViewsUpdatedCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
-    implements _$$ViewsUpdatedCopyWith<$Res> {
-  __$$ViewsUpdatedCopyWithImpl(
-      _$ViewsUpdated _value, $Res Function(_$ViewsUpdated) _then)
-      : super(_value, (v) => _then(v as _$ViewsUpdated));
-
-  @override
-  _$ViewsUpdated get _value => super._value as _$ViewsUpdated;
-}
-
-/// @nodoc
-
-class _$ViewsUpdated implements ViewsUpdated {
-  const _$ViewsUpdated();
-
-  @override
-  String toString() {
-    return 'BranchEvent.viewsUpdated()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ViewsUpdated);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authorLoaded,
-    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() branchSet,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() likeStatusLoaded,
-    required TResult Function() nextBranchesBySameAuthorLoaded,
-    required TResult Function() nextBranchesLoaded,
-    required TResult Function() refreshNextBranchesBySameAuthorPressed,
-    required TResult Function() refreshNextBranchesPressed,
-    required TResult Function(int currentScrollPosition, int maxScrollPosition)
-        scrolled,
-    required TResult Function() sessionFetched,
-    required TResult Function() settingsFetched,
-    required TResult Function() toggleDetails,
-    required TResult Function() viewsUpdated,
-  }) {
-    return viewsUpdated();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-  }) {
-    return viewsUpdated?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? branchSet,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
-        scrolled,
-    TResult Function()? sessionFetched,
-    TResult Function()? settingsFetched,
-    TResult Function()? toggleDetails,
-    TResult Function()? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (viewsUpdated != null) {
-      return viewsUpdated();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthorLoaded value) authorLoaded,
-    required TResult Function(BookmarkButtonPressed value)
-        bookmarkButtonPressed,
-    required TResult Function(BranchSet value) branchSet,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(LikeStatusLoaded value) likeStatusLoaded,
-    required TResult Function(NextBranchesBySameAuthorLoaded value)
-        nextBranchesBySameAuthorLoaded,
-    required TResult Function(NextBranchesLoaded value) nextBranchesLoaded,
-    required TResult Function(RefreshNextBranchesBySameAuthorPressed value)
-        refreshNextBranchesBySameAuthorPressed,
-    required TResult Function(RefreshNextBranchesPressed value)
-        refreshNextBranchesPressed,
-    required TResult Function(Scrolled value) scrolled,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(ToggleDetails value) toggleDetails,
-    required TResult Function(ViewsUpdated value) viewsUpdated,
-  }) {
-    return viewsUpdated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-  }) {
-    return viewsUpdated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
-        nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
-        refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
-        refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(ToggleDetails value)? toggleDetails,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    required TResult orElse(),
-  }) {
-    if (viewsUpdated != null) {
-      return viewsUpdated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ViewsUpdated implements BranchEvent {
-  const factory ViewsUpdated() = _$ViewsUpdated;
 }
 
 /// @nodoc

@@ -56,6 +56,7 @@ void setupInjection() {
     ..registerLazySingleton<LogInBloc>(
       () => LogInBloc(
         _authFacade,
+        _defaultCoversRepository,
         _sessionsRepository,
         _userRepository,
       ),

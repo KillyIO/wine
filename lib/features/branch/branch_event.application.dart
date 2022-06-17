@@ -4,27 +4,20 @@ part of 'branch_bloc.application.dart';
 @freezed
 class BranchEvent with _$BranchEvent {
   /// @nodoc
-  const factory BranchEvent.authorLoaded() = AuthorLoaded;
-
-  /// @nodoc
-  const factory BranchEvent.bookmarkButtonPressed({
-    required bool isBookmarked,
-  }) = BookmarkButtonPressed;
+  const factory BranchEvent.launchWithUID(UniqueID uid, {Branch? branch}) =
+      LaunchWithUID;
 
   /// @nodoc
   const factory BranchEvent.branchSet() = BranchSet;
 
   /// @nodoc
-  const factory BranchEvent.launchWithUID(UniqueID uid, {Branch? branch}) =
-      LaunchWithUID;
+  const factory BranchEvent.sessionFetched() = SessionFetched;
 
   /// @nodoc
-  const factory BranchEvent.likeButtonPressed({
-    required bool isLiked,
-  }) = LikeButtonPressed;
+  const factory BranchEvent.authorLoaded() = AuthorLoaded;
 
   /// @nodoc
-  const factory BranchEvent.likeStatusLoaded() = LikeStatusLoaded;
+  const factory BranchEvent.settingsFetched() = SettingsFetched;
 
   /// @nodoc
   const factory BranchEvent.nextBranchesBySameAuthorLoaded() =
@@ -32,6 +25,22 @@ class BranchEvent with _$BranchEvent {
 
   /// @nodoc
   const factory BranchEvent.nextBranchesLoaded() = NextBranchesLoaded;
+
+  /// @nodoc
+  const factory BranchEvent.viewsUpdated() = ViewsUpdated;
+
+  /// @nodoc
+  const factory BranchEvent.likeStatusLoaded() = LikeStatusLoaded;
+
+  /// @nodoc
+  const factory BranchEvent.bookmarkButtonPressed({
+    required bool isBookmarked,
+  }) = BookmarkButtonPressed;
+
+  /// @nodoc
+  const factory BranchEvent.likeButtonPressed({
+    required bool isLiked,
+  }) = LikeButtonPressed;
 
   /// @nodoc
   const factory BranchEvent.refreshNextBranchesBySameAuthorPressed() =
@@ -48,14 +57,5 @@ class BranchEvent with _$BranchEvent {
   ) = Scrolled;
 
   /// @nodoc
-  const factory BranchEvent.sessionFetched() = SessionFetched;
-
-  /// @nodoc
-  const factory BranchEvent.settingsFetched() = SettingsFetched;
-
-  /// @nodoc
   const factory BranchEvent.toggleDetails() = ToggleDetails;
-
-  /// @nodoc
-  const factory BranchEvent.viewsUpdated() = ViewsUpdated;
 }

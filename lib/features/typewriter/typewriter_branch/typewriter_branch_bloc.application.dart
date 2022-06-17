@@ -48,6 +48,106 @@ class TypewriterBranchBloc
     this._defaultCoversRepository,
     this._sessionsRepository,
   ) : super(TypewriterBranchState.initial()) {
+    on<LaunchAsNewBranch>((value, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: Option.none(),
+          isProcessing: true,
+        ),
+      );
+
+      (await _sessionsRepository.fetchSession()).match(
+        (user) {
+          emit(
+            state.copyWith(
+              branch: state.branch.copyWith(
+                authorUID: user.uid,
+                index: (value.previousBranch?.index ?? 0) + 1,
+                previousBranchUID: value.previousBranch?.uid,
+                treeUID: value.tree?.uid ?? value.previousBranch!.treeUID,
+              ),
+              failureOption: const None(),
+              genres: value.tree?.genres ?? value.previousBranch!.genres,
+              isNSFW: value.tree?.isNSFW ?? value.previousBranch!.isNSFW,
+              language: value.tree?.language ?? value.previousBranch!.language,
+              leafController: QuillController.basic()
+                ..changes.listen((_) => add(const LeafChanged())),
+            ),
+          );
+
+          add(const TypewriterBranchEvent.sessionFetched());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<SessionFetched>((_, emit) async {
+      final randomKey =
+          placeholdersKeys[Random().nextInt(placeholdersKeys.length)];
+
+      (await _defaultCoversRepository.fetchDefaultCoverByKey(randomKey)).match(
+        (defaultCover) {
+          emit(
+            state.copyWith(
+              coverURL: defaultCover.url.getOrCrash(),
+              failureOption: const None(),
+              isProcessing: false,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption:
+                  Option.some(Err(CoreFailure.defaultCovers(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<PublishButtonPressed>((_, emit) async {
+      final isValid = state.genres.isNotEmpty &&
+          state.language.isValid &&
+          state.leaf.isValid &&
+          state.title.isValid;
+
+      if (isValid) {
+        emit(
+          state.copyWith(
+            failureOption: Option.none(),
+            isProcessing: true,
+          ),
+        );
+
+        if (state.branch.previousBranchUID == null) {
+          (await _branchRepository
+                  .checkBranchOneAlreadyExists(state.branch.treeUID))
+              .match(
+            (_) {
+              add(const TypewriterBranchEvent.branchOneExistenceChecked());
+            },
+            (failure) {
+              emit(
+                state.copyWith(
+                  failureOption: Option.some(Err(CoreFailure.branch(failure))),
+                  isProcessing: false,
+                ),
+              );
+            },
+          );
+        } else {
+          await _publish(emit);
+        }
+      }
+    });
+    on<BranchOneExistenceChecked>((_, emit) async => await _publish(emit));
     on<AddCoverPressed>((_, emit) async {
       final imagePicker = ImagePicker();
 
@@ -84,7 +184,6 @@ class TypewriterBranchBloc
         }
       }
     });
-    on<BranchOneExistenceChecked>((_, emit) async => await _publish(emit));
     on<DeleteButtonPressed>((_, emit) async {
       (await _branchRepository.deleteBranch(state.branch.uid)).match(
         (_) {
@@ -142,45 +241,6 @@ class TypewriterBranchBloc
         ),
       ),
     );
-    on<LaunchAsNewBranch>((value, emit) async {
-      emit(
-        state.copyWith(
-          failureOption: Option.none(),
-          isProcessing: true,
-        ),
-      );
-
-      (await _sessionsRepository.fetchSession()).match(
-        (user) {
-          emit(
-            state.copyWith(
-              branch: state.branch.copyWith(
-                authorUID: user.uid,
-                index: (value.previousBranch?.index ?? 0) + 1,
-                previousBranchUID: value.previousBranch?.uid,
-                treeUID: value.tree?.uid ?? value.previousBranch!.treeUID,
-              ),
-              failureOption: const None(),
-              genres: value.tree?.genres ?? value.previousBranch!.genres,
-              isNSFW: value.tree?.isNSFW ?? value.previousBranch!.isNSFW,
-              language: value.tree?.language ?? value.previousBranch!.language,
-              leafController: QuillController.basic()
-                ..changes.listen((_) => add(const LeafChanged())),
-            ),
-          );
-
-          add(const TypewriterBranchEvent.sessionFetched());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
-    });
     on<LaunchWithUID>((value, emit) async {
       emit(
         state.copyWith(
@@ -306,41 +366,6 @@ class TypewriterBranchBloc
         );
       }
     });
-    on<PublishButtonPressed>((_, emit) async {
-      final isValid = state.genres.isNotEmpty &&
-          state.language.isValid &&
-          state.leaf.isValid &&
-          state.title.isValid;
-
-      if (isValid) {
-        emit(
-          state.copyWith(
-            failureOption: Option.none(),
-            isProcessing: true,
-          ),
-        );
-
-        if (state.branch.previousBranchUID == null) {
-          (await _branchRepository
-                  .checkBranchOneAlreadyExists(state.branch.treeUID))
-              .match(
-            (_) {
-              add(const TypewriterBranchEvent.branchOneExistenceChecked());
-            },
-            (failure) {
-              emit(
-                state.copyWith(
-                  failureOption: Option.some(Err(CoreFailure.branch(failure))),
-                  isProcessing: false,
-                ),
-              );
-            },
-          );
-        } else {
-          await _publish(emit);
-        }
-      }
-    });
     on<SaveButtonPressed>((_, emit) async {
       final branch = state.branch.copyWith(
         coverURL: CoverURL(state.coverURL),
@@ -364,31 +389,6 @@ class TypewriterBranchBloc
         TypewriterEndState.saved,
         branch,
         emit,
-      );
-    });
-    on<SessionFetched>((_, emit) async {
-      final randomKey =
-          placeholdersKeys[Random().nextInt(placeholdersKeys.length)];
-
-      (await _defaultCoversRepository.fetchDefaultCoverByKey(randomKey)).match(
-        (defaultCover) {
-          emit(
-            state.copyWith(
-              coverURL: defaultCover.url.getOrCrash(),
-              failureOption: const None(),
-              isProcessing: false,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption:
-                  Option.some(Err(CoreFailure.defaultCovers(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
       );
     });
     on<TitleChanged>((value, emit) {

@@ -7,6 +7,7 @@ import 'package:wine/features/auth/auth_failure.domain.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/auth/password.domain.dart';
+import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/log_in/log_in_bloc.application.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/sessions/sessions_failure.domain.dart';
@@ -14,6 +15,7 @@ import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user_failure.domain.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
+import '../../mocks/default_covers_mock.dart';
 import '../../mocks/domain_mocks.dart';
 import '../../mocks/sessions_mocks.dart';
 import '../../mocks/user_mocks.dart';
@@ -21,6 +23,7 @@ import '../utils/constants.dart';
 
 void main() {
   late IAuthFacade _authFacade;
+  late IDefaultCoversRepository _defaultCoverRepository;
   late ISessionsRepository _sessionsRepository;
   late IUserRepository _userRepository;
 
@@ -28,11 +31,13 @@ void main() {
 
   setUp(() {
     _authFacade = MockAuthFacade();
+    _defaultCoverRepository = MockDefaultCoversRepository();
     _sessionsRepository = MockSessionsRepository();
     _userRepository = MockUserRepository();
 
     _logInBloc = LogInBloc(
       _authFacade,
+      _defaultCoverRepository,
       _sessionsRepository,
       _userRepository,
     );

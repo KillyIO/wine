@@ -18,126 +18,126 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TypewriterBranchEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
     required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TitleChanged value) titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) =>
@@ -159,1476 +159,6 @@ class _$TypewriterBranchEventCopyWithImpl<$Res>
   final TypewriterBranchEvent _value;
   // ignore: unused_field
   final $Res Function(TypewriterBranchEvent) _then;
-}
-
-/// @nodoc
-abstract class _$$AddCoverPressedCopyWith<$Res> {
-  factory _$$AddCoverPressedCopyWith(
-          _$AddCoverPressed value, $Res Function(_$AddCoverPressed) then) =
-      __$$AddCoverPressedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AddCoverPressedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$AddCoverPressedCopyWith<$Res> {
-  __$$AddCoverPressedCopyWithImpl(
-      _$AddCoverPressed _value, $Res Function(_$AddCoverPressed) _then)
-      : super(_value, (v) => _then(v as _$AddCoverPressed));
-
-  @override
-  _$AddCoverPressed get _value => super._value as _$AddCoverPressed;
-}
-
-/// @nodoc
-
-class _$AddCoverPressed implements AddCoverPressed {
-  const _$AddCoverPressed();
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.addCoverPressed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AddCoverPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return addCoverPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return addCoverPressed?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (addCoverPressed != null) {
-      return addCoverPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return addCoverPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return addCoverPressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (addCoverPressed != null) {
-      return addCoverPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AddCoverPressed implements TypewriterBranchEvent {
-  const factory AddCoverPressed() = _$AddCoverPressed;
-}
-
-/// @nodoc
-abstract class _$$BranchOneExistenceCheckedCopyWith<$Res> {
-  factory _$$BranchOneExistenceCheckedCopyWith(
-          _$BranchOneExistenceChecked value,
-          $Res Function(_$BranchOneExistenceChecked) then) =
-      __$$BranchOneExistenceCheckedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$BranchOneExistenceCheckedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$BranchOneExistenceCheckedCopyWith<$Res> {
-  __$$BranchOneExistenceCheckedCopyWithImpl(_$BranchOneExistenceChecked _value,
-      $Res Function(_$BranchOneExistenceChecked) _then)
-      : super(_value, (v) => _then(v as _$BranchOneExistenceChecked));
-
-  @override
-  _$BranchOneExistenceChecked get _value =>
-      super._value as _$BranchOneExistenceChecked;
-}
-
-/// @nodoc
-
-class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
-  const _$BranchOneExistenceChecked();
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.branchOneExistenceChecked()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BranchOneExistenceChecked);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return branchOneExistenceChecked();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return branchOneExistenceChecked?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (branchOneExistenceChecked != null) {
-      return branchOneExistenceChecked();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return branchOneExistenceChecked(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return branchOneExistenceChecked?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (branchOneExistenceChecked != null) {
-      return branchOneExistenceChecked(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BranchOneExistenceChecked implements TypewriterBranchEvent {
-  const factory BranchOneExistenceChecked() = _$BranchOneExistenceChecked;
-}
-
-/// @nodoc
-abstract class _$$DeleteButtonPressedCopyWith<$Res> {
-  factory _$$DeleteButtonPressedCopyWith(_$DeleteButtonPressed value,
-          $Res Function(_$DeleteButtonPressed) then) =
-      __$$DeleteButtonPressedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$DeleteButtonPressedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$DeleteButtonPressedCopyWith<$Res> {
-  __$$DeleteButtonPressedCopyWithImpl(
-      _$DeleteButtonPressed _value, $Res Function(_$DeleteButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$DeleteButtonPressed));
-
-  @override
-  _$DeleteButtonPressed get _value => super._value as _$DeleteButtonPressed;
-}
-
-/// @nodoc
-
-class _$DeleteButtonPressed implements DeleteButtonPressed {
-  const _$DeleteButtonPressed();
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.deleteButtonPressed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DeleteButtonPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return deleteButtonPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return deleteButtonPressed?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (deleteButtonPressed != null) {
-      return deleteButtonPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return deleteButtonPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return deleteButtonPressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (deleteButtonPressed != null) {
-      return deleteButtonPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DeleteButtonPressed implements TypewriterBranchEvent {
-  const factory DeleteButtonPressed() = _$DeleteButtonPressed;
-}
-
-/// @nodoc
-abstract class _$$GenreAddedCopyWith<$Res> {
-  factory _$$GenreAddedCopyWith(
-          _$GenreAdded value, $Res Function(_$GenreAdded) then) =
-      __$$GenreAddedCopyWithImpl<$Res>;
-  $Res call({String genre});
-}
-
-/// @nodoc
-class __$$GenreAddedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$GenreAddedCopyWith<$Res> {
-  __$$GenreAddedCopyWithImpl(
-      _$GenreAdded _value, $Res Function(_$GenreAdded) _then)
-      : super(_value, (v) => _then(v as _$GenreAdded));
-
-  @override
-  _$GenreAdded get _value => super._value as _$GenreAdded;
-
-  @override
-  $Res call({
-    Object? genre = freezed,
-  }) {
-    return _then(_$GenreAdded(
-      genre == freezed
-          ? _value.genre
-          : genre // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GenreAdded implements GenreAdded {
-  const _$GenreAdded(this.genre);
-
-  @override
-  final String genre;
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.genreAdded(genre: $genre)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GenreAdded &&
-            const DeepCollectionEquality().equals(other.genre, genre));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(genre));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
-      __$$GenreAddedCopyWithImpl<_$GenreAdded>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return genreAdded(genre);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return genreAdded?.call(genre);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (genreAdded != null) {
-      return genreAdded(genre);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return genreAdded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return genreAdded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (genreAdded != null) {
-      return genreAdded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GenreAdded implements TypewriterBranchEvent {
-  const factory GenreAdded(final String genre) = _$GenreAdded;
-
-  String get genre => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GenreRemovedCopyWith<$Res> {
-  factory _$$GenreRemovedCopyWith(
-          _$GenreRemoved value, $Res Function(_$GenreRemoved) then) =
-      __$$GenreRemovedCopyWithImpl<$Res>;
-  $Res call({String genre});
-}
-
-/// @nodoc
-class __$$GenreRemovedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$GenreRemovedCopyWith<$Res> {
-  __$$GenreRemovedCopyWithImpl(
-      _$GenreRemoved _value, $Res Function(_$GenreRemoved) _then)
-      : super(_value, (v) => _then(v as _$GenreRemoved));
-
-  @override
-  _$GenreRemoved get _value => super._value as _$GenreRemoved;
-
-  @override
-  $Res call({
-    Object? genre = freezed,
-  }) {
-    return _then(_$GenreRemoved(
-      genre == freezed
-          ? _value.genre
-          : genre // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GenreRemoved implements GenreRemoved {
-  const _$GenreRemoved(this.genre);
-
-  @override
-  final String genre;
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.genreRemoved(genre: $genre)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GenreRemoved &&
-            const DeepCollectionEquality().equals(other.genre, genre));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(genre));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
-      __$$GenreRemovedCopyWithImpl<_$GenreRemoved>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return genreRemoved(genre);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return genreRemoved?.call(genre);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (genreRemoved != null) {
-      return genreRemoved(genre);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return genreRemoved(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return genreRemoved?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (genreRemoved != null) {
-      return genreRemoved(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GenreRemoved implements TypewriterBranchEvent {
-  const factory GenreRemoved(final String genre) = _$GenreRemoved;
-
-  String get genre => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$IsNSFWChangedCopyWith<$Res> {
-  factory _$$IsNSFWChangedCopyWith(
-          _$IsNSFWChanged value, $Res Function(_$IsNSFWChanged) then) =
-      __$$IsNSFWChangedCopyWithImpl<$Res>;
-  $Res call({bool isNSFW});
-}
-
-/// @nodoc
-class __$$IsNSFWChangedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$IsNSFWChangedCopyWith<$Res> {
-  __$$IsNSFWChangedCopyWithImpl(
-      _$IsNSFWChanged _value, $Res Function(_$IsNSFWChanged) _then)
-      : super(_value, (v) => _then(v as _$IsNSFWChanged));
-
-  @override
-  _$IsNSFWChanged get _value => super._value as _$IsNSFWChanged;
-
-  @override
-  $Res call({
-    Object? isNSFW = freezed,
-  }) {
-    return _then(_$IsNSFWChanged(
-      isNSFW: isNSFW == freezed
-          ? _value.isNSFW
-          : isNSFW // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$IsNSFWChanged implements IsNSFWChanged {
-  const _$IsNSFWChanged({required this.isNSFW});
-
-  @override
-  final bool isNSFW;
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.isNSFWChanged(isNSFW: $isNSFW)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$IsNSFWChanged &&
-            const DeepCollectionEquality().equals(other.isNSFW, isNSFW));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isNSFW));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
-      __$$IsNSFWChangedCopyWithImpl<_$IsNSFWChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return isNSFWChanged(isNSFW);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return isNSFWChanged?.call(isNSFW);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (isNSFWChanged != null) {
-      return isNSFWChanged(isNSFW);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return isNSFWChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return isNSFWChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (isNSFWChanged != null) {
-      return isNSFWChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class IsNSFWChanged implements TypewriterBranchEvent {
-  const factory IsNSFWChanged({required final bool isNSFW}) = _$IsNSFWChanged;
-
-  bool get isNSFW => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LanguageSelectedCopyWith<$Res> {
-  factory _$$LanguageSelectedCopyWith(
-          _$LanguageSelected value, $Res Function(_$LanguageSelected) then) =
-      __$$LanguageSelectedCopyWithImpl<$Res>;
-  $Res call({String language});
-}
-
-/// @nodoc
-class __$$LanguageSelectedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$LanguageSelectedCopyWith<$Res> {
-  __$$LanguageSelectedCopyWithImpl(
-      _$LanguageSelected _value, $Res Function(_$LanguageSelected) _then)
-      : super(_value, (v) => _then(v as _$LanguageSelected));
-
-  @override
-  _$LanguageSelected get _value => super._value as _$LanguageSelected;
-
-  @override
-  $Res call({
-    Object? language = freezed,
-  }) {
-    return _then(_$LanguageSelected(
-      language == freezed
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$LanguageSelected implements LanguageSelected {
-  const _$LanguageSelected(this.language);
-
-  @override
-  final String language;
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.languageSelected(language: $language)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LanguageSelected &&
-            const DeepCollectionEquality().equals(other.language, language));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(language));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
-      __$$LanguageSelectedCopyWithImpl<_$LanguageSelected>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return languageSelected(language);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return languageSelected?.call(language);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (languageSelected != null) {
-      return languageSelected(language);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return languageSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return languageSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (languageSelected != null) {
-      return languageSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LanguageSelected implements TypewriterBranchEvent {
-  const factory LanguageSelected(final String language) = _$LanguageSelected;
-
-  String get language => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1732,22 +262,22 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
     required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
     return launchAsNewBranch(previousBranch, tree);
@@ -1756,21 +286,21 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
     return launchAsNewBranch?.call(previousBranch, tree);
@@ -1779,21 +309,21 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1806,22 +336,22 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchAsNewBranch(this);
@@ -1830,22 +360,22 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return launchAsNewBranch?.call(this);
@@ -1854,22 +384,22 @@ class _$LaunchAsNewBranch implements LaunchAsNewBranch {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -1888,6 +418,1862 @@ abstract class LaunchAsNewBranch implements TypewriterBranchEvent {
   Tree? get tree => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$LaunchAsNewBranchCopyWith<_$LaunchAsNewBranch> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SessionFetchedCopyWith<$Res> {
+  factory _$$SessionFetchedCopyWith(
+          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
+      __$$SessionFetchedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SessionFetchedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$SessionFetchedCopyWith<$Res> {
+  __$$SessionFetchedCopyWithImpl(
+      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
+      : super(_value, (v) => _then(v as _$SessionFetched));
+
+  @override
+  _$SessionFetched get _value => super._value as _$SessionFetched;
+}
+
+/// @nodoc
+
+class _$SessionFetched implements SessionFetched {
+  const _$SessionFetched();
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.sessionFetched()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SessionFetched);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return sessionFetched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return sessionFetched?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (sessionFetched != null) {
+      return sessionFetched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return sessionFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return sessionFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (sessionFetched != null) {
+      return sessionFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionFetched implements TypewriterBranchEvent {
+  const factory SessionFetched() = _$SessionFetched;
+}
+
+/// @nodoc
+abstract class _$$PublishButtonPressedCopyWith<$Res> {
+  factory _$$PublishButtonPressedCopyWith(_$PublishButtonPressed value,
+          $Res Function(_$PublishButtonPressed) then) =
+      __$$PublishButtonPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PublishButtonPressedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$PublishButtonPressedCopyWith<$Res> {
+  __$$PublishButtonPressedCopyWithImpl(_$PublishButtonPressed _value,
+      $Res Function(_$PublishButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$PublishButtonPressed));
+
+  @override
+  _$PublishButtonPressed get _value => super._value as _$PublishButtonPressed;
+}
+
+/// @nodoc
+
+class _$PublishButtonPressed implements PublishButtonPressed {
+  const _$PublishButtonPressed();
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.publishButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PublishButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return publishButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return publishButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (publishButtonPressed != null) {
+      return publishButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return publishButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return publishButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (publishButtonPressed != null) {
+      return publishButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PublishButtonPressed implements TypewriterBranchEvent {
+  const factory PublishButtonPressed() = _$PublishButtonPressed;
+}
+
+/// @nodoc
+abstract class _$$BranchOneExistenceCheckedCopyWith<$Res> {
+  factory _$$BranchOneExistenceCheckedCopyWith(
+          _$BranchOneExistenceChecked value,
+          $Res Function(_$BranchOneExistenceChecked) then) =
+      __$$BranchOneExistenceCheckedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BranchOneExistenceCheckedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$BranchOneExistenceCheckedCopyWith<$Res> {
+  __$$BranchOneExistenceCheckedCopyWithImpl(_$BranchOneExistenceChecked _value,
+      $Res Function(_$BranchOneExistenceChecked) _then)
+      : super(_value, (v) => _then(v as _$BranchOneExistenceChecked));
+
+  @override
+  _$BranchOneExistenceChecked get _value =>
+      super._value as _$BranchOneExistenceChecked;
+}
+
+/// @nodoc
+
+class _$BranchOneExistenceChecked implements BranchOneExistenceChecked {
+  const _$BranchOneExistenceChecked();
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.branchOneExistenceChecked()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BranchOneExistenceChecked);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return branchOneExistenceChecked();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return branchOneExistenceChecked?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (branchOneExistenceChecked != null) {
+      return branchOneExistenceChecked();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return branchOneExistenceChecked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return branchOneExistenceChecked?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (branchOneExistenceChecked != null) {
+      return branchOneExistenceChecked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BranchOneExistenceChecked implements TypewriterBranchEvent {
+  const factory BranchOneExistenceChecked() = _$BranchOneExistenceChecked;
+}
+
+/// @nodoc
+abstract class _$$AddCoverPressedCopyWith<$Res> {
+  factory _$$AddCoverPressedCopyWith(
+          _$AddCoverPressed value, $Res Function(_$AddCoverPressed) then) =
+      __$$AddCoverPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddCoverPressedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$AddCoverPressedCopyWith<$Res> {
+  __$$AddCoverPressedCopyWithImpl(
+      _$AddCoverPressed _value, $Res Function(_$AddCoverPressed) _then)
+      : super(_value, (v) => _then(v as _$AddCoverPressed));
+
+  @override
+  _$AddCoverPressed get _value => super._value as _$AddCoverPressed;
+}
+
+/// @nodoc
+
+class _$AddCoverPressed implements AddCoverPressed {
+  const _$AddCoverPressed();
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.addCoverPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AddCoverPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return addCoverPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return addCoverPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (addCoverPressed != null) {
+      return addCoverPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return addCoverPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return addCoverPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (addCoverPressed != null) {
+      return addCoverPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddCoverPressed implements TypewriterBranchEvent {
+  const factory AddCoverPressed() = _$AddCoverPressed;
+}
+
+/// @nodoc
+abstract class _$$DeleteButtonPressedCopyWith<$Res> {
+  factory _$$DeleteButtonPressedCopyWith(_$DeleteButtonPressed value,
+          $Res Function(_$DeleteButtonPressed) then) =
+      __$$DeleteButtonPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteButtonPressedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$DeleteButtonPressedCopyWith<$Res> {
+  __$$DeleteButtonPressedCopyWithImpl(
+      _$DeleteButtonPressed _value, $Res Function(_$DeleteButtonPressed) _then)
+      : super(_value, (v) => _then(v as _$DeleteButtonPressed));
+
+  @override
+  _$DeleteButtonPressed get _value => super._value as _$DeleteButtonPressed;
+}
+
+/// @nodoc
+
+class _$DeleteButtonPressed implements DeleteButtonPressed {
+  const _$DeleteButtonPressed();
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.deleteButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return deleteButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return deleteButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (deleteButtonPressed != null) {
+      return deleteButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return deleteButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return deleteButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (deleteButtonPressed != null) {
+      return deleteButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteButtonPressed implements TypewriterBranchEvent {
+  const factory DeleteButtonPressed() = _$DeleteButtonPressed;
+}
+
+/// @nodoc
+abstract class _$$GenreAddedCopyWith<$Res> {
+  factory _$$GenreAddedCopyWith(
+          _$GenreAdded value, $Res Function(_$GenreAdded) then) =
+      __$$GenreAddedCopyWithImpl<$Res>;
+  $Res call({String genre});
+}
+
+/// @nodoc
+class __$$GenreAddedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$GenreAddedCopyWith<$Res> {
+  __$$GenreAddedCopyWithImpl(
+      _$GenreAdded _value, $Res Function(_$GenreAdded) _then)
+      : super(_value, (v) => _then(v as _$GenreAdded));
+
+  @override
+  _$GenreAdded get _value => super._value as _$GenreAdded;
+
+  @override
+  $Res call({
+    Object? genre = freezed,
+  }) {
+    return _then(_$GenreAdded(
+      genre == freezed
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GenreAdded implements GenreAdded {
+  const _$GenreAdded(this.genre);
+
+  @override
+  final String genre;
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.genreAdded(genre: $genre)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GenreAdded &&
+            const DeepCollectionEquality().equals(other.genre, genre));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(genre));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
+      __$$GenreAddedCopyWithImpl<_$GenreAdded>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return genreAdded(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return genreAdded?.call(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (genreAdded != null) {
+      return genreAdded(genre);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return genreAdded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return genreAdded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (genreAdded != null) {
+      return genreAdded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenreAdded implements TypewriterBranchEvent {
+  const factory GenreAdded(final String genre) = _$GenreAdded;
+
+  String get genre => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GenreRemovedCopyWith<$Res> {
+  factory _$$GenreRemovedCopyWith(
+          _$GenreRemoved value, $Res Function(_$GenreRemoved) then) =
+      __$$GenreRemovedCopyWithImpl<$Res>;
+  $Res call({String genre});
+}
+
+/// @nodoc
+class __$$GenreRemovedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$GenreRemovedCopyWith<$Res> {
+  __$$GenreRemovedCopyWithImpl(
+      _$GenreRemoved _value, $Res Function(_$GenreRemoved) _then)
+      : super(_value, (v) => _then(v as _$GenreRemoved));
+
+  @override
+  _$GenreRemoved get _value => super._value as _$GenreRemoved;
+
+  @override
+  $Res call({
+    Object? genre = freezed,
+  }) {
+    return _then(_$GenreRemoved(
+      genre == freezed
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GenreRemoved implements GenreRemoved {
+  const _$GenreRemoved(this.genre);
+
+  @override
+  final String genre;
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.genreRemoved(genre: $genre)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GenreRemoved &&
+            const DeepCollectionEquality().equals(other.genre, genre));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(genre));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
+      __$$GenreRemovedCopyWithImpl<_$GenreRemoved>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return genreRemoved(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return genreRemoved?.call(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (genreRemoved != null) {
+      return genreRemoved(genre);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return genreRemoved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return genreRemoved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (genreRemoved != null) {
+      return genreRemoved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenreRemoved implements TypewriterBranchEvent {
+  const factory GenreRemoved(final String genre) = _$GenreRemoved;
+
+  String get genre => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$IsNSFWChangedCopyWith<$Res> {
+  factory _$$IsNSFWChangedCopyWith(
+          _$IsNSFWChanged value, $Res Function(_$IsNSFWChanged) then) =
+      __$$IsNSFWChangedCopyWithImpl<$Res>;
+  $Res call({bool isNSFW});
+}
+
+/// @nodoc
+class __$$IsNSFWChangedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$IsNSFWChangedCopyWith<$Res> {
+  __$$IsNSFWChangedCopyWithImpl(
+      _$IsNSFWChanged _value, $Res Function(_$IsNSFWChanged) _then)
+      : super(_value, (v) => _then(v as _$IsNSFWChanged));
+
+  @override
+  _$IsNSFWChanged get _value => super._value as _$IsNSFWChanged;
+
+  @override
+  $Res call({
+    Object? isNSFW = freezed,
+  }) {
+    return _then(_$IsNSFWChanged(
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$IsNSFWChanged implements IsNSFWChanged {
+  const _$IsNSFWChanged({required this.isNSFW});
+
+  @override
+  final bool isNSFW;
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.isNSFWChanged(isNSFW: $isNSFW)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$IsNSFWChanged &&
+            const DeepCollectionEquality().equals(other.isNSFW, isNSFW));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isNSFW));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
+      __$$IsNSFWChangedCopyWithImpl<_$IsNSFWChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return isNSFWChanged(isNSFW);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return isNSFWChanged?.call(isNSFW);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (isNSFWChanged != null) {
+      return isNSFWChanged(isNSFW);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return isNSFWChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return isNSFWChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (isNSFWChanged != null) {
+      return isNSFWChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IsNSFWChanged implements TypewriterBranchEvent {
+  const factory IsNSFWChanged({required final bool isNSFW}) = _$IsNSFWChanged;
+
+  bool get isNSFW => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LanguageSelectedCopyWith<$Res> {
+  factory _$$LanguageSelectedCopyWith(
+          _$LanguageSelected value, $Res Function(_$LanguageSelected) then) =
+      __$$LanguageSelectedCopyWithImpl<$Res>;
+  $Res call({String language});
+}
+
+/// @nodoc
+class __$$LanguageSelectedCopyWithImpl<$Res>
+    extends _$TypewriterBranchEventCopyWithImpl<$Res>
+    implements _$$LanguageSelectedCopyWith<$Res> {
+  __$$LanguageSelectedCopyWithImpl(
+      _$LanguageSelected _value, $Res Function(_$LanguageSelected) _then)
+      : super(_value, (v) => _then(v as _$LanguageSelected));
+
+  @override
+  _$LanguageSelected get _value => super._value as _$LanguageSelected;
+
+  @override
+  $Res call({
+    Object? language = freezed,
+  }) {
+    return _then(_$LanguageSelected(
+      language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LanguageSelected implements LanguageSelected {
+  const _$LanguageSelected(this.language);
+
+  @override
+  final String language;
+
+  @override
+  String toString() {
+    return 'TypewriterBranchEvent.languageSelected(language: $language)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LanguageSelected &&
+            const DeepCollectionEquality().equals(other.language, language));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(language));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
+      __$$LanguageSelectedCopyWithImpl<_$LanguageSelected>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
+    required TResult Function() leafChanged,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() saveButtonPressed,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return languageSelected(language);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return languageSelected?.call(language);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult Function()? leafChanged,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? saveButtonPressed,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (languageSelected != null) {
+      return languageSelected(language);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(BranchOneExistenceChecked value)
+        branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchWithUID value) launchWithUID,
+    required TResult Function(LeafChanged value) leafChanged,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return languageSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return languageSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(BranchOneExistenceChecked value)?
+        branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchWithUID value)? launchWithUID,
+    TResult Function(LeafChanged value)? leafChanged,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (languageSelected != null) {
+      return languageSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LanguageSelected implements TypewriterBranchEvent {
+  const factory LanguageSelected(final String language) = _$LanguageSelected;
+
+  String get language => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1979,22 +2365,22 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
     required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
     return launchWithUID(uid, branch);
@@ -2003,21 +2389,21 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
     return launchWithUID?.call(uid, branch);
@@ -2026,21 +2412,21 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2053,22 +2439,22 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchWithUID(this);
@@ -2077,22 +2463,22 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return launchWithUID?.call(this);
@@ -2101,22 +2487,22 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2179,22 +2565,22 @@ class _$LeafChanged implements LeafChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
     required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
     return leafChanged();
@@ -2203,21 +2589,21 @@ class _$LeafChanged implements LeafChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
     return leafChanged?.call();
@@ -2226,21 +2612,21 @@ class _$LeafChanged implements LeafChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2253,22 +2639,22 @@ class _$LeafChanged implements LeafChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return leafChanged(this);
@@ -2277,22 +2663,22 @@ class _$LeafChanged implements LeafChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return leafChanged?.call(this);
@@ -2301,22 +2687,22 @@ class _$LeafChanged implements LeafChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2396,22 +2782,22 @@ class _$LicenceSelected implements LicenceSelected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
     required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
     return licenceSelected(licence);
@@ -2420,21 +2806,21 @@ class _$LicenceSelected implements LicenceSelected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
     return licenceSelected?.call(licence);
@@ -2443,21 +2829,21 @@ class _$LicenceSelected implements LicenceSelected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2470,22 +2856,22 @@ class _$LicenceSelected implements LicenceSelected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return licenceSelected(this);
@@ -2494,22 +2880,22 @@ class _$LicenceSelected implements LicenceSelected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return licenceSelected?.call(this);
@@ -2518,22 +2904,22 @@ class _$LicenceSelected implements LicenceSelected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2619,22 +3005,22 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
     required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
     return pageViewIndexChanged(index);
@@ -2643,21 +3029,21 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
     return pageViewIndexChanged?.call(index);
@@ -2666,21 +3052,21 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2693,22 +3079,22 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return pageViewIndexChanged(this);
@@ -2717,22 +3103,22 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return pageViewIndexChanged?.call(this);
@@ -2741,22 +3127,22 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -2774,199 +3160,6 @@ abstract class PageViewIndexChanged implements TypewriterBranchEvent {
   @JsonKey(ignore: true)
   _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PublishButtonPressedCopyWith<$Res> {
-  factory _$$PublishButtonPressedCopyWith(_$PublishButtonPressed value,
-          $Res Function(_$PublishButtonPressed) then) =
-      __$$PublishButtonPressedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PublishButtonPressedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$PublishButtonPressedCopyWith<$Res> {
-  __$$PublishButtonPressedCopyWithImpl(_$PublishButtonPressed _value,
-      $Res Function(_$PublishButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$PublishButtonPressed));
-
-  @override
-  _$PublishButtonPressed get _value => super._value as _$PublishButtonPressed;
-}
-
-/// @nodoc
-
-class _$PublishButtonPressed implements PublishButtonPressed {
-  const _$PublishButtonPressed();
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.publishButtonPressed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PublishButtonPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return publishButtonPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return publishButtonPressed?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (publishButtonPressed != null) {
-      return publishButtonPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return publishButtonPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return publishButtonPressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (publishButtonPressed != null) {
-      return publishButtonPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PublishButtonPressed implements TypewriterBranchEvent {
-  const factory PublishButtonPressed() = _$PublishButtonPressed;
 }
 
 /// @nodoc
@@ -3010,22 +3203,22 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
     required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
     return saveButtonPressed();
@@ -3034,21 +3227,21 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
     return saveButtonPressed?.call();
@@ -3057,21 +3250,21 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -3084,22 +3277,22 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return saveButtonPressed(this);
@@ -3108,22 +3301,22 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return saveButtonPressed?.call(this);
@@ -3132,22 +3325,22 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
@@ -3160,199 +3353,6 @@ class _$SaveButtonPressed implements SaveButtonPressed {
 
 abstract class SaveButtonPressed implements TypewriterBranchEvent {
   const factory SaveButtonPressed() = _$SaveButtonPressed;
-}
-
-/// @nodoc
-abstract class _$$SessionFetchedCopyWith<$Res> {
-  factory _$$SessionFetchedCopyWith(
-          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
-      __$$SessionFetchedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$TypewriterBranchEventCopyWithImpl<$Res>
-    implements _$$SessionFetchedCopyWith<$Res> {
-  __$$SessionFetchedCopyWithImpl(
-      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
-      : super(_value, (v) => _then(v as _$SessionFetched));
-
-  @override
-  _$SessionFetched get _value => super._value as _$SessionFetched;
-}
-
-/// @nodoc
-
-class _$SessionFetched implements SessionFetched {
-  const _$SessionFetched();
-
-  @override
-  String toString() {
-    return 'TypewriterBranchEvent.sessionFetched()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionFetched);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
-    required TResult Function() branchOneExistenceChecked,
-    required TResult Function() deleteButtonPressed,
-    required TResult Function(String genre) genreAdded,
-    required TResult Function(String genre) genreRemoved,
-    required TResult Function(bool isNSFW) isNSFWChanged,
-    required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
-    required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
-    required TResult Function() leafChanged,
-    required TResult Function(String licence) licenceSelected,
-    required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
-    required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
-    required TResult Function(String title) titleChanged,
-  }) {
-    return sessionFetched();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-  }) {
-    return sessionFetched?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
-    TResult Function()? branchOneExistenceChecked,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? leafChanged,
-    TResult Function(String licence)? licenceSelected,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
-    TResult Function(String title)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (sessionFetched != null) {
-      return sessionFetched();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
-    required TResult Function(BranchOneExistenceChecked value)
-        branchOneExistenceChecked,
-    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
-    required TResult Function(GenreAdded value) genreAdded,
-    required TResult Function(GenreRemoved value) genreRemoved,
-    required TResult Function(IsNSFWChanged value) isNSFWChanged,
-    required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
-    required TResult Function(LaunchWithUID value) launchWithUID,
-    required TResult Function(LeafChanged value) leafChanged,
-    required TResult Function(LicenceSelected value) licenceSelected,
-    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
-    required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(TitleChanged value) titleChanged,
-  }) {
-    return sessionFetched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-  }) {
-    return sessionFetched?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(BranchOneExistenceChecked value)?
-        branchOneExistenceChecked,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(LeafChanged value)? leafChanged,
-    TResult Function(LicenceSelected value)? licenceSelected,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(TitleChanged value)? titleChanged,
-    required TResult orElse(),
-  }) {
-    if (sessionFetched != null) {
-      return sessionFetched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SessionFetched implements TypewriterBranchEvent {
-  const factory SessionFetched() = _$SessionFetched;
 }
 
 /// @nodoc
@@ -3420,22 +3420,22 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() addCoverPressed,
+    required TResult Function(Branch? previousBranch, Tree? tree)
+        launchAsNewBranch,
+    required TResult Function() sessionFetched,
+    required TResult Function() publishButtonPressed,
     required TResult Function() branchOneExistenceChecked,
+    required TResult Function() addCoverPressed,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Branch? previousBranch, Tree? tree)
-        launchAsNewBranch,
     required TResult Function(UniqueID uid, Branch? branch) launchWithUID,
     required TResult Function() leafChanged,
     required TResult Function(String licence) licenceSelected,
     required TResult Function(int index) pageViewIndexChanged,
-    required TResult Function() publishButtonPressed,
     required TResult Function() saveButtonPressed,
-    required TResult Function() sessionFetched,
     required TResult Function(String title) titleChanged,
   }) {
     return titleChanged(title);
@@ -3444,21 +3444,21 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
   }) {
     return titleChanged?.call(title);
@@ -3467,21 +3467,21 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? addCoverPressed,
+    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
+    TResult Function()? sessionFetched,
+    TResult Function()? publishButtonPressed,
     TResult Function()? branchOneExistenceChecked,
+    TResult Function()? addCoverPressed,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Branch? previousBranch, Tree? tree)? launchAsNewBranch,
     TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
     TResult Function()? leafChanged,
     TResult Function(String licence)? licenceSelected,
     TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? publishButtonPressed,
     TResult Function()? saveButtonPressed,
-    TResult Function()? sessionFetched,
     TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
@@ -3494,22 +3494,22 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(BranchOneExistenceChecked value)
         branchOneExistenceChecked,
+    required TResult Function(AddCoverPressed value) addCoverPressed,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
-    required TResult Function(LaunchAsNewBranch value) launchAsNewBranch,
     required TResult Function(LaunchWithUID value) launchWithUID,
     required TResult Function(LeafChanged value) leafChanged,
     required TResult Function(LicenceSelected value) licenceSelected,
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
-    required TResult Function(PublishButtonPressed value) publishButtonPressed,
     required TResult Function(SaveButtonPressed value) saveButtonPressed,
-    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return titleChanged(this);
@@ -3518,22 +3518,22 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
   }) {
     return titleChanged?.call(this);
@@ -3542,22 +3542,22 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(BranchOneExistenceChecked value)?
         branchOneExistenceChecked,
+    TResult Function(AddCoverPressed value)? addCoverPressed,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchAsNewBranch value)? launchAsNewBranch,
     TResult Function(LaunchWithUID value)? launchWithUID,
     TResult Function(LeafChanged value)? leafChanged,
     TResult Function(LicenceSelected value)? licenceSelected,
     TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
     TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {

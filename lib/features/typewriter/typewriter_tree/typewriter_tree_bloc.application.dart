@@ -44,6 +44,60 @@ class TypewriterTreeBloc
     this._sessionsRepository,
     this._treeRepository,
   ) : super(TypewriterTreeState.initial()) {
+    on<LaunchAsNewTree>((_, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: Option.none(),
+          isProcessing: true,
+        ),
+      );
+
+      (await _sessionsRepository.fetchSession()).match(
+        (user) {
+          emit(
+            state.copyWith(
+              tree: state.tree.copyWith(authorUID: user.uid),
+              failureOption: const None(),
+            ),
+          );
+
+          add(const TypewriterTreeEvent.sessionFetched());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<SessionFetched>((_, emit) async {
+      final randomKey =
+          placeholdersKeys[Random().nextInt(placeholdersKeys.length)];
+
+      (await _defaultCoversRepository.fetchDefaultCoverByKey(randomKey)).match(
+        (defaultCover) {
+          emit(
+            state.copyWith(
+              coverURL: defaultCover.url.getOrCrash(),
+              failureOption: const None(),
+              isProcessing: false,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption:
+                  Option.some(Err(CoreFailure.defaultCovers(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
     on<AddCoverPressed>((_, emit) async {
       final imagePicker = ImagePicker();
 
@@ -137,35 +191,6 @@ class TypewriterTreeBloc
         ),
       ),
     );
-    on<LaunchAsNewTree>((_, emit) async {
-      emit(
-        state.copyWith(
-          failureOption: Option.none(),
-          isProcessing: true,
-        ),
-      );
-
-      (await _sessionsRepository.fetchSession()).match(
-        (user) {
-          emit(
-            state.copyWith(
-              tree: state.tree.copyWith(authorUID: user.uid),
-              failureOption: const None(),
-            ),
-          );
-
-          add(const TypewriterTreeEvent.sessionFetched());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
-    });
     on<LaunchWithUID>((value, emit) async {
       emit(
         state.copyWith(
@@ -298,31 +323,7 @@ class TypewriterTreeBloc
         emit,
       );
     });
-    on<SessionFetched>((_, emit) async {
-      final randomKey =
-          placeholdersKeys[Random().nextInt(placeholdersKeys.length)];
 
-      (await _defaultCoversRepository.fetchDefaultCoverByKey(randomKey)).match(
-        (defaultCover) {
-          emit(
-            state.copyWith(
-              coverURL: defaultCover.url.getOrCrash(),
-              failureOption: const None(),
-              isProcessing: false,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption:
-                  Option.some(Err(CoreFailure.defaultCovers(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
-    });
     on<SubtitleChanged>((value, emit) {
       final subtitleTrim = value.subtitle.trim();
       final wordCount = subtitleTrim.countWords();

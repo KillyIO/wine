@@ -8,6 +8,8 @@ import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/auth/password.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
+import 'package:wine/features/default_covers/default_cover.domain.dart';
+import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user.domain.dart';
@@ -24,65 +26,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   /// @nodoc
   SignUpBloc(
     this._authFacade,
+    this._defaultCoversRepository,
     this._sessionsRepository,
     this._userRepository,
   ) : super(SignUpState.initial()) {
-    on<AccountCreated>((_, emit) async {
-      final userOption = await _authFacade.getLoggedInUser();
-      var userAsPlain = userOption.toNullable();
-
-      if (userAsPlain != null) {
-        userAsPlain = userAsPlain.copyWith(username: state.username);
-
-        (await _userRepository.saveUsername(
-          userAsPlain.uid,
-          userAsPlain.username,
-        ))
-            .match(
-          (_) {
-            add(SignUpEvent.usernameSaved(userAsPlain!));
-          },
-          (failure) {
-            emit(
-              state.copyWith(
-                failureOption: Option.some(Err(CoreFailure.user(failure))),
-                isProcessing: false,
-                showErrorMessages: true,
-              ),
-            );
-          },
-        );
-      }
-    });
-    on<ConfirmPasswordChanged>((value, emit) {
-      final password = state.password.value.ok().toNullable();
-
-      if (password != null) {
-        emit(
-          state.copyWith(
-            confirmPassword:
-                ConfirmPassword(password, value.confirmPasswordStr),
-            failureOption: const None(),
-          ),
-        );
-      }
-    });
-    on<EmailAddressChanged>(
-      (value, emit) => emit(
-        state.copyWith(
-          emailAddress: EmailAddress(value.emailAddressStr),
-          failureOption: const None(),
-        ),
-      ),
-    );
-    on<PasswordChanged>(
-      (value, emit) => emit(
-        state.copyWith(
-          failureOption: const None(),
-          password: Password(value.passwordStr),
-        ),
-      ),
-    );
     on<SignUpPressed>((_, emit) async {
       final isUsernameValid = state.username.isValid;
 
@@ -113,29 +60,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         );
       }
     });
-    on<UserDetailsSaved>(
-      (value, emit) async =>
-          (await _sessionsRepository.insertSession(value.user)).match(
-        (_) {
-          emit(
-            state.copyWith(
-              failureOption: const None(),
-              isAuthenticated: true,
-              isProcessing: false,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ),
-          );
-        },
-      ),
-    );
     on<UsernameAvailabilityConfirmed>((_, emit) async {
       final isEmailValid = state.emailAddress.isValid;
       final isPasswordValid = state.password.isValid;
@@ -162,6 +86,33 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         );
       }
     });
+    on<AccountCreated>((_, emit) async {
+      final userOption = await _authFacade.getLoggedInUser();
+      var userAsPlain = userOption.toNullable();
+
+      if (userAsPlain != null) {
+        userAsPlain = userAsPlain.copyWith(username: state.username);
+
+        (await _userRepository.saveUsername(
+          userAsPlain.uid,
+          userAsPlain.username,
+        ))
+            .match(
+          (_) {
+            add(SignUpEvent.usernameSaved(userAsPlain!));
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.user(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              ),
+            );
+          },
+        );
+      }
+    });
     on<UsernameSaved>(
       (value, emit) async =>
           (await _userRepository.saveDetailsFromUser(value.user)).match(
@@ -179,6 +130,93 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         },
       ),
     );
+    on<UserDetailsSaved>(
+      (value, emit) async =>
+          (await _sessionsRepository.insertSession(value.user)).match(
+        (_) {
+          add(const SignUpEvent.sessionInserted());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
+        },
+      ),
+    );
+    on<SessionInserted>((_, emit) async {
+      (await _defaultCoversRepository.loadDefaultCovers()).match(
+        (defaultCoverURLs) {
+          add(SignUpEvent.defaultCoversLoaded(defaultCoverURLs));
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption:
+                  Option.some(Err(CoreFailure.defaultCovers(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
+        },
+      );
+    });
+    on<DefaultCoversLoaded>((value, emit) async {
+      (await _defaultCoversRepository.cacheDefaultCovers(value.defaultCovers))
+          .match(
+        (_) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              isAuthenticated: true,
+              isProcessing: false,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption:
+                  Option.some(Err(CoreFailure.defaultCovers(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
+        },
+      );
+    });
+    on<ConfirmPasswordChanged>((value, emit) {
+      final password = state.password.value.ok().toNullable();
+
+      if (password != null) {
+        emit(
+          state.copyWith(
+            confirmPassword:
+                ConfirmPassword(password, value.confirmPasswordStr),
+            failureOption: const None(),
+          ),
+        );
+      }
+    });
+    on<EmailAddressChanged>(
+      (value, emit) => emit(
+        state.copyWith(
+          emailAddress: EmailAddress(value.emailAddressStr),
+          failureOption: const None(),
+        ),
+      ),
+    );
+    on<PasswordChanged>(
+      (value, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          password: Password(value.passwordStr),
+        ),
+      ),
+    );
     on<UsernameChanged>(
       (value, emit) => emit(
         state.copyWith(
@@ -190,6 +228,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   }
 
   final IAuthFacade _authFacade;
+  final IDefaultCoversRepository _defaultCoversRepository;
   final ISessionsRepository _sessionsRepository;
   final IUserRepository _userRepository;
 }

@@ -7,11 +7,11 @@ class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.init() = Init;
 
   /// @nodoc
+  const factory SettingsEvent.sessionFetched() = SessionFetched;
+
+  /// @nodoc
   const factory SettingsEvent.logOutPressed() = LogOutPressed;
 
   /// @nodoc
   const factory SettingsEvent.sessionDeleted() = SessionDeleted;
-
-  /// @nodoc
-  const factory SettingsEvent.sessionFetched() = SessionFetched;
 }

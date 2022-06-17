@@ -35,47 +35,6 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
     this._treeRepository,
     this._userRepository,
   ) : super(TreeState.initial()) {
-    // TODO(SSebigo): try fetching last branch read
-    on<AuthorLoaded>((_, emit) async {
-      await _fetchSettings(emit);
-    });
-    on<BookmarkButtonPressed>((value, emit) async {
-      final session = state.session;
-
-      if (session != null) {
-        (await _treeRepository.updateTreeBookmarks(
-          session.uid,
-          state.tree.uid,
-          isBookmarked: !value.isBookmarked,
-        ))
-            .match(
-          (_) {
-            final bookmarksCount = state.tree.bookmarksCount;
-
-            emit(
-              state.copyWith(
-                isBookmarked: !value.isBookmarked,
-                failureOption: const None(),
-                tree: state.tree.copyWith(
-                  bookmarksCount: !value.isBookmarked
-                      ? bookmarksCount + 1
-                      : bookmarksCount - 1,
-                ),
-              ),
-            );
-          },
-          (failure) {
-            emit(
-              state.copyWith(
-                failureOption: Option.some(Err(CoreFailure.tree(failure))),
-              ),
-            );
-          },
-        );
-      }
-    });
-    on<BranchOneLoaded>((_, emit) async => _updateTreeViews(emit));
-    on<BranchOneNotFound>((_, emit) async => _updateTreeViews(emit));
     on<LaunchWithUID>((value, emit) async {
       emit(state.copyWith(isProcessing: true));
 
@@ -112,113 +71,6 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
           },
         );
       }
-    });
-    on<LikeButtonPressed>((value, emit) async {
-      final session = state.session;
-
-      if (session != null) {
-        (await _treeRepository.updateTreeLikes(
-          session.uid,
-          state.tree.uid,
-          isLiked: !value.isLiked,
-        ))
-            .match(
-          (_) {
-            final likesCount = state.tree.likesCount;
-
-            emit(
-              state.copyWith(
-                isLiked: !value.isLiked,
-                failureOption: const None(),
-                tree: state.tree.copyWith(
-                  likesCount: !value.isLiked ? likesCount + 1 : likesCount - 1,
-                ),
-              ),
-            );
-          },
-          (failure) {
-            emit(
-              state.copyWith(
-                failureOption: Option.some(Err(CoreFailure.tree(failure))),
-              ),
-            );
-          },
-        );
-      }
-    });
-    on<LikeStatusLoaded>((_, emit) async {
-      final session = state.session;
-
-      if (session != null) {
-        (await _treeRepository.loadBookmarkStatus(
-          session.uid,
-          state.tree.uid,
-        ))
-            .match(
-          (isBookmarked) {
-            emit(
-              state.copyWith(
-                failureOption: const None(),
-                isBookmarked: isBookmarked,
-                isProcessing: false,
-              ),
-            );
-          },
-          (failure) {
-            emit(
-              state.copyWith(
-                failureOption: Option.some(Err(CoreFailure.tree(failure))),
-                isProcessing: false,
-              ),
-            );
-          },
-        );
-      }
-    });
-    on<SessionFetched>((_, emit) async {
-      if (!state.authorIsUser) {
-        await _loadAuthor(emit);
-      } else {
-        await _fetchSettings(emit);
-      }
-    });
-    on<SettingsFetched>((_, emit) async {
-      (await _branchRepository.loadBranchByTreeUIDAndIndex(
-        state.tree.uid,
-        1,
-      ))
-          .match(
-        (branch) {
-          emit(
-            state.copyWith(
-              branchOne: branch.isPublished ? branch : null,
-              failureOption: const None(),
-              isProcessing: !_authFacade.isAnonymous,
-            ),
-          );
-
-          if (!_authFacade.isAnonymous) {
-            add(const TreeEvent.branchOneLoaded());
-          }
-        },
-        (failure) {
-          failure.maybeWhen(
-            branchNotFound: () {
-              if (!_authFacade.isAnonymous) {
-                add(const TreeEvent.branchOneNotFound());
-              }
-            },
-            orElse: () {
-              emit(
-                state.copyWith(
-                  failureOption: Option.some(Err(CoreFailure.branch(failure))),
-                  isProcessing: false,
-                ),
-              );
-            },
-          );
-        },
-      );
     });
     on<TreeSet>((_, emit) async {
       if (!_authFacade.isAnonymous) {
@@ -259,6 +111,55 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
         await _loadAuthor(emit);
       }
     });
+    on<SessionFetched>((_, emit) async {
+      if (!state.authorIsUser) {
+        await _loadAuthor(emit);
+      } else {
+        await _fetchSettings(emit);
+      }
+    });
+    on<AuthorLoaded>((_, emit) async {
+      await _fetchSettings(emit);
+    });
+    on<SettingsFetched>((_, emit) async {
+      (await _branchRepository.loadBranchByTreeUIDAndIndex(
+        state.tree.uid,
+        1,
+      ))
+          .match(
+        (branch) {
+          emit(
+            state.copyWith(
+              branchOne: branch.isPublished ? branch : null,
+              failureOption: const None(),
+              isProcessing: !_authFacade.isAnonymous,
+            ),
+          );
+
+          if (!_authFacade.isAnonymous) {
+            add(const TreeEvent.branchOneLoaded());
+          }
+        },
+        (failure) {
+          failure.maybeWhen(
+            branchNotFound: () {
+              if (!_authFacade.isAnonymous) {
+                add(const TreeEvent.branchOneNotFound());
+              }
+            },
+            orElse: () {
+              emit(
+                state.copyWith(
+                  failureOption: Option.some(Err(CoreFailure.branch(failure))),
+                  isProcessing: false,
+                ),
+              );
+            },
+          );
+        },
+      );
+    });
+    on<BranchOneLoaded>((_, emit) async => _updateTreeViews(emit));
     on<ViewsUpdated>((_, emit) async {
       final session = state.session;
 
@@ -283,6 +184,105 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
               state.copyWith(
                 failureOption: Option.some(Err(CoreFailure.tree(failure))),
                 isProcessing: false,
+              ),
+            );
+          },
+        );
+      }
+    });
+    on<LikeStatusLoaded>((_, emit) async {
+      final session = state.session;
+
+      if (session != null) {
+        (await _treeRepository.loadBookmarkStatus(
+          session.uid,
+          state.tree.uid,
+        ))
+            .match(
+          (isBookmarked) {
+            emit(
+              state.copyWith(
+                failureOption: const None(),
+                isBookmarked: isBookmarked,
+                isProcessing: false,
+              ),
+            );
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.tree(failure))),
+                isProcessing: false,
+              ),
+            );
+          },
+        );
+      }
+    });
+    on<BranchOneNotFound>((_, emit) async => _updateTreeViews(emit));
+    // TODO(SSebigo): try fetching last branch read
+    on<BookmarkButtonPressed>((value, emit) async {
+      final session = state.session;
+
+      if (session != null) {
+        (await _treeRepository.updateTreeBookmarks(
+          session.uid,
+          state.tree.uid,
+          isBookmarked: !value.isBookmarked,
+        ))
+            .match(
+          (_) {
+            final bookmarksCount = state.tree.bookmarksCount;
+
+            emit(
+              state.copyWith(
+                isBookmarked: !value.isBookmarked,
+                failureOption: const None(),
+                tree: state.tree.copyWith(
+                  bookmarksCount: !value.isBookmarked
+                      ? bookmarksCount + 1
+                      : bookmarksCount - 1,
+                ),
+              ),
+            );
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              ),
+            );
+          },
+        );
+      }
+    });
+    on<LikeButtonPressed>((value, emit) async {
+      final session = state.session;
+
+      if (session != null) {
+        (await _treeRepository.updateTreeLikes(
+          session.uid,
+          state.tree.uid,
+          isLiked: !value.isLiked,
+        ))
+            .match(
+          (_) {
+            final likesCount = state.tree.likesCount;
+
+            emit(
+              state.copyWith(
+                isLiked: !value.isLiked,
+                failureOption: const None(),
+                tree: state.tree.copyWith(
+                  likesCount: !value.isLiked ? likesCount + 1 : likesCount - 1,
+                ),
+              ),
+            );
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.tree(failure))),
               ),
             );
           },
