@@ -94,7 +94,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i22.SessionsRepository(get<_i4.FirebaseAuth>(), get<_i16.Isar>()),
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i23.ISettingsRepository>(
-      () => _i24.SettingsRepository(get<_i4.FirebaseAuth>(), get<_i16.Isar>()),
+      () => _i24.SettingsRepository(get<_i16.Isar>()),
       registerFor: {_dev, _prod});
   gh.factory<_i25.LibraryBloc>(
       () => _i25.LibraryBloc(get<_i10.IBranchRepository>(),

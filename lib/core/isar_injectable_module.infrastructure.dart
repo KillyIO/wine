@@ -15,14 +15,10 @@ abstract class IIsarInjectableModule {
   @Environment(Environment.prod)
   @LazySingleton()
   Future<Isar> get isar async {
-    if (F.appFlavor == Flavor.development) {
-      // initializeIsarConnect();
-    }
-
     final isar = await Isar.open(
       schemas: [IsarDefaultCoverSchema, IsarSettingsSchema, IsarUserSchema],
-      directory: (await getApplicationDocumentsDirectory()).path,
-      inspector: true,
+      directory: (await getApplicationSupportDirectory()).path,
+      inspector: F.appFlavor == Flavor.development,
     );
 
     return isar;

@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:oxidized/oxidized.dart';
@@ -15,12 +14,8 @@ import 'package:wine/features/settings/settings_failure.domain.dart';
 )
 class SettingsRepository implements ISettingsRepository {
   /// @nodoc
-  SettingsRepository(
-    this._firebaseAuth,
-    this._isar,
-  );
+  SettingsRepository(this._isar);
 
-  final auth.FirebaseAuth _firebaseAuth;
   final Isar _isar;
 
   @override

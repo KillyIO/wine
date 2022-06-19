@@ -34,7 +34,7 @@ void main() {
         MockQueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause>();
     _build = MockQuery<IsarSettings>();
 
-    _settingsRepository = SettingsRepository(_firebaseAuth, _isar);
+    _settingsRepository = SettingsRepository(_isar);
 
     registerFallbackValue(MockIsarSettings());
     registerFallbackValue(MockIsarCollection<IsarSettings>());
