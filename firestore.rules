@@ -12,9 +12,9 @@ service cloud.firestore {
         function allowTreesUpdate() {
             return isSignedIn() && (request.auth.uid == resource.data.authorUID || request.resource.data.keys().hasOnly(['bookmarksCount', 'likesCount', 'viewsCount']));
         }
-        
+
         match /users/{document=**} {
-            allow create, read: if isSignedIn(); //Allow create if signed in 
+            allow create, read: if isSignedIn(); // Allow create if signed in
             allow update, delete: if isSignedIn() && request.auth.uid == resource.data.uid; // Allow delete only if the uid matches (same user)
         }
 
@@ -23,11 +23,11 @@ service cloud.firestore {
             allow create: if isSignedIn();  //Once a uid mapping is created it cannot be deleted or updated from the app
             allow update: if isSignedIn() && request.auth.uid == resource.data.uid;
         }
-        
+
         match /branches/{document=**} {
             allow create, read: if isSignedIn();
-            allow update: if allowBranchesUpdate(); // Only the original creator of the series can modiy or delete his/her series
-            allow delete: if isSignedIn() && request.auth.uid == resource.data.authorUID && resource.data.isPublished == false; // Only the original creator of the chapter can modiy or delete his/her series
+            allow update: if allowBranchesUpdate(); // Only the original creator of the series can modiy or delete their series
+            allow delete: if isSignedIn() && request.auth.uid == resource.data.authorUID && resource.data.isPublished == false; // Only the original creator of the chapter can modiy or delete their series
         }
 
         match /branches_bookmarks/{document=**} {
@@ -47,8 +47,8 @@ service cloud.firestore {
 
         match /trees/{document=**} {
             allow create, read: if isSignedIn();
-            allow update: if allowTreesUpdate(); // Only the original creator of the series can modiy or delete his/her series
-            allow delete: if isSignedIn() && request.auth.uid == resource.data.authorUID && resource.data.isPublished == false; // Only the original creator of the series can modiy or delete his/her series
+            allow update: if allowTreesUpdate(); // Only the original creator of the series can modiy or delete their series
+            allow delete: if isSignedIn() && request.auth.uid == resource.data.authorUID && resource.data.isPublished == false; // Only the original creator of the series can modiy or delete their series
         }
 
         match /trees_bookmarks/{document=**} {
