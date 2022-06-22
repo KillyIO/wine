@@ -35,7 +35,7 @@ packages:
       name: assorted_layout_widgets
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.0"
+    version: "6.1.1"
   async:
     dependency: transitive
     description:
@@ -1079,7 +1079,7 @@ packages:
       name: readmore
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.2.0"
   responsive_builder:
     dependency: "direct main"
     description:
