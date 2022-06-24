@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wine/core/buttons/asset_button.presentation.dart';
 import 'package:wine/features/settings/settings_account/settings_account_layout.presentation.dart';
-import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/icons.dart';
 
 /// @nodoc
 class SettingsAccountPage extends StatelessWidget {

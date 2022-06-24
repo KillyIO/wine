@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wine/utils/assets/images.dart';
+import 'package:wine/utils/constants/images.dart';
 import 'package:wine/utils/responsive/plus_responsive.dart';
 
 /// @nodoc

@@ -1,7 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:wine/features/home/home_splash_copyright.presentation.dart';
-import 'package:wine/utils/assets/animations.dart';
+import 'package:wine/utils/constants/animations.dart';
 
 /// @nodoc
 class HomeSplashLayout extends StatelessWidget {

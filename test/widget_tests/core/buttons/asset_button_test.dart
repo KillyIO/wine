@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/core/buttons/asset_button.presentation.dart';
-import 'package:wine/utils/assets/icons.dart';
+import 'package:wine/utils/constants/icons.dart';
 
 import '../../utils/test_widget.dart';
 

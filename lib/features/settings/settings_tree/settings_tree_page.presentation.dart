@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:wine/core/buttons/asset_button.presentation.dart';
-import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/icons.dart';
 
 /// @nodoc
 class SettingsTreePage extends StatelessWidget {
