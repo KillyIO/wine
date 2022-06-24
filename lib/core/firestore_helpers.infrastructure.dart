@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/features/user/user_dto.infrastructure.dart';
-import 'package:wine/utils/paths/users.dart';
+import 'package:wine/utils/constants/paths/users.dart';
 
 /// @nodoc
 extension FirebaseFirestoreX on FirebaseFirestore {

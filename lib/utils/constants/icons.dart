@@ -1,4 +1,4 @@
-import 'package:wine/utils/paths/assets.dart';
+import 'package:wine/utils/constants/paths/assets.dart';
 
 /// @nodoc
 const String backIcon = '${assetsIconsPath}back.png';

@@ -12,8 +12,8 @@ import 'package:wine/features/tree/i_tree_repository.domain.dart';
 import 'package:wine/features/tree/tree.domain.dart';
 import 'package:wine/features/tree/tree_dto.infrastructure.dart';
 import 'package:wine/features/tree/tree_failure.domain.dart';
-import 'package:wine/utils/paths/storage.dart';
-import 'package:wine/utils/paths/tree.dart';
+import 'package:wine/utils/constants/paths/storage.dart';
+import 'package:wine/utils/constants/paths/tree.dart';
 
 /// @nodoc
 @LazySingleton(

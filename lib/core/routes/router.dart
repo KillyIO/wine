@@ -12,7 +12,7 @@ import 'package:wine/features/sign_up/sign_up_page.presentation.dart';
 import 'package:wine/features/tree/tree_page.presentation.dart';
 import 'package:wine/features/typewriter/typewriter_page.presentation.dart';
 import 'package:wine/features/wrappers/settings_wrapper.presentation.dart';
-import 'package:wine/utils/paths/router.dart';
+import 'package:wine/utils/constants/paths/router.dart';
 
 export 'router.gr.dart';
 

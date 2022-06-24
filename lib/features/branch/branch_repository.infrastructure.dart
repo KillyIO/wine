@@ -12,8 +12,8 @@ import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/features/branch/branch_dto.infrastructure.dart';
 import 'package:wine/features/branch/branch_failure.domain.dart';
 import 'package:wine/features/branch/i_branch_repository.domain.dart';
-import 'package:wine/utils/paths/branch.dart';
-import 'package:wine/utils/paths/storage.dart';
+import 'package:wine/utils/constants/paths/branch.dart';
+import 'package:wine/utils/constants/paths/storage.dart';
 
 /// @nodoc
 @LazySingleton(

@@ -8,8 +8,8 @@ import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/features/user/user_dto.infrastructure.dart';
 import 'package:wine/features/user/user_failure.domain.dart';
+import 'package:wine/utils/constants/paths/users.dart';
 import 'package:wine/utils/constants/users.dart';
-import 'package:wine/utils/paths/users.dart';
 
 /// @nodoc
 @LazySingleton(

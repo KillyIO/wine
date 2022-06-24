@@ -7,7 +7,7 @@ import 'package:wine/features/auth/username.fomain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user_failure.domain.dart';
 import 'package:wine/features/user/user_repository.infrastructure.dart';
-import 'package:wine/utils/paths/users.dart';
+import 'package:wine/utils/constants/paths/users.dart';
 
 import '../utils/constants.dart';
 
