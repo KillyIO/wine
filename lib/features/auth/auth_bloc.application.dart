@@ -7,9 +7,9 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/user/user.domain.dart';
 
-part '../auth_event.application.dart';
-part '../auth_state.application.dart';
-part '../auth_bloc.application.freezed.dart';
+part 'auth_event.application.dart';
+part 'auth_state.application.dart';
+part 'auth_bloc.application.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)

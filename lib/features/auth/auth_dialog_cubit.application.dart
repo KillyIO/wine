@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part '../auth_dialog_state.application.dart';
-part '../auth_dialog_cubit.application.freezed.dart';
+part 'auth_dialog_state.application.dart';
+part 'auth_dialog_cubit.application.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
