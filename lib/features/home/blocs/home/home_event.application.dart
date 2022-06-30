@@ -1,4 +1,4 @@
-part of 'home_bloc.application.dart';
+part of 'home_bloc/home_bloc.application.dart';
 
 /// @nodoc
 @freezed

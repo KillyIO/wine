@@ -4,7 +4,7 @@ import 'package:wine/features/auth/auth_dialog_cubit/auth_dialog_cubit.applicati
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/branch/i_branch_repository.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
-import 'package:wine/features/home/home_bloc.application.dart';
+import 'package:wine/features/home/home_bloc/home_bloc.application.dart';
 import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/features/log_in/log_in_bloc.application.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';

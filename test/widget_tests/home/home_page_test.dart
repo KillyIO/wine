@@ -10,7 +10,7 @@ import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/default_covers/default_covers_failure.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/home/home_app_bar.presentation.dart';
-import 'package:wine/features/home/home_bloc.application.dart';
+import 'package:wine/features/home/home_bloc/home_bloc.application.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/sessions/sessions_failure.domain.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';

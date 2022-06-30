@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/footer/footer.presentation.dart';
 import 'package:wine/core/page_view/horizontal_page_view_navbar.presentation.dart';
-import 'package:wine/features/home/home_bloc.application.dart';
+import 'package:wine/features/home/home_bloc/home_bloc.application.dart';
 import 'package:wine/features/home/home_page_view_builder.presentation.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/home.dart';

@@ -8,9 +8,9 @@ import 'package:wine/features/tree/i_tree_repository.domain.dart';
 import 'package:wine/features/tree/tree.domain.dart';
 import 'package:wine/utils/constants/home.dart';
 
-part 'home_bloc.application.freezed.dart';
-part 'home_event.application.dart';
-part 'home_state.application.dart';
+part '../../home_bloc.application.freezed.dart';
+part '../../home_event.application.dart';
+part '../../home_state.application.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
