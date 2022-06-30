@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:wine/features/auth/auth_bloc.application.dart';
-import 'package:wine/features/auth/auth_dialog_cubit.application.dart';
+import 'package:wine/features/auth/auth_bloc/auth_bloc.application.dart';
+import 'package:wine/features/auth/auth_dialog_cubit/auth_dialog_cubit.application.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/branch/i_branch_repository.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/routes/router.dart';
 import 'package:wine/core/section_tile.presentation.dart';
-import 'package:wine/features/auth/auth_bloc.application.dart';
+import 'package:wine/features/auth/auth_bloc/auth_bloc.application.dart';
 import 'package:wine/features/settings/settings_bloc.application.dart';
 import 'package:wine/utils/constants/palette.dart';
 
