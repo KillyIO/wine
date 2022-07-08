@@ -2,14 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/core/unique_id.domain.dart';
-import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/username.fomain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user.domain.dart';
 import 'package:wine/features/user/user_dto.infrastructure.dart';
 import 'package:wine/features/user/user_failure.domain.dart';
 import 'package:wine/utils/constants/paths/users.dart';
-import 'package:wine/utils/constants/users.dart';
 
 /// @nodoc
 @LazySingleton(
@@ -53,18 +51,15 @@ class UserRepository implements IUserRepository {
     try {
       final user = await _firestore
           .collection(usersPath)
-          .withConverter<User>(
+          .withConverter<User?>(
             fromFirestore: (snapshot, _) {
               if (snapshot.exists) {
                 return UserDTO.fromJson(snapshot.data()!).toDomain();
               }
-              return User(
-                emailAddress: EmailAddress(defaultEmailAddress),
-                uid: UniqueID.fromUniqueString(snapshot.id),
-                username: Username(defaultUsername),
-              );
+              return null;
             },
-            toFirestore: (value, _) => UserDTO.fromDomain(value).toJson(),
+            toFirestore: (value, _) =>
+                value != null ? UserDTO.fromDomain(value).toJson() : {},
           )
           .doc(userUID.getOrCrash())
           .get()

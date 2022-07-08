@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/branch/branch_tile.presentation.dart';
@@ -39,9 +40,8 @@ class TreeBranchOne extends StatelessWidget {
                 title: state.branchOne!.title.getOrCrash(),
                 language: state.branchOne!.language.getOrCrash(),
                 coverURL: state.branchOne!.coverURL.getOrCrash(),
-                onPressed: () => handleAuthGuardedNavigation(
-                  context,
-                  navigateTo: BranchRoute(
+                onPressed: () => context.router.root.push(
+                  BranchRoute(
                     branch: state.branchOne,
                     uid: state.branchOne!.uid.getOrCrash(),
                   ),

@@ -2287,7 +2287,7 @@ class _$_TreeState implements _TreeState {
       required this.isBookmarked,
       required this.isLiked,
       required this.isProcessing,
-      required this.session,
+      this.session,
       required this.settings,
       required this.tree});
 
@@ -2373,7 +2373,7 @@ abstract class _TreeState implements TreeState {
       required final bool isBookmarked,
       required final bool isLiked,
       required final bool isProcessing,
-      required final User? session,
+      final User? session,
       required final Settings settings,
       required final Tree tree}) = _$_TreeState;
 

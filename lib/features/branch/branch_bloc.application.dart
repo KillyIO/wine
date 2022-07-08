@@ -82,55 +82,47 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       }
     });
     on<BranchSet>((_, emit) async {
-      (await _sessionsRepository.fetchSession()).match(
-        (session) {
-          emit(
-            state.copyWith(
-              author: state.branch.authorUID.getOrCrash() ==
-                      session.uid.getOrCrash()
-                  ? session
-                  : User.empty(),
-              authorIsUser: state.branch.authorUID.getOrCrash() ==
-                  session.uid.getOrCrash(),
-              failureOption: const None(),
-              session: session,
-            ),
-          );
-
-          add(const BranchEvent.sessionFetched());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
-    });
-    on<SessionFetched>((_, emit) async {
-      if (!state.authorIsUser) {
-        (await _userRepository.loadUser(state.branch.authorUID)).match(
-          (user) {
+      if (!_authFacade.isAnonymous) {
+        (await _sessionsRepository.fetchSession()).match(
+          (session) {
             emit(
               state.copyWith(
-                author: user,
+                author: state.branch.authorUID.getOrCrash() ==
+                        session.uid.getOrCrash()
+                    ? session
+                    : User.empty(),
+                authorIsUser: state.branch.authorUID.getOrCrash() ==
+                    session.uid.getOrCrash(),
                 failureOption: const None(),
+                session: session,
               ),
             );
 
-            add(const BranchEvent.authorLoaded());
+            add(const BranchEvent.sessionFetched());
           },
           (failure) {
             emit(
               state.copyWith(
-                failureOption: Option.some(Err(CoreFailure.user(failure))),
+                failureOption: Option.some(Err(CoreFailure.sessions(failure))),
                 isProcessing: false,
               ),
             );
           },
         );
+      } else {
+        emit(
+          state.copyWith(
+            authorIsUser: false,
+            failureOption: const None(),
+          ),
+        );
+
+        await _loadAuthor(emit);
+      }
+    });
+    on<SessionFetched>((_, emit) async {
+      if (!state.authorIsUser) {
+        await _loadAuthor(emit);
       } else {
         await _fetchSettings(emit);
       }
@@ -152,10 +144,11 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       ),
     );
     on<NextBranchesLoaded>((_, emit) async {
-      (await _branchRepository.updateBranchViews(
-        state.session.uid,
-        state.branch.uid,
-      ))
+      final userUID = state.session?.uid;
+
+      if (userUID == null) return;
+
+      (await _branchRepository.updateBranchViews(userUID, state.branch.uid))
           .match(
         (isUpdated) {
           final viewsCount = state.branch.viewsCount;
@@ -183,11 +176,11 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       );
     });
     on<ViewsUpdated>((_, emit) async {
-      (await _branchRepository.loadLikeStatus(
-        state.session.uid,
-        state.branch.uid,
-      ))
-          .match(
+      final userUID = state.session?.uid;
+
+      if (userUID == null) return;
+
+      (await _branchRepository.loadLikeStatus(userUID, state.branch.uid)).match(
         (isLiked) {
           emit(
             state.copyWith(
@@ -209,10 +202,11 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       );
     });
     on<LikeStatusLoaded>((_, emit) async {
-      (await _branchRepository.loadBookmarkStatus(
-        state.session.uid,
-        state.branch.uid,
-      ))
+      final userUID = state.session?.uid;
+
+      if (userUID == null) return;
+
+      (await _branchRepository.loadBookmarkStatus(userUID, state.branch.uid))
           .match(
         (isBookmarked) {
           emit(
@@ -234,8 +228,12 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       );
     });
     on<BookmarkButtonPressed>((value, emit) async {
+      final userUID = state.session?.uid;
+
+      if (userUID == null) return;
+
       (await _branchRepository.updateBranchBookmarks(
-        state.session.uid,
+        userUID,
         state.branch.uid,
         isBookmarked: !value.isBookmarked,
       ))
@@ -265,8 +263,12 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
       );
     });
     on<LikeButtonPressed>((value, emit) async {
+      final userUID = state.session?.uid;
+
+      if (userUID == null) return;
+
       (await _branchRepository.updateBranchLikes(
-        state.session.uid,
+        userUID,
         state.branch.uid,
         isLiked: !value.isLiked,
       ))
@@ -340,6 +342,29 @@ class BranchBloc extends Bloc<BranchEvent, BranchState> {
   final ISessionsRepository _sessionsRepository;
   final ISettingsRepository _settingsRepository;
   final IUserRepository _userRepository;
+
+  FutureOr<void> _loadAuthor(Emitter<BranchState> emit) async {
+    (await _userRepository.loadUser(state.branch.authorUID)).match(
+      (user) {
+        emit(
+          state.copyWith(
+            author: user,
+            failureOption: const None(),
+          ),
+        );
+
+        add(const BranchEvent.authorLoaded());
+      },
+      (failure) {
+        emit(
+          state.copyWith(
+            failureOption: Option.some(Err(CoreFailure.user(failure))),
+            isProcessing: false,
+          ),
+        );
+      },
+    );
+  }
 
   FutureOr<void> _fetchSettings(Emitter<BranchState> emit) async {
     (await _settingsRepository.fetchSettings()).match(

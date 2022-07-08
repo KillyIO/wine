@@ -3289,7 +3289,7 @@ mixin _$BranchState {
   List<Branch> get nextBranches => throw _privateConstructorUsedError;
   List<Branch> get sameAuthorNextBranches => throw _privateConstructorUsedError;
   double get scrollProgress => throw _privateConstructorUsedError;
-  User get session => throw _privateConstructorUsedError;
+  User? get session => throw _privateConstructorUsedError;
   Settings get settings => throw _privateConstructorUsedError;
   bool get showDetails => throw _privateConstructorUsedError;
 
@@ -3315,13 +3315,13 @@ abstract class $BranchStateCopyWith<$Res> {
       List<Branch> nextBranches,
       List<Branch> sameAuthorNextBranches,
       double scrollProgress,
-      User session,
+      User? session,
       Settings settings,
       bool showDetails});
 
   $UserCopyWith<$Res> get author;
   $BranchCopyWith<$Res> get branch;
-  $UserCopyWith<$Res> get session;
+  $UserCopyWith<$Res>? get session;
   $SettingsCopyWith<$Res> get settings;
 }
 
@@ -3398,7 +3398,7 @@ class _$BranchStateCopyWithImpl<$Res> implements $BranchStateCopyWith<$Res> {
       session: session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       settings: settings == freezed
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -3425,8 +3425,12 @@ class _$BranchStateCopyWithImpl<$Res> implements $BranchStateCopyWith<$Res> {
   }
 
   @override
-  $UserCopyWith<$Res> get session {
-    return $UserCopyWith<$Res>(_value.session, (value) {
+  $UserCopyWith<$Res>? get session {
+    if (_value.session == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.session!, (value) {
       return _then(_value.copyWith(session: value));
     });
   }
@@ -3458,7 +3462,7 @@ abstract class _$$_BranchStateCopyWith<$Res>
       List<Branch> nextBranches,
       List<Branch> sameAuthorNextBranches,
       double scrollProgress,
-      User session,
+      User? session,
       Settings settings,
       bool showDetails});
 
@@ -3467,7 +3471,7 @@ abstract class _$$_BranchStateCopyWith<$Res>
   @override
   $BranchCopyWith<$Res> get branch;
   @override
-  $UserCopyWith<$Res> get session;
+  $UserCopyWith<$Res>? get session;
   @override
   $SettingsCopyWith<$Res> get settings;
 }
@@ -3547,7 +3551,7 @@ class __$$_BranchStateCopyWithImpl<$Res> extends _$BranchStateCopyWithImpl<$Res>
       session: session == freezed
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
-              as User,
+              as User?,
       settings: settings == freezed
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -3575,7 +3579,7 @@ class _$_BranchState implements _BranchState {
       required final List<Branch> nextBranches,
       required final List<Branch> sameAuthorNextBranches,
       required this.scrollProgress,
-      required this.session,
+      this.session,
       required this.settings,
       required this.showDetails})
       : _nextBranches = nextBranches,
@@ -3614,7 +3618,7 @@ class _$_BranchState implements _BranchState {
   @override
   final double scrollProgress;
   @override
-  final User session;
+  final User? session;
   @override
   final Settings settings;
   @override
@@ -3692,7 +3696,7 @@ abstract class _BranchState implements BranchState {
       required final List<Branch> nextBranches,
       required final List<Branch> sameAuthorNextBranches,
       required final double scrollProgress,
-      required final User session,
+      final User? session,
       required final Settings settings,
       required final bool showDetails}) = _$_BranchState;
 
@@ -3720,7 +3724,7 @@ abstract class _BranchState implements BranchState {
   @override
   double get scrollProgress => throw _privateConstructorUsedError;
   @override
-  User get session => throw _privateConstructorUsedError;
+  User? get session => throw _privateConstructorUsedError;
   @override
   Settings get settings => throw _privateConstructorUsedError;
   @override

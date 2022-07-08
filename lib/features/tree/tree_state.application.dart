@@ -13,7 +13,7 @@ class TreeState with _$TreeState {
     required bool isBookmarked,
     required bool isLiked,
     required bool isProcessing,
-    required User? session,
+    User? session,
     required Settings settings,
     required Tree tree,
   }) = _TreeState;
@@ -26,7 +26,6 @@ class TreeState with _$TreeState {
         isBookmarked: false,
         isLiked: false,
         isProcessing: false,
-        session: null,
         settings: Settings.empty(),
         tree: Tree.empty(),
       );
