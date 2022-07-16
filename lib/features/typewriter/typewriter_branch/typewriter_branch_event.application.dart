@@ -51,7 +51,7 @@ class TypewriterBranchEvent with _$TypewriterBranchEvent {
   const factory TypewriterBranchEvent.leafChanged() = LeafChanged;
 
   /// @nodoc
-  const factory TypewriterBranchEvent.licenceSelected(String licence) =
+  const factory TypewriterBranchEvent.licenceSelected(LicenceType licence) =
       LicenceSelected;
 
   /// @nodoc

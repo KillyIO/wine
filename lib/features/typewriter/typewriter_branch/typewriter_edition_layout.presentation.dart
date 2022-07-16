@@ -11,6 +11,7 @@ import 'package:wine/core/typewriter/typewriter_selection_list_tile.presentation
 import 'package:wine/core/typewriter/typewriter_switch_list_tile.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_text_field.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_top_title.presentation.dart';
+import 'package:wine/features/branch/licence_type.domain.dart';
 import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart';
 import 'package:wine/features/typewriter/typewriter_branch/typewriter_quill.presentation.dart';
 import 'package:wine/utils/constants/branch.dart';
@@ -204,16 +205,19 @@ class TypewriterEditionLayout extends StatelessWidget {
                             items: licencesKeys,
                             onPressed: (v) =>
                                 context.read<TypewriterBranchBloc>().add(
-                                      TypewriterBranchEvent.licenceSelected(v),
+                                      TypewriterBranchEvent.licenceSelected(
+                                        LicenceType.values
+                                            .singleWhere((e) => e.name == v),
+                                      ),
                                     ),
-                            selectedItem: state.licence.getOrNull(),
+                            selectedItem: state.licence.getOrNull()?.name,
                             title: 'LICENCE*',
                           );
                         },
                       ),
                     ),
                   ),
-                  selectedItem: state.licence.getOrNull(),
+                  selectedItem: state.licence.getOrNull()?.name,
                   title: 'LICENCE*',
                 ),
               );

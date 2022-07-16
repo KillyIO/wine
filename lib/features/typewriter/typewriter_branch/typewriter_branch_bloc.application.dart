@@ -26,6 +26,7 @@ import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/features/branch/i_branch_repository.domain.dart';
 import 'package:wine/features/branch/leaf.domain.dart';
 import 'package:wine/features/branch/licence.domain.dart';
+import 'package:wine/features/branch/licence_type.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/tree/tree.domain.dart';

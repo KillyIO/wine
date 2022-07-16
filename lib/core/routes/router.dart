@@ -4,6 +4,7 @@ import 'package:wine/features/home/home_page.presentation.dart';
 import 'package:wine/features/library/library_page.presentation.dart';
 import 'package:wine/features/log_in/log_in_page.presentation.dart';
 import 'package:wine/features/plus/plus_page.presentation.dart';
+import 'package:wine/features/report/report_page.presentation.dart';
 import 'package:wine/features/settings/settings_account/settings_account_page.presentation.dart';
 import 'package:wine/features/settings/settings_branch/settings_branch_page.presentation.dart';
 import 'package:wine/features/settings/settings_page.presentation.dart';
@@ -65,6 +66,10 @@ export 'router.gr.dart';
           path: '',
         ),
       ],
+    ),
+    AutoRoute<ReportPage>(
+      page: ReportPage,
+      path: reportPagePath,
     ),
     AutoRoute<SignUpPage>(
       page: SignUpPage,

@@ -6,9 +6,12 @@ import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
 import 'package:wine/core/string_helpers.infrastructure.dart';
 import 'package:wine/core/value_failure.domain.dart';
+import 'package:wine/features/branch/licence_type.domain.dart';
+import 'package:wine/features/report/report_type.domain.dart';
 
 import 'package:wine/utils/constants/branch.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/report.dart';
 import 'package:wine/utils/constants/tree.dart';
 
 /// @nodoc
@@ -153,4 +156,36 @@ Result<String, ValueFailure<String>> validateUsername(String input) {
     return Ok(input);
   }
   return Err(ValueFailure.invalidUsername(input));
+}
+
+/// @nodoc
+Result<LicenceType, ValueFailure<LicenceType>> validateLicence(
+  LicenceType input,
+) {
+  if (input == LicenceType.unknown) {
+    return Err(ValueFailure.invalidLicence(input));
+  }
+
+  return Ok(input);
+}
+
+/// @nodoc
+Result<ReportType, ValueFailure<ReportType>> validateViolation(
+  ReportType input,
+) {
+  if (input == ReportType.unknown) {
+    return Err(ValueFailure.invalidViolation(input));
+  }
+
+  return Ok(input);
+}
+
+/// @nodoc
+Result<String, ValueFailure<String>> validateDescription(String input) {
+  if (input.isEmpty) {
+    return Err(ValueFailure.emptyInput(input));
+  } else if (input.countWords() > descriptionMaxWords) {
+    return Err(ValueFailure.tooLongInput(input));
+  }
+  return Ok(input);
 }

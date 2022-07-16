@@ -25,6 +25,9 @@ const String settingsBranchPagePath = 'branch';
 /// @nodoc
 const String settingsTreePagePath = 'tree';
 
+/// id: Branch ID
+const String reportPagePath = '/report/:id';
+
 /// @nodoc
 const String signUpPagePath = '/sign-up';
 

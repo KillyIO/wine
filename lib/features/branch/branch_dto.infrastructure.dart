@@ -12,6 +12,7 @@ import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/features/branch/leaf.domain.dart';
 import 'package:wine/features/branch/licence.domain.dart';
+import 'package:wine/features/branch/licence_type.domain.dart';
 
 part 'branch_dto.infrastructure.freezed.dart';
 part 'branch_dto.infrastructure.g.dart';
@@ -52,7 +53,7 @@ class BranchDTO with _$BranchDTO {
       isPublished: branch.isPublished,
       language: branch.language.getOrCrash(),
       leaf: branch.leaf.getOrCrash(),
-      licence: branch.licence.getOrCrash(),
+      licence: branch.licence.getOrCrash().name,
       likesCount: branch.likesCount,
       previousBranchUID: branch.previousBranchUID?.getOrCrash(),
       title: branch.title.getOrCrash(),
@@ -96,7 +97,8 @@ extension BranchDTOX on BranchDTO {
                   .toDelta()
                   .toJson(),
         ),
-        licence: Licence(licence),
+        licence:
+            Licence(LicenceType.values.singleWhere((e) => e.name == licence)),
         likesCount: likesCount,
         previousBranchUID: previousBranchUID != null
             ? UniqueID.fromUniqueString(previousBranchUID!)
@@ -148,7 +150,10 @@ extension BranchMapX on Map<dynamic, dynamic> {
             jsonDecode(this['leaf'] as String) as List<dynamic>,
           ).toDelta().toJson(),
         ),
-        licence: Licence(this['licence'] as String),
+        licence: Licence(
+          LicenceType.values
+              .singleWhere((e) => e.name == this['licence'] as String),
+        ),
         likesCount: this['likesCount'] as int,
         previousBranchUID: this['previousBranchUID'] != null
             ? UniqueID.fromUniqueString(this['previousBranchUID'] as String)

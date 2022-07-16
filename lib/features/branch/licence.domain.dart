@@ -2,25 +2,28 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/core/value_failure.domain.dart';
 import 'package:wine/core/value_object.domain.dart';
 import 'package:wine/core/value_validators.domain.dart';
+import 'package:wine/features/branch/licence_type.domain.dart';
 
 /// @nodoc
-class Licence extends ValueObject<String> {
+class Licence extends ValueObject<LicenceType> {
   /// @nodoc
-  factory Licence(String input) {
+  factory Licence(LicenceType input) {
     return Licence._(
-      validateSelectionNotEmpty(input),
+      validateLicence(input),
     );
   }
 
   /// @nodoc
-  factory Licence.forSaving(Result<String, ValueFailure<String>> input) {
+  factory Licence.forSaving(
+    Result<LicenceType, ValueFailure<LicenceType>> input,
+  ) {
     return Licence._(
-      Ok(input.unwrapOr('')),
+      Ok(input.unwrapOr(LicenceType.unknown)),
     );
   }
 
   const Licence._(this.value);
 
   @override
-  final Result<String, ValueFailure<String>> value;
+  final Result<LicenceType, ValueFailure<LicenceType>> value;
 }

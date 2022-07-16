@@ -23,10 +23,12 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) =>
@@ -38,10 +40,12 @@ mixin _$ValueFailure<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) =>
@@ -53,10 +57,12 @@ mixin _$ValueFailure<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -69,11 +75,13 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) =>
@@ -85,10 +93,12 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) =>
@@ -100,10 +110,12 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -199,10 +211,12 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -217,10 +231,12 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -235,10 +251,12 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -257,11 +275,13 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -276,10 +296,12 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -294,10 +316,12 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -389,10 +413,12 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -407,10 +433,12 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -425,10 +453,12 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -447,11 +477,13 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -466,10 +498,12 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -484,10 +518,12 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -580,10 +616,12 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -598,10 +636,12 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -616,10 +656,12 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -638,11 +680,13 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -657,10 +701,12 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -675,10 +721,12 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -771,10 +819,12 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -789,10 +839,12 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -807,10 +859,12 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -829,11 +883,13 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -848,10 +904,12 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -866,10 +924,12 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -961,10 +1021,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -979,10 +1041,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -997,10 +1061,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -1019,11 +1085,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -1038,10 +1106,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -1056,10 +1126,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -1077,6 +1149,208 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidLicenceCopyWith<T, $Res> {
+  factory _$$InvalidLicenceCopyWith(
+          _$InvalidLicence<T> value, $Res Function(_$InvalidLicence<T>) then) =
+      __$$InvalidLicenceCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidLicenceCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidLicenceCopyWith<T, $Res> {
+  __$$InvalidLicenceCopyWithImpl(
+      _$InvalidLicence<T> _value, $Res Function(_$InvalidLicence<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidLicence<T>));
+
+  @override
+  _$InvalidLicence<T> get _value => super._value as _$InvalidLicence<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidLicence<T>(
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidLicence<T> implements InvalidLicence<T> {
+  const _$InvalidLicence(this.failedValue);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidLicence(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidLicence<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidLicenceCopyWith<T, _$InvalidLicence<T>> get copyWith =>
+      __$$InvalidLicenceCopyWithImpl<T, _$InvalidLicence<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
+    required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
+  }) {
+    return invalidLicence(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
+    TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
+  }) {
+    return invalidLicence?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
+    TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
+    required TResult orElse(),
+  }) {
+    if (invalidLicence != null) {
+      return invalidLicence(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
+  }) {
+    return invalidLicence(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
+  }) {
+    return invalidLicence?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
+    required TResult orElse(),
+  }) {
+    if (invalidLicence != null) {
+      return invalidLicence(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidLicence<T> implements ValueFailure<T> {
+  const factory InvalidLicence(final T failedValue) = _$InvalidLicence<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$InvalidLicenceCopyWith<T, _$InvalidLicence<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1152,10 +1426,12 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -1170,10 +1446,12 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -1188,10 +1466,12 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -1210,11 +1490,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -1229,10 +1511,12 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -1247,10 +1531,12 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -1344,10 +1630,12 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -1362,10 +1650,12 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -1380,10 +1670,12 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -1402,11 +1694,13 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -1421,10 +1715,12 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -1439,10 +1735,12 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -1536,10 +1834,12 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -1554,10 +1854,12 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -1572,10 +1874,12 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -1594,11 +1898,13 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -1613,10 +1919,12 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -1631,10 +1939,12 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -1727,10 +2037,12 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -1745,10 +2057,12 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -1763,10 +2077,12 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -1785,11 +2101,13 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -1804,10 +2122,12 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -1822,10 +2142,12 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -1843,6 +2165,209 @@ abstract class InvalidUsername<T> implements ValueFailure<T> {
   T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$InvalidUsernameCopyWith<T, _$InvalidUsername<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidViolationCopyWith<T, $Res> {
+  factory _$$InvalidViolationCopyWith(_$InvalidViolation<T> value,
+          $Res Function(_$InvalidViolation<T>) then) =
+      __$$InvalidViolationCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidViolationCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidViolationCopyWith<T, $Res> {
+  __$$InvalidViolationCopyWithImpl(
+      _$InvalidViolation<T> _value, $Res Function(_$InvalidViolation<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidViolation<T>));
+
+  @override
+  _$InvalidViolation<T> get _value => super._value as _$InvalidViolation<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidViolation<T>(
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidViolation<T> implements InvalidViolation<T> {
+  const _$InvalidViolation(this.failedValue);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidViolation(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidViolation<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidViolationCopyWith<T, _$InvalidViolation<T>> get copyWith =>
+      __$$InvalidViolationCopyWithImpl<T, _$InvalidViolation<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
+    required TResult Function(T failedValue) tooLongInput,
+    required TResult Function(T failedValue) tooShortInput,
+  }) {
+    return invalidViolation(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
+    TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
+  }) {
+    return invalidViolation?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
+    TResult Function(T failedValue)? tooLongInput,
+    TResult Function(T failedValue)? tooShortInput,
+    required TResult orElse(),
+  }) {
+    if (invalidViolation != null) {
+      return invalidViolation(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
+    required TResult Function(TooShortInput<T> value) tooShortInput,
+  }) {
+    return invalidViolation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
+  }) {
+    return invalidViolation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    TResult Function(TooShortInput<T> value)? tooShortInput,
+    required TResult orElse(),
+  }) {
+    if (invalidViolation != null) {
+      return invalidViolation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidViolation<T> implements ValueFailure<T> {
+  const factory InvalidViolation(final T failedValue) = _$InvalidViolation<T>;
+
+  T get failedValue => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$InvalidViolationCopyWith<T, _$InvalidViolation<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1917,10 +2442,12 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -1935,10 +2462,12 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -1953,10 +2482,12 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -1975,11 +2506,13 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -1994,10 +2527,12 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -2012,10 +2547,12 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),
@@ -2107,10 +2644,12 @@ class _$TooShortInput<T> implements TooShortInput<T> {
     required TResult Function(T failureValue) invalidCoverFile,
     required TResult Function(T failedValue) invalidCoverURL,
     required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidLicence,
     required TResult Function(T failedValue) invalidPassword,
     required TResult Function(T failedValue) invalidConfirmPassword,
     required TResult Function(T failedValue) invalidUniqueID,
     required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidViolation,
     required TResult Function(T failedValue) tooLongInput,
     required TResult Function(T failedValue) tooShortInput,
   }) {
@@ -2125,10 +2664,12 @@ class _$TooShortInput<T> implements TooShortInput<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
   }) {
@@ -2143,10 +2684,12 @@ class _$TooShortInput<T> implements TooShortInput<T> {
     TResult Function(T failureValue)? invalidCoverFile,
     TResult Function(T failedValue)? invalidCoverURL,
     TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidLicence,
     TResult Function(T failedValue)? invalidPassword,
     TResult Function(T failedValue)? invalidConfirmPassword,
     TResult Function(T failedValue)? invalidUniqueID,
     TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidViolation,
     TResult Function(T failedValue)? tooLongInput,
     TResult Function(T failedValue)? tooShortInput,
     required TResult orElse(),
@@ -2165,11 +2708,13 @@ class _$TooShortInput<T> implements TooShortInput<T> {
     required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
     required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
     required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidLicence<T> value) invalidLicence,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
     required TResult Function(InvalidConfirmPassword<T> value)
         invalidConfirmPassword,
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidViolation<T> value) invalidViolation,
     required TResult Function(TooLongInput<T> value) tooLongInput,
     required TResult Function(TooShortInput<T> value) tooShortInput,
   }) {
@@ -2184,10 +2729,12 @@ class _$TooShortInput<T> implements TooShortInput<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
   }) {
@@ -2202,10 +2749,12 @@ class _$TooShortInput<T> implements TooShortInput<T> {
     TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
     TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
     TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidLicence<T> value)? invalidLicence,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
     TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
     TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
     TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidViolation<T> value)? invalidViolation,
     TResult Function(TooLongInput<T> value)? tooLongInput,
     TResult Function(TooShortInput<T> value)? tooShortInput,
     required TResult orElse(),

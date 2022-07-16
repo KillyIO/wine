@@ -24,6 +24,9 @@ class ValueFailure<T> with _$ValueFailure<T> {
       InvalidEmail<T>;
 
   /// @nodoc
+  const factory ValueFailure.invalidLicence(T failedValue) = InvalidLicence<T>;
+
+  /// @nodoc
   const factory ValueFailure.invalidPassword(T failedValue) =
       InvalidPassword<T>;
 
@@ -38,6 +41,10 @@ class ValueFailure<T> with _$ValueFailure<T> {
   /// @nodoc
   const factory ValueFailure.invalidUsername(T failedValue) =
       InvalidUsername<T>;
+
+  /// @nodoc
+  const factory ValueFailure.invalidViolation(T failedValue) =
+      InvalidViolation<T>;
 
   /// @nodoc
   const factory ValueFailure.tooLongInput(T failedValue) = TooLongInput<T>;

@@ -40,7 +40,7 @@ class TypewriterBranchState with _$TypewriterBranchState {
         leaf: Leaf('', const <dynamic>[]),
         leafController: QuillController.basic(),
         leafWordCount: 0,
-        licence: Licence(''),
+        licence: Licence(LicenceType.unknown),
         showErrorMessages: false,
         title: Title(''),
         titleController: TextEditingController(),

@@ -6,6 +6,7 @@ import 'package:wine/core/title.domain.dart';
 import 'package:wine/core/unique_id.domain.dart';
 import 'package:wine/features/branch/leaf.domain.dart';
 import 'package:wine/features/branch/licence.domain.dart';
+import 'package:wine/features/branch/licence_type.domain.dart';
 
 part 'branch.domain.freezed.dart';
 
@@ -43,7 +44,7 @@ class Branch with _$Branch {
         isPublished: false,
         language: Language(''),
         leaf: Leaf('', const <dynamic>[]),
-        licence: Licence(''),
+        licence: Licence(LicenceType.unknown),
         likesCount: 0,
         previousBranchUID: UniqueID(),
         title: Title(''),

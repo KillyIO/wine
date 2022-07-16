@@ -87,7 +87,7 @@ class BranchDetails extends StatelessWidget {
                         BlocBuilder<BranchBloc, BranchState>(
                           builder: (context, state) {
                             return Text(
-                              state.branch.licence.getOrNull() ?? '',
+                              state.branch.licence.getOrNull()?.name ?? '',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
