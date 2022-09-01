@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/cover_url.domain.dart';
+import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/features/default_covers/default_cover.domain.dart';
 import 'package:wine/features/default_covers/default_cover_dto.infrastructure.dart';
 import 'package:wine/features/default_covers/default_covers_failure.domain.dart';

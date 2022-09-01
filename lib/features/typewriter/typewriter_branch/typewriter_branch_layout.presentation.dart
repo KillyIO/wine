@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/page_view/horizontal_page_view_navbar.presentation.dart';
 import 'package:wine/core/routes/router.dart';
-import 'package:wine/core/typewriter_end_state.domain.dart';
+import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/features/library/library_bloc.application.dart';
 import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart';
 import 'package:wine/features/typewriter/typewriter_branch/typewriter_page_view_builder.presentation.dart';

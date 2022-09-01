@@ -372,7 +372,9 @@ class _$_TreeDTO implements _TreeDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TreeDTOToJson(this);
+    return _$$_TreeDTOToJson(
+      this,
+    );
   }
 }
 
@@ -396,34 +398,34 @@ abstract class _TreeDTO implements TreeDTO {
   factory _TreeDTO.fromJson(Map<String, dynamic> json) = _$_TreeDTO.fromJson;
 
   @override
-  String get authorUID => throw _privateConstructorUsedError;
+  String get authorUID;
   @override
-  int get bookmarksCount => throw _privateConstructorUsedError;
+  int get bookmarksCount;
   @override
-  String get coverURL => throw _privateConstructorUsedError;
+  String get coverURL;
   @override
-  List<String> get genres => throw _privateConstructorUsedError;
+  List<String> get genres;
   @override
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @override
-  bool get isPublished => throw _privateConstructorUsedError;
+  bool get isPublished;
   @override
-  String get language => throw _privateConstructorUsedError;
+  String get language;
   @override
-  int get likesCount => throw _privateConstructorUsedError;
+  int get likesCount;
   @override
-  String? get subtitle => throw _privateConstructorUsedError;
+  String? get subtitle;
   @override
-  String get synopsis => throw _privateConstructorUsedError;
+  String get synopsis;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get uid => throw _privateConstructorUsedError;
+  String get uid;
   @override
   @ServerTimestampConverter()
-  FieldValue get updatedAt => throw _privateConstructorUsedError;
+  FieldValue get updatedAt;
   @override
-  int get viewsCount => throw _privateConstructorUsedError;
+  int get viewsCount;
   @override
   @JsonKey(ignore: true)
   _$$_TreeDTOCopyWith<_$_TreeDTO> get copyWith =>

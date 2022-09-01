@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/core/title.domain.dart';
-import 'package:wine/core/unique_id.domain.dart';
+import 'package:wine/domain/core/title.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/features/report/description.domain.dart';
 import 'package:wine/features/report/report_type.domain.dart';
 import 'package:wine/features/report/violation.domain.dart';

@@ -563,7 +563,7 @@ class _$BranchDeleted implements BranchDeleted {
 abstract class BranchDeleted implements LibraryEvent {
   const factory BranchDeleted(final UniqueID uid) = _$BranchDeleted;
 
-  UniqueID get uid => throw _privateConstructorUsedError;
+  UniqueID get uid;
   @JsonKey(ignore: true)
   _$$BranchDeletedCopyWith<_$BranchDeleted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -745,7 +745,7 @@ class _$BranchUpdated implements BranchUpdated {
 abstract class BranchUpdated implements LibraryEvent {
   const factory BranchUpdated(final Branch branch) = _$BranchUpdated;
 
-  Branch get branch => throw _privateConstructorUsedError;
+  Branch get branch;
   @JsonKey(ignore: true)
   _$$BranchUpdatedCopyWith<_$BranchUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -919,7 +919,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 abstract class PageViewIndexChanged implements LibraryEvent {
   const factory PageViewIndexChanged(final int index) = _$PageViewIndexChanged;
 
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @JsonKey(ignore: true)
   _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1091,7 +1091,7 @@ class _$TreeDeleted implements TreeDeleted {
 abstract class TreeDeleted implements LibraryEvent {
   const factory TreeDeleted(final UniqueID uid) = _$TreeDeleted;
 
-  UniqueID get uid => throw _privateConstructorUsedError;
+  UniqueID get uid;
   @JsonKey(ignore: true)
   _$$TreeDeletedCopyWith<_$TreeDeleted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1272,7 +1272,7 @@ class _$TreeUpdated implements TreeUpdated {
 abstract class TreeUpdated implements LibraryEvent {
   const factory TreeUpdated(final Tree tree) = _$TreeUpdated;
 
-  Tree get tree => throw _privateConstructorUsedError;
+  Tree get tree;
   @JsonKey(ignore: true)
   _$$TreeUpdatedCopyWith<_$TreeUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1450,7 +1450,7 @@ abstract class VerticalNavbarIndexChanged implements LibraryEvent {
   const factory VerticalNavbarIndexChanged(final int index) =
       _$VerticalNavbarIndexChanged;
 
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @JsonKey(ignore: true)
   _$$VerticalNavbarIndexChangedCopyWith<_$VerticalNavbarIndexChanged>
       get copyWith => throw _privateConstructorUsedError;
@@ -1762,24 +1762,23 @@ abstract class _LibraryState implements LibraryState {
       required final List<Tree> trees}) = _$_LibraryState;
 
   @override
-  List<Branch> get bookmarkedBranches => throw _privateConstructorUsedError;
+  List<Branch> get bookmarkedBranches;
   @override
-  List<Tree> get bookmarkedTree => throw _privateConstructorUsedError;
+  List<Tree> get bookmarkedTree;
   @override
-  List<Branch> get branches => throw _privateConstructorUsedError;
+  List<Branch> get branches;
   @override
-  int get currentPageViewIdx => throw _privateConstructorUsedError;
+  int get currentPageViewIdx;
   @override
-  int get currentVerticalNavbarIdx => throw _privateConstructorUsedError;
+  int get currentVerticalNavbarIdx;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  User get session => throw _privateConstructorUsedError;
+  User get session;
   @override
-  List<Tree> get trees => throw _privateConstructorUsedError;
+  List<Tree> get trees;
   @override
   @JsonKey(ignore: true)
   _$$_LibraryStateCopyWith<_$_LibraryState> get copyWith =>

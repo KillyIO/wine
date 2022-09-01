@@ -225,17 +225,17 @@ abstract class _Settings implements Settings {
       required final bool? enableTreesViewsCount}) = _$_Settings;
 
   @override
-  bool? get enableBranchesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesBookmarksCount;
   @override
-  bool? get enableBranchesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesLikesCount;
   @override
-  bool? get enableBranchesViewsCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesViewsCount;
   @override
-  bool? get enableTreesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableTreesBookmarksCount;
   @override
-  bool? get enableTreesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableTreesLikesCount;
   @override
-  bool? get enableTreesViewsCount => throw _privateConstructorUsedError;
+  bool? get enableTreesViewsCount;
   @override
   @JsonKey(ignore: true)
   _$$_SettingsCopyWith<_$_Settings> get copyWith =>

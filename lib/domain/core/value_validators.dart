@@ -5,7 +5,7 @@ import 'package:oxidized/oxidized.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
 import 'package:wine/core/string_helpers.infrastructure.dart';
-import 'package:wine/core/value_failure.domain.dart';
+import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/features/branch/licence_type.domain.dart';
 import 'package:wine/features/report/report_type.domain.dart';
 

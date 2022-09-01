@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:wine/core/core_failure.domain.dart';
+import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';
 import 'package:wine/features/default_covers/default_cover.domain.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';

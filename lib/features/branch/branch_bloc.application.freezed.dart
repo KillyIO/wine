@@ -406,8 +406,8 @@ abstract class LaunchWithUID implements BranchEvent {
   const factory LaunchWithUID(final UniqueID uid, {final Branch? branch}) =
       _$LaunchWithUID;
 
-  UniqueID get uid => throw _privateConstructorUsedError;
-  Branch? get branch => throw _privateConstructorUsedError;
+  UniqueID get uid;
+  Branch? get branch;
   @JsonKey(ignore: true)
   _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2206,7 +2206,7 @@ abstract class BookmarkButtonPressed implements BranchEvent {
   const factory BookmarkButtonPressed({required final bool isBookmarked}) =
       _$BookmarkButtonPressed;
 
-  bool get isBookmarked => throw _privateConstructorUsedError;
+  bool get isBookmarked;
   @JsonKey(ignore: true)
   _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2432,7 +2432,7 @@ abstract class LikeButtonPressed implements BranchEvent {
   const factory LikeButtonPressed({required final bool isLiked}) =
       _$LikeButtonPressed;
 
-  bool get isLiked => throw _privateConstructorUsedError;
+  bool get isLiked;
   @JsonKey(ignore: true)
   _$$LikeButtonPressedCopyWith<_$LikeButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3072,8 +3072,8 @@ abstract class Scrolled implements BranchEvent {
           final int currentScrollPosition, final int maxScrollPosition) =
       _$Scrolled;
 
-  int get currentScrollPosition => throw _privateConstructorUsedError;
-  int get maxScrollPosition => throw _privateConstructorUsedError;
+  int get currentScrollPosition;
+  int get maxScrollPosition;
   @JsonKey(ignore: true)
   _$$ScrolledCopyWith<_$Scrolled> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3701,34 +3701,33 @@ abstract class _BranchState implements BranchState {
       required final bool showDetails}) = _$_BranchState;
 
   @override
-  bool get authorIsUser => throw _privateConstructorUsedError;
+  bool get authorIsUser;
   @override
-  User get author => throw _privateConstructorUsedError;
+  User get author;
   @override
-  Branch get branch => throw _privateConstructorUsedError;
+  Branch get branch;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isBookmarked => throw _privateConstructorUsedError;
+  bool get isBookmarked;
   @override
-  bool get isLiked => throw _privateConstructorUsedError;
+  bool get isLiked;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  QuillController get leafController => throw _privateConstructorUsedError;
+  QuillController get leafController;
   @override
-  List<Branch> get nextBranches => throw _privateConstructorUsedError;
+  List<Branch> get nextBranches;
   @override
-  List<Branch> get sameAuthorNextBranches => throw _privateConstructorUsedError;
+  List<Branch> get sameAuthorNextBranches;
   @override
-  double get scrollProgress => throw _privateConstructorUsedError;
+  double get scrollProgress;
   @override
-  User? get session => throw _privateConstructorUsedError;
+  User? get session;
   @override
-  Settings get settings => throw _privateConstructorUsedError;
+  Settings get settings;
   @override
-  bool get showDetails => throw _privateConstructorUsedError;
+  bool get showDetails;
   @override
   @JsonKey(ignore: true)
   _$$_BranchStateCopyWith<_$_BranchState> get copyWith =>

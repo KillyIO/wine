@@ -139,9 +139,9 @@ abstract class _DefaultCover implements DefaultCover {
       required final CoverURL url}) = _$_DefaultCover;
 
   @override
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @override
-  CoverURL get url => throw _privateConstructorUsedError;
+  CoverURL get url;
   @override
   @JsonKey(ignore: true)
   _$$_DefaultCoverCopyWith<_$_DefaultCover> get copyWith =>

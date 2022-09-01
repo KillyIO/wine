@@ -151,11 +151,11 @@ abstract class _User implements User {
       required final Username username}) = _$_User;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  UniqueID get uid => throw _privateConstructorUsedError;
+  UniqueID get uid;
   @override
-  Username get username => throw _privateConstructorUsedError;
+  Username get username;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

@@ -183,7 +183,9 @@ class _$_UserDTO implements _UserDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserDTOToJson(this);
+    return _$$_UserDTOToJson(
+      this,
+    );
   }
 }
 
@@ -197,14 +199,14 @@ abstract class _UserDTO implements UserDTO {
   factory _UserDTO.fromJson(Map<String, dynamic> json) = _$_UserDTO.fromJson;
 
   @override
-  String get emailAddress => throw _privateConstructorUsedError;
+  String get emailAddress;
   @override
-  String get uid => throw _privateConstructorUsedError;
+  String get uid;
   @override
   @ServerTimestampConverter()
-  FieldValue get updatedAt => throw _privateConstructorUsedError;
+  FieldValue get updatedAt;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
   @JsonKey(ignore: true)
   _$$_UserDTOCopyWith<_$_UserDTO> get copyWith =>

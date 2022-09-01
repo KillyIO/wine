@@ -392,7 +392,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 abstract class PageViewIndexChanged implements HomeEvent {
   const factory PageViewIndexChanged(final int index) = _$PageViewIndexChanged;
 
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @JsonKey(ignore: true)
   _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -824,7 +824,7 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
 abstract class LoadTreeByGenre implements HomeEvent {
   const factory LoadTreeByGenre(final String key) = _$LoadTreeByGenre;
 
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @JsonKey(ignore: true)
   _$$LoadTreeByGenreCopyWith<_$LoadTreeByGenre> get copyWith =>
       throw _privateConstructorUsedError;
@@ -989,7 +989,7 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
 abstract class LoadTreeByLanguage implements HomeEvent {
   const factory LoadTreeByLanguage(final String key) = _$LoadTreeByLanguage;
 
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @JsonKey(ignore: true)
   _$$LoadTreeByLanguageCopyWith<_$LoadTreeByLanguage> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1152,7 +1152,7 @@ class _$LoadTreeByTime implements LoadTreeByTime {
 abstract class LoadTreeByTime implements HomeEvent {
   const factory LoadTreeByTime(final String key) = _$LoadTreeByTime;
 
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @JsonKey(ignore: true)
   _$$LoadTreeByTimeCopyWith<_$LoadTreeByTime> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1418,22 +1418,21 @@ abstract class _HomeState implements HomeState {
       required final List<Tree> topTrees}) = _$_HomeState;
 
   @override
-  int get currentPageViewIdx => throw _privateConstructorUsedError;
+  int get currentPageViewIdx;
   @override
-  Option<Result<Unit, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<Unit, CoreFailure>> get failureOption;
   @override
-  String get genreFilterKey => throw _privateConstructorUsedError;
+  String get genreFilterKey;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  String get languageFilterKey => throw _privateConstructorUsedError;
+  String get languageFilterKey;
   @override
-  List<Tree> get newTrees => throw _privateConstructorUsedError;
+  List<Tree> get newTrees;
   @override
-  String get timeFilterKey => throw _privateConstructorUsedError;
+  String get timeFilterKey;
   @override
-  List<Tree> get topTrees => throw _privateConstructorUsedError;
+  List<Tree> get topTrees;
   @override
   @JsonKey(ignore: true)
   _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>

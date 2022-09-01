@@ -416,37 +416,37 @@ abstract class _Branch implements Branch {
       required final int viewsCount}) = _$_Branch;
 
   @override
-  UniqueID get authorUID => throw _privateConstructorUsedError;
+  UniqueID get authorUID;
   @override
-  int get bookmarksCount => throw _privateConstructorUsedError;
+  int get bookmarksCount;
   @override
-  CoverURL get coverURL => throw _privateConstructorUsedError;
+  CoverURL get coverURL;
   @override
-  List<Genre> get genres => throw _privateConstructorUsedError;
+  List<Genre> get genres;
   @override
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @override
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @override
-  bool get isPublished => throw _privateConstructorUsedError;
+  bool get isPublished;
   @override
-  Language get language => throw _privateConstructorUsedError;
+  Language get language;
   @override
-  Leaf get leaf => throw _privateConstructorUsedError;
+  Leaf get leaf;
   @override
-  Licence get licence => throw _privateConstructorUsedError;
+  Licence get licence;
   @override
-  int get likesCount => throw _privateConstructorUsedError;
+  int get likesCount;
   @override
-  UniqueID? get previousBranchUID => throw _privateConstructorUsedError;
+  UniqueID? get previousBranchUID;
   @override
-  Title get title => throw _privateConstructorUsedError;
+  Title get title;
   @override
-  UniqueID get treeUID => throw _privateConstructorUsedError;
+  UniqueID get treeUID;
   @override
-  UniqueID get uid => throw _privateConstructorUsedError;
+  UniqueID get uid;
   @override
-  int get viewsCount => throw _privateConstructorUsedError;
+  int get viewsCount;
   @override
   @JsonKey(ignore: true)
   _$$_BranchCopyWith<_$_Branch> get copyWith =>

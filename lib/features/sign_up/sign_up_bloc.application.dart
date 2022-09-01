@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/core_failure.domain.dart';
+import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/features/auth/confirm_password.domain.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';

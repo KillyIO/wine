@@ -2,13 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wine/core/typewriter_type.domain.dart';
+import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/features/tree/tree.domain.dart';
-import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_new_page.presentation.dart';
-import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_uid_page.presentation.dart';
-import 'package:wine/features/typewriter/typewriter_tree/typewriter_tree_new_page.presentation.dart';
-import 'package:wine/features/typewriter/typewriter_tree/typewriter_tree_uid_page.presentation.dart';
+import 'package:wine/presentation/typewriter/branch/typewriter_branch_new_page.dart';
+import 'package:wine/presentation/typewriter/branch/typewriter_branch_uid_page.presentation.dart';
+import 'package:wine/presentation/typewriter/tree/typewriter_tree_new_page.presentation.dart';
+import 'package:wine/presentation/typewriter/tree/typewriter_tree_uid_page.presentation.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
@@ -17,17 +17,17 @@ class TypewriterPage extends StatelessWidget {
   /// @nodoc
   const TypewriterPage({
     super.key,
-    this.branch,
     @PathParam('id') this.uid,
+    this.branch,
     this.tree,
     this.type = TypewriterType.unknown,
   });
 
-  /// @nodoc
-  final Branch? branch;
-
   /// Tree or Branch id.
   final String? uid;
+
+  /// @nodoc
+  final Branch? branch;
 
   /// @nodoc
   final Tree? tree;

@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:uuid/uuid.dart';
-import 'package:wine/core/core_failure.domain.dart';
+import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/features/auth/auth_failure.domain.dart' as auth_failure;
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';

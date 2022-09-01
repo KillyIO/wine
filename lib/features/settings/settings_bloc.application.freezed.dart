@@ -755,16 +755,15 @@ abstract class _SettingsState implements SettingsState {
       required final String username}) = _$_SettingsState;
 
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isLoggedOut => throw _privateConstructorUsedError;
+  bool get isLoggedOut;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Settings get settings => throw _privateConstructorUsedError;
+  Settings get settings;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
   @JsonKey(ignore: true)
   _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>

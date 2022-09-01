@@ -792,7 +792,7 @@ class _$UserLoaded implements UserLoaded {
 abstract class UserLoaded implements LogInEvent {
   const factory UserLoaded(final User user) = _$UserLoaded;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1026,7 +1026,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 abstract class UserDetailsSaved implements LogInEvent {
   const factory UserDetailsSaved(final User user) = _$UserDetailsSaved;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$UserDetailsSavedCopyWith<_$UserDetailsSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1455,7 +1455,7 @@ abstract class DefaultCoversLoaded implements LogInEvent {
   const factory DefaultCoversLoaded(final List<DefaultCover> defaultCovers) =
       _$DefaultCoversLoaded;
 
-  List<DefaultCover> get defaultCovers => throw _privateConstructorUsedError;
+  List<DefaultCover> get defaultCovers;
   @JsonKey(ignore: true)
   _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2081,7 +2081,7 @@ class _$UserNotFound implements UserNotFound {
 abstract class UserNotFound implements LogInEvent {
   const factory UserNotFound(final User user) = _$UserNotFound;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$UserNotFoundCopyWith<_$UserNotFound> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2320,7 +2320,7 @@ abstract class UsernameAvailabilityConfirmed implements LogInEvent {
   const factory UsernameAvailabilityConfirmed(final User user) =
       _$UsernameAvailabilityConfirmed;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$UsernameAvailabilityConfirmedCopyWith<_$UsernameAvailabilityConfirmed>
       get copyWith => throw _privateConstructorUsedError;
@@ -2553,7 +2553,7 @@ class _$UsernameSaved implements UsernameSaved {
 abstract class UsernameSaved implements LogInEvent {
   const factory UsernameSaved(final User user) = _$UsernameSaved;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$UsernameSavedCopyWith<_$UsernameSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2790,7 +2790,7 @@ abstract class CustomUsernameGenerated implements LogInEvent {
   const factory CustomUsernameGenerated(final User user) =
       _$CustomUsernameGenerated;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$CustomUsernameGeneratedCopyWith<_$CustomUsernameGenerated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3215,7 +3215,7 @@ abstract class EmailAddressChanged implements LogInEvent {
   const factory EmailAddressChanged(final String emailAddressStr) =
       _$EmailAddressChanged;
 
-  String get emailAddressStr => throw _privateConstructorUsedError;
+  String get emailAddressStr;
   @JsonKey(ignore: true)
   _$$EmailAddressChangedCopyWith<_$EmailAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3441,7 +3441,7 @@ class _$PasswordChanged implements PasswordChanged {
 abstract class PasswordChanged implements LogInEvent {
   const factory PasswordChanged(final String passwordStr) = _$PasswordChanged;
 
-  String get passwordStr => throw _privateConstructorUsedError;
+  String get passwordStr;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3659,18 +3659,17 @@ abstract class _LogInState implements LogInState {
       required final bool showErrorMessages}) = _$_LogInState;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isAuthenticated => throw _privateConstructorUsedError;
+  bool get isAuthenticated;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
   @JsonKey(ignore: true)
   _$$_LogInStateCopyWith<_$_LogInState> get copyWith =>

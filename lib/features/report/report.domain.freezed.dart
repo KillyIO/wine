@@ -198,15 +198,15 @@ abstract class _Report implements Report {
       required final UniqueID uid}) = _$_Report;
 
   @override
-  Description get description => throw _privateConstructorUsedError;
+  Description get description;
   @override
-  UniqueID get reporterUID => throw _privateConstructorUsedError;
+  UniqueID get reporterUID;
   @override
-  Title get title => throw _privateConstructorUsedError;
+  Title get title;
   @override
-  Violation get violation => throw _privateConstructorUsedError;
+  Violation get violation;
   @override
-  UniqueID get uid => throw _privateConstructorUsedError;
+  UniqueID get uid;
   @override
   @JsonKey(ignore: true)
   _$$_ReportCopyWith<_$_Report> get copyWith =>

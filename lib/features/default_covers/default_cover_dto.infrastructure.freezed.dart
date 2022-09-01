@@ -144,7 +144,9 @@ class _$_DefaultCoverDTO implements _DefaultCoverDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultCoverDTOToJson(this);
+    return _$$_DefaultCoverDTOToJson(
+      this,
+    );
   }
 }
 
@@ -157,9 +159,9 @@ abstract class _DefaultCoverDTO implements DefaultCoverDTO {
       _$_DefaultCoverDTO.fromJson;
 
   @override
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @override
-  String get url => throw _privateConstructorUsedError;
+  String get url;
   @override
   @JsonKey(ignore: true)
   _$$_DefaultCoverDTOCopyWith<_$_DefaultCoverDTO> get copyWith =>

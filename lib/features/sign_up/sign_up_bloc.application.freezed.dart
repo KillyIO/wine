@@ -824,7 +824,7 @@ class _$UsernameSaved implements UsernameSaved {
 abstract class UsernameSaved implements SignUpEvent {
   const factory UsernameSaved(final User user) = _$UsernameSaved;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$UsernameSavedCopyWith<_$UsernameSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1026,7 +1026,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 abstract class UserDetailsSaved implements SignUpEvent {
   const factory UserDetailsSaved(final User user) = _$UserDetailsSaved;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$UserDetailsSavedCopyWith<_$UserDetailsSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1391,7 +1391,7 @@ abstract class DefaultCoversLoaded implements SignUpEvent {
   const factory DefaultCoversLoaded(final List<DefaultCover> defaultCovers) =
       _$DefaultCoversLoaded;
 
-  List<DefaultCover> get defaultCovers => throw _privateConstructorUsedError;
+  List<DefaultCover> get defaultCovers;
   @JsonKey(ignore: true)
   _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1588,7 +1588,7 @@ abstract class ConfirmPasswordChanged implements SignUpEvent {
   const factory ConfirmPasswordChanged(final String confirmPasswordStr) =
       _$ConfirmPasswordChanged;
 
-  String get confirmPasswordStr => throw _privateConstructorUsedError;
+  String get confirmPasswordStr;
   @JsonKey(ignore: true)
   _$$ConfirmPasswordChangedCopyWith<_$ConfirmPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1784,7 +1784,7 @@ abstract class EmailAddressChanged implements SignUpEvent {
   const factory EmailAddressChanged(final String emailAddressStr) =
       _$EmailAddressChanged;
 
-  String get emailAddressStr => throw _privateConstructorUsedError;
+  String get emailAddressStr;
   @JsonKey(ignore: true)
   _$$EmailAddressChangedCopyWith<_$EmailAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1978,7 +1978,7 @@ class _$PasswordChanged implements PasswordChanged {
 abstract class PasswordChanged implements SignUpEvent {
   const factory PasswordChanged(final String passwordStr) = _$PasswordChanged;
 
-  String get passwordStr => throw _privateConstructorUsedError;
+  String get passwordStr;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2172,7 +2172,7 @@ class _$UsernameChanged implements UsernameChanged {
 abstract class UsernameChanged implements SignUpEvent {
   const factory UsernameChanged(final String usernameStr) = _$UsernameChanged;
 
-  String get usernameStr => throw _privateConstructorUsedError;
+  String get usernameStr;
   @JsonKey(ignore: true)
   _$$UsernameChangedCopyWith<_$UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2429,22 +2429,21 @@ abstract class _SignUpState implements SignUpState {
       required final Username username}) = _$_SignUpState;
 
   @override
-  ConfirmPassword get confirmPassword => throw _privateConstructorUsedError;
+  ConfirmPassword get confirmPassword;
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isAuthenticated => throw _privateConstructorUsedError;
+  bool get isAuthenticated;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  Username get username => throw _privateConstructorUsedError;
+  Username get username;
   @override
   @JsonKey(ignore: true)
   _$$_SignUpStateCopyWith<_$_SignUpState> get copyWith =>

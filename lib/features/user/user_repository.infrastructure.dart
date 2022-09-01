@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/unique_id.domain.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/features/auth/username.fomain.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 import 'package:wine/features/user/user.domain.dart';

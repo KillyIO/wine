@@ -6,7 +6,7 @@ import 'package:wine/core/branch/branch_leaf_body.presentation.dart';
 import 'package:wine/core/branch/branch_leaf_head.presentation.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
 import 'package:wine/core/routes/router.dart';
-import 'package:wine/core/typewriter_type.domain.dart';
+import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/features/branch/branch_app_bar.presentation.dart';
 import 'package:wine/features/branch/branch_bloc.application.dart';
 import 'package:wine/features/branch/branch_details.presentation.dart';

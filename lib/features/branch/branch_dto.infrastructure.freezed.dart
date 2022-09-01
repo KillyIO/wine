@@ -429,7 +429,9 @@ class _$_BranchDTO implements _BranchDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BranchDTOToJson(this);
+    return _$$_BranchDTOToJson(
+      this,
+    );
   }
 }
 
@@ -457,40 +459,40 @@ abstract class _BranchDTO implements BranchDTO {
       _$_BranchDTO.fromJson;
 
   @override
-  String get authorUID => throw _privateConstructorUsedError;
+  String get authorUID;
   @override
-  int get bookmarksCount => throw _privateConstructorUsedError;
+  int get bookmarksCount;
   @override
-  String get coverURL => throw _privateConstructorUsedError;
+  String get coverURL;
   @override
-  List<String> get genres => throw _privateConstructorUsedError;
+  List<String> get genres;
   @override
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @override
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @override
-  bool get isPublished => throw _privateConstructorUsedError;
+  bool get isPublished;
   @override
-  String get language => throw _privateConstructorUsedError;
+  String get language;
   @override
-  String get leaf => throw _privateConstructorUsedError;
+  String get leaf;
   @override
-  String get licence => throw _privateConstructorUsedError;
+  String get licence;
   @override
-  int get likesCount => throw _privateConstructorUsedError;
+  int get likesCount;
   @override
-  String? get previousBranchUID => throw _privateConstructorUsedError;
+  String? get previousBranchUID;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get treeUID => throw _privateConstructorUsedError;
+  String get treeUID;
   @override
-  String get uid => throw _privateConstructorUsedError;
+  String get uid;
   @override
   @ServerTimestampConverter()
-  FieldValue get updatedAt => throw _privateConstructorUsedError;
+  FieldValue get updatedAt;
   @override
-  int get viewsCount => throw _privateConstructorUsedError;
+  int get viewsCount;
   @override
   @JsonKey(ignore: true)
   _$$_BranchDTOCopyWith<_$_BranchDTO> get copyWith =>

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/unique_id.domain.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/sessions/sessions_failure.domain.dart';
 import 'package:wine/features/user/isar_user.infrastructure.dart';

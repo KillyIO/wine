@@ -414,8 +414,8 @@ abstract class LaunchAsNewBranch implements TypewriterBranchEvent {
   const factory LaunchAsNewBranch(
       {final Branch? previousBranch, final Tree? tree}) = _$LaunchAsNewBranch;
 
-  Branch? get previousBranch => throw _privateConstructorUsedError;
-  Tree? get tree => throw _privateConstructorUsedError;
+  Branch? get previousBranch;
+  Tree? get tree;
   @JsonKey(ignore: true)
   _$$LaunchAsNewBranchCopyWith<_$LaunchAsNewBranch> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1605,7 +1605,7 @@ class _$GenreAdded implements GenreAdded {
 abstract class GenreAdded implements TypewriterBranchEvent {
   const factory GenreAdded(final String genre) = _$GenreAdded;
 
-  String get genre => throw _privateConstructorUsedError;
+  String get genre;
   @JsonKey(ignore: true)
   _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1827,7 +1827,7 @@ class _$GenreRemoved implements GenreRemoved {
 abstract class GenreRemoved implements TypewriterBranchEvent {
   const factory GenreRemoved(final String genre) = _$GenreRemoved;
 
-  String get genre => throw _privateConstructorUsedError;
+  String get genre;
   @JsonKey(ignore: true)
   _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2049,7 +2049,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
 abstract class IsNSFWChanged implements TypewriterBranchEvent {
   const factory IsNSFWChanged({required final bool isNSFW}) = _$IsNSFWChanged;
 
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @JsonKey(ignore: true)
   _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2271,7 +2271,7 @@ class _$LanguageSelected implements LanguageSelected {
 abstract class LanguageSelected implements TypewriterBranchEvent {
   const factory LanguageSelected(final String language) = _$LanguageSelected;
 
-  String get language => throw _privateConstructorUsedError;
+  String get language;
   @JsonKey(ignore: true)
   _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2517,8 +2517,8 @@ abstract class LaunchWithUID implements TypewriterBranchEvent {
   const factory LaunchWithUID(final UniqueID uid, {final Branch? branch}) =
       _$LaunchWithUID;
 
-  UniqueID get uid => throw _privateConstructorUsedError;
-  Branch? get branch => throw _privateConstructorUsedError;
+  UniqueID get uid;
+  Branch? get branch;
   @JsonKey(ignore: true)
   _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2933,7 +2933,7 @@ class _$LicenceSelected implements LicenceSelected {
 abstract class LicenceSelected implements TypewriterBranchEvent {
   const factory LicenceSelected(final LicenceType licence) = _$LicenceSelected;
 
-  LicenceType get licence => throw _privateConstructorUsedError;
+  LicenceType get licence;
   @JsonKey(ignore: true)
   _$$LicenceSelectedCopyWith<_$LicenceSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3156,7 +3156,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 abstract class PageViewIndexChanged implements TypewriterBranchEvent {
   const factory PageViewIndexChanged(final int index) = _$PageViewIndexChanged;
 
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @JsonKey(ignore: true)
   _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3571,7 +3571,7 @@ class _$TitleChanged implements TitleChanged {
 abstract class TitleChanged implements TypewriterBranchEvent {
   const factory TitleChanged(final String title) = _$TitleChanged;
 
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @JsonKey(ignore: true)
   _$$TitleChangedCopyWith<_$TitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4043,43 +4043,41 @@ abstract class _TypewriterBranchState implements TypewriterBranchState {
       required final int titleWordCount}) = _$_TypewriterBranchState;
 
   @override
-  Branch get branch => throw _privateConstructorUsedError;
+  Branch get branch;
   @override
-  String get coverURL => throw _privateConstructorUsedError;
+  String get coverURL;
   @override
-  int get currentPageViewIdx => throw _privateConstructorUsedError;
+  int get currentPageViewIdx;
   @override
-  TypewriterEndState get endState => throw _privateConstructorUsedError;
+  TypewriterEndState get endState;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  List<Genre> get genres => throw _privateConstructorUsedError;
+  List<Genre> get genres;
   @override
-  bool get isEdit => throw _privateConstructorUsedError;
+  bool get isEdit;
   @override
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Language get language => throw _privateConstructorUsedError;
+  Language get language;
   @override
-  Leaf get leaf => throw _privateConstructorUsedError;
+  Leaf get leaf;
   @override
-  QuillController get leafController => throw _privateConstructorUsedError;
+  QuillController get leafController;
   @override
-  int get leafWordCount => throw _privateConstructorUsedError;
+  int get leafWordCount;
   @override
-  Licence get licence => throw _privateConstructorUsedError;
+  Licence get licence;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  Title get title => throw _privateConstructorUsedError;
+  Title get title;
   @override
-  TextEditingController get titleController =>
-      throw _privateConstructorUsedError;
+  TextEditingController get titleController;
   @override
-  int get titleWordCount => throw _privateConstructorUsedError;
+  int get titleWordCount;
   @override
   @JsonKey(ignore: true)
   _$$_TypewriterBranchStateCopyWith<_$_TypewriterBranchState> get copyWith =>

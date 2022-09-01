@@ -7,7 +7,7 @@ import 'package:wine/features/settings/settings_failure.domain.dart';
 import 'package:wine/features/tree/tree_failure.domain.dart';
 import 'package:wine/features/user/user_failure.domain.dart';
 
-part 'core_failure.domain.freezed.dart';
+part 'core_failure.freezed.dart';
 
 /// @nodoc
 @freezed

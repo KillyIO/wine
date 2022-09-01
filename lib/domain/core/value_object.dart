@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/errors.domain.dart';
-import 'package:wine/core/value_failure.domain.dart';
+import 'package:wine/domain/core/errors.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 /// @nodoc
 abstract class ValueObject<T extends Object> extends Equatable {

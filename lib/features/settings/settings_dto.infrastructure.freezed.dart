@@ -227,7 +227,9 @@ class _$_SettingsDTO implements _SettingsDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SettingsDTOToJson(this);
+    return _$$_SettingsDTOToJson(
+      this,
+    );
   }
 }
 
@@ -244,17 +246,17 @@ abstract class _SettingsDTO implements SettingsDTO {
       _$_SettingsDTO.fromJson;
 
   @override
-  bool? get enableBranchesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesBookmarksCount;
   @override
-  bool? get enableBranchesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesLikesCount;
   @override
-  bool? get enableBranchesViewsCount => throw _privateConstructorUsedError;
+  bool? get enableBranchesViewsCount;
   @override
-  bool? get enableTreesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableTreesBookmarksCount;
   @override
-  bool? get enableTreesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableTreesLikesCount;
   @override
-  bool? get enableTreesViewsCount => throw _privateConstructorUsedError;
+  bool? get enableTreesViewsCount;
   @override
   @JsonKey(ignore: true)
   _$$_SettingsDTOCopyWith<_$_SettingsDTO> get copyWith =>

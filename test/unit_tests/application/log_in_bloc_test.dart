@@ -2,7 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/core_failure.domain.dart';
+import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/features/auth/auth_failure.domain.dart';
 import 'package:wine/features/auth/email_address.domain.dart';
 import 'package:wine/features/auth/i_auth_facade.domain.dart';

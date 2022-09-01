@@ -737,7 +737,7 @@ class _$SessionFetched implements SessionFetched {
 abstract class SessionFetched implements SetupEvent {
   const factory SessionFetched(final User session) = _$SessionFetched;
 
-  User get session => throw _privateConstructorUsedError;
+  User get session;
   @JsonKey(ignore: true)
   _$$SessionFetchedCopyWith<_$SessionFetched> get copyWith =>
       throw _privateConstructorUsedError;
@@ -922,7 +922,7 @@ class _$UserLoaded implements UserLoaded {
 abstract class UserLoaded implements SetupEvent {
   const factory UserLoaded(final User user) = _$UserLoaded;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1403,7 +1403,7 @@ abstract class DefaultCoversLoaded implements SetupEvent {
   const factory DefaultCoversLoaded(final List<DefaultCover> defaultCovers) =
       _$DefaultCoversLoaded;
 
-  List<DefaultCover> get defaultCovers => throw _privateConstructorUsedError;
+  List<DefaultCover> get defaultCovers;
   @JsonKey(ignore: true)
   _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1871,7 +1871,7 @@ class _$_Failure implements _Failure {
 abstract class _Failure implements SetupState {
   const factory _Failure(final CoreFailure failure) = _$_Failure;
 
-  CoreFailure get failure => throw _privateConstructorUsedError;
+  CoreFailure get failure;
   @JsonKey(ignore: true)
   _$$_FailureCopyWith<_$_Failure> get copyWith =>
       throw _privateConstructorUsedError;

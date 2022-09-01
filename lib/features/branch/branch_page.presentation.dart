@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/core/unique_id.domain.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/features/branch/branch.domain.dart';
 import 'package:wine/features/branch/branch_bloc.application.dart';
 import 'package:wine/features/branch/branch_layout.presentation.dart';

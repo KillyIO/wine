@@ -358,31 +358,31 @@ abstract class _Tree implements Tree {
       required final int viewsCount}) = _$_Tree;
 
   @override
-  UniqueID get authorUID => throw _privateConstructorUsedError;
+  UniqueID get authorUID;
   @override
-  int get bookmarksCount => throw _privateConstructorUsedError;
+  int get bookmarksCount;
   @override
-  CoverURL get coverURL => throw _privateConstructorUsedError;
+  CoverURL get coverURL;
   @override
-  List<Genre> get genres => throw _privateConstructorUsedError;
+  List<Genre> get genres;
   @override
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @override
-  bool get isPublished => throw _privateConstructorUsedError;
+  bool get isPublished;
   @override
-  Language get language => throw _privateConstructorUsedError;
+  Language get language;
   @override
-  int get likesCount => throw _privateConstructorUsedError;
+  int get likesCount;
   @override
-  Subtitle? get subtitle => throw _privateConstructorUsedError;
+  Subtitle? get subtitle;
   @override
-  Synopsis get synopsis => throw _privateConstructorUsedError;
+  Synopsis get synopsis;
   @override
-  Title get title => throw _privateConstructorUsedError;
+  Title get title;
   @override
-  UniqueID get uid => throw _privateConstructorUsedError;
+  UniqueID get uid;
   @override
-  int get viewsCount => throw _privateConstructorUsedError;
+  int get viewsCount;
   @override
   @JsonKey(ignore: true)
   _$$_TreeCopyWith<_$_Tree> get copyWith => throw _privateConstructorUsedError;

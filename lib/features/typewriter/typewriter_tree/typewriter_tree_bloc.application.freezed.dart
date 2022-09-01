@@ -1053,7 +1053,7 @@ class _$GenreAdded implements GenreAdded {
 abstract class GenreAdded implements TypewriterTreeEvent {
   const factory GenreAdded(final String genre) = _$GenreAdded;
 
-  String get genre => throw _privateConstructorUsedError;
+  String get genre;
   @JsonKey(ignore: true)
   _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1259,7 +1259,7 @@ class _$GenreRemoved implements GenreRemoved {
 abstract class GenreRemoved implements TypewriterTreeEvent {
   const factory GenreRemoved(final String genre) = _$GenreRemoved;
 
-  String get genre => throw _privateConstructorUsedError;
+  String get genre;
   @JsonKey(ignore: true)
   _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1465,7 +1465,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
 abstract class IsNSFWChanged implements TypewriterTreeEvent {
   const factory IsNSFWChanged({required final bool isNSFW}) = _$IsNSFWChanged;
 
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @JsonKey(ignore: true)
   _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1671,7 +1671,7 @@ class _$LanguageSelected implements LanguageSelected {
 abstract class LanguageSelected implements TypewriterTreeEvent {
   const factory LanguageSelected(final String language) = _$LanguageSelected;
 
-  String get language => throw _privateConstructorUsedError;
+  String get language;
   @JsonKey(ignore: true)
   _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1901,8 +1901,8 @@ abstract class LaunchWithUID implements TypewriterTreeEvent {
   const factory LaunchWithUID(final UniqueID uid, {final Tree? tree}) =
       _$LaunchWithUID;
 
-  UniqueID get uid => throw _privateConstructorUsedError;
-  Tree? get tree => throw _privateConstructorUsedError;
+  UniqueID get uid;
+  Tree? get tree;
   @JsonKey(ignore: true)
   _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2462,7 +2462,7 @@ class _$SubtitleChanged implements SubtitleChanged {
 abstract class SubtitleChanged implements TypewriterTreeEvent {
   const factory SubtitleChanged(final String subtitle) = _$SubtitleChanged;
 
-  String get subtitle => throw _privateConstructorUsedError;
+  String get subtitle;
   @JsonKey(ignore: true)
   _$$SubtitleChangedCopyWith<_$SubtitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2668,7 +2668,7 @@ class _$SynopsisChanged implements SynopsisChanged {
 abstract class SynopsisChanged implements TypewriterTreeEvent {
   const factory SynopsisChanged(final String synopsis) = _$SynopsisChanged;
 
-  String get synopsis => throw _privateConstructorUsedError;
+  String get synopsis;
   @JsonKey(ignore: true)
   _$$SynopsisChangedCopyWith<_$SynopsisChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2874,7 +2874,7 @@ class _$TitleChanged implements TitleChanged {
 abstract class TitleChanged implements TypewriterTreeEvent {
   const factory TitleChanged(final String title) = _$TitleChanged;
 
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @JsonKey(ignore: true)
   _$$TitleChangedCopyWith<_$TitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3368,47 +3368,43 @@ abstract class _TypewriterTreeState implements TypewriterTreeState {
       required final Tree tree}) = _$_TypewriterTreeState;
 
   @override
-  String get coverURL => throw _privateConstructorUsedError;
+  String get coverURL;
   @override
-  TypewriterEndState get endState => throw _privateConstructorUsedError;
+  TypewriterEndState get endState;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  List<Genre> get genres => throw _privateConstructorUsedError;
+  List<Genre> get genres;
   @override
-  bool get isEdit => throw _privateConstructorUsedError;
+  bool get isEdit;
   @override
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Language get language => throw _privateConstructorUsedError;
+  Language get language;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  Subtitle get subtitle => throw _privateConstructorUsedError;
+  Subtitle get subtitle;
   @override
-  TextEditingController get subtitleController =>
-      throw _privateConstructorUsedError;
+  TextEditingController get subtitleController;
   @override
-  int get subtitleWordCount => throw _privateConstructorUsedError;
+  int get subtitleWordCount;
   @override
-  Synopsis get synopsis => throw _privateConstructorUsedError;
+  Synopsis get synopsis;
   @override
-  TextEditingController get synopsisController =>
-      throw _privateConstructorUsedError;
+  TextEditingController get synopsisController;
   @override
-  int get synopsisWordCount => throw _privateConstructorUsedError;
+  int get synopsisWordCount;
   @override
-  Title get title => throw _privateConstructorUsedError;
+  Title get title;
   @override
-  TextEditingController get titleController =>
-      throw _privateConstructorUsedError;
+  TextEditingController get titleController;
   @override
-  int get titleWordCount => throw _privateConstructorUsedError;
+  int get titleWordCount;
   @override
-  Tree get tree => throw _privateConstructorUsedError;
+  Tree get tree;
   @override
   @JsonKey(ignore: true)
   _$$_TypewriterTreeStateCopyWith<_$_TypewriterTreeState> get copyWith =>

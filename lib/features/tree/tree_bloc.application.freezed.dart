@@ -332,8 +332,8 @@ abstract class LaunchWithUID implements TreeEvent {
   const factory LaunchWithUID(final UniqueID uid, {final Tree? tree}) =
       _$LaunchWithUID;
 
-  UniqueID get uid => throw _privateConstructorUsedError;
-  Tree? get tree => throw _privateConstructorUsedError;
+  UniqueID get uid;
+  Tree? get tree;
   @JsonKey(ignore: true)
   _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1799,7 +1799,7 @@ abstract class BookmarkButtonPressed implements TreeEvent {
   const factory BookmarkButtonPressed({required final bool isBookmarked}) =
       _$BookmarkButtonPressed;
 
-  bool get isBookmarked => throw _privateConstructorUsedError;
+  bool get isBookmarked;
   @JsonKey(ignore: true)
   _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1989,7 +1989,7 @@ abstract class LikeButtonPressed implements TreeEvent {
   const factory LikeButtonPressed({required final bool isLiked}) =
       _$LikeButtonPressed;
 
-  bool get isLiked => throw _privateConstructorUsedError;
+  bool get isLiked;
   @JsonKey(ignore: true)
   _$$LikeButtonPressedCopyWith<_$LikeButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2378,28 +2378,27 @@ abstract class _TreeState implements TreeState {
       required final Tree tree}) = _$_TreeState;
 
   @override
-  bool get authorIsUser => throw _privateConstructorUsedError;
+  bool get authorIsUser;
   @override
-  User? get author => throw _privateConstructorUsedError;
+  User? get author;
   @override
-  Branch? get branchOne => throw _privateConstructorUsedError;
+  Branch? get branchOne;
   @override
-  Branch? get branchResume => throw _privateConstructorUsedError;
+  Branch? get branchResume;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isBookmarked => throw _privateConstructorUsedError;
+  bool get isBookmarked;
   @override
-  bool get isLiked => throw _privateConstructorUsedError;
+  bool get isLiked;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  User? get session => throw _privateConstructorUsedError;
+  User? get session;
   @override
-  Settings get settings => throw _privateConstructorUsedError;
+  Settings get settings;
   @override
-  Tree get tree => throw _privateConstructorUsedError;
+  Tree get tree;
   @override
   @JsonKey(ignore: true)
   _$$_TreeStateCopyWith<_$_TreeState> get copyWith =>
