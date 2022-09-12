@@ -41,7 +41,13 @@ const String typewriterPageBranchUIDPath = '/branch/:id';
 const String typewriterPageBranchNewPath = '/branch/new';
 
 /// @nodoc
+const String typewriterPageBranchPath = '/typewriter/branch';
+
+/// @nodoc
 const String typewriterPagePath = '/typewriter';
+
+/// @nodoc
+const String typewriterPageTreePath = '/typewriter/tree';
 
 /// @nodoc
 const String typewriterPageTreeUIDPath = '/tree/:id';

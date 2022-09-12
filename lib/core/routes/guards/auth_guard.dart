@@ -15,8 +15,7 @@ class AuthGuard extends AutoRouteGuard {
         resolver.next();
       },
       orElse: () {
-        router.root
-            .push(LogInRoute(navigateTo: resolver.route.toPageRouteInfo()));
+        router.push(LogInRoute(navigateTo: resolver.route.toPageRouteInfo()));
       },
     );
   }

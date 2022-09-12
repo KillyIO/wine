@@ -75,25 +75,23 @@ part 'router.gr.dart';
       page: SignUpPage,
       path: signUpPagePath,
     ),
+    RedirectRoute(
+      path: typewriterPageBranchPath,
+      redirectTo: '$typewriterPagePath$typewriterPageBranchNewPath',
+    ),
     AutoRoute<TypewriterPage>(
       name: 'TypewriterBranchUID',
       page: TypewriterPage,
       path: '$typewriterPagePath$typewriterPageBranchUIDPath',
     ),
-    AutoRoute<TypewriterPage>(
-      name: 'TypewriterBranchNew',
-      page: TypewriterPage,
-      path: '$typewriterPagePath$typewriterPageBranchNewPath',
+    RedirectRoute(
+      path: typewriterPageTreePath,
+      redirectTo: '$typewriterPagePath$typewriterPageTreeNewPath',
     ),
     AutoRoute<TypewriterPage>(
       name: 'TypewriterTreeUID',
       page: TypewriterPage,
       path: '$typewriterPagePath$typewriterPageTreeUIDPath',
-    ),
-    AutoRoute<TypewriterPage>(
-      name: 'TypewriterTreeNew',
-      page: TypewriterPage,
-      path: '$typewriterPagePath$typewriterPageTreeNewPath',
     ),
   ],
 )
