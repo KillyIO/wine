@@ -5,7 +5,7 @@ import 'package:wine/core/routes/router.gr.dart';
 import 'package:wine/core/tree/tree_card.presentation.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/features/tree/tree.domain.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/images.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
 

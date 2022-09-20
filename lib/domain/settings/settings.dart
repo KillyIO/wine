@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'settings.domain.freezed.dart';
+part 'settings.freezed.dart';
 
 /// @nodoc
 @freezed

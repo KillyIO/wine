@@ -5,10 +5,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/core_failure.dart';
-import 'package:wine/features/auth/i_auth_facade.domain.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
+import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
-import 'package:wine/features/settings/settings.domain.dart';
+import 'package:wine/domain/settings/settings.dart';
 
 part 'settings_bloc.freezed.dart';
 part 'settings_event.dart';

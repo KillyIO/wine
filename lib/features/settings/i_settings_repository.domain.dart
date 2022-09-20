@@ -1,6 +1,6 @@
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/settings/settings.domain.dart';
-import 'package:wine/features/settings/settings_failure.domain.dart';
+import 'package:wine/domain/settings/settings.dart';
+import 'package:wine/domain/settings/settings_failure.dart';
 
 /// @nodoc
 abstract class ISettingsRepository {

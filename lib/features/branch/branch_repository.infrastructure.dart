@@ -8,10 +8,10 @@ import 'package:path/path.dart' as p;
 import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/branch/branch.domain.dart';
+import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/features/branch/branch_dto.infrastructure.dart';
-import 'package:wine/features/branch/branch_failure.domain.dart';
-import 'package:wine/features/branch/i_branch_repository.domain.dart';
+import 'package:wine/domain/branch/branch_failure.dart';
+import 'package:wine/domain/branch/i_branch_repository.dart';
 import 'package:wine/utils/constants/paths/branch.dart';
 import 'package:wine/utils/constants/paths/storage.dart';
 

@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/default_covers/default_covers_failure.domain.dart';
+import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/features/default_covers/default_covers_repository.infrastructure.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/features/default_covers/isar_default_cover.infrastructure.dart';

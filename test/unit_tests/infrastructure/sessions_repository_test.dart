@@ -5,8 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/sessions/sessions_failure.domain.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/features/sessions/sessions_repository.infrastructure.dart';
 import 'package:wine/features/user/isar_user.infrastructure.dart';
 

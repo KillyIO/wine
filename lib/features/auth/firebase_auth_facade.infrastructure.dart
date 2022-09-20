@@ -5,11 +5,11 @@ import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/auth/auth_failure.domain.dart';
-import 'package:wine/features/auth/email_address.domain.dart';
-import 'package:wine/features/auth/i_auth_facade.domain.dart';
-import 'package:wine/features/auth/password.domain.dart';
-import 'package:wine/features/user/user.domain.dart';
+import 'package:wine/domain/auth/auth_failure.dart';
+import 'package:wine/domain/auth/email_address.dart';
+import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/auth/password.dart';
+import 'package:wine/domain/user/user.dart';
 import 'package:wine/features/user/user_dto.infrastructure.dart';
 
 /// Implementation of [IAuthFacade] using Firebase.

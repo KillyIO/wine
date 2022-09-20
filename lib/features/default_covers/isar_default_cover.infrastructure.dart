@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
 import 'package:wine/domain/core/cover_url.dart';
-import 'package:wine/features/default_covers/default_cover.domain.dart';
+import 'package:wine/domain/default_covers/default_cover.dart';
 
 part 'isar_default_cover.infrastructure.g.dart';
 

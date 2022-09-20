@@ -3,11 +3,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/auth/auth_failure.domain.dart';
-import 'package:wine/features/auth/email_address.domain.dart';
+import 'package:wine/domain/auth/auth_failure.dart';
+import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/features/auth/firebase_auth_facade.infrastructure.dart';
-import 'package:wine/features/auth/i_auth_facade.domain.dart';
-import 'package:wine/features/auth/password.domain.dart';
+import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/auth/password.dart';
 
 import '../../mocks/firebase_auth_mocks.dart';
 import '../../mocks/google_sign_in_mocks.dart';

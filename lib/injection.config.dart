@@ -27,22 +27,22 @@ import 'application/typewriter/branch/typewriter_branch_bloc.dart' as _i32;
 import 'application/typewriter/tree/typewriter_tree_bloc.dart' as _i33;
 import 'core/firebase_injectable_module.infrastructure.dart' as _i35;
 import 'core/isar_injectable_module.infrastructure.dart' as _i36;
+import 'domain/auth/i_auth_facade.dart' as _i8;
+import 'domain/branch/i_branch_repository.dart' as _i10;
+import 'domain/sessions/i_sessions_repository.dart' as _i22;
+import 'domain/tree/i_tree_repository.dart' as _i12;
+import 'domain/user/i_user_repository.dart' as _i14;
 import 'features/auth/firebase_auth_facade.infrastructure.dart' as _i9;
-import 'features/auth/i_auth_facade.domain.dart' as _i8;
 import 'features/branch/branch_repository.infrastructure.dart' as _i11;
-import 'features/branch/i_branch_repository.domain.dart' as _i10;
 import 'features/default_covers/default_covers_repository.infrastructure.dart'
     as _i21;
 import 'features/default_covers/i_default_covers_repository.domain.dart'
     as _i20;
 import 'features/report/report_bloc.application.dart' as _i17;
-import 'features/sessions/i_sessions_repository.domain.dart' as _i22;
 import 'features/sessions/sessions_repository.infrastructure.dart' as _i23;
 import 'features/settings/i_settings_repository.domain.dart' as _i24;
 import 'features/settings/settings_repository.infrastructure.dart' as _i25;
-import 'features/tree/i_tree_repository.domain.dart' as _i12;
 import 'features/tree/tree_repository.infrastructure.dart' as _i13;
-import 'features/user/i_user_repository.domain.dart' as _i14;
 import 'features/user/user_repository.infrastructure.dart' as _i15;
 
 const String _dev = 'dev';

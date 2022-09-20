@@ -3,10 +3,10 @@ import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/sessions/sessions_failure.domain.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/features/user/isar_user.infrastructure.dart';
-import 'package:wine/features/user/user.domain.dart';
+import 'package:wine/domain/user/user.dart';
 import 'package:wine/features/user/user_dto.infrastructure.dart';
 
 /// @nodoc

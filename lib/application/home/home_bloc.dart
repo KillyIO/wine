@@ -4,8 +4,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/core_failure.dart';
-import 'package:wine/features/tree/i_tree_repository.domain.dart';
-import 'package:wine/features/tree/tree.domain.dart';
+import 'package:wine/domain/tree/i_tree_repository.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/home.dart';
 
 part 'home_bloc.freezed.dart';

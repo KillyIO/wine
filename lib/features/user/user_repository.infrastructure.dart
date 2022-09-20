@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/auth/username.fomain.dart';
-import 'package:wine/features/user/i_user_repository.domain.dart';
-import 'package:wine/features/user/user.domain.dart';
+import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
+import 'package:wine/domain/user/user.dart';
 import 'package:wine/features/user/user_dto.infrastructure.dart';
-import 'package:wine/features/user/user_failure.domain.dart';
+import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/utils/constants/paths/users.dart';
 
 /// @nodoc

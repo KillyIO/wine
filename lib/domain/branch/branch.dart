@@ -4,11 +4,11 @@ import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/branch/leaf.domain.dart';
-import 'package:wine/features/branch/licence.domain.dart';
+import 'package:wine/domain/branch/leaf.dart';
+import 'package:wine/domain/branch/licence.dart';
 import 'package:wine/features/branch/licence_type.domain.dart';
 
-part 'branch.domain.freezed.dart';
+part 'branch.freezed.dart';
 
 /// @nodoc
 @freezed

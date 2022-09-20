@@ -21,11 +21,11 @@ import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/tree/i_tree_repository.domain.dart';
-import 'package:wine/features/tree/subtitle.domain.dart';
-import 'package:wine/features/tree/synopsis.domain.dart';
-import 'package:wine/features/tree/tree.domain.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/tree/i_tree_repository.dart';
+import 'package:wine/domain/tree/subtitle.dart';
+import 'package:wine/domain/tree/synopsis.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/cover.dart';
 
 part 'typewriter_tree_bloc.freezed.dart';

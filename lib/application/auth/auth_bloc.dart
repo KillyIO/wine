@@ -4,8 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/auth/i_auth_facade.domain.dart';
-import 'package:wine/features/user/user.domain.dart';
+import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/user/user.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/features/auth/auth_failure.domain.dart';
-import 'package:wine/features/branch/branch_failure.domain.dart';
-import 'package:wine/features/default_covers/default_covers_failure.domain.dart';
-import 'package:wine/features/sessions/sessions_failure.domain.dart';
-import 'package:wine/features/settings/settings_failure.domain.dart';
-import 'package:wine/features/tree/tree_failure.domain.dart';
-import 'package:wine/features/user/user_failure.domain.dart';
+import 'package:wine/domain/auth/auth_failure.dart';
+import 'package:wine/domain/branch/branch_failure.dart';
+import 'package:wine/domain/default_covers/default_covers_failure.dart';
+import 'package:wine/domain/sessions/sessions_failure.dart';
+import 'package:wine/domain/settings/settings_failure.dart';
+import 'package:wine/domain/tree/tree_failure.dart';
+import 'package:wine/domain/user/user_failure.dart';
 
 part 'core_failure.freezed.dart';
 

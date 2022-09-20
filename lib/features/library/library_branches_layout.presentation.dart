@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/branch/branch.domain.dart';
+import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/features/library/library_base_branches_layout.presentation.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/features/library/library_vertical_navbar.presentation.dart';

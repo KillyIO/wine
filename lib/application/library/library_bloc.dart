@@ -4,12 +4,12 @@ import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/branch/branch.domain.dart';
-import 'package:wine/features/branch/i_branch_repository.domain.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/tree/i_tree_repository.domain.dart';
-import 'package:wine/features/tree/tree.domain.dart';
-import 'package:wine/features/user/user.domain.dart';
+import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/branch/i_branch_repository.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/tree/i_tree_repository.dart';
+import 'package:wine/domain/tree/tree.dart';
+import 'package:wine/domain/user/user.dart';
 import 'package:wine/utils/constants/library.dart';
 
 part 'library_bloc.freezed.dart';

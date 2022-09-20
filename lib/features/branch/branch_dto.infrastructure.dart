@@ -9,9 +9,9 @@ import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/branch/branch.domain.dart';
-import 'package:wine/features/branch/leaf.domain.dart';
-import 'package:wine/features/branch/licence.domain.dart';
+import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/branch/leaf.dart';
+import 'package:wine/domain/branch/licence.dart';
 import 'package:wine/features/branch/licence_type.domain.dart';
 
 part 'branch_dto.infrastructure.freezed.dart';

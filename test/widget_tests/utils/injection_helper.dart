@@ -1,17 +1,17 @@
 import 'package:injectable/injectable.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/dialog/auth_dialog_cubit.dart';
-import 'package:wine/features/auth/i_auth_facade.domain.dart';
-import 'package:wine/features/branch/i_branch_repository.domain.dart';
+import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/branch/i_branch_repository.dart';
 import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
-import 'package:wine/features/tree/i_tree_repository.domain.dart';
-import 'package:wine/features/user/i_user_repository.domain.dart';
+import 'package:wine/domain/tree/i_tree_repository.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/injection.dart';
 
 import '../../mocks/auth_facade_mocks.dart';

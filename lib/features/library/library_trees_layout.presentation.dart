@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/features/library/library_base_trees_layout.presentation.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/features/library/library_vertical_navbar.presentation.dart';
-import 'package:wine/features/tree/tree.domain.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/utils/constants/library.dart';
 
 /// @nodoc

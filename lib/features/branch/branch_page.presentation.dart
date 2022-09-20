@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/branch/branch.domain.dart';
+import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/features/branch/branch_layout.presentation.dart';
 import 'package:wine/injection.dart';

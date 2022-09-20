@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/branch/branch_tile.presentation.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
 import 'package:wine/core/routes/router.gr.dart';
-import 'package:wine/features/branch/branch.domain.dart';
+import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/utils/constants/images.dart';
 import 'package:wine/utils/constants/palette.dart';

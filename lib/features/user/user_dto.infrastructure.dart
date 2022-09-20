@@ -3,10 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/core/converter.infrastructure.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/auth/email_address.domain.dart';
-import 'package:wine/features/auth/username.fomain.dart';
+import 'package:wine/domain/auth/email_address.dart';
+import 'package:wine/domain/auth/username.dart';
 import 'package:wine/features/user/isar_user.infrastructure.dart';
-import 'package:wine/features/user/user.domain.dart';
+import 'package:wine/domain/user/user.dart';
 
 part 'user_dto.infrastructure.freezed.dart';
 part 'user_dto.infrastructure.g.dart';
