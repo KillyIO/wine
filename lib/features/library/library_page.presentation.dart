@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
+import 'package:wine/application/library/library_bloc.dart';
 
 import 'package:wine/features/library/library_layout.presentation.dart';
 import 'package:wine/utils/constants/core.dart';

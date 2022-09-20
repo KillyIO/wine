@@ -16,8 +16,7 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await configureInjection(Environment.dev);
 
-  BlocOverrides.runZoned(
-    () => runApp(AppDevelopment()),
-    blocObserver: SimpleBlocObserver(),
-  );
+  Bloc.observer = SimpleBlocObserver();
+
+  runApp(AppDevelopment());
 }

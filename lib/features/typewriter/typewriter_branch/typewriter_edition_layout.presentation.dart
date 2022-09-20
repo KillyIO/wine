@@ -12,7 +12,7 @@ import 'package:wine/core/typewriter/typewriter_switch_list_tile.presentation.da
 import 'package:wine/core/typewriter/typewriter_text_field.presentation.dart';
 import 'package:wine/core/typewriter/typewriter_top_title.presentation.dart';
 import 'package:wine/features/branch/licence_type.domain.dart';
-import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart';
+import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
 import 'package:wine/features/typewriter/typewriter_branch/typewriter_quill.presentation.dart';
 import 'package:wine/utils/constants/branch.dart';
 import 'package:wine/utils/constants/core.dart';

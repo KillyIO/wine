@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:wine/core/content_actions.presentation.dart';
 import 'package:wine/core/content_genres.presentation.dart';
-import 'package:wine/features/branch/branch_bloc.application.dart';
+import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/features/branch/branch_detail_container.presentation.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';

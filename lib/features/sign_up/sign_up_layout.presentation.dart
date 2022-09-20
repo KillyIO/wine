@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
 import 'package:wine/core/labels/text_field_label.presentation.dart';
 import 'package:wine/core/text_fields/authentication_text_field.presentation.dart';
-import 'package:wine/features/sign_up/sign_up_bloc.application.dart';
+import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/features/sign_up/sign_up_tos_and_pp_button.presentation.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/branch/branch_tile.presentation.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
-import 'package:wine/core/routes/router.dart';
+import 'package:wine/core/routes/router.gr.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
-import 'package:wine/features/tree/tree_bloc.application.dart';
+import 'package:wine/application/tree/tree_bloc.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
 
@@ -55,7 +55,7 @@ class TreeBranchOne extends StatelessWidget {
                 hasRoundedCorners: true,
                 onPressed: () => handleAuthGuardedNavigation(
                   context,
-                  navigateTo: TypewriterBranchNew(
+                  navigateTo: TypewriterBranchUID(
                     tree: state.tree,
                     type: TypewriterType.branch,
                   ),

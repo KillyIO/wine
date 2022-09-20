@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/core/routes/router.dart';
+import 'package:wine/application/setup/setup_bloc.dart';
+import 'package:wine/core/routes/router.gr.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
-import 'package:wine/features/setup/setup_bloc.application.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';
@@ -61,7 +61,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   onPressed: () => handleAuthGuardedNavigation(
                     context,
-                    navigateTo: TypewriterTreeNew(type: TypewriterType.tree),
+                    navigateTo: TypewriterTreeUID(
+                      type: TypewriterType.tree,
+                    ),
                   ),
                   splashColor: Colors.transparent,
                 ),

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/core/routes/router.dart';
-import 'package:wine/features/auth/auth_bloc.application.dart';
+import 'package:wine/core/routes/router.gr.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 
 /// @nodoc
 class AuthGuard extends AutoRouteGuard {

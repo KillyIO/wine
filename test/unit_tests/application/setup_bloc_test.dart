@@ -11,7 +11,7 @@ import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
 import 'package:wine/features/sessions/sessions_failure.domain.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
 import 'package:wine/features/settings/settings_failure.domain.dart';
-import 'package:wine/features/setup/setup_bloc.application.dart';
+import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/features/user/i_user_repository.domain.dart';
 
 import '../../mocks/auth_facade_mocks.dart';

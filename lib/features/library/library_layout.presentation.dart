@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/page_view/horizontal_page_view_navbar.presentation.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/features/library/library_page_view_builder.presentation.dart';
 import 'package:wine/utils/constants/library.dart';
 import 'package:wine/utils/constants/palette.dart';

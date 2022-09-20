@@ -15,9 +15,7 @@ import 'package:wine/features/wrappers/settings_wrapper.presentation.dart';
 import 'package:wine/presentation/typewriter/typewriter_page.dart';
 import 'package:wine/utils/constants/paths/router.dart';
 
-part 'router.gr.dart';
-
-@AdaptiveAutoRouter(
+@MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AutoRoute<BranchPage>(
@@ -97,4 +95,4 @@ part 'router.gr.dart';
 )
 
 /// @nodoc
-class AppRouter extends _$AppRouter {}
+class $AppRouter {}

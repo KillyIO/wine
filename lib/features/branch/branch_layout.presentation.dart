@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:measured_size/measured_size.dart';
 import 'package:time/time.dart';
+import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/core/branch/branch_leaf_body.presentation.dart';
 import 'package:wine/core/branch/branch_leaf_head.presentation.dart';
 import 'package:wine/core/buttons/default_button.presentation.dart';
-import 'package:wine/core/routes/router.dart';
+import 'package:wine/core/routes/router.gr.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/features/branch/branch_app_bar.presentation.dart';
-import 'package:wine/features/branch/branch_bloc.application.dart';
 import 'package:wine/features/branch/branch_details.presentation.dart';
 import 'package:wine/features/branch/next_branches.presentation.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -163,7 +163,7 @@ class _BranchLayoutState extends State<BranchLayout> {
                                 width: mediaQuery.width,
                                 onPressed: () => handleAuthGuardedNavigation(
                                   context,
-                                  navigateTo: TypewriterBranchNew(
+                                  navigateTo: TypewriterBranchUID(
                                     branch: state.branch,
                                     type: TypewriterType.branch,
                                   ),

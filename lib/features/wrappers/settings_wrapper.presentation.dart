@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/settings/settings_bloc.application.dart';
+import 'package:wine/application/settings/settings_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 

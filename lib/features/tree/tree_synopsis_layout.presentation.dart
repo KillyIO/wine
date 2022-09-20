@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/tree/tree_bloc.application.dart';
+import 'package:wine/application/tree/tree_bloc.dart';
 import 'package:wine/features/tree/tree_synopsis.presentation.dart';
 
 /// @nodoc

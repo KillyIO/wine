@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/features/home/home_layout.presentation.dart';
-import 'package:wine/features/setup/setup_bloc.application.dart';
+import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/injection.dart';
 
 /// @nodoc

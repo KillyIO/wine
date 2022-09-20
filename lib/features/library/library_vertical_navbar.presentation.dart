@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/navbars/vertical_navbar_button.presentation.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
+import 'package:wine/application/library/library_bloc.dart';
 
 /// @nodoc
 class LibraryVerticalNavbar extends StatelessWidget {

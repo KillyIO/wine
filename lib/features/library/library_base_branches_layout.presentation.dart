@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/branch/branch_tile.presentation.dart';
-import 'package:wine/core/routes/router.dart';
+import 'package:wine/core/routes/router.gr.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/features/branch/branch.domain.dart';
-import 'package:wine/features/library/library_bloc.application.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/utils/constants/images.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
 

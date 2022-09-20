@@ -13,37 +13,35 @@ import 'package:google_sign_in/google_sign_in.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:isar/isar.dart' as _i16;
 
+import 'application/auth/auth_bloc.dart' as _i18;
+import 'application/auth/dialog/auth_dialog_cubit.dart' as _i3;
+import 'application/branch/branch_bloc.dart' as _i34;
+import 'application/home/home_bloc.dart' as _i19;
+import 'application/library/library_bloc.dart' as _i26;
+import 'application/log_in/log_in_bloc.dart' as _i27;
+import 'application/settings/settings_bloc.dart' as _i28;
+import 'application/setup/setup_bloc.dart' as _i29;
+import 'application/sign_up/sign_up_bloc.dart' as _i30;
+import 'application/tree/tree_bloc.dart' as _i31;
+import 'application/typewriter/branch/typewriter_branch_bloc.dart' as _i32;
+import 'application/typewriter/tree/typewriter_tree_bloc.dart' as _i33;
 import 'core/firebase_injectable_module.infrastructure.dart' as _i35;
 import 'core/isar_injectable_module.infrastructure.dart' as _i36;
-import 'features/auth/auth_bloc.application.dart' as _i18;
-import 'features/auth/auth_dialog_cubit.application.dart' as _i3;
 import 'features/auth/firebase_auth_facade.infrastructure.dart' as _i9;
 import 'features/auth/i_auth_facade.domain.dart' as _i8;
-import 'features/branch/branch_bloc.application.dart' as _i34;
 import 'features/branch/branch_repository.infrastructure.dart' as _i11;
 import 'features/branch/i_branch_repository.domain.dart' as _i10;
 import 'features/default_covers/default_covers_repository.infrastructure.dart'
     as _i21;
 import 'features/default_covers/i_default_covers_repository.domain.dart'
     as _i20;
-import 'features/home/home_bloc.application.dart' as _i19;
-import 'features/library/library_bloc.application.dart' as _i26;
-import 'features/log_in/log_in_bloc.application.dart' as _i27;
 import 'features/report/report_bloc.application.dart' as _i17;
 import 'features/sessions/i_sessions_repository.domain.dart' as _i22;
 import 'features/sessions/sessions_repository.infrastructure.dart' as _i23;
 import 'features/settings/i_settings_repository.domain.dart' as _i24;
-import 'features/settings/settings_bloc.application.dart' as _i28;
 import 'features/settings/settings_repository.infrastructure.dart' as _i25;
-import 'features/setup/setup_bloc.application.dart' as _i29;
-import 'features/sign_up/sign_up_bloc.application.dart' as _i30;
 import 'features/tree/i_tree_repository.domain.dart' as _i12;
-import 'features/tree/tree_bloc.application.dart' as _i31;
 import 'features/tree/tree_repository.infrastructure.dart' as _i13;
-import 'features/typewriter/typewriter_branch/typewriter_branch_bloc.application.dart'
-    as _i32;
-import 'features/typewriter/typewriter_tree/typewriter_tree_bloc.application.dart'
-    as _i33;
 import 'features/user/i_user_repository.domain.dart' as _i14;
 import 'features/user/user_repository.infrastructure.dart' as _i15;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/home/home_bloc.application.dart';
+import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/features/home/home_trees_layout.presentation.dart';
 
 /// @nodoc
