@@ -7,7 +7,7 @@ import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
-import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';

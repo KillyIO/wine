@@ -5,7 +5,7 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/default_covers/default_cover.dart';
-import 'package:wine/features/default_covers/isar_default_cover.infrastructure.dart';
+import 'package:wine/infrastructure/auth/isar_default_cover.dart';
 import 'package:wine/features/settings/isar_settings.infrastructure.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/features/user/isar_user.infrastructure.dart';

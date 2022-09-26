@@ -3,7 +3,7 @@ import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/dialog/auth_dialog_cubit.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/branch/i_branch_repository.dart';
-import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';

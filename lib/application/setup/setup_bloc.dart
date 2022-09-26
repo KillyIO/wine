@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/default_cover.dart';
-import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/features/settings/i_settings_repository.domain.dart';
 import 'package:wine/domain/user/i_user_repository.dart';

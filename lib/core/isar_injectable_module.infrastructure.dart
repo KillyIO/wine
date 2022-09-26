@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:wine/features/default_covers/isar_default_cover.infrastructure.dart';
+import 'package:wine/infrastructure/auth/isar_default_cover.dart';
 import 'package:wine/features/settings/isar_settings.infrastructure.dart';
 import 'package:wine/features/user/isar_user.infrastructure.dart';
 import 'package:wine/flavors.dart';

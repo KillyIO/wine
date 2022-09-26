@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
-import 'package:wine/features/auth/firebase_auth_facade.infrastructure.dart';
+import 'package:wine/infrastructure/auth/firebase_auth_facade.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
 

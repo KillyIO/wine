@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/core/buttons/tile_button.presentation.dart';
-import 'package:wine/core/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/navigation_functions.dart';
 

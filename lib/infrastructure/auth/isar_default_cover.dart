@@ -3,7 +3,7 @@ import 'package:isar/isar.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/default_covers/default_cover.dart';
 
-part 'isar_default_cover.infrastructure.g.dart';
+part 'isar_default_cover.g.dart';
 
 /// @nodoc
 @Collection(accessor: 'defaultCovers')

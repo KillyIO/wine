@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/default_covers/default_cover.dart';
-import 'package:wine/features/default_covers/isar_default_cover.infrastructure.dart';
+import 'package:wine/infrastructure/auth/isar_default_cover.dart';
 
-part 'default_cover_dto.infrastructure.freezed.dart';
-part 'default_cover_dto.infrastructure.g.dart';
+part 'default_cover_dto.freezed.dart';
+part 'default_cover_dto.g.dart';
 
 /// @nodoc
 @freezed

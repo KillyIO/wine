@@ -20,7 +20,7 @@ import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/subtitle.dart';
