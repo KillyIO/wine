@@ -6,7 +6,7 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
-import 'package:wine/features/user/user_repository.infrastructure.dart';
+import 'package:wine/infrastructure/user/user_repository.dart';
 import 'package:wine/utils/constants/paths/users.dart';
 
 import '../utils/constants.dart';

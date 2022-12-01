@@ -1,8 +1,8 @@
 import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:wine/infrastructure/auth/isar_default_cover.dart';
-import 'package:wine/features/settings/isar_settings.infrastructure.dart';
-import 'package:wine/features/user/isar_user.infrastructure.dart';
+import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
+import 'package:wine/infrastructure/user/isar_user.dart';
 
 class MockIsar extends Mock implements Isar {}
 

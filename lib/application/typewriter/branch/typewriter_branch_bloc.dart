@@ -28,7 +28,7 @@ import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
-import 'package:wine/features/branch/licence_type.domain.dart';
+import 'package:wine/domain/branch/licence_type.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/utils/constants/cover.dart';
 import 'package:wine/utils/constants/typewriter.dart';

@@ -6,7 +6,7 @@ import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/branch/leaf.dart';
 import 'package:wine/domain/branch/licence.dart';
-import 'package:wine/features/branch/licence_type.domain.dart';
+import 'package:wine/domain/branch/licence_type.dart';
 
 part 'branch.freezed.dart';
 

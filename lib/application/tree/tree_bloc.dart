@@ -10,7 +10,7 @@ import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/branch/i_branch_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
-import 'package:wine/features/settings/i_settings_repository.domain.dart';
+import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';

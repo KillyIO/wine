@@ -13,7 +13,7 @@ import 'package:wine/features/library/library_page.presentation.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/features/log_in/log_in_page.presentation.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
-import 'package:wine/features/settings/i_settings_repository.domain.dart';
+import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/features/web/auth_dialog.presentation.dart';
 import 'package:wine/injection.dart';

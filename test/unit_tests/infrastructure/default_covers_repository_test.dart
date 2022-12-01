@@ -5,9 +5,9 @@ import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
-import 'package:wine/infrastructure/auth/default_covers_repository.dart';
+import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
-import 'package:wine/infrastructure/auth/isar_default_cover.dart';
+import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
 import 'package:wine/utils/constants/paths/default_covers.dart';
 
 import '../../mocks/isar_mocks.dart';

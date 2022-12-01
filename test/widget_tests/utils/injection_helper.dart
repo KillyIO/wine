@@ -8,7 +8,7 @@ import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
-import 'package:wine/features/settings/i_settings_repository.domain.dart';
+import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';

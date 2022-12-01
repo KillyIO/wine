@@ -10,7 +10,7 @@ import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
 import 'package:wine/domain/user/user.dart';
-import 'package:wine/features/user/user_dto.infrastructure.dart';
+import 'package:wine/infrastructure/user/user_dto.dart';
 
 /// Implementation of [IAuthFacade] using Firebase.
 @LazySingleton(as: IAuthFacade, env: [Environment.dev, Environment.prod])

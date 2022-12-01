@@ -4,10 +4,10 @@ import 'dart:io';
 import 'package:oxidized/oxidized.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
-import 'package:wine/core/string_helpers.infrastructure.dart';
+import 'package:wine/infrastructure/core/string_helpers.infrastructure.dart';
 import 'package:wine/domain/core/value_failure.dart';
-import 'package:wine/features/branch/licence_type.domain.dart';
-import 'package:wine/features/report/report_type.domain.dart';
+import 'package:wine/domain/branch/licence_type.dart';
+import 'package:wine/domain/report/report_type.dart';
 
 import 'package:wine/utils/constants/branch.dart';
 import 'package:wine/utils/constants/core.dart';

@@ -5,10 +5,10 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/default_covers/default_cover.dart';
-import 'package:wine/infrastructure/auth/isar_default_cover.dart';
-import 'package:wine/features/settings/isar_settings.infrastructure.dart';
+import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
 import 'package:wine/domain/settings/settings.dart';
-import 'package:wine/features/user/isar_user.infrastructure.dart';
+import 'package:wine/infrastructure/user/isar_user.dart';
 import 'package:wine/domain/user/user.dart';
 
 const testConfirmPasssword = r'''wT-t"_fCznEH+tPMt7Y$JB''';
