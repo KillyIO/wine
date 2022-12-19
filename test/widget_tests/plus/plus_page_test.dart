@@ -15,7 +15,7 @@ import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
-import 'package:wine/features/web/auth_dialog.presentation.dart';
+import 'package:wine/presentation/web/auth_dialog.dart';
 import 'package:wine/injection.dart';
 
 import '../../unit_tests/utils/constants.dart';
