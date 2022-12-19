@@ -6,9 +6,9 @@ import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/presentation/typewriter/branch/typewriter_branch_new_page.dart';
-import 'package:wine/presentation/typewriter/branch/typewriter_branch_uid_page.presentation.dart';
-import 'package:wine/presentation/typewriter/tree/typewriter_tree_new_page.presentation.dart';
-import 'package:wine/presentation/typewriter/tree/typewriter_tree_uid_page.presentation.dart';
+import 'package:wine/presentation/typewriter/branch/typewriter_branch_uid_page.dart';
+import 'package:wine/presentation/typewriter/tree/typewriter_tree_new_page.dart';
+import 'package:wine/presentation/typewriter/tree/typewriter_tree_uid_page.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 

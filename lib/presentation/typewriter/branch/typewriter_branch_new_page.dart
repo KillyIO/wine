@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
-import 'package:wine/features/typewriter/typewriter_branch/typewriter_branch_layout.presentation.dart';
+import 'package:wine/presentation/typewriter/branch/typewriter_branch_layout.dart';
 import 'package:wine/injection.dart';
 
 /// @nodoc

@@ -6,7 +6,7 @@ import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
-import 'package:wine/features/typewriter/typewriter_branch/typewriter_page_view_builder.presentation.dart';
+import 'package:wine/presentation/typewriter/widgets/branch/typewriter_page_view_builder.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/constants/typewriter.dart';

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/application/typewriter/tree/typewriter_tree_bloc.dart';
-import 'package:wine/features/typewriter/typewriter_tree/typwriter_tree_layout.presentation.dart';
+import 'package:wine/presentation/typewriter/tree/typewriter_tree_layout.dart';
 import 'package:wine/injection.dart';
 
 /// @nodoc
