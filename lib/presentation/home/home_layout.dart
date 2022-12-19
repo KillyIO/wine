@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/features/home/home_app_bar.presentation.dart';
+import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/features/home/home_content_layout.presentation.dart';
-import 'package:wine/features/home/home_filters_menu_layout.presentation.dart';
-import 'package:wine/features/home/home_menu_layout.presentation.dart';
-import 'package:wine/features/home/home_splash_layout.presentation.dart';
+import 'package:wine/presentation/home/home_content_layout.dart';
+import 'package:wine/presentation/home/home_filters_menu_layout.dart';
+import 'package:wine/presentation/home/home_menu_layout.dart';
+import 'package:wine/presentation/home/home_splash_layout.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 

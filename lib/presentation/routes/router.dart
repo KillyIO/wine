@@ -1,6 +1,6 @@
 import 'package:auto_route/annotations.dart';
-import 'package:wine/features/branch/branch_page.presentation.dart';
-import 'package:wine/features/home/home_page.presentation.dart';
+import 'package:wine/presentation/branch/branch_page.dart';
+import 'package:wine/presentation/home/home_page.dart';
 import 'package:wine/features/library/library_page.presentation.dart';
 import 'package:wine/features/log_in/log_in_page.presentation.dart';
 import 'package:wine/features/plus/plus_page.presentation.dart';
