@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'tree_dto.infrastructure.dart';
+part of 'tree_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

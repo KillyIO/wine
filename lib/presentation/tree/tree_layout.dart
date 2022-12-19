@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/core/content_actions.presentation.dart';
 import 'package:wine/core/content_genres.presentation.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
-import 'package:wine/features/tree/tree_branch_one.presentation.dart';
-import 'package:wine/features/tree/tree_details.presentation.dart';
-import 'package:wine/features/tree/tree_resume_reading.presentation.dart';
-import 'package:wine/features/tree/tree_synopsis_layout.presentation.dart';
+import 'package:wine/presentation/tree/tree_synopsis_layout.dart';
+import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';
+import 'package:wine/presentation/tree/widgets/tree_details.dart';
+import 'package:wine/presentation/tree/widgets/tree_resume_reading.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 

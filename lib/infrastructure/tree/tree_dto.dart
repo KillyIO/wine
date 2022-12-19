@@ -10,8 +10,8 @@ import 'package:wine/domain/tree/subtitle.dart';
 import 'package:wine/domain/tree/synopsis.dart';
 import 'package:wine/domain/tree/tree.dart';
 
-part 'tree_dto.infrastructure.freezed.dart';
-part 'tree_dto.infrastructure.g.dart';
+part 'tree_dto.freezed.dart';
+part 'tree_dto.g.dart';
 
 /// @nodoc
 @freezed
