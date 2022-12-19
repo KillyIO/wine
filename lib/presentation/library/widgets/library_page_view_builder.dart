@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/features/library/library_branches_layout.presentation.dart';
-import 'package:wine/features/library/library_trees_layout.presentation.dart';
+import 'package:wine/presentation/library/library_branches_layout.dart';
+import 'package:wine/presentation/library/library_trees_layout.dart';
 
 /// @nodoc
 class LibraryPageViewBuilder extends StatelessWidget {

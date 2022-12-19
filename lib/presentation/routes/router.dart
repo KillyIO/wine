@@ -1,8 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:wine/presentation/branch/branch_page.dart';
 import 'package:wine/presentation/home/home_page.dart';
-import 'package:wine/features/library/library_page.presentation.dart';
-import 'package:wine/features/log_in/log_in_page.presentation.dart';
+import 'package:wine/presentation/library/library_page.dart';
+import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/features/plus/plus_page.presentation.dart';
 import 'package:wine/features/report/report_page.presentation.dart';
 import 'package:wine/features/settings/settings_account/settings_account_page.presentation.dart';

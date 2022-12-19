@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
-import 'package:wine/features/log_in/log_in_layout.presentation.dart';
+import 'package:wine/presentation/log_in/log_in_layout.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
