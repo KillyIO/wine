@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:wine/core/buttons/animated_button.presentation.dart';
+import 'package:wine/presentation/core/buttons/animated_button.dart';
 import 'package:wine/utils/constants/animations.dart';
 
 import '../../utils/test_widget.dart';

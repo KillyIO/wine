@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wine/core/genre_item.presentation.dart';
+import 'package:wine/presentation/core/common/genre_item.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc

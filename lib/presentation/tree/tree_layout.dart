@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/core/content_actions.presentation.dart';
-import 'package:wine/core/content_genres.presentation.dart';
+import 'package:wine/presentation/core/common/content_actions.dart';
+import 'package:wine/presentation/core/common/content_genres.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
 import 'package:wine/presentation/tree/tree_synopsis_layout.dart';
 import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';

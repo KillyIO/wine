@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
-import 'package:wine/core/branch/branch_index.presentation.dart';
-import 'package:wine/core/branch/branch_title.presentation.dart';
+import 'package:wine/presentation/core/branch/branch_index.dart';
+import 'package:wine/presentation/core/branch/branch_title.dart';
 
 /// @nodoc
 class BranchLeafHead extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:wine/core/buttons/default_button.presentation.dart';
+import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/responsive/dialog_responsive.dart';
 

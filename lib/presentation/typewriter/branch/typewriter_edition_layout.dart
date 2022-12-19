@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/core/buttons/default_button.presentation.dart';
-import 'package:wine/core/dialogs/warning_dialog.presentation.dart';
+import 'package:wine/presentation/core/buttons/default_button.dart';
+import 'package:wine/presentation/core/dialogs/warning_dialog.dart';
 import 'package:wine/core/labels/text_field_label.presentation.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_cover.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_genres.dart';

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/core/buttons/default_button.presentation.dart';
+import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/core/labels/text_field_label.presentation.dart';
 import 'package:wine/core/text_fields/authentication_text_field.presentation.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';

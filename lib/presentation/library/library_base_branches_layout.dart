@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/core/branch/branch_tile.presentation.dart';
+import 'package:wine/presentation/core/branch/branch_tile.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/domain/branch/branch.dart';
