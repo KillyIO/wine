@@ -17,22 +17,19 @@ import 'package:flutter/material.dart' as _i16;
 import '../../domain/branch/branch.dart' as _i17;
 import '../../domain/core/typewriter_type.dart' as _i19;
 import '../../domain/tree/tree.dart' as _i18;
-import '../../features/branch/branch_page.presentation.dart' as _i1;
-import '../../features/home/home_page.presentation.dart' as _i2;
-import '../../features/library/library_page.presentation.dart' as _i3;
-import '../../features/log_in/log_in_page.presentation.dart' as _i4;
-import '../../features/plus/plus_page.presentation.dart' as _i5;
-import '../../features/report/report_page.presentation.dart' as _i8;
-import '../../features/settings/settings_account/settings_account_page.presentation.dart'
-    as _i11;
-import '../../features/settings/settings_branch/settings_branch_page.presentation.dart'
-    as _i12;
-import '../../features/settings/settings_page.presentation.dart' as _i14;
-import '../../features/settings/settings_tree/settings_tree_page.presentation.dart'
-    as _i13;
 import '../../features/sign_up/sign_up_page.presentation.dart' as _i9;
 import '../../features/tree/tree_page.presentation.dart' as _i6;
 import '../../features/wrappers/settings_wrapper.presentation.dart' as _i7;
+import '../branch/branch_page.dart' as _i1;
+import '../home/home_page.dart' as _i2;
+import '../library/library_page.dart' as _i3;
+import '../log_in/log_in_page.dart' as _i4;
+import '../plus/plus_page.dart' as _i5;
+import '../report/report_page.presentation.dart' as _i8;
+import '../settings/settings_account/settings_account_page.dart' as _i11;
+import '../settings/settings_branch/settings_branch_page.dart' as _i12;
+import '../settings/settings_page.dart' as _i14;
+import '../settings/settings_tree/settings_tree_page.dart' as _i13;
 import '../typewriter/typewriter_page.dart' as _i10;
 
 class AppRouter extends _i15.RootStackRouter {

@@ -33,13 +33,13 @@ import 'domain/sessions/i_sessions_repository.dart' as _i22;
 import 'domain/settings/i_settings_repository.dart' as _i24;
 import 'domain/tree/i_tree_repository.dart' as _i12;
 import 'domain/user/i_user_repository.dart' as _i14;
-import 'features/sessions/sessions_repository.infrastructure.dart' as _i23;
 import 'features/tree/tree_repository.infrastructure.dart' as _i13;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i9;
 import 'infrastructure/branch/branch_repository.dart' as _i11;
 import 'infrastructure/core/firebase_injectable_module.dart' as _i35;
 import 'infrastructure/core/isar_injectable_module.dart' as _i36;
 import 'infrastructure/default_covers/default_covers_repository.dart' as _i21;
+import 'infrastructure/sessions/sessions_repository.dart' as _i23;
 import 'infrastructure/settings/settings_repository.dart' as _i25;
 import 'infrastructure/user/user_repository.dart' as _i15;
 
