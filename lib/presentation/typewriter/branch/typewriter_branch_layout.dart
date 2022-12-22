@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/core/page_view/horizontal_page_view_navbar.presentation.dart';
+import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/application/library/library_bloc.dart';

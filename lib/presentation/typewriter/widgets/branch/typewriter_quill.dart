@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' hide Text;
-import 'package:wine/core/labels/text_field_label.presentation.dart';
+import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc

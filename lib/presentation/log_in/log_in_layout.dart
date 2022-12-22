@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
-import 'package:wine/core/text_fields/authentication_text_field.presentation.dart';
+import 'package:wine/presentation/core/text_fields/authentication_text_field.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/presentation/log_in/widgets/log_in_create_account_button.dart';
 import 'package:wine/presentation/log_in/widgets/log_in_separator.dart';

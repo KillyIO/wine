@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:time/time.dart';
-import 'package:wine/core/page_view/horizontal_page_view_navbar_button.presentation.dart';
+import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar_button.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
 /// @nodoc
