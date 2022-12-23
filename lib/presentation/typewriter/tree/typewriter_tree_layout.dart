@@ -1,10 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/library/library_bloc.dart';
+import 'package:wine/application/typewriter/tree/typewriter_tree_bloc.dart';
+import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/dialogs/warning_dialog.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_cover.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_genres.dart';
@@ -13,9 +15,6 @@ import 'package:wine/presentation/typewriter/widgets/core/typewriter_selection_l
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_switch_list_tile.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_text_field.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_top_title.dart';
-import 'package:wine/domain/core/typewriter_end_state.dart';
-import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/application/typewriter/tree/typewriter_tree_bloc.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/genres.dart';
 import 'package:wine/utils/constants/languages.dart';
@@ -95,7 +94,7 @@ class TypewriterTreeLayout extends StatelessWidget {
                   .read<LibraryBloc>()
                   .add(LibraryEvent.treeDeleted(state.tree.uid));
 
-              if (context.router.root.canPopSelfOrChildren) {
+              if (context.router.root.canPop()) {
                 context.router.root.pop();
               }
               break;

@@ -11,8 +11,8 @@ import 'package:wine/presentation/settings/settings_page.dart';
 import 'package:wine/presentation/settings/settings_tree/settings_tree_page.dart';
 import 'package:wine/presentation/sign_up/sign_up_page.dart';
 import 'package:wine/presentation/tree/tree_page.dart';
-import 'package:wine/presentation/wrappers/settings_wrapper.dart';
 import 'package:wine/presentation/typewriter/typewriter_page.dart';
+import 'package:wine/presentation/wrappers/settings_wrapper.dart';
 import 'package:wine/utils/constants/paths/router.dart';
 
 @MaterialAutoRouter(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/presentation/home/home_layout.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/home/home_layout.dart';
 
 /// @nodoc
 class HomePage extends StatelessWidget {

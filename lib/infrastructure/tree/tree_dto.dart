@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/infrastructure/core/converter.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
@@ -9,6 +8,7 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/tree/subtitle.dart';
 import 'package:wine/domain/tree/synopsis.dart';
 import 'package:wine/domain/tree/tree.dart';
+import 'package:wine/infrastructure/core/converter.dart';
 
 part 'tree_dto.freezed.dart';
 part 'tree_dto.g.dart';

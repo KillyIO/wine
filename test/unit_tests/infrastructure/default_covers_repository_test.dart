@@ -5,8 +5,8 @@ import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
-import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
+import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
 import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
 import 'package:wine/utils/constants/paths/default_covers.dart';
 
@@ -14,40 +14,40 @@ import '../../mocks/isar_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  late IDefaultCoversRepository _defaultCoversRepository;
+  late IDefaultCoversRepository defaultCoversRepository;
 
-  late FirebaseFirestore _firestore;
+  late FirebaseFirestore firestore;
 
-  late Isar _isar;
-  late IsarCollection<IsarDefaultCover> _collection;
-  late QueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhere> _where;
+  late Isar isar;
+  late IsarCollection<IsarDefaultCover> collection;
+  late QueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhere> where;
   late QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
-      _uidEqualTo;
-  late Query<IsarDefaultCover> _build;
+      uidEqualTo;
+  late Query<IsarDefaultCover> build;
 
   setUp(() {
-    _firestore = FakeFirebaseFirestore();
-    _isar = MockIsar();
-    _collection = MockIsarCollection<IsarDefaultCover>();
-    _where = MockQueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhere>();
-    _uidEqualTo = MockQueryBuilder<IsarDefaultCover, IsarDefaultCover,
+    firestore = FakeFirebaseFirestore();
+    isar = MockIsar();
+    collection = MockIsarCollection<IsarDefaultCover>();
+    where = MockQueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhere>();
+    uidEqualTo = MockQueryBuilder<IsarDefaultCover, IsarDefaultCover,
         QAfterWhereClause>();
-    _build = MockQuery<IsarDefaultCover>();
+    build = MockQuery<IsarDefaultCover>();
 
     registerFallbackValue(MockIsarDefaultCover());
     registerFallbackValue(MockIsarCollection<IsarDefaultCover>());
     registerFallbackValue(MockWhereClause());
 
-    _defaultCoversRepository = DefaultCoversRepository(_firestore, _isar);
+    defaultCoversRepository = DefaultCoversRepository(firestore, isar);
   });
 
   group('cacheDefaultCovers -', () {
     test('When covers cached Then return Unit', () async {
-      when(() => _isar.writeTxn(any()))
+      when(() => isar.writeTxn(any()))
           .thenAnswer((_) async => Result<Unit, DefaultCoversFailure>.ok(unit));
 
       final result =
-          await _defaultCoversRepository.cacheDefaultCovers([testDefaultCover]);
+          await defaultCoversRepository.cacheDefaultCovers([testDefaultCover]);
 
       expect(result.isOk(), true);
       result.match(
@@ -59,13 +59,13 @@ void main() {
     test(
       'When at least one cover not cached The return DefaultCoversNotCached',
       () async {
-        when(() => _isar.writeTxn(any())).thenAnswer(
+        when(() => isar.writeTxn(any())).thenAnswer(
           (_) async => Result<Unit, DefaultCoversFailure>.err(
             const DefaultCoversFailure.defaultCoversNotCached(),
           ),
         );
 
-        final result = await _defaultCoversRepository
+        final result = await defaultCoversRepository
             .cacheDefaultCovers([testDefaultCover]);
 
         expect(result.isErr(), true);
@@ -82,20 +82,20 @@ void main() {
 
   group('fetchDefaultCoverByKey -', () {
     setUp(() {
-      when(() => _isar.defaultCovers).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        // ignore: invalid_use_of_protected_member
-        () => _where.addWhereClauseInternal<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
+      when(() => isar.defaultCovers).thenReturn(collection);
+      when(collection.where).thenReturn(where);
+      // when(
+      //   // ignore: invalid_use_of_protected_member
+      //   () => where.addWhereClauseInternal<QAfterWhereClause>(any()),
+      // ).thenReturn(uidEqualTo);
+      when(uidEqualTo.build).thenReturn(build);
     });
 
     test('When cover fetched Then return DefaultCover', () async {
-      when(_build.findFirst).thenAnswer((_) async => testIsarDefaultCover);
+      when(build.findFirst).thenAnswer((_) async => testIsarDefaultCover);
 
       final result =
-          await _defaultCoversRepository.fetchDefaultCoverByKey('key');
+          await defaultCoversRepository.fetchDefaultCoverByKey('key');
 
       expect(result.isOk(), true);
       result.match(
@@ -107,10 +107,10 @@ void main() {
     test(
       'When cover not found Then return DefaultCoverNotFetched',
       () async {
-        when(_build.findFirst).thenAnswer((_) async => null);
+        when(build.findFirst).thenAnswer((_) async => null);
 
         final result =
-            await _defaultCoversRepository.fetchDefaultCoverByKey('key');
+            await defaultCoversRepository.fetchDefaultCoverByKey('key');
 
         expect(result.isErr(), true);
         result.match(
@@ -126,11 +126,11 @@ void main() {
 
   group('loadDefaultCovers -', () {
     test('When cover URLs loaded Then return DefaultCover list', () async {
-      await _firestore
+      await firestore
           .collection(defaultCoversPath)
           .add(<String, dynamic>{'key': 'key', 'coverURL': testCoverURL});
 
-      final result = await _defaultCoversRepository.loadDefaultCovers();
+      final result = await defaultCoversRepository.loadDefaultCovers();
       final expectedList = [testDefaultCover];
 
       expect(result.isOk(), true);

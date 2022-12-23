@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/presentation/core/footer/footer.dart';
 import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
-import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/presentation/home/widgets/home_page_view_builder.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/home.dart';

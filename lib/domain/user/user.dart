@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/core/unique_id.dart';
 
 part 'user.freezed.dart';
 

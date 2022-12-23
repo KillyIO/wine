@@ -33,14 +33,14 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
     List<DefaultCover> defaultCovers,
   ) async {
     try {
-      return await _isar.writeTxn((isar) async {
+      return await _isar.writeTxn(() async {
         final covers = <IsarDefaultCover>[];
 
         for (final defaultCover in defaultCovers) {
           var defaultCoverAdapter =
               DefaultCoverDTO.fromDomain(defaultCover).toAdapter();
 
-          final isarDefaultCover = await isar.defaultCovers
+          final isarDefaultCover = await _isar.defaultCovers
               .where()
               .keyEqualTo(defaultCover.key)
               .findFirst();
@@ -52,7 +52,7 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
           covers.add(defaultCoverAdapter);
         }
 
-        final ids = await isar.defaultCovers.putAll(covers);
+        final ids = await _isar.defaultCovers.putAll(covers);
 
         if (ids.length == defaultCovers.length) {
           return Ok(unit);

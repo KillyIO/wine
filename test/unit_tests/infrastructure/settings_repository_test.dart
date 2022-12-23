@@ -6,8 +6,8 @@ import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
-import 'package:wine/infrastructure/settings/isar_settings.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
 import 'package:wine/infrastructure/settings/settings_repository.dart';
 
 import '../../mocks/firebase_auth_mocks.dart';
@@ -15,40 +15,40 @@ import '../../mocks/isar_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  late ISettingsRepository _settingsRepository;
+  late ISettingsRepository settingsRepository;
 
-  late auth.FirebaseAuth _firebaseAuth;
+  late auth.FirebaseAuth firebaseAuth;
 
-  late Isar _isar;
-  late IsarCollection<IsarSettings> _collection;
-  late QueryBuilder<IsarSettings, IsarSettings, QWhere> _where;
-  late QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> _uidEqualTo;
-  late Query<IsarSettings> _build;
+  late Isar isar;
+  late IsarCollection<IsarSettings> collection;
+  late QueryBuilder<IsarSettings, IsarSettings, QWhere> where;
+  late QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> uidEqualTo;
+  late Query<IsarSettings> build;
 
   setUp(() {
-    _firebaseAuth = MockFirebaseAuth();
-    _isar = MockIsar();
-    _collection = MockIsarCollection<IsarSettings>();
-    _where = MockQueryBuilder<IsarSettings, IsarSettings, QWhere>();
-    _uidEqualTo =
+    firebaseAuth = MockFirebaseAuth();
+    isar = MockIsar();
+    collection = MockIsarCollection<IsarSettings>();
+    where = MockQueryBuilder<IsarSettings, IsarSettings, QWhere>();
+    uidEqualTo =
         MockQueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause>();
-    _build = MockQuery<IsarSettings>();
+    build = MockQuery<IsarSettings>();
 
-    _settingsRepository = SettingsRepository(_isar);
+    settingsRepository = SettingsRepository(isar);
 
     registerFallbackValue(MockIsarSettings());
     registerFallbackValue(MockIsarCollection<IsarSettings>());
     registerFallbackValue(MockWhereClause());
 
-    when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
+    when(() => firebaseAuth.currentUser).thenReturn(MockUser());
   });
 
   group('deleteSettings -', () {
     test('When settings deleted Then return Unit', () async {
-      when(() => _isar.writeTxn(any()))
+      when(() => isar.writeTxn(any()))
           .thenAnswer((_) async => Result<Unit, SettingsFailure>.ok(unit));
 
-      final result = await _settingsRepository.deleteSettings();
+      final result = await settingsRepository.deleteSettings();
 
       expect(result.isOk(), true);
       result.match(
@@ -58,13 +58,13 @@ void main() {
     });
 
     test('When settings not deleted Then return SettingsNotDeleted', () async {
-      when(() => _isar.writeTxn(any())).thenAnswer(
+      when(() => isar.writeTxn(any())).thenAnswer(
         (_) async => Result<Unit, SettingsFailure>.err(
           const SettingsFailure.settingsNotDeleted(),
         ),
       );
 
-      final result = await _settingsRepository.deleteSettings();
+      final result = await settingsRepository.deleteSettings();
 
       expect(result.isErr(), true);
       result.match(
@@ -76,18 +76,18 @@ void main() {
 
   group('fetchSettings -', () {
     setUp(() {
-      when(() => _isar.settings).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClauseInternal<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
+      when(() => isar.settings).thenReturn(collection);
+      when(collection.where).thenReturn(where);
+      // when(
+      //   () => where.addWhereClauseInternal<QAfterWhereClause>(any()),
+      // ).thenReturn(uidEqualTo);
+      when(uidEqualTo.build).thenReturn(build);
     });
 
     test('When settings fetched Then return Settings', () async {
-      when(_build.findFirst).thenAnswer((_) async => testIsarSettings);
+      when(build.findFirst).thenAnswer((_) async => testIsarSettings);
 
-      final result = await _settingsRepository.fetchSettings();
+      final result = await settingsRepository.fetchSettings();
 
       expect(result.isOk(), true);
       result.match(
@@ -97,9 +97,9 @@ void main() {
     });
 
     test('When settings not fetched Then return SettingsNotFound', () async {
-      when(_build.findFirst).thenAnswer((_) async => null);
+      when(build.findFirst).thenAnswer((_) async => null);
 
-      final result = await _settingsRepository.fetchSettings();
+      final result = await settingsRepository.fetchSettings();
 
       expect(result.isErr(), true);
       result.match(
@@ -111,10 +111,10 @@ void main() {
 
   group('initializeSettings -', () {
     test('When settings initialized Then return Unit', () async {
-      when(() => _isar.writeTxn(any()))
+      when(() => isar.writeTxn(any()))
           .thenAnswer((_) async => Result<Unit, SettingsFailure>.ok(unit));
 
-      final result = await _settingsRepository.initializeSettings();
+      final result = await settingsRepository.initializeSettings();
 
       expect(result.isOk(), true);
       result.match(
@@ -126,13 +126,13 @@ void main() {
     test(
       'When settings not initialized Then return SettingsNotCreated',
       () async {
-        when(() => _isar.writeTxn(any())).thenAnswer(
+        when(() => isar.writeTxn(any())).thenAnswer(
           (_) async => Result<Unit, SettingsFailure>.err(
             const SettingsFailure.settingsNotInitialized(),
           ),
         );
 
-        final result = await _settingsRepository.initializeSettings();
+        final result = await settingsRepository.initializeSettings();
 
         expect(result.isErr(), true);
         result.match(
@@ -145,20 +145,20 @@ void main() {
 
   group('updateSettings -', () {
     setUp(() {
-      when(() => _isar.settings).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClauseInternal<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
+      when(() => isar.settings).thenReturn(collection);
+      when(collection.where).thenReturn(where);
+      // when(
+      //   () => where.addWhereClauseInternal<QAfterWhereClause>(any()),
+      // ).thenReturn(uidEqualTo);
+      when(uidEqualTo.build).thenReturn(build);
     });
 
     test('When settings updated Then return Unit', () async {
-      when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
-      when(_build.findFirst).thenAnswer((_) async => testIsarSettings);
+      when(() => isar.writeTxn(any())).thenAnswer((_) async => null);
+      when(build.findFirst).thenAnswer((_) async => testIsarSettings);
 
       final result =
-          await _settingsRepository.updateSettings(testIsarSettings.toDomain());
+          await settingsRepository.updateSettings(testIsarSettings.toDomain());
 
       expect(result.isOk(), true);
       result.match(
@@ -168,10 +168,10 @@ void main() {
     });
 
     test('When settings not found Then return SettingsNotFound', () async {
-      when(_build.findFirst).thenAnswer((_) async => null);
+      when(build.findFirst).thenAnswer((_) async => null);
 
       final result =
-          await _settingsRepository.updateSettings(testIsarSettings.toDomain());
+          await settingsRepository.updateSettings(testIsarSettings.toDomain());
 
       expect(result.isErr(), true);
       result.match(
@@ -184,11 +184,11 @@ void main() {
       final updatedTestIsarSettings =
           testIsarSettings.copyWith(enableBranchesBookmarksCount: true);
 
-      when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
-      when(_build.findFirst).thenAnswer((_) async => updatedTestIsarSettings);
+      when(() => isar.writeTxn(any())).thenAnswer((_) async => null);
+      when(build.findFirst).thenAnswer((_) async => updatedTestIsarSettings);
 
       final result =
-          await _settingsRepository.updateSettings(testIsarSettings.toDomain());
+          await settingsRepository.updateSettings(testIsarSettings.toDomain());
 
       expect(result.isErr(), true);
       result.match(

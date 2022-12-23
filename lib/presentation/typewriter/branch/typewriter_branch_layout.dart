@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
-import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
+import 'package:wine/domain/core/typewriter_end_state.dart';
+import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/typewriter/widgets/branch/typewriter_page_view_builder.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
@@ -91,7 +91,7 @@ class TypewriterBranchLayout extends StatelessWidget {
                   .read<LibraryBloc>()
                   .add(LibraryEvent.branchDeleted(state.branch.uid));
 
-              if (context.router.root.canPopSelfOrChildren) {
+              if (context.router.root.canPop()) {
                 context.router.root.pop();
               }
               break;

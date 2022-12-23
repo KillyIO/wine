@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/presentation/core/dialogs/error_dialog.dart';
 import 'package:wine/presentation/core/dialogs/success_dialog.dart';
-import 'package:wine/application/setup/setup_bloc.dart';
 
 /// Used when an action requiring a redirection occurs,
 /// e.g. LogIn, SignUp, LogOut.

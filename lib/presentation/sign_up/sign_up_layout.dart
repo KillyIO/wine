@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/presentation/core/text_fields/authentication_text_field.dart';
-import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/presentation/sign_up/widgets/sign_up_tos_and_pp_button.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';

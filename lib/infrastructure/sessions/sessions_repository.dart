@@ -5,8 +5,8 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
-import 'package:wine/infrastructure/user/isar_user.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/infrastructure/user/isar_user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
 
 /// @nodoc
@@ -29,9 +29,11 @@ class SessionsRepository implements ISessionsRepository {
     final firebaseUser = _firebaseAuth.currentUser;
 
     if (firebaseUser != null) {
-      return _isar.writeTxn((isar) async {
-        final isDeleted =
-            await isar.users.where().uidEqualTo(firebaseUser.uid).deleteFirst();
+      return _isar.writeTxn(() async {
+        final isDeleted = await _isar.users
+            .where()
+            .uidEqualTo(firebaseUser.uid)
+            .deleteFirst();
 
         if (isDeleted) {
           return Ok(unit);
@@ -77,8 +79,8 @@ class SessionsRepository implements ISessionsRepository {
         userAdapter = userAdapter.copyWith(id: session.id);
       }
 
-      await _isar.writeTxn((isar) async {
-        await isar.users.put(userAdapter);
+      await _isar.writeTxn(() async {
+        await _isar.users.put(userAdapter);
       });
 
       session =

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
-import 'package:wine/presentation/sign_up/sign_up_layout.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/sign_up/sign_up_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 

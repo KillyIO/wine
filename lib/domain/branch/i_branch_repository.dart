@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/branch/branch_failure.dart';
+import 'package:wine/domain/core/unique_id.dart';
 
 /// @nodoc
 abstract class IBranchRepository {

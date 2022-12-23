@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
 import 'package:wine/presentation/core/branch/branch_leaf_body.dart';
 import 'package:wine/presentation/core/branch/branch_leaf_head.dart';
-import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
 
 /// @nodoc
 class TypewriterPreviewLayout extends StatelessWidget {

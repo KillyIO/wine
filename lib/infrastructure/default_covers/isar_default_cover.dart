@@ -25,8 +25,7 @@ class IsarDefaultCover extends Equatable {
   }
 
   /// @nodoc
-  @Id()
-  final int? id;
+  final Id? id;
 
   /// @nodoc
   @Index()

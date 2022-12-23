@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
-import 'package:wine/presentation/core/common/section_tile.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/settings/settings_bloc.dart';
+import 'package:wine/presentation/core/common/section_tile.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc

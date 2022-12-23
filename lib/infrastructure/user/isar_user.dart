@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
-import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
 
 part 'isar_user.g.dart';
@@ -34,8 +34,7 @@ class IsarUser extends Equatable {
   final String emailAddress;
 
   /// @nodoc
-  @Id()
-  final int? id;
+  final Id? id;
 
   /// @nodoc
   @Index()

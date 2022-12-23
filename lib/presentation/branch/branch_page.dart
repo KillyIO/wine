@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/domain/core/unique_id.dart';
-import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
-import 'package:wine/presentation/branch/branch_layout.dart';
+import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/branch/branch_layout.dart';
 
 /// @nodoc
 class BranchPage extends StatelessWidget {

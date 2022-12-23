@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/infrastructure/settings/isar_settings.dart';
 import 'package:wine/domain/settings/settings.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
 
 part 'settings_dto.freezed.dart';
 part 'settings_dto.g.dart';
