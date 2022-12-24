@@ -57,6 +57,7 @@ dependencies:
 dependency_overrides:
   intl: 0.18.0
   path: 1.8.3
+  test_api: 0.4.17
 
 dev_dependencies:
   auto_route_generator: ^5.0.3
