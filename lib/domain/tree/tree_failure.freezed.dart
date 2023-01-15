@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tree_failure.dart';
 
@@ -27,11 +27,11 @@ mixin _$TreeFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? treeNotFound,
-    TResult Function()? unexpected,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? treeNotFound,
+    TResult? Function()? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,11 +55,11 @@ mixin _$TreeFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(TreeNotFound value)? treeNotFound,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(TreeNotFound value)? treeNotFound,
+    TResult? Function(Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,16 +78,18 @@ mixin _$TreeFailure {
 abstract class $TreeFailureCopyWith<$Res> {
   factory $TreeFailureCopyWith(
           TreeFailure value, $Res Function(TreeFailure) then) =
-      _$TreeFailureCopyWithImpl<$Res>;
+      _$TreeFailureCopyWithImpl<$Res, TreeFailure>;
 }
 
 /// @nodoc
-class _$TreeFailureCopyWithImpl<$Res> implements $TreeFailureCopyWith<$Res> {
+class _$TreeFailureCopyWithImpl<$Res, $Val extends TreeFailure>
+    implements $TreeFailureCopyWith<$Res> {
   _$TreeFailureCopyWithImpl(this._value, this._then);
 
-  final TreeFailure _value;
   // ignore: unused_field
-  final $Res Function(TreeFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -99,14 +101,11 @@ abstract class _$$CoverNotUploadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$CoverNotUploadedCopyWithImpl<$Res>
-    extends _$TreeFailureCopyWithImpl<$Res>
+    extends _$TreeFailureCopyWithImpl<$Res, _$CoverNotUploaded>
     implements _$$CoverNotUploadedCopyWith<$Res> {
   __$$CoverNotUploadedCopyWithImpl(
       _$CoverNotUploaded _value, $Res Function(_$CoverNotUploaded) _then)
-      : super(_value, (v) => _then(v as _$CoverNotUploaded));
-
-  @override
-  _$CoverNotUploaded get _value => super._value as _$CoverNotUploaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -143,11 +142,11 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? treeNotFound,
-    TResult Function()? unexpected,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? treeNotFound,
+    TResult? Function()? unexpected,
   }) {
     return coverNotUploaded?.call();
   }
@@ -183,11 +182,11 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(TreeNotFound value)? treeNotFound,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(TreeNotFound value)? treeNotFound,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return coverNotUploaded?.call(this);
   }
@@ -222,14 +221,11 @@ abstract class _$$PermissionDeniedCopyWith<$Res> {
 
 /// @nodoc
 class __$$PermissionDeniedCopyWithImpl<$Res>
-    extends _$TreeFailureCopyWithImpl<$Res>
+    extends _$TreeFailureCopyWithImpl<$Res, _$PermissionDenied>
     implements _$$PermissionDeniedCopyWith<$Res> {
   __$$PermissionDeniedCopyWithImpl(
       _$PermissionDenied _value, $Res Function(_$PermissionDenied) _then)
-      : super(_value, (v) => _then(v as _$PermissionDenied));
-
-  @override
-  _$PermissionDenied get _value => super._value as _$PermissionDenied;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -266,11 +262,11 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? treeNotFound,
-    TResult Function()? unexpected,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? treeNotFound,
+    TResult? Function()? unexpected,
   }) {
     return permissionDenied?.call();
   }
@@ -306,11 +302,11 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(TreeNotFound value)? treeNotFound,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(TreeNotFound value)? treeNotFound,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return permissionDenied?.call(this);
   }
@@ -344,14 +340,12 @@ abstract class _$$ServerErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
+class __$$ServerErrorCopyWithImpl<$Res>
+    extends _$TreeFailureCopyWithImpl<$Res, _$ServerError>
     implements _$$ServerErrorCopyWith<$Res> {
   __$$ServerErrorCopyWithImpl(
       _$ServerError _value, $Res Function(_$ServerError) _then)
-      : super(_value, (v) => _then(v as _$ServerError));
-
-  @override
-  _$ServerError get _value => super._value as _$ServerError;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -388,11 +382,11 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? treeNotFound,
-    TResult Function()? unexpected,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? treeNotFound,
+    TResult? Function()? unexpected,
   }) {
     return serverError?.call();
   }
@@ -428,11 +422,11 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(TreeNotFound value)? treeNotFound,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(TreeNotFound value)? treeNotFound,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return serverError?.call(this);
   }
@@ -466,14 +460,12 @@ abstract class _$$TreeNotFoundCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TreeNotFoundCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
+class __$$TreeNotFoundCopyWithImpl<$Res>
+    extends _$TreeFailureCopyWithImpl<$Res, _$TreeNotFound>
     implements _$$TreeNotFoundCopyWith<$Res> {
   __$$TreeNotFoundCopyWithImpl(
       _$TreeNotFound _value, $Res Function(_$TreeNotFound) _then)
-      : super(_value, (v) => _then(v as _$TreeNotFound));
-
-  @override
-  _$TreeNotFound get _value => super._value as _$TreeNotFound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -510,11 +502,11 @@ class _$TreeNotFound implements TreeNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? treeNotFound,
-    TResult Function()? unexpected,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? treeNotFound,
+    TResult? Function()? unexpected,
   }) {
     return treeNotFound?.call();
   }
@@ -550,11 +542,11 @@ class _$TreeNotFound implements TreeNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(TreeNotFound value)? treeNotFound,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(TreeNotFound value)? treeNotFound,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return treeNotFound?.call(this);
   }
@@ -588,14 +580,12 @@ abstract class _$$UnexpectedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UnexpectedCopyWithImpl<$Res> extends _$TreeFailureCopyWithImpl<$Res>
+class __$$UnexpectedCopyWithImpl<$Res>
+    extends _$TreeFailureCopyWithImpl<$Res, _$Unexpected>
     implements _$$UnexpectedCopyWith<$Res> {
   __$$UnexpectedCopyWithImpl(
       _$Unexpected _value, $Res Function(_$Unexpected) _then)
-      : super(_value, (v) => _then(v as _$Unexpected));
-
-  @override
-  _$Unexpected get _value => super._value as _$Unexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -632,11 +622,11 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? treeNotFound,
-    TResult Function()? unexpected,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? treeNotFound,
+    TResult? Function()? unexpected,
   }) {
     return unexpected?.call();
   }
@@ -672,11 +662,11 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(TreeNotFound value)? treeNotFound,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(TreeNotFound value)? treeNotFound,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return unexpected?.call(this);
   }

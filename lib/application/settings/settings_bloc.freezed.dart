@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings_bloc.dart';
 
@@ -26,10 +26,10 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function()? logOutPressed,
-    TResult Function()? sessionDeleted,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? sessionDeleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$SettingsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(LogOutPressed value)? logOutPressed,
-    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(SessionDeleted value)? sessionDeleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$SettingsEvent {
 abstract class $SettingsEventCopyWith<$Res> {
   factory $SettingsEventCopyWith(
           SettingsEvent value, $Res Function(SettingsEvent) then) =
-      _$SettingsEventCopyWithImpl<$Res>;
+      _$SettingsEventCopyWithImpl<$Res, SettingsEvent>;
 }
 
 /// @nodoc
-class _$SettingsEventCopyWithImpl<$Res>
+class _$SettingsEventCopyWithImpl<$Res, $Val extends SettingsEvent>
     implements $SettingsEventCopyWith<$Res> {
   _$SettingsEventCopyWithImpl(this._value, this._then);
 
-  final SettingsEvent _value;
   // ignore: unused_field
-  final $Res Function(SettingsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -92,13 +93,11 @@ abstract class _$$InitCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$InitCopyWithImpl<$Res> extends _$SettingsEventCopyWithImpl<$Res>
+class __$$InitCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$Init>
     implements _$$InitCopyWith<$Res> {
   __$$InitCopyWithImpl(_$Init _value, $Res Function(_$Init) _then)
-      : super(_value, (v) => _then(v as _$Init));
-
-  @override
-  _$Init get _value => super._value as _$Init;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -134,10 +133,10 @@ class _$Init implements Init {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function()? logOutPressed,
-    TResult Function()? sessionDeleted,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? sessionDeleted,
   }) {
     return init?.call();
   }
@@ -171,10 +170,10 @@ class _$Init implements Init {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(LogOutPressed value)? logOutPressed,
-    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(SessionDeleted value)? sessionDeleted,
   }) {
     return init?.call(this);
   }
@@ -208,14 +207,11 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$SessionFetched>
     implements _$$SessionFetchedCopyWith<$Res> {
   __$$SessionFetchedCopyWithImpl(
       _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
-      : super(_value, (v) => _then(v as _$SessionFetched));
-
-  @override
-  _$SessionFetched get _value => super._value as _$SessionFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -251,10 +247,10 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function()? logOutPressed,
-    TResult Function()? sessionDeleted,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? sessionDeleted,
   }) {
     return sessionFetched?.call();
   }
@@ -288,10 +284,10 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(LogOutPressed value)? logOutPressed,
-    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(SessionDeleted value)? sessionDeleted,
   }) {
     return sessionFetched?.call(this);
   }
@@ -325,14 +321,11 @@ abstract class _$$LogOutPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$LogOutPressedCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$LogOutPressed>
     implements _$$LogOutPressedCopyWith<$Res> {
   __$$LogOutPressedCopyWithImpl(
       _$LogOutPressed _value, $Res Function(_$LogOutPressed) _then)
-      : super(_value, (v) => _then(v as _$LogOutPressed));
-
-  @override
-  _$LogOutPressed get _value => super._value as _$LogOutPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -368,10 +361,10 @@ class _$LogOutPressed implements LogOutPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function()? logOutPressed,
-    TResult Function()? sessionDeleted,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? sessionDeleted,
   }) {
     return logOutPressed?.call();
   }
@@ -405,10 +398,10 @@ class _$LogOutPressed implements LogOutPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(LogOutPressed value)? logOutPressed,
-    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(SessionDeleted value)? sessionDeleted,
   }) {
     return logOutPressed?.call(this);
   }
@@ -442,14 +435,11 @@ abstract class _$$SessionDeletedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionDeletedCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$SessionDeleted>
     implements _$$SessionDeletedCopyWith<$Res> {
   __$$SessionDeletedCopyWithImpl(
       _$SessionDeleted _value, $Res Function(_$SessionDeleted) _then)
-      : super(_value, (v) => _then(v as _$SessionDeleted));
-
-  @override
-  _$SessionDeleted get _value => super._value as _$SessionDeleted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -485,10 +475,10 @@ class _$SessionDeleted implements SessionDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function()? logOutPressed,
-    TResult Function()? sessionDeleted,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? logOutPressed,
+    TResult? Function()? sessionDeleted,
   }) {
     return sessionDeleted?.call();
   }
@@ -522,10 +512,10 @@ class _$SessionDeleted implements SessionDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(LogOutPressed value)? logOutPressed,
-    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(LogOutPressed value)? logOutPressed,
+    TResult? Function(SessionDeleted value)? sessionDeleted,
   }) {
     return sessionDeleted?.call(this);
   }
@@ -568,7 +558,8 @@ mixin _$SettingsState {
 abstract class $SettingsStateCopyWith<$Res> {
   factory $SettingsStateCopyWith(
           SettingsState value, $Res Function(SettingsState) then) =
-      _$SettingsStateCopyWithImpl<$Res>;
+      _$SettingsStateCopyWithImpl<$Res, SettingsState>;
+  @useResult
   $Res call(
       {Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isLoggedOut,
@@ -580,50 +571,53 @@ abstract class $SettingsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingsStateCopyWithImpl<$Res>
+class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
     implements $SettingsStateCopyWith<$Res> {
   _$SettingsStateCopyWithImpl(this._value, this._then);
 
-  final SettingsState _value;
   // ignore: unused_field
-  final $Res Function(SettingsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failureOption = freezed,
-    Object? isLoggedOut = freezed,
-    Object? isProcessing = freezed,
-    Object? settings = freezed,
-    Object? username = freezed,
+    Object? failureOption = null,
+    Object? isLoggedOut = null,
+    Object? isProcessing = null,
+    Object? settings = null,
+    Object? username = null,
   }) {
     return _then(_value.copyWith(
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isLoggedOut: isLoggedOut == freezed
+      isLoggedOut: null == isLoggedOut
           ? _value.isLoggedOut
           : isLoggedOut // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      settings: settings == freezed
+      settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SettingsCopyWith<$Res> get settings {
     return $SettingsCopyWith<$Res>(_value.settings, (value) {
-      return _then(_value.copyWith(settings: value));
+      return _then(_value.copyWith(settings: value) as $Val);
     });
   }
 }
@@ -635,6 +629,7 @@ abstract class _$$_SettingsStateCopyWith<$Res>
           _$_SettingsState value, $Res Function(_$_SettingsState) then) =
       __$$_SettingsStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isLoggedOut,
@@ -648,41 +643,39 @@ abstract class _$$_SettingsStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_SettingsStateCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_SettingsState>
     implements _$$_SettingsStateCopyWith<$Res> {
   __$$_SettingsStateCopyWithImpl(
       _$_SettingsState _value, $Res Function(_$_SettingsState) _then)
-      : super(_value, (v) => _then(v as _$_SettingsState));
+      : super(_value, _then);
 
-  @override
-  _$_SettingsState get _value => super._value as _$_SettingsState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failureOption = freezed,
-    Object? isLoggedOut = freezed,
-    Object? isProcessing = freezed,
-    Object? settings = freezed,
-    Object? username = freezed,
+    Object? failureOption = null,
+    Object? isLoggedOut = null,
+    Object? isProcessing = null,
+    Object? settings = null,
+    Object? username = null,
   }) {
     return _then(_$_SettingsState(
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isLoggedOut: isLoggedOut == freezed
+      isLoggedOut: null == isLoggedOut
           ? _value.isLoggedOut
           : isLoggedOut // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      settings: settings == freezed
+      settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
@@ -721,27 +714,25 @@ class _$_SettingsState implements _SettingsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SettingsState &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality()
-                .equals(other.isLoggedOut, isLoggedOut) &&
-            const DeepCollectionEquality()
-                .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality().equals(other.settings, settings) &&
-            const DeepCollectionEquality().equals(other.username, username));
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.isLoggedOut, isLoggedOut) ||
+                other.isLoggedOut == isLoggedOut) &&
+            (identical(other.isProcessing, isProcessing) ||
+                other.isProcessing == isProcessing) &&
+            (identical(other.settings, settings) ||
+                other.settings == settings) &&
+            (identical(other.username, username) ||
+                other.username == username));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(isLoggedOut),
-      const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(settings),
-      const DeepCollectionEquality().hash(username));
+  int get hashCode => Object.hash(runtimeType, failureOption, isLoggedOut,
+      isProcessing, settings, username);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>
       __$$_SettingsStateCopyWithImpl<_$_SettingsState>(this, _$identity);
 }

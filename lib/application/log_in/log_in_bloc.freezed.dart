@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'log_in_bloc.dart';
 
@@ -38,21 +38,21 @@ mixin _$LogInEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,24 +102,24 @@ mixin _$LogInEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -151,16 +151,18 @@ mixin _$LogInEvent {
 abstract class $LogInEventCopyWith<$Res> {
   factory $LogInEventCopyWith(
           LogInEvent value, $Res Function(LogInEvent) then) =
-      _$LogInEventCopyWithImpl<$Res>;
+      _$LogInEventCopyWithImpl<$Res, LogInEvent>;
 }
 
 /// @nodoc
-class _$LogInEventCopyWithImpl<$Res> implements $LogInEventCopyWith<$Res> {
+class _$LogInEventCopyWithImpl<$Res, $Val extends LogInEvent>
+    implements $LogInEventCopyWith<$Res> {
   _$LogInEventCopyWithImpl(this._value, this._then);
 
-  final LogInEvent _value;
   // ignore: unused_field
-  final $Res Function(LogInEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -173,16 +175,12 @@ abstract class _$$LogInWithEmailAndPasswordPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$LogInWithEmailAndPasswordPressedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$LogInWithEmailAndPasswordPressed>
     implements _$$LogInWithEmailAndPasswordPressedCopyWith<$Res> {
   __$$LogInWithEmailAndPasswordPressedCopyWithImpl(
       _$LogInWithEmailAndPasswordPressed _value,
       $Res Function(_$LogInWithEmailAndPasswordPressed) _then)
-      : super(_value, (v) => _then(v as _$LogInWithEmailAndPasswordPressed));
-
-  @override
-  _$LogInWithEmailAndPasswordPressed get _value =>
-      super._value as _$LogInWithEmailAndPasswordPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -232,21 +230,21 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return logInWithEmailAndPasswordPressed?.call();
   }
@@ -308,24 +306,24 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return logInWithEmailAndPasswordPressed?.call(this);
   }
@@ -375,16 +373,12 @@ abstract class _$$LoggedInWithEmailAndPasswordCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoggedInWithEmailAndPasswordCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$LoggedInWithEmailAndPassword>
     implements _$$LoggedInWithEmailAndPasswordCopyWith<$Res> {
   __$$LoggedInWithEmailAndPasswordCopyWithImpl(
       _$LoggedInWithEmailAndPassword _value,
       $Res Function(_$LoggedInWithEmailAndPassword) _then)
-      : super(_value, (v) => _then(v as _$LoggedInWithEmailAndPassword));
-
-  @override
-  _$LoggedInWithEmailAndPassword get _value =>
-      super._value as _$LoggedInWithEmailAndPassword;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -433,21 +427,21 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return loggedInWithEmailAndPassword?.call();
   }
@@ -509,24 +503,24 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return loggedInWithEmailAndPassword?.call(this);
   }
@@ -570,27 +564,27 @@ abstract class _$$UserLoadedCopyWith<$Res> {
   factory _$$UserLoadedCopyWith(
           _$UserLoaded value, $Res Function(_$UserLoaded) then) =
       __$$UserLoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$UserLoadedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+class __$$UserLoadedCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UserLoaded>
     implements _$$UserLoadedCopyWith<$Res> {
   __$$UserLoadedCopyWithImpl(
       _$UserLoaded _value, $Res Function(_$UserLoaded) _then)
-      : super(_value, (v) => _then(v as _$UserLoaded));
+      : super(_value, _then);
 
-  @override
-  _$UserLoaded get _value => super._value as _$UserLoaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$UserLoaded(
-      user == freezed
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -598,6 +592,7 @@ class __$$UserLoadedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -623,15 +618,15 @@ class _$UserLoaded implements UserLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLoaded &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
       __$$UserLoadedCopyWithImpl<_$UserLoaded>(this, _$identity);
 
@@ -661,21 +656,21 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return userLoaded?.call(user);
   }
@@ -737,24 +732,24 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return userLoaded?.call(this);
   }
@@ -803,6 +798,7 @@ abstract class _$$UserDetailsSavedCopyWith<$Res> {
   factory _$$UserDetailsSavedCopyWith(
           _$UserDetailsSaved value, $Res Function(_$UserDetailsSaved) then) =
       __$$UserDetailsSavedCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -810,21 +806,19 @@ abstract class _$$UserDetailsSavedCopyWith<$Res> {
 
 /// @nodoc
 class __$$UserDetailsSavedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UserDetailsSaved>
     implements _$$UserDetailsSavedCopyWith<$Res> {
   __$$UserDetailsSavedCopyWithImpl(
       _$UserDetailsSaved _value, $Res Function(_$UserDetailsSaved) _then)
-      : super(_value, (v) => _then(v as _$UserDetailsSaved));
+      : super(_value, _then);
 
-  @override
-  _$UserDetailsSaved get _value => super._value as _$UserDetailsSaved;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$UserDetailsSaved(
-      user == freezed
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -832,6 +826,7 @@ class __$$UserDetailsSavedCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -857,15 +852,15 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserDetailsSaved &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UserDetailsSavedCopyWith<_$UserDetailsSaved> get copyWith =>
       __$$UserDetailsSavedCopyWithImpl<_$UserDetailsSaved>(this, _$identity);
 
@@ -895,21 +890,21 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return userDetailsSaved?.call(user);
   }
@@ -971,24 +966,24 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return userDetailsSaved?.call(this);
   }
@@ -1041,14 +1036,11 @@ abstract class _$$SessionInsertedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionInsertedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$SessionInserted>
     implements _$$SessionInsertedCopyWith<$Res> {
   __$$SessionInsertedCopyWithImpl(
       _$SessionInserted _value, $Res Function(_$SessionInserted) _then)
-      : super(_value, (v) => _then(v as _$SessionInserted));
-
-  @override
-  _$SessionInserted get _value => super._value as _$SessionInserted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1096,21 +1088,21 @@ class _$SessionInserted implements SessionInserted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return sessionInserted?.call();
   }
@@ -1172,24 +1164,24 @@ class _$SessionInserted implements SessionInserted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return sessionInserted?.call(this);
   }
@@ -1233,26 +1225,25 @@ abstract class _$$DefaultCoversLoadedCopyWith<$Res> {
   factory _$$DefaultCoversLoadedCopyWith(_$DefaultCoversLoaded value,
           $Res Function(_$DefaultCoversLoaded) then) =
       __$$DefaultCoversLoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<DefaultCover> defaultCovers});
 }
 
 /// @nodoc
 class __$$DefaultCoversLoadedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$DefaultCoversLoaded>
     implements _$$DefaultCoversLoadedCopyWith<$Res> {
   __$$DefaultCoversLoadedCopyWithImpl(
       _$DefaultCoversLoaded _value, $Res Function(_$DefaultCoversLoaded) _then)
-      : super(_value, (v) => _then(v as _$DefaultCoversLoaded));
+      : super(_value, _then);
 
-  @override
-  _$DefaultCoversLoaded get _value => super._value as _$DefaultCoversLoaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? defaultCovers = freezed,
+    Object? defaultCovers = null,
   }) {
     return _then(_$DefaultCoversLoaded(
-      defaultCovers == freezed
+      null == defaultCovers
           ? _value._defaultCovers
           : defaultCovers // ignore: cast_nullable_to_non_nullable
               as List<DefaultCover>,
@@ -1269,6 +1260,7 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
   final List<DefaultCover> _defaultCovers;
   @override
   List<DefaultCover> get defaultCovers {
+    if (_defaultCovers is EqualUnmodifiableListView) return _defaultCovers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_defaultCovers);
   }
@@ -1293,6 +1285,7 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
       __$$DefaultCoversLoadedCopyWithImpl<_$DefaultCoversLoaded>(
           this, _$identity);
@@ -1323,21 +1316,21 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return defaultCoversLoaded?.call(defaultCovers);
   }
@@ -1399,24 +1392,24 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return defaultCoversLoaded?.call(this);
   }
@@ -1470,15 +1463,11 @@ abstract class _$$LogInWithGooglePressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$LogInWithGooglePressedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$LogInWithGooglePressed>
     implements _$$LogInWithGooglePressedCopyWith<$Res> {
   __$$LogInWithGooglePressedCopyWithImpl(_$LogInWithGooglePressed _value,
       $Res Function(_$LogInWithGooglePressed) _then)
-      : super(_value, (v) => _then(v as _$LogInWithGooglePressed));
-
-  @override
-  _$LogInWithGooglePressed get _value =>
-      super._value as _$LogInWithGooglePressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1526,21 +1515,21 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return logInWithGooglePressed?.call();
   }
@@ -1602,24 +1591,24 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return logInWithGooglePressed?.call(this);
   }
@@ -1667,14 +1656,11 @@ abstract class _$$LoggedInWithGoogleCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoggedInWithGoogleCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$LoggedInWithGoogle>
     implements _$$LoggedInWithGoogleCopyWith<$Res> {
   __$$LoggedInWithGoogleCopyWithImpl(
       _$LoggedInWithGoogle _value, $Res Function(_$LoggedInWithGoogle) _then)
-      : super(_value, (v) => _then(v as _$LoggedInWithGoogle));
-
-  @override
-  _$LoggedInWithGoogle get _value => super._value as _$LoggedInWithGoogle;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1722,21 +1708,21 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return loggedInWithGoogle?.call();
   }
@@ -1798,24 +1784,24 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return loggedInWithGoogle?.call(this);
   }
@@ -1859,27 +1845,27 @@ abstract class _$$UserNotFoundCopyWith<$Res> {
   factory _$$UserNotFoundCopyWith(
           _$UserNotFound value, $Res Function(_$UserNotFound) then) =
       __$$UserNotFoundCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$UserNotFoundCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+class __$$UserNotFoundCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UserNotFound>
     implements _$$UserNotFoundCopyWith<$Res> {
   __$$UserNotFoundCopyWithImpl(
       _$UserNotFound _value, $Res Function(_$UserNotFound) _then)
-      : super(_value, (v) => _then(v as _$UserNotFound));
+      : super(_value, _then);
 
-  @override
-  _$UserNotFound get _value => super._value as _$UserNotFound;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$UserNotFound(
-      user == freezed
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -1887,6 +1873,7 @@ class __$$UserNotFoundCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -1912,15 +1899,15 @@ class _$UserNotFound implements UserNotFound {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserNotFound &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UserNotFoundCopyWith<_$UserNotFound> get copyWith =>
       __$$UserNotFoundCopyWithImpl<_$UserNotFound>(this, _$identity);
 
@@ -1950,21 +1937,21 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return userNotFound?.call(user);
   }
@@ -2026,24 +2013,24 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return userNotFound?.call(this);
   }
@@ -2093,6 +2080,7 @@ abstract class _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
           _$UsernameAvailabilityConfirmed value,
           $Res Function(_$UsernameAvailabilityConfirmed) then) =
       __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -2100,23 +2088,20 @@ abstract class _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
 
 /// @nodoc
 class __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UsernameAvailabilityConfirmed>
     implements _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
   __$$UsernameAvailabilityConfirmedCopyWithImpl(
       _$UsernameAvailabilityConfirmed _value,
       $Res Function(_$UsernameAvailabilityConfirmed) _then)
-      : super(_value, (v) => _then(v as _$UsernameAvailabilityConfirmed));
+      : super(_value, _then);
 
-  @override
-  _$UsernameAvailabilityConfirmed get _value =>
-      super._value as _$UsernameAvailabilityConfirmed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$UsernameAvailabilityConfirmed(
-      user == freezed
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -2124,6 +2109,7 @@ class __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -2149,15 +2135,15 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsernameAvailabilityConfirmed &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UsernameAvailabilityConfirmedCopyWith<_$UsernameAvailabilityConfirmed>
       get copyWith => __$$UsernameAvailabilityConfirmedCopyWithImpl<
           _$UsernameAvailabilityConfirmed>(this, _$identity);
@@ -2188,21 +2174,21 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return usernameAvailabilityConfirmed?.call(user);
   }
@@ -2264,24 +2250,24 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return usernameAvailabilityConfirmed?.call(this);
   }
@@ -2331,27 +2317,27 @@ abstract class _$$UsernameSavedCopyWith<$Res> {
   factory _$$UsernameSavedCopyWith(
           _$UsernameSaved value, $Res Function(_$UsernameSaved) then) =
       __$$UsernameSavedCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$UsernameSavedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+class __$$UsernameSavedCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UsernameSaved>
     implements _$$UsernameSavedCopyWith<$Res> {
   __$$UsernameSavedCopyWithImpl(
       _$UsernameSaved _value, $Res Function(_$UsernameSaved) _then)
-      : super(_value, (v) => _then(v as _$UsernameSaved));
+      : super(_value, _then);
 
-  @override
-  _$UsernameSaved get _value => super._value as _$UsernameSaved;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$UsernameSaved(
-      user == freezed
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -2359,6 +2345,7 @@ class __$$UsernameSavedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -2384,15 +2371,15 @@ class _$UsernameSaved implements UsernameSaved {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsernameSaved &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UsernameSavedCopyWith<_$UsernameSaved> get copyWith =>
       __$$UsernameSavedCopyWithImpl<_$UsernameSaved>(this, _$identity);
 
@@ -2422,21 +2409,21 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return usernameSaved?.call(user);
   }
@@ -2498,24 +2485,24 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return usernameSaved?.call(this);
   }
@@ -2564,6 +2551,7 @@ abstract class _$$CustomUsernameGeneratedCopyWith<$Res> {
   factory _$$CustomUsernameGeneratedCopyWith(_$CustomUsernameGenerated value,
           $Res Function(_$CustomUsernameGenerated) then) =
       __$$CustomUsernameGeneratedCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -2571,22 +2559,19 @@ abstract class _$$CustomUsernameGeneratedCopyWith<$Res> {
 
 /// @nodoc
 class __$$CustomUsernameGeneratedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$CustomUsernameGenerated>
     implements _$$CustomUsernameGeneratedCopyWith<$Res> {
   __$$CustomUsernameGeneratedCopyWithImpl(_$CustomUsernameGenerated _value,
       $Res Function(_$CustomUsernameGenerated) _then)
-      : super(_value, (v) => _then(v as _$CustomUsernameGenerated));
+      : super(_value, _then);
 
-  @override
-  _$CustomUsernameGenerated get _value =>
-      super._value as _$CustomUsernameGenerated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$CustomUsernameGenerated(
-      user == freezed
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -2594,6 +2579,7 @@ class __$$CustomUsernameGeneratedCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -2619,15 +2605,15 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomUsernameGenerated &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$CustomUsernameGeneratedCopyWith<_$CustomUsernameGenerated> get copyWith =>
       __$$CustomUsernameGeneratedCopyWithImpl<_$CustomUsernameGenerated>(
           this, _$identity);
@@ -2658,21 +2644,21 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return customUsernameGenerated?.call(user);
   }
@@ -2734,24 +2720,24 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return customUsernameGenerated?.call(this);
   }
@@ -2805,15 +2791,11 @@ abstract class _$$CredentialAlreadyInUseCopyWith<$Res> {
 
 /// @nodoc
 class __$$CredentialAlreadyInUseCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$CredentialAlreadyInUse>
     implements _$$CredentialAlreadyInUseCopyWith<$Res> {
   __$$CredentialAlreadyInUseCopyWithImpl(_$CredentialAlreadyInUse _value,
       $Res Function(_$CredentialAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as _$CredentialAlreadyInUse));
-
-  @override
-  _$CredentialAlreadyInUse get _value =>
-      super._value as _$CredentialAlreadyInUse;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2861,21 +2843,21 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return credentialAlreadyInUse?.call();
   }
@@ -2937,24 +2919,24 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return credentialAlreadyInUse?.call(this);
   }
@@ -2998,26 +2980,25 @@ abstract class _$$EmailAddressChangedCopyWith<$Res> {
   factory _$$EmailAddressChangedCopyWith(_$EmailAddressChanged value,
           $Res Function(_$EmailAddressChanged) then) =
       __$$EmailAddressChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String emailAddressStr});
 }
 
 /// @nodoc
 class __$$EmailAddressChangedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$EmailAddressChanged>
     implements _$$EmailAddressChangedCopyWith<$Res> {
   __$$EmailAddressChangedCopyWithImpl(
       _$EmailAddressChanged _value, $Res Function(_$EmailAddressChanged) _then)
-      : super(_value, (v) => _then(v as _$EmailAddressChanged));
+      : super(_value, _then);
 
-  @override
-  _$EmailAddressChanged get _value => super._value as _$EmailAddressChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailAddressStr = freezed,
+    Object? emailAddressStr = null,
   }) {
     return _then(_$EmailAddressChanged(
-      emailAddressStr == freezed
+      null == emailAddressStr
           ? _value.emailAddressStr
           : emailAddressStr // ignore: cast_nullable_to_non_nullable
               as String,
@@ -3043,16 +3024,16 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmailAddressChanged &&
-            const DeepCollectionEquality()
-                .equals(other.emailAddressStr, emailAddressStr));
+            (identical(other.emailAddressStr, emailAddressStr) ||
+                other.emailAddressStr == emailAddressStr));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(emailAddressStr));
+  int get hashCode => Object.hash(runtimeType, emailAddressStr);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$EmailAddressChangedCopyWith<_$EmailAddressChanged> get copyWith =>
       __$$EmailAddressChangedCopyWithImpl<_$EmailAddressChanged>(
           this, _$identity);
@@ -3083,21 +3064,21 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return emailAddressChanged?.call(emailAddressStr);
   }
@@ -3159,24 +3140,24 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return emailAddressChanged?.call(this);
   }
@@ -3226,26 +3207,25 @@ abstract class _$$PasswordChangedCopyWith<$Res> {
   factory _$$PasswordChangedCopyWith(
           _$PasswordChanged value, $Res Function(_$PasswordChanged) then) =
       __$$PasswordChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String passwordStr});
 }
 
 /// @nodoc
 class __$$PasswordChangedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$PasswordChanged>
     implements _$$PasswordChangedCopyWith<$Res> {
   __$$PasswordChangedCopyWithImpl(
       _$PasswordChanged _value, $Res Function(_$PasswordChanged) _then)
-      : super(_value, (v) => _then(v as _$PasswordChanged));
+      : super(_value, _then);
 
-  @override
-  _$PasswordChanged get _value => super._value as _$PasswordChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? passwordStr = freezed,
+    Object? passwordStr = null,
   }) {
     return _then(_$PasswordChanged(
-      passwordStr == freezed
+      null == passwordStr
           ? _value.passwordStr
           : passwordStr // ignore: cast_nullable_to_non_nullable
               as String,
@@ -3271,16 +3251,16 @@ class _$PasswordChanged implements PasswordChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PasswordChanged &&
-            const DeepCollectionEquality()
-                .equals(other.passwordStr, passwordStr));
+            (identical(other.passwordStr, passwordStr) ||
+                other.passwordStr == passwordStr));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(passwordStr));
+  int get hashCode => Object.hash(runtimeType, passwordStr);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
       __$$PasswordChangedCopyWithImpl<_$PasswordChanged>(this, _$identity);
 
@@ -3310,21 +3290,21 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logInWithEmailAndPasswordPressed,
-    TResult Function()? loggedInWithEmailAndPassword,
-    TResult Function(User user)? userLoaded,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? sessionInserted,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? logInWithGooglePressed,
-    TResult Function()? loggedInWithGoogle,
-    TResult Function(User user)? userNotFound,
-    TResult Function(User user)? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(User user)? customUsernameGenerated,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult? Function()? logInWithEmailAndPasswordPressed,
+    TResult? Function()? loggedInWithEmailAndPassword,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? logInWithGooglePressed,
+    TResult? Function()? loggedInWithGoogle,
+    TResult? Function(User user)? userNotFound,
+    TResult? Function(User user)? usernameAvailabilityConfirmed,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? customUsernameGenerated,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
   }) {
     return passwordChanged?.call(passwordStr);
   }
@@ -3386,24 +3366,24 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LogInWithEmailAndPasswordPressed value)?
+    TResult? Function(LogInWithEmailAndPasswordPressed value)?
         logInWithEmailAndPasswordPressed,
-    TResult Function(LoggedInWithEmailAndPassword value)?
+    TResult? Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(SessionInserted value)? sessionInserted,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
-    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult? Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
   }) {
     return passwordChanged?.call(this);
   }
@@ -3466,7 +3446,8 @@ mixin _$LogInState {
 abstract class $LogInStateCopyWith<$Res> {
   factory $LogInStateCopyWith(
           LogInState value, $Res Function(LogInState) then) =
-      _$LogInStateCopyWithImpl<$Res>;
+      _$LogInStateCopyWithImpl<$Res, LogInState>;
+  @useResult
   $Res call(
       {EmailAddress emailAddress,
       Option<Result<None<Object>, CoreFailure>> failureOption,
@@ -3477,48 +3458,51 @@ abstract class $LogInStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
+class _$LogInStateCopyWithImpl<$Res, $Val extends LogInState>
+    implements $LogInStateCopyWith<$Res> {
   _$LogInStateCopyWithImpl(this._value, this._then);
 
-  final LogInState _value;
   // ignore: unused_field
-  final $Res Function(LogInState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailAddress = freezed,
-    Object? failureOption = freezed,
-    Object? isAuthenticated = freezed,
-    Object? isProcessing = freezed,
-    Object? password = freezed,
-    Object? showErrorMessages = freezed,
+    Object? emailAddress = null,
+    Object? failureOption = null,
+    Object? isAuthenticated = null,
+    Object? isProcessing = null,
+    Object? password = null,
+    Object? showErrorMessages = null,
   }) {
     return _then(_value.copyWith(
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isAuthenticated: isAuthenticated == freezed
+      isAuthenticated: null == isAuthenticated
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -3529,6 +3513,7 @@ abstract class _$$_LogInStateCopyWith<$Res>
           _$_LogInState value, $Res Function(_$_LogInState) then) =
       __$$_LogInStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {EmailAddress emailAddress,
       Option<Result<None<Object>, CoreFailure>> failureOption,
@@ -3539,46 +3524,45 @@ abstract class _$$_LogInStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
+class __$$_LogInStateCopyWithImpl<$Res>
+    extends _$LogInStateCopyWithImpl<$Res, _$_LogInState>
     implements _$$_LogInStateCopyWith<$Res> {
   __$$_LogInStateCopyWithImpl(
       _$_LogInState _value, $Res Function(_$_LogInState) _then)
-      : super(_value, (v) => _then(v as _$_LogInState));
+      : super(_value, _then);
 
-  @override
-  _$_LogInState get _value => super._value as _$_LogInState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailAddress = freezed,
-    Object? failureOption = freezed,
-    Object? isAuthenticated = freezed,
-    Object? isProcessing = freezed,
-    Object? password = freezed,
-    Object? showErrorMessages = freezed,
+    Object? emailAddress = null,
+    Object? failureOption = null,
+    Object? isAuthenticated = null,
+    Object? isProcessing = null,
+    Object? password = null,
+    Object? showErrorMessages = null,
   }) {
     return _then(_$_LogInState(
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isAuthenticated: isAuthenticated == freezed
+      isAuthenticated: null == isAuthenticated
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -3620,31 +3604,27 @@ class _$_LogInState implements _LogInState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LogInState &&
-            const DeepCollectionEquality()
-                .equals(other.emailAddress, emailAddress) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality()
-                .equals(other.isAuthenticated, isAuthenticated) &&
-            const DeepCollectionEquality()
-                .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages));
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.isAuthenticated, isAuthenticated) ||
+                other.isAuthenticated == isAuthenticated) &&
+            (identical(other.isProcessing, isProcessing) ||
+                other.isProcessing == isProcessing) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(emailAddress),
-      const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(isAuthenticated),
-      const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(showErrorMessages));
+  int get hashCode => Object.hash(runtimeType, emailAddress, failureOption,
+      isAuthenticated, isProcessing, password, showErrorMessages);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LogInStateCopyWith<_$_LogInState> get copyWith =>
       __$$_LogInStateCopyWithImpl<_$_LogInState>(this, _$identity);
 }

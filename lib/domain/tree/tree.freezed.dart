@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tree.dart';
 
@@ -37,7 +37,8 @@ mixin _$Tree {
 /// @nodoc
 abstract class $TreeCopyWith<$Res> {
   factory $TreeCopyWith(Tree value, $Res Function(Tree) then) =
-      _$TreeCopyWithImpl<$Res>;
+      _$TreeCopyWithImpl<$Res, Tree>;
+  @useResult
   $Res call(
       {UniqueID authorUID,
       int bookmarksCount,
@@ -55,83 +56,86 @@ abstract class $TreeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TreeCopyWithImpl<$Res> implements $TreeCopyWith<$Res> {
+class _$TreeCopyWithImpl<$Res, $Val extends Tree>
+    implements $TreeCopyWith<$Res> {
   _$TreeCopyWithImpl(this._value, this._then);
 
-  final Tree _value;
   // ignore: unused_field
-  final $Res Function(Tree) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? likesCount = null,
     Object? subtitle = freezed,
-    Object? synopsis = freezed,
-    Object? title = freezed,
-    Object? uid = freezed,
-    Object? viewsCount = freezed,
+    Object? synopsis = null,
+    Object? title = null,
+    Object? uid = null,
+    Object? viewsCount = null,
   }) {
     return _then(_value.copyWith(
-      authorUID: authorUID == freezed
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as CoverURL,
-      genres: genres == freezed
+      genres: null == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: subtitle == freezed
+      subtitle: freezed == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as Subtitle?,
-      synopsis: synopsis == freezed
+      synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as Synopsis,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Title,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -140,6 +144,7 @@ abstract class _$$_TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
   factory _$$_TreeCopyWith(_$_Tree value, $Res Function(_$_Tree) then) =
       __$$_TreeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {UniqueID authorUID,
       int bookmarksCount,
@@ -157,80 +162,78 @@ abstract class _$$_TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res>
+class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res, _$_Tree>
     implements _$$_TreeCopyWith<$Res> {
   __$$_TreeCopyWithImpl(_$_Tree _value, $Res Function(_$_Tree) _then)
-      : super(_value, (v) => _then(v as _$_Tree));
+      : super(_value, _then);
 
-  @override
-  _$_Tree get _value => super._value as _$_Tree;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? likesCount = null,
     Object? subtitle = freezed,
-    Object? synopsis = freezed,
-    Object? title = freezed,
-    Object? uid = freezed,
-    Object? viewsCount = freezed,
+    Object? synopsis = null,
+    Object? title = null,
+    Object? uid = null,
+    Object? viewsCount = null,
   }) {
     return _then(_$_Tree(
-      authorUID: authorUID == freezed
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as CoverURL,
-      genres: genres == freezed
+      genres: null == genres
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: subtitle == freezed
+      subtitle: freezed == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as Subtitle?,
-      synopsis: synopsis == freezed
+      synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as Synopsis,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Title,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
@@ -266,6 +269,7 @@ class _$_Tree implements _Tree {
   final List<Genre> _genres;
   @override
   List<Genre> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_genres);
   }
@@ -299,44 +303,50 @@ class _$_Tree implements _Tree {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Tree &&
-            const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
-            const DeepCollectionEquality()
-                .equals(other.bookmarksCount, bookmarksCount) &&
-            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
+            (identical(other.authorUID, authorUID) ||
+                other.authorUID == authorUID) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                other.bookmarksCount == bookmarksCount) &&
+            (identical(other.coverURL, coverURL) ||
+                other.coverURL == coverURL) &&
             const DeepCollectionEquality().equals(other._genres, _genres) &&
-            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
-            const DeepCollectionEquality()
-                .equals(other.isPublished, isPublished) &&
-            const DeepCollectionEquality().equals(other.language, language) &&
-            const DeepCollectionEquality()
-                .equals(other.likesCount, likesCount) &&
-            const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
-            const DeepCollectionEquality().equals(other.synopsis, synopsis) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality()
-                .equals(other.viewsCount, viewsCount));
+            (identical(other.isNSFW, isNSFW) || other.isNSFW == isNSFW) &&
+            (identical(other.isPublished, isPublished) ||
+                other.isPublished == isPublished) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.likesCount, likesCount) ||
+                other.likesCount == likesCount) &&
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle) &&
+            (identical(other.synopsis, synopsis) ||
+                other.synopsis == synopsis) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.viewsCount, viewsCount) ||
+                other.viewsCount == viewsCount));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(authorUID),
-      const DeepCollectionEquality().hash(bookmarksCount),
-      const DeepCollectionEquality().hash(coverURL),
+      authorUID,
+      bookmarksCount,
+      coverURL,
       const DeepCollectionEquality().hash(_genres),
-      const DeepCollectionEquality().hash(isNSFW),
-      const DeepCollectionEquality().hash(isPublished),
-      const DeepCollectionEquality().hash(language),
-      const DeepCollectionEquality().hash(likesCount),
-      const DeepCollectionEquality().hash(subtitle),
-      const DeepCollectionEquality().hash(synopsis),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(viewsCount));
+      isNSFW,
+      isPublished,
+      language,
+      likesCount,
+      subtitle,
+      synopsis,
+      title,
+      uid,
+      viewsCount);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TreeCopyWith<_$_Tree> get copyWith =>
       __$$_TreeCopyWithImpl<_$_Tree>(this, _$identity);
 }

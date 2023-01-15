@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user_dto.dart';
 
@@ -34,7 +34,8 @@ mixin _$UserDTO {
 /// @nodoc
 abstract class $UserDTOCopyWith<$Res> {
   factory $UserDTOCopyWith(UserDTO value, $Res Function(UserDTO) then) =
-      _$UserDTOCopyWithImpl<$Res>;
+      _$UserDTOCopyWithImpl<$Res, UserDTO>;
+  @useResult
   $Res call(
       {String emailAddress,
       String uid,
@@ -43,38 +44,41 @@ abstract class $UserDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserDTOCopyWithImpl<$Res> implements $UserDTOCopyWith<$Res> {
+class _$UserDTOCopyWithImpl<$Res, $Val extends UserDTO>
+    implements $UserDTOCopyWith<$Res> {
   _$UserDTOCopyWithImpl(this._value, this._then);
 
-  final UserDTO _value;
   // ignore: unused_field
-  final $Res Function(UserDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailAddress = freezed,
-    Object? uid = freezed,
-    Object? updatedAt = freezed,
-    Object? username = freezed,
+    Object? emailAddress = null,
+    Object? uid = null,
+    Object? updatedAt = null,
+    Object? username = null,
   }) {
     return _then(_value.copyWith(
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -84,6 +88,7 @@ abstract class _$$_UserDTOCopyWith<$Res> implements $UserDTOCopyWith<$Res> {
           _$_UserDTO value, $Res Function(_$_UserDTO) then) =
       __$$_UserDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String emailAddress,
       String uid,
@@ -92,35 +97,34 @@ abstract class _$$_UserDTOCopyWith<$Res> implements $UserDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserDTOCopyWithImpl<$Res> extends _$UserDTOCopyWithImpl<$Res>
+class __$$_UserDTOCopyWithImpl<$Res>
+    extends _$UserDTOCopyWithImpl<$Res, _$_UserDTO>
     implements _$$_UserDTOCopyWith<$Res> {
   __$$_UserDTOCopyWithImpl(_$_UserDTO _value, $Res Function(_$_UserDTO) _then)
-      : super(_value, (v) => _then(v as _$_UserDTO));
+      : super(_value, _then);
 
-  @override
-  _$_UserDTO get _value => super._value as _$_UserDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailAddress = freezed,
-    Object? uid = freezed,
-    Object? updatedAt = freezed,
-    Object? username = freezed,
+    Object? emailAddress = null,
+    Object? uid = null,
+    Object? updatedAt = null,
+    Object? username = null,
   }) {
     return _then(_$_UserDTO(
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
@@ -160,24 +164,23 @@ class _$_UserDTO implements _UserDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserDTO &&
-            const DeepCollectionEquality()
-                .equals(other.emailAddress, emailAddress) &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality().equals(other.username, username));
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.username, username) ||
+                other.username == username));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(emailAddress),
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(username));
+  int get hashCode =>
+      Object.hash(runtimeType, emailAddress, uid, updatedAt, username);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UserDTOCopyWith<_$_UserDTO> get copyWith =>
       __$$_UserDTOCopyWithImpl<_$_UserDTO>(this, _$identity);
 

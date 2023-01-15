@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'typewriter_tree_bloc.dart';
 
@@ -36,20 +36,20 @@ mixin _$TypewriterTreeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,20 +91,20 @@ mixin _$TypewriterTreeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -132,17 +132,18 @@ mixin _$TypewriterTreeEvent {
 abstract class $TypewriterTreeEventCopyWith<$Res> {
   factory $TypewriterTreeEventCopyWith(
           TypewriterTreeEvent value, $Res Function(TypewriterTreeEvent) then) =
-      _$TypewriterTreeEventCopyWithImpl<$Res>;
+      _$TypewriterTreeEventCopyWithImpl<$Res, TypewriterTreeEvent>;
 }
 
 /// @nodoc
-class _$TypewriterTreeEventCopyWithImpl<$Res>
+class _$TypewriterTreeEventCopyWithImpl<$Res, $Val extends TypewriterTreeEvent>
     implements $TypewriterTreeEventCopyWith<$Res> {
   _$TypewriterTreeEventCopyWithImpl(this._value, this._then);
 
-  final TypewriterTreeEvent _value;
   // ignore: unused_field
-  final $Res Function(TypewriterTreeEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -154,14 +155,11 @@ abstract class _$$LaunchAsNewTreeCopyWith<$Res> {
 
 /// @nodoc
 class __$$LaunchAsNewTreeCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$LaunchAsNewTree>
     implements _$$LaunchAsNewTreeCopyWith<$Res> {
   __$$LaunchAsNewTreeCopyWithImpl(
       _$LaunchAsNewTree _value, $Res Function(_$LaunchAsNewTree) _then)
-      : super(_value, (v) => _then(v as _$LaunchAsNewTree));
-
-  @override
-  _$LaunchAsNewTree get _value => super._value as _$LaunchAsNewTree;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -207,20 +205,20 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return launchAsNewTree?.call();
   }
@@ -274,20 +272,20 @@ class _$LaunchAsNewTree implements LaunchAsNewTree {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return launchAsNewTree?.call(this);
   }
@@ -331,14 +329,11 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$SessionFetched>
     implements _$$SessionFetchedCopyWith<$Res> {
   __$$SessionFetchedCopyWithImpl(
       _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
-      : super(_value, (v) => _then(v as _$SessionFetched));
-
-  @override
-  _$SessionFetched get _value => super._value as _$SessionFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -384,20 +379,20 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return sessionFetched?.call();
   }
@@ -451,20 +446,20 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return sessionFetched?.call(this);
   }
@@ -508,14 +503,11 @@ abstract class _$$AddCoverPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$AddCoverPressedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$AddCoverPressed>
     implements _$$AddCoverPressedCopyWith<$Res> {
   __$$AddCoverPressedCopyWithImpl(
       _$AddCoverPressed _value, $Res Function(_$AddCoverPressed) _then)
-      : super(_value, (v) => _then(v as _$AddCoverPressed));
-
-  @override
-  _$AddCoverPressed get _value => super._value as _$AddCoverPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -561,20 +553,20 @@ class _$AddCoverPressed implements AddCoverPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return addCoverPressed?.call();
   }
@@ -628,20 +620,20 @@ class _$AddCoverPressed implements AddCoverPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return addCoverPressed?.call(this);
   }
@@ -685,14 +677,11 @@ abstract class _$$DeleteButtonPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$DeleteButtonPressedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$DeleteButtonPressed>
     implements _$$DeleteButtonPressedCopyWith<$Res> {
   __$$DeleteButtonPressedCopyWithImpl(
       _$DeleteButtonPressed _value, $Res Function(_$DeleteButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$DeleteButtonPressed));
-
-  @override
-  _$DeleteButtonPressed get _value => super._value as _$DeleteButtonPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -738,20 +727,20 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return deleteButtonPressed?.call();
   }
@@ -805,20 +794,20 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return deleteButtonPressed?.call(this);
   }
@@ -858,26 +847,25 @@ abstract class _$$GenreAddedCopyWith<$Res> {
   factory _$$GenreAddedCopyWith(
           _$GenreAdded value, $Res Function(_$GenreAdded) then) =
       __$$GenreAddedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String genre});
 }
 
 /// @nodoc
 class __$$GenreAddedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$GenreAdded>
     implements _$$GenreAddedCopyWith<$Res> {
   __$$GenreAddedCopyWithImpl(
       _$GenreAdded _value, $Res Function(_$GenreAdded) _then)
-      : super(_value, (v) => _then(v as _$GenreAdded));
+      : super(_value, _then);
 
-  @override
-  _$GenreAdded get _value => super._value as _$GenreAdded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? genre = freezed,
+    Object? genre = null,
   }) {
     return _then(_$GenreAdded(
-      genre == freezed
+      null == genre
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
               as String,
@@ -903,15 +891,15 @@ class _$GenreAdded implements GenreAdded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GenreAdded &&
-            const DeepCollectionEquality().equals(other.genre, genre));
+            (identical(other.genre, genre) || other.genre == genre));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(genre));
+  int get hashCode => Object.hash(runtimeType, genre);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$GenreAddedCopyWith<_$GenreAdded> get copyWith =>
       __$$GenreAddedCopyWithImpl<_$GenreAdded>(this, _$identity);
 
@@ -939,20 +927,20 @@ class _$GenreAdded implements GenreAdded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return genreAdded?.call(genre);
   }
@@ -1006,20 +994,20 @@ class _$GenreAdded implements GenreAdded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return genreAdded?.call(this);
   }
@@ -1064,26 +1052,25 @@ abstract class _$$GenreRemovedCopyWith<$Res> {
   factory _$$GenreRemovedCopyWith(
           _$GenreRemoved value, $Res Function(_$GenreRemoved) then) =
       __$$GenreRemovedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String genre});
 }
 
 /// @nodoc
 class __$$GenreRemovedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$GenreRemoved>
     implements _$$GenreRemovedCopyWith<$Res> {
   __$$GenreRemovedCopyWithImpl(
       _$GenreRemoved _value, $Res Function(_$GenreRemoved) _then)
-      : super(_value, (v) => _then(v as _$GenreRemoved));
+      : super(_value, _then);
 
-  @override
-  _$GenreRemoved get _value => super._value as _$GenreRemoved;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? genre = freezed,
+    Object? genre = null,
   }) {
     return _then(_$GenreRemoved(
-      genre == freezed
+      null == genre
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1109,15 +1096,15 @@ class _$GenreRemoved implements GenreRemoved {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GenreRemoved &&
-            const DeepCollectionEquality().equals(other.genre, genre));
+            (identical(other.genre, genre) || other.genre == genre));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(genre));
+  int get hashCode => Object.hash(runtimeType, genre);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$GenreRemovedCopyWith<_$GenreRemoved> get copyWith =>
       __$$GenreRemovedCopyWithImpl<_$GenreRemoved>(this, _$identity);
 
@@ -1145,20 +1132,20 @@ class _$GenreRemoved implements GenreRemoved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return genreRemoved?.call(genre);
   }
@@ -1212,20 +1199,20 @@ class _$GenreRemoved implements GenreRemoved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return genreRemoved?.call(this);
   }
@@ -1270,26 +1257,25 @@ abstract class _$$IsNSFWChangedCopyWith<$Res> {
   factory _$$IsNSFWChangedCopyWith(
           _$IsNSFWChanged value, $Res Function(_$IsNSFWChanged) then) =
       __$$IsNSFWChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isNSFW});
 }
 
 /// @nodoc
 class __$$IsNSFWChangedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$IsNSFWChanged>
     implements _$$IsNSFWChangedCopyWith<$Res> {
   __$$IsNSFWChangedCopyWithImpl(
       _$IsNSFWChanged _value, $Res Function(_$IsNSFWChanged) _then)
-      : super(_value, (v) => _then(v as _$IsNSFWChanged));
+      : super(_value, _then);
 
-  @override
-  _$IsNSFWChanged get _value => super._value as _$IsNSFWChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isNSFW = freezed,
+    Object? isNSFW = null,
   }) {
     return _then(_$IsNSFWChanged(
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1315,15 +1301,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IsNSFWChanged &&
-            const DeepCollectionEquality().equals(other.isNSFW, isNSFW));
+            (identical(other.isNSFW, isNSFW) || other.isNSFW == isNSFW));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isNSFW));
+  int get hashCode => Object.hash(runtimeType, isNSFW);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$IsNSFWChangedCopyWith<_$IsNSFWChanged> get copyWith =>
       __$$IsNSFWChangedCopyWithImpl<_$IsNSFWChanged>(this, _$identity);
 
@@ -1351,20 +1337,20 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return isNSFWChanged?.call(isNSFW);
   }
@@ -1418,20 +1404,20 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return isNSFWChanged?.call(this);
   }
@@ -1476,26 +1462,25 @@ abstract class _$$LanguageSelectedCopyWith<$Res> {
   factory _$$LanguageSelectedCopyWith(
           _$LanguageSelected value, $Res Function(_$LanguageSelected) then) =
       __$$LanguageSelectedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String language});
 }
 
 /// @nodoc
 class __$$LanguageSelectedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$LanguageSelected>
     implements _$$LanguageSelectedCopyWith<$Res> {
   __$$LanguageSelectedCopyWithImpl(
       _$LanguageSelected _value, $Res Function(_$LanguageSelected) _then)
-      : super(_value, (v) => _then(v as _$LanguageSelected));
+      : super(_value, _then);
 
-  @override
-  _$LanguageSelected get _value => super._value as _$LanguageSelected;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? language = freezed,
+    Object? language = null,
   }) {
     return _then(_$LanguageSelected(
-      language == freezed
+      null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1521,15 +1506,16 @@ class _$LanguageSelected implements LanguageSelected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LanguageSelected &&
-            const DeepCollectionEquality().equals(other.language, language));
+            (identical(other.language, language) ||
+                other.language == language));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(language));
+  int get hashCode => Object.hash(runtimeType, language);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LanguageSelectedCopyWith<_$LanguageSelected> get copyWith =>
       __$$LanguageSelectedCopyWithImpl<_$LanguageSelected>(this, _$identity);
 
@@ -1557,20 +1543,20 @@ class _$LanguageSelected implements LanguageSelected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return languageSelected?.call(language);
   }
@@ -1624,20 +1610,20 @@ class _$LanguageSelected implements LanguageSelected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return languageSelected?.call(this);
   }
@@ -1682,6 +1668,7 @@ abstract class _$$LaunchWithUIDCopyWith<$Res> {
   factory _$$LaunchWithUIDCopyWith(
           _$LaunchWithUID value, $Res Function(_$LaunchWithUID) then) =
       __$$LaunchWithUIDCopyWithImpl<$Res>;
+  @useResult
   $Res call({UniqueID uid, Tree? tree});
 
   $TreeCopyWith<$Res>? get tree;
@@ -1689,26 +1676,24 @@ abstract class _$$LaunchWithUIDCopyWith<$Res> {
 
 /// @nodoc
 class __$$LaunchWithUIDCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$LaunchWithUID>
     implements _$$LaunchWithUIDCopyWith<$Res> {
   __$$LaunchWithUIDCopyWithImpl(
       _$LaunchWithUID _value, $Res Function(_$LaunchWithUID) _then)
-      : super(_value, (v) => _then(v as _$LaunchWithUID));
+      : super(_value, _then);
 
-  @override
-  _$LaunchWithUID get _value => super._value as _$LaunchWithUID;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uid = null,
     Object? tree = freezed,
   }) {
     return _then(_$LaunchWithUID(
-      uid == freezed
+      null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      tree: tree == freezed
+      tree: freezed == tree
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree?,
@@ -1716,6 +1701,7 @@ class __$$LaunchWithUIDCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TreeCopyWith<$Res>? get tree {
     if (_value.tree == null) {
       return null;
@@ -1747,18 +1733,16 @@ class _$LaunchWithUID implements LaunchWithUID {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LaunchWithUID &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.tree, tree));
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.tree, tree) || other.tree == tree));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(tree));
+  int get hashCode => Object.hash(runtimeType, uid, tree);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       __$$LaunchWithUIDCopyWithImpl<_$LaunchWithUID>(this, _$identity);
 
@@ -1786,20 +1770,20 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return launchWithUID?.call(uid, tree);
   }
@@ -1853,20 +1837,20 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return launchWithUID?.call(this);
   }
@@ -1917,14 +1901,11 @@ abstract class _$$PublishButtonPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$PublishButtonPressedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$PublishButtonPressed>
     implements _$$PublishButtonPressedCopyWith<$Res> {
   __$$PublishButtonPressedCopyWithImpl(_$PublishButtonPressed _value,
       $Res Function(_$PublishButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$PublishButtonPressed));
-
-  @override
-  _$PublishButtonPressed get _value => super._value as _$PublishButtonPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1970,20 +1951,20 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return publishButtonPressed?.call();
   }
@@ -2037,20 +2018,20 @@ class _$PublishButtonPressed implements PublishButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return publishButtonPressed?.call(this);
   }
@@ -2094,14 +2075,11 @@ abstract class _$$SaveButtonPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SaveButtonPressedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$SaveButtonPressed>
     implements _$$SaveButtonPressedCopyWith<$Res> {
   __$$SaveButtonPressedCopyWithImpl(
       _$SaveButtonPressed _value, $Res Function(_$SaveButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$SaveButtonPressed));
-
-  @override
-  _$SaveButtonPressed get _value => super._value as _$SaveButtonPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2147,20 +2125,20 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return saveButtonPressed?.call();
   }
@@ -2214,20 +2192,20 @@ class _$SaveButtonPressed implements SaveButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return saveButtonPressed?.call(this);
   }
@@ -2267,26 +2245,25 @@ abstract class _$$SubtitleChangedCopyWith<$Res> {
   factory _$$SubtitleChangedCopyWith(
           _$SubtitleChanged value, $Res Function(_$SubtitleChanged) then) =
       __$$SubtitleChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String subtitle});
 }
 
 /// @nodoc
 class __$$SubtitleChangedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$SubtitleChanged>
     implements _$$SubtitleChangedCopyWith<$Res> {
   __$$SubtitleChangedCopyWithImpl(
       _$SubtitleChanged _value, $Res Function(_$SubtitleChanged) _then)
-      : super(_value, (v) => _then(v as _$SubtitleChanged));
+      : super(_value, _then);
 
-  @override
-  _$SubtitleChanged get _value => super._value as _$SubtitleChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? subtitle = freezed,
+    Object? subtitle = null,
   }) {
     return _then(_$SubtitleChanged(
-      subtitle == freezed
+      null == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2312,15 +2289,16 @@ class _$SubtitleChanged implements SubtitleChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SubtitleChanged &&
-            const DeepCollectionEquality().equals(other.subtitle, subtitle));
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(subtitle));
+  int get hashCode => Object.hash(runtimeType, subtitle);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SubtitleChangedCopyWith<_$SubtitleChanged> get copyWith =>
       __$$SubtitleChangedCopyWithImpl<_$SubtitleChanged>(this, _$identity);
 
@@ -2348,20 +2326,20 @@ class _$SubtitleChanged implements SubtitleChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return subtitleChanged?.call(subtitle);
   }
@@ -2415,20 +2393,20 @@ class _$SubtitleChanged implements SubtitleChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return subtitleChanged?.call(this);
   }
@@ -2473,26 +2451,25 @@ abstract class _$$SynopsisChangedCopyWith<$Res> {
   factory _$$SynopsisChangedCopyWith(
           _$SynopsisChanged value, $Res Function(_$SynopsisChanged) then) =
       __$$SynopsisChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String synopsis});
 }
 
 /// @nodoc
 class __$$SynopsisChangedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$SynopsisChanged>
     implements _$$SynopsisChangedCopyWith<$Res> {
   __$$SynopsisChangedCopyWithImpl(
       _$SynopsisChanged _value, $Res Function(_$SynopsisChanged) _then)
-      : super(_value, (v) => _then(v as _$SynopsisChanged));
+      : super(_value, _then);
 
-  @override
-  _$SynopsisChanged get _value => super._value as _$SynopsisChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? synopsis = freezed,
+    Object? synopsis = null,
   }) {
     return _then(_$SynopsisChanged(
-      synopsis == freezed
+      null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2518,15 +2495,16 @@ class _$SynopsisChanged implements SynopsisChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SynopsisChanged &&
-            const DeepCollectionEquality().equals(other.synopsis, synopsis));
+            (identical(other.synopsis, synopsis) ||
+                other.synopsis == synopsis));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(synopsis));
+  int get hashCode => Object.hash(runtimeType, synopsis);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SynopsisChangedCopyWith<_$SynopsisChanged> get copyWith =>
       __$$SynopsisChangedCopyWithImpl<_$SynopsisChanged>(this, _$identity);
 
@@ -2554,20 +2532,20 @@ class _$SynopsisChanged implements SynopsisChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return synopsisChanged?.call(synopsis);
   }
@@ -2621,20 +2599,20 @@ class _$SynopsisChanged implements SynopsisChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return synopsisChanged?.call(this);
   }
@@ -2679,26 +2657,25 @@ abstract class _$$TitleChangedCopyWith<$Res> {
   factory _$$TitleChangedCopyWith(
           _$TitleChanged value, $Res Function(_$TitleChanged) then) =
       __$$TitleChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String title});
 }
 
 /// @nodoc
 class __$$TitleChangedCopyWithImpl<$Res>
-    extends _$TypewriterTreeEventCopyWithImpl<$Res>
+    extends _$TypewriterTreeEventCopyWithImpl<$Res, _$TitleChanged>
     implements _$$TitleChangedCopyWith<$Res> {
   __$$TitleChangedCopyWithImpl(
       _$TitleChanged _value, $Res Function(_$TitleChanged) _then)
-      : super(_value, (v) => _then(v as _$TitleChanged));
+      : super(_value, _then);
 
-  @override
-  _$TitleChanged get _value => super._value as _$TitleChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
+    Object? title = null,
   }) {
     return _then(_$TitleChanged(
-      title == freezed
+      null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2724,15 +2701,15 @@ class _$TitleChanged implements TitleChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TitleChanged &&
-            const DeepCollectionEquality().equals(other.title, title));
+            (identical(other.title, title) || other.title == title));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(title));
+  int get hashCode => Object.hash(runtimeType, title);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TitleChangedCopyWith<_$TitleChanged> get copyWith =>
       __$$TitleChangedCopyWithImpl<_$TitleChanged>(this, _$identity);
 
@@ -2760,20 +2737,20 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? launchAsNewTree,
-    TResult Function()? sessionFetched,
-    TResult Function()? addCoverPressed,
-    TResult Function()? deleteButtonPressed,
-    TResult Function(String genre)? genreAdded,
-    TResult Function(String genre)? genreRemoved,
-    TResult Function(bool isNSFW)? isNSFWChanged,
-    TResult Function(String language)? languageSelected,
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? publishButtonPressed,
-    TResult Function()? saveButtonPressed,
-    TResult Function(String subtitle)? subtitleChanged,
-    TResult Function(String synopsis)? synopsisChanged,
-    TResult Function(String title)? titleChanged,
+    TResult? Function()? launchAsNewTree,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? addCoverPressed,
+    TResult? Function()? deleteButtonPressed,
+    TResult? Function(String genre)? genreAdded,
+    TResult? Function(String genre)? genreRemoved,
+    TResult? Function(bool isNSFW)? isNSFWChanged,
+    TResult? Function(String language)? languageSelected,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? publishButtonPressed,
+    TResult? Function()? saveButtonPressed,
+    TResult? Function(String subtitle)? subtitleChanged,
+    TResult? Function(String synopsis)? synopsisChanged,
+    TResult? Function(String title)? titleChanged,
   }) {
     return titleChanged?.call(title);
   }
@@ -2827,20 +2804,20 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchAsNewTree value)? launchAsNewTree,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AddCoverPressed value)? addCoverPressed,
-    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
-    TResult Function(GenreAdded value)? genreAdded,
-    TResult Function(GenreRemoved value)? genreRemoved,
-    TResult Function(IsNSFWChanged value)? isNSFWChanged,
-    TResult Function(LanguageSelected value)? languageSelected,
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(PublishButtonPressed value)? publishButtonPressed,
-    TResult Function(SaveButtonPressed value)? saveButtonPressed,
-    TResult Function(SubtitleChanged value)? subtitleChanged,
-    TResult Function(SynopsisChanged value)? synopsisChanged,
-    TResult Function(TitleChanged value)? titleChanged,
+    TResult? Function(LaunchAsNewTree value)? launchAsNewTree,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AddCoverPressed value)? addCoverPressed,
+    TResult? Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult? Function(GenreAdded value)? genreAdded,
+    TResult? Function(GenreRemoved value)? genreRemoved,
+    TResult? Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult? Function(LanguageSelected value)? languageSelected,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult? Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult? Function(SubtitleChanged value)? subtitleChanged,
+    TResult? Function(SynopsisChanged value)? synopsisChanged,
+    TResult? Function(TitleChanged value)? titleChanged,
   }) {
     return titleChanged?.call(this);
   }
@@ -2915,7 +2892,8 @@ mixin _$TypewriterTreeState {
 abstract class $TypewriterTreeStateCopyWith<$Res> {
   factory $TypewriterTreeStateCopyWith(
           TypewriterTreeState value, $Res Function(TypewriterTreeState) then) =
-      _$TypewriterTreeStateCopyWithImpl<$Res>;
+      _$TypewriterTreeStateCopyWithImpl<$Res, TypewriterTreeState>;
+  @useResult
   $Res call(
       {String coverURL,
       TypewriterEndState endState,
@@ -2941,120 +2919,123 @@ abstract class $TypewriterTreeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TypewriterTreeStateCopyWithImpl<$Res>
+class _$TypewriterTreeStateCopyWithImpl<$Res, $Val extends TypewriterTreeState>
     implements $TypewriterTreeStateCopyWith<$Res> {
   _$TypewriterTreeStateCopyWithImpl(this._value, this._then);
 
-  final TypewriterTreeState _value;
   // ignore: unused_field
-  final $Res Function(TypewriterTreeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? coverURL = freezed,
-    Object? endState = freezed,
-    Object? failureOption = freezed,
-    Object? genres = freezed,
-    Object? isEdit = freezed,
-    Object? isNSFW = freezed,
-    Object? isProcessing = freezed,
-    Object? language = freezed,
-    Object? showErrorMessages = freezed,
-    Object? subtitle = freezed,
-    Object? subtitleController = freezed,
-    Object? subtitleWordCount = freezed,
-    Object? synopsis = freezed,
-    Object? synopsisController = freezed,
-    Object? synopsisWordCount = freezed,
-    Object? title = freezed,
-    Object? titleController = freezed,
-    Object? titleWordCount = freezed,
-    Object? tree = freezed,
+    Object? coverURL = null,
+    Object? endState = null,
+    Object? failureOption = null,
+    Object? genres = null,
+    Object? isEdit = null,
+    Object? isNSFW = null,
+    Object? isProcessing = null,
+    Object? language = null,
+    Object? showErrorMessages = null,
+    Object? subtitle = null,
+    Object? subtitleController = null,
+    Object? subtitleWordCount = null,
+    Object? synopsis = null,
+    Object? synopsisController = null,
+    Object? synopsisWordCount = null,
+    Object? title = null,
+    Object? titleController = null,
+    Object? titleWordCount = null,
+    Object? tree = null,
   }) {
     return _then(_value.copyWith(
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
-      endState: endState == freezed
+      endState: null == endState
           ? _value.endState
           : endState // ignore: cast_nullable_to_non_nullable
               as TypewriterEndState,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      genres: genres == freezed
+      genres: null == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
-      isEdit: isEdit == freezed
+      isEdit: null == isEdit
           ? _value.isEdit
           : isEdit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      subtitle: subtitle == freezed
+      subtitle: null == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as Subtitle,
-      subtitleController: subtitleController == freezed
+      subtitleController: null == subtitleController
           ? _value.subtitleController
           : subtitleController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      subtitleWordCount: subtitleWordCount == freezed
+      subtitleWordCount: null == subtitleWordCount
           ? _value.subtitleWordCount
           : subtitleWordCount // ignore: cast_nullable_to_non_nullable
               as int,
-      synopsis: synopsis == freezed
+      synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as Synopsis,
-      synopsisController: synopsisController == freezed
+      synopsisController: null == synopsisController
           ? _value.synopsisController
           : synopsisController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      synopsisWordCount: synopsisWordCount == freezed
+      synopsisWordCount: null == synopsisWordCount
           ? _value.synopsisWordCount
           : synopsisWordCount // ignore: cast_nullable_to_non_nullable
               as int,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Title,
-      titleController: titleController == freezed
+      titleController: null == titleController
           ? _value.titleController
           : titleController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      titleWordCount: titleWordCount == freezed
+      titleWordCount: null == titleWordCount
           ? _value.titleWordCount
           : titleWordCount // ignore: cast_nullable_to_non_nullable
               as int,
-      tree: tree == freezed
+      tree: null == tree
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TreeCopyWith<$Res> get tree {
     return $TreeCopyWith<$Res>(_value.tree, (value) {
-      return _then(_value.copyWith(tree: value));
+      return _then(_value.copyWith(tree: value) as $Val);
     });
   }
 }
@@ -3066,6 +3047,7 @@ abstract class _$$_TypewriterTreeStateCopyWith<$Res>
           $Res Function(_$_TypewriterTreeState) then) =
       __$$_TypewriterTreeStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String coverURL,
       TypewriterEndState endState,
@@ -3093,111 +3075,109 @@ abstract class _$$_TypewriterTreeStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_TypewriterTreeStateCopyWithImpl<$Res>
-    extends _$TypewriterTreeStateCopyWithImpl<$Res>
+    extends _$TypewriterTreeStateCopyWithImpl<$Res, _$_TypewriterTreeState>
     implements _$$_TypewriterTreeStateCopyWith<$Res> {
   __$$_TypewriterTreeStateCopyWithImpl(_$_TypewriterTreeState _value,
       $Res Function(_$_TypewriterTreeState) _then)
-      : super(_value, (v) => _then(v as _$_TypewriterTreeState));
+      : super(_value, _then);
 
-  @override
-  _$_TypewriterTreeState get _value => super._value as _$_TypewriterTreeState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? coverURL = freezed,
-    Object? endState = freezed,
-    Object? failureOption = freezed,
-    Object? genres = freezed,
-    Object? isEdit = freezed,
-    Object? isNSFW = freezed,
-    Object? isProcessing = freezed,
-    Object? language = freezed,
-    Object? showErrorMessages = freezed,
-    Object? subtitle = freezed,
-    Object? subtitleController = freezed,
-    Object? subtitleWordCount = freezed,
-    Object? synopsis = freezed,
-    Object? synopsisController = freezed,
-    Object? synopsisWordCount = freezed,
-    Object? title = freezed,
-    Object? titleController = freezed,
-    Object? titleWordCount = freezed,
-    Object? tree = freezed,
+    Object? coverURL = null,
+    Object? endState = null,
+    Object? failureOption = null,
+    Object? genres = null,
+    Object? isEdit = null,
+    Object? isNSFW = null,
+    Object? isProcessing = null,
+    Object? language = null,
+    Object? showErrorMessages = null,
+    Object? subtitle = null,
+    Object? subtitleController = null,
+    Object? subtitleWordCount = null,
+    Object? synopsis = null,
+    Object? synopsisController = null,
+    Object? synopsisWordCount = null,
+    Object? title = null,
+    Object? titleController = null,
+    Object? titleWordCount = null,
+    Object? tree = null,
   }) {
     return _then(_$_TypewriterTreeState(
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
-      endState: endState == freezed
+      endState: null == endState
           ? _value.endState
           : endState // ignore: cast_nullable_to_non_nullable
               as TypewriterEndState,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      genres: genres == freezed
+      genres: null == genres
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
-      isEdit: isEdit == freezed
+      isEdit: null == isEdit
           ? _value.isEdit
           : isEdit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      subtitle: subtitle == freezed
+      subtitle: null == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as Subtitle,
-      subtitleController: subtitleController == freezed
+      subtitleController: null == subtitleController
           ? _value.subtitleController
           : subtitleController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      subtitleWordCount: subtitleWordCount == freezed
+      subtitleWordCount: null == subtitleWordCount
           ? _value.subtitleWordCount
           : subtitleWordCount // ignore: cast_nullable_to_non_nullable
               as int,
-      synopsis: synopsis == freezed
+      synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as Synopsis,
-      synopsisController: synopsisController == freezed
+      synopsisController: null == synopsisController
           ? _value.synopsisController
           : synopsisController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      synopsisWordCount: synopsisWordCount == freezed
+      synopsisWordCount: null == synopsisWordCount
           ? _value.synopsisWordCount
           : synopsisWordCount // ignore: cast_nullable_to_non_nullable
               as int,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Title,
-      titleController: titleController == freezed
+      titleController: null == titleController
           ? _value.titleController
           : titleController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      titleWordCount: titleWordCount == freezed
+      titleWordCount: null == titleWordCount
           ? _value.titleWordCount
           : titleWordCount // ignore: cast_nullable_to_non_nullable
               as int,
-      tree: tree == freezed
+      tree: null == tree
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree,
@@ -3239,6 +3219,7 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
   final List<Genre> _genres;
   @override
   List<Genre> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_genres);
   }
@@ -3284,62 +3265,68 @@ class _$_TypewriterTreeState implements _TypewriterTreeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TypewriterTreeState &&
-            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
-            const DeepCollectionEquality().equals(other.endState, endState) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
+            (identical(other.coverURL, coverURL) ||
+                other.coverURL == coverURL) &&
+            (identical(other.endState, endState) ||
+                other.endState == endState) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
             const DeepCollectionEquality().equals(other._genres, _genres) &&
-            const DeepCollectionEquality().equals(other.isEdit, isEdit) &&
-            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
-            const DeepCollectionEquality()
-                .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality().equals(other.language, language) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
-            const DeepCollectionEquality()
-                .equals(other.subtitleController, subtitleController) &&
-            const DeepCollectionEquality()
-                .equals(other.subtitleWordCount, subtitleWordCount) &&
-            const DeepCollectionEquality().equals(other.synopsis, synopsis) &&
-            const DeepCollectionEquality()
-                .equals(other.synopsisController, synopsisController) &&
-            const DeepCollectionEquality()
-                .equals(other.synopsisWordCount, synopsisWordCount) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality()
-                .equals(other.titleController, titleController) &&
-            const DeepCollectionEquality()
-                .equals(other.titleWordCount, titleWordCount) &&
-            const DeepCollectionEquality().equals(other.tree, tree));
+            (identical(other.isEdit, isEdit) || other.isEdit == isEdit) &&
+            (identical(other.isNSFW, isNSFW) || other.isNSFW == isNSFW) &&
+            (identical(other.isProcessing, isProcessing) ||
+                other.isProcessing == isProcessing) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle) &&
+            (identical(other.subtitleController, subtitleController) ||
+                other.subtitleController == subtitleController) &&
+            (identical(other.subtitleWordCount, subtitleWordCount) ||
+                other.subtitleWordCount == subtitleWordCount) &&
+            (identical(other.synopsis, synopsis) ||
+                other.synopsis == synopsis) &&
+            (identical(other.synopsisController, synopsisController) ||
+                other.synopsisController == synopsisController) &&
+            (identical(other.synopsisWordCount, synopsisWordCount) ||
+                other.synopsisWordCount == synopsisWordCount) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.titleController, titleController) ||
+                other.titleController == titleController) &&
+            (identical(other.titleWordCount, titleWordCount) ||
+                other.titleWordCount == titleWordCount) &&
+            (identical(other.tree, tree) || other.tree == tree));
   }
 
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(coverURL),
-        const DeepCollectionEquality().hash(endState),
-        const DeepCollectionEquality().hash(failureOption),
+        coverURL,
+        endState,
+        failureOption,
         const DeepCollectionEquality().hash(_genres),
-        const DeepCollectionEquality().hash(isEdit),
-        const DeepCollectionEquality().hash(isNSFW),
-        const DeepCollectionEquality().hash(isProcessing),
-        const DeepCollectionEquality().hash(language),
-        const DeepCollectionEquality().hash(showErrorMessages),
-        const DeepCollectionEquality().hash(subtitle),
-        const DeepCollectionEquality().hash(subtitleController),
-        const DeepCollectionEquality().hash(subtitleWordCount),
-        const DeepCollectionEquality().hash(synopsis),
-        const DeepCollectionEquality().hash(synopsisController),
-        const DeepCollectionEquality().hash(synopsisWordCount),
-        const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(titleController),
-        const DeepCollectionEquality().hash(titleWordCount),
-        const DeepCollectionEquality().hash(tree)
+        isEdit,
+        isNSFW,
+        isProcessing,
+        language,
+        showErrorMessages,
+        subtitle,
+        subtitleController,
+        subtitleWordCount,
+        synopsis,
+        synopsisController,
+        synopsisWordCount,
+        title,
+        titleController,
+        titleWordCount,
+        tree
       ]);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TypewriterTreeStateCopyWith<_$_TypewriterTreeState> get copyWith =>
       __$$_TypewriterTreeStateCopyWithImpl<_$_TypewriterTreeState>(
           this, _$identity);

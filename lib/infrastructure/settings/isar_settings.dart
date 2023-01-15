@@ -5,7 +5,7 @@ import 'package:wine/domain/settings/settings.dart';
 part 'isar_settings.g.dart';
 
 /// @nodoc
-@Collection(accessor: 'settings')
+@Collection(accessor: 'settings', inheritance: false)
 class IsarSettings extends Equatable {
   /// @nodoc
   const IsarSettings({
@@ -15,7 +15,7 @@ class IsarSettings extends Equatable {
     this.enableTreesBookmarksCount,
     this.enableTreesLikesCount,
     this.enableTreesViewsCount,
-    this.id,
+    this.id = Isar.autoIncrement,
   });
 
   /// @nodoc
@@ -50,7 +50,7 @@ class IsarSettings extends Equatable {
   final bool? enableTreesViewsCount;
 
   /// @nodoc
-  final int? id;
+  final Id id;
 
   /// @nodoc
   IsarSettings copyWith({
@@ -105,6 +105,7 @@ class IsarSettings extends Equatable {
   }
 
   @override
+  @ignore
   List<Object?> get props => [
         enableBranchesBookmarksCount,
         enableBranchesLikesCount,

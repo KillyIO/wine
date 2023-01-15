@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'home_bloc.dart';
 
@@ -29,13 +29,13 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? loadNewTree,
-    TResult Function()? loadTopTree,
-    TResult Function(String key)? loadTreeByGenre,
-    TResult Function(String key)? loadTreeByLanguage,
-    TResult Function(String key)? loadTreeByTime,
+    TResult? Function()? init,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function()? loadNewTree,
+    TResult? Function()? loadTopTree,
+    TResult? Function(String key)? loadTreeByGenre,
+    TResult? Function(String key)? loadTreeByLanguage,
+    TResult? Function(String key)? loadTreeByTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,13 +63,13 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(LoadNewTree value)? loadNewTree,
-    TResult Function(LoadTopTree value)? loadTopTree,
-    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
-    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
-    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult? Function(Init value)? init,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(LoadNewTree value)? loadNewTree,
+    TResult? Function(LoadTopTree value)? loadTopTree,
+    TResult? Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult? Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult? Function(LoadTreeByTime value)? loadTreeByTime,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,16 +89,18 @@ mixin _$HomeEvent {
 /// @nodoc
 abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
-      _$HomeEventCopyWithImpl<$Res>;
+      _$HomeEventCopyWithImpl<$Res, HomeEvent>;
 }
 
 /// @nodoc
-class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
+class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
+    implements $HomeEventCopyWith<$Res> {
   _$HomeEventCopyWithImpl(this._value, this._then);
 
-  final HomeEvent _value;
   // ignore: unused_field
-  final $Res Function(HomeEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -108,13 +110,10 @@ abstract class _$$InitCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$InitCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+class __$$InitCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res, _$Init>
     implements _$$InitCopyWith<$Res> {
   __$$InitCopyWithImpl(_$Init _value, $Res Function(_$Init) _then)
-      : super(_value, (v) => _then(v as _$Init));
-
-  @override
-  _$Init get _value => super._value as _$Init;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -153,13 +152,13 @@ class _$Init implements Init {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? loadNewTree,
-    TResult Function()? loadTopTree,
-    TResult Function(String key)? loadTreeByGenre,
-    TResult Function(String key)? loadTreeByLanguage,
-    TResult Function(String key)? loadTreeByTime,
+    TResult? Function()? init,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function()? loadNewTree,
+    TResult? Function()? loadTopTree,
+    TResult? Function(String key)? loadTreeByGenre,
+    TResult? Function(String key)? loadTreeByLanguage,
+    TResult? Function(String key)? loadTreeByTime,
   }) {
     return init?.call();
   }
@@ -199,13 +198,13 @@ class _$Init implements Init {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(LoadNewTree value)? loadNewTree,
-    TResult Function(LoadTopTree value)? loadTopTree,
-    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
-    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
-    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult? Function(Init value)? init,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(LoadNewTree value)? loadNewTree,
+    TResult? Function(LoadTopTree value)? loadTopTree,
+    TResult? Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult? Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult? Function(LoadTreeByTime value)? loadTreeByTime,
   }) {
     return init?.call(this);
   }
@@ -238,26 +237,25 @@ abstract class _$$PageViewIndexChangedCopyWith<$Res> {
   factory _$$PageViewIndexChangedCopyWith(_$PageViewIndexChanged value,
           $Res Function(_$PageViewIndexChanged) then) =
       __$$PageViewIndexChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int index});
 }
 
 /// @nodoc
 class __$$PageViewIndexChangedCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$PageViewIndexChanged>
     implements _$$PageViewIndexChangedCopyWith<$Res> {
   __$$PageViewIndexChangedCopyWithImpl(_$PageViewIndexChanged _value,
       $Res Function(_$PageViewIndexChanged) _then)
-      : super(_value, (v) => _then(v as _$PageViewIndexChanged));
+      : super(_value, _then);
 
-  @override
-  _$PageViewIndexChanged get _value => super._value as _$PageViewIndexChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? index = freezed,
+    Object? index = null,
   }) {
     return _then(_$PageViewIndexChanged(
-      index == freezed
+      null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
@@ -283,15 +281,15 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageViewIndexChanged &&
-            const DeepCollectionEquality().equals(other.index, index));
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+  int get hashCode => Object.hash(runtimeType, index);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
       __$$PageViewIndexChangedCopyWithImpl<_$PageViewIndexChanged>(
           this, _$identity);
@@ -313,13 +311,13 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? loadNewTree,
-    TResult Function()? loadTopTree,
-    TResult Function(String key)? loadTreeByGenre,
-    TResult Function(String key)? loadTreeByLanguage,
-    TResult Function(String key)? loadTreeByTime,
+    TResult? Function()? init,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function()? loadNewTree,
+    TResult? Function()? loadTopTree,
+    TResult? Function(String key)? loadTreeByGenre,
+    TResult? Function(String key)? loadTreeByLanguage,
+    TResult? Function(String key)? loadTreeByTime,
   }) {
     return pageViewIndexChanged?.call(index);
   }
@@ -359,13 +357,13 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(LoadNewTree value)? loadNewTree,
-    TResult Function(LoadTopTree value)? loadTopTree,
-    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
-    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
-    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult? Function(Init value)? init,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(LoadNewTree value)? loadNewTree,
+    TResult? Function(LoadTopTree value)? loadTopTree,
+    TResult? Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult? Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult? Function(LoadTreeByTime value)? loadTreeByTime,
   }) {
     return pageViewIndexChanged?.call(this);
   }
@@ -406,14 +404,12 @@ abstract class _$$LoadNewTreeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoadNewTreeCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+class __$$LoadNewTreeCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadNewTree>
     implements _$$LoadNewTreeCopyWith<$Res> {
   __$$LoadNewTreeCopyWithImpl(
       _$LoadNewTree _value, $Res Function(_$LoadNewTree) _then)
-      : super(_value, (v) => _then(v as _$LoadNewTree));
-
-  @override
-  _$LoadNewTree get _value => super._value as _$LoadNewTree;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -452,13 +448,13 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? loadNewTree,
-    TResult Function()? loadTopTree,
-    TResult Function(String key)? loadTreeByGenre,
-    TResult Function(String key)? loadTreeByLanguage,
-    TResult Function(String key)? loadTreeByTime,
+    TResult? Function()? init,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function()? loadNewTree,
+    TResult? Function()? loadTopTree,
+    TResult? Function(String key)? loadTreeByGenre,
+    TResult? Function(String key)? loadTreeByLanguage,
+    TResult? Function(String key)? loadTreeByTime,
   }) {
     return loadNewTree?.call();
   }
@@ -498,13 +494,13 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(LoadNewTree value)? loadNewTree,
-    TResult Function(LoadTopTree value)? loadTopTree,
-    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
-    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
-    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult? Function(Init value)? init,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(LoadNewTree value)? loadNewTree,
+    TResult? Function(LoadTopTree value)? loadTopTree,
+    TResult? Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult? Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult? Function(LoadTreeByTime value)? loadTreeByTime,
   }) {
     return loadNewTree?.call(this);
   }
@@ -540,14 +536,12 @@ abstract class _$$LoadTopTreeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoadTopTreeCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+class __$$LoadTopTreeCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadTopTree>
     implements _$$LoadTopTreeCopyWith<$Res> {
   __$$LoadTopTreeCopyWithImpl(
       _$LoadTopTree _value, $Res Function(_$LoadTopTree) _then)
-      : super(_value, (v) => _then(v as _$LoadTopTree));
-
-  @override
-  _$LoadTopTree get _value => super._value as _$LoadTopTree;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -586,13 +580,13 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? loadNewTree,
-    TResult Function()? loadTopTree,
-    TResult Function(String key)? loadTreeByGenre,
-    TResult Function(String key)? loadTreeByLanguage,
-    TResult Function(String key)? loadTreeByTime,
+    TResult? Function()? init,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function()? loadNewTree,
+    TResult? Function()? loadTopTree,
+    TResult? Function(String key)? loadTreeByGenre,
+    TResult? Function(String key)? loadTreeByLanguage,
+    TResult? Function(String key)? loadTreeByTime,
   }) {
     return loadTopTree?.call();
   }
@@ -632,13 +626,13 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(LoadNewTree value)? loadNewTree,
-    TResult Function(LoadTopTree value)? loadTopTree,
-    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
-    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
-    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult? Function(Init value)? init,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(LoadNewTree value)? loadNewTree,
+    TResult? Function(LoadTopTree value)? loadTopTree,
+    TResult? Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult? Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult? Function(LoadTreeByTime value)? loadTreeByTime,
   }) {
     return loadTopTree?.call(this);
   }
@@ -671,26 +665,25 @@ abstract class _$$LoadTreeByGenreCopyWith<$Res> {
   factory _$$LoadTreeByGenreCopyWith(
           _$LoadTreeByGenre value, $Res Function(_$LoadTreeByGenre) then) =
       __$$LoadTreeByGenreCopyWithImpl<$Res>;
+  @useResult
   $Res call({String key});
 }
 
 /// @nodoc
 class __$$LoadTreeByGenreCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByGenre>
     implements _$$LoadTreeByGenreCopyWith<$Res> {
   __$$LoadTreeByGenreCopyWithImpl(
       _$LoadTreeByGenre _value, $Res Function(_$LoadTreeByGenre) _then)
-      : super(_value, (v) => _then(v as _$LoadTreeByGenre));
+      : super(_value, _then);
 
-  @override
-  _$LoadTreeByGenre get _value => super._value as _$LoadTreeByGenre;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
+    Object? key = null,
   }) {
     return _then(_$LoadTreeByGenre(
-      key == freezed
+      null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
@@ -716,15 +709,15 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadTreeByGenre &&
-            const DeepCollectionEquality().equals(other.key, key));
+            (identical(other.key, key) || other.key == key));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(key));
+  int get hashCode => Object.hash(runtimeType, key);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadTreeByGenreCopyWith<_$LoadTreeByGenre> get copyWith =>
       __$$LoadTreeByGenreCopyWithImpl<_$LoadTreeByGenre>(this, _$identity);
 
@@ -745,13 +738,13 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? loadNewTree,
-    TResult Function()? loadTopTree,
-    TResult Function(String key)? loadTreeByGenre,
-    TResult Function(String key)? loadTreeByLanguage,
-    TResult Function(String key)? loadTreeByTime,
+    TResult? Function()? init,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function()? loadNewTree,
+    TResult? Function()? loadTopTree,
+    TResult? Function(String key)? loadTreeByGenre,
+    TResult? Function(String key)? loadTreeByLanguage,
+    TResult? Function(String key)? loadTreeByTime,
   }) {
     return loadTreeByGenre?.call(key);
   }
@@ -791,13 +784,13 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(LoadNewTree value)? loadNewTree,
-    TResult Function(LoadTopTree value)? loadTopTree,
-    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
-    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
-    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult? Function(Init value)? init,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(LoadNewTree value)? loadNewTree,
+    TResult? Function(LoadTopTree value)? loadTopTree,
+    TResult? Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult? Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult? Function(LoadTreeByTime value)? loadTreeByTime,
   }) {
     return loadTreeByGenre?.call(this);
   }
@@ -835,26 +828,25 @@ abstract class _$$LoadTreeByLanguageCopyWith<$Res> {
   factory _$$LoadTreeByLanguageCopyWith(_$LoadTreeByLanguage value,
           $Res Function(_$LoadTreeByLanguage) then) =
       __$$LoadTreeByLanguageCopyWithImpl<$Res>;
+  @useResult
   $Res call({String key});
 }
 
 /// @nodoc
 class __$$LoadTreeByLanguageCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByLanguage>
     implements _$$LoadTreeByLanguageCopyWith<$Res> {
   __$$LoadTreeByLanguageCopyWithImpl(
       _$LoadTreeByLanguage _value, $Res Function(_$LoadTreeByLanguage) _then)
-      : super(_value, (v) => _then(v as _$LoadTreeByLanguage));
+      : super(_value, _then);
 
-  @override
-  _$LoadTreeByLanguage get _value => super._value as _$LoadTreeByLanguage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
+    Object? key = null,
   }) {
     return _then(_$LoadTreeByLanguage(
-      key == freezed
+      null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
@@ -880,15 +872,15 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadTreeByLanguage &&
-            const DeepCollectionEquality().equals(other.key, key));
+            (identical(other.key, key) || other.key == key));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(key));
+  int get hashCode => Object.hash(runtimeType, key);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadTreeByLanguageCopyWith<_$LoadTreeByLanguage> get copyWith =>
       __$$LoadTreeByLanguageCopyWithImpl<_$LoadTreeByLanguage>(
           this, _$identity);
@@ -910,13 +902,13 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? loadNewTree,
-    TResult Function()? loadTopTree,
-    TResult Function(String key)? loadTreeByGenre,
-    TResult Function(String key)? loadTreeByLanguage,
-    TResult Function(String key)? loadTreeByTime,
+    TResult? Function()? init,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function()? loadNewTree,
+    TResult? Function()? loadTopTree,
+    TResult? Function(String key)? loadTreeByGenre,
+    TResult? Function(String key)? loadTreeByLanguage,
+    TResult? Function(String key)? loadTreeByTime,
   }) {
     return loadTreeByLanguage?.call(key);
   }
@@ -956,13 +948,13 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(LoadNewTree value)? loadNewTree,
-    TResult Function(LoadTopTree value)? loadTopTree,
-    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
-    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
-    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult? Function(Init value)? init,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(LoadNewTree value)? loadNewTree,
+    TResult? Function(LoadTopTree value)? loadTopTree,
+    TResult? Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult? Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult? Function(LoadTreeByTime value)? loadTreeByTime,
   }) {
     return loadTreeByLanguage?.call(this);
   }
@@ -1000,25 +992,25 @@ abstract class _$$LoadTreeByTimeCopyWith<$Res> {
   factory _$$LoadTreeByTimeCopyWith(
           _$LoadTreeByTime value, $Res Function(_$LoadTreeByTime) then) =
       __$$LoadTreeByTimeCopyWithImpl<$Res>;
+  @useResult
   $Res call({String key});
 }
 
 /// @nodoc
-class __$$LoadTreeByTimeCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+class __$$LoadTreeByTimeCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByTime>
     implements _$$LoadTreeByTimeCopyWith<$Res> {
   __$$LoadTreeByTimeCopyWithImpl(
       _$LoadTreeByTime _value, $Res Function(_$LoadTreeByTime) _then)
-      : super(_value, (v) => _then(v as _$LoadTreeByTime));
+      : super(_value, _then);
 
-  @override
-  _$LoadTreeByTime get _value => super._value as _$LoadTreeByTime;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
+    Object? key = null,
   }) {
     return _then(_$LoadTreeByTime(
-      key == freezed
+      null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1044,15 +1036,15 @@ class _$LoadTreeByTime implements LoadTreeByTime {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadTreeByTime &&
-            const DeepCollectionEquality().equals(other.key, key));
+            (identical(other.key, key) || other.key == key));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(key));
+  int get hashCode => Object.hash(runtimeType, key);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadTreeByTimeCopyWith<_$LoadTreeByTime> get copyWith =>
       __$$LoadTreeByTimeCopyWithImpl<_$LoadTreeByTime>(this, _$identity);
 
@@ -1073,13 +1065,13 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function()? loadNewTree,
-    TResult Function()? loadTopTree,
-    TResult Function(String key)? loadTreeByGenre,
-    TResult Function(String key)? loadTreeByLanguage,
-    TResult Function(String key)? loadTreeByTime,
+    TResult? Function()? init,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function()? loadNewTree,
+    TResult? Function()? loadTopTree,
+    TResult? Function(String key)? loadTreeByGenre,
+    TResult? Function(String key)? loadTreeByLanguage,
+    TResult? Function(String key)? loadTreeByTime,
   }) {
     return loadTreeByTime?.call(key);
   }
@@ -1119,13 +1111,13 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(LoadNewTree value)? loadNewTree,
-    TResult Function(LoadTopTree value)? loadTopTree,
-    TResult Function(LoadTreeByGenre value)? loadTreeByGenre,
-    TResult Function(LoadTreeByLanguage value)? loadTreeByLanguage,
-    TResult Function(LoadTreeByTime value)? loadTreeByTime,
+    TResult? Function(Init value)? init,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(LoadNewTree value)? loadNewTree,
+    TResult? Function(LoadTopTree value)? loadTopTree,
+    TResult? Function(LoadTreeByGenre value)? loadTreeByGenre,
+    TResult? Function(LoadTreeByLanguage value)? loadTreeByLanguage,
+    TResult? Function(LoadTreeByTime value)? loadTreeByTime,
   }) {
     return loadTreeByTime?.call(this);
   }
@@ -1178,7 +1170,8 @@ mixin _$HomeState {
 /// @nodoc
 abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res>;
+      _$HomeStateCopyWithImpl<$Res, HomeState>;
+  @useResult
   $Res call(
       {int currentPageViewIdx,
       Option<Result<Unit, CoreFailure>> failureOption,
@@ -1191,58 +1184,61 @@ abstract class $HomeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
+class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
+    implements $HomeStateCopyWith<$Res> {
   _$HomeStateCopyWithImpl(this._value, this._then);
 
-  final HomeState _value;
   // ignore: unused_field
-  final $Res Function(HomeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPageViewIdx = freezed,
-    Object? failureOption = freezed,
-    Object? genreFilterKey = freezed,
-    Object? isProcessing = freezed,
-    Object? languageFilterKey = freezed,
-    Object? newTrees = freezed,
-    Object? timeFilterKey = freezed,
-    Object? topTrees = freezed,
+    Object? currentPageViewIdx = null,
+    Object? failureOption = null,
+    Object? genreFilterKey = null,
+    Object? isProcessing = null,
+    Object? languageFilterKey = null,
+    Object? newTrees = null,
+    Object? timeFilterKey = null,
+    Object? topTrees = null,
   }) {
     return _then(_value.copyWith(
-      currentPageViewIdx: currentPageViewIdx == freezed
+      currentPageViewIdx: null == currentPageViewIdx
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
               as int,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<Unit, CoreFailure>>,
-      genreFilterKey: genreFilterKey == freezed
+      genreFilterKey: null == genreFilterKey
           ? _value.genreFilterKey
           : genreFilterKey // ignore: cast_nullable_to_non_nullable
               as String,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      languageFilterKey: languageFilterKey == freezed
+      languageFilterKey: null == languageFilterKey
           ? _value.languageFilterKey
           : languageFilterKey // ignore: cast_nullable_to_non_nullable
               as String,
-      newTrees: newTrees == freezed
+      newTrees: null == newTrees
           ? _value.newTrees
           : newTrees // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
-      timeFilterKey: timeFilterKey == freezed
+      timeFilterKey: null == timeFilterKey
           ? _value.timeFilterKey
           : timeFilterKey // ignore: cast_nullable_to_non_nullable
               as String,
-      topTrees: topTrees == freezed
+      topTrees: null == topTrees
           ? _value.topTrees
           : topTrees // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -1252,6 +1248,7 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
           _$_HomeState value, $Res Function(_$_HomeState) then) =
       __$$_HomeStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int currentPageViewIdx,
       Option<Result<Unit, CoreFailure>> failureOption,
@@ -1264,56 +1261,55 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+class __$$_HomeStateCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$_HomeState>
     implements _$$_HomeStateCopyWith<$Res> {
   __$$_HomeStateCopyWithImpl(
       _$_HomeState _value, $Res Function(_$_HomeState) _then)
-      : super(_value, (v) => _then(v as _$_HomeState));
+      : super(_value, _then);
 
-  @override
-  _$_HomeState get _value => super._value as _$_HomeState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPageViewIdx = freezed,
-    Object? failureOption = freezed,
-    Object? genreFilterKey = freezed,
-    Object? isProcessing = freezed,
-    Object? languageFilterKey = freezed,
-    Object? newTrees = freezed,
-    Object? timeFilterKey = freezed,
-    Object? topTrees = freezed,
+    Object? currentPageViewIdx = null,
+    Object? failureOption = null,
+    Object? genreFilterKey = null,
+    Object? isProcessing = null,
+    Object? languageFilterKey = null,
+    Object? newTrees = null,
+    Object? timeFilterKey = null,
+    Object? topTrees = null,
   }) {
     return _then(_$_HomeState(
-      currentPageViewIdx: currentPageViewIdx == freezed
+      currentPageViewIdx: null == currentPageViewIdx
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
               as int,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<Unit, CoreFailure>>,
-      genreFilterKey: genreFilterKey == freezed
+      genreFilterKey: null == genreFilterKey
           ? _value.genreFilterKey
           : genreFilterKey // ignore: cast_nullable_to_non_nullable
               as String,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      languageFilterKey: languageFilterKey == freezed
+      languageFilterKey: null == languageFilterKey
           ? _value.languageFilterKey
           : languageFilterKey // ignore: cast_nullable_to_non_nullable
               as String,
-      newTrees: newTrees == freezed
+      newTrees: null == newTrees
           ? _value._newTrees
           : newTrees // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
-      timeFilterKey: timeFilterKey == freezed
+      timeFilterKey: null == timeFilterKey
           ? _value.timeFilterKey
           : timeFilterKey // ignore: cast_nullable_to_non_nullable
               as String,
-      topTrees: topTrees == freezed
+      topTrees: null == topTrees
           ? _value._topTrees
           : topTrees // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
@@ -1349,6 +1345,7 @@ class _$_HomeState implements _HomeState {
   final List<Tree> _newTrees;
   @override
   List<Tree> get newTrees {
+    if (_newTrees is EqualUnmodifiableListView) return _newTrees;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_newTrees);
   }
@@ -1358,6 +1355,7 @@ class _$_HomeState implements _HomeState {
   final List<Tree> _topTrees;
   @override
   List<Tree> get topTrees {
+    if (_topTrees is EqualUnmodifiableListView) return _topTrees;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_topTrees);
   }
@@ -1372,36 +1370,37 @@ class _$_HomeState implements _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HomeState &&
-            const DeepCollectionEquality()
-                .equals(other.currentPageViewIdx, currentPageViewIdx) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality()
-                .equals(other.genreFilterKey, genreFilterKey) &&
-            const DeepCollectionEquality()
-                .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality()
-                .equals(other.languageFilterKey, languageFilterKey) &&
+            (identical(other.currentPageViewIdx, currentPageViewIdx) ||
+                other.currentPageViewIdx == currentPageViewIdx) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.genreFilterKey, genreFilterKey) ||
+                other.genreFilterKey == genreFilterKey) &&
+            (identical(other.isProcessing, isProcessing) ||
+                other.isProcessing == isProcessing) &&
+            (identical(other.languageFilterKey, languageFilterKey) ||
+                other.languageFilterKey == languageFilterKey) &&
             const DeepCollectionEquality().equals(other._newTrees, _newTrees) &&
-            const DeepCollectionEquality()
-                .equals(other.timeFilterKey, timeFilterKey) &&
+            (identical(other.timeFilterKey, timeFilterKey) ||
+                other.timeFilterKey == timeFilterKey) &&
             const DeepCollectionEquality().equals(other._topTrees, _topTrees));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(currentPageViewIdx),
-      const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(genreFilterKey),
-      const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(languageFilterKey),
+      currentPageViewIdx,
+      failureOption,
+      genreFilterKey,
+      isProcessing,
+      languageFilterKey,
       const DeepCollectionEquality().hash(_newTrees),
-      const DeepCollectionEquality().hash(timeFilterKey),
+      timeFilterKey,
       const DeepCollectionEquality().hash(_topTrees));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
       __$$_HomeStateCopyWithImpl<_$_HomeState>(this, _$identity);
 }

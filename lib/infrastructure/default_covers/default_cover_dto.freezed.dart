@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'default_cover_dto.dart';
 
@@ -33,34 +33,37 @@ mixin _$DefaultCoverDTO {
 abstract class $DefaultCoverDTOCopyWith<$Res> {
   factory $DefaultCoverDTOCopyWith(
           DefaultCoverDTO value, $Res Function(DefaultCoverDTO) then) =
-      _$DefaultCoverDTOCopyWithImpl<$Res>;
+      _$DefaultCoverDTOCopyWithImpl<$Res, DefaultCoverDTO>;
+  @useResult
   $Res call({String key, String url});
 }
 
 /// @nodoc
-class _$DefaultCoverDTOCopyWithImpl<$Res>
+class _$DefaultCoverDTOCopyWithImpl<$Res, $Val extends DefaultCoverDTO>
     implements $DefaultCoverDTOCopyWith<$Res> {
   _$DefaultCoverDTOCopyWithImpl(this._value, this._then);
 
-  final DefaultCoverDTO _value;
   // ignore: unused_field
-  final $Res Function(DefaultCoverDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
-    Object? url = freezed,
+    Object? key = null,
+    Object? url = null,
   }) {
     return _then(_value.copyWith(
-      key: key == freezed
+      key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -71,31 +74,30 @@ abstract class _$$_DefaultCoverDTOCopyWith<$Res>
           _$_DefaultCoverDTO value, $Res Function(_$_DefaultCoverDTO) then) =
       __$$_DefaultCoverDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String key, String url});
 }
 
 /// @nodoc
 class __$$_DefaultCoverDTOCopyWithImpl<$Res>
-    extends _$DefaultCoverDTOCopyWithImpl<$Res>
+    extends _$DefaultCoverDTOCopyWithImpl<$Res, _$_DefaultCoverDTO>
     implements _$$_DefaultCoverDTOCopyWith<$Res> {
   __$$_DefaultCoverDTOCopyWithImpl(
       _$_DefaultCoverDTO _value, $Res Function(_$_DefaultCoverDTO) _then)
-      : super(_value, (v) => _then(v as _$_DefaultCoverDTO));
+      : super(_value, _then);
 
-  @override
-  _$_DefaultCoverDTO get _value => super._value as _$_DefaultCoverDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
-    Object? url = freezed,
+    Object? key = null,
+    Object? url = null,
   }) {
     return _then(_$_DefaultCoverDTO(
-      key: key == freezed
+      key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
-      url: url == freezed
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
@@ -126,19 +128,17 @@ class _$_DefaultCoverDTO implements _DefaultCoverDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DefaultCoverDTO &&
-            const DeepCollectionEquality().equals(other.key, key) &&
-            const DeepCollectionEquality().equals(other.url, url));
+            (identical(other.key, key) || other.key == key) &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(key),
-      const DeepCollectionEquality().hash(url));
+  int get hashCode => Object.hash(runtimeType, key, url);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DefaultCoverDTOCopyWith<_$_DefaultCoverDTO> get copyWith =>
       __$$_DefaultCoverDTOCopyWithImpl<_$_DefaultCoverDTO>(this, _$identity);
 

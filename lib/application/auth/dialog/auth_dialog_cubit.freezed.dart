@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth_dialog_cubit.dart';
 
@@ -25,9 +25,9 @@ mixin _$AuthDialogState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logIn,
-    TResult Function()? signUp,
+    TResult? Function()? initial,
+    TResult? Function()? logIn,
+    TResult? Function()? signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$AuthDialogState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LogIn value)? logIn,
-    TResult Function(_SignUp value)? signUp,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LogIn value)? logIn,
+    TResult? Function(_SignUp value)? signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,17 +66,18 @@ mixin _$AuthDialogState {
 abstract class $AuthDialogStateCopyWith<$Res> {
   factory $AuthDialogStateCopyWith(
           AuthDialogState value, $Res Function(AuthDialogState) then) =
-      _$AuthDialogStateCopyWithImpl<$Res>;
+      _$AuthDialogStateCopyWithImpl<$Res, AuthDialogState>;
 }
 
 /// @nodoc
-class _$AuthDialogStateCopyWithImpl<$Res>
+class _$AuthDialogStateCopyWithImpl<$Res, $Val extends AuthDialogState>
     implements $AuthDialogStateCopyWith<$Res> {
   _$AuthDialogStateCopyWithImpl(this._value, this._then);
 
-  final AuthDialogState _value;
   // ignore: unused_field
-  final $Res Function(AuthDialogState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -87,13 +88,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$AuthDialogStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -128,9 +127,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logIn,
-    TResult Function()? signUp,
+    TResult? Function()? initial,
+    TResult? Function()? logIn,
+    TResult? Function()? signUp,
   }) {
     return initial?.call();
   }
@@ -162,9 +161,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LogIn value)? logIn,
-    TResult Function(_SignUp value)? signUp,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LogIn value)? logIn,
+    TResult? Function(_SignUp value)? signUp,
   }) {
     return initial?.call(this);
   }
@@ -195,13 +194,11 @@ abstract class _$$_LogInCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LogInCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
+class __$$_LogInCopyWithImpl<$Res>
+    extends _$AuthDialogStateCopyWithImpl<$Res, _$_LogIn>
     implements _$$_LogInCopyWith<$Res> {
   __$$_LogInCopyWithImpl(_$_LogIn _value, $Res Function(_$_LogIn) _then)
-      : super(_value, (v) => _then(v as _$_LogIn));
-
-  @override
-  _$_LogIn get _value => super._value as _$_LogIn;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -236,9 +233,9 @@ class _$_LogIn implements _LogIn {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logIn,
-    TResult Function()? signUp,
+    TResult? Function()? initial,
+    TResult? Function()? logIn,
+    TResult? Function()? signUp,
   }) {
     return logIn?.call();
   }
@@ -270,9 +267,9 @@ class _$_LogIn implements _LogIn {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LogIn value)? logIn,
-    TResult Function(_SignUp value)? signUp,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LogIn value)? logIn,
+    TResult? Function(_SignUp value)? signUp,
   }) {
     return logIn?.call(this);
   }
@@ -303,13 +300,11 @@ abstract class _$$_SignUpCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SignUpCopyWithImpl<$Res> extends _$AuthDialogStateCopyWithImpl<$Res>
+class __$$_SignUpCopyWithImpl<$Res>
+    extends _$AuthDialogStateCopyWithImpl<$Res, _$_SignUp>
     implements _$$_SignUpCopyWith<$Res> {
   __$$_SignUpCopyWithImpl(_$_SignUp _value, $Res Function(_$_SignUp) _then)
-      : super(_value, (v) => _then(v as _$_SignUp));
-
-  @override
-  _$_SignUp get _value => super._value as _$_SignUp;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -344,9 +339,9 @@ class _$_SignUp implements _SignUp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logIn,
-    TResult Function()? signUp,
+    TResult? Function()? initial,
+    TResult? Function()? logIn,
+    TResult? Function()? signUp,
   }) {
     return signUp?.call();
   }
@@ -378,9 +373,9 @@ class _$_SignUp implements _SignUp {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LogIn value)? logIn,
-    TResult Function(_SignUp value)? signUp,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LogIn value)? logIn,
+    TResult? Function(_SignUp value)? signUp,
   }) {
     return signUp?.call(this);
   }

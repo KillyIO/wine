@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth_failure.dart';
 
@@ -30,14 +30,14 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,15 +69,15 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,16 +100,18 @@ mixin _$AuthFailure {
 abstract class $AuthFailureCopyWith<$Res> {
   factory $AuthFailureCopyWith(
           AuthFailure value, $Res Function(AuthFailure) then) =
-      _$AuthFailureCopyWithImpl<$Res>;
+      _$AuthFailureCopyWithImpl<$Res, AuthFailure>;
 }
 
 /// @nodoc
-class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
+class _$AuthFailureCopyWithImpl<$Res, $Val extends AuthFailure>
+    implements $AuthFailureCopyWith<$Res> {
   _$AuthFailureCopyWithImpl(this._value, this._then);
 
-  final AuthFailure _value;
   // ignore: unused_field
-  final $Res Function(AuthFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -121,14 +123,11 @@ abstract class _$$CancelledByUserCopyWith<$Res> {
 
 /// @nodoc
 class __$$CancelledByUserCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$CancelledByUser>
     implements _$$CancelledByUserCopyWith<$Res> {
   __$$CancelledByUserCopyWithImpl(
       _$CancelledByUser _value, $Res Function(_$CancelledByUser) _then)
-      : super(_value, (v) => _then(v as _$CancelledByUser));
-
-  @override
-  _$CancelledByUser get _value => super._value as _$CancelledByUser;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -168,14 +167,14 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) {
     return cancelledByUser?.call();
   }
@@ -219,15 +218,15 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return cancelledByUser?.call(this);
   }
@@ -266,15 +265,11 @@ abstract class _$$CredentialAlreadyInUseCopyWith<$Res> {
 
 /// @nodoc
 class __$$CredentialAlreadyInUseCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$CredentialAlreadyInUse>
     implements _$$CredentialAlreadyInUseCopyWith<$Res> {
   __$$CredentialAlreadyInUseCopyWithImpl(_$CredentialAlreadyInUse _value,
       $Res Function(_$CredentialAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as _$CredentialAlreadyInUse));
-
-  @override
-  _$CredentialAlreadyInUse get _value =>
-      super._value as _$CredentialAlreadyInUse;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -314,14 +309,14 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) {
     return credentialAlreadyInUse?.call();
   }
@@ -365,15 +360,15 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return credentialAlreadyInUse?.call(this);
   }
@@ -412,14 +407,11 @@ abstract class _$$EmailAlreadyInUseCopyWith<$Res> {
 
 /// @nodoc
 class __$$EmailAlreadyInUseCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$EmailAlreadyInUse>
     implements _$$EmailAlreadyInUseCopyWith<$Res> {
   __$$EmailAlreadyInUseCopyWithImpl(
       _$EmailAlreadyInUse _value, $Res Function(_$EmailAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as _$EmailAlreadyInUse));
-
-  @override
-  _$EmailAlreadyInUse get _value => super._value as _$EmailAlreadyInUse;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -459,14 +451,14 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) {
     return emailAlreadyInUse?.call();
   }
@@ -510,15 +502,15 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return emailAlreadyInUse?.call(this);
   }
@@ -558,16 +550,13 @@ abstract class _$$InvalidEmailAndPasswordCombinationCopyWith<$Res> {
 
 /// @nodoc
 class __$$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res,
+        _$InvalidEmailAndPasswordCombination>
     implements _$$InvalidEmailAndPasswordCombinationCopyWith<$Res> {
   __$$InvalidEmailAndPasswordCombinationCopyWithImpl(
       _$InvalidEmailAndPasswordCombination _value,
       $Res Function(_$InvalidEmailAndPasswordCombination) _then)
-      : super(_value, (v) => _then(v as _$InvalidEmailAndPasswordCombination));
-
-  @override
-  _$InvalidEmailAndPasswordCombination get _value =>
-      super._value as _$InvalidEmailAndPasswordCombination;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -609,14 +598,14 @@ class _$InvalidEmailAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) {
     return invalidEmailAndPasswordCombination?.call();
   }
@@ -660,15 +649,15 @@ class _$InvalidEmailAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return invalidEmailAndPasswordCombination?.call(this);
   }
@@ -708,14 +697,11 @@ abstract class _$$PermissionDeniedCopyWith<$Res> {
 
 /// @nodoc
 class __$$PermissionDeniedCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$PermissionDenied>
     implements _$$PermissionDeniedCopyWith<$Res> {
   __$$PermissionDeniedCopyWithImpl(
       _$PermissionDenied _value, $Res Function(_$PermissionDenied) _then)
-      : super(_value, (v) => _then(v as _$PermissionDenied));
-
-  @override
-  _$PermissionDenied get _value => super._value as _$PermissionDenied;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -755,14 +741,14 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) {
     return permissionDenied?.call();
   }
@@ -806,15 +792,15 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return permissionDenied?.call(this);
   }
@@ -852,14 +838,12 @@ abstract class _$$ServerErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+class __$$ServerErrorCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$ServerError>
     implements _$$ServerErrorCopyWith<$Res> {
   __$$ServerErrorCopyWithImpl(
       _$ServerError _value, $Res Function(_$ServerError) _then)
-      : super(_value, (v) => _then(v as _$ServerError));
-
-  @override
-  _$ServerError get _value => super._value as _$ServerError;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -899,14 +883,14 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) {
     return serverError?.call();
   }
@@ -950,15 +934,15 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return serverError?.call(this);
   }
@@ -997,14 +981,11 @@ abstract class _$$UnableToSignOutCopyWith<$Res> {
 
 /// @nodoc
 class __$$UnableToSignOutCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$UnableToSignOut>
     implements _$$UnableToSignOutCopyWith<$Res> {
   __$$UnableToSignOutCopyWithImpl(
       _$UnableToSignOut _value, $Res Function(_$UnableToSignOut) _then)
-      : super(_value, (v) => _then(v as _$UnableToSignOut));
-
-  @override
-  _$UnableToSignOut get _value => super._value as _$UnableToSignOut;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1044,14 +1025,14 @@ class _$UnableToSignOut implements UnableToSignOut {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) {
     return unableToSignOut?.call();
   }
@@ -1095,15 +1076,15 @@ class _$UnableToSignOut implements UnableToSignOut {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return unableToSignOut?.call(this);
   }
@@ -1141,14 +1122,12 @@ abstract class _$$UnexpectedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UnexpectedCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+class __$$UnexpectedCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$Unexpected>
     implements _$$UnexpectedCopyWith<$Res> {
   __$$UnexpectedCopyWithImpl(
       _$Unexpected _value, $Res Function(_$Unexpected) _then)
-      : super(_value, (v) => _then(v as _$Unexpected));
-
-  @override
-  _$Unexpected get _value => super._value as _$Unexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1188,14 +1167,14 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? cancelledByUser,
-    TResult Function()? credentialAlreadyInUse,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidEmailAndPasswordCombination,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unableToSignOut,
-    TResult Function()? unexpected,
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? credentialAlreadyInUse,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unableToSignOut,
+    TResult? Function()? unexpected,
   }) {
     return unexpected?.call();
   }
@@ -1239,15 +1218,15 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidEmailAndPasswordCombination value)?
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(UnableToSignOut value)? unableToSignOut,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(UnableToSignOut value)? unableToSignOut,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return unexpected?.call(this);
   }

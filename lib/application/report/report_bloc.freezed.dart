@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'report_bloc.dart';
 
@@ -23,7 +23,7 @@ mixin _$ReportEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult? Function()? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,7 +39,7 @@ mixin _$ReportEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult? Function(_Started value)? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,16 +54,18 @@ mixin _$ReportEvent {
 abstract class $ReportEventCopyWith<$Res> {
   factory $ReportEventCopyWith(
           ReportEvent value, $Res Function(ReportEvent) then) =
-      _$ReportEventCopyWithImpl<$Res>;
+      _$ReportEventCopyWithImpl<$Res, ReportEvent>;
 }
 
 /// @nodoc
-class _$ReportEventCopyWithImpl<$Res> implements $ReportEventCopyWith<$Res> {
+class _$ReportEventCopyWithImpl<$Res, $Val extends ReportEvent>
+    implements $ReportEventCopyWith<$Res> {
   _$ReportEventCopyWithImpl(this._value, this._then);
 
-  final ReportEvent _value;
   // ignore: unused_field
-  final $Res Function(ReportEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -74,13 +76,11 @@ abstract class _$$_StartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res> extends _$ReportEventCopyWithImpl<$Res>
+class __$$_StartedCopyWithImpl<$Res>
+    extends _$ReportEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
-
-  @override
-  _$_Started get _value => super._value as _$_Started;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -113,7 +113,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult? Function()? started,
   }) {
     return started?.call();
   }
@@ -141,7 +141,7 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult? Function(_Started value)? started,
   }) {
     return started?.call(this);
   }
@@ -172,7 +172,7 @@ mixin _$ReportState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult? Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -188,7 +188,7 @@ mixin _$ReportState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult? Function(_Initial value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -203,16 +203,18 @@ mixin _$ReportState {
 abstract class $ReportStateCopyWith<$Res> {
   factory $ReportStateCopyWith(
           ReportState value, $Res Function(ReportState) then) =
-      _$ReportStateCopyWithImpl<$Res>;
+      _$ReportStateCopyWithImpl<$Res, ReportState>;
 }
 
 /// @nodoc
-class _$ReportStateCopyWithImpl<$Res> implements $ReportStateCopyWith<$Res> {
+class _$ReportStateCopyWithImpl<$Res, $Val extends ReportState>
+    implements $ReportStateCopyWith<$Res> {
   _$ReportStateCopyWithImpl(this._value, this._then);
 
-  final ReportState _value;
   // ignore: unused_field
-  final $Res Function(ReportState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -223,13 +225,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$ReportStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$ReportStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -262,7 +262,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult? Function()? initial,
   }) {
     return initial?.call();
   }
@@ -290,7 +290,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult? Function(_Initial value)? initial,
   }) {
     return initial?.call(this);
   }

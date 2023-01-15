@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings_dto.dart';
 
@@ -37,7 +37,8 @@ mixin _$SettingsDTO {
 abstract class $SettingsDTOCopyWith<$Res> {
   factory $SettingsDTOCopyWith(
           SettingsDTO value, $Res Function(SettingsDTO) then) =
-      _$SettingsDTOCopyWithImpl<$Res>;
+      _$SettingsDTOCopyWithImpl<$Res, SettingsDTO>;
+  @useResult
   $Res call(
       {bool? enableBranchesBookmarksCount,
       bool? enableBranchesLikesCount,
@@ -48,13 +49,16 @@ abstract class $SettingsDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingsDTOCopyWithImpl<$Res> implements $SettingsDTOCopyWith<$Res> {
+class _$SettingsDTOCopyWithImpl<$Res, $Val extends SettingsDTO>
+    implements $SettingsDTOCopyWith<$Res> {
   _$SettingsDTOCopyWithImpl(this._value, this._then);
 
-  final SettingsDTO _value;
   // ignore: unused_field
-  final $Res Function(SettingsDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? enableBranchesBookmarksCount = freezed,
@@ -65,31 +69,31 @@ class _$SettingsDTOCopyWithImpl<$Res> implements $SettingsDTOCopyWith<$Res> {
     Object? enableTreesViewsCount = freezed,
   }) {
     return _then(_value.copyWith(
-      enableBranchesBookmarksCount: enableBranchesBookmarksCount == freezed
+      enableBranchesBookmarksCount: freezed == enableBranchesBookmarksCount
           ? _value.enableBranchesBookmarksCount
           : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableBranchesLikesCount: enableBranchesLikesCount == freezed
+      enableBranchesLikesCount: freezed == enableBranchesLikesCount
           ? _value.enableBranchesLikesCount
           : enableBranchesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableBranchesViewsCount: enableBranchesViewsCount == freezed
+      enableBranchesViewsCount: freezed == enableBranchesViewsCount
           ? _value.enableBranchesViewsCount
           : enableBranchesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesBookmarksCount: enableTreesBookmarksCount == freezed
+      enableTreesBookmarksCount: freezed == enableTreesBookmarksCount
           ? _value.enableTreesBookmarksCount
           : enableTreesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesLikesCount: enableTreesLikesCount == freezed
+      enableTreesLikesCount: freezed == enableTreesLikesCount
           ? _value.enableTreesLikesCount
           : enableTreesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesViewsCount: enableTreesViewsCount == freezed
+      enableTreesViewsCount: freezed == enableTreesViewsCount
           ? _value.enableTreesViewsCount
           : enableTreesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -100,6 +104,7 @@ abstract class _$$_SettingsDTOCopyWith<$Res>
           _$_SettingsDTO value, $Res Function(_$_SettingsDTO) then) =
       __$$_SettingsDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool? enableBranchesBookmarksCount,
       bool? enableBranchesLikesCount,
@@ -110,15 +115,14 @@ abstract class _$$_SettingsDTOCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SettingsDTOCopyWithImpl<$Res> extends _$SettingsDTOCopyWithImpl<$Res>
+class __$$_SettingsDTOCopyWithImpl<$Res>
+    extends _$SettingsDTOCopyWithImpl<$Res, _$_SettingsDTO>
     implements _$$_SettingsDTOCopyWith<$Res> {
   __$$_SettingsDTOCopyWithImpl(
       _$_SettingsDTO _value, $Res Function(_$_SettingsDTO) _then)
-      : super(_value, (v) => _then(v as _$_SettingsDTO));
+      : super(_value, _then);
 
-  @override
-  _$_SettingsDTO get _value => super._value as _$_SettingsDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? enableBranchesBookmarksCount = freezed,
@@ -129,27 +133,27 @@ class __$$_SettingsDTOCopyWithImpl<$Res> extends _$SettingsDTOCopyWithImpl<$Res>
     Object? enableTreesViewsCount = freezed,
   }) {
     return _then(_$_SettingsDTO(
-      enableBranchesBookmarksCount: enableBranchesBookmarksCount == freezed
+      enableBranchesBookmarksCount: freezed == enableBranchesBookmarksCount
           ? _value.enableBranchesBookmarksCount
           : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableBranchesLikesCount: enableBranchesLikesCount == freezed
+      enableBranchesLikesCount: freezed == enableBranchesLikesCount
           ? _value.enableBranchesLikesCount
           : enableBranchesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableBranchesViewsCount: enableBranchesViewsCount == freezed
+      enableBranchesViewsCount: freezed == enableBranchesViewsCount
           ? _value.enableBranchesViewsCount
           : enableBranchesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesBookmarksCount: enableTreesBookmarksCount == freezed
+      enableTreesBookmarksCount: freezed == enableTreesBookmarksCount
           ? _value.enableTreesBookmarksCount
           : enableTreesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesLikesCount: enableTreesLikesCount == freezed
+      enableTreesLikesCount: freezed == enableTreesLikesCount
           ? _value.enableTreesLikesCount
           : enableTreesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesViewsCount: enableTreesViewsCount == freezed
+      enableTreesViewsCount: freezed == enableTreesViewsCount
           ? _value.enableTreesViewsCount
           : enableTreesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -194,34 +198,39 @@ class _$_SettingsDTO implements _SettingsDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SettingsDTO &&
-            const DeepCollectionEquality().equals(
-                other.enableBranchesBookmarksCount,
-                enableBranchesBookmarksCount) &&
-            const DeepCollectionEquality().equals(
-                other.enableBranchesLikesCount, enableBranchesLikesCount) &&
-            const DeepCollectionEquality().equals(
-                other.enableBranchesViewsCount, enableBranchesViewsCount) &&
-            const DeepCollectionEquality().equals(
-                other.enableTreesBookmarksCount, enableTreesBookmarksCount) &&
-            const DeepCollectionEquality()
-                .equals(other.enableTreesLikesCount, enableTreesLikesCount) &&
-            const DeepCollectionEquality()
-                .equals(other.enableTreesViewsCount, enableTreesViewsCount));
+            (identical(other.enableBranchesBookmarksCount,
+                    enableBranchesBookmarksCount) ||
+                other.enableBranchesBookmarksCount ==
+                    enableBranchesBookmarksCount) &&
+            (identical(
+                    other.enableBranchesLikesCount, enableBranchesLikesCount) ||
+                other.enableBranchesLikesCount == enableBranchesLikesCount) &&
+            (identical(
+                    other.enableBranchesViewsCount, enableBranchesViewsCount) ||
+                other.enableBranchesViewsCount == enableBranchesViewsCount) &&
+            (identical(other.enableTreesBookmarksCount,
+                    enableTreesBookmarksCount) ||
+                other.enableTreesBookmarksCount == enableTreesBookmarksCount) &&
+            (identical(other.enableTreesLikesCount, enableTreesLikesCount) ||
+                other.enableTreesLikesCount == enableTreesLikesCount) &&
+            (identical(other.enableTreesViewsCount, enableTreesViewsCount) ||
+                other.enableTreesViewsCount == enableTreesViewsCount));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(enableBranchesBookmarksCount),
-      const DeepCollectionEquality().hash(enableBranchesLikesCount),
-      const DeepCollectionEquality().hash(enableBranchesViewsCount),
-      const DeepCollectionEquality().hash(enableTreesBookmarksCount),
-      const DeepCollectionEquality().hash(enableTreesLikesCount),
-      const DeepCollectionEquality().hash(enableTreesViewsCount));
+      enableBranchesBookmarksCount,
+      enableBranchesLikesCount,
+      enableBranchesViewsCount,
+      enableTreesBookmarksCount,
+      enableTreesLikesCount,
+      enableTreesViewsCount);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SettingsDTOCopyWith<_$_SettingsDTO> get copyWith =>
       __$$_SettingsDTOCopyWithImpl<_$_SettingsDTO>(this, _$identity);
 

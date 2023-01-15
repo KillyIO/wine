@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'core_failure.dart';
 
@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CoreFailure {
+  Object get f => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
@@ -29,13 +30,13 @@ mixin _$CoreFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(BranchFailure f)? branch,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(TreeFailure f)? tree,
-    TResult Function(UserFailure f)? user,
+    TResult? Function(AuthFailure f)? auth,
+    TResult? Function(BranchFailure f)? branch,
+    TResult? Function(DefaultCoversFailure f)? defaultCovers,
+    TResult? Function(SessionsFailure f)? sessions,
+    TResult? Function(SettingsFailure f)? settings,
+    TResult? Function(TreeFailure f)? tree,
+    TResult? Function(UserFailure f)? user,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,13 +64,13 @@ mixin _$CoreFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Branch value)? branch,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_User value)? user,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Branch value)? branch,
+    TResult? Function(_DefaultCovers value)? defaultCovers,
+    TResult? Function(_Sessions value)? sessions,
+    TResult? Function(_Settings value)? settings,
+    TResult? Function(_Tree value)? tree,
+    TResult? Function(_User value)? user,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,42 +91,44 @@ mixin _$CoreFailure {
 abstract class $CoreFailureCopyWith<$Res> {
   factory $CoreFailureCopyWith(
           CoreFailure value, $Res Function(CoreFailure) then) =
-      _$CoreFailureCopyWithImpl<$Res>;
+      _$CoreFailureCopyWithImpl<$Res, CoreFailure>;
 }
 
 /// @nodoc
-class _$CoreFailureCopyWithImpl<$Res> implements $CoreFailureCopyWith<$Res> {
+class _$CoreFailureCopyWithImpl<$Res, $Val extends CoreFailure>
+    implements $CoreFailureCopyWith<$Res> {
   _$CoreFailureCopyWithImpl(this._value, this._then);
 
-  final CoreFailure _value;
   // ignore: unused_field
-  final $Res Function(CoreFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
 abstract class _$$_AuthCopyWith<$Res> {
   factory _$$_AuthCopyWith(_$_Auth value, $Res Function(_$_Auth) then) =
       __$$_AuthCopyWithImpl<$Res>;
+  @useResult
   $Res call({AuthFailure f});
 
   $AuthFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
-class __$$_AuthCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+class __$$_AuthCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$_Auth>
     implements _$$_AuthCopyWith<$Res> {
   __$$_AuthCopyWithImpl(_$_Auth _value, $Res Function(_$_Auth) _then)
-      : super(_value, (v) => _then(v as _$_Auth));
+      : super(_value, _then);
 
-  @override
-  _$_Auth get _value => super._value as _$_Auth;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? f = freezed,
+    Object? f = null,
   }) {
     return _then(_$_Auth(
-      f == freezed
+      null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
               as AuthFailure,
@@ -133,6 +136,7 @@ class __$$_AuthCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AuthFailureCopyWith<$Res> get f {
     return $AuthFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
@@ -158,15 +162,15 @@ class _$_Auth implements _Auth {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Auth &&
-            const DeepCollectionEquality().equals(other.f, f));
+            (identical(other.f, f) || other.f == f));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+  int get hashCode => Object.hash(runtimeType, f);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AuthCopyWith<_$_Auth> get copyWith =>
       __$$_AuthCopyWithImpl<_$_Auth>(this, _$identity);
 
@@ -187,13 +191,13 @@ class _$_Auth implements _Auth {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(BranchFailure f)? branch,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(TreeFailure f)? tree,
-    TResult Function(UserFailure f)? user,
+    TResult? Function(AuthFailure f)? auth,
+    TResult? Function(BranchFailure f)? branch,
+    TResult? Function(DefaultCoversFailure f)? defaultCovers,
+    TResult? Function(SessionsFailure f)? sessions,
+    TResult? Function(SettingsFailure f)? settings,
+    TResult? Function(TreeFailure f)? tree,
+    TResult? Function(UserFailure f)? user,
   }) {
     return auth?.call(f);
   }
@@ -233,13 +237,13 @@ class _$_Auth implements _Auth {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Branch value)? branch,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_User value)? user,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Branch value)? branch,
+    TResult? Function(_DefaultCovers value)? defaultCovers,
+    TResult? Function(_Sessions value)? sessions,
+    TResult? Function(_Settings value)? settings,
+    TResult? Function(_Tree value)? tree,
+    TResult? Function(_User value)? user,
   }) {
     return auth?.call(this);
   }
@@ -266,6 +270,7 @@ class _$_Auth implements _Auth {
 abstract class _Auth implements CoreFailure {
   const factory _Auth(final AuthFailure f) = _$_Auth;
 
+  @override
   AuthFailure get f;
   @JsonKey(ignore: true)
   _$$_AuthCopyWith<_$_Auth> get copyWith => throw _privateConstructorUsedError;
@@ -275,26 +280,26 @@ abstract class _Auth implements CoreFailure {
 abstract class _$$_BranchCopyWith<$Res> {
   factory _$$_BranchCopyWith(_$_Branch value, $Res Function(_$_Branch) then) =
       __$$_BranchCopyWithImpl<$Res>;
+  @useResult
   $Res call({BranchFailure f});
 
   $BranchFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
-class __$$_BranchCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+class __$$_BranchCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$_Branch>
     implements _$$_BranchCopyWith<$Res> {
   __$$_BranchCopyWithImpl(_$_Branch _value, $Res Function(_$_Branch) _then)
-      : super(_value, (v) => _then(v as _$_Branch));
+      : super(_value, _then);
 
-  @override
-  _$_Branch get _value => super._value as _$_Branch;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? f = freezed,
+    Object? f = null,
   }) {
     return _then(_$_Branch(
-      f == freezed
+      null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
               as BranchFailure,
@@ -302,6 +307,7 @@ class __$$_BranchCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $BranchFailureCopyWith<$Res> get f {
     return $BranchFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
@@ -327,15 +333,15 @@ class _$_Branch implements _Branch {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Branch &&
-            const DeepCollectionEquality().equals(other.f, f));
+            (identical(other.f, f) || other.f == f));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+  int get hashCode => Object.hash(runtimeType, f);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_BranchCopyWith<_$_Branch> get copyWith =>
       __$$_BranchCopyWithImpl<_$_Branch>(this, _$identity);
 
@@ -356,13 +362,13 @@ class _$_Branch implements _Branch {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(BranchFailure f)? branch,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(TreeFailure f)? tree,
-    TResult Function(UserFailure f)? user,
+    TResult? Function(AuthFailure f)? auth,
+    TResult? Function(BranchFailure f)? branch,
+    TResult? Function(DefaultCoversFailure f)? defaultCovers,
+    TResult? Function(SessionsFailure f)? sessions,
+    TResult? Function(SettingsFailure f)? settings,
+    TResult? Function(TreeFailure f)? tree,
+    TResult? Function(UserFailure f)? user,
   }) {
     return branch?.call(f);
   }
@@ -402,13 +408,13 @@ class _$_Branch implements _Branch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Branch value)? branch,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_User value)? user,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Branch value)? branch,
+    TResult? Function(_DefaultCovers value)? defaultCovers,
+    TResult? Function(_Sessions value)? sessions,
+    TResult? Function(_Settings value)? settings,
+    TResult? Function(_Tree value)? tree,
+    TResult? Function(_User value)? user,
   }) {
     return branch?.call(this);
   }
@@ -435,6 +441,7 @@ class _$_Branch implements _Branch {
 abstract class _Branch implements CoreFailure {
   const factory _Branch(final BranchFailure f) = _$_Branch;
 
+  @override
   BranchFailure get f;
   @JsonKey(ignore: true)
   _$$_BranchCopyWith<_$_Branch> get copyWith =>
@@ -446,6 +453,7 @@ abstract class _$$_DefaultCoversCopyWith<$Res> {
   factory _$$_DefaultCoversCopyWith(
           _$_DefaultCovers value, $Res Function(_$_DefaultCovers) then) =
       __$$_DefaultCoversCopyWithImpl<$Res>;
+  @useResult
   $Res call({DefaultCoversFailure f});
 
   $DefaultCoversFailureCopyWith<$Res> get f;
@@ -453,21 +461,19 @@ abstract class _$$_DefaultCoversCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DefaultCoversCopyWithImpl<$Res>
-    extends _$CoreFailureCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$_DefaultCovers>
     implements _$$_DefaultCoversCopyWith<$Res> {
   __$$_DefaultCoversCopyWithImpl(
       _$_DefaultCovers _value, $Res Function(_$_DefaultCovers) _then)
-      : super(_value, (v) => _then(v as _$_DefaultCovers));
+      : super(_value, _then);
 
-  @override
-  _$_DefaultCovers get _value => super._value as _$_DefaultCovers;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? f = freezed,
+    Object? f = null,
   }) {
     return _then(_$_DefaultCovers(
-      f == freezed
+      null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
               as DefaultCoversFailure,
@@ -475,6 +481,7 @@ class __$$_DefaultCoversCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DefaultCoversFailureCopyWith<$Res> get f {
     return $DefaultCoversFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
@@ -500,15 +507,15 @@ class _$_DefaultCovers implements _DefaultCovers {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DefaultCovers &&
-            const DeepCollectionEquality().equals(other.f, f));
+            (identical(other.f, f) || other.f == f));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+  int get hashCode => Object.hash(runtimeType, f);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DefaultCoversCopyWith<_$_DefaultCovers> get copyWith =>
       __$$_DefaultCoversCopyWithImpl<_$_DefaultCovers>(this, _$identity);
 
@@ -529,13 +536,13 @@ class _$_DefaultCovers implements _DefaultCovers {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(BranchFailure f)? branch,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(TreeFailure f)? tree,
-    TResult Function(UserFailure f)? user,
+    TResult? Function(AuthFailure f)? auth,
+    TResult? Function(BranchFailure f)? branch,
+    TResult? Function(DefaultCoversFailure f)? defaultCovers,
+    TResult? Function(SessionsFailure f)? sessions,
+    TResult? Function(SettingsFailure f)? settings,
+    TResult? Function(TreeFailure f)? tree,
+    TResult? Function(UserFailure f)? user,
   }) {
     return defaultCovers?.call(f);
   }
@@ -575,13 +582,13 @@ class _$_DefaultCovers implements _DefaultCovers {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Branch value)? branch,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_User value)? user,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Branch value)? branch,
+    TResult? Function(_DefaultCovers value)? defaultCovers,
+    TResult? Function(_Sessions value)? sessions,
+    TResult? Function(_Settings value)? settings,
+    TResult? Function(_Tree value)? tree,
+    TResult? Function(_User value)? user,
   }) {
     return defaultCovers?.call(this);
   }
@@ -608,6 +615,7 @@ class _$_DefaultCovers implements _DefaultCovers {
 abstract class _DefaultCovers implements CoreFailure {
   const factory _DefaultCovers(final DefaultCoversFailure f) = _$_DefaultCovers;
 
+  @override
   DefaultCoversFailure get f;
   @JsonKey(ignore: true)
   _$$_DefaultCoversCopyWith<_$_DefaultCovers> get copyWith =>
@@ -619,27 +627,27 @@ abstract class _$$_SessionsCopyWith<$Res> {
   factory _$$_SessionsCopyWith(
           _$_Sessions value, $Res Function(_$_Sessions) then) =
       __$$_SessionsCopyWithImpl<$Res>;
+  @useResult
   $Res call({SessionsFailure f});
 
   $SessionsFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
-class __$$_SessionsCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+class __$$_SessionsCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$_Sessions>
     implements _$$_SessionsCopyWith<$Res> {
   __$$_SessionsCopyWithImpl(
       _$_Sessions _value, $Res Function(_$_Sessions) _then)
-      : super(_value, (v) => _then(v as _$_Sessions));
+      : super(_value, _then);
 
-  @override
-  _$_Sessions get _value => super._value as _$_Sessions;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? f = freezed,
+    Object? f = null,
   }) {
     return _then(_$_Sessions(
-      f == freezed
+      null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
               as SessionsFailure,
@@ -647,6 +655,7 @@ class __$$_SessionsCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SessionsFailureCopyWith<$Res> get f {
     return $SessionsFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
@@ -672,15 +681,15 @@ class _$_Sessions implements _Sessions {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Sessions &&
-            const DeepCollectionEquality().equals(other.f, f));
+            (identical(other.f, f) || other.f == f));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+  int get hashCode => Object.hash(runtimeType, f);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SessionsCopyWith<_$_Sessions> get copyWith =>
       __$$_SessionsCopyWithImpl<_$_Sessions>(this, _$identity);
 
@@ -701,13 +710,13 @@ class _$_Sessions implements _Sessions {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(BranchFailure f)? branch,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(TreeFailure f)? tree,
-    TResult Function(UserFailure f)? user,
+    TResult? Function(AuthFailure f)? auth,
+    TResult? Function(BranchFailure f)? branch,
+    TResult? Function(DefaultCoversFailure f)? defaultCovers,
+    TResult? Function(SessionsFailure f)? sessions,
+    TResult? Function(SettingsFailure f)? settings,
+    TResult? Function(TreeFailure f)? tree,
+    TResult? Function(UserFailure f)? user,
   }) {
     return sessions?.call(f);
   }
@@ -747,13 +756,13 @@ class _$_Sessions implements _Sessions {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Branch value)? branch,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_User value)? user,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Branch value)? branch,
+    TResult? Function(_DefaultCovers value)? defaultCovers,
+    TResult? Function(_Sessions value)? sessions,
+    TResult? Function(_Settings value)? settings,
+    TResult? Function(_Tree value)? tree,
+    TResult? Function(_User value)? user,
   }) {
     return sessions?.call(this);
   }
@@ -780,6 +789,7 @@ class _$_Sessions implements _Sessions {
 abstract class _Sessions implements CoreFailure {
   const factory _Sessions(final SessionsFailure f) = _$_Sessions;
 
+  @override
   SessionsFailure get f;
   @JsonKey(ignore: true)
   _$$_SessionsCopyWith<_$_Sessions> get copyWith =>
@@ -791,27 +801,27 @@ abstract class _$$_SettingsCopyWith<$Res> {
   factory _$$_SettingsCopyWith(
           _$_Settings value, $Res Function(_$_Settings) then) =
       __$$_SettingsCopyWithImpl<$Res>;
+  @useResult
   $Res call({SettingsFailure f});
 
   $SettingsFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
-class __$$_SettingsCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+class __$$_SettingsCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$_Settings>
     implements _$$_SettingsCopyWith<$Res> {
   __$$_SettingsCopyWithImpl(
       _$_Settings _value, $Res Function(_$_Settings) _then)
-      : super(_value, (v) => _then(v as _$_Settings));
+      : super(_value, _then);
 
-  @override
-  _$_Settings get _value => super._value as _$_Settings;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? f = freezed,
+    Object? f = null,
   }) {
     return _then(_$_Settings(
-      f == freezed
+      null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
               as SettingsFailure,
@@ -819,6 +829,7 @@ class __$$_SettingsCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SettingsFailureCopyWith<$Res> get f {
     return $SettingsFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
@@ -844,15 +855,15 @@ class _$_Settings implements _Settings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Settings &&
-            const DeepCollectionEquality().equals(other.f, f));
+            (identical(other.f, f) || other.f == f));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+  int get hashCode => Object.hash(runtimeType, f);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SettingsCopyWith<_$_Settings> get copyWith =>
       __$$_SettingsCopyWithImpl<_$_Settings>(this, _$identity);
 
@@ -873,13 +884,13 @@ class _$_Settings implements _Settings {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(BranchFailure f)? branch,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(TreeFailure f)? tree,
-    TResult Function(UserFailure f)? user,
+    TResult? Function(AuthFailure f)? auth,
+    TResult? Function(BranchFailure f)? branch,
+    TResult? Function(DefaultCoversFailure f)? defaultCovers,
+    TResult? Function(SessionsFailure f)? sessions,
+    TResult? Function(SettingsFailure f)? settings,
+    TResult? Function(TreeFailure f)? tree,
+    TResult? Function(UserFailure f)? user,
   }) {
     return settings?.call(f);
   }
@@ -919,13 +930,13 @@ class _$_Settings implements _Settings {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Branch value)? branch,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_User value)? user,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Branch value)? branch,
+    TResult? Function(_DefaultCovers value)? defaultCovers,
+    TResult? Function(_Sessions value)? sessions,
+    TResult? Function(_Settings value)? settings,
+    TResult? Function(_Tree value)? tree,
+    TResult? Function(_User value)? user,
   }) {
     return settings?.call(this);
   }
@@ -952,6 +963,7 @@ class _$_Settings implements _Settings {
 abstract class _Settings implements CoreFailure {
   const factory _Settings(final SettingsFailure f) = _$_Settings;
 
+  @override
   SettingsFailure get f;
   @JsonKey(ignore: true)
   _$$_SettingsCopyWith<_$_Settings> get copyWith =>
@@ -962,26 +974,26 @@ abstract class _Settings implements CoreFailure {
 abstract class _$$_TreeCopyWith<$Res> {
   factory _$$_TreeCopyWith(_$_Tree value, $Res Function(_$_Tree) then) =
       __$$_TreeCopyWithImpl<$Res>;
+  @useResult
   $Res call({TreeFailure f});
 
   $TreeFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
-class __$$_TreeCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+class __$$_TreeCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$_Tree>
     implements _$$_TreeCopyWith<$Res> {
   __$$_TreeCopyWithImpl(_$_Tree _value, $Res Function(_$_Tree) _then)
-      : super(_value, (v) => _then(v as _$_Tree));
+      : super(_value, _then);
 
-  @override
-  _$_Tree get _value => super._value as _$_Tree;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? f = freezed,
+    Object? f = null,
   }) {
     return _then(_$_Tree(
-      f == freezed
+      null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
               as TreeFailure,
@@ -989,6 +1001,7 @@ class __$$_TreeCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TreeFailureCopyWith<$Res> get f {
     return $TreeFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
@@ -1014,15 +1027,15 @@ class _$_Tree implements _Tree {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Tree &&
-            const DeepCollectionEquality().equals(other.f, f));
+            (identical(other.f, f) || other.f == f));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+  int get hashCode => Object.hash(runtimeType, f);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TreeCopyWith<_$_Tree> get copyWith =>
       __$$_TreeCopyWithImpl<_$_Tree>(this, _$identity);
 
@@ -1043,13 +1056,13 @@ class _$_Tree implements _Tree {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(BranchFailure f)? branch,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(TreeFailure f)? tree,
-    TResult Function(UserFailure f)? user,
+    TResult? Function(AuthFailure f)? auth,
+    TResult? Function(BranchFailure f)? branch,
+    TResult? Function(DefaultCoversFailure f)? defaultCovers,
+    TResult? Function(SessionsFailure f)? sessions,
+    TResult? Function(SettingsFailure f)? settings,
+    TResult? Function(TreeFailure f)? tree,
+    TResult? Function(UserFailure f)? user,
   }) {
     return tree?.call(f);
   }
@@ -1089,13 +1102,13 @@ class _$_Tree implements _Tree {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Branch value)? branch,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_User value)? user,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Branch value)? branch,
+    TResult? Function(_DefaultCovers value)? defaultCovers,
+    TResult? Function(_Sessions value)? sessions,
+    TResult? Function(_Settings value)? settings,
+    TResult? Function(_Tree value)? tree,
+    TResult? Function(_User value)? user,
   }) {
     return tree?.call(this);
   }
@@ -1122,6 +1135,7 @@ class _$_Tree implements _Tree {
 abstract class _Tree implements CoreFailure {
   const factory _Tree(final TreeFailure f) = _$_Tree;
 
+  @override
   TreeFailure get f;
   @JsonKey(ignore: true)
   _$$_TreeCopyWith<_$_Tree> get copyWith => throw _privateConstructorUsedError;
@@ -1131,26 +1145,26 @@ abstract class _Tree implements CoreFailure {
 abstract class _$$_UserCopyWith<$Res> {
   factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
       __$$_UserCopyWithImpl<$Res>;
+  @useResult
   $Res call({UserFailure f});
 
   $UserFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+class __$$_UserCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$_User>
     implements _$$_UserCopyWith<$Res> {
   __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
-      : super(_value, (v) => _then(v as _$_User));
+      : super(_value, _then);
 
-  @override
-  _$_User get _value => super._value as _$_User;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? f = freezed,
+    Object? f = null,
   }) {
     return _then(_$_User(
-      f == freezed
+      null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
               as UserFailure,
@@ -1158,6 +1172,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserFailureCopyWith<$Res> get f {
     return $UserFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
@@ -1183,15 +1198,15 @@ class _$_User implements _User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_User &&
-            const DeepCollectionEquality().equals(other.f, f));
+            (identical(other.f, f) || other.f == f));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+  int get hashCode => Object.hash(runtimeType, f);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UserCopyWith<_$_User> get copyWith =>
       __$$_UserCopyWithImpl<_$_User>(this, _$identity);
 
@@ -1212,13 +1227,13 @@ class _$_User implements _User {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthFailure f)? auth,
-    TResult Function(BranchFailure f)? branch,
-    TResult Function(DefaultCoversFailure f)? defaultCovers,
-    TResult Function(SessionsFailure f)? sessions,
-    TResult Function(SettingsFailure f)? settings,
-    TResult Function(TreeFailure f)? tree,
-    TResult Function(UserFailure f)? user,
+    TResult? Function(AuthFailure f)? auth,
+    TResult? Function(BranchFailure f)? branch,
+    TResult? Function(DefaultCoversFailure f)? defaultCovers,
+    TResult? Function(SessionsFailure f)? sessions,
+    TResult? Function(SettingsFailure f)? settings,
+    TResult? Function(TreeFailure f)? tree,
+    TResult? Function(UserFailure f)? user,
   }) {
     return user?.call(f);
   }
@@ -1258,13 +1273,13 @@ class _$_User implements _User {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Auth value)? auth,
-    TResult Function(_Branch value)? branch,
-    TResult Function(_DefaultCovers value)? defaultCovers,
-    TResult Function(_Sessions value)? sessions,
-    TResult Function(_Settings value)? settings,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_User value)? user,
+    TResult? Function(_Auth value)? auth,
+    TResult? Function(_Branch value)? branch,
+    TResult? Function(_DefaultCovers value)? defaultCovers,
+    TResult? Function(_Sessions value)? sessions,
+    TResult? Function(_Settings value)? settings,
+    TResult? Function(_Tree value)? tree,
+    TResult? Function(_User value)? user,
   }) {
     return user?.call(this);
   }
@@ -1291,6 +1306,7 @@ class _$_User implements _User {
 abstract class _User implements CoreFailure {
   const factory _User(final UserFailure f) = _$_User;
 
+  @override
   UserFailure get f;
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

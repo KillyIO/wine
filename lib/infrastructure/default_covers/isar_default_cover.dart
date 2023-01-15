@@ -6,11 +6,11 @@ import 'package:wine/domain/default_covers/default_cover.dart';
 part 'isar_default_cover.g.dart';
 
 /// @nodoc
-@Collection(accessor: 'defaultCovers')
+@Collection(accessor: 'defaultCovers', inheritance: false)
 class IsarDefaultCover extends Equatable {
   /// @nodoc
   const IsarDefaultCover({
-    this.id,
+    this.id = Isar.autoIncrement,
     required this.key,
     required this.url,
   });
@@ -28,7 +28,7 @@ class IsarDefaultCover extends Equatable {
   final Id? id;
 
   /// @nodoc
-  @Index()
+  @Index(unique: true)
   final String key;
 
   /// @nodoc
@@ -65,6 +65,7 @@ class IsarDefaultCover extends Equatable {
   }
 
   @override
+  @ignore
   List<Object?> get props => [id, key, url];
 
   @override

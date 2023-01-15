@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'library_bloc.dart';
 
@@ -30,14 +30,14 @@ mixin _$LibraryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,14 +68,14 @@ mixin _$LibraryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -99,16 +99,18 @@ mixin _$LibraryEvent {
 abstract class $LibraryEventCopyWith<$Res> {
   factory $LibraryEventCopyWith(
           LibraryEvent value, $Res Function(LibraryEvent) then) =
-      _$LibraryEventCopyWithImpl<$Res>;
+      _$LibraryEventCopyWithImpl<$Res, LibraryEvent>;
 }
 
 /// @nodoc
-class _$LibraryEventCopyWithImpl<$Res> implements $LibraryEventCopyWith<$Res> {
+class _$LibraryEventCopyWithImpl<$Res, $Val extends LibraryEvent>
+    implements $LibraryEventCopyWith<$Res> {
   _$LibraryEventCopyWithImpl(this._value, this._then);
 
-  final LibraryEvent _value;
   // ignore: unused_field
-  final $Res Function(LibraryEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -118,13 +120,11 @@ abstract class _$$InitCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$InitCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+class __$$InitCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$Init>
     implements _$$InitCopyWith<$Res> {
   __$$InitCopyWithImpl(_$Init _value, $Res Function(_$Init) _then)
-      : super(_value, (v) => _then(v as _$Init));
-
-  @override
-  _$Init get _value => super._value as _$Init;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -164,14 +164,14 @@ class _$Init implements Init {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) {
     return init?.call();
   }
@@ -214,14 +214,14 @@ class _$Init implements Init {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
     return init?.call(this);
@@ -261,14 +261,11 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$LibraryEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$SessionFetched>
     implements _$$SessionFetchedCopyWith<$Res> {
   __$$SessionFetchedCopyWithImpl(
       _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
-      : super(_value, (v) => _then(v as _$SessionFetched));
-
-  @override
-  _$SessionFetched get _value => super._value as _$SessionFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -308,14 +305,14 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) {
     return sessionFetched?.call();
   }
@@ -358,14 +355,14 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
     return sessionFetched?.call(this);
@@ -401,26 +398,25 @@ abstract class _$$BranchDeletedCopyWith<$Res> {
   factory _$$BranchDeletedCopyWith(
           _$BranchDeleted value, $Res Function(_$BranchDeleted) then) =
       __$$BranchDeletedCopyWithImpl<$Res>;
+  @useResult
   $Res call({UniqueID uid});
 }
 
 /// @nodoc
 class __$$BranchDeletedCopyWithImpl<$Res>
-    extends _$LibraryEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$BranchDeleted>
     implements _$$BranchDeletedCopyWith<$Res> {
   __$$BranchDeletedCopyWithImpl(
       _$BranchDeleted _value, $Res Function(_$BranchDeleted) _then)
-      : super(_value, (v) => _then(v as _$BranchDeleted));
+      : super(_value, _then);
 
-  @override
-  _$BranchDeleted get _value => super._value as _$BranchDeleted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uid = null,
   }) {
     return _then(_$BranchDeleted(
-      uid == freezed
+      null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
@@ -446,15 +442,15 @@ class _$BranchDeleted implements BranchDeleted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BranchDeleted &&
-            const DeepCollectionEquality().equals(other.uid, uid));
+            (identical(other.uid, uid) || other.uid == uid));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(uid));
+  int get hashCode => Object.hash(runtimeType, uid);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$BranchDeletedCopyWith<_$BranchDeleted> get copyWith =>
       __$$BranchDeletedCopyWithImpl<_$BranchDeleted>(this, _$identity);
 
@@ -476,14 +472,14 @@ class _$BranchDeleted implements BranchDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) {
     return branchDeleted?.call(uid);
   }
@@ -526,14 +522,14 @@ class _$BranchDeleted implements BranchDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
     return branchDeleted?.call(this);
@@ -574,6 +570,7 @@ abstract class _$$BranchUpdatedCopyWith<$Res> {
   factory _$$BranchUpdatedCopyWith(
           _$BranchUpdated value, $Res Function(_$BranchUpdated) then) =
       __$$BranchUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Branch branch});
 
   $BranchCopyWith<$Res> get branch;
@@ -581,21 +578,19 @@ abstract class _$$BranchUpdatedCopyWith<$Res> {
 
 /// @nodoc
 class __$$BranchUpdatedCopyWithImpl<$Res>
-    extends _$LibraryEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$BranchUpdated>
     implements _$$BranchUpdatedCopyWith<$Res> {
   __$$BranchUpdatedCopyWithImpl(
       _$BranchUpdated _value, $Res Function(_$BranchUpdated) _then)
-      : super(_value, (v) => _then(v as _$BranchUpdated));
+      : super(_value, _then);
 
-  @override
-  _$BranchUpdated get _value => super._value as _$BranchUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? branch = freezed,
+    Object? branch = null,
   }) {
     return _then(_$BranchUpdated(
-      branch == freezed
+      null == branch
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as Branch,
@@ -603,6 +598,7 @@ class __$$BranchUpdatedCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $BranchCopyWith<$Res> get branch {
     return $BranchCopyWith<$Res>(_value.branch, (value) {
       return _then(_value.copyWith(branch: value));
@@ -628,15 +624,15 @@ class _$BranchUpdated implements BranchUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BranchUpdated &&
-            const DeepCollectionEquality().equals(other.branch, branch));
+            (identical(other.branch, branch) || other.branch == branch));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(branch));
+  int get hashCode => Object.hash(runtimeType, branch);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$BranchUpdatedCopyWith<_$BranchUpdated> get copyWith =>
       __$$BranchUpdatedCopyWithImpl<_$BranchUpdated>(this, _$identity);
 
@@ -658,14 +654,14 @@ class _$BranchUpdated implements BranchUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) {
     return branchUpdated?.call(branch);
   }
@@ -708,14 +704,14 @@ class _$BranchUpdated implements BranchUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
     return branchUpdated?.call(this);
@@ -756,26 +752,25 @@ abstract class _$$PageViewIndexChangedCopyWith<$Res> {
   factory _$$PageViewIndexChangedCopyWith(_$PageViewIndexChanged value,
           $Res Function(_$PageViewIndexChanged) then) =
       __$$PageViewIndexChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int index});
 }
 
 /// @nodoc
 class __$$PageViewIndexChangedCopyWithImpl<$Res>
-    extends _$LibraryEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$PageViewIndexChanged>
     implements _$$PageViewIndexChangedCopyWith<$Res> {
   __$$PageViewIndexChangedCopyWithImpl(_$PageViewIndexChanged _value,
       $Res Function(_$PageViewIndexChanged) _then)
-      : super(_value, (v) => _then(v as _$PageViewIndexChanged));
+      : super(_value, _then);
 
-  @override
-  _$PageViewIndexChanged get _value => super._value as _$PageViewIndexChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? index = freezed,
+    Object? index = null,
   }) {
     return _then(_$PageViewIndexChanged(
-      index == freezed
+      null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
@@ -801,15 +796,15 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageViewIndexChanged &&
-            const DeepCollectionEquality().equals(other.index, index));
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+  int get hashCode => Object.hash(runtimeType, index);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
       __$$PageViewIndexChangedCopyWithImpl<_$PageViewIndexChanged>(
           this, _$identity);
@@ -832,14 +827,14 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) {
     return pageViewIndexChanged?.call(index);
   }
@@ -882,14 +877,14 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
     return pageViewIndexChanged?.call(this);
@@ -930,25 +925,25 @@ abstract class _$$TreeDeletedCopyWith<$Res> {
   factory _$$TreeDeletedCopyWith(
           _$TreeDeleted value, $Res Function(_$TreeDeleted) then) =
       __$$TreeDeletedCopyWithImpl<$Res>;
+  @useResult
   $Res call({UniqueID uid});
 }
 
 /// @nodoc
-class __$$TreeDeletedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+class __$$TreeDeletedCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$TreeDeleted>
     implements _$$TreeDeletedCopyWith<$Res> {
   __$$TreeDeletedCopyWithImpl(
       _$TreeDeleted _value, $Res Function(_$TreeDeleted) _then)
-      : super(_value, (v) => _then(v as _$TreeDeleted));
+      : super(_value, _then);
 
-  @override
-  _$TreeDeleted get _value => super._value as _$TreeDeleted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uid = null,
   }) {
     return _then(_$TreeDeleted(
-      uid == freezed
+      null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
@@ -974,15 +969,15 @@ class _$TreeDeleted implements TreeDeleted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TreeDeleted &&
-            const DeepCollectionEquality().equals(other.uid, uid));
+            (identical(other.uid, uid) || other.uid == uid));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(uid));
+  int get hashCode => Object.hash(runtimeType, uid);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TreeDeletedCopyWith<_$TreeDeleted> get copyWith =>
       __$$TreeDeletedCopyWithImpl<_$TreeDeleted>(this, _$identity);
 
@@ -1004,14 +999,14 @@ class _$TreeDeleted implements TreeDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) {
     return treeDeleted?.call(uid);
   }
@@ -1054,14 +1049,14 @@ class _$TreeDeleted implements TreeDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
     return treeDeleted?.call(this);
@@ -1102,27 +1097,27 @@ abstract class _$$TreeUpdatedCopyWith<$Res> {
   factory _$$TreeUpdatedCopyWith(
           _$TreeUpdated value, $Res Function(_$TreeUpdated) then) =
       __$$TreeUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Tree tree});
 
   $TreeCopyWith<$Res> get tree;
 }
 
 /// @nodoc
-class __$$TreeUpdatedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
+class __$$TreeUpdatedCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$TreeUpdated>
     implements _$$TreeUpdatedCopyWith<$Res> {
   __$$TreeUpdatedCopyWithImpl(
       _$TreeUpdated _value, $Res Function(_$TreeUpdated) _then)
-      : super(_value, (v) => _then(v as _$TreeUpdated));
+      : super(_value, _then);
 
-  @override
-  _$TreeUpdated get _value => super._value as _$TreeUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tree = freezed,
+    Object? tree = null,
   }) {
     return _then(_$TreeUpdated(
-      tree == freezed
+      null == tree
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree,
@@ -1130,6 +1125,7 @@ class __$$TreeUpdatedCopyWithImpl<$Res> extends _$LibraryEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TreeCopyWith<$Res> get tree {
     return $TreeCopyWith<$Res>(_value.tree, (value) {
       return _then(_value.copyWith(tree: value));
@@ -1155,15 +1151,15 @@ class _$TreeUpdated implements TreeUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TreeUpdated &&
-            const DeepCollectionEquality().equals(other.tree, tree));
+            (identical(other.tree, tree) || other.tree == tree));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(tree));
+  int get hashCode => Object.hash(runtimeType, tree);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TreeUpdatedCopyWith<_$TreeUpdated> get copyWith =>
       __$$TreeUpdatedCopyWithImpl<_$TreeUpdated>(this, _$identity);
 
@@ -1185,14 +1181,14 @@ class _$TreeUpdated implements TreeUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) {
     return treeUpdated?.call(tree);
   }
@@ -1235,14 +1231,14 @@ class _$TreeUpdated implements TreeUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
     return treeUpdated?.call(this);
@@ -1284,28 +1280,26 @@ abstract class _$$VerticalNavbarIndexChangedCopyWith<$Res> {
           _$VerticalNavbarIndexChanged value,
           $Res Function(_$VerticalNavbarIndexChanged) then) =
       __$$VerticalNavbarIndexChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int index});
 }
 
 /// @nodoc
 class __$$VerticalNavbarIndexChangedCopyWithImpl<$Res>
-    extends _$LibraryEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$VerticalNavbarIndexChanged>
     implements _$$VerticalNavbarIndexChangedCopyWith<$Res> {
   __$$VerticalNavbarIndexChangedCopyWithImpl(
       _$VerticalNavbarIndexChanged _value,
       $Res Function(_$VerticalNavbarIndexChanged) _then)
-      : super(_value, (v) => _then(v as _$VerticalNavbarIndexChanged));
+      : super(_value, _then);
 
-  @override
-  _$VerticalNavbarIndexChanged get _value =>
-      super._value as _$VerticalNavbarIndexChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? index = freezed,
+    Object? index = null,
   }) {
     return _then(_$VerticalNavbarIndexChanged(
-      index == freezed
+      null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1331,15 +1325,15 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VerticalNavbarIndexChanged &&
-            const DeepCollectionEquality().equals(other.index, index));
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+  int get hashCode => Object.hash(runtimeType, index);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$VerticalNavbarIndexChangedCopyWith<_$VerticalNavbarIndexChanged>
       get copyWith => __$$VerticalNavbarIndexChangedCopyWithImpl<
           _$VerticalNavbarIndexChanged>(this, _$identity);
@@ -1362,14 +1356,14 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? sessionFetched,
-    TResult Function(UniqueID uid)? branchDeleted,
-    TResult Function(Branch branch)? branchUpdated,
-    TResult Function(int index)? pageViewIndexChanged,
-    TResult Function(UniqueID uid)? treeDeleted,
-    TResult Function(Tree tree)? treeUpdated,
-    TResult Function(int index)? verticalNavbarIndexChanged,
+    TResult? Function()? init,
+    TResult? Function()? sessionFetched,
+    TResult? Function(UniqueID uid)? branchDeleted,
+    TResult? Function(Branch branch)? branchUpdated,
+    TResult? Function(int index)? pageViewIndexChanged,
+    TResult? Function(UniqueID uid)? treeDeleted,
+    TResult? Function(Tree tree)? treeUpdated,
+    TResult? Function(int index)? verticalNavbarIndexChanged,
   }) {
     return verticalNavbarIndexChanged?.call(index);
   }
@@ -1412,14 +1406,14 @@ class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Init value)? init,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(BranchDeleted value)? branchDeleted,
-    TResult Function(BranchUpdated value)? branchUpdated,
-    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
-    TResult Function(TreeDeleted value)? treeDeleted,
-    TResult Function(TreeUpdated value)? treeUpdated,
-    TResult Function(VerticalNavbarIndexChanged value)?
+    TResult? Function(Init value)? init,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(BranchDeleted value)? branchDeleted,
+    TResult? Function(BranchUpdated value)? branchUpdated,
+    TResult? Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult? Function(TreeDeleted value)? treeDeleted,
+    TResult? Function(TreeUpdated value)? treeUpdated,
+    TResult? Function(VerticalNavbarIndexChanged value)?
         verticalNavbarIndexChanged,
   }) {
     return verticalNavbarIndexChanged?.call(this);
@@ -1478,7 +1472,8 @@ mixin _$LibraryState {
 abstract class $LibraryStateCopyWith<$Res> {
   factory $LibraryStateCopyWith(
           LibraryState value, $Res Function(LibraryState) then) =
-      _$LibraryStateCopyWithImpl<$Res>;
+      _$LibraryStateCopyWithImpl<$Res, LibraryState>;
+  @useResult
   $Res call(
       {List<Branch> bookmarkedBranches,
       List<Tree> bookmarkedTree,
@@ -1494,69 +1489,73 @@ abstract class $LibraryStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
+class _$LibraryStateCopyWithImpl<$Res, $Val extends LibraryState>
+    implements $LibraryStateCopyWith<$Res> {
   _$LibraryStateCopyWithImpl(this._value, this._then);
 
-  final LibraryState _value;
   // ignore: unused_field
-  final $Res Function(LibraryState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? bookmarkedBranches = freezed,
-    Object? bookmarkedTree = freezed,
-    Object? branches = freezed,
-    Object? currentPageViewIdx = freezed,
-    Object? currentVerticalNavbarIdx = freezed,
-    Object? failureOption = freezed,
-    Object? isProcessing = freezed,
-    Object? session = freezed,
-    Object? trees = freezed,
+    Object? bookmarkedBranches = null,
+    Object? bookmarkedTree = null,
+    Object? branches = null,
+    Object? currentPageViewIdx = null,
+    Object? currentVerticalNavbarIdx = null,
+    Object? failureOption = null,
+    Object? isProcessing = null,
+    Object? session = null,
+    Object? trees = null,
   }) {
     return _then(_value.copyWith(
-      bookmarkedBranches: bookmarkedBranches == freezed
+      bookmarkedBranches: null == bookmarkedBranches
           ? _value.bookmarkedBranches
           : bookmarkedBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
-      bookmarkedTree: bookmarkedTree == freezed
+      bookmarkedTree: null == bookmarkedTree
           ? _value.bookmarkedTree
           : bookmarkedTree // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
-      branches: branches == freezed
+      branches: null == branches
           ? _value.branches
           : branches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
-      currentPageViewIdx: currentPageViewIdx == freezed
+      currentPageViewIdx: null == currentPageViewIdx
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
               as int,
-      currentVerticalNavbarIdx: currentVerticalNavbarIdx == freezed
+      currentVerticalNavbarIdx: null == currentVerticalNavbarIdx
           ? _value.currentVerticalNavbarIdx
           : currentVerticalNavbarIdx // ignore: cast_nullable_to_non_nullable
               as int,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      session: session == freezed
+      session: null == session
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User,
-      trees: trees == freezed
+      trees: null == trees
           ? _value.trees
           : trees // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get session {
     return $UserCopyWith<$Res>(_value.session, (value) {
-      return _then(_value.copyWith(session: value));
+      return _then(_value.copyWith(session: value) as $Val);
     });
   }
 }
@@ -1568,6 +1567,7 @@ abstract class _$$_LibraryStateCopyWith<$Res>
           _$_LibraryState value, $Res Function(_$_LibraryState) then) =
       __$$_LibraryStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<Branch> bookmarkedBranches,
       List<Tree> bookmarkedTree,
@@ -1585,61 +1585,59 @@ abstract class _$$_LibraryStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_LibraryStateCopyWithImpl<$Res>
-    extends _$LibraryStateCopyWithImpl<$Res>
+    extends _$LibraryStateCopyWithImpl<$Res, _$_LibraryState>
     implements _$$_LibraryStateCopyWith<$Res> {
   __$$_LibraryStateCopyWithImpl(
       _$_LibraryState _value, $Res Function(_$_LibraryState) _then)
-      : super(_value, (v) => _then(v as _$_LibraryState));
+      : super(_value, _then);
 
-  @override
-  _$_LibraryState get _value => super._value as _$_LibraryState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? bookmarkedBranches = freezed,
-    Object? bookmarkedTree = freezed,
-    Object? branches = freezed,
-    Object? currentPageViewIdx = freezed,
-    Object? currentVerticalNavbarIdx = freezed,
-    Object? failureOption = freezed,
-    Object? isProcessing = freezed,
-    Object? session = freezed,
-    Object? trees = freezed,
+    Object? bookmarkedBranches = null,
+    Object? bookmarkedTree = null,
+    Object? branches = null,
+    Object? currentPageViewIdx = null,
+    Object? currentVerticalNavbarIdx = null,
+    Object? failureOption = null,
+    Object? isProcessing = null,
+    Object? session = null,
+    Object? trees = null,
   }) {
     return _then(_$_LibraryState(
-      bookmarkedBranches: bookmarkedBranches == freezed
+      bookmarkedBranches: null == bookmarkedBranches
           ? _value._bookmarkedBranches
           : bookmarkedBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
-      bookmarkedTree: bookmarkedTree == freezed
+      bookmarkedTree: null == bookmarkedTree
           ? _value._bookmarkedTree
           : bookmarkedTree // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
-      branches: branches == freezed
+      branches: null == branches
           ? _value._branches
           : branches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
-      currentPageViewIdx: currentPageViewIdx == freezed
+      currentPageViewIdx: null == currentPageViewIdx
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
               as int,
-      currentVerticalNavbarIdx: currentVerticalNavbarIdx == freezed
+      currentVerticalNavbarIdx: null == currentVerticalNavbarIdx
           ? _value.currentVerticalNavbarIdx
           : currentVerticalNavbarIdx // ignore: cast_nullable_to_non_nullable
               as int,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      session: session == freezed
+      session: null == session
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User,
-      trees: trees == freezed
+      trees: null == trees
           ? _value._trees
           : trees // ignore: cast_nullable_to_non_nullable
               as List<Tree>,
@@ -1668,6 +1666,8 @@ class _$_LibraryState implements _LibraryState {
   final List<Branch> _bookmarkedBranches;
   @override
   List<Branch> get bookmarkedBranches {
+    if (_bookmarkedBranches is EqualUnmodifiableListView)
+      return _bookmarkedBranches;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookmarkedBranches);
   }
@@ -1675,6 +1675,7 @@ class _$_LibraryState implements _LibraryState {
   final List<Tree> _bookmarkedTree;
   @override
   List<Tree> get bookmarkedTree {
+    if (_bookmarkedTree is EqualUnmodifiableListView) return _bookmarkedTree;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookmarkedTree);
   }
@@ -1682,6 +1683,7 @@ class _$_LibraryState implements _LibraryState {
   final List<Branch> _branches;
   @override
   List<Branch> get branches {
+    if (_branches is EqualUnmodifiableListView) return _branches;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_branches);
   }
@@ -1699,6 +1701,7 @@ class _$_LibraryState implements _LibraryState {
   final List<Tree> _trees;
   @override
   List<Tree> get trees {
+    if (_trees is EqualUnmodifiableListView) return _trees;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_trees);
   }
@@ -1718,15 +1721,16 @@ class _$_LibraryState implements _LibraryState {
             const DeepCollectionEquality()
                 .equals(other._bookmarkedTree, _bookmarkedTree) &&
             const DeepCollectionEquality().equals(other._branches, _branches) &&
-            const DeepCollectionEquality()
-                .equals(other.currentPageViewIdx, currentPageViewIdx) &&
-            const DeepCollectionEquality().equals(
-                other.currentVerticalNavbarIdx, currentVerticalNavbarIdx) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality()
-                .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality().equals(other.session, session) &&
+            (identical(other.currentPageViewIdx, currentPageViewIdx) ||
+                other.currentPageViewIdx == currentPageViewIdx) &&
+            (identical(
+                    other.currentVerticalNavbarIdx, currentVerticalNavbarIdx) ||
+                other.currentVerticalNavbarIdx == currentVerticalNavbarIdx) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.isProcessing, isProcessing) ||
+                other.isProcessing == isProcessing) &&
+            (identical(other.session, session) || other.session == session) &&
             const DeepCollectionEquality().equals(other._trees, _trees));
   }
 
@@ -1736,15 +1740,16 @@ class _$_LibraryState implements _LibraryState {
       const DeepCollectionEquality().hash(_bookmarkedBranches),
       const DeepCollectionEquality().hash(_bookmarkedTree),
       const DeepCollectionEquality().hash(_branches),
-      const DeepCollectionEquality().hash(currentPageViewIdx),
-      const DeepCollectionEquality().hash(currentVerticalNavbarIdx),
-      const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(session),
+      currentPageViewIdx,
+      currentVerticalNavbarIdx,
+      failureOption,
+      isProcessing,
+      session,
       const DeepCollectionEquality().hash(_trees));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LibraryStateCopyWith<_$_LibraryState> get copyWith =>
       __$$_LibraryStateCopyWithImpl<_$_LibraryState>(this, _$identity);
 }

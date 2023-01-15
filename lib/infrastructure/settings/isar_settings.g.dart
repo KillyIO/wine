@@ -6,101 +6,97 @@ part of 'isar_settings.dart';
 // IsarCollectionGenerator
 // **************************************************************************
 
-// ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, unused_local_variable
+// coverage:ignore-file
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, prefer_const_constructors, lines_longer_than_80_chars, require_trailing_commas, inference_failure_on_function_invocation, unnecessary_parenthesis, unnecessary_raw_strings, unnecessary_null_checks, join_return_with_assignment, prefer_final_locals, avoid_js_rounded_ints, avoid_positional_boolean_parameters
 
 extension GetIsarSettingsCollection on Isar {
-  IsarCollection<IsarSettings> get settings => getCollection();
+  IsarCollection<IsarSettings> get settings => this.collection();
 }
 
 const IsarSettingsSchema = CollectionSchema(
-  name: 'IsarSettings',
-  schema:
-      '{"name":"IsarSettings","idName":"id","properties":[{"name":"enableBranchesBookmarksCount","type":"Bool"},{"name":"enableBranchesLikesCount","type":"Bool"},{"name":"enableBranchesViewsCount","type":"Bool"},{"name":"enableTreesBookmarksCount","type":"Bool"},{"name":"enableTreesLikesCount","type":"Bool"},{"name":"enableTreesViewsCount","type":"Bool"},{"name":"hashCode","type":"Long"},{"name":"stringify","type":"Bool"}],"indexes":[],"links":[]}',
-  idName: 'id',
-  propertyIds: {
-    'enableBranchesBookmarksCount': 0,
-    'enableBranchesLikesCount': 1,
-    'enableBranchesViewsCount': 2,
-    'enableTreesBookmarksCount': 3,
-    'enableTreesLikesCount': 4,
-    'enableTreesViewsCount': 5,
-    'hashCode': 6,
-    'stringify': 7
+  name: r'IsarSettings',
+  id: -2003972169886166418,
+  properties: {
+    r'enableBranchesBookmarksCount': PropertySchema(
+      id: 0,
+      name: r'enableBranchesBookmarksCount',
+      type: IsarType.bool,
+    ),
+    r'enableBranchesLikesCount': PropertySchema(
+      id: 1,
+      name: r'enableBranchesLikesCount',
+      type: IsarType.bool,
+    ),
+    r'enableBranchesViewsCount': PropertySchema(
+      id: 2,
+      name: r'enableBranchesViewsCount',
+      type: IsarType.bool,
+    ),
+    r'enableTreesBookmarksCount': PropertySchema(
+      id: 3,
+      name: r'enableTreesBookmarksCount',
+      type: IsarType.bool,
+    ),
+    r'enableTreesLikesCount': PropertySchema(
+      id: 4,
+      name: r'enableTreesLikesCount',
+      type: IsarType.bool,
+    ),
+    r'enableTreesViewsCount': PropertySchema(
+      id: 5,
+      name: r'enableTreesViewsCount',
+      type: IsarType.bool,
+    ),
+    r'stringify': PropertySchema(
+      id: 6,
+      name: r'stringify',
+      type: IsarType.bool,
+    )
   },
-  listProperties: {},
-  indexIds: {},
-  indexValueTypes: {},
-  linkIds: {},
-  backlinkLinkNames: {},
+  estimateSize: _isarSettingsEstimateSize,
+  serialize: _isarSettingsSerialize,
+  deserialize: _isarSettingsDeserialize,
+  deserializeProp: _isarSettingsDeserializeProp,
+  idName: r'id',
+  indexes: {},
+  links: {},
+  embeddedSchemas: {},
   getId: _isarSettingsGetId,
   getLinks: _isarSettingsGetLinks,
-  attachLinks: _isarSettingsAttachLinks,
-  serializeNative: _isarSettingsSerializeNative,
-  deserializeNative: _isarSettingsDeserializeNative,
-  deserializePropNative: _isarSettingsDeserializePropNative,
-  serializeWeb: _isarSettingsSerializeWeb,
-  deserializeWeb: _isarSettingsDeserializeWeb,
-  deserializePropWeb: _isarSettingsDeserializePropWeb,
-  version: 3,
+  attach: _isarSettingsAttach,
+  version: '3.0.5',
 );
 
-int? _isarSettingsGetId(IsarSettings object) {
-  if (object.id == Isar.autoIncrement) {
-    return null;
-  } else {
-    return object.id;
-  }
+int _isarSettingsEstimateSize(
+  IsarSettings object,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
+  var bytesCount = offsets.last;
+  return bytesCount;
 }
 
-List<IsarLinkBase> _isarSettingsGetLinks(IsarSettings object) {
-  return [];
+void _isarSettingsSerialize(
+  IsarSettings object,
+  IsarWriter writer,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
+  writer.writeBool(offsets[0], object.enableBranchesBookmarksCount);
+  writer.writeBool(offsets[1], object.enableBranchesLikesCount);
+  writer.writeBool(offsets[2], object.enableBranchesViewsCount);
+  writer.writeBool(offsets[3], object.enableTreesBookmarksCount);
+  writer.writeBool(offsets[4], object.enableTreesLikesCount);
+  writer.writeBool(offsets[5], object.enableTreesViewsCount);
+  writer.writeBool(offsets[6], object.stringify);
 }
 
-void _isarSettingsSerializeNative(
-    IsarCollection<IsarSettings> collection,
-    IsarRawObject rawObj,
-    IsarSettings object,
-    int staticSize,
-    List<int> offsets,
-    AdapterAlloc alloc) {
-  var dynamicSize = 0;
-  final value0 = object.enableBranchesBookmarksCount;
-  final _enableBranchesBookmarksCount = value0;
-  final value1 = object.enableBranchesLikesCount;
-  final _enableBranchesLikesCount = value1;
-  final value2 = object.enableBranchesViewsCount;
-  final _enableBranchesViewsCount = value2;
-  final value3 = object.enableTreesBookmarksCount;
-  final _enableTreesBookmarksCount = value3;
-  final value4 = object.enableTreesLikesCount;
-  final _enableTreesLikesCount = value4;
-  final value5 = object.enableTreesViewsCount;
-  final _enableTreesViewsCount = value5;
-  final value6 = object.hashCode;
-  final _hashCode = value6;
-  final value7 = object.stringify;
-  final _stringify = value7;
-  final size = staticSize + dynamicSize;
-
-  rawObj.buffer = alloc(size);
-  rawObj.buffer_length = size;
-  final buffer = IsarNative.bufAsBytes(rawObj.buffer, size);
-  final writer = IsarBinaryWriter(buffer, staticSize);
-  writer.writeBool(offsets[0], _enableBranchesBookmarksCount);
-  writer.writeBool(offsets[1], _enableBranchesLikesCount);
-  writer.writeBool(offsets[2], _enableBranchesViewsCount);
-  writer.writeBool(offsets[3], _enableTreesBookmarksCount);
-  writer.writeBool(offsets[4], _enableTreesLikesCount);
-  writer.writeBool(offsets[5], _enableTreesViewsCount);
-  writer.writeLong(offsets[6], _hashCode);
-  writer.writeBool(offsets[7], _stringify);
-}
-
-IsarSettings _isarSettingsDeserializeNative(
-    IsarCollection<IsarSettings> collection,
-    int id,
-    IsarBinaryReader reader,
-    List<int> offsets) {
+IsarSettings _isarSettingsDeserialize(
+  Id id,
+  IsarReader reader,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
   final object = IsarSettings(
     enableBranchesBookmarksCount: reader.readBoolOrNull(offsets[0]),
     enableBranchesLikesCount: reader.readBoolOrNull(offsets[1]),
@@ -113,11 +109,13 @@ IsarSettings _isarSettingsDeserializeNative(
   return object;
 }
 
-P _isarSettingsDeserializePropNative<P>(
-    int id, IsarBinaryReader reader, int propertyIndex, int offset) {
-  switch (propertyIndex) {
-    case -1:
-      return id as P;
+P _isarSettingsDeserializeProp<P>(
+  IsarReader reader,
+  int propertyId,
+  int offset,
+  Map<Type, List<int>> allOffsets,
+) {
+  switch (propertyId) {
     case 0:
       return (reader.readBoolOrNull(offset)) as P;
     case 1:
@@ -131,148 +129,99 @@ P _isarSettingsDeserializePropNative<P>(
     case 5:
       return (reader.readBoolOrNull(offset)) as P;
     case 6:
-      return (reader.readLong(offset)) as P;
-    case 7:
       return (reader.readBool(offset)) as P;
     default:
-      throw 'Illegal propertyIndex';
+      throw IsarError('Unknown property with id $propertyId');
   }
 }
 
-dynamic _isarSettingsSerializeWeb(
-    IsarCollection<IsarSettings> collection, IsarSettings object) {
-  final jsObj = IsarNative.newJsObject();
-  IsarNative.jsObjectSet(jsObj, 'enableBranchesBookmarksCount',
-      object.enableBranchesBookmarksCount);
-  IsarNative.jsObjectSet(
-      jsObj, 'enableBranchesLikesCount', object.enableBranchesLikesCount);
-  IsarNative.jsObjectSet(
-      jsObj, 'enableBranchesViewsCount', object.enableBranchesViewsCount);
-  IsarNative.jsObjectSet(
-      jsObj, 'enableTreesBookmarksCount', object.enableTreesBookmarksCount);
-  IsarNative.jsObjectSet(
-      jsObj, 'enableTreesLikesCount', object.enableTreesLikesCount);
-  IsarNative.jsObjectSet(
-      jsObj, 'enableTreesViewsCount', object.enableTreesViewsCount);
-  IsarNative.jsObjectSet(jsObj, 'hashCode', object.hashCode);
-  IsarNative.jsObjectSet(jsObj, 'id', object.id);
-  IsarNative.jsObjectSet(jsObj, 'stringify', object.stringify);
-  return jsObj;
+Id _isarSettingsGetId(IsarSettings object) {
+  return object.id;
 }
 
-IsarSettings _isarSettingsDeserializeWeb(
-    IsarCollection<IsarSettings> collection, dynamic jsObj) {
-  final object = IsarSettings(
-    enableBranchesBookmarksCount:
-        IsarNative.jsObjectGet(jsObj, 'enableBranchesBookmarksCount'),
-    enableBranchesLikesCount:
-        IsarNative.jsObjectGet(jsObj, 'enableBranchesLikesCount'),
-    enableBranchesViewsCount:
-        IsarNative.jsObjectGet(jsObj, 'enableBranchesViewsCount'),
-    enableTreesBookmarksCount:
-        IsarNative.jsObjectGet(jsObj, 'enableTreesBookmarksCount'),
-    enableTreesLikesCount:
-        IsarNative.jsObjectGet(jsObj, 'enableTreesLikesCount'),
-    enableTreesViewsCount:
-        IsarNative.jsObjectGet(jsObj, 'enableTreesViewsCount'),
-    id: IsarNative.jsObjectGet(jsObj, 'id'),
-  );
-  return object;
+List<IsarLinkBase<dynamic>> _isarSettingsGetLinks(IsarSettings object) {
+  return [];
 }
 
-P _isarSettingsDeserializePropWeb<P>(Object jsObj, String propertyName) {
-  switch (propertyName) {
-    case 'enableBranchesBookmarksCount':
-      return (IsarNative.jsObjectGet(jsObj, 'enableBranchesBookmarksCount'))
-          as P;
-    case 'enableBranchesLikesCount':
-      return (IsarNative.jsObjectGet(jsObj, 'enableBranchesLikesCount')) as P;
-    case 'enableBranchesViewsCount':
-      return (IsarNative.jsObjectGet(jsObj, 'enableBranchesViewsCount')) as P;
-    case 'enableTreesBookmarksCount':
-      return (IsarNative.jsObjectGet(jsObj, 'enableTreesBookmarksCount')) as P;
-    case 'enableTreesLikesCount':
-      return (IsarNative.jsObjectGet(jsObj, 'enableTreesLikesCount')) as P;
-    case 'enableTreesViewsCount':
-      return (IsarNative.jsObjectGet(jsObj, 'enableTreesViewsCount')) as P;
-    case 'hashCode':
-      return (IsarNative.jsObjectGet(jsObj, 'hashCode') ??
-          double.negativeInfinity) as P;
-    case 'id':
-      return (IsarNative.jsObjectGet(jsObj, 'id')) as P;
-    case 'stringify':
-      return (IsarNative.jsObjectGet(jsObj, 'stringify') ?? false) as P;
-    default:
-      throw 'Illegal propertyName';
-  }
-}
-
-void _isarSettingsAttachLinks(
-    IsarCollection col, int id, IsarSettings object) {}
+void _isarSettingsAttach(
+    IsarCollection<dynamic> col, Id id, IsarSettings object) {}
 
 extension IsarSettingsQueryWhereSort
     on QueryBuilder<IsarSettings, IsarSettings, QWhere> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhere> anyId() {
-    return addWhereClauseInternal(const IdWhereClause.any());
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(const IdWhereClause.any());
+    });
   }
 }
 
 extension IsarSettingsQueryWhere
     on QueryBuilder<IsarSettings, IsarSettings, QWhereClause> {
-  QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idEqualTo(
-      int id) {
-    return addWhereClauseInternal(IdWhereClause.between(
-      lower: id,
-      includeLower: true,
-      upper: id,
-      includeUpper: true,
-    ));
+  QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idEqualTo(Id id) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IdWhereClause.between(
+        lower: id,
+        upper: id,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idNotEqualTo(
-      int id) {
-    if (whereSortInternal == Sort.asc) {
-      return addWhereClauseInternal(
-        IdWhereClause.lessThan(upper: id, includeUpper: false),
-      ).addWhereClauseInternal(
-        IdWhereClause.greaterThan(lower: id, includeLower: false),
-      );
-    } else {
-      return addWhereClauseInternal(
-        IdWhereClause.greaterThan(lower: id, includeLower: false),
-      ).addWhereClauseInternal(
-        IdWhereClause.lessThan(upper: id, includeUpper: false),
-      );
-    }
+      Id id) {
+    return QueryBuilder.apply(this, (query) {
+      if (query.whereSort == Sort.asc) {
+        return query
+            .addWhereClause(
+              IdWhereClause.lessThan(upper: id, includeUpper: false),
+            )
+            .addWhereClause(
+              IdWhereClause.greaterThan(lower: id, includeLower: false),
+            );
+      } else {
+        return query
+            .addWhereClause(
+              IdWhereClause.greaterThan(lower: id, includeLower: false),
+            )
+            .addWhereClause(
+              IdWhereClause.lessThan(upper: id, includeUpper: false),
+            );
+      }
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idGreaterThan(
-      int id,
+      Id id,
       {bool include = false}) {
-    return addWhereClauseInternal(
-      IdWhereClause.greaterThan(lower: id, includeLower: include),
-    );
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(
+        IdWhereClause.greaterThan(lower: id, includeLower: include),
+      );
+    });
   }
 
-  QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idLessThan(int id,
+  QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idLessThan(Id id,
       {bool include = false}) {
-    return addWhereClauseInternal(
-      IdWhereClause.lessThan(upper: id, includeUpper: include),
-    );
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(
+        IdWhereClause.lessThan(upper: id, includeUpper: include),
+      );
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterWhereClause> idBetween(
-    int lowerId,
-    int upperId, {
+    Id lowerId,
+    Id upperId, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addWhereClauseInternal(IdWhereClause.between(
-      lower: lowerId,
-      includeLower: includeLower,
-      upper: upperId,
-      includeUpper: includeUpper,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IdWhereClause.between(
+        lower: lowerId,
+        includeLower: includeLower,
+        upper: upperId,
+        includeUpper: includeUpper,
+      ));
+    });
   }
 }
 
@@ -280,403 +229,449 @@ extension IsarSettingsQueryFilter
     on QueryBuilder<IsarSettings, IsarSettings, QFilterCondition> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesBookmarksCountIsNull() {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.isNull,
-      property: 'enableBranchesBookmarksCount',
-      value: null,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'enableBranchesBookmarksCount',
+      ));
+    });
+  }
+
+  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
+      enableBranchesBookmarksCountIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'enableBranchesBookmarksCount',
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesBookmarksCountEqualTo(bool? value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'enableBranchesBookmarksCount',
-      value: value,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'enableBranchesBookmarksCount',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesLikesCountIsNull() {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.isNull,
-      property: 'enableBranchesLikesCount',
-      value: null,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'enableBranchesLikesCount',
+      ));
+    });
+  }
+
+  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
+      enableBranchesLikesCountIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'enableBranchesLikesCount',
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesLikesCountEqualTo(bool? value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'enableBranchesLikesCount',
-      value: value,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'enableBranchesLikesCount',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesViewsCountIsNull() {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.isNull,
-      property: 'enableBranchesViewsCount',
-      value: null,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'enableBranchesViewsCount',
+      ));
+    });
+  }
+
+  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
+      enableBranchesViewsCountIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'enableBranchesViewsCount',
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableBranchesViewsCountEqualTo(bool? value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'enableBranchesViewsCount',
-      value: value,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'enableBranchesViewsCount',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesBookmarksCountIsNull() {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.isNull,
-      property: 'enableTreesBookmarksCount',
-      value: null,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'enableTreesBookmarksCount',
+      ));
+    });
+  }
+
+  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
+      enableTreesBookmarksCountIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'enableTreesBookmarksCount',
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesBookmarksCountEqualTo(bool? value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'enableTreesBookmarksCount',
-      value: value,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'enableTreesBookmarksCount',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesLikesCountIsNull() {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.isNull,
-      property: 'enableTreesLikesCount',
-      value: null,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'enableTreesLikesCount',
+      ));
+    });
+  }
+
+  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
+      enableTreesLikesCountIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'enableTreesLikesCount',
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesLikesCountEqualTo(bool? value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'enableTreesLikesCount',
-      value: value,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'enableTreesLikesCount',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesViewsCountIsNull() {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.isNull,
-      property: 'enableTreesViewsCount',
-      value: null,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'enableTreesViewsCount',
+      ));
+    });
+  }
+
+  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
+      enableTreesViewsCountIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'enableTreesViewsCount',
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       enableTreesViewsCountEqualTo(bool? value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'enableTreesViewsCount',
-      value: value,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      hashCodeEqualTo(int value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'hashCode',
-      value: value,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      hashCodeGreaterThan(
-    int value, {
-    bool include = false,
-  }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.gt,
-      include: include,
-      property: 'hashCode',
-      value: value,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      hashCodeLessThan(
-    int value, {
-    bool include = false,
-  }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.lt,
-      include: include,
-      property: 'hashCode',
-      value: value,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
-      hashCodeBetween(
-    int lower,
-    int upper, {
-    bool includeLower = true,
-    bool includeUpper = true,
-  }) {
-    return addFilterConditionInternal(FilterCondition.between(
-      property: 'hashCode',
-      lower: lower,
-      includeLower: includeLower,
-      upper: upper,
-      includeUpper: includeUpper,
-    ));
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> idIsNull() {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.isNull,
-      property: 'id',
-      value: null,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'enableTreesViewsCount',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> idEqualTo(
-      int value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'id',
-      value: value,
-    ));
+      Id value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'id',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> idGreaterThan(
-    int value, {
+    Id value, {
     bool include = false,
   }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.gt,
-      include: include,
-      property: 'id',
-      value: value,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'id',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> idLessThan(
-    int value, {
+    Id value, {
     bool include = false,
   }) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.lt,
-      include: include,
-      property: 'id',
-      value: value,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'id',
+        value: value,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition> idBetween(
-    int lower,
-    int upper, {
+    Id lower,
+    Id upper, {
     bool includeLower = true,
     bool includeUpper = true,
   }) {
-    return addFilterConditionInternal(FilterCondition.between(
-      property: 'id',
-      lower: lower,
-      includeLower: includeLower,
-      upper: upper,
-      includeUpper: includeUpper,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'id',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+      ));
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterFilterCondition>
       stringifyEqualTo(bool value) {
-    return addFilterConditionInternal(FilterCondition(
-      type: ConditionType.eq,
-      property: 'stringify',
-      value: value,
-    ));
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'stringify',
+        value: value,
+      ));
+    });
   }
 }
+
+extension IsarSettingsQueryObject
+    on QueryBuilder<IsarSettings, IsarSettings, QFilterCondition> {}
 
 extension IsarSettingsQueryLinks
     on QueryBuilder<IsarSettings, IsarSettings, QFilterCondition> {}
 
-extension IsarSettingsQueryWhereSortBy
+extension IsarSettingsQuerySortBy
     on QueryBuilder<IsarSettings, IsarSettings, QSortBy> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableBranchesBookmarksCount() {
-    return addSortByInternal('enableBranchesBookmarksCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesBookmarksCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableBranchesBookmarksCountDesc() {
-    return addSortByInternal('enableBranchesBookmarksCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesBookmarksCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableBranchesLikesCount() {
-    return addSortByInternal('enableBranchesLikesCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesLikesCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableBranchesLikesCountDesc() {
-    return addSortByInternal('enableBranchesLikesCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesLikesCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableBranchesViewsCount() {
-    return addSortByInternal('enableBranchesViewsCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesViewsCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableBranchesViewsCountDesc() {
-    return addSortByInternal('enableBranchesViewsCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesViewsCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableTreesBookmarksCount() {
-    return addSortByInternal('enableTreesBookmarksCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesBookmarksCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableTreesBookmarksCountDesc() {
-    return addSortByInternal('enableTreesBookmarksCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesBookmarksCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableTreesLikesCount() {
-    return addSortByInternal('enableTreesLikesCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesLikesCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableTreesLikesCountDesc() {
-    return addSortByInternal('enableTreesLikesCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesLikesCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableTreesViewsCount() {
-    return addSortByInternal('enableTreesViewsCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesViewsCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       sortByEnableTreesViewsCountDesc() {
-    return addSortByInternal('enableTreesViewsCount', Sort.desc);
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortByHashCode() {
-    return addSortByInternal('hashCode', Sort.asc);
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortByHashCodeDesc() {
-    return addSortByInternal('hashCode', Sort.desc);
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortById() {
-    return addSortByInternal('id', Sort.asc);
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortByIdDesc() {
-    return addSortByInternal('id', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesViewsCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortByStringify() {
-    return addSortByInternal('stringify', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'stringify', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> sortByStringifyDesc() {
-    return addSortByInternal('stringify', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'stringify', Sort.desc);
+    });
   }
 }
 
-extension IsarSettingsQueryWhereSortThenBy
+extension IsarSettingsQuerySortThenBy
     on QueryBuilder<IsarSettings, IsarSettings, QSortThenBy> {
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableBranchesBookmarksCount() {
-    return addSortByInternal('enableBranchesBookmarksCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesBookmarksCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableBranchesBookmarksCountDesc() {
-    return addSortByInternal('enableBranchesBookmarksCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesBookmarksCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableBranchesLikesCount() {
-    return addSortByInternal('enableBranchesLikesCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesLikesCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableBranchesLikesCountDesc() {
-    return addSortByInternal('enableBranchesLikesCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesLikesCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableBranchesViewsCount() {
-    return addSortByInternal('enableBranchesViewsCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesViewsCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableBranchesViewsCountDesc() {
-    return addSortByInternal('enableBranchesViewsCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableBranchesViewsCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableTreesBookmarksCount() {
-    return addSortByInternal('enableTreesBookmarksCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesBookmarksCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableTreesBookmarksCountDesc() {
-    return addSortByInternal('enableTreesBookmarksCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesBookmarksCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableTreesLikesCount() {
-    return addSortByInternal('enableTreesLikesCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesLikesCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableTreesLikesCountDesc() {
-    return addSortByInternal('enableTreesLikesCount', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesLikesCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableTreesViewsCount() {
-    return addSortByInternal('enableTreesViewsCount', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesViewsCount', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy>
       thenByEnableTreesViewsCountDesc() {
-    return addSortByInternal('enableTreesViewsCount', Sort.desc);
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenByHashCode() {
-    return addSortByInternal('hashCode', Sort.asc);
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenByHashCodeDesc() {
-    return addSortByInternal('hashCode', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'enableTreesViewsCount', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenById() {
-    return addSortByInternal('id', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'id', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenByIdDesc() {
-    return addSortByInternal('id', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'id', Sort.desc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenByStringify() {
-    return addSortByInternal('stringify', Sort.asc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'stringify', Sort.asc);
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QAfterSortBy> thenByStringifyDesc() {
-    return addSortByInternal('stringify', Sort.desc);
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'stringify', Sort.desc);
+    });
   }
 }
 
@@ -684,88 +679,106 @@ extension IsarSettingsQueryWhereDistinct
     on QueryBuilder<IsarSettings, IsarSettings, QDistinct> {
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
       distinctByEnableBranchesBookmarksCount() {
-    return addDistinctByInternal('enableBranchesBookmarksCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'enableBranchesBookmarksCount');
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
       distinctByEnableBranchesLikesCount() {
-    return addDistinctByInternal('enableBranchesLikesCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'enableBranchesLikesCount');
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
       distinctByEnableBranchesViewsCount() {
-    return addDistinctByInternal('enableBranchesViewsCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'enableBranchesViewsCount');
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
       distinctByEnableTreesBookmarksCount() {
-    return addDistinctByInternal('enableTreesBookmarksCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'enableTreesBookmarksCount');
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
       distinctByEnableTreesLikesCount() {
-    return addDistinctByInternal('enableTreesLikesCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'enableTreesLikesCount');
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct>
       distinctByEnableTreesViewsCount() {
-    return addDistinctByInternal('enableTreesViewsCount');
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QDistinct> distinctByHashCode() {
-    return addDistinctByInternal('hashCode');
-  }
-
-  QueryBuilder<IsarSettings, IsarSettings, QDistinct> distinctById() {
-    return addDistinctByInternal('id');
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'enableTreesViewsCount');
+    });
   }
 
   QueryBuilder<IsarSettings, IsarSettings, QDistinct> distinctByStringify() {
-    return addDistinctByInternal('stringify');
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'stringify');
+    });
   }
 }
 
 extension IsarSettingsQueryProperty
     on QueryBuilder<IsarSettings, IsarSettings, QQueryProperty> {
+  QueryBuilder<IsarSettings, int, QQueryOperations> idProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'id');
+    });
+  }
+
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableBranchesBookmarksCountProperty() {
-    return addPropertyNameInternal('enableBranchesBookmarksCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'enableBranchesBookmarksCount');
+    });
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableBranchesLikesCountProperty() {
-    return addPropertyNameInternal('enableBranchesLikesCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'enableBranchesLikesCount');
+    });
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableBranchesViewsCountProperty() {
-    return addPropertyNameInternal('enableBranchesViewsCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'enableBranchesViewsCount');
+    });
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableTreesBookmarksCountProperty() {
-    return addPropertyNameInternal('enableTreesBookmarksCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'enableTreesBookmarksCount');
+    });
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableTreesLikesCountProperty() {
-    return addPropertyNameInternal('enableTreesLikesCount');
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'enableTreesLikesCount');
+    });
   }
 
   QueryBuilder<IsarSettings, bool?, QQueryOperations>
       enableTreesViewsCountProperty() {
-    return addPropertyNameInternal('enableTreesViewsCount');
-  }
-
-  QueryBuilder<IsarSettings, int, QQueryOperations> hashCodeProperty() {
-    return addPropertyNameInternal('hashCode');
-  }
-
-  QueryBuilder<IsarSettings, int?, QQueryOperations> idProperty() {
-    return addPropertyNameInternal('id');
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'enableTreesViewsCount');
+    });
   }
 
   QueryBuilder<IsarSettings, bool, QQueryOperations> stringifyProperty() {
-    return addPropertyNameInternal('stringify');
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'stringify');
+    });
   }
 }

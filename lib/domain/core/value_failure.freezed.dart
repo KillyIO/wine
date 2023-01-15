@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'value_failure.dart';
 
@@ -35,19 +35,19 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,19 +88,19 @@ mixin _$ValueFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -127,17 +127,18 @@ mixin _$ValueFailure<T> {
 abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
-      _$ValueFailureCopyWithImpl<T, $Res>;
+      _$ValueFailureCopyWithImpl<T, $Res, ValueFailure<T>>;
 }
 
 /// @nodoc
-class _$ValueFailureCopyWithImpl<T, $Res>
+class _$ValueFailureCopyWithImpl<T, $Res, $Val extends ValueFailure<T>>
     implements $ValueFailureCopyWith<T, $Res> {
   _$ValueFailureCopyWithImpl(this._value, this._then);
 
-  final ValueFailure<T> _value;
   // ignore: unused_field
-  final $Res Function(ValueFailure<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -145,26 +146,25 @@ abstract class _$$EmptyInputCopyWith<T, $Res> {
   factory _$$EmptyInputCopyWith(
           _$EmptyInput<T> value, $Res Function(_$EmptyInput<T>) then) =
       __$$EmptyInputCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$EmptyInputCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$EmptyInput<T>>
     implements _$$EmptyInputCopyWith<T, $Res> {
   __$$EmptyInputCopyWithImpl(
       _$EmptyInput<T> _value, $Res Function(_$EmptyInput<T>) _then)
-      : super(_value, (v) => _then(v as _$EmptyInput<T>));
+      : super(_value, _then);
 
-  @override
-  _$EmptyInput<T> get _value => super._value as _$EmptyInput<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$EmptyInput<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -200,6 +200,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$EmptyInputCopyWith<T, _$EmptyInput<T>> get copyWith =>
       __$$EmptyInputCopyWithImpl<T, _$EmptyInput<T>>(this, _$identity);
 
@@ -226,19 +227,19 @@ class _$EmptyInput<T> implements EmptyInput<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return emptyInput?.call(failedValue);
   }
@@ -291,19 +292,19 @@ class _$EmptyInput<T> implements EmptyInput<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return emptyInput?.call(this);
   }
@@ -347,26 +348,25 @@ abstract class _$$EmptySelectionCopyWith<T, $Res> {
   factory _$$EmptySelectionCopyWith(
           _$EmptySelection<T> value, $Res Function(_$EmptySelection<T>) then) =
       __$$EmptySelectionCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$EmptySelectionCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$EmptySelection<T>>
     implements _$$EmptySelectionCopyWith<T, $Res> {
   __$$EmptySelectionCopyWithImpl(
       _$EmptySelection<T> _value, $Res Function(_$EmptySelection<T>) _then)
-      : super(_value, (v) => _then(v as _$EmptySelection<T>));
+      : super(_value, _then);
 
-  @override
-  _$EmptySelection<T> get _value => super._value as _$EmptySelection<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$EmptySelection<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -402,6 +402,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$EmptySelectionCopyWith<T, _$EmptySelection<T>> get copyWith =>
       __$$EmptySelectionCopyWithImpl<T, _$EmptySelection<T>>(this, _$identity);
 
@@ -428,19 +429,19 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return emptySelection?.call(failedValue);
   }
@@ -493,19 +494,19 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return emptySelection?.call(this);
   }
@@ -549,26 +550,25 @@ abstract class _$$InvalidCoverFileCopyWith<T, $Res> {
   factory _$$InvalidCoverFileCopyWith(_$InvalidCoverFile<T> value,
           $Res Function(_$InvalidCoverFile<T>) then) =
       __$$InvalidCoverFileCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failureValue});
 }
 
 /// @nodoc
 class __$$InvalidCoverFileCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidCoverFile<T>>
     implements _$$InvalidCoverFileCopyWith<T, $Res> {
   __$$InvalidCoverFileCopyWithImpl(
       _$InvalidCoverFile<T> _value, $Res Function(_$InvalidCoverFile<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidCoverFile<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidCoverFile<T> get _value => super._value as _$InvalidCoverFile<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failureValue = freezed,
   }) {
     return _then(_$InvalidCoverFile<T>(
-      failureValue == freezed
+      freezed == failureValue
           ? _value.failureValue
           : failureValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -604,6 +604,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidCoverFileCopyWith<T, _$InvalidCoverFile<T>> get copyWith =>
       __$$InvalidCoverFileCopyWithImpl<T, _$InvalidCoverFile<T>>(
           this, _$identity);
@@ -631,19 +632,19 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidCoverFile?.call(failureValue);
   }
@@ -696,19 +697,19 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidCoverFile?.call(this);
   }
@@ -752,26 +753,25 @@ abstract class _$$InvalidCoverURLCopyWith<T, $Res> {
   factory _$$InvalidCoverURLCopyWith(_$InvalidCoverURL<T> value,
           $Res Function(_$InvalidCoverURL<T>) then) =
       __$$InvalidCoverURLCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidCoverURLCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidCoverURL<T>>
     implements _$$InvalidCoverURLCopyWith<T, $Res> {
   __$$InvalidCoverURLCopyWithImpl(
       _$InvalidCoverURL<T> _value, $Res Function(_$InvalidCoverURL<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidCoverURL<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidCoverURL<T> get _value => super._value as _$InvalidCoverURL<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$InvalidCoverURL<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -807,6 +807,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidCoverURLCopyWith<T, _$InvalidCoverURL<T>> get copyWith =>
       __$$InvalidCoverURLCopyWithImpl<T, _$InvalidCoverURL<T>>(
           this, _$identity);
@@ -834,19 +835,19 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidCoverURL?.call(failedValue);
   }
@@ -899,19 +900,19 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidCoverURL?.call(this);
   }
@@ -955,26 +956,25 @@ abstract class _$$InvalidEmailCopyWith<T, $Res> {
   factory _$$InvalidEmailCopyWith(
           _$InvalidEmail<T> value, $Res Function(_$InvalidEmail<T>) then) =
       __$$InvalidEmailCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidEmailCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidEmail<T>>
     implements _$$InvalidEmailCopyWith<T, $Res> {
   __$$InvalidEmailCopyWithImpl(
       _$InvalidEmail<T> _value, $Res Function(_$InvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidEmail<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidEmail<T> get _value => super._value as _$InvalidEmail<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$InvalidEmail<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -1010,6 +1010,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
       __$$InvalidEmailCopyWithImpl<T, _$InvalidEmail<T>>(this, _$identity);
 
@@ -1036,19 +1037,19 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidEmailAddress?.call(failedValue);
   }
@@ -1101,19 +1102,19 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidEmailAddress?.call(this);
   }
@@ -1157,26 +1158,25 @@ abstract class _$$InvalidLicenceCopyWith<T, $Res> {
   factory _$$InvalidLicenceCopyWith(
           _$InvalidLicence<T> value, $Res Function(_$InvalidLicence<T>) then) =
       __$$InvalidLicenceCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidLicenceCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidLicence<T>>
     implements _$$InvalidLicenceCopyWith<T, $Res> {
   __$$InvalidLicenceCopyWithImpl(
       _$InvalidLicence<T> _value, $Res Function(_$InvalidLicence<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidLicence<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidLicence<T> get _value => super._value as _$InvalidLicence<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$InvalidLicence<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -1212,6 +1212,7 @@ class _$InvalidLicence<T> implements InvalidLicence<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidLicenceCopyWith<T, _$InvalidLicence<T>> get copyWith =>
       __$$InvalidLicenceCopyWithImpl<T, _$InvalidLicence<T>>(this, _$identity);
 
@@ -1238,19 +1239,19 @@ class _$InvalidLicence<T> implements InvalidLicence<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidLicence?.call(failedValue);
   }
@@ -1303,19 +1304,19 @@ class _$InvalidLicence<T> implements InvalidLicence<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidLicence?.call(this);
   }
@@ -1359,26 +1360,25 @@ abstract class _$$InvalidPasswordCopyWith<T, $Res> {
   factory _$$InvalidPasswordCopyWith(_$InvalidPassword<T> value,
           $Res Function(_$InvalidPassword<T>) then) =
       __$$InvalidPasswordCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidPasswordCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidPassword<T>>
     implements _$$InvalidPasswordCopyWith<T, $Res> {
   __$$InvalidPasswordCopyWithImpl(
       _$InvalidPassword<T> _value, $Res Function(_$InvalidPassword<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidPassword<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidPassword<T> get _value => super._value as _$InvalidPassword<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$InvalidPassword<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -1414,6 +1414,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidPasswordCopyWith<T, _$InvalidPassword<T>> get copyWith =>
       __$$InvalidPasswordCopyWithImpl<T, _$InvalidPassword<T>>(
           this, _$identity);
@@ -1441,19 +1442,19 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidPassword?.call(failedValue);
   }
@@ -1506,19 +1507,19 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidPassword?.call(this);
   }
@@ -1562,27 +1563,25 @@ abstract class _$$InvalidConfirmPasswordCopyWith<T, $Res> {
   factory _$$InvalidConfirmPasswordCopyWith(_$InvalidConfirmPassword<T> value,
           $Res Function(_$InvalidConfirmPassword<T>) then) =
       __$$InvalidConfirmPasswordCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidConfirmPasswordCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidConfirmPassword<T>>
     implements _$$InvalidConfirmPasswordCopyWith<T, $Res> {
   __$$InvalidConfirmPasswordCopyWithImpl(_$InvalidConfirmPassword<T> _value,
       $Res Function(_$InvalidConfirmPassword<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidConfirmPassword<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidConfirmPassword<T> get _value =>
-      super._value as _$InvalidConfirmPassword<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$InvalidConfirmPassword<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -1618,6 +1617,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidConfirmPasswordCopyWith<T, _$InvalidConfirmPassword<T>>
       get copyWith => __$$InvalidConfirmPasswordCopyWithImpl<T,
           _$InvalidConfirmPassword<T>>(this, _$identity);
@@ -1645,19 +1645,19 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidConfirmPassword?.call(failedValue);
   }
@@ -1710,19 +1710,19 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidConfirmPassword?.call(this);
   }
@@ -1767,26 +1767,25 @@ abstract class _$$InvalidUniqueIDCopyWith<T, $Res> {
   factory _$$InvalidUniqueIDCopyWith(_$InvalidUniqueID<T> value,
           $Res Function(_$InvalidUniqueID<T>) then) =
       __$$InvalidUniqueIDCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidUniqueIDCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidUniqueID<T>>
     implements _$$InvalidUniqueIDCopyWith<T, $Res> {
   __$$InvalidUniqueIDCopyWithImpl(
       _$InvalidUniqueID<T> _value, $Res Function(_$InvalidUniqueID<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidUniqueID<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidUniqueID<T> get _value => super._value as _$InvalidUniqueID<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$InvalidUniqueID<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -1822,6 +1821,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidUniqueIDCopyWith<T, _$InvalidUniqueID<T>> get copyWith =>
       __$$InvalidUniqueIDCopyWithImpl<T, _$InvalidUniqueID<T>>(
           this, _$identity);
@@ -1849,19 +1849,19 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidUniqueID?.call(failedValue);
   }
@@ -1914,19 +1914,19 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidUniqueID?.call(this);
   }
@@ -1970,26 +1970,25 @@ abstract class _$$InvalidUsernameCopyWith<T, $Res> {
   factory _$$InvalidUsernameCopyWith(_$InvalidUsername<T> value,
           $Res Function(_$InvalidUsername<T>) then) =
       __$$InvalidUsernameCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidUsernameCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidUsername<T>>
     implements _$$InvalidUsernameCopyWith<T, $Res> {
   __$$InvalidUsernameCopyWithImpl(
       _$InvalidUsername<T> _value, $Res Function(_$InvalidUsername<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidUsername<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidUsername<T> get _value => super._value as _$InvalidUsername<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$InvalidUsername<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -2025,6 +2024,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidUsernameCopyWith<T, _$InvalidUsername<T>> get copyWith =>
       __$$InvalidUsernameCopyWithImpl<T, _$InvalidUsername<T>>(
           this, _$identity);
@@ -2052,19 +2052,19 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidUsername?.call(failedValue);
   }
@@ -2117,19 +2117,19 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidUsername?.call(this);
   }
@@ -2173,26 +2173,25 @@ abstract class _$$InvalidViolationCopyWith<T, $Res> {
   factory _$$InvalidViolationCopyWith(_$InvalidViolation<T> value,
           $Res Function(_$InvalidViolation<T>) then) =
       __$$InvalidViolationCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidViolationCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidViolation<T>>
     implements _$$InvalidViolationCopyWith<T, $Res> {
   __$$InvalidViolationCopyWithImpl(
       _$InvalidViolation<T> _value, $Res Function(_$InvalidViolation<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidViolation<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidViolation<T> get _value => super._value as _$InvalidViolation<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$InvalidViolation<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -2228,6 +2227,7 @@ class _$InvalidViolation<T> implements InvalidViolation<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidViolationCopyWith<T, _$InvalidViolation<T>> get copyWith =>
       __$$InvalidViolationCopyWithImpl<T, _$InvalidViolation<T>>(
           this, _$identity);
@@ -2255,19 +2255,19 @@ class _$InvalidViolation<T> implements InvalidViolation<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return invalidViolation?.call(failedValue);
   }
@@ -2320,19 +2320,19 @@ class _$InvalidViolation<T> implements InvalidViolation<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return invalidViolation?.call(this);
   }
@@ -2376,26 +2376,25 @@ abstract class _$$TooLongInputCopyWith<T, $Res> {
   factory _$$TooLongInputCopyWith(
           _$TooLongInput<T> value, $Res Function(_$TooLongInput<T>) then) =
       __$$TooLongInputCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$TooLongInputCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$TooLongInput<T>>
     implements _$$TooLongInputCopyWith<T, $Res> {
   __$$TooLongInputCopyWithImpl(
       _$TooLongInput<T> _value, $Res Function(_$TooLongInput<T>) _then)
-      : super(_value, (v) => _then(v as _$TooLongInput<T>));
+      : super(_value, _then);
 
-  @override
-  _$TooLongInput<T> get _value => super._value as _$TooLongInput<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$TooLongInput<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -2431,6 +2430,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TooLongInputCopyWith<T, _$TooLongInput<T>> get copyWith =>
       __$$TooLongInputCopyWithImpl<T, _$TooLongInput<T>>(this, _$identity);
 
@@ -2457,19 +2457,19 @@ class _$TooLongInput<T> implements TooLongInput<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return tooLongInput?.call(failedValue);
   }
@@ -2522,19 +2522,19 @@ class _$TooLongInput<T> implements TooLongInput<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return tooLongInput?.call(this);
   }
@@ -2578,26 +2578,25 @@ abstract class _$$TooShortInputCopyWith<T, $Res> {
   factory _$$TooShortInputCopyWith(
           _$TooShortInput<T> value, $Res Function(_$TooShortInput<T>) then) =
       __$$TooShortInputCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$TooShortInputCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$TooShortInput<T>>
     implements _$$TooShortInputCopyWith<T, $Res> {
   __$$TooShortInputCopyWithImpl(
       _$TooShortInput<T> _value, $Res Function(_$TooShortInput<T>) _then)
-      : super(_value, (v) => _then(v as _$TooShortInput<T>));
+      : super(_value, _then);
 
-  @override
-  _$TooShortInput<T> get _value => super._value as _$TooShortInput<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
     return _then(_$TooShortInput<T>(
-      failedValue == freezed
+      freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -2633,6 +2632,7 @@ class _$TooShortInput<T> implements TooShortInput<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$TooShortInputCopyWith<T, _$TooShortInput<T>> get copyWith =>
       __$$TooShortInputCopyWithImpl<T, _$TooShortInput<T>>(this, _$identity);
 
@@ -2659,19 +2659,19 @@ class _$TooShortInput<T> implements TooShortInput<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? emptyInput,
-    TResult Function(T failedValue)? emptySelection,
-    TResult Function(T failureValue)? invalidCoverFile,
-    TResult Function(T failedValue)? invalidCoverURL,
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidLicence,
-    TResult Function(T failedValue)? invalidPassword,
-    TResult Function(T failedValue)? invalidConfirmPassword,
-    TResult Function(T failedValue)? invalidUniqueID,
-    TResult Function(T failedValue)? invalidUsername,
-    TResult Function(T failedValue)? invalidViolation,
-    TResult Function(T failedValue)? tooLongInput,
-    TResult Function(T failedValue)? tooShortInput,
+    TResult? Function(T failedValue)? emptyInput,
+    TResult? Function(T failedValue)? emptySelection,
+    TResult? Function(T failureValue)? invalidCoverFile,
+    TResult? Function(T failedValue)? invalidCoverURL,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidLicence,
+    TResult? Function(T failedValue)? invalidPassword,
+    TResult? Function(T failedValue)? invalidConfirmPassword,
+    TResult? Function(T failedValue)? invalidUniqueID,
+    TResult? Function(T failedValue)? invalidUsername,
+    TResult? Function(T failedValue)? invalidViolation,
+    TResult? Function(T failedValue)? tooLongInput,
+    TResult? Function(T failedValue)? tooShortInput,
   }) {
     return tooShortInput?.call(failedValue);
   }
@@ -2724,19 +2724,19 @@ class _$TooShortInput<T> implements TooShortInput<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmptyInput<T> value)? emptyInput,
-    TResult Function(EmptySelection<T> value)? emptySelection,
-    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
-    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
-    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
-    TResult Function(InvalidLicence<T> value)? invalidLicence,
-    TResult Function(InvalidPassword<T> value)? invalidPassword,
-    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
-    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
-    TResult Function(InvalidUsername<T> value)? invalidUsername,
-    TResult Function(InvalidViolation<T> value)? invalidViolation,
-    TResult Function(TooLongInput<T> value)? tooLongInput,
-    TResult Function(TooShortInput<T> value)? tooShortInput,
+    TResult? Function(EmptyInput<T> value)? emptyInput,
+    TResult? Function(EmptySelection<T> value)? emptySelection,
+    TResult? Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult? Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult? Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidLicence<T> value)? invalidLicence,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult? Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult? Function(InvalidUsername<T> value)? invalidUsername,
+    TResult? Function(InvalidViolation<T> value)? invalidViolation,
+    TResult? Function(TooLongInput<T> value)? tooLongInput,
+    TResult? Function(TooShortInput<T> value)? tooShortInput,
   }) {
     return tooShortInput?.call(this);
   }

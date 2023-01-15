@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'default_covers_failure.dart';
 
@@ -28,12 +28,12 @@ mixin _$DefaultCoversFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultCoversNotCached,
-    TResult Function()? defaultCoverNotFetched,
-    TResult Function()? defaultCoversNotLoaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? defaultCoversNotCached,
+    TResult? Function()? defaultCoverNotFetched,
+    TResult? Function()? defaultCoversNotLoaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,12 +62,12 @@ mixin _$DefaultCoversFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DefaultCoversNotCached value)? defaultCoversNotCached,
-    TResult Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
-    TResult Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(DefaultCoversNotCached value)? defaultCoversNotCached,
+    TResult? Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
+    TResult? Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,17 +87,19 @@ mixin _$DefaultCoversFailure {
 abstract class $DefaultCoversFailureCopyWith<$Res> {
   factory $DefaultCoversFailureCopyWith(DefaultCoversFailure value,
           $Res Function(DefaultCoversFailure) then) =
-      _$DefaultCoversFailureCopyWithImpl<$Res>;
+      _$DefaultCoversFailureCopyWithImpl<$Res, DefaultCoversFailure>;
 }
 
 /// @nodoc
-class _$DefaultCoversFailureCopyWithImpl<$Res>
+class _$DefaultCoversFailureCopyWithImpl<$Res,
+        $Val extends DefaultCoversFailure>
     implements $DefaultCoversFailureCopyWith<$Res> {
   _$DefaultCoversFailureCopyWithImpl(this._value, this._then);
 
-  final DefaultCoversFailure _value;
   // ignore: unused_field
-  final $Res Function(DefaultCoversFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -109,15 +111,11 @@ abstract class _$$DefaultCoversNotCachedCopyWith<$Res> {
 
 /// @nodoc
 class __$$DefaultCoversNotCachedCopyWithImpl<$Res>
-    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res, _$DefaultCoversNotCached>
     implements _$$DefaultCoversNotCachedCopyWith<$Res> {
   __$$DefaultCoversNotCachedCopyWithImpl(_$DefaultCoversNotCached _value,
       $Res Function(_$DefaultCoversNotCached) _then)
-      : super(_value, (v) => _then(v as _$DefaultCoversNotCached));
-
-  @override
-  _$DefaultCoversNotCached get _value =>
-      super._value as _$DefaultCoversNotCached;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -155,12 +153,12 @@ class _$DefaultCoversNotCached implements DefaultCoversNotCached {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultCoversNotCached,
-    TResult Function()? defaultCoverNotFetched,
-    TResult Function()? defaultCoversNotLoaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? defaultCoversNotCached,
+    TResult? Function()? defaultCoverNotFetched,
+    TResult? Function()? defaultCoversNotLoaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return defaultCoversNotCached?.call();
   }
@@ -201,12 +199,12 @@ class _$DefaultCoversNotCached implements DefaultCoversNotCached {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DefaultCoversNotCached value)? defaultCoversNotCached,
-    TResult Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
-    TResult Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(DefaultCoversNotCached value)? defaultCoversNotCached,
+    TResult? Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
+    TResult? Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return defaultCoversNotCached?.call(this);
   }
@@ -242,15 +240,11 @@ abstract class _$$DefaultCoverNotFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$DefaultCoverNotFetchedCopyWithImpl<$Res>
-    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res, _$DefaultCoverNotFetched>
     implements _$$DefaultCoverNotFetchedCopyWith<$Res> {
   __$$DefaultCoverNotFetchedCopyWithImpl(_$DefaultCoverNotFetched _value,
       $Res Function(_$DefaultCoverNotFetched) _then)
-      : super(_value, (v) => _then(v as _$DefaultCoverNotFetched));
-
-  @override
-  _$DefaultCoverNotFetched get _value =>
-      super._value as _$DefaultCoverNotFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -288,12 +282,12 @@ class _$DefaultCoverNotFetched implements DefaultCoverNotFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultCoversNotCached,
-    TResult Function()? defaultCoverNotFetched,
-    TResult Function()? defaultCoversNotLoaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? defaultCoversNotCached,
+    TResult? Function()? defaultCoverNotFetched,
+    TResult? Function()? defaultCoversNotLoaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return defaultCoverNotFetched?.call();
   }
@@ -334,12 +328,12 @@ class _$DefaultCoverNotFetched implements DefaultCoverNotFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DefaultCoversNotCached value)? defaultCoversNotCached,
-    TResult Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
-    TResult Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(DefaultCoversNotCached value)? defaultCoversNotCached,
+    TResult? Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
+    TResult? Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return defaultCoverNotFetched?.call(this);
   }
@@ -375,15 +369,11 @@ abstract class _$$DefaultCoversNotLoadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$DefaultCoversNotLoadedCopyWithImpl<$Res>
-    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res, _$DefaultCoversNotLoaded>
     implements _$$DefaultCoversNotLoadedCopyWith<$Res> {
   __$$DefaultCoversNotLoadedCopyWithImpl(_$DefaultCoversNotLoaded _value,
       $Res Function(_$DefaultCoversNotLoaded) _then)
-      : super(_value, (v) => _then(v as _$DefaultCoversNotLoaded));
-
-  @override
-  _$DefaultCoversNotLoaded get _value =>
-      super._value as _$DefaultCoversNotLoaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -421,12 +411,12 @@ class _$DefaultCoversNotLoaded implements DefaultCoversNotLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultCoversNotCached,
-    TResult Function()? defaultCoverNotFetched,
-    TResult Function()? defaultCoversNotLoaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? defaultCoversNotCached,
+    TResult? Function()? defaultCoverNotFetched,
+    TResult? Function()? defaultCoversNotLoaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return defaultCoversNotLoaded?.call();
   }
@@ -467,12 +457,12 @@ class _$DefaultCoversNotLoaded implements DefaultCoversNotLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DefaultCoversNotCached value)? defaultCoversNotCached,
-    TResult Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
-    TResult Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(DefaultCoversNotCached value)? defaultCoversNotCached,
+    TResult? Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
+    TResult? Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return defaultCoversNotLoaded?.call(this);
   }
@@ -508,14 +498,11 @@ abstract class _$$PermissionDeniedCopyWith<$Res> {
 
 /// @nodoc
 class __$$PermissionDeniedCopyWithImpl<$Res>
-    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res, _$PermissionDenied>
     implements _$$PermissionDeniedCopyWith<$Res> {
   __$$PermissionDeniedCopyWithImpl(
       _$PermissionDenied _value, $Res Function(_$PermissionDenied) _then)
-      : super(_value, (v) => _then(v as _$PermissionDenied));
-
-  @override
-  _$PermissionDenied get _value => super._value as _$PermissionDenied;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -553,12 +540,12 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultCoversNotCached,
-    TResult Function()? defaultCoverNotFetched,
-    TResult Function()? defaultCoversNotLoaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? defaultCoversNotCached,
+    TResult? Function()? defaultCoverNotFetched,
+    TResult? Function()? defaultCoversNotLoaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return permissionDenied?.call();
   }
@@ -599,12 +586,12 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DefaultCoversNotCached value)? defaultCoversNotCached,
-    TResult Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
-    TResult Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(DefaultCoversNotCached value)? defaultCoversNotCached,
+    TResult? Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
+    TResult? Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return permissionDenied?.call(this);
   }
@@ -640,14 +627,11 @@ abstract class _$$ServerErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$ServerErrorCopyWithImpl<$Res>
-    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res, _$ServerError>
     implements _$$ServerErrorCopyWith<$Res> {
   __$$ServerErrorCopyWithImpl(
       _$ServerError _value, $Res Function(_$ServerError) _then)
-      : super(_value, (v) => _then(v as _$ServerError));
-
-  @override
-  _$ServerError get _value => super._value as _$ServerError;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -685,12 +669,12 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultCoversNotCached,
-    TResult Function()? defaultCoverNotFetched,
-    TResult Function()? defaultCoversNotLoaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? defaultCoversNotCached,
+    TResult? Function()? defaultCoverNotFetched,
+    TResult? Function()? defaultCoversNotLoaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return serverError?.call();
   }
@@ -731,12 +715,12 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DefaultCoversNotCached value)? defaultCoversNotCached,
-    TResult Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
-    TResult Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(DefaultCoversNotCached value)? defaultCoversNotCached,
+    TResult? Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
+    TResult? Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return serverError?.call(this);
   }
@@ -772,14 +756,11 @@ abstract class _$$UnexpectedCopyWith<$Res> {
 
 /// @nodoc
 class __$$UnexpectedCopyWithImpl<$Res>
-    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res, _$Unexpected>
     implements _$$UnexpectedCopyWith<$Res> {
   __$$UnexpectedCopyWithImpl(
       _$Unexpected _value, $Res Function(_$Unexpected) _then)
-      : super(_value, (v) => _then(v as _$Unexpected));
-
-  @override
-  _$Unexpected get _value => super._value as _$Unexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -817,12 +798,12 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? defaultCoversNotCached,
-    TResult Function()? defaultCoverNotFetched,
-    TResult Function()? defaultCoversNotLoaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? defaultCoversNotCached,
+    TResult? Function()? defaultCoverNotFetched,
+    TResult? Function()? defaultCoversNotLoaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return unexpected?.call();
   }
@@ -863,12 +844,12 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DefaultCoversNotCached value)? defaultCoversNotCached,
-    TResult Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
-    TResult Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(DefaultCoversNotCached value)? defaultCoversNotCached,
+    TResult? Function(DefaultCoverNotFetched value)? defaultCoverNotFetched,
+    TResult? Function(DefaultCoversNotLoaded value)? defaultCoversNotLoaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return unexpected?.call(this);
   }

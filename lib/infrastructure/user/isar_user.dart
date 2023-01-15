@@ -8,12 +8,12 @@ import 'package:wine/domain/user/user.dart';
 part 'isar_user.g.dart';
 
 /// @nodoc
-@Collection(accessor: 'users')
+@Collection(accessor: 'users', inheritance: false)
 class IsarUser extends Equatable {
   /// @nodoc
   const IsarUser({
     required this.emailAddress,
-    this.id,
+    this.id = Isar.autoIncrement,
     required this.uid,
     required this.updatedAt,
     required this.username,
@@ -37,7 +37,7 @@ class IsarUser extends Equatable {
   final Id? id;
 
   /// @nodoc
-  @Index()
+  @Index(unique: true)
   final String uid;
 
   /// @nodoc
@@ -84,6 +84,7 @@ class IsarUser extends Equatable {
   }
 
   @override
+  @ignore
   List<Object?> get props => [emailAddress, id, uid, updatedAt, username];
 
   @override

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user_failure.dart';
 
@@ -27,11 +27,11 @@ mixin _$UserFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? usernameAlreadyInUse,
-    TResult Function()? userNotFound,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
+    TResult? Function()? usernameAlreadyInUse,
+    TResult? Function()? userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,11 +55,11 @@ mixin _$UserFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
-    TResult Function(UserNotFound value)? userNotFound,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult? Function(UserNotFound value)? userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,16 +78,18 @@ mixin _$UserFailure {
 abstract class $UserFailureCopyWith<$Res> {
   factory $UserFailureCopyWith(
           UserFailure value, $Res Function(UserFailure) then) =
-      _$UserFailureCopyWithImpl<$Res>;
+      _$UserFailureCopyWithImpl<$Res, UserFailure>;
 }
 
 /// @nodoc
-class _$UserFailureCopyWithImpl<$Res> implements $UserFailureCopyWith<$Res> {
+class _$UserFailureCopyWithImpl<$Res, $Val extends UserFailure>
+    implements $UserFailureCopyWith<$Res> {
   _$UserFailureCopyWithImpl(this._value, this._then);
 
-  final UserFailure _value;
   // ignore: unused_field
-  final $Res Function(UserFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -99,14 +101,11 @@ abstract class _$$PermissionDeniedCopyWith<$Res> {
 
 /// @nodoc
 class __$$PermissionDeniedCopyWithImpl<$Res>
-    extends _$UserFailureCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res, _$PermissionDenied>
     implements _$$PermissionDeniedCopyWith<$Res> {
   __$$PermissionDeniedCopyWithImpl(
       _$PermissionDenied _value, $Res Function(_$PermissionDenied) _then)
-      : super(_value, (v) => _then(v as _$PermissionDenied));
-
-  @override
-  _$PermissionDenied get _value => super._value as _$PermissionDenied;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -143,11 +142,11 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? usernameAlreadyInUse,
-    TResult Function()? userNotFound,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
+    TResult? Function()? usernameAlreadyInUse,
+    TResult? Function()? userNotFound,
   }) {
     return permissionDenied?.call();
   }
@@ -183,11 +182,11 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
-    TResult Function(UserNotFound value)? userNotFound,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult? Function(UserNotFound value)? userNotFound,
   }) {
     return permissionDenied?.call(this);
   }
@@ -221,14 +220,12 @@ abstract class _$$ServerErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
+class __$$ServerErrorCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res, _$ServerError>
     implements _$$ServerErrorCopyWith<$Res> {
   __$$ServerErrorCopyWithImpl(
       _$ServerError _value, $Res Function(_$ServerError) _then)
-      : super(_value, (v) => _then(v as _$ServerError));
-
-  @override
-  _$ServerError get _value => super._value as _$ServerError;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -265,11 +262,11 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? usernameAlreadyInUse,
-    TResult Function()? userNotFound,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
+    TResult? Function()? usernameAlreadyInUse,
+    TResult? Function()? userNotFound,
   }) {
     return serverError?.call();
   }
@@ -305,11 +302,11 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
-    TResult Function(UserNotFound value)? userNotFound,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult? Function(UserNotFound value)? userNotFound,
   }) {
     return serverError?.call(this);
   }
@@ -343,14 +340,12 @@ abstract class _$$UnexpectedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UnexpectedCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
+class __$$UnexpectedCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res, _$Unexpected>
     implements _$$UnexpectedCopyWith<$Res> {
   __$$UnexpectedCopyWithImpl(
       _$Unexpected _value, $Res Function(_$Unexpected) _then)
-      : super(_value, (v) => _then(v as _$Unexpected));
-
-  @override
-  _$Unexpected get _value => super._value as _$Unexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -387,11 +382,11 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? usernameAlreadyInUse,
-    TResult Function()? userNotFound,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
+    TResult? Function()? usernameAlreadyInUse,
+    TResult? Function()? userNotFound,
   }) {
     return unexpected?.call();
   }
@@ -427,11 +422,11 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
-    TResult Function(UserNotFound value)? userNotFound,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult? Function(UserNotFound value)? userNotFound,
   }) {
     return unexpected?.call(this);
   }
@@ -466,14 +461,11 @@ abstract class _$$UsernameAlreadyInUseCopyWith<$Res> {
 
 /// @nodoc
 class __$$UsernameAlreadyInUseCopyWithImpl<$Res>
-    extends _$UserFailureCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res, _$UsernameAlreadyInUse>
     implements _$$UsernameAlreadyInUseCopyWith<$Res> {
   __$$UsernameAlreadyInUseCopyWithImpl(_$UsernameAlreadyInUse _value,
       $Res Function(_$UsernameAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as _$UsernameAlreadyInUse));
-
-  @override
-  _$UsernameAlreadyInUse get _value => super._value as _$UsernameAlreadyInUse;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -510,11 +502,11 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? usernameAlreadyInUse,
-    TResult Function()? userNotFound,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
+    TResult? Function()? usernameAlreadyInUse,
+    TResult? Function()? userNotFound,
   }) {
     return usernameAlreadyInUse?.call();
   }
@@ -550,11 +542,11 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
-    TResult Function(UserNotFound value)? userNotFound,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult? Function(UserNotFound value)? userNotFound,
   }) {
     return usernameAlreadyInUse?.call(this);
   }
@@ -588,14 +580,12 @@ abstract class _$$UserNotFoundCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserNotFoundCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
+class __$$UserNotFoundCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res, _$UserNotFound>
     implements _$$UserNotFoundCopyWith<$Res> {
   __$$UserNotFoundCopyWithImpl(
       _$UserNotFound _value, $Res Function(_$UserNotFound) _then)
-      : super(_value, (v) => _then(v as _$UserNotFound));
-
-  @override
-  _$UserNotFound get _value => super._value as _$UserNotFound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -632,11 +622,11 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    TResult Function()? usernameAlreadyInUse,
-    TResult Function()? userNotFound,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
+    TResult? Function()? usernameAlreadyInUse,
+    TResult? Function()? userNotFound,
   }) {
     return userNotFound?.call();
   }
@@ -672,11 +662,11 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
-    TResult Function(UserNotFound value)? userNotFound,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult? Function(UserNotFound value)? userNotFound,
   }) {
     return userNotFound?.call(this);
   }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'branch_dto.dart';
 
@@ -48,7 +48,8 @@ mixin _$BranchDTO {
 /// @nodoc
 abstract class $BranchDTOCopyWith<$Res> {
   factory $BranchDTOCopyWith(BranchDTO value, $Res Function(BranchDTO) then) =
-      _$BranchDTOCopyWithImpl<$Res>;
+      _$BranchDTOCopyWithImpl<$Res, BranchDTO>;
+  @useResult
   $Res call(
       {String authorUID,
       int bookmarksCount,
@@ -70,103 +71,106 @@ abstract class $BranchDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BranchDTOCopyWithImpl<$Res> implements $BranchDTOCopyWith<$Res> {
+class _$BranchDTOCopyWithImpl<$Res, $Val extends BranchDTO>
+    implements $BranchDTOCopyWith<$Res> {
   _$BranchDTOCopyWithImpl(this._value, this._then);
 
-  final BranchDTO _value;
   // ignore: unused_field
-  final $Res Function(BranchDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? index = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? leaf = freezed,
-    Object? licence = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? index = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? leaf = null,
+    Object? licence = null,
+    Object? likesCount = null,
     Object? previousBranchUID = freezed,
-    Object? title = freezed,
-    Object? treeUID = freezed,
-    Object? uid = freezed,
-    Object? updatedAt = freezed,
-    Object? viewsCount = freezed,
+    Object? title = null,
+    Object? treeUID = null,
+    Object? uid = null,
+    Object? updatedAt = null,
+    Object? viewsCount = null,
   }) {
     return _then(_value.copyWith(
-      authorUID: authorUID == freezed
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as String,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
-      genres: genres == freezed
+      genres: null == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      index: index == freezed
+      index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
-      leaf: leaf == freezed
+      leaf: null == leaf
           ? _value.leaf
           : leaf // ignore: cast_nullable_to_non_nullable
               as String,
-      licence: licence == freezed
+      licence: null == licence
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
               as String,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      previousBranchUID: previousBranchUID == freezed
+      previousBranchUID: freezed == previousBranchUID
           ? _value.previousBranchUID
           : previousBranchUID // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      treeUID: treeUID == freezed
+      treeUID: null == treeUID
           ? _value.treeUID
           : treeUID // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -176,6 +180,7 @@ abstract class _$$_BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
           _$_BranchDTO value, $Res Function(_$_BranchDTO) then) =
       __$$_BranchDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String authorUID,
       int bookmarksCount,
@@ -197,101 +202,100 @@ abstract class _$$_BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BranchDTOCopyWithImpl<$Res> extends _$BranchDTOCopyWithImpl<$Res>
+class __$$_BranchDTOCopyWithImpl<$Res>
+    extends _$BranchDTOCopyWithImpl<$Res, _$_BranchDTO>
     implements _$$_BranchDTOCopyWith<$Res> {
   __$$_BranchDTOCopyWithImpl(
       _$_BranchDTO _value, $Res Function(_$_BranchDTO) _then)
-      : super(_value, (v) => _then(v as _$_BranchDTO));
+      : super(_value, _then);
 
-  @override
-  _$_BranchDTO get _value => super._value as _$_BranchDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? index = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? leaf = freezed,
-    Object? licence = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? index = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? leaf = null,
+    Object? licence = null,
+    Object? likesCount = null,
     Object? previousBranchUID = freezed,
-    Object? title = freezed,
-    Object? treeUID = freezed,
-    Object? uid = freezed,
-    Object? updatedAt = freezed,
-    Object? viewsCount = freezed,
+    Object? title = null,
+    Object? treeUID = null,
+    Object? uid = null,
+    Object? updatedAt = null,
+    Object? viewsCount = null,
   }) {
     return _then(_$_BranchDTO(
-      authorUID: authorUID == freezed
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as String,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
-      genres: genres == freezed
+      genres: null == genres
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      index: index == freezed
+      index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
-      leaf: leaf == freezed
+      leaf: null == leaf
           ? _value.leaf
           : leaf // ignore: cast_nullable_to_non_nullable
               as String,
-      licence: licence == freezed
+      licence: null == licence
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
               as String,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      previousBranchUID: previousBranchUID == freezed
+      previousBranchUID: freezed == previousBranchUID
           ? _value.previousBranchUID
           : previousBranchUID // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      treeUID: treeUID == freezed
+      treeUID: null == treeUID
           ? _value.treeUID
           : treeUID // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
@@ -334,6 +338,7 @@ class _$_BranchDTO implements _BranchDTO {
   final List<String> _genres;
   @override
   List<String> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_genres);
   }
@@ -376,54 +381,59 @@ class _$_BranchDTO implements _BranchDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BranchDTO &&
-            const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
-            const DeepCollectionEquality()
-                .equals(other.bookmarksCount, bookmarksCount) &&
-            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
+            (identical(other.authorUID, authorUID) ||
+                other.authorUID == authorUID) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                other.bookmarksCount == bookmarksCount) &&
+            (identical(other.coverURL, coverURL) ||
+                other.coverURL == coverURL) &&
             const DeepCollectionEquality().equals(other._genres, _genres) &&
-            const DeepCollectionEquality().equals(other.index, index) &&
-            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
-            const DeepCollectionEquality()
-                .equals(other.isPublished, isPublished) &&
-            const DeepCollectionEquality().equals(other.language, language) &&
-            const DeepCollectionEquality().equals(other.leaf, leaf) &&
-            const DeepCollectionEquality().equals(other.licence, licence) &&
-            const DeepCollectionEquality()
-                .equals(other.likesCount, likesCount) &&
-            const DeepCollectionEquality()
-                .equals(other.previousBranchUID, previousBranchUID) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.treeUID, treeUID) &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality()
-                .equals(other.viewsCount, viewsCount));
+            (identical(other.index, index) || other.index == index) &&
+            (identical(other.isNSFW, isNSFW) || other.isNSFW == isNSFW) &&
+            (identical(other.isPublished, isPublished) ||
+                other.isPublished == isPublished) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.leaf, leaf) || other.leaf == leaf) &&
+            (identical(other.licence, licence) || other.licence == licence) &&
+            (identical(other.likesCount, likesCount) ||
+                other.likesCount == likesCount) &&
+            (identical(other.previousBranchUID, previousBranchUID) ||
+                other.previousBranchUID == previousBranchUID) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.treeUID, treeUID) || other.treeUID == treeUID) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.viewsCount, viewsCount) ||
+                other.viewsCount == viewsCount));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(authorUID),
-      const DeepCollectionEquality().hash(bookmarksCount),
-      const DeepCollectionEquality().hash(coverURL),
+      authorUID,
+      bookmarksCount,
+      coverURL,
       const DeepCollectionEquality().hash(_genres),
-      const DeepCollectionEquality().hash(index),
-      const DeepCollectionEquality().hash(isNSFW),
-      const DeepCollectionEquality().hash(isPublished),
-      const DeepCollectionEquality().hash(language),
-      const DeepCollectionEquality().hash(leaf),
-      const DeepCollectionEquality().hash(licence),
-      const DeepCollectionEquality().hash(likesCount),
-      const DeepCollectionEquality().hash(previousBranchUID),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(treeUID),
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(viewsCount));
+      index,
+      isNSFW,
+      isPublished,
+      language,
+      leaf,
+      licence,
+      likesCount,
+      previousBranchUID,
+      title,
+      treeUID,
+      uid,
+      updatedAt,
+      viewsCount);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_BranchDTOCopyWith<_$_BranchDTO> get copyWith =>
       __$$_BranchDTOCopyWithImpl<_$_BranchDTO>(this, _$identity);
 

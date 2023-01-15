@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'setup_bloc.dart';
 
@@ -32,15 +32,15 @@ mixin _$SetupEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,15 +72,15 @@ mixin _$SetupEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,16 +103,18 @@ mixin _$SetupEvent {
 abstract class $SetupEventCopyWith<$Res> {
   factory $SetupEventCopyWith(
           SetupEvent value, $Res Function(SetupEvent) then) =
-      _$SetupEventCopyWithImpl<$Res>;
+      _$SetupEventCopyWithImpl<$Res, SetupEvent>;
 }
 
 /// @nodoc
-class _$SetupEventCopyWithImpl<$Res> implements $SetupEventCopyWith<$Res> {
+class _$SetupEventCopyWithImpl<$Res, $Val extends SetupEvent>
+    implements $SetupEventCopyWith<$Res> {
   _$SetupEventCopyWithImpl(this._value, this._then);
 
-  final SetupEvent _value;
   // ignore: unused_field
-  final $Res Function(SetupEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -123,14 +125,12 @@ abstract class _$$AppLaunchedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AppLaunchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
+class __$$AppLaunchedCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$AppLaunched>
     implements _$$AppLaunchedCopyWith<$Res> {
   __$$AppLaunchedCopyWithImpl(
       _$AppLaunched _value, $Res Function(_$AppLaunched) _then)
-      : super(_value, (v) => _then(v as _$AppLaunched));
-
-  @override
-  _$AppLaunched get _value => super._value as _$AppLaunched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -172,15 +172,15 @@ class _$AppLaunched implements AppLaunched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return appLaunched?.call();
   }
@@ -224,15 +224,15 @@ class _$AppLaunched implements AppLaunched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return appLaunched?.call(this);
   }
@@ -270,14 +270,12 @@ abstract class _$$AuthenticatedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AuthenticatedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
+class __$$AuthenticatedCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$Authenticated>
     implements _$$AuthenticatedCopyWith<$Res> {
   __$$AuthenticatedCopyWithImpl(
       _$Authenticated _value, $Res Function(_$Authenticated) _then)
-      : super(_value, (v) => _then(v as _$Authenticated));
-
-  @override
-  _$Authenticated get _value => super._value as _$Authenticated;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -319,15 +317,15 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return authenticated?.call();
   }
@@ -371,15 +369,15 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return authenticated?.call(this);
   }
@@ -418,14 +416,11 @@ abstract class _$$SettingsFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SettingsFetchedCopyWithImpl<$Res>
-    extends _$SetupEventCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$SettingsFetched>
     implements _$$SettingsFetchedCopyWith<$Res> {
   __$$SettingsFetchedCopyWithImpl(
       _$SettingsFetched _value, $Res Function(_$SettingsFetched) _then)
-      : super(_value, (v) => _then(v as _$SettingsFetched));
-
-  @override
-  _$SettingsFetched get _value => super._value as _$SettingsFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -467,15 +462,15 @@ class _$SettingsFetched implements SettingsFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return settingsFetched?.call();
   }
@@ -519,15 +514,15 @@ class _$SettingsFetched implements SettingsFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return settingsFetched?.call(this);
   }
@@ -562,6 +557,7 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
   factory _$$SessionFetchedCopyWith(
           _$SessionFetched value, $Res Function(_$SessionFetched) then) =
       __$$SessionFetchedCopyWithImpl<$Res>;
+  @useResult
   $Res call({User session});
 
   $UserCopyWith<$Res> get session;
@@ -569,21 +565,19 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$SetupEventCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$SessionFetched>
     implements _$$SessionFetchedCopyWith<$Res> {
   __$$SessionFetchedCopyWithImpl(
       _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
-      : super(_value, (v) => _then(v as _$SessionFetched));
+      : super(_value, _then);
 
-  @override
-  _$SessionFetched get _value => super._value as _$SessionFetched;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? session = freezed,
+    Object? session = null,
   }) {
     return _then(_$SessionFetched(
-      session == freezed
+      null == session
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User,
@@ -591,6 +585,7 @@ class __$$SessionFetchedCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get session {
     return $UserCopyWith<$Res>(_value.session, (value) {
       return _then(_value.copyWith(session: value));
@@ -616,15 +611,15 @@ class _$SessionFetched implements SessionFetched {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SessionFetched &&
-            const DeepCollectionEquality().equals(other.session, session));
+            (identical(other.session, session) || other.session == session));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(session));
+  int get hashCode => Object.hash(runtimeType, session);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SessionFetchedCopyWith<_$SessionFetched> get copyWith =>
       __$$SessionFetchedCopyWithImpl<_$SessionFetched>(this, _$identity);
 
@@ -648,15 +643,15 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return sessionFetched?.call(session);
   }
@@ -700,15 +695,15 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return sessionFetched?.call(this);
   }
@@ -748,27 +743,27 @@ abstract class _$$UserLoadedCopyWith<$Res> {
   factory _$$UserLoadedCopyWith(
           _$UserLoaded value, $Res Function(_$UserLoaded) then) =
       __$$UserLoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$UserLoadedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
+class __$$UserLoadedCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$UserLoaded>
     implements _$$UserLoadedCopyWith<$Res> {
   __$$UserLoadedCopyWithImpl(
       _$UserLoaded _value, $Res Function(_$UserLoaded) _then)
-      : super(_value, (v) => _then(v as _$UserLoaded));
+      : super(_value, _then);
 
-  @override
-  _$UserLoaded get _value => super._value as _$UserLoaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
     return _then(_$UserLoaded(
-      user == freezed
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -776,6 +771,7 @@ class __$$UserLoadedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -801,15 +797,15 @@ class _$UserLoaded implements UserLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLoaded &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
       __$$UserLoadedCopyWithImpl<_$UserLoaded>(this, _$identity);
 
@@ -833,15 +829,15 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return userLoaded?.call(user);
   }
@@ -885,15 +881,15 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return userLoaded?.call(this);
   }
@@ -937,14 +933,11 @@ abstract class _$$SettingsNotFoundCopyWith<$Res> {
 
 /// @nodoc
 class __$$SettingsNotFoundCopyWithImpl<$Res>
-    extends _$SetupEventCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$SettingsNotFound>
     implements _$$SettingsNotFoundCopyWith<$Res> {
   __$$SettingsNotFoundCopyWithImpl(
       _$SettingsNotFound _value, $Res Function(_$SettingsNotFound) _then)
-      : super(_value, (v) => _then(v as _$SettingsNotFound));
-
-  @override
-  _$SettingsNotFound get _value => super._value as _$SettingsNotFound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -986,15 +979,15 @@ class _$SettingsNotFound implements SettingsNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return settingsNotFound?.call();
   }
@@ -1038,15 +1031,15 @@ class _$SettingsNotFound implements SettingsNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return settingsNotFound?.call(this);
   }
@@ -1085,14 +1078,11 @@ abstract class _$$SettingsInitializedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SettingsInitializedCopyWithImpl<$Res>
-    extends _$SetupEventCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$SettingsInitialized>
     implements _$$SettingsInitializedCopyWith<$Res> {
   __$$SettingsInitializedCopyWithImpl(
       _$SettingsInitialized _value, $Res Function(_$SettingsInitialized) _then)
-      : super(_value, (v) => _then(v as _$SettingsInitialized));
-
-  @override
-  _$SettingsInitialized get _value => super._value as _$SettingsInitialized;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1134,15 +1124,15 @@ class _$SettingsInitialized implements SettingsInitialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return settingsInitialized?.call();
   }
@@ -1186,15 +1176,15 @@ class _$SettingsInitialized implements SettingsInitialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return settingsInitialized?.call(this);
   }
@@ -1229,26 +1219,25 @@ abstract class _$$DefaultCoversLoadedCopyWith<$Res> {
   factory _$$DefaultCoversLoadedCopyWith(_$DefaultCoversLoaded value,
           $Res Function(_$DefaultCoversLoaded) then) =
       __$$DefaultCoversLoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<DefaultCover> defaultCovers});
 }
 
 /// @nodoc
 class __$$DefaultCoversLoadedCopyWithImpl<$Res>
-    extends _$SetupEventCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$DefaultCoversLoaded>
     implements _$$DefaultCoversLoadedCopyWith<$Res> {
   __$$DefaultCoversLoadedCopyWithImpl(
       _$DefaultCoversLoaded _value, $Res Function(_$DefaultCoversLoaded) _then)
-      : super(_value, (v) => _then(v as _$DefaultCoversLoaded));
+      : super(_value, _then);
 
-  @override
-  _$DefaultCoversLoaded get _value => super._value as _$DefaultCoversLoaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? defaultCovers = freezed,
+    Object? defaultCovers = null,
   }) {
     return _then(_$DefaultCoversLoaded(
-      defaultCovers == freezed
+      null == defaultCovers
           ? _value._defaultCovers
           : defaultCovers // ignore: cast_nullable_to_non_nullable
               as List<DefaultCover>,
@@ -1265,6 +1254,7 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
   final List<DefaultCover> _defaultCovers;
   @override
   List<DefaultCover> get defaultCovers {
+    if (_defaultCovers is EqualUnmodifiableListView) return _defaultCovers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_defaultCovers);
   }
@@ -1289,6 +1279,7 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
       __$$DefaultCoversLoadedCopyWithImpl<_$DefaultCoversLoaded>(
           this, _$identity);
@@ -1313,15 +1304,15 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return defaultCoversLoaded?.call(defaultCovers);
   }
@@ -1365,15 +1356,15 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return defaultCoversLoaded?.call(this);
   }
@@ -1418,14 +1409,11 @@ abstract class _$$DefaultCoversCachedCopyWith<$Res> {
 
 /// @nodoc
 class __$$DefaultCoversCachedCopyWithImpl<$Res>
-    extends _$SetupEventCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res, _$DefaultCoversCached>
     implements _$$DefaultCoversCachedCopyWith<$Res> {
   __$$DefaultCoversCachedCopyWithImpl(
       _$DefaultCoversCached _value, $Res Function(_$DefaultCoversCached) _then)
-      : super(_value, (v) => _then(v as _$DefaultCoversCached));
-
-  @override
-  _$DefaultCoversCached get _value => super._value as _$DefaultCoversCached;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1467,15 +1455,15 @@ class _$DefaultCoversCached implements DefaultCoversCached {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? settingsFetched,
-    TResult Function(User session)? sessionFetched,
-    TResult Function(User user)? userLoaded,
-    TResult Function()? settingsNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? defaultCoversCached,
+    TResult? Function()? appLaunched,
+    TResult? Function()? authenticated,
+    TResult? Function()? settingsFetched,
+    TResult? Function(User session)? sessionFetched,
+    TResult? Function(User user)? userLoaded,
+    TResult? Function()? settingsNotFound,
+    TResult? Function()? settingsInitialized,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function()? defaultCoversCached,
   }) {
     return defaultCoversCached?.call();
   }
@@ -1519,15 +1507,15 @@ class _$DefaultCoversCached implements DefaultCoversCached {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(UserLoaded value)? userLoaded,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
+    TResult? Function(AppLaunched value)? appLaunched,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(UserLoaded value)? userLoaded,
+    TResult? Function(SettingsNotFound value)? settingsNotFound,
+    TResult? Function(SettingsInitialized value)? settingsInitialized,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(DefaultCoversCached value)? defaultCoversCached,
   }) {
     return defaultCoversCached?.call(this);
   }
@@ -1568,9 +1556,9 @@ mixin _$SetupState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? content,
-    TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initial,
+    TResult? Function()? content,
+    TResult? Function(CoreFailure failure)? failure,
+    TResult? Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1590,9 +1578,9 @@ mixin _$SetupState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Content value)? content,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Initial value)? initial,
+    TResult? Function(_Content value)? content,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Initial value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1609,16 +1597,18 @@ mixin _$SetupState {
 abstract class $SetupStateCopyWith<$Res> {
   factory $SetupStateCopyWith(
           SetupState value, $Res Function(SetupState) then) =
-      _$SetupStateCopyWithImpl<$Res>;
+      _$SetupStateCopyWithImpl<$Res, SetupState>;
 }
 
 /// @nodoc
-class _$SetupStateCopyWithImpl<$Res> implements $SetupStateCopyWith<$Res> {
+class _$SetupStateCopyWithImpl<$Res, $Val extends SetupState>
+    implements $SetupStateCopyWith<$Res> {
   _$SetupStateCopyWithImpl(this._value, this._then);
 
-  final SetupState _value;
   // ignore: unused_field
-  final $Res Function(SetupState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -1629,13 +1619,11 @@ abstract class _$$_ContentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ContentCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
+class __$$_ContentCopyWithImpl<$Res>
+    extends _$SetupStateCopyWithImpl<$Res, _$_Content>
     implements _$$_ContentCopyWith<$Res> {
   __$$_ContentCopyWithImpl(_$_Content _value, $Res Function(_$_Content) _then)
-      : super(_value, (v) => _then(v as _$_Content));
-
-  @override
-  _$_Content get _value => super._value as _$_Content;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1670,9 +1658,9 @@ class _$_Content implements _Content {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? content,
-    TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initial,
+    TResult? Function()? content,
+    TResult? Function(CoreFailure failure)? failure,
+    TResult? Function()? initial,
   }) {
     return content?.call();
   }
@@ -1704,9 +1692,9 @@ class _$_Content implements _Content {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Content value)? content,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Initial value)? initial,
+    TResult? Function(_Content value)? content,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Initial value)? initial,
   }) {
     return content?.call(this);
   }
@@ -1735,26 +1723,26 @@ abstract class _$$_FailureCopyWith<$Res> {
   factory _$$_FailureCopyWith(
           _$_Failure value, $Res Function(_$_Failure) then) =
       __$$_FailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({CoreFailure failure});
 
   $CoreFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$$_FailureCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
+class __$$_FailureCopyWithImpl<$Res>
+    extends _$SetupStateCopyWithImpl<$Res, _$_Failure>
     implements _$$_FailureCopyWith<$Res> {
   __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
-      : super(_value, (v) => _then(v as _$_Failure));
+      : super(_value, _then);
 
-  @override
-  _$_Failure get _value => super._value as _$_Failure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
     return _then(_$_Failure(
-      failure == freezed
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as CoreFailure,
@@ -1762,6 +1750,7 @@ class __$$_FailureCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CoreFailureCopyWith<$Res> get failure {
     return $CoreFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -1787,15 +1776,15 @@ class _$_Failure implements _Failure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Failure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FailureCopyWith<_$_Failure> get copyWith =>
       __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
 
@@ -1812,9 +1801,9 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? content,
-    TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initial,
+    TResult? Function()? content,
+    TResult? Function(CoreFailure failure)? failure,
+    TResult? Function()? initial,
   }) {
     return failure?.call(this.failure);
   }
@@ -1846,9 +1835,9 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Content value)? content,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Initial value)? initial,
+    TResult? Function(_Content value)? content,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Initial value)? initial,
   }) {
     return failure?.call(this);
   }
@@ -1885,13 +1874,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$SetupStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1926,9 +1913,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? content,
-    TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initial,
+    TResult? Function()? content,
+    TResult? Function(CoreFailure failure)? failure,
+    TResult? Function()? initial,
   }) {
     return initial?.call();
   }
@@ -1960,9 +1947,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Content value)? content,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Initial value)? initial,
+    TResult? Function(_Content value)? content,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Initial value)? initial,
   }) {
     return initial?.call(this);
   }

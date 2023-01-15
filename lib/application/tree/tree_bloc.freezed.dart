@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tree_bloc.dart';
 
@@ -33,17 +33,17 @@ mixin _$TreeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,17 +80,17 @@ mixin _$TreeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -114,16 +114,18 @@ mixin _$TreeEvent {
 /// @nodoc
 abstract class $TreeEventCopyWith<$Res> {
   factory $TreeEventCopyWith(TreeEvent value, $Res Function(TreeEvent) then) =
-      _$TreeEventCopyWithImpl<$Res>;
+      _$TreeEventCopyWithImpl<$Res, TreeEvent>;
 }
 
 /// @nodoc
-class _$TreeEventCopyWithImpl<$Res> implements $TreeEventCopyWith<$Res> {
+class _$TreeEventCopyWithImpl<$Res, $Val extends TreeEvent>
+    implements $TreeEventCopyWith<$Res> {
   _$TreeEventCopyWithImpl(this._value, this._then);
 
-  final TreeEvent _value;
   // ignore: unused_field
-  final $Res Function(TreeEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -131,32 +133,32 @@ abstract class _$$LaunchWithUIDCopyWith<$Res> {
   factory _$$LaunchWithUIDCopyWith(
           _$LaunchWithUID value, $Res Function(_$LaunchWithUID) then) =
       __$$LaunchWithUIDCopyWithImpl<$Res>;
+  @useResult
   $Res call({UniqueID uid, Tree? tree});
 
   $TreeCopyWith<$Res>? get tree;
 }
 
 /// @nodoc
-class __$$LaunchWithUIDCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
+class __$$LaunchWithUIDCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$LaunchWithUID>
     implements _$$LaunchWithUIDCopyWith<$Res> {
   __$$LaunchWithUIDCopyWithImpl(
       _$LaunchWithUID _value, $Res Function(_$LaunchWithUID) _then)
-      : super(_value, (v) => _then(v as _$LaunchWithUID));
+      : super(_value, _then);
 
-  @override
-  _$LaunchWithUID get _value => super._value as _$LaunchWithUID;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uid = null,
     Object? tree = freezed,
   }) {
     return _then(_$LaunchWithUID(
-      uid == freezed
+      null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      tree: tree == freezed
+      tree: freezed == tree
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree?,
@@ -164,6 +166,7 @@ class __$$LaunchWithUIDCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TreeCopyWith<$Res>? get tree {
     if (_value.tree == null) {
       return null;
@@ -195,18 +198,16 @@ class _$LaunchWithUID implements LaunchWithUID {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LaunchWithUID &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.tree, tree));
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.tree, tree) || other.tree == tree));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(tree));
+  int get hashCode => Object.hash(runtimeType, uid, tree);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       __$$LaunchWithUIDCopyWithImpl<_$LaunchWithUID>(this, _$identity);
 
@@ -231,17 +232,17 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return launchWithUID?.call(uid, tree);
   }
@@ -290,17 +291,17 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return launchWithUID?.call(this);
   }
@@ -346,13 +347,11 @@ abstract class _$$TreeSetCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TreeSetCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
+class __$$TreeSetCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$TreeSet>
     implements _$$TreeSetCopyWith<$Res> {
   __$$TreeSetCopyWithImpl(_$TreeSet _value, $Res Function(_$TreeSet) _then)
-      : super(_value, (v) => _then(v as _$TreeSet));
-
-  @override
-  _$TreeSet get _value => super._value as _$TreeSet;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -395,17 +394,17 @@ class _$TreeSet implements TreeSet {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return treeSet?.call();
   }
@@ -454,17 +453,17 @@ class _$TreeSet implements TreeSet {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return treeSet?.call(this);
   }
@@ -504,14 +503,12 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SessionFetchedCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
+class __$$SessionFetchedCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$SessionFetched>
     implements _$$SessionFetchedCopyWith<$Res> {
   __$$SessionFetchedCopyWithImpl(
       _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
-      : super(_value, (v) => _then(v as _$SessionFetched));
-
-  @override
-  _$SessionFetched get _value => super._value as _$SessionFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -554,17 +551,17 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return sessionFetched?.call();
   }
@@ -613,17 +610,17 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return sessionFetched?.call(this);
   }
@@ -663,14 +660,12 @@ abstract class _$$AuthorLoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AuthorLoadedCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
+class __$$AuthorLoadedCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$AuthorLoaded>
     implements _$$AuthorLoadedCopyWith<$Res> {
   __$$AuthorLoadedCopyWithImpl(
       _$AuthorLoaded _value, $Res Function(_$AuthorLoaded) _then)
-      : super(_value, (v) => _then(v as _$AuthorLoaded));
-
-  @override
-  _$AuthorLoaded get _value => super._value as _$AuthorLoaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -713,17 +708,17 @@ class _$AuthorLoaded implements AuthorLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return authorLoaded?.call();
   }
@@ -772,17 +767,17 @@ class _$AuthorLoaded implements AuthorLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return authorLoaded?.call(this);
   }
@@ -823,14 +818,11 @@ abstract class _$$SettingsFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SettingsFetchedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$SettingsFetched>
     implements _$$SettingsFetchedCopyWith<$Res> {
   __$$SettingsFetchedCopyWithImpl(
       _$SettingsFetched _value, $Res Function(_$SettingsFetched) _then)
-      : super(_value, (v) => _then(v as _$SettingsFetched));
-
-  @override
-  _$SettingsFetched get _value => super._value as _$SettingsFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -873,17 +865,17 @@ class _$SettingsFetched implements SettingsFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return settingsFetched?.call();
   }
@@ -932,17 +924,17 @@ class _$SettingsFetched implements SettingsFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return settingsFetched?.call(this);
   }
@@ -983,14 +975,11 @@ abstract class _$$BranchOneLoadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$BranchOneLoadedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$BranchOneLoaded>
     implements _$$BranchOneLoadedCopyWith<$Res> {
   __$$BranchOneLoadedCopyWithImpl(
       _$BranchOneLoaded _value, $Res Function(_$BranchOneLoaded) _then)
-      : super(_value, (v) => _then(v as _$BranchOneLoaded));
-
-  @override
-  _$BranchOneLoaded get _value => super._value as _$BranchOneLoaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1033,17 +1022,17 @@ class _$BranchOneLoaded implements BranchOneLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return branchOneLoaded?.call();
   }
@@ -1092,17 +1081,17 @@ class _$BranchOneLoaded implements BranchOneLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return branchOneLoaded?.call(this);
   }
@@ -1142,14 +1131,12 @@ abstract class _$$ViewsUpdatedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ViewsUpdatedCopyWithImpl<$Res> extends _$TreeEventCopyWithImpl<$Res>
+class __$$ViewsUpdatedCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$ViewsUpdated>
     implements _$$ViewsUpdatedCopyWith<$Res> {
   __$$ViewsUpdatedCopyWithImpl(
       _$ViewsUpdated _value, $Res Function(_$ViewsUpdated) _then)
-      : super(_value, (v) => _then(v as _$ViewsUpdated));
-
-  @override
-  _$ViewsUpdated get _value => super._value as _$ViewsUpdated;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1192,17 +1179,17 @@ class _$ViewsUpdated implements ViewsUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return viewsUpdated?.call();
   }
@@ -1251,17 +1238,17 @@ class _$ViewsUpdated implements ViewsUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return viewsUpdated?.call(this);
   }
@@ -1302,14 +1289,11 @@ abstract class _$$LikeStatusLoadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$LikeStatusLoadedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$LikeStatusLoaded>
     implements _$$LikeStatusLoadedCopyWith<$Res> {
   __$$LikeStatusLoadedCopyWithImpl(
       _$LikeStatusLoaded _value, $Res Function(_$LikeStatusLoaded) _then)
-      : super(_value, (v) => _then(v as _$LikeStatusLoaded));
-
-  @override
-  _$LikeStatusLoaded get _value => super._value as _$LikeStatusLoaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1352,17 +1336,17 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return likeStatusLoaded?.call();
   }
@@ -1411,17 +1395,17 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return likeStatusLoaded?.call(this);
   }
@@ -1462,14 +1446,11 @@ abstract class _$$BranchOneNotFoundCopyWith<$Res> {
 
 /// @nodoc
 class __$$BranchOneNotFoundCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$BranchOneNotFound>
     implements _$$BranchOneNotFoundCopyWith<$Res> {
   __$$BranchOneNotFoundCopyWithImpl(
       _$BranchOneNotFound _value, $Res Function(_$BranchOneNotFound) _then)
-      : super(_value, (v) => _then(v as _$BranchOneNotFound));
-
-  @override
-  _$BranchOneNotFound get _value => super._value as _$BranchOneNotFound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1512,17 +1493,17 @@ class _$BranchOneNotFound implements BranchOneNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return branchOneNotFound?.call();
   }
@@ -1571,17 +1552,17 @@ class _$BranchOneNotFound implements BranchOneNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return branchOneNotFound?.call(this);
   }
@@ -1618,26 +1599,25 @@ abstract class _$$BookmarkButtonPressedCopyWith<$Res> {
   factory _$$BookmarkButtonPressedCopyWith(_$BookmarkButtonPressed value,
           $Res Function(_$BookmarkButtonPressed) then) =
       __$$BookmarkButtonPressedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isBookmarked});
 }
 
 /// @nodoc
 class __$$BookmarkButtonPressedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$BookmarkButtonPressed>
     implements _$$BookmarkButtonPressedCopyWith<$Res> {
   __$$BookmarkButtonPressedCopyWithImpl(_$BookmarkButtonPressed _value,
       $Res Function(_$BookmarkButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$BookmarkButtonPressed));
+      : super(_value, _then);
 
-  @override
-  _$BookmarkButtonPressed get _value => super._value as _$BookmarkButtonPressed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isBookmarked = freezed,
+    Object? isBookmarked = null,
   }) {
     return _then(_$BookmarkButtonPressed(
-      isBookmarked: isBookmarked == freezed
+      isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1663,16 +1643,16 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookmarkButtonPressed &&
-            const DeepCollectionEquality()
-                .equals(other.isBookmarked, isBookmarked));
+            (identical(other.isBookmarked, isBookmarked) ||
+                other.isBookmarked == isBookmarked));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(isBookmarked));
+  int get hashCode => Object.hash(runtimeType, isBookmarked);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
       __$$BookmarkButtonPressedCopyWithImpl<_$BookmarkButtonPressed>(
           this, _$identity);
@@ -1698,17 +1678,17 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return bookmarkButtonPressed?.call(isBookmarked);
   }
@@ -1757,17 +1737,17 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return bookmarkButtonPressed?.call(this);
   }
@@ -1810,26 +1790,25 @@ abstract class _$$LikeButtonPressedCopyWith<$Res> {
   factory _$$LikeButtonPressedCopyWith(
           _$LikeButtonPressed value, $Res Function(_$LikeButtonPressed) then) =
       __$$LikeButtonPressedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isLiked});
 }
 
 /// @nodoc
 class __$$LikeButtonPressedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$LikeButtonPressed>
     implements _$$LikeButtonPressedCopyWith<$Res> {
   __$$LikeButtonPressedCopyWithImpl(
       _$LikeButtonPressed _value, $Res Function(_$LikeButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$LikeButtonPressed));
+      : super(_value, _then);
 
-  @override
-  _$LikeButtonPressed get _value => super._value as _$LikeButtonPressed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLiked = freezed,
+    Object? isLiked = null,
   }) {
     return _then(_$LikeButtonPressed(
-      isLiked: isLiked == freezed
+      isLiked: null == isLiked
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1855,15 +1834,15 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LikeButtonPressed &&
-            const DeepCollectionEquality().equals(other.isLiked, isLiked));
+            (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isLiked));
+  int get hashCode => Object.hash(runtimeType, isLiked);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LikeButtonPressedCopyWith<_$LikeButtonPressed> get copyWith =>
       __$$LikeButtonPressedCopyWithImpl<_$LikeButtonPressed>(this, _$identity);
 
@@ -1888,17 +1867,17 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Tree? tree)? launchWithUID,
-    TResult Function()? treeSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? branchOneLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function()? branchOneNotFound,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
+    TResult? Function(UniqueID uid, Tree? tree)? launchWithUID,
+    TResult? Function()? treeSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? branchOneLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function()? branchOneNotFound,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
   }) {
     return likeButtonPressed?.call(isLiked);
   }
@@ -1947,17 +1926,17 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(TreeSet value)? treeSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(BranchOneLoaded value)? branchOneLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BranchOneNotFound value)? branchOneNotFound,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(TreeSet value)? treeSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(BranchOneLoaded value)? branchOneLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BranchOneNotFound value)? branchOneNotFound,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
   }) {
     return likeButtonPressed?.call(this);
   }
@@ -2018,7 +1997,8 @@ mixin _$TreeState {
 /// @nodoc
 abstract class $TreeStateCopyWith<$Res> {
   factory $TreeStateCopyWith(TreeState value, $Res Function(TreeState) then) =
-      _$TreeStateCopyWithImpl<$Res>;
+      _$TreeStateCopyWithImpl<$Res, TreeState>;
+  @useResult
   $Res call(
       {bool authorIsUser,
       User? author,
@@ -2041,130 +2021,139 @@ abstract class $TreeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TreeStateCopyWithImpl<$Res> implements $TreeStateCopyWith<$Res> {
+class _$TreeStateCopyWithImpl<$Res, $Val extends TreeState>
+    implements $TreeStateCopyWith<$Res> {
   _$TreeStateCopyWithImpl(this._value, this._then);
 
-  final TreeState _value;
   // ignore: unused_field
-  final $Res Function(TreeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorIsUser = freezed,
+    Object? authorIsUser = null,
     Object? author = freezed,
     Object? branchOne = freezed,
     Object? branchResume = freezed,
-    Object? failureOption = freezed,
-    Object? isBookmarked = freezed,
-    Object? isLiked = freezed,
-    Object? isProcessing = freezed,
+    Object? failureOption = null,
+    Object? isBookmarked = null,
+    Object? isLiked = null,
+    Object? isProcessing = null,
     Object? session = freezed,
-    Object? settings = freezed,
-    Object? tree = freezed,
+    Object? settings = null,
+    Object? tree = null,
   }) {
     return _then(_value.copyWith(
-      authorIsUser: authorIsUser == freezed
+      authorIsUser: null == authorIsUser
           ? _value.authorIsUser
           : authorIsUser // ignore: cast_nullable_to_non_nullable
               as bool,
-      author: author == freezed
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as User?,
-      branchOne: branchOne == freezed
+      branchOne: freezed == branchOne
           ? _value.branchOne
           : branchOne // ignore: cast_nullable_to_non_nullable
               as Branch?,
-      branchResume: branchResume == freezed
+      branchResume: freezed == branchResume
           ? _value.branchResume
           : branchResume // ignore: cast_nullable_to_non_nullable
               as Branch?,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isBookmarked: isBookmarked == freezed
+      isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLiked: isLiked == freezed
+      isLiked: null == isLiked
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      session: session == freezed
+      session: freezed == session
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User?,
-      settings: settings == freezed
+      settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
-      tree: tree == freezed
+      tree: null == tree
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get author {
     if (_value.author == null) {
       return null;
     }
 
     return $UserCopyWith<$Res>(_value.author!, (value) {
-      return _then(_value.copyWith(author: value));
+      return _then(_value.copyWith(author: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $BranchCopyWith<$Res>? get branchOne {
     if (_value.branchOne == null) {
       return null;
     }
 
     return $BranchCopyWith<$Res>(_value.branchOne!, (value) {
-      return _then(_value.copyWith(branchOne: value));
+      return _then(_value.copyWith(branchOne: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $BranchCopyWith<$Res>? get branchResume {
     if (_value.branchResume == null) {
       return null;
     }
 
     return $BranchCopyWith<$Res>(_value.branchResume!, (value) {
-      return _then(_value.copyWith(branchResume: value));
+      return _then(_value.copyWith(branchResume: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get session {
     if (_value.session == null) {
       return null;
     }
 
     return $UserCopyWith<$Res>(_value.session!, (value) {
-      return _then(_value.copyWith(session: value));
+      return _then(_value.copyWith(session: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SettingsCopyWith<$Res> get settings {
     return $SettingsCopyWith<$Res>(_value.settings, (value) {
-      return _then(_value.copyWith(settings: value));
+      return _then(_value.copyWith(settings: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TreeCopyWith<$Res> get tree {
     return $TreeCopyWith<$Res>(_value.tree, (value) {
-      return _then(_value.copyWith(tree: value));
+      return _then(_value.copyWith(tree: value) as $Val);
     });
   }
 }
@@ -2175,6 +2164,7 @@ abstract class _$$_TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
           _$_TreeState value, $Res Function(_$_TreeState) then) =
       __$$_TreeStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool authorIsUser,
       User? author,
@@ -2203,71 +2193,70 @@ abstract class _$$_TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TreeStateCopyWithImpl<$Res> extends _$TreeStateCopyWithImpl<$Res>
+class __$$_TreeStateCopyWithImpl<$Res>
+    extends _$TreeStateCopyWithImpl<$Res, _$_TreeState>
     implements _$$_TreeStateCopyWith<$Res> {
   __$$_TreeStateCopyWithImpl(
       _$_TreeState _value, $Res Function(_$_TreeState) _then)
-      : super(_value, (v) => _then(v as _$_TreeState));
+      : super(_value, _then);
 
-  @override
-  _$_TreeState get _value => super._value as _$_TreeState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorIsUser = freezed,
+    Object? authorIsUser = null,
     Object? author = freezed,
     Object? branchOne = freezed,
     Object? branchResume = freezed,
-    Object? failureOption = freezed,
-    Object? isBookmarked = freezed,
-    Object? isLiked = freezed,
-    Object? isProcessing = freezed,
+    Object? failureOption = null,
+    Object? isBookmarked = null,
+    Object? isLiked = null,
+    Object? isProcessing = null,
     Object? session = freezed,
-    Object? settings = freezed,
-    Object? tree = freezed,
+    Object? settings = null,
+    Object? tree = null,
   }) {
     return _then(_$_TreeState(
-      authorIsUser: authorIsUser == freezed
+      authorIsUser: null == authorIsUser
           ? _value.authorIsUser
           : authorIsUser // ignore: cast_nullable_to_non_nullable
               as bool,
-      author: author == freezed
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as User?,
-      branchOne: branchOne == freezed
+      branchOne: freezed == branchOne
           ? _value.branchOne
           : branchOne // ignore: cast_nullable_to_non_nullable
               as Branch?,
-      branchResume: branchResume == freezed
+      branchResume: freezed == branchResume
           ? _value.branchResume
           : branchResume // ignore: cast_nullable_to_non_nullable
               as Branch?,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isBookmarked: isBookmarked == freezed
+      isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLiked: isLiked == freezed
+      isLiked: null == isLiked
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      session: session == freezed
+      session: freezed == session
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User?,
-      settings: settings == freezed
+      settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
-      tree: tree == freezed
+      tree: null == tree
           ? _value.tree
           : tree // ignore: cast_nullable_to_non_nullable
               as Tree,
@@ -2324,41 +2313,44 @@ class _$_TreeState implements _TreeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TreeState &&
-            const DeepCollectionEquality()
-                .equals(other.authorIsUser, authorIsUser) &&
-            const DeepCollectionEquality().equals(other.author, author) &&
-            const DeepCollectionEquality().equals(other.branchOne, branchOne) &&
-            const DeepCollectionEquality()
-                .equals(other.branchResume, branchResume) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality()
-                .equals(other.isBookmarked, isBookmarked) &&
-            const DeepCollectionEquality().equals(other.isLiked, isLiked) &&
-            const DeepCollectionEquality()
-                .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality().equals(other.session, session) &&
-            const DeepCollectionEquality().equals(other.settings, settings) &&
-            const DeepCollectionEquality().equals(other.tree, tree));
+            (identical(other.authorIsUser, authorIsUser) ||
+                other.authorIsUser == authorIsUser) &&
+            (identical(other.author, author) || other.author == author) &&
+            (identical(other.branchOne, branchOne) ||
+                other.branchOne == branchOne) &&
+            (identical(other.branchResume, branchResume) ||
+                other.branchResume == branchResume) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.isBookmarked, isBookmarked) ||
+                other.isBookmarked == isBookmarked) &&
+            (identical(other.isLiked, isLiked) || other.isLiked == isLiked) &&
+            (identical(other.isProcessing, isProcessing) ||
+                other.isProcessing == isProcessing) &&
+            (identical(other.session, session) || other.session == session) &&
+            (identical(other.settings, settings) ||
+                other.settings == settings) &&
+            (identical(other.tree, tree) || other.tree == tree));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(authorIsUser),
-      const DeepCollectionEquality().hash(author),
-      const DeepCollectionEquality().hash(branchOne),
-      const DeepCollectionEquality().hash(branchResume),
-      const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(isBookmarked),
-      const DeepCollectionEquality().hash(isLiked),
-      const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(session),
-      const DeepCollectionEquality().hash(settings),
-      const DeepCollectionEquality().hash(tree));
+      authorIsUser,
+      author,
+      branchOne,
+      branchResume,
+      failureOption,
+      isBookmarked,
+      isLiked,
+      isProcessing,
+      session,
+      settings,
+      tree);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TreeStateCopyWith<_$_TreeState> get copyWith =>
       __$$_TreeStateCopyWithImpl<_$_TreeState>(this, _$identity);
 }

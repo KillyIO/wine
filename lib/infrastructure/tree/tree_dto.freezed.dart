@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tree_dto.dart';
 
@@ -44,7 +44,8 @@ mixin _$TreeDTO {
 /// @nodoc
 abstract class $TreeDTOCopyWith<$Res> {
   factory $TreeDTOCopyWith(TreeDTO value, $Res Function(TreeDTO) then) =
-      _$TreeDTOCopyWithImpl<$Res>;
+      _$TreeDTOCopyWithImpl<$Res, TreeDTO>;
+  @useResult
   $Res call(
       {String authorUID,
       int bookmarksCount,
@@ -63,88 +64,91 @@ abstract class $TreeDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TreeDTOCopyWithImpl<$Res> implements $TreeDTOCopyWith<$Res> {
+class _$TreeDTOCopyWithImpl<$Res, $Val extends TreeDTO>
+    implements $TreeDTOCopyWith<$Res> {
   _$TreeDTOCopyWithImpl(this._value, this._then);
 
-  final TreeDTO _value;
   // ignore: unused_field
-  final $Res Function(TreeDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? likesCount = null,
     Object? subtitle = freezed,
-    Object? synopsis = freezed,
-    Object? title = freezed,
-    Object? uid = freezed,
-    Object? updatedAt = freezed,
-    Object? viewsCount = freezed,
+    Object? synopsis = null,
+    Object? title = null,
+    Object? uid = null,
+    Object? updatedAt = null,
+    Object? viewsCount = null,
   }) {
     return _then(_value.copyWith(
-      authorUID: authorUID == freezed
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as String,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
-      genres: genres == freezed
+      genres: null == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: subtitle == freezed
+      subtitle: freezed == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      synopsis: synopsis == freezed
+      synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -154,6 +158,7 @@ abstract class _$$_TreeDTOCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
           _$_TreeDTO value, $Res Function(_$_TreeDTO) then) =
       __$$_TreeDTOCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String authorUID,
       int bookmarksCount,
@@ -172,85 +177,84 @@ abstract class _$$_TreeDTOCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TreeDTOCopyWithImpl<$Res> extends _$TreeDTOCopyWithImpl<$Res>
+class __$$_TreeDTOCopyWithImpl<$Res>
+    extends _$TreeDTOCopyWithImpl<$Res, _$_TreeDTO>
     implements _$$_TreeDTOCopyWith<$Res> {
   __$$_TreeDTOCopyWithImpl(_$_TreeDTO _value, $Res Function(_$_TreeDTO) _then)
-      : super(_value, (v) => _then(v as _$_TreeDTO));
+      : super(_value, _then);
 
-  @override
-  _$_TreeDTO get _value => super._value as _$_TreeDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? likesCount = null,
     Object? subtitle = freezed,
-    Object? synopsis = freezed,
-    Object? title = freezed,
-    Object? uid = freezed,
-    Object? updatedAt = freezed,
-    Object? viewsCount = freezed,
+    Object? synopsis = null,
+    Object? title = null,
+    Object? uid = null,
+    Object? updatedAt = null,
+    Object? viewsCount = null,
   }) {
     return _then(_$_TreeDTO(
-      authorUID: authorUID == freezed
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as String,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
-      genres: genres == freezed
+      genres: null == genres
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: subtitle == freezed
+      subtitle: freezed == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      synopsis: synopsis == freezed
+      synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
@@ -290,6 +294,7 @@ class _$_TreeDTO implements _TreeDTO {
   final List<String> _genres;
   @override
   List<String> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_genres);
   }
@@ -326,47 +331,54 @@ class _$_TreeDTO implements _TreeDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TreeDTO &&
-            const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
-            const DeepCollectionEquality()
-                .equals(other.bookmarksCount, bookmarksCount) &&
-            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
+            (identical(other.authorUID, authorUID) ||
+                other.authorUID == authorUID) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                other.bookmarksCount == bookmarksCount) &&
+            (identical(other.coverURL, coverURL) ||
+                other.coverURL == coverURL) &&
             const DeepCollectionEquality().equals(other._genres, _genres) &&
-            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
-            const DeepCollectionEquality()
-                .equals(other.isPublished, isPublished) &&
-            const DeepCollectionEquality().equals(other.language, language) &&
-            const DeepCollectionEquality()
-                .equals(other.likesCount, likesCount) &&
-            const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
-            const DeepCollectionEquality().equals(other.synopsis, synopsis) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality()
-                .equals(other.viewsCount, viewsCount));
+            (identical(other.isNSFW, isNSFW) || other.isNSFW == isNSFW) &&
+            (identical(other.isPublished, isPublished) ||
+                other.isPublished == isPublished) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.likesCount, likesCount) ||
+                other.likesCount == likesCount) &&
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle) &&
+            (identical(other.synopsis, synopsis) ||
+                other.synopsis == synopsis) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.viewsCount, viewsCount) ||
+                other.viewsCount == viewsCount));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(authorUID),
-      const DeepCollectionEquality().hash(bookmarksCount),
-      const DeepCollectionEquality().hash(coverURL),
+      authorUID,
+      bookmarksCount,
+      coverURL,
       const DeepCollectionEquality().hash(_genres),
-      const DeepCollectionEquality().hash(isNSFW),
-      const DeepCollectionEquality().hash(isPublished),
-      const DeepCollectionEquality().hash(language),
-      const DeepCollectionEquality().hash(likesCount),
-      const DeepCollectionEquality().hash(subtitle),
-      const DeepCollectionEquality().hash(synopsis),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(viewsCount));
+      isNSFW,
+      isPublished,
+      language,
+      likesCount,
+      subtitle,
+      synopsis,
+      title,
+      uid,
+      updatedAt,
+      viewsCount);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TreeDTOCopyWith<_$_TreeDTO> get copyWith =>
       __$$_TreeDTOCopyWithImpl<_$_TreeDTO>(this, _$identity);
 

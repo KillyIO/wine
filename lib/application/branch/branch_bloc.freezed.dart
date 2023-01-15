@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'branch_bloc.dart';
 
@@ -38,22 +38,22 @@ mixin _$BranchEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,24 +102,24 @@ mixin _$BranchEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -151,16 +151,18 @@ mixin _$BranchEvent {
 abstract class $BranchEventCopyWith<$Res> {
   factory $BranchEventCopyWith(
           BranchEvent value, $Res Function(BranchEvent) then) =
-      _$BranchEventCopyWithImpl<$Res>;
+      _$BranchEventCopyWithImpl<$Res, BranchEvent>;
 }
 
 /// @nodoc
-class _$BranchEventCopyWithImpl<$Res> implements $BranchEventCopyWith<$Res> {
+class _$BranchEventCopyWithImpl<$Res, $Val extends BranchEvent>
+    implements $BranchEventCopyWith<$Res> {
   _$BranchEventCopyWithImpl(this._value, this._then);
 
-  final BranchEvent _value;
   // ignore: unused_field
-  final $Res Function(BranchEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -168,6 +170,7 @@ abstract class _$$LaunchWithUIDCopyWith<$Res> {
   factory _$$LaunchWithUIDCopyWith(
           _$LaunchWithUID value, $Res Function(_$LaunchWithUID) then) =
       __$$LaunchWithUIDCopyWithImpl<$Res>;
+  @useResult
   $Res call({UniqueID uid, Branch? branch});
 
   $BranchCopyWith<$Res>? get branch;
@@ -175,26 +178,24 @@ abstract class _$$LaunchWithUIDCopyWith<$Res> {
 
 /// @nodoc
 class __$$LaunchWithUIDCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$LaunchWithUID>
     implements _$$LaunchWithUIDCopyWith<$Res> {
   __$$LaunchWithUIDCopyWithImpl(
       _$LaunchWithUID _value, $Res Function(_$LaunchWithUID) _then)
-      : super(_value, (v) => _then(v as _$LaunchWithUID));
+      : super(_value, _then);
 
-  @override
-  _$LaunchWithUID get _value => super._value as _$LaunchWithUID;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uid = null,
     Object? branch = freezed,
   }) {
     return _then(_$LaunchWithUID(
-      uid == freezed
+      null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      branch: branch == freezed
+      branch: freezed == branch
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as Branch?,
@@ -202,6 +203,7 @@ class __$$LaunchWithUIDCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $BranchCopyWith<$Res>? get branch {
     if (_value.branch == null) {
       return null;
@@ -233,18 +235,16 @@ class _$LaunchWithUID implements LaunchWithUID {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LaunchWithUID &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.branch, branch));
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.branch, branch) || other.branch == branch));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(branch));
+  int get hashCode => Object.hash(runtimeType, uid, branch);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
       __$$LaunchWithUIDCopyWithImpl<_$LaunchWithUID>(this, _$identity);
 
@@ -274,22 +274,22 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return launchWithUID?.call(uid, branch);
   }
@@ -350,24 +350,24 @@ class _$LaunchWithUID implements LaunchWithUID {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return launchWithUID?.call(this);
   }
@@ -421,14 +421,12 @@ abstract class _$$BranchSetCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$BranchSetCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+class __$$BranchSetCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$BranchSet>
     implements _$$BranchSetCopyWith<$Res> {
   __$$BranchSetCopyWithImpl(
       _$BranchSet _value, $Res Function(_$BranchSet) _then)
-      : super(_value, (v) => _then(v as _$BranchSet));
-
-  @override
-  _$BranchSet get _value => super._value as _$BranchSet;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -476,22 +474,22 @@ class _$BranchSet implements BranchSet {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return branchSet?.call();
   }
@@ -552,24 +550,24 @@ class _$BranchSet implements BranchSet {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return branchSet?.call(this);
   }
@@ -617,14 +615,11 @@ abstract class _$$SessionFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$SessionFetched>
     implements _$$SessionFetchedCopyWith<$Res> {
   __$$SessionFetchedCopyWithImpl(
       _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
-      : super(_value, (v) => _then(v as _$SessionFetched));
-
-  @override
-  _$SessionFetched get _value => super._value as _$SessionFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -672,22 +667,22 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return sessionFetched?.call();
   }
@@ -748,24 +743,24 @@ class _$SessionFetched implements SessionFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return sessionFetched?.call(this);
   }
@@ -812,14 +807,12 @@ abstract class _$$AuthorLoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AuthorLoadedCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+class __$$AuthorLoadedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$AuthorLoaded>
     implements _$$AuthorLoadedCopyWith<$Res> {
   __$$AuthorLoadedCopyWithImpl(
       _$AuthorLoaded _value, $Res Function(_$AuthorLoaded) _then)
-      : super(_value, (v) => _then(v as _$AuthorLoaded));
-
-  @override
-  _$AuthorLoaded get _value => super._value as _$AuthorLoaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -867,22 +860,22 @@ class _$AuthorLoaded implements AuthorLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return authorLoaded?.call();
   }
@@ -943,24 +936,24 @@ class _$AuthorLoaded implements AuthorLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return authorLoaded?.call(this);
   }
@@ -1008,14 +1001,11 @@ abstract class _$$SettingsFetchedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SettingsFetchedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$SettingsFetched>
     implements _$$SettingsFetchedCopyWith<$Res> {
   __$$SettingsFetchedCopyWithImpl(
       _$SettingsFetched _value, $Res Function(_$SettingsFetched) _then)
-      : super(_value, (v) => _then(v as _$SettingsFetched));
-
-  @override
-  _$SettingsFetched get _value => super._value as _$SettingsFetched;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1063,22 +1053,22 @@ class _$SettingsFetched implements SettingsFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return settingsFetched?.call();
   }
@@ -1139,24 +1129,24 @@ class _$SettingsFetched implements SettingsFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return settingsFetched?.call(this);
   }
@@ -1205,16 +1195,12 @@ abstract class _$$NextBranchesBySameAuthorLoadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$NextBranchesBySameAuthorLoadedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$NextBranchesBySameAuthorLoaded>
     implements _$$NextBranchesBySameAuthorLoadedCopyWith<$Res> {
   __$$NextBranchesBySameAuthorLoadedCopyWithImpl(
       _$NextBranchesBySameAuthorLoaded _value,
       $Res Function(_$NextBranchesBySameAuthorLoaded) _then)
-      : super(_value, (v) => _then(v as _$NextBranchesBySameAuthorLoaded));
-
-  @override
-  _$NextBranchesBySameAuthorLoaded get _value =>
-      super._value as _$NextBranchesBySameAuthorLoaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1264,22 +1250,22 @@ class _$NextBranchesBySameAuthorLoaded
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return nextBranchesBySameAuthorLoaded?.call();
   }
@@ -1340,24 +1326,24 @@ class _$NextBranchesBySameAuthorLoaded
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return nextBranchesBySameAuthorLoaded?.call(this);
   }
@@ -1406,14 +1392,11 @@ abstract class _$$NextBranchesLoadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$NextBranchesLoadedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$NextBranchesLoaded>
     implements _$$NextBranchesLoadedCopyWith<$Res> {
   __$$NextBranchesLoadedCopyWithImpl(
       _$NextBranchesLoaded _value, $Res Function(_$NextBranchesLoaded) _then)
-      : super(_value, (v) => _then(v as _$NextBranchesLoaded));
-
-  @override
-  _$NextBranchesLoaded get _value => super._value as _$NextBranchesLoaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1461,22 +1444,22 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return nextBranchesLoaded?.call();
   }
@@ -1537,24 +1520,24 @@ class _$NextBranchesLoaded implements NextBranchesLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return nextBranchesLoaded?.call(this);
   }
@@ -1601,14 +1584,12 @@ abstract class _$$ViewsUpdatedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ViewsUpdatedCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+class __$$ViewsUpdatedCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$ViewsUpdated>
     implements _$$ViewsUpdatedCopyWith<$Res> {
   __$$ViewsUpdatedCopyWithImpl(
       _$ViewsUpdated _value, $Res Function(_$ViewsUpdated) _then)
-      : super(_value, (v) => _then(v as _$ViewsUpdated));
-
-  @override
-  _$ViewsUpdated get _value => super._value as _$ViewsUpdated;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1656,22 +1637,22 @@ class _$ViewsUpdated implements ViewsUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return viewsUpdated?.call();
   }
@@ -1732,24 +1713,24 @@ class _$ViewsUpdated implements ViewsUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return viewsUpdated?.call(this);
   }
@@ -1797,14 +1778,11 @@ abstract class _$$LikeStatusLoadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$LikeStatusLoadedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$LikeStatusLoaded>
     implements _$$LikeStatusLoadedCopyWith<$Res> {
   __$$LikeStatusLoadedCopyWithImpl(
       _$LikeStatusLoaded _value, $Res Function(_$LikeStatusLoaded) _then)
-      : super(_value, (v) => _then(v as _$LikeStatusLoaded));
-
-  @override
-  _$LikeStatusLoaded get _value => super._value as _$LikeStatusLoaded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1852,22 +1830,22 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return likeStatusLoaded?.call();
   }
@@ -1928,24 +1906,24 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return likeStatusLoaded?.call(this);
   }
@@ -1989,26 +1967,25 @@ abstract class _$$BookmarkButtonPressedCopyWith<$Res> {
   factory _$$BookmarkButtonPressedCopyWith(_$BookmarkButtonPressed value,
           $Res Function(_$BookmarkButtonPressed) then) =
       __$$BookmarkButtonPressedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isBookmarked});
 }
 
 /// @nodoc
 class __$$BookmarkButtonPressedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$BookmarkButtonPressed>
     implements _$$BookmarkButtonPressedCopyWith<$Res> {
   __$$BookmarkButtonPressedCopyWithImpl(_$BookmarkButtonPressed _value,
       $Res Function(_$BookmarkButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$BookmarkButtonPressed));
+      : super(_value, _then);
 
-  @override
-  _$BookmarkButtonPressed get _value => super._value as _$BookmarkButtonPressed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isBookmarked = freezed,
+    Object? isBookmarked = null,
   }) {
     return _then(_$BookmarkButtonPressed(
-      isBookmarked: isBookmarked == freezed
+      isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -2034,16 +2011,16 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookmarkButtonPressed &&
-            const DeepCollectionEquality()
-                .equals(other.isBookmarked, isBookmarked));
+            (identical(other.isBookmarked, isBookmarked) ||
+                other.isBookmarked == isBookmarked));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(isBookmarked));
+  int get hashCode => Object.hash(runtimeType, isBookmarked);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
       __$$BookmarkButtonPressedCopyWithImpl<_$BookmarkButtonPressed>(
           this, _$identity);
@@ -2074,22 +2051,22 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return bookmarkButtonPressed?.call(isBookmarked);
   }
@@ -2150,24 +2127,24 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return bookmarkButtonPressed?.call(this);
   }
@@ -2217,26 +2194,25 @@ abstract class _$$LikeButtonPressedCopyWith<$Res> {
   factory _$$LikeButtonPressedCopyWith(
           _$LikeButtonPressed value, $Res Function(_$LikeButtonPressed) then) =
       __$$LikeButtonPressedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isLiked});
 }
 
 /// @nodoc
 class __$$LikeButtonPressedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$LikeButtonPressed>
     implements _$$LikeButtonPressedCopyWith<$Res> {
   __$$LikeButtonPressedCopyWithImpl(
       _$LikeButtonPressed _value, $Res Function(_$LikeButtonPressed) _then)
-      : super(_value, (v) => _then(v as _$LikeButtonPressed));
+      : super(_value, _then);
 
-  @override
-  _$LikeButtonPressed get _value => super._value as _$LikeButtonPressed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLiked = freezed,
+    Object? isLiked = null,
   }) {
     return _then(_$LikeButtonPressed(
-      isLiked: isLiked == freezed
+      isLiked: null == isLiked
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -2262,15 +2238,15 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LikeButtonPressed &&
-            const DeepCollectionEquality().equals(other.isLiked, isLiked));
+            (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isLiked));
+  int get hashCode => Object.hash(runtimeType, isLiked);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LikeButtonPressedCopyWith<_$LikeButtonPressed> get copyWith =>
       __$$LikeButtonPressedCopyWithImpl<_$LikeButtonPressed>(this, _$identity);
 
@@ -2300,22 +2276,22 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return likeButtonPressed?.call(isLiked);
   }
@@ -2376,24 +2352,24 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return likeButtonPressed?.call(this);
   }
@@ -2448,17 +2424,13 @@ abstract class _$$RefreshNextBranchesBySameAuthorPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$RefreshNextBranchesBySameAuthorPressedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res,
+        _$RefreshNextBranchesBySameAuthorPressed>
     implements _$$RefreshNextBranchesBySameAuthorPressedCopyWith<$Res> {
   __$$RefreshNextBranchesBySameAuthorPressedCopyWithImpl(
       _$RefreshNextBranchesBySameAuthorPressed _value,
       $Res Function(_$RefreshNextBranchesBySameAuthorPressed) _then)
-      : super(_value,
-            (v) => _then(v as _$RefreshNextBranchesBySameAuthorPressed));
-
-  @override
-  _$RefreshNextBranchesBySameAuthorPressed get _value =>
-      super._value as _$RefreshNextBranchesBySameAuthorPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2508,22 +2480,22 @@ class _$RefreshNextBranchesBySameAuthorPressed
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return refreshNextBranchesBySameAuthorPressed?.call();
   }
@@ -2584,24 +2556,24 @@ class _$RefreshNextBranchesBySameAuthorPressed
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return refreshNextBranchesBySameAuthorPressed?.call(this);
   }
@@ -2651,16 +2623,12 @@ abstract class _$$RefreshNextBranchesPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$RefreshNextBranchesPressedCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$RefreshNextBranchesPressed>
     implements _$$RefreshNextBranchesPressedCopyWith<$Res> {
   __$$RefreshNextBranchesPressedCopyWithImpl(
       _$RefreshNextBranchesPressed _value,
       $Res Function(_$RefreshNextBranchesPressed) _then)
-      : super(_value, (v) => _then(v as _$RefreshNextBranchesPressed));
-
-  @override
-  _$RefreshNextBranchesPressed get _value =>
-      super._value as _$RefreshNextBranchesPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2709,22 +2677,22 @@ class _$RefreshNextBranchesPressed implements RefreshNextBranchesPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return refreshNextBranchesPressed?.call();
   }
@@ -2785,24 +2753,24 @@ class _$RefreshNextBranchesPressed implements RefreshNextBranchesPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return refreshNextBranchesPressed?.call(this);
   }
@@ -2846,29 +2814,29 @@ abstract class _$$ScrolledCopyWith<$Res> {
   factory _$$ScrolledCopyWith(
           _$Scrolled value, $Res Function(_$Scrolled) then) =
       __$$ScrolledCopyWithImpl<$Res>;
+  @useResult
   $Res call({int currentScrollPosition, int maxScrollPosition});
 }
 
 /// @nodoc
-class __$$ScrolledCopyWithImpl<$Res> extends _$BranchEventCopyWithImpl<$Res>
+class __$$ScrolledCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$Scrolled>
     implements _$$ScrolledCopyWith<$Res> {
   __$$ScrolledCopyWithImpl(_$Scrolled _value, $Res Function(_$Scrolled) _then)
-      : super(_value, (v) => _then(v as _$Scrolled));
+      : super(_value, _then);
 
-  @override
-  _$Scrolled get _value => super._value as _$Scrolled;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentScrollPosition = freezed,
-    Object? maxScrollPosition = freezed,
+    Object? currentScrollPosition = null,
+    Object? maxScrollPosition = null,
   }) {
     return _then(_$Scrolled(
-      currentScrollPosition == freezed
+      null == currentScrollPosition
           ? _value.currentScrollPosition
           : currentScrollPosition // ignore: cast_nullable_to_non_nullable
               as int,
-      maxScrollPosition == freezed
+      null == maxScrollPosition
           ? _value.maxScrollPosition
           : maxScrollPosition // ignore: cast_nullable_to_non_nullable
               as int,
@@ -2896,20 +2864,19 @@ class _$Scrolled implements Scrolled {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Scrolled &&
-            const DeepCollectionEquality()
-                .equals(other.currentScrollPosition, currentScrollPosition) &&
-            const DeepCollectionEquality()
-                .equals(other.maxScrollPosition, maxScrollPosition));
+            (identical(other.currentScrollPosition, currentScrollPosition) ||
+                other.currentScrollPosition == currentScrollPosition) &&
+            (identical(other.maxScrollPosition, maxScrollPosition) ||
+                other.maxScrollPosition == maxScrollPosition));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(currentScrollPosition),
-      const DeepCollectionEquality().hash(maxScrollPosition));
+  int get hashCode =>
+      Object.hash(runtimeType, currentScrollPosition, maxScrollPosition);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$ScrolledCopyWith<_$Scrolled> get copyWith =>
       __$$ScrolledCopyWithImpl<_$Scrolled>(this, _$identity);
 
@@ -2939,22 +2906,22 @@ class _$Scrolled implements Scrolled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return scrolled?.call(currentScrollPosition, maxScrollPosition);
   }
@@ -3015,24 +2982,24 @@ class _$Scrolled implements Scrolled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return scrolled?.call(this);
   }
@@ -3088,14 +3055,11 @@ abstract class _$$ToggleDetailsCopyWith<$Res> {
 
 /// @nodoc
 class __$$ToggleDetailsCopyWithImpl<$Res>
-    extends _$BranchEventCopyWithImpl<$Res>
+    extends _$BranchEventCopyWithImpl<$Res, _$ToggleDetails>
     implements _$$ToggleDetailsCopyWith<$Res> {
   __$$ToggleDetailsCopyWithImpl(
       _$ToggleDetails _value, $Res Function(_$ToggleDetails) _then)
-      : super(_value, (v) => _then(v as _$ToggleDetails));
-
-  @override
-  _$ToggleDetails get _value => super._value as _$ToggleDetails;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -3143,22 +3107,22 @@ class _$ToggleDetails implements ToggleDetails {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(UniqueID uid, Branch? branch)? launchWithUID,
-    TResult Function()? branchSet,
-    TResult Function()? sessionFetched,
-    TResult Function()? authorLoaded,
-    TResult Function()? settingsFetched,
-    TResult Function()? nextBranchesBySameAuthorLoaded,
-    TResult Function()? nextBranchesLoaded,
-    TResult Function()? viewsUpdated,
-    TResult Function()? likeStatusLoaded,
-    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? refreshNextBranchesBySameAuthorPressed,
-    TResult Function()? refreshNextBranchesPressed,
-    TResult Function(int currentScrollPosition, int maxScrollPosition)?
+    TResult? Function(UniqueID uid, Branch? branch)? launchWithUID,
+    TResult? Function()? branchSet,
+    TResult? Function()? sessionFetched,
+    TResult? Function()? authorLoaded,
+    TResult? Function()? settingsFetched,
+    TResult? Function()? nextBranchesBySameAuthorLoaded,
+    TResult? Function()? nextBranchesLoaded,
+    TResult? Function()? viewsUpdated,
+    TResult? Function()? likeStatusLoaded,
+    TResult? Function(bool isBookmarked)? bookmarkButtonPressed,
+    TResult? Function(bool isLiked)? likeButtonPressed,
+    TResult? Function()? refreshNextBranchesBySameAuthorPressed,
+    TResult? Function()? refreshNextBranchesPressed,
+    TResult? Function(int currentScrollPosition, int maxScrollPosition)?
         scrolled,
-    TResult Function()? toggleDetails,
+    TResult? Function()? toggleDetails,
   }) {
     return toggleDetails?.call();
   }
@@ -3219,24 +3183,24 @@ class _$ToggleDetails implements ToggleDetails {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LaunchWithUID value)? launchWithUID,
-    TResult Function(BranchSet value)? branchSet,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(AuthorLoaded value)? authorLoaded,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(NextBranchesBySameAuthorLoaded value)?
+    TResult? Function(LaunchWithUID value)? launchWithUID,
+    TResult? Function(BranchSet value)? branchSet,
+    TResult? Function(SessionFetched value)? sessionFetched,
+    TResult? Function(AuthorLoaded value)? authorLoaded,
+    TResult? Function(SettingsFetched value)? settingsFetched,
+    TResult? Function(NextBranchesBySameAuthorLoaded value)?
         nextBranchesBySameAuthorLoaded,
-    TResult Function(NextBranchesLoaded value)? nextBranchesLoaded,
-    TResult Function(ViewsUpdated value)? viewsUpdated,
-    TResult Function(LikeStatusLoaded value)? likeStatusLoaded,
-    TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(RefreshNextBranchesBySameAuthorPressed value)?
+    TResult? Function(NextBranchesLoaded value)? nextBranchesLoaded,
+    TResult? Function(ViewsUpdated value)? viewsUpdated,
+    TResult? Function(LikeStatusLoaded value)? likeStatusLoaded,
+    TResult? Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
+    TResult? Function(LikeButtonPressed value)? likeButtonPressed,
+    TResult? Function(RefreshNextBranchesBySameAuthorPressed value)?
         refreshNextBranchesBySameAuthorPressed,
-    TResult Function(RefreshNextBranchesPressed value)?
+    TResult? Function(RefreshNextBranchesPressed value)?
         refreshNextBranchesPressed,
-    TResult Function(Scrolled value)? scrolled,
-    TResult Function(ToggleDetails value)? toggleDetails,
+    TResult? Function(Scrolled value)? scrolled,
+    TResult? Function(ToggleDetails value)? toggleDetails,
   }) {
     return toggleDetails?.call(this);
   }
@@ -3302,7 +3266,8 @@ mixin _$BranchState {
 abstract class $BranchStateCopyWith<$Res> {
   factory $BranchStateCopyWith(
           BranchState value, $Res Function(BranchState) then) =
-      _$BranchStateCopyWithImpl<$Res>;
+      _$BranchStateCopyWithImpl<$Res, BranchState>;
+  @useResult
   $Res call(
       {bool authorIsUser,
       User author,
@@ -3326,119 +3291,126 @@ abstract class $BranchStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BranchStateCopyWithImpl<$Res> implements $BranchStateCopyWith<$Res> {
+class _$BranchStateCopyWithImpl<$Res, $Val extends BranchState>
+    implements $BranchStateCopyWith<$Res> {
   _$BranchStateCopyWithImpl(this._value, this._then);
 
-  final BranchState _value;
   // ignore: unused_field
-  final $Res Function(BranchState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorIsUser = freezed,
-    Object? author = freezed,
-    Object? branch = freezed,
-    Object? failureOption = freezed,
-    Object? isBookmarked = freezed,
-    Object? isLiked = freezed,
-    Object? isProcessing = freezed,
-    Object? leafController = freezed,
-    Object? nextBranches = freezed,
-    Object? sameAuthorNextBranches = freezed,
-    Object? scrollProgress = freezed,
+    Object? authorIsUser = null,
+    Object? author = null,
+    Object? branch = null,
+    Object? failureOption = null,
+    Object? isBookmarked = null,
+    Object? isLiked = null,
+    Object? isProcessing = null,
+    Object? leafController = null,
+    Object? nextBranches = null,
+    Object? sameAuthorNextBranches = null,
+    Object? scrollProgress = null,
     Object? session = freezed,
-    Object? settings = freezed,
-    Object? showDetails = freezed,
+    Object? settings = null,
+    Object? showDetails = null,
   }) {
     return _then(_value.copyWith(
-      authorIsUser: authorIsUser == freezed
+      authorIsUser: null == authorIsUser
           ? _value.authorIsUser
           : authorIsUser // ignore: cast_nullable_to_non_nullable
               as bool,
-      author: author == freezed
+      author: null == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as User,
-      branch: branch == freezed
+      branch: null == branch
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as Branch,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isBookmarked: isBookmarked == freezed
+      isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLiked: isLiked == freezed
+      isLiked: null == isLiked
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      leafController: leafController == freezed
+      leafController: null == leafController
           ? _value.leafController
           : leafController // ignore: cast_nullable_to_non_nullable
               as QuillController,
-      nextBranches: nextBranches == freezed
+      nextBranches: null == nextBranches
           ? _value.nextBranches
           : nextBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
-      sameAuthorNextBranches: sameAuthorNextBranches == freezed
+      sameAuthorNextBranches: null == sameAuthorNextBranches
           ? _value.sameAuthorNextBranches
           : sameAuthorNextBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
-      scrollProgress: scrollProgress == freezed
+      scrollProgress: null == scrollProgress
           ? _value.scrollProgress
           : scrollProgress // ignore: cast_nullable_to_non_nullable
               as double,
-      session: session == freezed
+      session: freezed == session
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User?,
-      settings: settings == freezed
+      settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
-      showDetails: showDetails == freezed
+      showDetails: null == showDetails
           ? _value.showDetails
           : showDetails // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get author {
     return $UserCopyWith<$Res>(_value.author, (value) {
-      return _then(_value.copyWith(author: value));
+      return _then(_value.copyWith(author: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $BranchCopyWith<$Res> get branch {
     return $BranchCopyWith<$Res>(_value.branch, (value) {
-      return _then(_value.copyWith(branch: value));
+      return _then(_value.copyWith(branch: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get session {
     if (_value.session == null) {
       return null;
     }
 
     return $UserCopyWith<$Res>(_value.session!, (value) {
-      return _then(_value.copyWith(session: value));
+      return _then(_value.copyWith(session: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SettingsCopyWith<$Res> get settings {
     return $SettingsCopyWith<$Res>(_value.settings, (value) {
-      return _then(_value.copyWith(settings: value));
+      return _then(_value.copyWith(settings: value) as $Val);
     });
   }
 }
@@ -3450,6 +3422,7 @@ abstract class _$$_BranchStateCopyWith<$Res>
           _$_BranchState value, $Res Function(_$_BranchState) then) =
       __$$_BranchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool authorIsUser,
       User author,
@@ -3477,86 +3450,85 @@ abstract class _$$_BranchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BranchStateCopyWithImpl<$Res> extends _$BranchStateCopyWithImpl<$Res>
+class __$$_BranchStateCopyWithImpl<$Res>
+    extends _$BranchStateCopyWithImpl<$Res, _$_BranchState>
     implements _$$_BranchStateCopyWith<$Res> {
   __$$_BranchStateCopyWithImpl(
       _$_BranchState _value, $Res Function(_$_BranchState) _then)
-      : super(_value, (v) => _then(v as _$_BranchState));
+      : super(_value, _then);
 
-  @override
-  _$_BranchState get _value => super._value as _$_BranchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorIsUser = freezed,
-    Object? author = freezed,
-    Object? branch = freezed,
-    Object? failureOption = freezed,
-    Object? isBookmarked = freezed,
-    Object? isLiked = freezed,
-    Object? isProcessing = freezed,
-    Object? leafController = freezed,
-    Object? nextBranches = freezed,
-    Object? sameAuthorNextBranches = freezed,
-    Object? scrollProgress = freezed,
+    Object? authorIsUser = null,
+    Object? author = null,
+    Object? branch = null,
+    Object? failureOption = null,
+    Object? isBookmarked = null,
+    Object? isLiked = null,
+    Object? isProcessing = null,
+    Object? leafController = null,
+    Object? nextBranches = null,
+    Object? sameAuthorNextBranches = null,
+    Object? scrollProgress = null,
     Object? session = freezed,
-    Object? settings = freezed,
-    Object? showDetails = freezed,
+    Object? settings = null,
+    Object? showDetails = null,
   }) {
     return _then(_$_BranchState(
-      authorIsUser: authorIsUser == freezed
+      authorIsUser: null == authorIsUser
           ? _value.authorIsUser
           : authorIsUser // ignore: cast_nullable_to_non_nullable
               as bool,
-      author: author == freezed
+      author: null == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as User,
-      branch: branch == freezed
+      branch: null == branch
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as Branch,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isBookmarked: isBookmarked == freezed
+      isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLiked: isLiked == freezed
+      isLiked: null == isLiked
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      leafController: leafController == freezed
+      leafController: null == leafController
           ? _value.leafController
           : leafController // ignore: cast_nullable_to_non_nullable
               as QuillController,
-      nextBranches: nextBranches == freezed
+      nextBranches: null == nextBranches
           ? _value._nextBranches
           : nextBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
-      sameAuthorNextBranches: sameAuthorNextBranches == freezed
+      sameAuthorNextBranches: null == sameAuthorNextBranches
           ? _value._sameAuthorNextBranches
           : sameAuthorNextBranches // ignore: cast_nullable_to_non_nullable
               as List<Branch>,
-      scrollProgress: scrollProgress == freezed
+      scrollProgress: null == scrollProgress
           ? _value.scrollProgress
           : scrollProgress // ignore: cast_nullable_to_non_nullable
               as double,
-      session: session == freezed
+      session: freezed == session
           ? _value.session
           : session // ignore: cast_nullable_to_non_nullable
               as User?,
-      settings: settings == freezed
+      settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Settings,
-      showDetails: showDetails == freezed
+      showDetails: null == showDetails
           ? _value.showDetails
           : showDetails // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -3604,6 +3576,7 @@ class _$_BranchState implements _BranchState {
   final List<Branch> _nextBranches;
   @override
   List<Branch> get nextBranches {
+    if (_nextBranches is EqualUnmodifiableListView) return _nextBranches;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_nextBranches);
   }
@@ -3611,6 +3584,8 @@ class _$_BranchState implements _BranchState {
   final List<Branch> _sameAuthorNextBranches;
   @override
   List<Branch> get sameAuthorNextBranches {
+    if (_sameAuthorNextBranches is EqualUnmodifiableListView)
+      return _sameAuthorNextBranches;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_sameAuthorNextBranches);
   }
@@ -3634,51 +3609,53 @@ class _$_BranchState implements _BranchState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BranchState &&
-            const DeepCollectionEquality()
-                .equals(other.authorIsUser, authorIsUser) &&
-            const DeepCollectionEquality().equals(other.author, author) &&
-            const DeepCollectionEquality().equals(other.branch, branch) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality()
-                .equals(other.isBookmarked, isBookmarked) &&
-            const DeepCollectionEquality().equals(other.isLiked, isLiked) &&
-            const DeepCollectionEquality()
-                .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality()
-                .equals(other.leafController, leafController) &&
+            (identical(other.authorIsUser, authorIsUser) ||
+                other.authorIsUser == authorIsUser) &&
+            (identical(other.author, author) || other.author == author) &&
+            (identical(other.branch, branch) || other.branch == branch) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.isBookmarked, isBookmarked) ||
+                other.isBookmarked == isBookmarked) &&
+            (identical(other.isLiked, isLiked) || other.isLiked == isLiked) &&
+            (identical(other.isProcessing, isProcessing) ||
+                other.isProcessing == isProcessing) &&
+            (identical(other.leafController, leafController) ||
+                other.leafController == leafController) &&
             const DeepCollectionEquality()
                 .equals(other._nextBranches, _nextBranches) &&
             const DeepCollectionEquality().equals(
                 other._sameAuthorNextBranches, _sameAuthorNextBranches) &&
-            const DeepCollectionEquality()
-                .equals(other.scrollProgress, scrollProgress) &&
-            const DeepCollectionEquality().equals(other.session, session) &&
-            const DeepCollectionEquality().equals(other.settings, settings) &&
-            const DeepCollectionEquality()
-                .equals(other.showDetails, showDetails));
+            (identical(other.scrollProgress, scrollProgress) ||
+                other.scrollProgress == scrollProgress) &&
+            (identical(other.session, session) || other.session == session) &&
+            (identical(other.settings, settings) ||
+                other.settings == settings) &&
+            (identical(other.showDetails, showDetails) ||
+                other.showDetails == showDetails));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(authorIsUser),
-      const DeepCollectionEquality().hash(author),
-      const DeepCollectionEquality().hash(branch),
-      const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(isBookmarked),
-      const DeepCollectionEquality().hash(isLiked),
-      const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(leafController),
+      authorIsUser,
+      author,
+      branch,
+      failureOption,
+      isBookmarked,
+      isLiked,
+      isProcessing,
+      leafController,
       const DeepCollectionEquality().hash(_nextBranches),
       const DeepCollectionEquality().hash(_sameAuthorNextBranches),
-      const DeepCollectionEquality().hash(scrollProgress),
-      const DeepCollectionEquality().hash(session),
-      const DeepCollectionEquality().hash(settings),
-      const DeepCollectionEquality().hash(showDetails));
+      scrollProgress,
+      session,
+      settings,
+      showDetails);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_BranchStateCopyWith<_$_BranchState> get copyWith =>
       __$$_BranchStateCopyWithImpl<_$_BranchState>(this, _$identity);
 }

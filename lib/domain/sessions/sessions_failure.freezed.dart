@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'sessions_failure.dart';
 
@@ -25,9 +25,9 @@ mixin _$SessionsFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotDeleted,
-    TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotInserted,
+    TResult? Function()? sessionNotDeleted,
+    TResult? Function()? sessionNotFound,
+    TResult? Function()? sessionNotInserted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$SessionsFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotInserted value)? sessionNotInserted,
+    TResult? Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult? Function(SessionNotFound value)? sessionNotFound,
+    TResult? Function(SessionNotInserted value)? sessionNotInserted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,17 +66,18 @@ mixin _$SessionsFailure {
 abstract class $SessionsFailureCopyWith<$Res> {
   factory $SessionsFailureCopyWith(
           SessionsFailure value, $Res Function(SessionsFailure) then) =
-      _$SessionsFailureCopyWithImpl<$Res>;
+      _$SessionsFailureCopyWithImpl<$Res, SessionsFailure>;
 }
 
 /// @nodoc
-class _$SessionsFailureCopyWithImpl<$Res>
+class _$SessionsFailureCopyWithImpl<$Res, $Val extends SessionsFailure>
     implements $SessionsFailureCopyWith<$Res> {
   _$SessionsFailureCopyWithImpl(this._value, this._then);
 
-  final SessionsFailure _value;
   // ignore: unused_field
-  final $Res Function(SessionsFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -88,14 +89,11 @@ abstract class _$$SessionNotDeletedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionNotDeletedCopyWithImpl<$Res>
-    extends _$SessionsFailureCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotDeleted>
     implements _$$SessionNotDeletedCopyWith<$Res> {
   __$$SessionNotDeletedCopyWithImpl(
       _$SessionNotDeleted _value, $Res Function(_$SessionNotDeleted) _then)
-      : super(_value, (v) => _then(v as _$SessionNotDeleted));
-
-  @override
-  _$SessionNotDeleted get _value => super._value as _$SessionNotDeleted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -130,9 +128,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotDeleted,
-    TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotInserted,
+    TResult? Function()? sessionNotDeleted,
+    TResult? Function()? sessionNotFound,
+    TResult? Function()? sessionNotInserted,
   }) {
     return sessionNotDeleted?.call();
   }
@@ -164,9 +162,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotInserted value)? sessionNotInserted,
+    TResult? Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult? Function(SessionNotFound value)? sessionNotFound,
+    TResult? Function(SessionNotInserted value)? sessionNotInserted,
   }) {
     return sessionNotDeleted?.call(this);
   }
@@ -199,14 +197,11 @@ abstract class _$$SessionNotFoundCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionNotFoundCopyWithImpl<$Res>
-    extends _$SessionsFailureCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotFound>
     implements _$$SessionNotFoundCopyWith<$Res> {
   __$$SessionNotFoundCopyWithImpl(
       _$SessionNotFound _value, $Res Function(_$SessionNotFound) _then)
-      : super(_value, (v) => _then(v as _$SessionNotFound));
-
-  @override
-  _$SessionNotFound get _value => super._value as _$SessionNotFound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -241,9 +236,9 @@ class _$SessionNotFound implements SessionNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotDeleted,
-    TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotInserted,
+    TResult? Function()? sessionNotDeleted,
+    TResult? Function()? sessionNotFound,
+    TResult? Function()? sessionNotInserted,
   }) {
     return sessionNotFound?.call();
   }
@@ -275,9 +270,9 @@ class _$SessionNotFound implements SessionNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotInserted value)? sessionNotInserted,
+    TResult? Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult? Function(SessionNotFound value)? sessionNotFound,
+    TResult? Function(SessionNotInserted value)? sessionNotInserted,
   }) {
     return sessionNotFound?.call(this);
   }
@@ -310,14 +305,11 @@ abstract class _$$SessionNotInsertedCopyWith<$Res> {
 
 /// @nodoc
 class __$$SessionNotInsertedCopyWithImpl<$Res>
-    extends _$SessionsFailureCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotInserted>
     implements _$$SessionNotInsertedCopyWith<$Res> {
   __$$SessionNotInsertedCopyWithImpl(
       _$SessionNotInserted _value, $Res Function(_$SessionNotInserted) _then)
-      : super(_value, (v) => _then(v as _$SessionNotInserted));
-
-  @override
-  _$SessionNotInserted get _value => super._value as _$SessionNotInserted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -352,9 +344,9 @@ class _$SessionNotInserted implements SessionNotInserted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? sessionNotDeleted,
-    TResult Function()? sessionNotFound,
-    TResult Function()? sessionNotInserted,
+    TResult? Function()? sessionNotDeleted,
+    TResult? Function()? sessionNotFound,
+    TResult? Function()? sessionNotInserted,
   }) {
     return sessionNotInserted?.call();
   }
@@ -386,9 +378,9 @@ class _$SessionNotInserted implements SessionNotInserted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SessionNotInserted value)? sessionNotInserted,
+    TResult? Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult? Function(SessionNotFound value)? sessionNotFound,
+    TResult? Function(SessionNotInserted value)? sessionNotInserted,
   }) {
     return sessionNotInserted?.call(this);
   }
