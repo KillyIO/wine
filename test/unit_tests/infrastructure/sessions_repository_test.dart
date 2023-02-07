@@ -45,7 +45,7 @@ void main() {
   group('deleteSession -', () {
     test('When session deleted Then return Unit', () async {
       when(() => isar.writeTxn(any()))
-          .thenAnswer((_) async => Result<Unit, SessionsFailure>.ok(unit));
+          .thenAnswer((_) async => const Result<Unit, SessionsFailure>.ok(unit));
 
       final result = await sessionsRepository.deleteSession();
 
@@ -58,8 +58,8 @@ void main() {
 
     test('When session not deleted Then return SessionNotDeleted', () async {
       when(() => isar.writeTxn(any())).thenAnswer(
-        (_) async => Result<Unit, SessionsFailure>.err(
-          const SessionsFailure.sessionNotDeleted(),
+        (_) async => const Result<Unit, SessionsFailure>.err(
+          SessionsFailure.sessionNotDeleted(),
         ),
       );
 

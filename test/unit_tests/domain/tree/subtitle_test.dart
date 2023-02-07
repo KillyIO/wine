@@ -12,14 +12,14 @@ void main() {
 
       expect(
         subtitle.value,
-        Ok<String, ValueFailure<String>>(testSubtitle),
+        const Ok<String, ValueFailure<String>>(testSubtitle),
       );
     });
 
     test('When input empty Then return input', () {
       final subtitle = Subtitle(testEmpty);
 
-      expect(subtitle.value, Ok<String, ValueFailure<String>>(testEmpty));
+      expect(subtitle.value, const Ok<String, ValueFailure<String>>(testEmpty));
     });
 
     test('When input too long Then return tooLong', () {
@@ -27,8 +27,8 @@ void main() {
 
       expect(
         subtitle.value,
-        Err<String, ValueFailure<String>>(
-          const ValueFailure<String>.tooLongInput(testInvalidSubtitleTooLong),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.tooLongInput(testInvalidSubtitleTooLong),
         ),
       );
     });

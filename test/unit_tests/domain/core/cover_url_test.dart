@@ -20,7 +20,7 @@ void main() {
 
       expect(
         coverURL.value,
-        Ok<String, ValueFailure<String>>(testCoverURL),
+        const Ok<String, ValueFailure<String>>(testCoverURL),
       );
     });
 
@@ -29,8 +29,8 @@ void main() {
 
       expect(
         coverURL.value,
-        Err<String, ValueFailure<String>>(
-          const ValueFailure.invalidCoverURL(testInvalidCoverURL),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure.invalidCoverURL(testInvalidCoverURL),
         ),
       );
     });

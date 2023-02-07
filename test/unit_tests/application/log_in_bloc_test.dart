@@ -119,7 +119,7 @@ void main() {
         build: () => logInBloc,
         act: (bloc) {
           when(() => authFacade.logInWithEmailAndPassword(any(), any()))
-              .thenAnswer((_) async => Err(const AuthFailure.serverError()));
+              .thenAnswer((_) async => const Err(AuthFailure.serverError()));
           return bloc
             ..add(const LogInEvent.emailAddressChanged(testEmailAddress))
             ..add(const LogInEvent.passwordChanged(testPassword))
@@ -138,7 +138,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(testEmailAddress),
             failureOption:
-                Some(Err(const CoreFailure.auth(AuthFailure.serverError()))),
+                const Some(Err(CoreFailure.auth(AuthFailure.serverError()))),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(testPassword),
@@ -156,7 +156,7 @@ void main() {
         build: () => logInBloc,
         act: (bloc) {
           when(authFacade.logInWithGoogle)
-              .thenAnswer((_) async => Err(const AuthFailure.serverError()));
+              .thenAnswer((_) async => const Err(AuthFailure.serverError()));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[
@@ -171,7 +171,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(''),
             failureOption:
-                Some(Err(const CoreFailure.auth(AuthFailure.serverError()))),
+                const Some(Err(CoreFailure.auth(AuthFailure.serverError()))),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
@@ -191,7 +191,7 @@ void main() {
           when(authFacade.getLoggedInUser)
               .thenAnswer((_) async => Option.some(testUser));
           when(() => userRepository.loadUser(any()))
-              .thenAnswer((_) async => Err(const UserFailure.serverError()));
+              .thenAnswer((_) async => const Err(UserFailure.serverError()));
           return bloc
             ..add(const LogInEvent.emailAddressChanged(testEmailAddress))
             ..add(const LogInEvent.passwordChanged(testPassword))
@@ -202,7 +202,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(testEmailAddress),
             failureOption:
-                Some(Err(const CoreFailure.user(UserFailure.serverError()))),
+                const Some(Err(CoreFailure.user(UserFailure.serverError()))),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(testPassword),
@@ -226,14 +226,14 @@ void main() {
           when(authFacade.getLoggedInUser)
               .thenAnswer((_) async => Option.some(testUser));
           when(() => userRepository.loadUser(any()))
-              .thenAnswer((_) async => Err(const UserFailure.serverError()));
+              .thenAnswer((_) async => const Err(UserFailure.serverError()));
           return bloc.add(const LogInEvent.loggedInWithGoogle());
         },
         expect: () => <LogInState>[
           LogInState(
             emailAddress: EmailAddress(''),
             failureOption:
-                Some(Err(const CoreFailure.user(UserFailure.serverError()))),
+                const Some(Err(CoreFailure.user(UserFailure.serverError()))),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
@@ -254,16 +254,16 @@ void main() {
         build: () => logInBloc,
         act: (bloc) {
           when(() => sessionsRepository.insertSession(any())).thenAnswer(
-            (_) async => Err(const SessionsFailure.sessionNotInserted()),
+            (_) async => const Err(SessionsFailure.sessionNotInserted()),
           );
           return bloc.add(LogInEvent.userDetailsSaved(testUser));
         },
         expect: () => <LogInState>[
           LogInState(
             emailAddress: EmailAddress(''),
-            failureOption: Some(
+            failureOption: const Some(
               Err(
-                const CoreFailure.sessions(
+                CoreFailure.sessions(
                   SessionsFailure.sessionNotInserted(),
                 ),
               ),
@@ -286,16 +286,16 @@ void main() {
         build: () => logInBloc,
         act: (bloc) {
           when(() => authFacade.logInWithEmailAndPassword(any(), any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(authFacade.getLoggedInUser)
               .thenAnswer((_) async => Option.some(testUser));
           when(() => userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
           when(() => userRepository.saveDetailsFromUser(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => sessionsRepository.insertSession(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isAnonymous).thenReturn(false);
           return bloc
             ..add(const LogInEvent.emailAddressChanged(testEmailAddress))
@@ -339,16 +339,16 @@ void main() {
         build: () => logInBloc,
         act: (bloc) {
           when(() => authFacade.logInWithGoogle())
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(authFacade.getLoggedInUser)
               .thenAnswer((_) async => Option.some(testUser));
           when(() => userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
           when(() => userRepository.saveDetailsFromUser(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => sessionsRepository.insertSession(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[
@@ -388,20 +388,20 @@ void main() {
         build: () => logInBloc,
         act: (bloc) {
           when(() => authFacade.logInWithGoogle())
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(authFacade.getLoggedInUser)
               .thenAnswer((_) async => Option.some(testUser));
           when(() => userRepository.loadUser(any()))
-              .thenAnswer((_) async => Err(const UserFailure.userNotFound()));
+              .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
           when(() => userRepository.checkUsernameAvailability(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => userRepository.saveUsername(any(), any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => userRepository.saveDetailsFromUser(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => sessionsRepository.insertSession(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[
@@ -444,22 +444,22 @@ void main() {
         build: () => logInBloc,
         act: (bloc) {
           when(() => authFacade.logInWithGoogle())
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(authFacade.getLoggedInUser)
               .thenAnswer((_) async => Option.some(testUser));
           when(() => userRepository.loadUser(any()))
-              .thenAnswer((_) async => Err(const UserFailure.userNotFound()));
+              .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
           when(() => userRepository.checkUsernameAvailability(any()))
               .thenAnswer(
-            (_) async => Err(const UserFailure.usernameAlreadyInUse()),
+            (_) async => const Err(UserFailure.usernameAlreadyInUse()),
           );
           when(() => userRepository.saveUsername(any(), any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => userRepository.saveDetailsFromUser(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(() => sessionsRepository.insertSession(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[

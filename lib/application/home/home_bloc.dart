@@ -86,7 +86,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(
           state.copyWith(
             currentPageViewIdx: newIdx,
-            failureOption: Option.none(),
+            failureOption: const Option.none(),
           ),
         );
 

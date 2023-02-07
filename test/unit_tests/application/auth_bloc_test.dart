@@ -29,7 +29,7 @@ void main() {
       build: () => authBloc,
       act: (bloc) {
         when(() => authFacade.authStateChanges)
-            .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+            .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
         return bloc.add(const AuthEvent.authChanged());
       },
       expect: () => <AuthState>[const AuthState.anonymous()],

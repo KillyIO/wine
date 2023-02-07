@@ -50,16 +50,16 @@ class BranchRepository implements IBranchRepository {
           .get();
 
       if (snapshot.docs.isEmpty) {
-        return Ok(unit);
+        return const Ok(unit);
       }
-      return Err(const BranchFailure.branchOneAlreadyExists());
+      return const Err(BranchFailure.branchOneAlreadyExists());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -87,11 +87,11 @@ class BranchRepository implements IBranchRepository {
       return Ok(tmpBranch);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -100,14 +100,14 @@ class BranchRepository implements IBranchRepository {
     try {
       await _firestore.collection(branchesPath).doc(uid.getOrCrash()).delete();
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -123,7 +123,7 @@ class BranchRepository implements IBranchRepository {
           .get();
 
       if (!documentSnapshot.exists) {
-        return Ok(false);
+        return const Ok(false);
       }
 
       final data = documentSnapshot.data();
@@ -132,14 +132,14 @@ class BranchRepository implements IBranchRepository {
 
         return Ok(isBookmarked);
       }
-      return Ok(false);
+      return const Ok(false);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -153,14 +153,14 @@ class BranchRepository implements IBranchRepository {
         final branch = BranchDTO.fromJson(snapshot.data()!).toDomain();
         return Ok(branch);
       }
-      return Err(const BranchFailure.branchNotFound());
+      return const Err(BranchFailure.branchNotFound());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -186,7 +186,7 @@ class BranchRepository implements IBranchRepository {
           .get();
 
       if (snapshot.docs.isEmpty) {
-        return Err(const BranchFailure.branchNotFound());
+        return const Err(BranchFailure.branchNotFound());
       }
 
       final branch = snapshot.docs.first.data();
@@ -194,11 +194,11 @@ class BranchRepository implements IBranchRepository {
       return Ok(branch);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -244,11 +244,11 @@ class BranchRepository implements IBranchRepository {
       return Ok(branch);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -264,7 +264,7 @@ class BranchRepository implements IBranchRepository {
           .get();
 
       if (!documentSnapshot.exists) {
-        return Ok(false);
+        return const Ok(false);
       }
 
       final data = documentSnapshot.data();
@@ -273,14 +273,14 @@ class BranchRepository implements IBranchRepository {
 
         return Ok(isLiked);
       }
-      return Ok(false);
+      return const Ok(false);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -329,11 +329,11 @@ class BranchRepository implements IBranchRepository {
       return Ok(branch);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -395,11 +395,11 @@ class BranchRepository implements IBranchRepository {
       return Ok(branch);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -427,11 +427,11 @@ class BranchRepository implements IBranchRepository {
       return Ok(tmpBranch);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -477,14 +477,14 @@ class BranchRepository implements IBranchRepository {
         }
       });
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (e) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -529,14 +529,14 @@ class BranchRepository implements IBranchRepository {
         }
       });
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (e) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -582,11 +582,11 @@ class BranchRepository implements IBranchRepository {
       return Ok(result);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 
@@ -604,14 +604,14 @@ class BranchRepository implements IBranchRepository {
         final url = await ref.getDownloadURL();
         return Ok(url);
       }
-      return Err(const BranchFailure.coverNotUploaded());
+      return const Err(BranchFailure.coverNotUploaded());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const BranchFailure.permissionDenied());
+        return const Err(BranchFailure.permissionDenied());
       }
-      return Err(const BranchFailure.serverError());
+      return const Err(BranchFailure.serverError());
     } catch (_) {
-      return Err(const BranchFailure.unexpected());
+      return const Err(BranchFailure.unexpected());
     }
   }
 }

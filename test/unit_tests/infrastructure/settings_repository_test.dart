@@ -46,7 +46,7 @@ void main() {
   group('deleteSettings -', () {
     test('When settings deleted Then return Unit', () async {
       when(() => isar.writeTxn(any()))
-          .thenAnswer((_) async => Result<Unit, SettingsFailure>.ok(unit));
+          .thenAnswer((_) async => const Result<Unit, SettingsFailure>.ok(unit));
 
       final result = await settingsRepository.deleteSettings();
 
@@ -59,8 +59,8 @@ void main() {
 
     test('When settings not deleted Then return SettingsNotDeleted', () async {
       when(() => isar.writeTxn(any())).thenAnswer(
-        (_) async => Result<Unit, SettingsFailure>.err(
-          const SettingsFailure.settingsNotDeleted(),
+        (_) async => const Result<Unit, SettingsFailure>.err(
+          SettingsFailure.settingsNotDeleted(),
         ),
       );
 
@@ -112,7 +112,7 @@ void main() {
   group('initializeSettings -', () {
     test('When settings initialized Then return Unit', () async {
       when(() => isar.writeTxn(any()))
-          .thenAnswer((_) async => Result<Unit, SettingsFailure>.ok(unit));
+          .thenAnswer((_) async => const Result<Unit, SettingsFailure>.ok(unit));
 
       final result = await settingsRepository.initializeSettings();
 
@@ -127,8 +127,8 @@ void main() {
       'When settings not initialized Then return SettingsNotCreated',
       () async {
         when(() => isar.writeTxn(any())).thenAnswer(
-          (_) async => Result<Unit, SettingsFailure>.err(
-            const SettingsFailure.settingsNotInitialized(),
+          (_) async => const Result<Unit, SettingsFailure>.err(
+            SettingsFailure.settingsNotInitialized(),
           ),
         );
 

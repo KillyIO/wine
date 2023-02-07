@@ -52,11 +52,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(tmpTree);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -65,14 +65,14 @@ class TreeRepository implements ITreeRepository {
     try {
       await _firestore.collection(treesPath).doc(uid.getOrCrash()).delete();
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -88,7 +88,7 @@ class TreeRepository implements ITreeRepository {
           .get();
 
       if (!documentSnapshot.exists) {
-        return Ok(false);
+        return const Ok(false);
       }
 
       final data = documentSnapshot.data();
@@ -97,14 +97,14 @@ class TreeRepository implements ITreeRepository {
 
         return Ok(isBookmarked);
       }
-      return Ok(false);
+      return const Ok(false);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -120,7 +120,7 @@ class TreeRepository implements ITreeRepository {
           .get();
 
       if (!documentSnapshot.exists) {
-        return Ok(false);
+        return const Ok(false);
       }
 
       final data = documentSnapshot.data();
@@ -129,14 +129,14 @@ class TreeRepository implements ITreeRepository {
 
         return Ok(isLiked);
       }
-      return Ok(false);
+      return const Ok(false);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -192,11 +192,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(trees);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -210,14 +210,14 @@ class TreeRepository implements ITreeRepository {
         final tree = TreeDTO.fromJson(snapshot.data()!).toDomain();
         return Ok(tree);
       }
-      return Err(const TreeFailure.treeNotFound());
+      return const Err(TreeFailure.treeNotFound());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -262,11 +262,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(trees);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -294,11 +294,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(tmpTree);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -343,14 +343,14 @@ class TreeRepository implements ITreeRepository {
         }
       });
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (e) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -394,14 +394,14 @@ class TreeRepository implements ITreeRepository {
         }
       });
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (e) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -446,11 +446,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(result);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -468,14 +468,14 @@ class TreeRepository implements ITreeRepository {
         final url = await ref.getDownloadURL();
         return Ok(url);
       }
-      return Err(const TreeFailure.coverNotUploaded());
+      return const Err(TreeFailure.coverNotUploaded());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 }

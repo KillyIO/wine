@@ -25,7 +25,7 @@ abstract class ValueObject<T extends Object> extends Equatable {
   /// @nodoc
   Result<Unit, ValueFailure<dynamic>> get failureOrUnit {
     return value.match(
-      (_) => Ok(unit),
+      (_) => const Ok(unit),
       Err.new,
     );
   }

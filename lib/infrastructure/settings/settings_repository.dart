@@ -25,12 +25,12 @@ class SettingsRepository implements ISettingsRepository {
         final isDeleted = await _isar.settings.delete(0);
 
         if (isDeleted) {
-          return Ok(unit);
+          return const Ok(unit);
         }
-        return Err(const SettingsFailure.settingsNotDeleted());
+        return const Err(SettingsFailure.settingsNotDeleted());
       });
     } catch (e) {
-      return Err(const SettingsFailure.settingsNotDeleted());
+      return const Err(SettingsFailure.settingsNotDeleted());
     }
   }
 
@@ -42,9 +42,9 @@ class SettingsRepository implements ISettingsRepository {
       if (settings != null) {
         return Ok(settings.toDomain());
       }
-      return Err(const SettingsFailure.settingsNotFound());
+      return const Err(SettingsFailure.settingsNotFound());
     } catch (e) {
-      return Err(const SettingsFailure.settingsNotFound());
+      return const Err(SettingsFailure.settingsNotFound());
     }
   }
 
@@ -69,10 +69,10 @@ class SettingsRepository implements ISettingsRepository {
           );
         }
 
-        return Ok(unit);
+        return const Ok(unit);
       });
     } catch (e) {
-      return Err(const SettingsFailure.settingsNotInitialized());
+      return const Err(SettingsFailure.settingsNotInitialized());
     }
   }
 
@@ -84,7 +84,7 @@ class SettingsRepository implements ISettingsRepository {
       var isarSettings = await _isar.settings.get(0);
 
       if (isarSettings == null) {
-        return Err(const SettingsFailure.settingsNotFound());
+        return const Err(SettingsFailure.settingsNotFound());
       }
 
       final settingsAdapter = SettingsDTO.fromDomain(settings)
@@ -98,11 +98,11 @@ class SettingsRepository implements ISettingsRepository {
       isarSettings = await _isar.settings.get(0);
 
       if (isarSettings != null && isarSettings == settingsAdapter) {
-        return Ok(unit);
+        return const Ok(unit);
       }
-      return Err(const SettingsFailure.settingsNotUpdated());
+      return const Err(SettingsFailure.settingsNotUpdated());
     } catch (e) {
-      return Err(const SettingsFailure.settingsNotUpdated());
+      return const Err(SettingsFailure.settingsNotUpdated());
     }
   }
 }

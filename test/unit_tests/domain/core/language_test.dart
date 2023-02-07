@@ -12,7 +12,7 @@ void main() {
 
       expect(
         language.value,
-        Ok<String, ValueFailure<String>>(testLanguage),
+        const Ok<String, ValueFailure<String>>(testLanguage),
       );
     });
 
@@ -21,8 +21,8 @@ void main() {
 
       expect(
         language.value,
-        Err<String, ValueFailure<String>>(
-          const ValueFailure<String>.emptySelection(testEmpty),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.emptySelection(testEmpty),
         ),
       );
     });

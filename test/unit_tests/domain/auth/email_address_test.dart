@@ -14,7 +14,7 @@ void main() {
 
         expect(
           emailAddress.value,
-          Ok<String, ValueFailure<String>>(testEmailAddress),
+          const Ok<String, ValueFailure<String>>(testEmailAddress),
         );
       },
     );
@@ -26,8 +26,8 @@ void main() {
 
         expect(
           emailAddress.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.invalidEmailAddress(
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidEmailAddress(
               testInvalidEmailAddress,
             ),
           ),

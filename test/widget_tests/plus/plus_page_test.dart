@@ -55,11 +55,11 @@ void main() {
   group('PlusPage', () {
     setUp(() {
       when(() => authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+          .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
       when(() => authFacade.isLoggedIn).thenReturn(true);
       when(() => authFacade.isAnonymous).thenReturn(true);
       when(settingsRepository.fetchSettings)
-          .thenAnswer((_) async => Ok(testSettings));
+          .thenAnswer((_) async => const Ok(testSettings));
       when(sessionsRepository.fetchSession)
           .thenAnswer((_) async => Ok(testUser));
     });
@@ -106,7 +106,7 @@ void main() {
   group('LibraryButton', () {
     setUp(() {
       when(() => authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+          .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
     });
 
     group('Web', () {
@@ -125,7 +125,7 @@ void main() {
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(() => authFacade.isAnonymous).thenReturn(true);
           when(settingsRepository.fetchSettings)
-              .thenAnswer((_) async => Ok(testSettings));
+              .thenAnswer((_) async => const Ok(testSettings));
           when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
@@ -174,7 +174,7 @@ void main() {
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(() => authFacade.isAnonymous).thenReturn(true);
           when(settingsRepository.fetchSettings)
-              .thenAnswer((_) async => Ok(testSettings));
+              .thenAnswer((_) async => const Ok(testSettings));
           when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
@@ -222,15 +222,15 @@ void main() {
           when(defaultCoversRepository.loadDefaultCovers)
               .thenAnswer((_) async => Ok([testDefaultCover]));
           when(() => defaultCoversRepository.cacheDefaultCovers(any()))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(settingsRepository.fetchSettings)
-              .thenAnswer((_) async => Ok(testSettings));
+              .thenAnswer((_) async => const Ok(testSettings));
           when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
           when(() => userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
           when(() => sessionsRepository.insertSession(testUser))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
 
           final authBloc = getIt<AuthBloc>()
             ..add(const AuthEvent.authChanged());

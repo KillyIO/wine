@@ -64,7 +64,7 @@ void main() {
         act: (bloc) {
           when(() => authFacade.isLoggedIn).thenReturn(false);
           when(() => authFacade.logInAnonymously())
-              .thenAnswer((_) async => Err(const AuthFailure.serverError()));
+              .thenAnswer((_) async => const Err(AuthFailure.serverError()));
           return bloc.add(const SetupEvent.appLaunched());
         },
         expect: () => <SetupState>[
@@ -88,7 +88,7 @@ void main() {
           when(() => authFacade.isAnonymous).thenReturn(false);
           when(() => defaultCoversRepository.loadDefaultCovers()).thenAnswer(
             (_) async =>
-                Err(const DefaultCoversFailure.defaultCoversNotLoaded()),
+                const Err(DefaultCoversFailure.defaultCoversNotLoaded()),
           );
           return bloc.add(const SetupEvent.authenticated());
         },
@@ -116,7 +116,7 @@ void main() {
                 defaultCoversRepository.cacheDefaultCovers([testDefaultCover]),
           ).thenAnswer(
             (_) async =>
-                Err(const DefaultCoversFailure.defaultCoversNotCached()),
+                const Err(DefaultCoversFailure.defaultCoversNotCached()),
           );
           return bloc.add(SetupEvent.defaultCoversLoaded([testDefaultCover]));
         },
@@ -140,7 +140,7 @@ void main() {
         build: () => setupBloc,
         act: (bloc) {
           when(() => settingsRepository.initializeSettings()).thenAnswer(
-            (_) async => Err(const SettingsFailure.settingsNotInitialized()),
+            (_) async => const Err(SettingsFailure.settingsNotInitialized()),
           );
           return bloc.add(const SetupEvent.settingsNotFound());
         },
@@ -159,7 +159,7 @@ void main() {
         build: () => setupBloc,
         act: (bloc) {
           when(() => sessionsRepository.insertSession(testUser)).thenAnswer(
-            (_) async => Err(const SessionsFailure.sessionNotInserted()),
+            (_) async => const Err(SessionsFailure.sessionNotInserted()),
           );
           return bloc.add(SetupEvent.userLoaded(testUser));
         },
@@ -182,7 +182,7 @@ void main() {
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(() => authFacade.isAnonymous).thenReturn(true);
           when(settingsRepository.fetchSettings)
-              .thenAnswer((_) async => Ok(testSettings));
+              .thenAnswer((_) async => const Ok(testSettings));
           when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
@@ -208,25 +208,25 @@ void main() {
         build: () => setupBloc,
         act: (bloc) {
           when(() => authFacade.isLoggedIn).thenReturn(false);
-          when(authFacade.logInAnonymously).thenAnswer((_) async => Ok(unit));
+          when(authFacade.logInAnonymously).thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isAnonymous).thenReturn(false);
           when(defaultCoversRepository.loadDefaultCovers)
               .thenAnswer((_) async => Ok([testDefaultCover]));
           when(
             () =>
                 defaultCoversRepository.cacheDefaultCovers([testDefaultCover]),
-          ).thenAnswer((_) async => Ok(unit));
+          ).thenAnswer((_) async => const Ok(unit));
           when(settingsRepository.fetchSettings).thenAnswer(
-            (_) async => Err(const SettingsFailure.settingsNotFound()),
+            (_) async => const Err(SettingsFailure.settingsNotFound()),
           );
           when(settingsRepository.initializeSettings)
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
           when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
           when(() => userRepository.loadUser(testUser.uid))
               .thenAnswer((_) async => Ok(testUser));
           when(() => sessionsRepository.insertSession(testUser))
-              .thenAnswer((_) async => Ok(unit));
+              .thenAnswer((_) async => const Ok(unit));
 
           return bloc.add(const SetupEvent.appLaunched());
         },

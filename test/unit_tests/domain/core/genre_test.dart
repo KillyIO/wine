@@ -10,7 +10,7 @@ void main() {
     test('When input valid Then return input', () {
       final genre = Genre(testGenre);
 
-      expect(genre.value, Ok<String, ValueFailure<String>>(testGenre));
+      expect(genre.value, const Ok<String, ValueFailure<String>>(testGenre));
     });
 
     test(
@@ -20,8 +20,8 @@ void main() {
 
         expect(
           genre.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.emptySelection(testEmpty),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.emptySelection(testEmpty),
           ),
         );
       },

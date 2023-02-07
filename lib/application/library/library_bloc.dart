@@ -63,7 +63,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         (trees) {
           emit(
             state.copyWith(
-              failureOption: Option.none(),
+              failureOption: const Option.none(),
               isProcessing: false,
               trees: trees,
             ),
@@ -139,7 +139,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         emit(
           state.copyWith(
             currentPageViewIdx: newIdx,
-            failureOption: Option.none(),
+            failureOption: const Option.none(),
           ),
         );
 
@@ -151,7 +151,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                 (trees) {
                   emit(
                     state.copyWith(
-                      failureOption: Option.none(),
+                      failureOption: const Option.none(),
                       isProcessing: false,
                       trees: trees,
                     ),
@@ -177,7 +177,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                   emit(
                     state.copyWith(
                       branches: branches,
-                      failureOption: Option.none(),
+                      failureOption: const Option.none(),
                       isProcessing: false,
                     ),
                   );
@@ -253,7 +253,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         emit(
           state.copyWith(
             currentVerticalNavbarIdx: newIdx,
-            failureOption: Option.none(),
+            failureOption: const Option.none(),
           ),
         );
       }

@@ -34,8 +34,8 @@ void main() {
 
           expect(
             uid.value,
-            Err<String, ValueFailure<String>>(
-              const ValueFailure<String>.invalidUniqueID(testInvalidUid),
+            const Err<String, ValueFailure<String>>(
+              ValueFailure<String>.invalidUniqueID(testInvalidUid),
             ),
           );
         },

@@ -52,7 +52,7 @@ class TypewriterBranchBloc
     on<LaunchAsNewBranch>((value, emit) async {
       emit(
         state.copyWith(
-          failureOption: Option.none(),
+          failureOption: const Option.none(),
           isProcessing: true,
         ),
       );
@@ -122,7 +122,7 @@ class TypewriterBranchBloc
       if (isValid) {
         emit(
           state.copyWith(
-            failureOption: Option.none(),
+            failureOption: const Option.none(),
             isProcessing: true,
           ),
         );
@@ -245,7 +245,7 @@ class TypewriterBranchBloc
     on<LaunchWithUID>((value, emit) async {
       emit(
         state.copyWith(
-          failureOption: Option.none(),
+          failureOption: const Option.none(),
           isProcessing: true,
         ),
       );
@@ -362,7 +362,7 @@ class TypewriterBranchBloc
         emit(
           state.copyWith(
             currentPageViewIdx: newIdx,
-            failureOption: Option.none(),
+            failureOption: const Option.none(),
           ),
         );
       }
@@ -380,7 +380,7 @@ class TypewriterBranchBloc
 
       emit(
         state.copyWith(
-          failureOption: Option.none(),
+          failureOption: const Option.none(),
           isProcessing: true,
         ),
       );
@@ -427,7 +427,7 @@ class TypewriterBranchBloc
 
     emit(
       state.copyWith(
-        failureOption: Option.none(),
+        failureOption: const Option.none(),
         isProcessing: true,
       ),
     );

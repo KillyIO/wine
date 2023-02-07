@@ -44,7 +44,7 @@ void main() {
   group('cacheDefaultCovers -', () {
     test('When covers cached Then return Unit', () async {
       when(() => isar.writeTxn(any()))
-          .thenAnswer((_) async => Result<Unit, DefaultCoversFailure>.ok(unit));
+          .thenAnswer((_) async => const Result<Unit, DefaultCoversFailure>.ok(unit));
 
       final result =
           await defaultCoversRepository.cacheDefaultCovers([testDefaultCover]);
@@ -60,8 +60,8 @@ void main() {
       'When at least one cover not cached The return DefaultCoversNotCached',
       () async {
         when(() => isar.writeTxn(any())).thenAnswer(
-          (_) async => Result<Unit, DefaultCoversFailure>.err(
-            const DefaultCoversFailure.defaultCoversNotCached(),
+          (_) async => const Result<Unit, DefaultCoversFailure>.err(
+            DefaultCoversFailure.defaultCoversNotCached(),
           ),
         );
 

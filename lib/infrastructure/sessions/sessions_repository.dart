@@ -36,12 +36,12 @@ class SessionsRepository implements ISessionsRepository {
             .deleteFirst();
 
         if (isDeleted) {
-          return Ok(unit);
+          return const Ok(unit);
         }
-        return Err(const SessionsFailure.sessionNotDeleted());
+        return const Err(SessionsFailure.sessionNotDeleted());
       });
     }
-    return Err(const SessionsFailure.sessionNotDeleted());
+    return const Err(SessionsFailure.sessionNotDeleted());
   }
 
   @override
@@ -56,7 +56,7 @@ class SessionsRepository implements ISessionsRepository {
         return Ok(session.toDomain());
       }
     }
-    return Err(const SessionsFailure.sessionNotFound());
+    return const Err(SessionsFailure.sessionNotFound());
   }
 
   @override
@@ -88,9 +88,9 @@ class SessionsRepository implements ISessionsRepository {
 
       if (session != null &&
           session.updatedAt.compareTo(userAdapter.updatedAt) >= 0) {
-        return Ok(unit);
+        return const Ok(unit);
       }
     }
-    return Err(const SessionsFailure.sessionNotInserted());
+    return const Err(SessionsFailure.sessionNotInserted());
   }
 }

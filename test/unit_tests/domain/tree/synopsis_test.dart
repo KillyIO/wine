@@ -12,7 +12,7 @@ void main() {
 
       expect(
         synopsis.value,
-        Ok<String, ValueFailure<String>>(testSynopsis),
+        const Ok<String, ValueFailure<String>>(testSynopsis),
       );
     });
 
@@ -21,8 +21,8 @@ void main() {
 
       expect(
         synopsis.value,
-        Err<String, ValueFailure<String>>(
-          const ValueFailure<String>.emptyInput(testEmpty),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.emptyInput(testEmpty),
         ),
       );
     });
@@ -32,8 +32,8 @@ void main() {
 
       expect(
         synopsis.value,
-        Err<String, ValueFailure<String>>(
-          const ValueFailure<String>.tooLongInput(testInvalidSynopsisTooLong),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.tooLongInput(testInvalidSynopsisTooLong),
         ),
       );
     });

@@ -14,7 +14,7 @@ void main() {
 
         expect(
           username.value,
-          Ok<String, ValueFailure<String>>(testUsername),
+          const Ok<String, ValueFailure<String>>(testUsername),
         );
       },
     );
@@ -26,8 +26,8 @@ void main() {
 
         expect(
           username.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.invalidUsername(testInvalidUsername),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidUsername(testInvalidUsername),
           ),
         );
       },

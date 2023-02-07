@@ -47,7 +47,7 @@ class TypewriterTreeBloc
     on<LaunchAsNewTree>((_, emit) async {
       emit(
         state.copyWith(
-          failureOption: Option.none(),
+          failureOption: const Option.none(),
           isProcessing: true,
         ),
       );
@@ -194,7 +194,7 @@ class TypewriterTreeBloc
     on<LaunchWithUID>((value, emit) async {
       emit(
         state.copyWith(
-          failureOption: Option.none(),
+          failureOption: const Option.none(),
           isProcessing: true,
         ),
       );
@@ -285,7 +285,7 @@ class TypewriterTreeBloc
 
         emit(
           state.copyWith(
-            failureOption: Option.none(),
+            failureOption: const Option.none(),
             isProcessing: true,
           ),
         );
@@ -311,7 +311,7 @@ class TypewriterTreeBloc
 
       emit(
         state.copyWith(
-          failureOption: Option.none(),
+          failureOption: const Option.none(),
           isProcessing: true,
         ),
       );

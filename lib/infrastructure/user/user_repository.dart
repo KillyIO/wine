@@ -33,16 +33,16 @@ class UserRepository implements IUserRepository {
           .get();
 
       if (documentSnapshot.exists) {
-        return Err(const UserFailure.usernameAlreadyInUse());
+        return const Err(UserFailure.usernameAlreadyInUse());
       }
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const UserFailure.permissionDenied());
+        return const Err(UserFailure.permissionDenied());
       }
-      return Err(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return Err(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
@@ -68,14 +68,14 @@ class UserRepository implements IUserRepository {
       if (user != null) {
         return Ok(user);
       }
-      return Err(const UserFailure.userNotFound());
+      return const Err(UserFailure.userNotFound());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const UserFailure.permissionDenied());
+        return const Err(UserFailure.permissionDenied());
       }
-      return Err(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return Err(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
@@ -93,14 +93,14 @@ class UserRepository implements IUserRepository {
 
       await usersRef.set(user, SetOptions(merge: true));
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const UserFailure.permissionDenied());
+        return const Err(UserFailure.permissionDenied());
       }
-      return Err(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return Err(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
@@ -119,14 +119,14 @@ class UserRepository implements IUserRepository {
       await mapReference
           .set(<String, dynamic>{'uid': uid}, SetOptions(merge: true));
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const UserFailure.permissionDenied());
+        return const Err(UserFailure.permissionDenied());
       }
-      return Err(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return Err(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 }

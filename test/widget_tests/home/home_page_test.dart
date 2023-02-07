@@ -49,7 +49,7 @@ void main() {
       group('auth -', () {
         setUp(() {
           when(() => authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+              .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
         });
 
         testWidgets(
@@ -57,7 +57,7 @@ void main() {
           (tester) async {
             when(() => authFacade.isLoggedIn).thenReturn(false);
             when(authFacade.logInAnonymously)
-                .thenAnswer((_) async => Err(const AuthFailure.serverError()));
+                .thenAnswer((_) async => const Err(AuthFailure.serverError()));
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
@@ -86,7 +86,7 @@ void main() {
           (tester) async {
             when(() => authFacade.isLoggedIn).thenReturn(false);
             when(authFacade.logInAnonymously)
-                .thenAnswer((_) async => Err(const AuthFailure.unexpected()));
+                .thenAnswer((_) async => const Err(AuthFailure.unexpected()));
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
@@ -114,7 +114,7 @@ void main() {
       group('defaultCovers -', () {
         setUp(() {
           when(() => authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+              .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
         });
 
         testWidgets(
@@ -122,14 +122,14 @@ void main() {
           (tester) async {
             when(() => authFacade.isLoggedIn).thenReturn(false);
             when(authFacade.logInAnonymously)
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(() => authFacade.isAnonymous).thenReturn(false);
             when(defaultCoversRepository.loadDefaultCovers)
                 .thenAnswer((_) async => Ok([testDefaultCover]));
             when(() => defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer(
-              (_) async => Err(
-                const DefaultCoversFailure.defaultCoversNotCached(),
+              (_) async => const Err(
+                DefaultCoversFailure.defaultCoversNotCached(),
               ),
             );
 
@@ -165,7 +165,7 @@ void main() {
             when(() => authFacade.isAnonymous).thenReturn(false);
             when(defaultCoversRepository.loadDefaultCovers).thenAnswer(
               (_) async =>
-                  Err(const DefaultCoversFailure.defaultCoversNotLoaded()),
+                  const Err(DefaultCoversFailure.defaultCoversNotLoaded()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -199,7 +199,7 @@ void main() {
             when(() => authFacade.isLoggedIn).thenReturn(true);
             when(() => authFacade.isAnonymous).thenReturn(false);
             when(defaultCoversRepository.loadDefaultCovers).thenAnswer(
-              (_) async => Err(const DefaultCoversFailure.serverError()),
+              (_) async => const Err(DefaultCoversFailure.serverError()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -230,7 +230,7 @@ void main() {
             when(() => authFacade.isLoggedIn).thenReturn(true);
             when(() => authFacade.isAnonymous).thenReturn(false);
             when(defaultCoversRepository.loadDefaultCovers).thenAnswer(
-              (_) async => Err(const DefaultCoversFailure.unexpected()),
+              (_) async => const Err(DefaultCoversFailure.unexpected()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -259,7 +259,7 @@ void main() {
       group('sessions -', () {
         setUp(() {
           when(() => authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+              .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
         });
 
         testWidgets(
@@ -267,16 +267,16 @@ void main() {
           (tester) async {
             when(() => authFacade.isLoggedIn).thenReturn(false);
             when(authFacade.logInAnonymously)
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(() => authFacade.isAnonymous).thenReturn(false);
             when(defaultCoversRepository.loadDefaultCovers)
                 .thenAnswer((_) async => Ok([testDefaultCover]));
             when(() => defaultCoversRepository.cacheDefaultCovers(any()))
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(settingsRepository.fetchSettings)
-                .thenAnswer((_) async => Ok(testSettings));
+                .thenAnswer((_) async => const Ok(testSettings));
             when(sessionsRepository.fetchSession).thenAnswer(
-              (_) async => Err(const SessionsFailure.sessionNotFound()),
+              (_) async => const Err(SessionsFailure.sessionNotFound()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -307,20 +307,20 @@ void main() {
           (tester) async {
             when(() => authFacade.isLoggedIn).thenReturn(false);
             when(authFacade.logInAnonymously)
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(() => authFacade.isAnonymous).thenReturn(false);
             when(defaultCoversRepository.loadDefaultCovers)
                 .thenAnswer((_) async => Ok([testDefaultCover]));
             when(() => defaultCoversRepository.cacheDefaultCovers(any()))
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(settingsRepository.fetchSettings)
-                .thenAnswer((_) async => Ok(testSettings));
+                .thenAnswer((_) async => const Ok(testSettings));
             when(sessionsRepository.fetchSession)
                 .thenAnswer((_) async => Ok(testUser));
             when(() => userRepository.loadUser(any()))
                 .thenAnswer((_) async => Ok(testUser));
             when(() => sessionsRepository.insertSession(any())).thenAnswer(
-              (_) async => Err(const SessionsFailure.sessionNotInserted()),
+              (_) async => const Err(SessionsFailure.sessionNotInserted()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -350,7 +350,7 @@ void main() {
       group('settings -', () {
         setUp(() {
           when(() => authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+              .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
         });
 
         testWidgets(
@@ -358,17 +358,17 @@ void main() {
           (tester) async {
             when(() => authFacade.isLoggedIn).thenReturn(false);
             when(authFacade.logInAnonymously)
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(() => authFacade.isAnonymous).thenReturn(false);
             when(defaultCoversRepository.loadDefaultCovers)
                 .thenAnswer((_) async => Ok([testDefaultCover]));
             when(() => defaultCoversRepository.cacheDefaultCovers(any()))
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(settingsRepository.fetchSettings).thenAnswer(
-              (_) async => Err(const SettingsFailure.settingsNotFound()),
+              (_) async => const Err(SettingsFailure.settingsNotFound()),
             );
             when(settingsRepository.initializeSettings).thenAnswer(
-              (_) async => Err(const SettingsFailure.settingsNotInitialized()),
+              (_) async => const Err(SettingsFailure.settingsNotInitialized()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -401,7 +401,7 @@ void main() {
       group('user -', () {
         setUp(() {
           when(() => authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+              .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
         });
 
         testWidgets(
@@ -409,18 +409,18 @@ void main() {
           (tester) async {
             when(() => authFacade.isLoggedIn).thenReturn(false);
             when(authFacade.logInAnonymously)
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(() => authFacade.isAnonymous).thenReturn(false);
             when(defaultCoversRepository.loadDefaultCovers)
                 .thenAnswer((_) async => Ok([testDefaultCover]));
             when(() => defaultCoversRepository.cacheDefaultCovers(any()))
-                .thenAnswer((_) async => Ok(unit));
+                .thenAnswer((_) async => const Ok(unit));
             when(settingsRepository.fetchSettings)
-                .thenAnswer((_) async => Ok(testSettings));
+                .thenAnswer((_) async => const Ok(testSettings));
             when(sessionsRepository.fetchSession)
                 .thenAnswer((_) async => Ok(testUser));
             when(() => userRepository.loadUser(any()))
-                .thenAnswer((_) async => Err(const UserFailure.userNotFound()));
+                .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
@@ -450,11 +450,11 @@ void main() {
     group('AppBar -', () {
       testWidgets('Should find 3 buttons', (tester) async {
         when(() => authFacade.authStateChanges)
-            .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+            .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
         when(() => authFacade.isLoggedIn).thenReturn(true);
         when(() => authFacade.isAnonymous).thenReturn(true);
         when(settingsRepository.fetchSettings)
-            .thenAnswer((_) async => Ok(testSettings));
+            .thenAnswer((_) async => const Ok(testSettings));
         when(sessionsRepository.fetchSession)
             .thenAnswer((_) async => Ok(testUser));
 
@@ -486,7 +486,7 @@ void main() {
         when(() => authFacade.isLoggedIn).thenReturn(true);
         when(() => authFacade.isAnonymous).thenReturn(true);
         when(settingsRepository.fetchSettings)
-            .thenAnswer((_) async => Ok(testSettings));
+            .thenAnswer((_) async => const Ok(testSettings));
         when(sessionsRepository.fetchSession)
             .thenAnswer((_) async => Ok(testUser));
       });
@@ -495,7 +495,7 @@ void main() {
 
       testWidgets('Should find 3 buttons', (tester) async {
         when(() => authFacade.authStateChanges)
-            .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+            .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
 
         final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 

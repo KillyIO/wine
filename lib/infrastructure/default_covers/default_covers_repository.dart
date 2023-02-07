@@ -55,12 +55,12 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
         final ids = await _isar.defaultCovers.putAll(covers);
 
         if (ids.length == defaultCovers.length) {
-          return Ok(unit);
+          return const Ok(unit);
         }
-        return Err(const DefaultCoversFailure.defaultCoversNotCached());
+        return const Err(DefaultCoversFailure.defaultCoversNotCached());
       });
     } catch (_) {
-      return Err(const DefaultCoversFailure.unexpected());
+      return const Err(DefaultCoversFailure.unexpected());
     }
   }
 
@@ -75,9 +75,9 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
       if (isarDefaultCover != null) {
         return Ok(isarDefaultCover.toDomain());
       }
-      return Err(const DefaultCoversFailure.defaultCoverNotFetched());
+      return const Err(DefaultCoversFailure.defaultCoverNotFetched());
     } catch (_) {
-      return Err(const DefaultCoversFailure.unexpected());
+      return const Err(DefaultCoversFailure.unexpected());
     }
   }
 
@@ -88,7 +88,7 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
       final snapshot = await _firestore.collection(defaultCoversPath).get();
 
       if (snapshot.docs.isEmpty) {
-        return Err(const DefaultCoversFailure.defaultCoversNotLoaded());
+        return const Err(DefaultCoversFailure.defaultCoversNotLoaded());
       }
 
       final data = <DefaultCover>[];
@@ -105,11 +105,11 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
       return Ok(data);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const DefaultCoversFailure.permissionDenied());
+        return const Err(DefaultCoversFailure.permissionDenied());
       }
-      return Err(const DefaultCoversFailure.serverError());
+      return const Err(DefaultCoversFailure.serverError());
     } catch (_) {
-      return Err(const DefaultCoversFailure.unexpected());
+      return const Err(DefaultCoversFailure.unexpected());
     }
   }
 }

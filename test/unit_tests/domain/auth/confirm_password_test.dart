@@ -14,7 +14,7 @@ void main() {
 
         expect(
           password.value,
-          Ok<String, ValueFailure<String>>(testPassword),
+          const Ok<String, ValueFailure<String>>(testPassword),
         );
       },
     );
@@ -26,8 +26,8 @@ void main() {
 
         expect(
           password.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.invalidPassword(testInvalidPassword),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidPassword(testInvalidPassword),
           ),
         );
       },
@@ -41,8 +41,8 @@ void main() {
 
         expect(
           password.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.invalidConfirmPassword(testPassword),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidConfirmPassword(testPassword),
           ),
         );
       },
