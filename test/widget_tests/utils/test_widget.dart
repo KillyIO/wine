@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class TestWidget extends StatelessWidget {
   const TestWidget({
-    super.key,
     required this.child,
+    super.key,
   });
 
   final Widget child;

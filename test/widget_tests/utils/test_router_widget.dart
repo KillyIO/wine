@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TestRouterWidget extends StatelessWidget {
   const TestRouterWidget({
-    super.key,
     required this.appRouter,
     required this.providers,
+    super.key,
   });
 
   final RootStackRouter appRouter;

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/value_failure.domain.dart';
-import 'package:wine/features/auth/username.fomain.dart';
+import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 import '../../utils/constants.dart';
 
@@ -14,7 +14,7 @@ void main() {
 
         expect(
           username.value,
-          Ok<String, ValueFailure<String>>(testUsername),
+          const Ok<String, ValueFailure<String>>(testUsername),
         );
       },
     );
@@ -26,8 +26,8 @@ void main() {
 
         expect(
           username.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.invalidUsername(testInvalidUsername),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidUsername(testInvalidUsername),
           ),
         );
       },

@@ -3,20 +3,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/routes/router.dart';
-import 'package:wine/features/auth/auth_bloc.application.dart';
-import 'package:wine/features/auth/auth_dialog_cubit.application.dart';
-import 'package:wine/features/auth/i_auth_facade.domain.dart';
-import 'package:wine/features/default_covers/i_default_covers_repository.domain.dart';
-import 'package:wine/features/home/home_bloc.application.dart';
-import 'package:wine/features/library/library_page.presentation.dart';
-import 'package:wine/features/log_in/log_in_bloc.application.dart';
-import 'package:wine/features/log_in/log_in_page.presentation.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/settings/i_settings_repository.domain.dart';
-import 'package:wine/features/user/i_user_repository.domain.dart';
-import 'package:wine/features/web/auth_dialog.presentation.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
+import 'package:wine/application/auth/dialog/auth_dialog_cubit.dart';
+import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/application/log_in/log_in_bloc.dart';
+import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/settings/i_settings_repository.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/library/library_page.dart';
+import 'package:wine/presentation/log_in/log_in_page.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/web/auth_dialog.dart';
 
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
@@ -28,24 +28,24 @@ void main() {
   const mobileWidth = 360;
   const mobileHeight = 740;
 
-  late IAuthFacade _authFacade;
-  late IDefaultCoversRepository _defaultCoversRepository;
-  late ISessionsRepository _sessionsRepository;
-  late ISettingsRepository _settingsRepository;
-  late IUserRepository _userRepository;
+  late IAuthFacade authFacade;
+  late IDefaultCoversRepository defaultCoversRepository;
+  late ISessionsRepository sessionsRepository;
+  late ISettingsRepository settingsRepository;
+  late IUserRepository userRepository;
 
-  late AppRouter _router;
+  late AppRouter router;
 
   setUp(() {
     setupInjection();
 
-    _authFacade = getIt<IAuthFacade>();
-    _defaultCoversRepository = getIt<IDefaultCoversRepository>();
-    _sessionsRepository = getIt<ISessionsRepository>();
-    _settingsRepository = getIt<ISettingsRepository>();
-    _userRepository = getIt<IUserRepository>();
+    authFacade = getIt<IAuthFacade>();
+    defaultCoversRepository = getIt<IDefaultCoversRepository>();
+    sessionsRepository = getIt<ISessionsRepository>();
+    settingsRepository = getIt<ISettingsRepository>();
+    userRepository = getIt<IUserRepository>();
 
-    _router = AppRouter()
+    router = AppRouter()
       ..replaceAll([
         const HomeRoute(),
         const PlusRoute(),
@@ -54,13 +54,13 @@ void main() {
 
   group('PlusPage', () {
     setUp(() {
-      when(() => _authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
-      when(() => _authFacade.isLoggedIn).thenReturn(true);
-      when(() => _authFacade.isAnonymous).thenReturn(true);
-      when(_settingsRepository.fetchSettings)
-          .thenAnswer((_) async => Ok(testSettings));
-      when(_sessionsRepository.fetchSession)
+      when(() => authFacade.authStateChanges)
+          .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
+      when(() => authFacade.isLoggedIn).thenReturn(true);
+      when(() => authFacade.isAnonymous).thenReturn(true);
+      when(settingsRepository.fetchSettings)
+          .thenAnswer((_) async => const Ok(testSettings));
+      when(sessionsRepository.fetchSession)
           .thenAnswer((_) async => Ok(testUser));
     });
 
@@ -69,7 +69,7 @@ void main() {
 
       await tester.pumpWidget(
         TestRouterWidget(
-          appRouter: _router,
+          appRouter: router,
           providers: [
             BlocProvider(create: (_) => authBloc),
             BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -89,7 +89,7 @@ void main() {
 
         await tester.pumpWidget(
           TestRouterWidget(
-            appRouter: _router,
+            appRouter: router,
             providers: [
               BlocProvider<AuthBloc>(create: (context) => authBloc),
               BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -105,8 +105,8 @@ void main() {
 
   group('LibraryButton', () {
     setUp(() {
-      when(() => _authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
+      when(() => authFacade.authStateChanges)
+          .thenAnswer((_) => Stream.fromIterable([const Option.none()]));
     });
 
     group('Web', () {
@@ -122,11 +122,11 @@ void main() {
           tester.binding.window.physicalSizeTestValue =
               Size(desktopWidth * dpi, desktopHeight * dpi);
 
-          when(() => _authFacade.isLoggedIn).thenReturn(true);
-          when(() => _authFacade.isAnonymous).thenReturn(true);
-          when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => Ok(testSettings));
-          when(_sessionsRepository.fetchSession)
+          when(() => authFacade.isLoggedIn).thenReturn(true);
+          when(() => authFacade.isAnonymous).thenReturn(true);
+          when(settingsRepository.fetchSettings)
+              .thenAnswer((_) async => const Ok(testSettings));
+          when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
           final authBloc = getIt<AuthBloc>()
@@ -134,7 +134,7 @@ void main() {
 
           await tester.pumpWidget(
             TestRouterWidget(
-              appRouter: _router,
+              appRouter: router,
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<AuthDialogCubit>(
@@ -171,11 +171,11 @@ void main() {
           tester.binding.window.physicalSizeTestValue =
               Size(mobileWidth * dpi, mobileHeight * dpi);
 
-          when(() => _authFacade.isLoggedIn).thenReturn(true);
-          when(() => _authFacade.isAnonymous).thenReturn(true);
-          when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => Ok(testSettings));
-          when(_sessionsRepository.fetchSession)
+          when(() => authFacade.isLoggedIn).thenReturn(true);
+          when(() => authFacade.isAnonymous).thenReturn(true);
+          when(settingsRepository.fetchSettings)
+              .thenAnswer((_) async => const Ok(testSettings));
+          when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
           final authBloc = getIt<AuthBloc>()
@@ -183,7 +183,7 @@ void main() {
 
           await tester.pumpWidget(
             TestRouterWidget(
-              appRouter: _router,
+              appRouter: router,
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -215,29 +215,29 @@ void main() {
           tester.binding.window.physicalSizeTestValue =
               Size(mobileWidth * dpi, mobileHeight * dpi);
 
-          when(() => _authFacade.authStateChanges)
+          when(() => authFacade.authStateChanges)
               .thenAnswer((_) => Stream.fromIterable([Option.some(testUser)]));
-          when(() => _authFacade.isLoggedIn).thenReturn(true);
-          when(() => _authFacade.isAnonymous).thenReturn(false);
-          when(_defaultCoversRepository.loadDefaultCovers)
+          when(() => authFacade.isLoggedIn).thenReturn(true);
+          when(() => authFacade.isAnonymous).thenReturn(false);
+          when(defaultCoversRepository.loadDefaultCovers)
               .thenAnswer((_) async => Ok([testDefaultCover]));
-          when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
-              .thenAnswer((_) async => Ok(unit));
-          when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => Ok(testSettings));
-          when(_sessionsRepository.fetchSession)
+          when(() => defaultCoversRepository.cacheDefaultCovers(any()))
+              .thenAnswer((_) async => const Ok(unit));
+          when(settingsRepository.fetchSettings)
+              .thenAnswer((_) async => const Ok(testSettings));
+          when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
-          when(() => _userRepository.loadUser(any()))
+          when(() => userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
-          when(() => _sessionsRepository.insertSession(testUser))
-              .thenAnswer((_) async => Ok(unit));
+          when(() => sessionsRepository.insertSession(testUser))
+              .thenAnswer((_) async => const Ok(unit));
 
           final authBloc = getIt<AuthBloc>()
             ..add(const AuthEvent.authChanged());
 
           await tester.pumpWidget(
             TestRouterWidget(
-              appRouter: _router,
+              appRouter: router,
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),

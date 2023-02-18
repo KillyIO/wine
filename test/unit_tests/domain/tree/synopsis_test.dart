@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/value_failure.domain.dart';
-import 'package:wine/features/tree/synopsis.domain.dart';
+import 'package:wine/domain/core/value_failure.dart';
+import 'package:wine/domain/tree/synopsis.dart';
 
 import '../../utils/constants.dart';
 
@@ -12,7 +12,7 @@ void main() {
 
       expect(
         synopsis.value,
-        Ok<String, ValueFailure<String>>(testSynopsis),
+        const Ok<String, ValueFailure<String>>(testSynopsis),
       );
     });
 
@@ -21,8 +21,8 @@ void main() {
 
       expect(
         synopsis.value,
-        Err<String, ValueFailure<String>>(
-          const ValueFailure<String>.emptyInput(testEmpty),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.emptyInput(testEmpty),
         ),
       );
     });
@@ -32,8 +32,8 @@ void main() {
 
       expect(
         synopsis.value,
-        Err<String, ValueFailure<String>>(
-          const ValueFailure<String>.tooLongInput(testInvalidSynopsisTooLong),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.tooLongInput(testInvalidSynopsisTooLong),
         ),
       );
     });

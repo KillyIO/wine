@@ -5,8 +5,8 @@ import 'package:wine/flavors.dart';
 class FlavorBanner extends StatelessWidget {
   /// @nodoc
   const FlavorBanner({
-    super.key,
     required this.child,
+    super.key,
     this.show = true,
   });
 

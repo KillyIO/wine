@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/value_failure.domain.dart';
-import 'package:wine/features/auth/confirm_password.domain.dart';
+import 'package:wine/domain/auth/confirm_password.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 import '../../utils/constants.dart';
 
@@ -14,7 +14,7 @@ void main() {
 
         expect(
           password.value,
-          Ok<String, ValueFailure<String>>(testPassword),
+          const Ok<String, ValueFailure<String>>(testPassword),
         );
       },
     );
@@ -26,8 +26,8 @@ void main() {
 
         expect(
           password.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.invalidPassword(testInvalidPassword),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidPassword(testInvalidPassword),
           ),
         );
       },
@@ -41,8 +41,8 @@ void main() {
 
         expect(
           password.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.invalidConfirmPassword(testPassword),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidConfirmPassword(testPassword),
           ),
         );
       },

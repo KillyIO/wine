@@ -1,4 +1,4 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:wine/features/settings/settings_repository.infrastructure.dart';
+import 'package:wine/infrastructure/settings/settings_repository.dart';
 
 class MockSettingsRepository extends Mock implements SettingsRepository {}

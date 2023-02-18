@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/value_failure.domain.dart';
-import 'package:wine/features/auth/email_address.domain.dart';
+import 'package:wine/domain/auth/email_address.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 import '../../utils/constants.dart';
 
@@ -14,7 +14,7 @@ void main() {
 
         expect(
           emailAddress.value,
-          Ok<String, ValueFailure<String>>(testEmailAddress),
+          const Ok<String, ValueFailure<String>>(testEmailAddress),
         );
       },
     );
@@ -26,8 +26,8 @@ void main() {
 
         expect(
           emailAddress.value,
-          Err<String, ValueFailure<String>>(
-            const ValueFailure<String>.invalidEmailAddress(
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidEmailAddress(
               testInvalidEmailAddress,
             ),
           ),

@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/cover_url.domain.dart';
-import 'package:wine/core/value_failure.domain.dart';
+import 'package:wine/domain/core/cover_url.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 import '../../utils/constants.dart';
 
@@ -20,7 +20,7 @@ void main() {
 
       expect(
         coverURL.value,
-        Ok<String, ValueFailure<String>>(testCoverURL),
+        const Ok<String, ValueFailure<String>>(testCoverURL),
       );
     });
 
@@ -29,8 +29,8 @@ void main() {
 
       expect(
         coverURL.value,
-        Err<String, ValueFailure<String>>(
-          const ValueFailure.invalidCoverURL(testInvalidCoverURL),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure.invalidCoverURL(testInvalidCoverURL),
         ),
       );
     });

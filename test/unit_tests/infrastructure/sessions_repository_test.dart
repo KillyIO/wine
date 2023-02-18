@@ -5,49 +5,49 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/features/sessions/i_sessions_repository.domain.dart';
-import 'package:wine/features/sessions/sessions_failure.domain.dart';
-import 'package:wine/features/sessions/sessions_repository.infrastructure.dart';
-import 'package:wine/features/user/isar_user.infrastructure.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/sessions/sessions_failure.dart';
+import 'package:wine/infrastructure/sessions/sessions_repository.dart';
+import 'package:wine/infrastructure/user/isar_user.dart';
 
 import '../../mocks/firebase_auth_mocks.dart';
 import '../../mocks/isar_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  late ISessionsRepository _sessionsRepository;
+  late ISessionsRepository sessionsRepository;
 
-  late auth.FirebaseAuth _firebaseAuth;
+  late auth.FirebaseAuth firebaseAuth;
 
-  late Isar _isar;
-  late IsarCollection<IsarUser> _collection;
-  late QueryBuilder<IsarUser, IsarUser, QWhere> _where;
-  late QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> _uidEqualTo;
-  late Query<IsarUser> _build;
+  late Isar isar;
+  late IsarCollection<IsarUser> collection;
+  late QueryBuilder<IsarUser, IsarUser, QWhere> where;
+  late QueryBuilder<IsarUser, IsarUser, QAfterWhereClause> uidEqualTo;
+  late Query<IsarUser> build;
 
   setUp(() {
-    _firebaseAuth = MockFirebaseAuth();
-    _isar = MockIsar();
-    _collection = MockIsarCollection<IsarUser>();
-    _where = MockQueryBuilder<IsarUser, IsarUser, QWhere>();
-    _uidEqualTo = MockQueryBuilder<IsarUser, IsarUser, QAfterWhereClause>();
-    _build = MockQuery<IsarUser>();
+    firebaseAuth = MockFirebaseAuth();
+    isar = MockIsar();
+    collection = MockIsarCollection<IsarUser>();
+    where = MockQueryBuilder<IsarUser, IsarUser, QWhere>();
+    uidEqualTo = MockQueryBuilder<IsarUser, IsarUser, QAfterWhereClause>();
+    build = MockQuery<IsarUser>();
 
-    _sessionsRepository = SessionsRepository(_firebaseAuth, _isar);
+    sessionsRepository = SessionsRepository(firebaseAuth, isar);
 
     registerFallbackValue(MockIsarUser());
     registerFallbackValue(MockIsarCollection<IsarUser>());
     registerFallbackValue(MockWhereClause());
 
-    when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
+    when(() => firebaseAuth.currentUser).thenReturn(MockUser());
   });
 
   group('deleteSession -', () {
     test('When session deleted Then return Unit', () async {
-      when(() => _isar.writeTxn(any()))
-          .thenAnswer((_) async => Result<Unit, SessionsFailure>.ok(unit));
+      when(() => isar.writeTxn(any()))
+          .thenAnswer((_) async => const Result<Unit, SessionsFailure>.ok(unit));
 
-      final result = await _sessionsRepository.deleteSession();
+      final result = await sessionsRepository.deleteSession();
 
       expect(result.isOk(), true);
       result.match(
@@ -57,13 +57,13 @@ void main() {
     });
 
     test('When session not deleted Then return SessionNotDeleted', () async {
-      when(() => _isar.writeTxn(any())).thenAnswer(
-        (_) async => Result<Unit, SessionsFailure>.err(
-          const SessionsFailure.sessionNotDeleted(),
+      when(() => isar.writeTxn(any())).thenAnswer(
+        (_) async => const Result<Unit, SessionsFailure>.err(
+          SessionsFailure.sessionNotDeleted(),
         ),
       );
 
-      final result = await _sessionsRepository.deleteSession();
+      final result = await sessionsRepository.deleteSession();
 
       expect(result.isErr(), true);
       result.match(
@@ -75,18 +75,18 @@ void main() {
 
   group('fetchSession -', () {
     setUp(() {
-      when(() => _isar.users).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClauseInternal<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
+      when(() => isar.users).thenReturn(collection);
+      when(collection.where).thenReturn(where);
+      // when(
+      //   () => where.addWhereClauseInternal<QAfterWhereClause>(any()),
+      // ).thenReturn(uidEqualTo);
+      when(uidEqualTo.build).thenReturn(build);
     });
 
     test('When session fetched Then return User', () async {
-      when(_build.findFirst).thenAnswer((_) async => testIsarUser);
+      when(build.findFirst).thenAnswer((_) async => testIsarUser);
 
-      final result = await _sessionsRepository.fetchSession();
+      final result = await sessionsRepository.fetchSession();
 
       expect(result.isOk(), true);
       result.match(
@@ -96,9 +96,9 @@ void main() {
     });
 
     test('When session not fetched Then return SessionNotFound', () async {
-      when(_build.findFirst).thenAnswer((_) async => null);
+      when(build.findFirst).thenAnswer((_) async => null);
 
-      final result = await _sessionsRepository.fetchSession();
+      final result = await sessionsRepository.fetchSession();
 
       expect(result.isErr(), true);
       result.match(
@@ -110,22 +110,22 @@ void main() {
 
   group('insertSession -', () {
     setUp(() {
-      when(() => _isar.users).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClauseInternal<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
+      when(() => isar.users).thenReturn(collection);
+      when(collection.where).thenReturn(where);
+      // when(
+      //   () => where.addWhereClauseInternal<QAfterWhereClause>(any()),
+      // ).thenReturn(uidEqualTo);
+      when(uidEqualTo.build).thenReturn(build);
     });
 
     test('When session updated Then return Unit', () async {
-      when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
-      when(_build.findFirst).thenAnswer(
+      when(() => isar.writeTxn(any())).thenAnswer((_) async => null);
+      when(build.findFirst).thenAnswer(
         (_) async => testIsarUser.copyWith(updatedAt: DateTime.now()),
       );
 
       final result =
-          await _sessionsRepository.insertSession(testIsarUser.toDomain());
+          await sessionsRepository.insertSession(testIsarUser.toDomain());
 
       expect(result.isOk(), true);
       result.match(
@@ -139,11 +139,11 @@ void main() {
         emailAddress: 'yhaouas.hebbazth5@gmailvn.net',
       );
 
-      when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
-      when(_build.findFirst).thenAnswer((_) async => updatedTestIsarUser);
+      when(() => isar.writeTxn(any())).thenAnswer((_) async => null);
+      when(build.findFirst).thenAnswer((_) async => updatedTestIsarUser);
 
       final result =
-          await _sessionsRepository.insertSession(testIsarUser.toDomain());
+          await sessionsRepository.insertSession(testIsarUser.toDomain());
 
       expect(result.isErr(), true);
       result.match(

@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/core/unique_id.domain.dart';
-import 'package:wine/features/auth/username.fomain.dart';
-import 'package:wine/features/user/i_user_repository.domain.dart';
-import 'package:wine/features/user/user_failure.domain.dart';
-import 'package:wine/features/user/user_repository.infrastructure.dart';
+import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/core/unique_id.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
+import 'package:wine/domain/user/user_failure.dart';
+import 'package:wine/infrastructure/user/user_repository.dart';
 import 'package:wine/utils/constants/paths/users.dart';
 
 import '../utils/constants.dart';
@@ -14,19 +14,19 @@ import '../utils/constants.dart';
 // TODO(SSebigo): uncomment these tests
 // TODO(SSebigo): once fake_cloud_firestore allows throwing exceptions
 void main() {
-  late IUserRepository _userRepository;
+  late IUserRepository userRepository;
 
-  late FirebaseFirestore _firestore;
+  late FirebaseFirestore firestore;
 
   setUp(() {
-    _firestore = FakeFirebaseFirestore();
+    firestore = FakeFirebaseFirestore();
 
-    _userRepository = UserRepository(_firestore);
+    userRepository = UserRepository(firestore);
   });
 
   group('checkUsernameAvailability -', () {
     test('When username available Then return Unit', () async {
-      final result = await _userRepository
+      final result = await userRepository
           .checkUsernameAvailability(Username(testUsername));
 
       expect(result.isOk(), true);
@@ -37,12 +37,12 @@ void main() {
     });
 
     test('When user not available Then return UsernameAlreadyInUse', () async {
-      await _firestore
+      await firestore
           .collection(usernameUIDMapPath)
           .doc(testUsername)
           .set(<String, dynamic>{'uid': testUserUid}, SetOptions(merge: true));
 
-      final result = await _userRepository
+      final result = await userRepository
           .checkUsernameAvailability(Username(testUsername));
 
       expect(result.isErr(), true);
@@ -81,12 +81,12 @@ void main() {
 
   group('loadUser -', () {
     test('When user loaded Then return User', () async {
-      await _firestore
+      await firestore
           .collection(usersPath)
           .doc(testUserUid)
           .set(testUserFirestore, SetOptions(merge: true));
 
-      final result = await _userRepository
+      final result = await userRepository
           .loadUser(UniqueID.fromUniqueString(testUserUid));
 
       expect(result.isOk(), true);
@@ -97,7 +97,7 @@ void main() {
     });
 
     test('When user not loaded Then return UserNotFound', () async {
-      final result = await _userRepository
+      final result = await userRepository
           .loadUser(UniqueID.fromUniqueString(testIsarUser.uid));
 
       expect(result.isErr(), true);
@@ -134,7 +134,7 @@ void main() {
 
   group('saveDetailsFromUser -', () {
     test('When user details saved Then return Unit', () async {
-      final result = await _userRepository.saveDetailsFromUser(testUser);
+      final result = await userRepository.saveDetailsFromUser(testUser);
 
       expect(result.isOk(), true);
       result.match(
@@ -172,7 +172,7 @@ void main() {
 
   group('saveUsername -', () {
     test('When username saved Then return Unit', () async {
-      final result = await _userRepository.saveUsername(
+      final result = await userRepository.saveUsername(
         UniqueID.fromUniqueString(testUserUid),
         Username(testUsername),
       );
