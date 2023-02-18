@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class TypewriterSelectionListTile extends StatelessWidget {
   /// @nodoc
   const TypewriterSelectionListTile({
-    super.key,
     required this.onPressed,
-    this.selectedItem,
     required this.title,
+    super.key,
+    this.selectedItem,
   });
 
   /// @nodoc

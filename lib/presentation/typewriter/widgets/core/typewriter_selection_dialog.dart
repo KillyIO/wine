@@ -5,13 +5,13 @@ import 'package:wine/utils/constants/palette.dart';
 class TypewriterSelectionDialog extends StatelessWidget {
   /// @nodoc
   const TypewriterSelectionDialog({
-    super.key,
     required this.items,
-    this.onInfoPressed,
     required this.onPressed,
+    required this.title,
+    super.key,
+    this.onInfoPressed,
     this.selectedItem,
     this.selectedItems,
-    required this.title,
   });
 
   /// @nodoc

@@ -8,13 +8,13 @@ import 'package:string_validator/string_validator.dart';
 class TreeCard extends StatelessWidget {
   /// @nodoc
   const TreeCard({
-    super.key,
     required this.coverURL,
     required this.language,
     required this.onPressed,
     required this.title,
-    this.titleFontSize = 14,
     required this.uid,
+    super.key,
+    this.titleFontSize = 14,
   });
 
   /// @nodoc

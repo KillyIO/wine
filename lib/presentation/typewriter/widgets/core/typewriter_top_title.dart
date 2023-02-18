@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class TypewriterTopTitle extends StatelessWidget {
   /// @nodoc
   const TypewriterTopTitle({
-    super.key,
     required this.title,
+    super.key,
   });
 
   /// @nodoc

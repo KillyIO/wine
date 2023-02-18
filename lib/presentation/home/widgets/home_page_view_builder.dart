@@ -7,8 +7,8 @@ import 'package:wine/presentation/home/home_trees_layout.dart';
 class HomePageViewBuilder extends StatelessWidget {
   /// @nodoc
   const HomePageViewBuilder({
-    super.key,
     required this.controller,
+    super.key,
   });
 
   /// @nodoc

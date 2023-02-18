@@ -9,10 +9,10 @@ import 'package:wine/utils/responsive/dialog_responsive.dart';
 class WarningDialog extends StatelessWidget {
   /// @nodoc
   const WarningDialog({
-    super.key,
-    this.buttonText,
     required this.messages,
     required this.onPressed,
+    super.key,
+    this.buttonText,
   });
 
   /// @nodoc

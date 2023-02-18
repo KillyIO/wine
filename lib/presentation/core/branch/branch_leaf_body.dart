@@ -5,8 +5,8 @@ import 'package:flutter_quill/flutter_quill.dart';
 class BranchLeafBody extends StatelessWidget {
   /// @nodoc
   const BranchLeafBody({
-    super.key,
     required this.leafController,
+    super.key,
   });
 
   /// @nodoc

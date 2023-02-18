@@ -69,7 +69,7 @@ Future<void> handleAuthGuardedNavigation(
           ),
         );
 
-        if (result != null && result) {
+        if (result != null && result && context.mounted) {
           if (deviceType != DeviceScreenType.desktop) {
             if (useRoot) {
               await context.router.root.navigate(navigateTo);

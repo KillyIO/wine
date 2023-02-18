@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class TypewriterGenres extends StatelessWidget {
   /// @nodoc
   const TypewriterGenres({
-    super.key,
     required this.onPressed,
     required this.genres,
+    super.key,
   });
 
   /// @nodoc

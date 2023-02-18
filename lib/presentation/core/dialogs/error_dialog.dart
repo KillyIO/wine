@@ -7,10 +7,10 @@ import 'package:wine/utils/responsive/dialog_responsive.dart';
 class ErrorDialog extends StatelessWidget {
   /// @nodoc
   const ErrorDialog({
-    super.key,
-    this.buttonText,
     required this.messages,
     required this.onPressed,
+    super.key,
+    this.buttonText,
   });
 
   /// @nodoc

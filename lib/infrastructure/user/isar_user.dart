@@ -13,10 +13,10 @@ class IsarUser extends Equatable {
   /// @nodoc
   const IsarUser({
     required this.emailAddress,
-    this.id = Isar.autoIncrement,
     required this.uid,
     required this.updatedAt,
     required this.username,
+    this.id = Isar.autoIncrement,
   });
 
   /// @nodoc

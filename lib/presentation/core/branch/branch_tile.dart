@@ -8,12 +8,12 @@ import 'package:string_validator/string_validator.dart';
 class BranchTile extends StatelessWidget {
   /// @nodoc
   const BranchTile({
-    super.key,
     required this.coverURL,
     required this.language,
     required this.onPressed,
     required this.title,
     required this.uid,
+    super.key,
   });
 
   /// @nodoc

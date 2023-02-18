@@ -22,11 +22,11 @@ class Tree with _$Tree {
     required bool isPublished,
     required Language language,
     required int likesCount,
-    Subtitle? subtitle,
     required Synopsis synopsis,
     required Title title,
     required UniqueID uid,
     required int viewsCount,
+    Subtitle? subtitle,
   }) = _Tree;
 
   /// @nodoc

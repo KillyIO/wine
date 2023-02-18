@@ -13,9 +13,9 @@ import 'package:wine/utils/functions/navigation_functions.dart';
 class LibraryBaseTreesLayout extends StatelessWidget {
   /// @nodoc
   const LibraryBaseTreesLayout({
-    super.key,
     required this.trees,
     required this.type,
+    super.key,
   });
 
   /// @nodoc

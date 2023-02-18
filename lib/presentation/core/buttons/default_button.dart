@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class DefaultButton extends StatelessWidget {
   /// @nodoc
   const DefaultButton({
-    super.key,
     required this.color,
+    required this.title,
+    super.key,
     this.fontSize = 20,
     this.isProcessing = false,
     this.hasRoundedCorners = false,
     this.height = 50,
-    required this.title,
     this.onPressed,
     this.width = 100,
   });

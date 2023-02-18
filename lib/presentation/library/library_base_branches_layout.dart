@@ -12,9 +12,9 @@ import 'package:wine/utils/functions/navigation_functions.dart';
 class LibraryBaseBranchesLayout extends StatelessWidget {
   /// @nodoc
   const LibraryBaseBranchesLayout({
-    super.key,
     required this.branches,
     required this.type,
+    super.key,
   });
 
   /// @nodoc

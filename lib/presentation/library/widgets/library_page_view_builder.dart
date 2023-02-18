@@ -8,8 +8,8 @@ import 'package:wine/presentation/library/library_trees_layout.dart';
 class LibraryPageViewBuilder extends StatelessWidget {
   /// @nodoc
   LibraryPageViewBuilder({
-    super.key,
     required this.pageController,
+    super.key,
   });
 
   /// @nodoc

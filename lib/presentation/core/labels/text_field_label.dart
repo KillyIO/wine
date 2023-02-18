@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class TextFieldLabel extends StatelessWidget {
   /// @nodoc
   const TextFieldLabel({
-    super.key,
     required this.title,
+    super.key,
   });
 
   /// @nodoc

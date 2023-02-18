@@ -10,9 +10,9 @@ import 'package:wine/presentation/typewriter/branch/typewriter_branch_layout.dar
 class TypewriterBranchNewPage extends StatelessWidget {
   /// @nodoc
   const TypewriterBranchNewPage({
+    required this.tree,
     super.key,
     this.previousBranch,
-    required this.tree,
   });
 
   /// @nodoc

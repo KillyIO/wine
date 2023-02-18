@@ -10,9 +10,9 @@ import 'package:wine/presentation/typewriter/tree/typewriter_tree_layout.dart';
 class TypewriterTreeUIDPage extends StatelessWidget {
   /// @nodoc
   const TypewriterTreeUIDPage({
+    required this.treeUID,
     super.key,
     this.tree,
-    required this.treeUID,
   });
 
   /// @nodoc

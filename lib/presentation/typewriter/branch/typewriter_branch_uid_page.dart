@@ -10,9 +10,9 @@ import 'package:wine/presentation/typewriter/branch/typewriter_branch_layout.dar
 class TypewriterBranchUIDPage extends StatelessWidget {
   /// @nodoc
   const TypewriterBranchUIDPage({
+    required this.branchUID,
     super.key,
     this.branch,
-    required this.branchUID,
   });
 
   /// @nodoc

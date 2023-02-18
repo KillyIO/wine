@@ -12,9 +12,9 @@ import 'package:wine/presentation/branch/branch_layout.dart';
 class BranchPage extends StatelessWidget {
   /// @nodoc
   const BranchPage({
+    @PathParam('id') required this.uid,
     super.key,
     this.branch,
-    @PathParam('id') required this.uid,
   });
 
   /// @nodoc

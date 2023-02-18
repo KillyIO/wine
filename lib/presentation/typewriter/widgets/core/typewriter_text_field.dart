@@ -7,16 +7,16 @@ import 'package:wine/utils/constants/palette.dart';
 class TypewriterTextField extends StatelessWidget {
   /// @nodoc
   const TypewriterTextField({
-    super.key,
-    this.controller,
     required this.hintText,
-    this.keyboardType = TextInputType.text,
     required this.label,
-    this.maxLines = 1,
     required this.onChanged,
     required this.validator,
     required this.wordCount,
     required this.wordCountError,
+    super.key,
+    this.controller,
+    this.keyboardType = TextInputType.text,
+    this.maxLines = 1,
   });
 
   /// @nodoc

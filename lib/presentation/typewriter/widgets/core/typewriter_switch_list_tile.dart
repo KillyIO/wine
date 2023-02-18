@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class TypewriterSwitchListTile extends StatelessWidget {
   /// @nodoc
   const TypewriterSwitchListTile({
-    super.key,
     required this.title,
     required this.onInfoPressed,
     required this.value,
     required this.onChanged,
+    super.key,
   });
 
   /// @nodoc

@@ -7,11 +7,11 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 class HorizontalPageViewNavbar extends StatelessWidget {
   /// @nodoc
   const HorizontalPageViewNavbar({
-    super.key,
     required this.colors,
     required this.controller,
     required this.titles,
     required this.pageIndex,
+    super.key,
   });
 
   /// @nodoc

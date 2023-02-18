@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class AnimatedButton extends StatelessWidget {
   /// @nodoc
   const AnimatedButton({
-    super.key,
     required this.animation,
-    this.callback,
     required this.filename,
+    super.key,
+    this.callback,
     this.height = 20.0,
     this.onPressed,
     this.width = 20.0,

@@ -7,10 +7,10 @@ import 'package:wine/presentation/core/navbars/vertical_navbar_button.dart';
 class LibraryVerticalNavbar extends StatelessWidget {
   /// @nodoc
   const LibraryVerticalNavbar({
-    super.key,
     required this.currentIndex,
     required this.items,
     required this.width,
+    super.key,
   });
 
   /// @nodoc

@@ -10,9 +10,9 @@ part 'isar_default_cover.g.dart';
 class IsarDefaultCover extends Equatable {
   /// @nodoc
   const IsarDefaultCover({
-    this.id = Isar.autoIncrement,
     required this.key,
     required this.url,
+    this.id = Isar.autoIncrement,
   });
 
   /// @nodoc

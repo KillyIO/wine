@@ -18,8 +18,8 @@ import 'package:wine/utils/responsive/log_in_responsive.dart';
 class LogInLayout extends StatelessWidget {
   /// @nodoc
   const LogInLayout({
-    super.key,
     required this.navigateTo,
+    super.key,
     this.onSignUpButtonPressed,
     this.useRoot = true,
   });

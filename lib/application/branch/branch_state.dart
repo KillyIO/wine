@@ -16,9 +16,9 @@ class BranchState with _$BranchState {
     required List<Branch> nextBranches,
     required List<Branch> sameAuthorNextBranches,
     required double scrollProgress,
-    User? session,
     required Settings settings,
     required bool showDetails,
+    User? session,
   }) = _BranchState;
 
   /// @nodoc

@@ -13,10 +13,10 @@ import 'package:wine/utils/functions/navigation_functions.dart';
 class NextBranches extends StatelessWidget {
   /// @nodoc
   const NextBranches({
-    super.key,
     required this.branches,
     required this.title,
     required this.onRefreshPressed,
+    super.key,
   });
 
   /// @nodoc

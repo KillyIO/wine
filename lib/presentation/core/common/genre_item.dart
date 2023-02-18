@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class GenreItem extends StatelessWidget {
   /// @nodoc
   const GenreItem({
+    required this.title,
     super.key,
     this.backgroundColor = Colors.black12,
     this.textColor = Colors.black,
-    required this.title,
   });
 
   /// @nodoc

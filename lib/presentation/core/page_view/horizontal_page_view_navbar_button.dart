@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class HorizontalPageViewNavbarButton extends StatelessWidget {
   /// @nodoc
   const HorizontalPageViewNavbarButton({
-    super.key,
     required this.color,
     required this.onPressed,
     required this.title,
+    super.key,
   });
 
   /// @nodoc

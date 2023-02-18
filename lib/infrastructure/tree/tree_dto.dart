@@ -26,12 +26,12 @@ class TreeDTO with _$TreeDTO {
     required bool isPublished,
     required String language,
     required int likesCount,
-    String? subtitle,
     required String synopsis,
     required String title,
     required String uid,
     @ServerTimestampConverter() required FieldValue updatedAt,
     required int viewsCount,
+    String? subtitle,
   }) = _TreeDTO;
 
   /// @nodoc

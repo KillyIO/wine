@@ -14,8 +14,8 @@ import 'package:wine/utils/functions/navigation_functions.dart';
 class SignUpLayout extends StatelessWidget {
   /// @nodoc
   const SignUpLayout({
-    super.key,
     required this.navigateTo,
+    super.key,
     this.onDialogBackButtonPressed,
     this.useRoot = true,
   });

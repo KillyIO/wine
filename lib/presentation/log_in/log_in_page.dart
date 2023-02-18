@@ -12,8 +12,8 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 class LogInPage extends StatelessWidget {
   /// @nodoc
   const LogInPage({
-    super.key,
     required this.navigateTo,
+    super.key,
   });
 
   /// @nodoc

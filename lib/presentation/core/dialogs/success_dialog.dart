@@ -7,10 +7,10 @@ import 'package:wine/utils/responsive/dialog_responsive.dart';
 class SuccessDialog extends StatelessWidget {
   /// @nodoc
   const SuccessDialog({
-    super.key,
-    this.buttonText,
     required this.messages,
     required this.onPressed,
+    super.key,
+    this.buttonText,
   });
 
   /// @nodoc

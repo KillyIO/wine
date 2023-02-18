@@ -10,10 +10,10 @@ import 'package:wine/presentation/core/branch/branch_title.dart';
 class BranchLeafHead extends StatelessWidget {
   /// @nodoc
   const BranchLeafHead({
-    super.key,
     required this.coverURL,
     required this.index,
     required this.title,
+    super.key,
   });
 
   /// @nodoc

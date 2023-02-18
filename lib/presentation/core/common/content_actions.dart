@@ -7,7 +7,6 @@ import 'package:wine/utils/constants/palette.dart';
 class ContentActions extends StatelessWidget {
   /// @nodoc
   const ContentActions({
-    super.key,
     required this.bookmarksCount,
     required this.isBookmarked,
     required this.isLiked,
@@ -15,6 +14,7 @@ class ContentActions extends StatelessWidget {
     required this.onBookmarkTap,
     required this.onLikeTap,
     required this.viewsCount,
+    super.key,
   });
 
   /// @nodoc

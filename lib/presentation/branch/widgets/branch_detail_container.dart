@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class BranchDetailContainer extends StatelessWidget {
   /// @nodoc
   const BranchDetailContainer({
-    super.key,
     required this.child,
     required this.color,
+    super.key,
   });
 
   /// @nodoc

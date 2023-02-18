@@ -5,8 +5,8 @@ import 'package:readmore/readmore.dart';
 class TreeSynopsis extends StatelessWidget {
   /// @nodoc
   const TreeSynopsis({
-    super.key,
     required this.synopsis,
+    super.key,
   });
 
   /// @nodoc

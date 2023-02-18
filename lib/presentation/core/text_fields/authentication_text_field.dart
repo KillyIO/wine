@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 class AuthenticationTextField extends StatelessWidget {
   /// @nodoc
   const AuthenticationTextField({
+    required this.hintText,
+    required this.validator,
     super.key,
     this.autocorrect = false,
     this.controller,
-    required this.hintText,
     this.isLogInPage = false,
     this.keyboardType,
     this.obscureText = false,
     this.onChanged,
-    required this.validator,
   });
 
   /// @nodoc

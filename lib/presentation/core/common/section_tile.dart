@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class SectionTile extends StatelessWidget {
   /// @nodoc
   const SectionTile({
-    super.key,
     required this.title,
+    super.key,
   });
 
   /// @nodoc

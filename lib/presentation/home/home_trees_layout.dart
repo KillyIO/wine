@@ -10,9 +10,9 @@ import 'package:wine/utils/constants/images.dart';
 class HomeTreesLayout extends StatelessWidget {
   /// @nodoc
   const HomeTreesLayout({
-    super.key,
     required this.timeKey,
     required this.trees,
+    super.key,
   });
 
   /// @nodoc

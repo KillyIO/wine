@@ -7,13 +7,13 @@ import 'package:wine/utils/constants/palette.dart';
 class TypewriterQuill extends StatelessWidget {
   /// @nodoc
   const TypewriterQuill({
-    super.key,
     required this.controller,
     required this.errorMessage,
     required this.hintText,
     required this.label,
     required this.wordCount,
     required this.wordCountError,
+    super.key,
   });
 
   /// @nodoc

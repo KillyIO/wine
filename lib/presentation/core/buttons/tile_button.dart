@@ -5,12 +5,12 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 class TileButton extends StatelessWidget {
   /// @nodoc
   const TileButton({
-    super.key,
-    this.isFirst = false,
     required this.leadingIconData,
     required this.onPressed,
     required this.title,
     required this.trailingIconData,
+    super.key,
+    this.isFirst = false,
   });
 
   /// @nodoc

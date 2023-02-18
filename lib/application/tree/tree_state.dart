@@ -7,15 +7,15 @@ class TreeState with _$TreeState {
   const factory TreeState({
     required bool authorIsUser,
     required User? author,
-    Branch? branchOne,
-    Branch? branchResume,
     required Option<Result<None, CoreFailure>> failureOption,
     required bool isBookmarked,
     required bool isLiked,
     required bool isProcessing,
-    User? session,
     required Settings settings,
     required Tree tree,
+    Branch? branchOne,
+    Branch? branchResume,
+    User? session,
   }) = _TreeState;
 
   /// @nodoc

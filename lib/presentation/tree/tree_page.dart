@@ -15,8 +15,8 @@ import 'package:wine/utils/responsive/core_responsive.dart';
 class TreePage extends StatelessWidget {
   /// @nodoc
   const TreePage({
-    super.key,
     @PathParam('id') required this.uid,
+    super.key,
     this.tree,
   });
 

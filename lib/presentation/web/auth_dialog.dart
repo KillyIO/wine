@@ -10,8 +10,8 @@ import 'package:wine/utils/responsive/auth_dialog_responsive.dart';
 class AuthDialog extends StatelessWidget {
   /// @nodoc
   const AuthDialog({
-    super.key,
     required this.navigateTo,
+    super.key,
     this.useRoot = true,
   });
 

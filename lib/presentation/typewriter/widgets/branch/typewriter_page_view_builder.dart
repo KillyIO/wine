@@ -8,8 +8,8 @@ import 'package:wine/presentation/typewriter/branch/typewriter_preview_layout.da
 class TypewriterPageViewBuilder extends StatelessWidget {
   /// @nodoc
   TypewriterPageViewBuilder({
-    super.key,
     required this.pageController,
+    super.key,
   });
 
   /// @nodoc

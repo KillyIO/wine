@@ -6,8 +6,8 @@ import 'package:wine/utils/constants/palette.dart';
 class ContentGenres extends StatelessWidget {
   /// @nodoc
   const ContentGenres({
-    super.key,
     required this.genres,
+    super.key,
   });
 
   /// @nodoc

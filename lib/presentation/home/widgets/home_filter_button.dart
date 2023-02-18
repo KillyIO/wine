@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class HomeFilterButton extends StatelessWidget {
   /// @nodoc
   const HomeFilterButton({
-    super.key,
     required this.isActive,
     required this.onPressed,
     required this.title,
+    super.key,
   });
 
   /// @nodoc

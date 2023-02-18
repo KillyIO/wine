@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 class HomeMenuTile extends StatelessWidget {
   /// @nodoc
   const HomeMenuTile({
-    super.key,
     required this.onPressed,
     required this.text,
+    super.key,
   });
 
   /// @nodoc
