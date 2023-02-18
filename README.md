@@ -296,8 +296,6 @@ Create file ```web/index.html``` and then copy the following code:
 ```
 </details>
 
-> Unstable, [Isar](https://pub.dev/packages/isar) web is still beta.
-
 
 ## VSCode launch config
 

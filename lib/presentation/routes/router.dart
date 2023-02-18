@@ -4,7 +4,7 @@ import 'package:wine/presentation/home/home_page.dart';
 import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/plus/plus_page.dart';
-import 'package:wine/presentation/report/report_page.presentation.dart';
+import 'package:wine/presentation/report/report_page.dart';
 import 'package:wine/presentation/settings/settings_account/settings_account_page.dart';
 import 'package:wine/presentation/settings/settings_branch/settings_branch_page.dart';
 import 'package:wine/presentation/settings/settings_page.dart';
