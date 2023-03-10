@@ -296,6 +296,10 @@ void main() {
               .thenAnswer((_) async => const Ok(unit));
           when(() => sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => const Ok(unit));
+          when(() => defaultCoverRepository.loadDefaultCovers())
+              .thenAnswer((_) async => Ok(testDefaultCovers));
+          when(() => defaultCoverRepository.cacheDefaultCovers(any()))
+              .thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isAnonymous).thenReturn(false);
           return bloc
             ..add(const LogInEvent.emailAddressChanged(testEmailAddress))
@@ -349,6 +353,10 @@ void main() {
               .thenAnswer((_) async => const Ok(unit));
           when(() => sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => const Ok(unit));
+          when(() => defaultCoverRepository.loadDefaultCovers())
+              .thenAnswer((_) async => Ok(testDefaultCovers));
+          when(() => defaultCoverRepository.cacheDefaultCovers(any()))
+              .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[
@@ -401,6 +409,10 @@ void main() {
           when(() => userRepository.saveDetailsFromUser(any()))
               .thenAnswer((_) async => const Ok(unit));
           when(() => sessionsRepository.insertSession(any()))
+              .thenAnswer((_) async => const Ok(unit));
+          when(() => defaultCoverRepository.loadDefaultCovers())
+              .thenAnswer((_) async => Ok(testDefaultCovers));
+          when(() => defaultCoverRepository.cacheDefaultCovers(any()))
               .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
@@ -459,6 +471,10 @@ void main() {
           when(() => userRepository.saveDetailsFromUser(any()))
               .thenAnswer((_) async => const Ok(unit));
           when(() => sessionsRepository.insertSession(any()))
+              .thenAnswer((_) async => const Ok(unit));
+          when(() => defaultCoverRepository.loadDefaultCovers())
+              .thenAnswer((_) async => Ok(testDefaultCovers));
+          when(() => defaultCoverRepository.cacheDefaultCovers(any()))
               .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
