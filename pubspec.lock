@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "569ddca58d535e601dd1584afa117710abc999d036c0cd2c51777fb257df78e8"
+      sha256: "3444216bfd127af50bbe4862d8843ed44db946dd933554f0d7285e89f10e28ac"
       url: "https://pub.dev"
     source: hosted
-    version: "53.0.0"
+    version: "50.0.0"
   _flutterfire_internals:
     dependency: transitive
     description:
@@ -18,13 +18,13 @@ packages:
     source: hosted
     version: "1.0.17"
   analyzer:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: analyzer
-      sha256: "10927c4b7c7c88b1adbca278c3d5531db92e2f4b4abf04e2919a800af965f3f5"
+      sha256: "68796c31f510c8455a06fed75fc97d8e5ad04d324a830322ab3efc9feb6201c1"
       url: "https://pub.dev"
     source: hosted
-    version: "5.5.0"
+    version: "5.2.0"
   antlr4:
     dependency: transitive
     description:
@@ -394,7 +394,7 @@ packages:
     source: hosted
     version: "0.5.2"
   ffi:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: ffi
       sha256: a38574032c5f1dd06c4aee541789906c12ccaab8ba01446e800d9c5b79c4a978
@@ -892,26 +892,26 @@ packages:
     dependency: "direct main"
     description:
       name: isar
-      sha256: "5be35dbc489880fccc535da3d1c4b3f5fdeee6ebfcacd4b149e39e803c4029cd"
+      sha256: "0b9303fc88feb5d7ac0ec2baed4d351c9144bf55a4f8228479ccdd4c81f3fa28"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.5"
+    version: "3.0.0"
   isar_flutter_libs:
     dependency: "direct main"
     description:
       name: isar_flutter_libs
-      sha256: "9794524734856a8a3629652f9f359b66e3fea3cebeec4dbdeb3e3a8fb253073e"
+      sha256: "964bc3304a3f1be19eb929b10ca1c5ef22a04d126e8c4fe2edc660f693bd9fdc"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.5"
+    version: "3.0.0"
   isar_generator:
     dependency: "direct dev"
     description:
       name: isar_generator
-      sha256: ee4ab5d5b251bc7e86e1257793b57af100065831f00f3a12404b177ae53c2d69
+      sha256: c116a97d29847d1ef48526a16644c6d2e5609f6fe5bd73c499d744f768fcf77c
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.5"
+    version: "3.0.0"
   js:
     dependency: transitive
     description:

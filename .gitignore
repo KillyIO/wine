@@ -95,3 +95,5 @@ app.*.map.json
 
 lib/development_firebase_options.dart
 lib/production_firebase_options.dart
+
+isar.dll
