@@ -24,11 +24,11 @@ mixin _$Tree {
   bool get isPublished => throw _privateConstructorUsedError;
   Language get language => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
-  Subtitle? get subtitle => throw _privateConstructorUsedError;
   Synopsis get synopsis => throw _privateConstructorUsedError;
   Title get title => throw _privateConstructorUsedError;
   UniqueID get uid => throw _privateConstructorUsedError;
   int get viewsCount => throw _privateConstructorUsedError;
+  Subtitle? get subtitle => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TreeCopyWith<Tree> get copyWith => throw _privateConstructorUsedError;
@@ -48,11 +48,11 @@ abstract class $TreeCopyWith<$Res> {
       bool isPublished,
       Language language,
       int likesCount,
-      Subtitle? subtitle,
       Synopsis synopsis,
       Title title,
       UniqueID uid,
-      int viewsCount});
+      int viewsCount,
+      Subtitle? subtitle});
 }
 
 /// @nodoc
@@ -76,11 +76,11 @@ class _$TreeCopyWithImpl<$Res, $Val extends Tree>
     Object? isPublished = null,
     Object? language = null,
     Object? likesCount = null,
-    Object? subtitle = freezed,
     Object? synopsis = null,
     Object? title = null,
     Object? uid = null,
     Object? viewsCount = null,
+    Object? subtitle = freezed,
   }) {
     return _then(_value.copyWith(
       authorUID: null == authorUID
@@ -115,10 +115,6 @@ class _$TreeCopyWithImpl<$Res, $Val extends Tree>
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as Subtitle?,
       synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
@@ -135,6 +131,10 @@ class _$TreeCopyWithImpl<$Res, $Val extends Tree>
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
+      subtitle: freezed == subtitle
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as Subtitle?,
     ) as $Val);
   }
 }
@@ -154,11 +154,11 @@ abstract class _$$_TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
       bool isPublished,
       Language language,
       int likesCount,
-      Subtitle? subtitle,
       Synopsis synopsis,
       Title title,
       UniqueID uid,
-      int viewsCount});
+      int viewsCount,
+      Subtitle? subtitle});
 }
 
 /// @nodoc
@@ -178,11 +178,11 @@ class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res, _$_Tree>
     Object? isPublished = null,
     Object? language = null,
     Object? likesCount = null,
-    Object? subtitle = freezed,
     Object? synopsis = null,
     Object? title = null,
     Object? uid = null,
     Object? viewsCount = null,
+    Object? subtitle = freezed,
   }) {
     return _then(_$_Tree(
       authorUID: null == authorUID
@@ -217,10 +217,6 @@ class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res, _$_Tree>
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as Subtitle?,
       synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
@@ -237,6 +233,10 @@ class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res, _$_Tree>
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
+      subtitle: freezed == subtitle
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as Subtitle?,
     ));
   }
 }
@@ -253,11 +253,11 @@ class _$_Tree implements _Tree {
       required this.isPublished,
       required this.language,
       required this.likesCount,
-      this.subtitle,
       required this.synopsis,
       required this.title,
       required this.uid,
-      required this.viewsCount})
+      required this.viewsCount,
+      this.subtitle})
       : _genres = genres;
 
   @override
@@ -283,8 +283,6 @@ class _$_Tree implements _Tree {
   @override
   final int likesCount;
   @override
-  final Subtitle? subtitle;
-  @override
   final Synopsis synopsis;
   @override
   final Title title;
@@ -292,10 +290,12 @@ class _$_Tree implements _Tree {
   final UniqueID uid;
   @override
   final int viewsCount;
+  @override
+  final Subtitle? subtitle;
 
   @override
   String toString() {
-    return 'Tree(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, synopsis: $synopsis, title: $title, uid: $uid, viewsCount: $viewsCount)';
+    return 'Tree(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, synopsis: $synopsis, title: $title, uid: $uid, viewsCount: $viewsCount, subtitle: $subtitle)';
   }
 
   @override
@@ -317,14 +317,14 @@ class _$_Tree implements _Tree {
                 other.language == language) &&
             (identical(other.likesCount, likesCount) ||
                 other.likesCount == likesCount) &&
-            (identical(other.subtitle, subtitle) ||
-                other.subtitle == subtitle) &&
             (identical(other.synopsis, synopsis) ||
                 other.synopsis == synopsis) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.viewsCount, viewsCount) ||
-                other.viewsCount == viewsCount));
+                other.viewsCount == viewsCount) &&
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle));
   }
 
   @override
@@ -338,11 +338,11 @@ class _$_Tree implements _Tree {
       isPublished,
       language,
       likesCount,
-      subtitle,
       synopsis,
       title,
       uid,
-      viewsCount);
+      viewsCount,
+      subtitle);
 
   @JsonKey(ignore: true)
   @override
@@ -361,11 +361,11 @@ abstract class _Tree implements Tree {
       required final bool isPublished,
       required final Language language,
       required final int likesCount,
-      final Subtitle? subtitle,
       required final Synopsis synopsis,
       required final Title title,
       required final UniqueID uid,
-      required final int viewsCount}) = _$_Tree;
+      required final int viewsCount,
+      final Subtitle? subtitle}) = _$_Tree;
 
   @override
   UniqueID get authorUID;
@@ -384,8 +384,6 @@ abstract class _Tree implements Tree {
   @override
   int get likesCount;
   @override
-  Subtitle? get subtitle;
-  @override
   Synopsis get synopsis;
   @override
   Title get title;
@@ -393,6 +391,8 @@ abstract class _Tree implements Tree {
   UniqueID get uid;
   @override
   int get viewsCount;
+  @override
+  Subtitle? get subtitle;
   @override
   @JsonKey(ignore: true)
   _$$_TreeCopyWith<_$_Tree> get copyWith => throw _privateConstructorUsedError;

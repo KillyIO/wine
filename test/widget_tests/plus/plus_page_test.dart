@@ -6,11 +6,13 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
+import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/library/library_page.dart';
@@ -18,6 +20,7 @@ import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/web/auth_dialog.dart';
 
+import '../../mocks/domain_mocks.dart';
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
 import '../utils/test_router_widget.dart';
@@ -32,6 +35,7 @@ void main() {
   late IDefaultCoversRepository defaultCoversRepository;
   late ISessionsRepository sessionsRepository;
   late ISettingsRepository settingsRepository;
+  late ITreeRepository treeRepository;
   late IUserRepository userRepository;
 
   late AppRouter router;
@@ -43,6 +47,7 @@ void main() {
     defaultCoversRepository = getIt<IDefaultCoversRepository>();
     sessionsRepository = getIt<ISessionsRepository>();
     settingsRepository = getIt<ISettingsRepository>();
+    treeRepository = getIt<ITreeRepository>();
     userRepository = getIt<IUserRepository>();
 
     router = AppRouter()
@@ -50,6 +55,9 @@ void main() {
         const HomeRoute(),
         const PlusRoute(),
       ]);
+
+    registerFallbackValue(MockUniqueID());
+    registerFallbackValue(MockUser());
   });
 
   group('PlusPage', () {
@@ -229,8 +237,10 @@ void main() {
               .thenAnswer((_) async => Ok(testUser));
           when(() => userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
-          when(() => sessionsRepository.insertSession(testUser))
+          when(() => sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => const Ok(unit));
+          when(() => treeRepository.loadTreesByUserUID(any()))
+              .thenAnswer((_) async => Ok([testTree]));
 
           final authBloc = getIt<AuthBloc>()
             ..add(const AuthEvent.authChanged());
@@ -242,6 +252,7 @@ void main() {
                 BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
                 BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
+                BlocProvider<LibraryBloc>(create: (_) => getIt<LibraryBloc>()),
               ],
             ),
           );

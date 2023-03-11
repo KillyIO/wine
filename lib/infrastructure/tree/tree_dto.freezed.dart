@@ -28,13 +28,13 @@ mixin _$TreeDTO {
   bool get isPublished => throw _privateConstructorUsedError;
   String get language => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
-  String? get subtitle => throw _privateConstructorUsedError;
   String get synopsis => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   FieldValue get updatedAt => throw _privateConstructorUsedError;
   int get viewsCount => throw _privateConstructorUsedError;
+  String? get subtitle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,12 +55,12 @@ abstract class $TreeDTOCopyWith<$Res> {
       bool isPublished,
       String language,
       int likesCount,
-      String? subtitle,
       String synopsis,
       String title,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
-      int viewsCount});
+      int viewsCount,
+      String? subtitle});
 }
 
 /// @nodoc
@@ -84,12 +84,12 @@ class _$TreeDTOCopyWithImpl<$Res, $Val extends TreeDTO>
     Object? isPublished = null,
     Object? language = null,
     Object? likesCount = null,
-    Object? subtitle = freezed,
     Object? synopsis = null,
     Object? title = null,
     Object? uid = null,
     Object? updatedAt = null,
     Object? viewsCount = null,
+    Object? subtitle = freezed,
   }) {
     return _then(_value.copyWith(
       authorUID: null == authorUID
@@ -124,10 +124,6 @@ class _$TreeDTOCopyWithImpl<$Res, $Val extends TreeDTO>
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
       synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
@@ -148,6 +144,10 @@ class _$TreeDTOCopyWithImpl<$Res, $Val extends TreeDTO>
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
+      subtitle: freezed == subtitle
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -168,12 +168,12 @@ abstract class _$$_TreeDTOCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
       bool isPublished,
       String language,
       int likesCount,
-      String? subtitle,
       String synopsis,
       String title,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
-      int viewsCount});
+      int viewsCount,
+      String? subtitle});
 }
 
 /// @nodoc
@@ -194,12 +194,12 @@ class __$$_TreeDTOCopyWithImpl<$Res>
     Object? isPublished = null,
     Object? language = null,
     Object? likesCount = null,
-    Object? subtitle = freezed,
     Object? synopsis = null,
     Object? title = null,
     Object? uid = null,
     Object? updatedAt = null,
     Object? viewsCount = null,
+    Object? subtitle = freezed,
   }) {
     return _then(_$_TreeDTO(
       authorUID: null == authorUID
@@ -234,10 +234,6 @@ class __$$_TreeDTOCopyWithImpl<$Res>
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
       synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
@@ -258,6 +254,10 @@ class __$$_TreeDTOCopyWithImpl<$Res>
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
+      subtitle: freezed == subtitle
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -274,12 +274,12 @@ class _$_TreeDTO implements _TreeDTO {
       required this.isPublished,
       required this.language,
       required this.likesCount,
-      this.subtitle,
       required this.synopsis,
       required this.title,
       required this.uid,
       @ServerTimestampConverter() required this.updatedAt,
-      required this.viewsCount})
+      required this.viewsCount,
+      this.subtitle})
       : _genres = genres;
 
   factory _$_TreeDTO.fromJson(Map<String, dynamic> json) =>
@@ -308,8 +308,6 @@ class _$_TreeDTO implements _TreeDTO {
   @override
   final int likesCount;
   @override
-  final String? subtitle;
-  @override
   final String synopsis;
   @override
   final String title;
@@ -320,10 +318,12 @@ class _$_TreeDTO implements _TreeDTO {
   final FieldValue updatedAt;
   @override
   final int viewsCount;
+  @override
+  final String? subtitle;
 
   @override
   String toString() {
-    return 'TreeDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, synopsis: $synopsis, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
+    return 'TreeDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, synopsis: $synopsis, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount, subtitle: $subtitle)';
   }
 
   @override
@@ -345,8 +345,6 @@ class _$_TreeDTO implements _TreeDTO {
                 other.language == language) &&
             (identical(other.likesCount, likesCount) ||
                 other.likesCount == likesCount) &&
-            (identical(other.subtitle, subtitle) ||
-                other.subtitle == subtitle) &&
             (identical(other.synopsis, synopsis) ||
                 other.synopsis == synopsis) &&
             (identical(other.title, title) || other.title == title) &&
@@ -354,7 +352,9 @@ class _$_TreeDTO implements _TreeDTO {
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
             (identical(other.viewsCount, viewsCount) ||
-                other.viewsCount == viewsCount));
+                other.viewsCount == viewsCount) &&
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle));
   }
 
   @JsonKey(ignore: true)
@@ -369,12 +369,12 @@ class _$_TreeDTO implements _TreeDTO {
       isPublished,
       language,
       likesCount,
-      subtitle,
       synopsis,
       title,
       uid,
       updatedAt,
-      viewsCount);
+      viewsCount,
+      subtitle);
 
   @JsonKey(ignore: true)
   @override
@@ -400,12 +400,12 @@ abstract class _TreeDTO implements TreeDTO {
       required final bool isPublished,
       required final String language,
       required final int likesCount,
-      final String? subtitle,
       required final String synopsis,
       required final String title,
       required final String uid,
       @ServerTimestampConverter() required final FieldValue updatedAt,
-      required final int viewsCount}) = _$_TreeDTO;
+      required final int viewsCount,
+      final String? subtitle}) = _$_TreeDTO;
 
   factory _TreeDTO.fromJson(Map<String, dynamic> json) = _$_TreeDTO.fromJson;
 
@@ -426,8 +426,6 @@ abstract class _TreeDTO implements TreeDTO {
   @override
   int get likesCount;
   @override
-  String? get subtitle;
-  @override
   String get synopsis;
   @override
   String get title;
@@ -438,6 +436,8 @@ abstract class _TreeDTO implements TreeDTO {
   FieldValue get updatedAt;
   @override
   int get viewsCount;
+  @override
+  String? get subtitle;
   @override
   @JsonKey(ignore: true)
   _$$_TreeDTOCopyWith<_$_TreeDTO> get copyWith =>

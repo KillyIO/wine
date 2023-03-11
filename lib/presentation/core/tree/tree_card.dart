@@ -50,7 +50,7 @@ class TreeCard extends StatelessWidget {
               child: Hero(
                 tag: uid,
                 child: coverURL != null
-                    ? isURL(coverURL!)
+                    ? isURL(coverURL)
                         ? CachedNetworkImage(
                             fit: BoxFit.contain,
                             imageUrl: coverURL!,

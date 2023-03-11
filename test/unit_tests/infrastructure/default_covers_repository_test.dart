@@ -25,7 +25,9 @@ void main() {
       uidEqualTo;
   late Query<IsarDefaultCover> build;
 
-  setUp(() {
+  setUp(() async {
+    await Isar.initializeIsarCore(download: true);
+
     firestore = FakeFirebaseFirestore();
     isar = MockIsar();
     collection = MockIsarCollection<IsarDefaultCover>();
@@ -41,10 +43,13 @@ void main() {
     defaultCoversRepository = DefaultCoversRepository(firestore, isar);
   });
 
+  tearDown(() {
+    isar.close(deleteFromDisk: true);
+  });
+
   group('cacheDefaultCovers -', () {
     test('When covers cached Then return Unit', () async {
-      when(() => isar.writeTxn(any()))
-          .thenAnswer((_) async => const Result<Unit, DefaultCoversFailure>.ok(unit));
+      when(() => isar.writeTxn(any())).thenAnswer((_) async => const Ok(unit));
 
       final result =
           await defaultCoversRepository.cacheDefaultCovers([testDefaultCover]);

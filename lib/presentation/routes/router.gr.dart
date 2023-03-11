@@ -22,7 +22,7 @@ import '../home/home_page.dart' as _i2;
 import '../library/library_page.dart' as _i3;
 import '../log_in/log_in_page.dart' as _i4;
 import '../plus/plus_page.dart' as _i5;
-import '../report/report_page.presentation.dart' as _i8;
+import '../report/report_page.dart' as _i8;
 import '../settings/settings_account/settings_account_page.dart' as _i11;
 import '../settings/settings_branch/settings_branch_page.dart' as _i12;
 import '../settings/settings_page.dart' as _i14;
@@ -45,9 +45,9 @@ class AppRouter extends _i15.RootStackRouter {
       return _i15.MaterialPageX<_i1.BranchPage>(
         routeData: routeData,
         child: _i1.BranchPage(
+          uid: args.uid,
           key: args.key,
           branch: args.branch,
-          uid: args.uid,
         ),
       );
     },
@@ -68,8 +68,8 @@ class AppRouter extends _i15.RootStackRouter {
       return _i15.MaterialPageX<_i4.LogInPage>(
         routeData: routeData,
         child: _i4.LogInPage(
-          key: args.key,
           navigateTo: args.navigateTo,
+          key: args.key,
         ),
       );
     },
@@ -86,8 +86,8 @@ class AppRouter extends _i15.RootStackRouter {
       return _i15.MaterialPageX<_i6.TreePage>(
         routeData: routeData,
         child: _i6.TreePage(
-          key: args.key,
           uid: args.uid,
+          key: args.key,
           tree: args.tree,
         ),
       );
@@ -109,8 +109,8 @@ class AppRouter extends _i15.RootStackRouter {
       return _i15.MaterialPageX<_i9.SignUpPage>(
         routeData: routeData,
         child: _i9.SignUpPage(
-          key: args.key,
           navigateTo: args.navigateTo,
+          key: args.key,
         ),
       );
     },
@@ -258,16 +258,16 @@ class AppRouter extends _i15.RootStackRouter {
 /// [_i1.BranchPage]
 class BranchRoute extends _i15.PageRouteInfo<BranchRouteArgs> {
   BranchRoute({
+    required String uid,
     _i16.Key? key,
     _i17.Branch? branch,
-    required String uid,
   }) : super(
           BranchRoute.name,
           path: '/branch/:id',
           args: BranchRouteArgs(
+            uid: uid,
             key: key,
             branch: branch,
-            uid: uid,
           ),
           rawPathParams: {'id': uid},
         );
@@ -277,20 +277,20 @@ class BranchRoute extends _i15.PageRouteInfo<BranchRouteArgs> {
 
 class BranchRouteArgs {
   const BranchRouteArgs({
+    required this.uid,
     this.key,
     this.branch,
-    required this.uid,
   });
+
+  final String uid;
 
   final _i16.Key? key;
 
   final _i17.Branch? branch;
 
-  final String uid;
-
   @override
   String toString() {
-    return 'BranchRouteArgs{key: $key, branch: $branch, uid: $uid}';
+    return 'BranchRouteArgs{uid: $uid, key: $key, branch: $branch}';
   }
 }
 
@@ -322,14 +322,14 @@ class LibraryRoute extends _i15.PageRouteInfo<void> {
 /// [_i4.LogInPage]
 class LogInRoute extends _i15.PageRouteInfo<LogInRouteArgs> {
   LogInRoute({
-    _i16.Key? key,
     required _i15.PageRouteInfo<dynamic> navigateTo,
+    _i16.Key? key,
   }) : super(
           LogInRoute.name,
           path: '/log-in',
           args: LogInRouteArgs(
-            key: key,
             navigateTo: navigateTo,
+            key: key,
           ),
         );
 
@@ -338,17 +338,17 @@ class LogInRoute extends _i15.PageRouteInfo<LogInRouteArgs> {
 
 class LogInRouteArgs {
   const LogInRouteArgs({
-    this.key,
     required this.navigateTo,
+    this.key,
   });
-
-  final _i16.Key? key;
 
   final _i15.PageRouteInfo<dynamic> navigateTo;
 
+  final _i16.Key? key;
+
   @override
   String toString() {
-    return 'LogInRouteArgs{key: $key, navigateTo: $navigateTo}';
+    return 'LogInRouteArgs{navigateTo: $navigateTo, key: $key}';
   }
 }
 
@@ -368,15 +368,15 @@ class PlusRoute extends _i15.PageRouteInfo<void> {
 /// [_i6.TreePage]
 class TreeRoute extends _i15.PageRouteInfo<TreeRouteArgs> {
   TreeRoute({
-    _i16.Key? key,
     required String uid,
+    _i16.Key? key,
     _i18.Tree? tree,
   }) : super(
           TreeRoute.name,
           path: '/tree/:id',
           args: TreeRouteArgs(
-            key: key,
             uid: uid,
+            key: key,
             tree: tree,
           ),
           rawPathParams: {'id': uid},
@@ -387,20 +387,20 @@ class TreeRoute extends _i15.PageRouteInfo<TreeRouteArgs> {
 
 class TreeRouteArgs {
   const TreeRouteArgs({
-    this.key,
     required this.uid,
+    this.key,
     this.tree,
   });
 
-  final _i16.Key? key;
-
   final String uid;
+
+  final _i16.Key? key;
 
   final _i18.Tree? tree;
 
   @override
   String toString() {
-    return 'TreeRouteArgs{key: $key, uid: $uid, tree: $tree}';
+    return 'TreeRouteArgs{uid: $uid, key: $key, tree: $tree}';
   }
 }
 
@@ -433,14 +433,14 @@ class ReportRoute extends _i15.PageRouteInfo<void> {
 /// [_i9.SignUpPage]
 class SignUpRoute extends _i15.PageRouteInfo<SignUpRouteArgs> {
   SignUpRoute({
-    _i16.Key? key,
     required _i15.PageRouteInfo<dynamic> navigateTo,
+    _i16.Key? key,
   }) : super(
           SignUpRoute.name,
           path: '/sign-up',
           args: SignUpRouteArgs(
-            key: key,
             navigateTo: navigateTo,
+            key: key,
           ),
         );
 
@@ -449,17 +449,17 @@ class SignUpRoute extends _i15.PageRouteInfo<SignUpRouteArgs> {
 
 class SignUpRouteArgs {
   const SignUpRouteArgs({
-    this.key,
     required this.navigateTo,
+    this.key,
   });
-
-  final _i16.Key? key;
 
   final _i15.PageRouteInfo<dynamic> navigateTo;
 
+  final _i16.Key? key;
+
   @override
   String toString() {
-    return 'SignUpRouteArgs{key: $key, navigateTo: $navigateTo}';
+    return 'SignUpRouteArgs{navigateTo: $navigateTo, key: $key}';
   }
 }
 

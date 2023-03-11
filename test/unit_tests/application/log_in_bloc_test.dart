@@ -297,7 +297,7 @@ void main() {
           when(() => sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => const Ok(unit));
           when(() => defaultCoverRepository.loadDefaultCovers())
-              .thenAnswer((_) async => Ok(testDefaultCovers));
+              .thenAnswer((_) async => Ok([testDefaultCover]));
           when(() => defaultCoverRepository.cacheDefaultCovers(any()))
               .thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isAnonymous).thenReturn(false);
@@ -354,7 +354,7 @@ void main() {
           when(() => sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => const Ok(unit));
           when(() => defaultCoverRepository.loadDefaultCovers())
-              .thenAnswer((_) async => Ok(testDefaultCovers));
+              .thenAnswer((_) async => Ok([testDefaultCover]));
           when(() => defaultCoverRepository.cacheDefaultCovers(any()))
               .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
@@ -411,7 +411,7 @@ void main() {
           when(() => sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => const Ok(unit));
           when(() => defaultCoverRepository.loadDefaultCovers())
-              .thenAnswer((_) async => Ok(testDefaultCovers));
+              .thenAnswer((_) async => Ok([testDefaultCover]));
           when(() => defaultCoverRepository.cacheDefaultCovers(any()))
               .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
@@ -473,7 +473,7 @@ void main() {
           when(() => sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => const Ok(unit));
           when(() => defaultCoverRepository.loadDefaultCovers())
-              .thenAnswer((_) async => Ok(testDefaultCovers));
+              .thenAnswer((_) async => Ok([testDefaultCover]));
           when(() => defaultCoverRepository.cacheDefaultCovers(any()))
               .thenAnswer((_) async => const Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());

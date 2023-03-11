@@ -81,7 +81,7 @@ class BranchTile extends StatelessWidget {
             Hero(
               tag: uid,
               child: coverURL != null
-                  ? isURL(coverURL!)
+                  ? isURL(coverURL)
                       ? CachedNetworkImage(
                           fit: BoxFit.contain,
                           imageUrl: coverURL!,

@@ -3,9 +3,14 @@ import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/cover_url.dart';
+import 'package:wine/domain/core/genre.dart';
+import 'package:wine/domain/core/language.dart';
+import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/default_covers/default_cover.dart';
 import 'package:wine/domain/settings/settings.dart';
+import 'package:wine/domain/tree/synopsis.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
 import 'package:wine/infrastructure/settings/isar_settings.dart';
@@ -87,7 +92,6 @@ const testIsarDefaultCover = IsarDefaultCover(
   key: 'key',
   url: testCoverURL,
 );
-final testDefaultCovers = <DefaultCover>[testDefaultCover];
 
 // SECTION Settings
 const testSettings = Settings(
@@ -160,4 +164,19 @@ final testCredentialInUse = FirebaseException(
 final testRandomServerException = FirebaseException(
   plugin: 'server',
   message: 'Not handled Firebase exception',
+);
+
+final testTree = Tree(
+  authorUID: testUser.uid,
+  bookmarksCount: 0,
+  coverURL: CoverURL(testCoverURL),
+  genres: [Genre(testGenre)],
+  isNSFW: false,
+  isPublished: false,
+  language: Language(testLanguage),
+  likesCount: 0,
+  synopsis: Synopsis(testSynopsis),
+  title: Title(testTitle),
+  uid: UniqueID.fromUniqueString(testTreeUid),
+  viewsCount: 0,
 );

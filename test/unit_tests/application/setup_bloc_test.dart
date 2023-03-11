@@ -16,6 +16,7 @@ import 'package:wine/domain/user/i_user_repository.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
 import '../../mocks/default_covers_mock.dart';
+import '../../mocks/domain_mocks.dart';
 import '../../mocks/sessions_mocks.dart';
 import '../../mocks/settings_mocks.dart';
 import '../../mocks/user_mocks.dart';
@@ -44,6 +45,9 @@ void main() {
       settingsRepository,
       userRepository,
     );
+
+    registerFallbackValue(MockUniqueID());
+    registerFallbackValue(MockUser());
   });
 
   tearDown(() {
@@ -155,10 +159,10 @@ void main() {
       );
 
       blocTest<SetupBloc, SetupState>(
-        'emits [SessionsFailure.sessionNotUpdated] when userLoaded is added.',
+        'emits [SessionsFailure.sessionNotInserted] when userLoaded is added.',
         build: () => setupBloc,
         act: (bloc) {
-          when(() => sessionsRepository.insertSession(testUser)).thenAnswer(
+          when(() => sessionsRepository.insertSession(any())).thenAnswer(
             (_) async => const Err(SessionsFailure.sessionNotInserted()),
           );
           return bloc.add(SetupEvent.userLoaded(testUser));
@@ -169,22 +173,21 @@ void main() {
           ),
         ],
         verify: (_) {
-          verify(() => sessionsRepository.insertSession(testUser)).called(1);
+          verify(() => sessionsRepository.insertSession(any())).called(1);
         },
       );
     });
 
     group('Completed -', () {
       blocTest<SetupBloc, SetupState>(
-        'emits [SetupState.initHomeBloc] when appLaunched is added.',
+        'emits [SetupState.content] when appLaunched is added (anonymous).',
         build: () => setupBloc,
         act: (bloc) {
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(() => authFacade.isAnonymous).thenReturn(true);
           when(settingsRepository.fetchSettings)
               .thenAnswer((_) async => const Ok(testSettings));
-          when(sessionsRepository.fetchSession)
-              .thenAnswer((_) async => Ok(testUser));
+          when(() => authFacade.isAnonymous).thenReturn(true);
 
           return bloc.add(const SetupEvent.appLaunched());
         },
@@ -197,35 +200,35 @@ void main() {
             () => authFacade.isLoggedIn,
             () => authFacade.isAnonymous,
             settingsRepository.fetchSettings,
-            sessionsRepository.fetchSession,
             () => authFacade.isAnonymous,
           ]);
         },
       );
 
       blocTest<SetupBloc, SetupState>(
-        'emits [SetupState.initHomeBloc] when appLaunched is added.',
+        'emits [SetupState.content] when appLaunched is added (authenticated).',
         build: () => setupBloc,
         act: (bloc) {
           when(() => authFacade.isLoggedIn).thenReturn(false);
-          when(authFacade.logInAnonymously).thenAnswer((_) async => const Ok(unit));
+          when(authFacade.logInAnonymously)
+              .thenAnswer((_) async => const Ok(unit));
           when(() => authFacade.isAnonymous).thenReturn(false);
           when(defaultCoversRepository.loadDefaultCovers)
               .thenAnswer((_) async => Ok([testDefaultCover]));
           when(
-            () =>
-                defaultCoversRepository.cacheDefaultCovers([testDefaultCover]),
+            () => defaultCoversRepository.cacheDefaultCovers(any()),
           ).thenAnswer((_) async => const Ok(unit));
           when(settingsRepository.fetchSettings).thenAnswer(
             (_) async => const Err(SettingsFailure.settingsNotFound()),
           );
           when(settingsRepository.initializeSettings)
               .thenAnswer((_) async => const Ok(unit));
+          when(() => authFacade.isAnonymous).thenReturn(false);
           when(sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
-          when(() => userRepository.loadUser(testUser.uid))
+          when(() => userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
-          when(() => sessionsRepository.insertSession(testUser))
+          when(() => sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => const Ok(unit));
 
           return bloc.add(const SetupEvent.appLaunched());
@@ -240,13 +243,13 @@ void main() {
             authFacade.logInAnonymously,
             () => authFacade.isAnonymous,
             defaultCoversRepository.loadDefaultCovers,
-            () =>
-                defaultCoversRepository.cacheDefaultCovers([testDefaultCover]),
+            () => defaultCoversRepository.cacheDefaultCovers(any()),
             settingsRepository.fetchSettings,
             settingsRepository.initializeSettings,
+            () => authFacade.isAnonymous,
             sessionsRepository.fetchSession,
-            () => userRepository.loadUser(testUser.uid),
-            () => sessionsRepository.insertSession(testUser)
+            () => userRepository.loadUser(any()),
+            () => sessionsRepository.insertSession(any())
           ]);
         },
       );

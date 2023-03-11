@@ -41,7 +41,7 @@ class BranchLeafHead extends StatelessWidget {
                 height: 250,
                 width: mediaQuery.width,
                 child: coverURL != null
-                    ? isURL(coverURL!)
+                    ? isURL(coverURL)
                         ? CachedNetworkImage(
                             imageUrl: coverURL!,
                             fit: BoxFit.fitWidth,

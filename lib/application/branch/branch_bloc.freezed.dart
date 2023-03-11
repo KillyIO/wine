@@ -3253,9 +3253,9 @@ mixin _$BranchState {
   List<Branch> get nextBranches => throw _privateConstructorUsedError;
   List<Branch> get sameAuthorNextBranches => throw _privateConstructorUsedError;
   double get scrollProgress => throw _privateConstructorUsedError;
-  User? get session => throw _privateConstructorUsedError;
   Settings get settings => throw _privateConstructorUsedError;
   bool get showDetails => throw _privateConstructorUsedError;
+  User? get session => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BranchStateCopyWith<BranchState> get copyWith =>
@@ -3280,14 +3280,14 @@ abstract class $BranchStateCopyWith<$Res> {
       List<Branch> nextBranches,
       List<Branch> sameAuthorNextBranches,
       double scrollProgress,
-      User? session,
       Settings settings,
-      bool showDetails});
+      bool showDetails,
+      User? session});
 
   $UserCopyWith<$Res> get author;
   $BranchCopyWith<$Res> get branch;
-  $UserCopyWith<$Res>? get session;
   $SettingsCopyWith<$Res> get settings;
+  $UserCopyWith<$Res>? get session;
 }
 
 /// @nodoc
@@ -3314,9 +3314,9 @@ class _$BranchStateCopyWithImpl<$Res, $Val extends BranchState>
     Object? nextBranches = null,
     Object? sameAuthorNextBranches = null,
     Object? scrollProgress = null,
-    Object? session = freezed,
     Object? settings = null,
     Object? showDetails = null,
+    Object? session = freezed,
   }) {
     return _then(_value.copyWith(
       authorIsUser: null == authorIsUser
@@ -3363,10 +3363,6 @@ class _$BranchStateCopyWithImpl<$Res, $Val extends BranchState>
           ? _value.scrollProgress
           : scrollProgress // ignore: cast_nullable_to_non_nullable
               as double,
-      session: freezed == session
-          ? _value.session
-          : session // ignore: cast_nullable_to_non_nullable
-              as User?,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -3375,6 +3371,10 @@ class _$BranchStateCopyWithImpl<$Res, $Val extends BranchState>
           ? _value.showDetails
           : showDetails // ignore: cast_nullable_to_non_nullable
               as bool,
+      session: freezed == session
+          ? _value.session
+          : session // ignore: cast_nullable_to_non_nullable
+              as User?,
     ) as $Val);
   }
 
@@ -3396,6 +3396,14 @@ class _$BranchStateCopyWithImpl<$Res, $Val extends BranchState>
 
   @override
   @pragma('vm:prefer-inline')
+  $SettingsCopyWith<$Res> get settings {
+    return $SettingsCopyWith<$Res>(_value.settings, (value) {
+      return _then(_value.copyWith(settings: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get session {
     if (_value.session == null) {
       return null;
@@ -3403,14 +3411,6 @@ class _$BranchStateCopyWithImpl<$Res, $Val extends BranchState>
 
     return $UserCopyWith<$Res>(_value.session!, (value) {
       return _then(_value.copyWith(session: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SettingsCopyWith<$Res> get settings {
-    return $SettingsCopyWith<$Res>(_value.settings, (value) {
-      return _then(_value.copyWith(settings: value) as $Val);
     });
   }
 }
@@ -3435,18 +3435,18 @@ abstract class _$$_BranchStateCopyWith<$Res>
       List<Branch> nextBranches,
       List<Branch> sameAuthorNextBranches,
       double scrollProgress,
-      User? session,
       Settings settings,
-      bool showDetails});
+      bool showDetails,
+      User? session});
 
   @override
   $UserCopyWith<$Res> get author;
   @override
   $BranchCopyWith<$Res> get branch;
   @override
-  $UserCopyWith<$Res>? get session;
-  @override
   $SettingsCopyWith<$Res> get settings;
+  @override
+  $UserCopyWith<$Res>? get session;
 }
 
 /// @nodoc
@@ -3471,9 +3471,9 @@ class __$$_BranchStateCopyWithImpl<$Res>
     Object? nextBranches = null,
     Object? sameAuthorNextBranches = null,
     Object? scrollProgress = null,
-    Object? session = freezed,
     Object? settings = null,
     Object? showDetails = null,
+    Object? session = freezed,
   }) {
     return _then(_$_BranchState(
       authorIsUser: null == authorIsUser
@@ -3520,10 +3520,6 @@ class __$$_BranchStateCopyWithImpl<$Res>
           ? _value.scrollProgress
           : scrollProgress // ignore: cast_nullable_to_non_nullable
               as double,
-      session: freezed == session
-          ? _value.session
-          : session // ignore: cast_nullable_to_non_nullable
-              as User?,
       settings: null == settings
           ? _value.settings
           : settings // ignore: cast_nullable_to_non_nullable
@@ -3532,6 +3528,10 @@ class __$$_BranchStateCopyWithImpl<$Res>
           ? _value.showDetails
           : showDetails // ignore: cast_nullable_to_non_nullable
               as bool,
+      session: freezed == session
+          ? _value.session
+          : session // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -3551,9 +3551,9 @@ class _$_BranchState implements _BranchState {
       required final List<Branch> nextBranches,
       required final List<Branch> sameAuthorNextBranches,
       required this.scrollProgress,
-      this.session,
       required this.settings,
-      required this.showDetails})
+      required this.showDetails,
+      this.session})
       : _nextBranches = nextBranches,
         _sameAuthorNextBranches = sameAuthorNextBranches;
 
@@ -3593,15 +3593,15 @@ class _$_BranchState implements _BranchState {
   @override
   final double scrollProgress;
   @override
-  final User? session;
-  @override
   final Settings settings;
   @override
   final bool showDetails;
+  @override
+  final User? session;
 
   @override
   String toString() {
-    return 'BranchState(authorIsUser: $authorIsUser, author: $author, branch: $branch, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, leafController: $leafController, nextBranches: $nextBranches, sameAuthorNextBranches: $sameAuthorNextBranches, scrollProgress: $scrollProgress, session: $session, settings: $settings, showDetails: $showDetails)';
+    return 'BranchState(authorIsUser: $authorIsUser, author: $author, branch: $branch, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, leafController: $leafController, nextBranches: $nextBranches, sameAuthorNextBranches: $sameAuthorNextBranches, scrollProgress: $scrollProgress, settings: $settings, showDetails: $showDetails, session: $session)';
   }
 
   @override
@@ -3628,11 +3628,11 @@ class _$_BranchState implements _BranchState {
                 other._sameAuthorNextBranches, _sameAuthorNextBranches) &&
             (identical(other.scrollProgress, scrollProgress) ||
                 other.scrollProgress == scrollProgress) &&
-            (identical(other.session, session) || other.session == session) &&
             (identical(other.settings, settings) ||
                 other.settings == settings) &&
             (identical(other.showDetails, showDetails) ||
-                other.showDetails == showDetails));
+                other.showDetails == showDetails) &&
+            (identical(other.session, session) || other.session == session));
   }
 
   @override
@@ -3649,9 +3649,9 @@ class _$_BranchState implements _BranchState {
       const DeepCollectionEquality().hash(_nextBranches),
       const DeepCollectionEquality().hash(_sameAuthorNextBranches),
       scrollProgress,
-      session,
       settings,
-      showDetails);
+      showDetails,
+      session);
 
   @JsonKey(ignore: true)
   @override
@@ -3673,9 +3673,9 @@ abstract class _BranchState implements BranchState {
       required final List<Branch> nextBranches,
       required final List<Branch> sameAuthorNextBranches,
       required final double scrollProgress,
-      final User? session,
       required final Settings settings,
-      required final bool showDetails}) = _$_BranchState;
+      required final bool showDetails,
+      final User? session}) = _$_BranchState;
 
   @override
   bool get authorIsUser;
@@ -3700,11 +3700,11 @@ abstract class _BranchState implements BranchState {
   @override
   double get scrollProgress;
   @override
-  User? get session;
-  @override
   Settings get settings;
   @override
   bool get showDetails;
+  @override
+  User? get session;
   @override
   @JsonKey(ignore: true)
   _$$_BranchStateCopyWith<_$_BranchState> get copyWith =>

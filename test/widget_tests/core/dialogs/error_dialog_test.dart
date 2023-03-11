@@ -8,7 +8,7 @@ import '../../utils/test_widget.dart';
 void main() {
   group('ErrorDialog -', () {
     testWidgets(
-      "Should find texts SOMETHING'S WRONG!, Hello World!, DISMISS",
+      "Should find texts SOMETHING'S WRONG!, Hello World!, OK",
       (tester) async {
         await tester.pumpWidget(
           TestWidget(
@@ -21,7 +21,7 @@ void main() {
 
         expect(find.text("SOMETHING'S WRONG!"), findsOneWidget);
         expect(find.text('Hello World!'), findsOneWidget);
-        expect(find.text('DISMISS'), findsOneWidget);
+        expect(find.text('OK'), findsOneWidget);
       },
     );
 
@@ -51,7 +51,7 @@ void main() {
         ),
       );
 
-      final buttonText = find.text('DISMISS');
+      final buttonText = find.text('OK');
 
       await tester.tap(buttonText);
       await tester.pumpAndSettle();
