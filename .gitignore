@@ -97,3 +97,5 @@ lib/development_firebase_options.dart
 lib/production_firebase_options.dart
 
 isar.dll
+
+.fvm/flutter_sdk
