@@ -6,160 +6,241 @@ import 'package:mockito/mockito.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
+import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/sessions/sessions_repository.dart';
 import 'package:wine/infrastructure/user/isar_user.dart';
 
 import '../utils/constants.dart';
 import 'sessions_repository_test.mocks.dart';
 
-@GenerateMocks(
-  [auth.FirebaseAuth, auth.User, IsarCollection, QueryBuilder],
-  customMocks: [
-    MockSpec<Isar>(
-      unsupportedMembers: {Symbol('txnSync'), Symbol('writeTxnSync')},
-    ),
-    MockSpec<Query<IsarUser>>(
-      unsupportedMembers: {Symbol('exportJsonRawSync')},
-    ),
-  ],
-)
+@GenerateMocks([auth.User])
+@GenerateNiceMocks([
+  MockSpec<auth.FirebaseAuth>(),
+])
 void main() {
   late ISessionsRepository sessionsRepository;
-
   late auth.FirebaseAuth firebaseAuth;
-
   late Isar isar;
-  late IsarCollection<IsarUser> collection;
-  late QueryBuilder<IsarUser, IsarUser, QAfterWhereClause>
-      queryBuilderWhereClause;
-  late QueryBuilder<IsarUser, IsarUser, QWhere> queryBuilderWhere;
-  late Query<IsarUser> query;
 
-  setUp(() {
+  setUpAll(() async {
+    await Isar.initializeIsarCore(download: true);
+  });
+
+  setUp(() async {
     firebaseAuth = MockFirebaseAuth();
-    isar = MockIsar();
+
     sessionsRepository = SessionsRepository(firebaseAuth, isar);
-    collection = MockIsarCollection<IsarUser>();
-    queryBuilderWhereClause =
-        MockQueryBuilder<IsarUser, IsarUser, QAfterWhereClause>();
-    queryBuilderWhere = MockQueryBuilder<IsarUser, IsarUser, QWhere>();
-    query = MockQuery();
   });
 
   group('deleteSession -', () {
-    test('When session deleted Then return Unit', () async {
+    setUpAll(() async {
+      isar = await Isar.open([IsarUserSchema]);
+
+      await isar.writeTxn(() async {
+        await isar.users.clear();
+      });
+    });
+
+    tearDownAll(() async {
+      await isar.close();
+    });
+
+    test('returns Ok when session is deleted', () async {
+      // arrange
       final firebaseUser = MockUser();
 
+      when(firebaseUser.uid).thenReturn(testUserUid);
       when(firebaseAuth.currentUser).thenReturn(firebaseUser);
-      when(collection.where()).thenReturn(queryBuilderWhere);
-      when(queryBuilderWhere.uidEqualTo(testUserUid))
-          .thenReturn(queryBuilderWhereClause);
-      when(queryBuilderWhereClause.build()).thenReturn(query);
-      when(query.deleteFirst()).thenAnswer((_) async => true);
 
+      await isar.writeTxn(() async {
+        await isar.users.put(testIsarUser);
+      });
+
+      // act
       final result = await sessionsRepository.deleteSession();
 
-      expect(result.isOk(), true);
-      result.match(
-        (ok) => expect(ok, unit),
-        (_) {},
+      // assert
+      expect(result, equals(const Ok<Unit, SessionsFailure>(unit)));
+    });
+
+    test('returns Err when session is not deleted', () async {
+      // arrange
+      final firebaseUser = MockUser();
+
+      when(firebaseUser.uid).thenReturn(testUserUid);
+      when(firebaseAuth.currentUser).thenReturn(firebaseUser);
+
+      // act
+      final result = await sessionsRepository.deleteSession();
+
+      // assert
+      expect(
+        result,
+        equals(
+          const Err<Unit, SessionsFailure>(
+            SessionsFailure.sessionNotDeleted(),
+          ),
+        ),
       );
     });
 
-    test('When session not deleted Then return SessionNotDeleted', () async {
-      // when(() => isar.writeTxn(any())).thenAnswer(
-      //   (_) async => const Result<Unit, SessionsFailure>.err(
-      //     SessionsFailure.sessionNotDeleted(),
-      //   ),
-      // );
+    test('returns Err when firebaseUser is null', () async {
+      // arrange
+      when(firebaseAuth.currentUser).thenReturn(null);
 
+      // act
       final result = await sessionsRepository.deleteSession();
 
-      expect(result.isErr(), true);
-      result.match(
-        (_) {},
-        (err) => expect(err, isA<SessionNotDeleted>()),
+      // assert
+      expect(
+        result,
+        equals(
+          const Err<Unit, SessionsFailure>(
+            SessionsFailure.sessionNotDeleted(),
+          ),
+        ),
       );
     });
   });
 
   group('fetchSession -', () {
-    setUp(() {
-      // when(() => isar.users).thenReturn(collection);
-      // when(collection.where).thenReturn(where);
-      // when(
-      //   () => where.addWhereClauseInternal<QAfterWhereClause>(any()),
-      // ).thenReturn(uidEqualTo);
-      // when(uidEqualTo.build).thenReturn(build);
+    setUpAll(() async {
+      isar = await Isar.open([IsarUserSchema]);
+
+      await isar.writeTxn(() async {
+        await isar.users.clear();
+      });
     });
 
-    test('When session fetched Then return User', () async {
-      // when(query.findFirst).thenAnswer((_) async => testIsarUser);
-
-      // final result = await sessionsRepository.fetchSession();
-
-      // expect(result.isOk(), true);
-      // result.match(
-      //   (ok) => expect(ok, testIsarUser.toDomain()),
-      //   (_) {},
-      // );
+    tearDownAll(() async {
+      await isar.close();
     });
 
-    test('When session not fetched Then return SessionNotFound', () async {
-      // when(query.findFirst).thenAnswer((_) async => null);
+    test('returns Ok when session is found', () async {
+      // arrange
+      await isar.writeTxn(() async {
+        await isar.users.put(testIsarUser);
+      });
 
+      final firebaseUser = MockUser();
+
+      when(firebaseUser.uid).thenReturn(testUserUid);
+      when(firebaseAuth.currentUser).thenReturn(firebaseUser);
+
+      // act
       final result = await sessionsRepository.fetchSession();
 
-      expect(result.isErr(), true);
-      result.match(
-        (_) {},
-        (err) => expect(err, isA<SessionNotFound>()),
+      // assert
+      expect(result, equals(Ok<User, SessionsFailure>(testUser)));
+    });
+
+    test('returns Err when session is not found', () async {
+      // arrange
+      await isar.writeTxn(() async {
+        await isar.users.clear();
+      });
+
+      final firebaseUser = MockUser();
+
+      when(firebaseUser.uid).thenReturn(testUserUid);
+      when(firebaseAuth.currentUser).thenReturn(firebaseUser);
+
+      // act
+      final result = await sessionsRepository.fetchSession();
+
+      // assert
+      expect(
+        result,
+        equals(
+          const Err<User, SessionsFailure>(
+            SessionsFailure.sessionNotFound(),
+          ),
+        ),
+      );
+    });
+
+    test('Err when firebaseUser is null', () async {
+      // arrange
+      await isar.writeTxn(() async {
+        await isar.users.clear();
+      });
+
+      when(firebaseAuth.currentUser).thenReturn(null);
+
+      // act
+      final result = await sessionsRepository.fetchSession();
+
+      // assert
+      expect(
+        result,
+        equals(
+          const Err<User, SessionsFailure>(
+            SessionsFailure.sessionNotFound(),
+          ),
+        ),
       );
     });
   });
 
   group('insertSession -', () {
-    setUp(() {
-      // when(() => isar.users).thenReturn(collection);
-      // when(collection.where).thenReturn(queryBuilderWhere);
-      // when(
-      //   () => where.addWhereClauseInternal<QAfterWhereClause>(any()),
-      // ).thenReturn(uidEqualTo);
-      // when(queryBuilderWhereClause.build).thenReturn(query);
+    setUpAll(() async {
+      isar = await Isar.open([IsarUserSchema]);
+
+      await isar.writeTxn(() async {
+        await isar.users.clear();
+      });
     });
 
-    test('When session updated Then return Unit', () async {
-      // when(() => isar.writeTxn(any())).thenAnswer((_) async => null);
-      // when(query.findFirst).thenAnswer(
-      //   (_) async => testIsarUser.copyWith(updatedAt: DateTime.now()),
-      // );
-
-      // final result =
-      //     await sessionsRepository.insertSession(testIsarUser.toDomain());
-
-      // expect(result.isOk(), true);
-      // result.match(
-      //   (ok) => expect(ok, unit),
-      //   (_) {},
-      // );
+    tearDownAll(() async {
+      await isar.close();
     });
 
-    test('When session not updated Then return SessionNotUpdated', () async {
-      // final updatedTestIsarUser = testIsarUser.copyWith(
-      //   emailAddress: 'yhaouas.hebbazth5@gmailvn.net',
-      // );
+    test('inserts a new session when user is anonymous', () async {
+      // arrange
+      final firebaseUser = MockUser();
 
-      // when(() => isar.writeTxn(any())).thenAnswer((_) async => null);
-      // when(query.findFirst).thenAnswer((_) async => updatedTestIsarUser);
+      when(firebaseUser.uid).thenReturn(testUserUid);
+      when(firebaseUser.isAnonymous).thenReturn(true);
+      when(firebaseAuth.currentUser).thenReturn(firebaseUser);
 
-      // final result =
-      //     await sessionsRepository.insertSession(testIsarUser.toDomain());
+      // act
+      final result = await sessionsRepository.insertSession(testUser);
 
-      // expect(result.isErr(), true);
-      // result.match(
-      //   (_) {},
-      //   (err) => expect(err, isA<SessionNotInserted>()),
-      // );
+      // assert
+      expect(result, equals(const Ok<Unit, SessionsFailure>(unit)));
+    });
+
+    test('updates an existing session when user is authenticated', () async {
+      // arrange
+      final firebaseUser = MockUser();
+
+      when(firebaseUser.uid).thenReturn(testUserUid);
+      when(firebaseUser.isAnonymous).thenReturn(false);
+      when(firebaseAuth.currentUser).thenReturn(firebaseUser);
+
+      // act
+      final result = await sessionsRepository.insertSession(testUser);
+
+      // assert
+      expect(result, equals(const Ok<Unit, SessionsFailure>(unit)));
+    });
+
+    test('returns an error when firebaseUser is null', () async {
+      // arrange
+      when(firebaseAuth.currentUser).thenReturn(null);
+
+      // act
+      final result = await sessionsRepository.insertSession(testUser);
+
+      // assert
+      expect(
+        result,
+        equals(
+          const Err<Unit, SessionsFailure>(
+            SessionsFailure.sessionNotInserted(),
+          ),
+        ),
+      );
     });
   });
 }

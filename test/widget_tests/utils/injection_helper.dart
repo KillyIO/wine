@@ -22,9 +22,9 @@ import '../../mocks/settings_mocks.dart';
 import '../../mocks/tree_mocks.dart';
 import '../../mocks/user_mocks.dart';
 
-void setupInjection() {
-  getIt.reset();
-  configureInjection(Environment.test);
+Future<void> setupInjection() async {
+  await getIt.reset();
+  await configureInjection(Environment.test);
 
   final IAuthFacade authFacade = MockAuthFacade();
   final IBranchRepository branchRepository = MockBranchRepository();
