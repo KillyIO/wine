@@ -45,7 +45,7 @@ void main() {
       await isar.close();
     });
 
-    test('returns Ok when session is deleted', () async {
+    test('When session is deleted Then returns Unit', () async {
       // arrange
       final firebaseUser = MockUser();
 
@@ -63,7 +63,8 @@ void main() {
       expect(result, equals(const Ok<Unit, SessionsFailure>(unit)));
     });
 
-    test('returns Err when session is not deleted', () async {
+    test('When session is not deleted Then returns sessionNotDeleted',
+        () async {
       // arrange
       final firebaseUser = MockUser();
 
@@ -84,7 +85,7 @@ void main() {
       );
     });
 
-    test('returns Err when firebaseUser is null', () async {
+    test('When current user is null Then returns sessionNotDeleted', () async {
       // arrange
       when(firebaseAuth.currentUser).thenReturn(null);
 
@@ -116,7 +117,7 @@ void main() {
       await isar.close();
     });
 
-    test('returns Ok when session is found', () async {
+    test('When session is found Then returns User', () async {
       // arrange
       await isar.writeTxn(() async {
         await isar.users.put(testIsarUser);
@@ -134,7 +135,7 @@ void main() {
       expect(result, equals(Ok<User, SessionsFailure>(testUser)));
     });
 
-    test('returns Err when session is not found', () async {
+    test('When session is not found Then returns sessionNotFound', () async {
       // arrange
       await isar.writeTxn(() async {
         await isar.users.clear();
@@ -159,7 +160,7 @@ void main() {
       );
     });
 
-    test('Err when firebaseUser is null', () async {
+    test('When current user is null Then returns sessionNotFound', () async {
       // arrange
       await isar.writeTxn(() async {
         await isar.users.clear();
@@ -195,7 +196,7 @@ void main() {
       await isar.close();
     });
 
-    test('inserts a new session when user is anonymous', () async {
+    test('when user is inserted (anonymous) Then returns Unit', () async {
       // arrange
       final firebaseUser = MockUser();
 
@@ -210,7 +211,7 @@ void main() {
       expect(result, equals(const Ok<Unit, SessionsFailure>(unit)));
     });
 
-    test('updates an existing session when user is authenticated', () async {
+    test('When user is inserted (authenticated) Then returns Unit', () async {
       // arrange
       final firebaseUser = MockUser();
 
@@ -225,7 +226,7 @@ void main() {
       expect(result, equals(const Ok<Unit, SessionsFailure>(unit)));
     });
 
-    test('returns an error when firebaseUser is null', () async {
+    test('When current user is null Then returns sessionNotInserted', () async {
       // arrange
       when(firebaseAuth.currentUser).thenReturn(null);
 
