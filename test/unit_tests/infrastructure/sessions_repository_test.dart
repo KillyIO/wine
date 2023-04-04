@@ -26,6 +26,10 @@ void main() {
     await Isar.initializeIsarCore(download: true);
   });
 
+  tearDownAll(() {
+    isar.close(deleteFromDisk: true);
+  });
+
   setUp(() async {
     firebaseAuth = MockFirebaseAuth();
 

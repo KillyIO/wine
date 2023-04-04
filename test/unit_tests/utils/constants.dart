@@ -92,6 +92,15 @@ const testIsarDefaultCover = IsarDefaultCover(
   key: 'key',
   url: testCoverURL,
 );
+final testDefaultCover2 = DefaultCover(
+  key: 'key2',
+  url: CoverURL(testCoverURL),
+);
+const testIsarDefaultCover2 = IsarDefaultCover(
+  id: 1,
+  key: 'key2',
+  url: testCoverURL,
+);
 
 // SECTION Settings
 const testSettings = Settings(
