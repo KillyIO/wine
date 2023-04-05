@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart' hide Query;
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:isar/isar.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
+import 'package:wine/domain/default_covers/default_cover.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
@@ -50,67 +50,49 @@ void main() {
 
       expect(result, equals(const Ok<Unit, DefaultCoversFailure>(unit)));
     });
+  });
+
+  group('fetchDefaultCoverByKey -', () {
+    setUpAll(() async {
+      isar = await Isar.open([IsarDefaultCoverSchema]);
+    });
+
+    setUp(() async {
+      await isar.writeTxn(() async {
+        await isar.defaultCovers.clear();
+      });
+    });
+
+    test('When cover fetched Then return DefaultCover', () async {
+      await isar.writeTxn(() async {
+        await isar.defaultCovers.put(testIsarDefaultCover);
+      });
+
+      final result =
+          await defaultCoversRepository.fetchDefaultCoverByKey('key');
+
+      expect(
+        result,
+        equals(Ok<DefaultCover, DefaultCoversFailure>(testDefaultCover)),
+      );
+    });
 
     test(
-      'When at least one cover not cached The return DefaultCoversNotCached',
+      'When cover not found Then return DefaultCoverNotFetched',
       () async {
-        final result = await defaultCoversRepository
-            .cacheDefaultCovers([testDefaultCover, testDefaultCover2]);
+        final result =
+            await defaultCoversRepository.fetchDefaultCoverByKey('key');
 
         expect(
           result,
           equals(
-            const Err<Unit, DefaultCoversFailure>(
-              DefaultCoversFailure.defaultCoversNotCached(),
+            const Err<DefaultCover, DefaultCoversFailure>(
+              DefaultCoversFailure.defaultCoverNotFetched(),
             ),
           ),
         );
       },
     );
-  });
-
-  group('fetchDefaultCoverByKey -', () {
-    // setUp(() {
-    //   when(() => isar.defaultCovers).thenReturn(collection);
-    //   when(collection.where).thenReturn(where);
-    //   // when(
-    //   //   // ignore: invalid_use_of_protected_member
-    //   //   () => where.addWhereClauseInternal<QAfterWhereClause>(any()),
-    //   // ).thenReturn(uidEqualTo);
-    //   when(uidEqualTo.build).thenReturn(build);
-    // });
-
-    // test('When cover fetched Then return DefaultCover', () async {
-    //   when(build.findFirst).thenAnswer((_) async => testIsarDefaultCover);
-
-    //   final result =
-    //       await defaultCoversRepository.fetchDefaultCoverByKey('key');
-
-    //   expect(result.isOk(), true);
-    //   result.match(
-    //     (ok) => expect(ok, testDefaultCover),
-    //     (_) {},
-    //   );
-    // });
-
-    // test(
-    //   'When cover not found Then return DefaultCoverNotFetched',
-    //   () async {
-    //     when(build.findFirst).thenAnswer((_) async => null);
-
-    //     final result =
-    //         await defaultCoversRepository.fetchDefaultCoverByKey('key');
-
-    //     expect(result.isErr(), true);
-    //     result.match(
-    //       (_) {},
-    //       (err) => expect(
-    //         err,
-    //         const DefaultCoversFailure.defaultCoverNotFetched(),
-    //       ),
-    //     );
-    //   },
-    // );
   });
 
   group('loadDefaultCovers -', () {
