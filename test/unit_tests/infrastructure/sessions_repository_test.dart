@@ -27,7 +27,9 @@ void main() {
   });
 
   tearDownAll(() {
-    isar.close(deleteFromDisk: true);
+    if (isar.isOpen) {
+      isar.close(deleteFromDisk: true);
+    }
   });
 
   setUp(() async {
