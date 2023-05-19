@@ -163,8 +163,7 @@ class _BranchLayoutState extends State<BranchLayout> {
                                 onPressed: () => context.router.push(
                                   TypewriterBranchNewRoute(
                                     previousBranch: state.branch,
-                                    // TODO: add tree to state
-                                    tree: state,
+                                    tree: null,
                                   ),
                                 ),
                               );

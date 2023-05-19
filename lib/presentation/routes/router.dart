@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/auth/dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
+import 'package:wine/domain/branch/branch.dart';
+import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/branch/branch_page.dart';
 import 'package:wine/presentation/home/home_page.dart';
