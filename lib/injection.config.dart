@@ -4,6 +4,10 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// ignore_for_file: unnecessary_lambdas
+// ignore_for_file: lines_longer_than_80_chars
+// coverage:ignore-file
+
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:cloud_firestore/cloud_firestore.dart' as _i5;
 import 'package:firebase_auth/firebase_auth.dart' as _i4;
@@ -50,8 +54,6 @@ import 'package:wine/infrastructure/user/user_repository.dart' as _i15;
 const String _dev = 'dev';
 const String _prod = 'prod';
 
-// ignore_for_file: unnecessary_lambdas
-// ignore_for_file: lines_longer_than_80_chars
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
   Future<_i1.GetIt> init({

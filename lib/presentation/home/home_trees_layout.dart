@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/presentation/core/tree/tree_card.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/images.dart';
 
 /// @nodoc
@@ -64,7 +64,7 @@ class HomeTreesLayout extends StatelessWidget {
       itemBuilder: (_, i) => TreeCard(
         coverURL: trees[i].coverURL.getOrNull(),
         language: trees[i].language.getOrNull(),
-        onPressed: () => context.router.root.push(
+        onPressed: () => context.router.push(
           TreeRoute(
             tree: trees[i],
             uid: trees[i].uid.getOrCrash(),

@@ -9,41 +9,41 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  assorted_layout_widgets: 7.0.0
-  auto_route: 5.0.4
+  assorted_layout_widgets: 8.0.0
+  auto_route: 6.4.0
   bloc: 8.1.1
   cached_network_image: 3.2.3
-  cloud_firestore: 4.4.4
+  cloud_firestore: 4.6.0
   cupertino_icons: 1.0.5
   devicelocale: 0.6.0
   equatable: 2.0.5
-  firebase_auth: 4.2.10
-  firebase_core: 2.7.1
-  firebase_storage: 11.0.15
+  firebase_auth: 4.5.0
+  firebase_core: 2.11.0
+  firebase_storage: 11.1.2
   flare_flutter: 3.0.2
   flutter:
     sdk: flutter
   flutter_bloc: 8.1.2
-  flutter_quill: 6.4.4
+  flutter_quill: 7.1.14
   flutter_staggered_grid_view: 0.6.2
   freezed_annotation: 2.2.0
-  get_it: 7.2.0
-  google_sign_in: 6.0.2
-  image_cropper: 3.0.1
-  image_picker: 0.8.7
-  injectable: 2.1.0
+  get_it: 7.4.1
+  google_sign_in: 6.1.0
+  image_cropper: 3.0.2
+  image_picker: 0.8.7+1
+  injectable: 2.1.1
   intl: 0.18.0
   isar: 3.0.5
   isar_flutter_libs: 3.0.5
   json_annotation: 4.8.0
   like_button: 2.0.5
   line_icons: 2.0.1
-  logger: 1.2.2
+  logger: 1.3.0
   measured_size: 1.0.0
   mime: 1.0.4
   oxidized: 5.3.0
   path: 1.8.3
-  path_provider: 2.0.13
+  path_provider: 2.0.14
   percent_indicator: 4.2.3
   readmore: 2.2.0
   responsive_builder: 0.6.4
@@ -55,7 +55,7 @@ dependencies:
   uuid: 3.0.7
 
 dependency_overrides:
-  analyzer: 5.2.0
+  analyzer: 5.10.0
   ffi: 2.0.1
   image: 3.0.2
   intl: 0.18.0
@@ -63,20 +63,20 @@ dependency_overrides:
   xml: 5.0.0
 
 dev_dependencies:
-  auto_route_generator: 5.0.3
+  auto_route_generator: 6.2.0
   bloc_test: 9.1.1
   build_runner: 2.3.3
-  fake_cloud_firestore: 2.4.0
-  flutter_flavorizr: 2.1.5
+  fake_cloud_firestore: 2.4.1+1
+  flutter_flavorizr: 2.1.6
   flutter_launcher_icons_maker: 0.10.2
   flutter_native_splash: 2.2.19
   flutter_test:
     sdk: flutter
   freezed: 2.3.2
-  injectable_generator: 2.1.4
+  injectable_generator: 2.1.5
   isar_generator: 3.0.5
   json_serializable: 6.6.1
-  mockito: 5.3.2
+  mockito: 5.4.0
   mocktail: 0.3.0
   very_good_analysis: 4.0.0+1
 

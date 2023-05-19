@@ -17,7 +17,7 @@ import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/web/auth_dialog.dart';
 
 import '../../mocks/domain_mocks.dart';

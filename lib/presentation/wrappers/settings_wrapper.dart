@@ -6,6 +6,7 @@ import 'package:wine/injection.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
+@RoutePage()
 class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
   /// @nodoc
   const SettingsWrapper({super.key});

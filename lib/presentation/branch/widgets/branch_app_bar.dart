@@ -41,7 +41,7 @@ class BranchAppBar extends StatelessWidget {
                           Icons.keyboard_backspace_outlined,
                           color: Colors.black,
                         ),
-                        onPressed: context.router.root.pop,
+                        onPressed: context.router.pop,
                         splashColor: Colors.transparent,
                       ),
                     )

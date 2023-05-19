@@ -7,7 +7,7 @@ import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/dialogs/warning_dialog.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_cover.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_genres.dart';
 import 'package:wine/presentation/typewriter/widgets/core/typewriter_selection_dialog.dart';
@@ -21,7 +21,6 @@ import 'package:wine/utils/constants/languages.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/constants/tree.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class TypewriterTreeLayout extends StatelessWidget {
@@ -94,8 +93,8 @@ class TypewriterTreeLayout extends StatelessWidget {
                   .read<LibraryBloc>()
                   .add(LibraryEvent.treeDeleted(state.tree.uid));
 
-              if (context.router.root.canPop()) {
-                context.router.root.pop();
+              if (context.router.canPop()) {
+                context.router.pop();
               }
               break;
             case TypewriterEndState.published:
@@ -109,9 +108,8 @@ class TypewriterTreeLayout extends StatelessWidget {
                   'Your tree has been successfully published.',
                   'You will now be redirected.'
                 ],
-                () => handleAuthRedirect(
-                  context,
-                  navigateTo: TreeRoute(
+                () => context.router.replace(
+                  TreeRoute(
                     tree: state.tree,
                     uid: state.tree.uid.getOrCrash(),
                   ),
@@ -129,10 +127,7 @@ class TypewriterTreeLayout extends StatelessWidget {
                   'Your tree has been successfully saved.',
                   'You will now be redirected.'
                 ],
-                () => handleAuthRedirect(
-                  context,
-                  navigateTo: const LibraryRoute(),
-                ),
+                () => context.router.replace(const LibraryRoute()),
               );
               break;
           }
@@ -385,7 +380,7 @@ class TypewriterTreeLayout extends StatelessWidget {
                                   const TypewriterTreeEvent
                                       .deleteButtonPressed(),
                                 )
-                                ..router.root.pop(true);
+                                ..router.pop(true);
                             },
                           ),
                         ),

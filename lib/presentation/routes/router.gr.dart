@@ -1,50 +1,27 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
-// ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i15;
-import 'package:flutter/material.dart' as _i16;
+part of 'router.dart';
 
-import '../../domain/branch/branch.dart' as _i17;
-import '../../domain/core/typewriter_type.dart' as _i19;
-import '../../domain/tree/tree.dart' as _i18;
-import '../branch/branch_page.dart' as _i1;
-import '../home/home_page.dart' as _i2;
-import '../library/library_page.dart' as _i3;
-import '../log_in/log_in_page.dart' as _i4;
-import '../plus/plus_page.dart' as _i5;
-import '../report/report_page.dart' as _i8;
-import '../settings/settings_account/settings_account_page.dart' as _i11;
-import '../settings/settings_branch/settings_branch_page.dart' as _i12;
-import '../settings/settings_page.dart' as _i14;
-import '../settings/settings_tree/settings_tree_page.dart' as _i13;
-import '../sign_up/sign_up_page.dart' as _i9;
-import '../tree/tree_page.dart' as _i6;
-import '../typewriter/typewriter_page.dart' as _i10;
-import '../wrappers/settings_wrapper.dart' as _i7;
-
-class AppRouter extends _i15.RootStackRouter {
-  AppRouter([_i16.GlobalKey<_i16.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i15.PageFactory> pagesMap = {
+  final Map<String, PageFactory> pagesMap = {
     BranchRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<BranchRouteArgs>(
           orElse: () => BranchRouteArgs(uid: pathParams.getString('id')));
-      return _i15.MaterialPageX<_i1.BranchPage>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.BranchPage(
+        child: BranchPage(
           uid: args.uid,
           key: args.key,
           branch: args.branch,
@@ -52,40 +29,125 @@ class AppRouter extends _i15.RootStackRouter {
       );
     },
     HomeRoute.name: (routeData) {
-      return _i15.MaterialPageX<_i2.HomePage>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.HomePage(),
+        child: const HomePage(),
       );
     },
     LibraryRoute.name: (routeData) {
-      return _i15.MaterialPageX<_i3.LibraryPage>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.LibraryPage(),
+        child: const LibraryPage(),
       );
     },
     LogInRoute.name: (routeData) {
       final args = routeData.argsAs<LogInRouteArgs>();
-      return _i15.MaterialPageX<_i4.LogInPage>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i4.LogInPage(
+        child: LogInPage(
           navigateTo: args.navigateTo,
           key: args.key,
         ),
       );
     },
     PlusRoute.name: (routeData) {
-      return _i15.MaterialPageX<_i5.PlusPage>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.PlusPage(),
+        child: const PlusPage(),
+      );
+    },
+    ReportRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ReportPage(),
+      );
+    },
+    SettingsAccountRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SettingsAccountPage(),
+      );
+    },
+    SettingsBranchRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SettingsBranchPage(),
+      );
+    },
+    SettingsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SettingsPage(),
+      );
+    },
+    SettingsTreeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SettingsTreePage(),
+      );
+    },
+    SignUpRoute.name: (routeData) {
+      final args = routeData.argsAs<SignUpRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SignUpPage(
+          navigateTo: args.navigateTo,
+          key: args.key,
+        ),
       );
     },
     TreeRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<TreeRouteArgs>(
           orElse: () => TreeRouteArgs(uid: pathParams.getString('id')));
-      return _i15.MaterialPageX<_i6.TreePage>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i6.TreePage(
+        child: TreePage(
+          uid: args.uid,
+          key: args.key,
+          tree: args.tree,
+        ),
+      );
+    },
+    TypewriterBranchNewRoute.name: (routeData) {
+      final args = routeData.argsAs<TypewriterBranchNewRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: TypewriterBranchNewPage(
+          tree: args.tree,
+          key: args.key,
+          previousBranch: args.previousBranch,
+        ),
+      );
+    },
+    TypewriterBranchUIDRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TypewriterBranchUIDRouteArgs>(
+          orElse: () =>
+              TypewriterBranchUIDRouteArgs(uid: pathParams.getString('id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: TypewriterBranchUIDPage(
+          uid: args.uid,
+          key: args.key,
+          branch: args.branch,
+        ),
+      );
+    },
+    TypewriterTreeNewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TypewriterTreeNewPage(),
+      );
+    },
+    TypewriterTreeUIDRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TypewriterTreeUIDRouteArgs>(
+          orElse: () =>
+              TypewriterTreeUIDRouteArgs(uid: pathParams.getString('id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: TypewriterTreeUIDPage(
           uid: args.uid,
           key: args.key,
           tree: args.tree,
@@ -93,186 +155,42 @@ class AppRouter extends _i15.RootStackRouter {
       );
     },
     SettingsWrapper.name: (routeData) {
-      return _i15.MaterialPageX<_i7.SettingsWrapper>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i15.WrappedRoute(child: const _i7.SettingsWrapper()),
+        child: WrappedRoute(child: const SettingsWrapper()),
       );
     },
-    ReportRoute.name: (routeData) {
-      return _i15.MaterialPageX<_i8.ReportPage>(
+    TypewriterWrapper.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i8.ReportPage(),
-      );
-    },
-    SignUpRoute.name: (routeData) {
-      final args = routeData.argsAs<SignUpRouteArgs>();
-      return _i15.MaterialPageX<_i9.SignUpPage>(
-        routeData: routeData,
-        child: _i9.SignUpPage(
-          navigateTo: args.navigateTo,
-          key: args.key,
-        ),
-      );
-    },
-    TypewriterBranchUID.name: (routeData) {
-      final pathParams = routeData.inheritedPathParams;
-      final args = routeData.argsAs<TypewriterBranchUIDArgs>(
-          orElse: () =>
-              TypewriterBranchUIDArgs(uid: pathParams.optString('id')));
-      return _i15.MaterialPageX<_i10.TypewriterPage>(
-        routeData: routeData,
-        child: _i10.TypewriterPage(
-          key: args.key,
-          uid: args.uid,
-          branch: args.branch,
-          tree: args.tree,
-          type: args.type,
-        ),
-      );
-    },
-    TypewriterTreeUID.name: (routeData) {
-      final pathParams = routeData.inheritedPathParams;
-      final args = routeData.argsAs<TypewriterTreeUIDArgs>(
-          orElse: () => TypewriterTreeUIDArgs(uid: pathParams.optString('id')));
-      return _i15.MaterialPageX<_i10.TypewriterPage>(
-        routeData: routeData,
-        child: _i10.TypewriterPage(
-          key: args.key,
-          uid: args.uid,
-          branch: args.branch,
-          tree: args.tree,
-          type: args.type,
-        ),
-      );
-    },
-    SettingsAccountRoute.name: (routeData) {
-      return _i15.MaterialPageX<_i11.SettingsAccountPage>(
-        routeData: routeData,
-        child: const _i11.SettingsAccountPage(),
-      );
-    },
-    SettingsBranchRoute.name: (routeData) {
-      return _i15.MaterialPageX<_i12.SettingsBranchPage>(
-        routeData: routeData,
-        child: const _i12.SettingsBranchPage(),
-      );
-    },
-    SettingsTreeRoute.name: (routeData) {
-      return _i15.MaterialPageX<_i13.SettingsTreePage>(
-        routeData: routeData,
-        child: const _i13.SettingsTreePage(),
-      );
-    },
-    SettingsRoute.name: (routeData) {
-      return _i15.MaterialPageX<_i14.SettingsPage>(
-        routeData: routeData,
-        child: const _i14.SettingsPage(),
+        child: WrappedRoute(child: const TypewriterWrapper()),
       );
     },
   };
-
-  @override
-  List<_i15.RouteConfig> get routes => [
-        _i15.RouteConfig(
-          BranchRoute.name,
-          path: '/branch/:id',
-        ),
-        _i15.RouteConfig(
-          HomeRoute.name,
-          path: '/',
-        ),
-        _i15.RouteConfig(
-          LibraryRoute.name,
-          path: '/library',
-        ),
-        _i15.RouteConfig(
-          LogInRoute.name,
-          path: '/log-in',
-        ),
-        _i15.RouteConfig(
-          PlusRoute.name,
-          path: '/plus',
-        ),
-        _i15.RouteConfig(
-          TreeRoute.name,
-          path: '/tree/:id',
-        ),
-        _i15.RouteConfig(
-          SettingsWrapper.name,
-          path: '/settings',
-          children: [
-            _i15.RouteConfig(
-              SettingsAccountRoute.name,
-              path: 'account',
-              parent: SettingsWrapper.name,
-            ),
-            _i15.RouteConfig(
-              SettingsBranchRoute.name,
-              path: 'branch',
-              parent: SettingsWrapper.name,
-            ),
-            _i15.RouteConfig(
-              SettingsTreeRoute.name,
-              path: 'tree',
-              parent: SettingsWrapper.name,
-            ),
-            _i15.RouteConfig(
-              SettingsRoute.name,
-              path: '',
-              parent: SettingsWrapper.name,
-            ),
-          ],
-        ),
-        _i15.RouteConfig(
-          ReportRoute.name,
-          path: '/report/:id',
-        ),
-        _i15.RouteConfig(
-          SignUpRoute.name,
-          path: '/sign-up',
-        ),
-        _i15.RouteConfig(
-          '/typewriter/branch#redirect',
-          path: '/typewriter/branch',
-          redirectTo: '/typewriter/branch/new',
-          fullMatch: true,
-        ),
-        _i15.RouteConfig(
-          TypewriterBranchUID.name,
-          path: '/typewriter/branch/:id',
-        ),
-        _i15.RouteConfig(
-          '/typewriter/tree#redirect',
-          path: '/typewriter/tree',
-          redirectTo: '/typewriter/tree/new',
-          fullMatch: true,
-        ),
-        _i15.RouteConfig(
-          TypewriterTreeUID.name,
-          path: '/typewriter/tree/:id',
-        ),
-      ];
 }
 
 /// generated route for
-/// [_i1.BranchPage]
-class BranchRoute extends _i15.PageRouteInfo<BranchRouteArgs> {
+/// [BranchPage]
+class BranchRoute extends PageRouteInfo<BranchRouteArgs> {
   BranchRoute({
     required String uid,
-    _i16.Key? key,
-    _i17.Branch? branch,
+    Key? key,
+    Branch? branch,
+    List<PageRouteInfo>? children,
   }) : super(
           BranchRoute.name,
-          path: '/branch/:id',
           args: BranchRouteArgs(
             uid: uid,
             key: key,
             branch: branch,
           ),
           rawPathParams: {'id': uid},
+          initialChildren: children,
         );
 
   static const String name = 'BranchRoute';
+
+  static const PageInfo<BranchRouteArgs> page = PageInfo<BranchRouteArgs>(name);
 }
 
 class BranchRouteArgs {
@@ -284,9 +202,9 @@ class BranchRouteArgs {
 
   final String uid;
 
-  final _i16.Key? key;
+  final Key? key;
 
-  final _i17.Branch? branch;
+  final Branch? branch;
 
   @override
   String toString() {
@@ -295,45 +213,52 @@ class BranchRouteArgs {
 }
 
 /// generated route for
-/// [_i2.HomePage]
-class HomeRoute extends _i15.PageRouteInfo<void> {
-  const HomeRoute()
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
       : super(
           HomeRoute.name,
-          path: '/',
+          initialChildren: children,
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i3.LibraryPage]
-class LibraryRoute extends _i15.PageRouteInfo<void> {
-  const LibraryRoute()
+/// [LibraryPage]
+class LibraryRoute extends PageRouteInfo<void> {
+  const LibraryRoute({List<PageRouteInfo>? children})
       : super(
           LibraryRoute.name,
-          path: '/library',
+          initialChildren: children,
         );
 
   static const String name = 'LibraryRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i4.LogInPage]
-class LogInRoute extends _i15.PageRouteInfo<LogInRouteArgs> {
+/// [LogInPage]
+class LogInRoute extends PageRouteInfo<LogInRouteArgs> {
   LogInRoute({
-    required _i15.PageRouteInfo<dynamic> navigateTo,
-    _i16.Key? key,
+    required PageRouteInfo<dynamic> navigateTo,
+    Key? key,
+    List<PageRouteInfo>? children,
   }) : super(
           LogInRoute.name,
-          path: '/log-in',
           args: LogInRouteArgs(
             navigateTo: navigateTo,
             key: key,
           ),
+          initialChildren: children,
         );
 
   static const String name = 'LogInRoute';
+
+  static const PageInfo<LogInRouteArgs> page = PageInfo<LogInRouteArgs>(name);
 }
 
 class LogInRouteArgs {
@@ -342,9 +267,9 @@ class LogInRouteArgs {
     this.key,
   });
 
-  final _i15.PageRouteInfo<dynamic> navigateTo;
+  final PageRouteInfo<dynamic> navigateTo;
 
-  final _i16.Key? key;
+  final Key? key;
 
   @override
   String toString() {
@@ -353,36 +278,148 @@ class LogInRouteArgs {
 }
 
 /// generated route for
-/// [_i5.PlusPage]
-class PlusRoute extends _i15.PageRouteInfo<void> {
-  const PlusRoute()
+/// [PlusPage]
+class PlusRoute extends PageRouteInfo<void> {
+  const PlusRoute({List<PageRouteInfo>? children})
       : super(
           PlusRoute.name,
-          path: '/plus',
+          initialChildren: children,
         );
 
   static const String name = 'PlusRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i6.TreePage]
-class TreeRoute extends _i15.PageRouteInfo<TreeRouteArgs> {
+/// [ReportPage]
+class ReportRoute extends PageRouteInfo<void> {
+  const ReportRoute({List<PageRouteInfo>? children})
+      : super(
+          ReportRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ReportRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsAccountPage]
+class SettingsAccountRoute extends PageRouteInfo<void> {
+  const SettingsAccountRoute({List<PageRouteInfo>? children})
+      : super(
+          SettingsAccountRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsAccountRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsBranchPage]
+class SettingsBranchRoute extends PageRouteInfo<void> {
+  const SettingsBranchRoute({List<PageRouteInfo>? children})
+      : super(
+          SettingsBranchRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsBranchRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsPage]
+class SettingsRoute extends PageRouteInfo<void> {
+  const SettingsRoute({List<PageRouteInfo>? children})
+      : super(
+          SettingsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsTreePage]
+class SettingsTreeRoute extends PageRouteInfo<void> {
+  const SettingsTreeRoute({List<PageRouteInfo>? children})
+      : super(
+          SettingsTreeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsTreeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignUpPage]
+class SignUpRoute extends PageRouteInfo<SignUpRouteArgs> {
+  SignUpRoute({
+    required PageRouteInfo<dynamic> navigateTo,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SignUpRoute.name,
+          args: SignUpRouteArgs(
+            navigateTo: navigateTo,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SignUpRoute';
+
+  static const PageInfo<SignUpRouteArgs> page = PageInfo<SignUpRouteArgs>(name);
+}
+
+class SignUpRouteArgs {
+  const SignUpRouteArgs({
+    required this.navigateTo,
+    this.key,
+  });
+
+  final PageRouteInfo<dynamic> navigateTo;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'SignUpRouteArgs{navigateTo: $navigateTo, key: $key}';
+  }
+}
+
+/// generated route for
+/// [TreePage]
+class TreeRoute extends PageRouteInfo<TreeRouteArgs> {
   TreeRoute({
     required String uid,
-    _i16.Key? key,
-    _i18.Tree? tree,
+    Key? key,
+    Tree? tree,
+    List<PageRouteInfo>? children,
   }) : super(
           TreeRoute.name,
-          path: '/tree/:id',
           args: TreeRouteArgs(
             uid: uid,
             key: key,
             tree: tree,
           ),
           rawPathParams: {'id': uid},
+          initialChildren: children,
         );
 
   static const String name = 'TreeRoute';
+
+  static const PageInfo<TreeRouteArgs> page = PageInfo<TreeRouteArgs>(name);
 }
 
 class TreeRouteArgs {
@@ -394,9 +431,9 @@ class TreeRouteArgs {
 
   final String uid;
 
-  final _i16.Key? key;
+  final Key? key;
 
-  final _i18.Tree? tree;
+  final Tree? tree;
 
   @override
   String toString() {
@@ -405,208 +442,176 @@ class TreeRouteArgs {
 }
 
 /// generated route for
-/// [_i7.SettingsWrapper]
-class SettingsWrapper extends _i15.PageRouteInfo<void> {
-  const SettingsWrapper({List<_i15.PageRouteInfo>? children})
+/// [TypewriterBranchNewPage]
+class TypewriterBranchNewRoute
+    extends PageRouteInfo<TypewriterBranchNewRouteArgs> {
+  TypewriterBranchNewRoute({
+    required Tree? tree,
+    Key? key,
+    Branch? previousBranch,
+    List<PageRouteInfo>? children,
+  }) : super(
+          TypewriterBranchNewRoute.name,
+          args: TypewriterBranchNewRouteArgs(
+            tree: tree,
+            key: key,
+            previousBranch: previousBranch,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'TypewriterBranchNewRoute';
+
+  static const PageInfo<TypewriterBranchNewRouteArgs> page =
+      PageInfo<TypewriterBranchNewRouteArgs>(name);
+}
+
+class TypewriterBranchNewRouteArgs {
+  const TypewriterBranchNewRouteArgs({
+    required this.tree,
+    this.key,
+    this.previousBranch,
+  });
+
+  final Tree? tree;
+
+  final Key? key;
+
+  final Branch? previousBranch;
+
+  @override
+  String toString() {
+    return 'TypewriterBranchNewRouteArgs{tree: $tree, key: $key, previousBranch: $previousBranch}';
+  }
+}
+
+/// generated route for
+/// [TypewriterBranchUIDPage]
+class TypewriterBranchUIDRoute
+    extends PageRouteInfo<TypewriterBranchUIDRouteArgs> {
+  TypewriterBranchUIDRoute({
+    required String uid,
+    Key? key,
+    Branch? branch,
+    List<PageRouteInfo>? children,
+  }) : super(
+          TypewriterBranchUIDRoute.name,
+          args: TypewriterBranchUIDRouteArgs(
+            uid: uid,
+            key: key,
+            branch: branch,
+          ),
+          rawPathParams: {'id': uid},
+          initialChildren: children,
+        );
+
+  static const String name = 'TypewriterBranchUIDRoute';
+
+  static const PageInfo<TypewriterBranchUIDRouteArgs> page =
+      PageInfo<TypewriterBranchUIDRouteArgs>(name);
+}
+
+class TypewriterBranchUIDRouteArgs {
+  const TypewriterBranchUIDRouteArgs({
+    required this.uid,
+    this.key,
+    this.branch,
+  });
+
+  final String uid;
+
+  final Key? key;
+
+  final Branch? branch;
+
+  @override
+  String toString() {
+    return 'TypewriterBranchUIDRouteArgs{uid: $uid, key: $key, branch: $branch}';
+  }
+}
+
+/// generated route for
+/// [TypewriterTreeNewPage]
+class TypewriterTreeNewRoute extends PageRouteInfo<void> {
+  const TypewriterTreeNewRoute({List<PageRouteInfo>? children})
+      : super(
+          TypewriterTreeNewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TypewriterTreeNewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TypewriterTreeUIDPage]
+class TypewriterTreeUIDRoute extends PageRouteInfo<TypewriterTreeUIDRouteArgs> {
+  TypewriterTreeUIDRoute({
+    required String uid,
+    Key? key,
+    Tree? tree,
+    List<PageRouteInfo>? children,
+  }) : super(
+          TypewriterTreeUIDRoute.name,
+          args: TypewriterTreeUIDRouteArgs(
+            uid: uid,
+            key: key,
+            tree: tree,
+          ),
+          rawPathParams: {'id': uid},
+          initialChildren: children,
+        );
+
+  static const String name = 'TypewriterTreeUIDRoute';
+
+  static const PageInfo<TypewriterTreeUIDRouteArgs> page =
+      PageInfo<TypewriterTreeUIDRouteArgs>(name);
+}
+
+class TypewriterTreeUIDRouteArgs {
+  const TypewriterTreeUIDRouteArgs({
+    required this.uid,
+    this.key,
+    this.tree,
+  });
+
+  final String uid;
+
+  final Key? key;
+
+  final Tree? tree;
+
+  @override
+  String toString() {
+    return 'TypewriterTreeUIDRouteArgs{uid: $uid, key: $key, tree: $tree}';
+  }
+}
+
+/// generated route for
+/// [SettingsWrapper]
+class SettingsWrapper extends PageRouteInfo<void> {
+  const SettingsWrapper({List<PageRouteInfo>? children})
       : super(
           SettingsWrapper.name,
-          path: '/settings',
           initialChildren: children,
         );
 
   static const String name = 'SettingsWrapper';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i8.ReportPage]
-class ReportRoute extends _i15.PageRouteInfo<void> {
-  const ReportRoute()
+/// [TypewriterWrapper]
+class TypewriterWrapper extends PageRouteInfo<void> {
+  const TypewriterWrapper({List<PageRouteInfo>? children})
       : super(
-          ReportRoute.name,
-          path: '/report/:id',
+          TypewriterWrapper.name,
+          initialChildren: children,
         );
 
-  static const String name = 'ReportRoute';
-}
+  static const String name = 'TypewriterWrapper';
 
-/// generated route for
-/// [_i9.SignUpPage]
-class SignUpRoute extends _i15.PageRouteInfo<SignUpRouteArgs> {
-  SignUpRoute({
-    required _i15.PageRouteInfo<dynamic> navigateTo,
-    _i16.Key? key,
-  }) : super(
-          SignUpRoute.name,
-          path: '/sign-up',
-          args: SignUpRouteArgs(
-            navigateTo: navigateTo,
-            key: key,
-          ),
-        );
-
-  static const String name = 'SignUpRoute';
-}
-
-class SignUpRouteArgs {
-  const SignUpRouteArgs({
-    required this.navigateTo,
-    this.key,
-  });
-
-  final _i15.PageRouteInfo<dynamic> navigateTo;
-
-  final _i16.Key? key;
-
-  @override
-  String toString() {
-    return 'SignUpRouteArgs{navigateTo: $navigateTo, key: $key}';
-  }
-}
-
-/// generated route for
-/// [_i10.TypewriterPage]
-class TypewriterBranchUID extends _i15.PageRouteInfo<TypewriterBranchUIDArgs> {
-  TypewriterBranchUID({
-    _i16.Key? key,
-    String? uid,
-    _i17.Branch? branch,
-    _i18.Tree? tree,
-    _i19.TypewriterType type = _i19.TypewriterType.unknown,
-  }) : super(
-          TypewriterBranchUID.name,
-          path: '/typewriter/branch/:id',
-          args: TypewriterBranchUIDArgs(
-            key: key,
-            uid: uid,
-            branch: branch,
-            tree: tree,
-            type: type,
-          ),
-          rawPathParams: {'id': uid},
-        );
-
-  static const String name = 'TypewriterBranchUID';
-}
-
-class TypewriterBranchUIDArgs {
-  const TypewriterBranchUIDArgs({
-    this.key,
-    this.uid,
-    this.branch,
-    this.tree,
-    this.type = _i19.TypewriterType.unknown,
-  });
-
-  final _i16.Key? key;
-
-  final String? uid;
-
-  final _i17.Branch? branch;
-
-  final _i18.Tree? tree;
-
-  final _i19.TypewriterType type;
-
-  @override
-  String toString() {
-    return 'TypewriterBranchUIDArgs{key: $key, uid: $uid, branch: $branch, tree: $tree, type: $type}';
-  }
-}
-
-/// generated route for
-/// [_i10.TypewriterPage]
-class TypewriterTreeUID extends _i15.PageRouteInfo<TypewriterTreeUIDArgs> {
-  TypewriterTreeUID({
-    _i16.Key? key,
-    String? uid,
-    _i17.Branch? branch,
-    _i18.Tree? tree,
-    _i19.TypewriterType type = _i19.TypewriterType.unknown,
-  }) : super(
-          TypewriterTreeUID.name,
-          path: '/typewriter/tree/:id',
-          args: TypewriterTreeUIDArgs(
-            key: key,
-            uid: uid,
-            branch: branch,
-            tree: tree,
-            type: type,
-          ),
-          rawPathParams: {'id': uid},
-        );
-
-  static const String name = 'TypewriterTreeUID';
-}
-
-class TypewriterTreeUIDArgs {
-  const TypewriterTreeUIDArgs({
-    this.key,
-    this.uid,
-    this.branch,
-    this.tree,
-    this.type = _i19.TypewriterType.unknown,
-  });
-
-  final _i16.Key? key;
-
-  final String? uid;
-
-  final _i17.Branch? branch;
-
-  final _i18.Tree? tree;
-
-  final _i19.TypewriterType type;
-
-  @override
-  String toString() {
-    return 'TypewriterTreeUIDArgs{key: $key, uid: $uid, branch: $branch, tree: $tree, type: $type}';
-  }
-}
-
-/// generated route for
-/// [_i11.SettingsAccountPage]
-class SettingsAccountRoute extends _i15.PageRouteInfo<void> {
-  const SettingsAccountRoute()
-      : super(
-          SettingsAccountRoute.name,
-          path: 'account',
-        );
-
-  static const String name = 'SettingsAccountRoute';
-}
-
-/// generated route for
-/// [_i12.SettingsBranchPage]
-class SettingsBranchRoute extends _i15.PageRouteInfo<void> {
-  const SettingsBranchRoute()
-      : super(
-          SettingsBranchRoute.name,
-          path: 'branch',
-        );
-
-  static const String name = 'SettingsBranchRoute';
-}
-
-/// generated route for
-/// [_i13.SettingsTreePage]
-class SettingsTreeRoute extends _i15.PageRouteInfo<void> {
-  const SettingsTreeRoute()
-      : super(
-          SettingsTreeRoute.name,
-          path: 'tree',
-        );
-
-  static const String name = 'SettingsTreeRoute';
-}
-
-/// generated route for
-/// [_i14.SettingsPage]
-class SettingsRoute extends _i15.PageRouteInfo<void> {
-  const SettingsRoute()
-      : super(
-          SettingsRoute.name,
-          path: '',
-        );
-
-  static const String name = 'SettingsRoute';
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

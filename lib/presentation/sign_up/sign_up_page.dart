@@ -9,6 +9,7 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
 /// @nodoc
+@RoutePage()
 class SignUpPage extends StatelessWidget {
   /// @nodoc
   const SignUpPage({
@@ -54,7 +55,7 @@ class SignUpPage extends StatelessWidget {
               ),
               onPressed: () {
                 FocusScope.of(context).requestFocus(FocusNode());
-                context.router.root.pop();
+                context.router.pop();
               },
               splashColor: Colors.transparent,
             ),
@@ -64,7 +65,11 @@ class SignUpPage extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (_) => getIt<SignUpBloc>(),
-        child: SafeArea(child: SignUpLayout(navigateTo: navigateTo)),
+        child: SafeArea(
+          child: SignUpLayout(
+            navigateTo: navigateTo,
+          ),
+        ),
       ),
     );
   }

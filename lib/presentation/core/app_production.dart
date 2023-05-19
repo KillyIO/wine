@@ -5,7 +5,7 @@ import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc

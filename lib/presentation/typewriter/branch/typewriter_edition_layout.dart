@@ -277,7 +277,7 @@ class TypewriterEditionLayout extends StatelessWidget {
                             ..read<TypewriterBranchBloc>().add(
                               const TypewriterBranchEvent.deleteButtonPressed(),
                             )
-                            ..router.root.pop(true);
+                            ..router.pop(true);
                         },
                       ),
                     ),

@@ -5,13 +5,12 @@ import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
 import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/typewriter/widgets/branch/typewriter_page_view_builder.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/constants/typewriter.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class TypewriterBranchLayout extends StatelessWidget {
@@ -91,8 +90,8 @@ class TypewriterBranchLayout extends StatelessWidget {
                   .read<LibraryBloc>()
                   .add(LibraryEvent.branchDeleted(state.branch.uid));
 
-              if (context.router.root.canPop()) {
-                context.router.root.pop();
+              if (context.router.canPop()) {
+                context.router.pop();
               }
               break;
             case TypewriterEndState.published:
@@ -106,9 +105,8 @@ class TypewriterBranchLayout extends StatelessWidget {
                   'Your branch has been successfully published.',
                   'You will now be redirected.'
                 ],
-                () => handleAuthRedirect(
-                  context,
-                  navigateTo: BranchRoute(
+                () => context.router.replace(
+                  BranchRoute(
                     branch: state.branch,
                     uid: state.branch.uid.getOrCrash(),
                   ),
@@ -126,11 +124,7 @@ class TypewriterBranchLayout extends StatelessWidget {
                   'Your branch has been successfully saved.',
                   'You will now be redirected.'
                 ],
-                () => handleAuthRedirect(
-                  context,
-                  navigateTo: const LibraryRoute(),
-                  popUntil: state.isEdit,
-                ),
+                () => context.router.replace(const LibraryRoute()),
               );
               break;
           }

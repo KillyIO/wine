@@ -1,20 +1,19 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:measured_size/measured_size.dart';
 import 'package:time/time.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
-import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/presentation/branch/widgets/branch_app_bar.dart';
 import 'package:wine/presentation/branch/widgets/branch_details.dart';
 import 'package:wine/presentation/branch/widgets/next_branches.dart';
 import 'package:wine/presentation/core/branch/branch_leaf_body.dart';
 import 'package:wine/presentation/core/branch/branch_leaf_head.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class BranchLayout extends StatefulWidget {
@@ -161,11 +160,11 @@ class _BranchLayoutState extends State<BranchLayout> {
                                 hasRoundedCorners: true,
                                 title: 'WRITE NEXT BRANCH',
                                 width: mediaQuery.width,
-                                onPressed: () => handleAuthGuardedNavigation(
-                                  context,
-                                  navigateTo: TypewriterBranchUID(
-                                    branch: state.branch,
-                                    type: TypewriterType.branch,
+                                onPressed: () => context.router.push(
+                                  TypewriterBranchNewRoute(
+                                    previousBranch: state.branch,
+                                    // TODO: add tree to state
+                                    tree: state,
                                   ),
                                 ),
                               );

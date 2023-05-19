@@ -17,7 +17,7 @@ import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.dart';
 
 import '../../mocks/domain_mocks.dart';
 import '../../unit_tests/utils/constants.dart';

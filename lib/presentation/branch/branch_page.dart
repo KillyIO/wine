@@ -9,6 +9,7 @@ import 'package:wine/injection.dart';
 import 'package:wine/presentation/branch/branch_layout.dart';
 
 /// @nodoc
+@RoutePage()
 class BranchPage extends StatelessWidget {
   /// @nodoc
   const BranchPage({

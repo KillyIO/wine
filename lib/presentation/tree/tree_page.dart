@@ -12,6 +12,7 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
 /// @nodoc
+@RoutePage()
 class TreePage extends StatelessWidget {
   /// @nodoc
   const TreePage({
@@ -57,7 +58,7 @@ class TreePage extends StatelessWidget {
                       Icons.keyboard_backspace_outlined,
                       color: Colors.black,
                     ),
-                    onPressed: context.router.root.pop,
+                    onPressed: context.router.pop,
                     splashColor: Colors.transparent,
                   ),
                 )

@@ -2,16 +2,16 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/text_fields/authentication_text_field.dart';
 import 'package:wine/presentation/log_in/widgets/log_in_create_account_button.dart';
 import 'package:wine/presentation/log_in/widgets/log_in_separator.dart';
 import 'package:wine/presentation/log_in/widgets/log_in_social_media_button.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
 import 'package:wine/utils/responsive/log_in_responsive.dart';
 
 /// @nodoc
@@ -21,7 +21,6 @@ class LogInLayout extends StatelessWidget {
     required this.navigateTo,
     super.key,
     this.onSignUpButtonPressed,
-    this.useRoot = true,
   });
 
   /// @nodoc
@@ -29,9 +28,6 @@ class LogInLayout extends StatelessWidget {
 
   /// @nodoc
   final VoidCallback? onSignUpButtonPressed;
-
-  /// @nodoc
-  final bool useRoot;
 
   @override
   Widget build(BuildContext context) {
@@ -106,11 +102,9 @@ class LogInLayout extends StatelessWidget {
               'You have been successfully authenticated.',
               'You will now be redirected.'
             ],
-            () => handleAuthRedirect(
-              context,
-              navigateTo: navigateTo,
-              useRoot: useRoot,
-            ),
+            () => context
+              ..read<AuthBloc>().add(const AuthEvent.authChanged())
+              ..router.replace(navigateTo),
           );
         }
       },
@@ -135,7 +129,7 @@ class LogInLayout extends StatelessWidget {
                             Icons.close_outlined,
                             color: Colors.black,
                           ),
-                          onPressed: context.router.root.pop,
+                          onPressed: context.router.pop,
                           splashColor: Colors.transparent,
                         ),
                       ),
@@ -259,10 +253,8 @@ class LogInLayout extends StatelessWidget {
                           onPressed: state.isProcessing
                               ? null
                               : onSignUpButtonPressed ??
-                                  () => context.router.root.push(
-                                        SignUpRoute(
-                                          navigateTo: navigateTo,
-                                        ),
+                                  () => context.router.push(
+                                        SignUpRoute(navigateTo: navigateTo),
                                       ),
                         ),
                       ),

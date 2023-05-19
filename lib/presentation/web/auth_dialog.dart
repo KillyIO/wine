@@ -12,14 +12,10 @@ class AuthDialog extends StatelessWidget {
   const AuthDialog({
     required this.navigateTo,
     super.key,
-    this.useRoot = true,
   });
 
   /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
-
-  /// @nodoc
-  final bool useRoot;
 
   @override
   Widget build(BuildContext context) {
@@ -43,13 +39,11 @@ class AuthDialog extends StatelessWidget {
                 navigateTo: navigateTo,
                 onDialogBackButtonPressed:
                     context.read<AuthDialogCubit>().updateLayout,
-                useRoot: useRoot,
               ),
               orElse: () => LogInLayout(
                 navigateTo: navigateTo,
                 onSignUpButtonPressed:
                     context.read<AuthDialogCubit>().updateLayout,
-                useRoot: useRoot,
               ),
             );
           },

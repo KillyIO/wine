@@ -9,6 +9,7 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
 /// @nodoc
+@RoutePage()
 class LogInPage extends StatelessWidget {
   /// @nodoc
   const LogInPage({
@@ -54,7 +55,7 @@ class LogInPage extends StatelessWidget {
               ),
               onPressed: () {
                 FocusScope.of(context).requestFocus(FocusNode());
-                context.router.root.pop();
+                context.router.pop();
               },
               splashColor: Colors.transparent,
             ),

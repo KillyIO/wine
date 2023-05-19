@@ -6,6 +6,7 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/icons.dart';
 
 /// @nodoc
+@RoutePage()
 class SettingsBranchPage extends StatelessWidget {
   /// @nodoc
   const SettingsBranchPage({super.key});
