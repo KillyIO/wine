@@ -32,7 +32,8 @@ class PlusLayout extends StatelessWidget {
             TileButton(
               key: const Key('plus_settings_button'),
               leadingIconData: LineIcons.cog,
-              onPressed: () => context.router.push(const SettingsWrapper()),
+              onPressed: () =>
+                  context.router.push(const SettingsWrapperRoute()),
               title: 'SETTINGS',
               trailingIconData: Icons.keyboard_arrow_right,
             ),

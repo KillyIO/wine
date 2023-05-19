@@ -154,13 +154,13 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
-    SettingsWrapper.name: (routeData) {
+    SettingsWrapperRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: WrappedRoute(child: const SettingsWrapper()),
       );
     },
-    TypewriterWrapper.name: (routeData) {
+    TypewriterWrapperRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: WrappedRoute(child: const TypewriterWrapper()),
@@ -590,28 +590,28 @@ class TypewriterTreeUIDRouteArgs {
 
 /// generated route for
 /// [SettingsWrapper]
-class SettingsWrapper extends PageRouteInfo<void> {
-  const SettingsWrapper({List<PageRouteInfo>? children})
+class SettingsWrapperRoute extends PageRouteInfo<void> {
+  const SettingsWrapperRoute({List<PageRouteInfo>? children})
       : super(
-          SettingsWrapper.name,
+          SettingsWrapperRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'SettingsWrapper';
+  static const String name = 'SettingsWrapperRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
 /// [TypewriterWrapper]
-class TypewriterWrapper extends PageRouteInfo<void> {
-  const TypewriterWrapper({List<PageRouteInfo>? children})
+class TypewriterWrapperRoute extends PageRouteInfo<void> {
+  const TypewriterWrapperRoute({List<PageRouteInfo>? children})
       : super(
-          TypewriterWrapper.name,
+          TypewriterWrapperRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'TypewriterWrapper';
+  static const String name = 'TypewriterWrapperRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

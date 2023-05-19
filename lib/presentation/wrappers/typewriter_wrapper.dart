@@ -10,7 +10,7 @@ import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
-@RoutePage()
+@RoutePage(name: 'TypewriterWrapperRoute')
 class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
   /// @nodoc
   const TypewriterWrapper({super.key});

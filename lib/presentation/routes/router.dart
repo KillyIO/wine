@@ -26,6 +26,8 @@ import 'package:wine/presentation/typewriter/branch/typewriter_branch_uid_page.d
 import 'package:wine/presentation/typewriter/tree/typewriter_tree_new_page.dart';
 import 'package:wine/presentation/typewriter/tree/typewriter_tree_uid_page.dart';
 import 'package:wine/presentation/web/auth_dialog.dart';
+import 'package:wine/presentation/wrappers/settings_wrapper.dart';
+import 'package:wine/presentation/wrappers/typewriter_wrapper.dart';
 import 'package:wine/utils/constants/paths/router.dart';
 
 part 'router.gr.dart';
@@ -65,7 +67,7 @@ class AppRouter extends _$AppRouter {
       path: reportPagePath,
     ),
     AutoRoute(
-      page: SettingsWrapper.page,
+      page: SettingsWrapperRoute.page,
       path: settingsPagePath,
       children: <AutoRoute>[
         AutoRoute(
@@ -96,7 +98,7 @@ class AppRouter extends _$AppRouter {
       path: treePagePath,
     ),
     AutoRoute(
-      page: TypewriterWrapper.page,
+      page: TypewriterWrapperRoute.page,
       path: typewriterPagePath,
       guards: [getIt<AuthGuard>()],
       children: [
