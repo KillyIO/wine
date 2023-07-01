@@ -93,7 +93,6 @@ class TypewriterBranchLayout extends StatelessWidget {
               if (context.router.canPop()) {
                 context.router.pop();
               }
-              break;
             case TypewriterEndState.published:
               context
                   .read<LibraryBloc>()
@@ -112,7 +111,6 @@ class TypewriterBranchLayout extends StatelessWidget {
                   ),
                 ),
               );
-              break;
             case TypewriterEndState.saved:
               context
                   .read<LibraryBloc>()
@@ -126,6 +124,7 @@ class TypewriterBranchLayout extends StatelessWidget {
                 ],
                 () => context.router.replace(const LibraryRoute()),
               );
+            case TypewriterEndState.unknown:
               break;
           }
         },

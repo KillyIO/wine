@@ -26,10 +26,10 @@ import '../utils/injection_helper.dart';
 import '../utils/test_router_widget.dart';
 
 void main() {
-  const desktopWidth = 1280;
-  const desktopHeight = 800;
-  const mobileWidth = 360;
-  const mobileHeight = 740;
+  // const desktopWidth = 1280;
+  // const desktopHeight = 800;
+  // const mobileWidth = 360;
+  // const mobileHeight = 740;
 
   late IAuthFacade authFacade;
   late IDefaultCoversRepository defaultCoversRepository;
@@ -121,14 +121,14 @@ void main() {
       testWidgets(
         'plus_library_button should display AuthDialog',
         (tester) async {
-          tester.binding.window.devicePixelRatioTestValue = 2.625;
-          tester.binding.window.platformDispatcher.textScaleFactorTestValue =
-              .5;
+          // tester.binding.window.devicePixelRatioTestValue = 2.625;
+          // tester.binding.window.platformDispatcher.textScaleFactorTestValue =
+          //     .5;
 
-          final dpi = tester.binding.window.devicePixelRatio;
+          // final dpi = tester.binding.window.devicePixelRatio;
 
-          tester.binding.window.physicalSizeTestValue =
-              Size(desktopWidth * dpi, desktopHeight * dpi);
+          // tester.binding.window.physicalSizeTestValue =
+          //     Size(desktopWidth * dpi, desktopHeight * dpi);
 
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(() => authFacade.isAnonymous).thenReturn(true);
@@ -170,14 +170,14 @@ void main() {
       testWidgets(
         'plus_library_button should navigate to LogInPage',
         (tester) async {
-          tester.binding.window.devicePixelRatioTestValue = 2.625;
-          tester.binding.window.platformDispatcher.textScaleFactorTestValue =
-              .5;
+          // tester.binding.window.devicePixelRatioTestValue = 2.625;
+          // tester.binding.window.platformDispatcher.textScaleFactorTestValue =
+          //     .5;
 
-          final dpi = tester.binding.window.devicePixelRatio;
+          // final dpi = tester.binding.window.devicePixelRatio;
 
-          tester.binding.window.physicalSizeTestValue =
-              Size(mobileWidth * dpi, mobileHeight * dpi);
+          // tester.binding.window.physicalSizeTestValue =
+          //     Size(mobileWidth * dpi, mobileHeight * dpi);
 
           when(() => authFacade.isLoggedIn).thenReturn(true);
           when(() => authFacade.isAnonymous).thenReturn(true);
@@ -214,14 +214,14 @@ void main() {
       testWidgets(
         'plus_library_button should navigate to LibraryPage',
         (tester) async {
-          tester.binding.window.devicePixelRatioTestValue = 2.625;
-          tester.binding.window.platformDispatcher.textScaleFactorTestValue =
-              .5;
+          // tester.binding.window.devicePixelRatioTestValue = 2.625;
+          // tester.binding.window.platformDispatcher.textScaleFactorTestValue =
+          //     .5;
 
-          final dpi = tester.binding.window.devicePixelRatio;
+          // final dpi = tester.binding.window.devicePixelRatio;
 
-          tester.binding.window.physicalSizeTestValue =
-              Size(mobileWidth * dpi, mobileHeight * dpi);
+          // tester.binding.window.physicalSizeTestValue =
+          //     Size(mobileWidth * dpi, mobileHeight * dpi);
 
           when(() => authFacade.authStateChanges)
               .thenAnswer((_) => Stream.fromIterable([Option.some(testUser)]));

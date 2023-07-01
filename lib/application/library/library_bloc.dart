@@ -168,7 +168,6 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                 },
               );
             }
-            break;
           case 1:
             if (state.branches.isEmpty) {
               (await _branchRepository.loadBranchesByUserUID(state.session.uid))
@@ -193,7 +192,6 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                 },
               );
             }
-            break;
           default:
         }
       }

@@ -87,7 +87,6 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                   if (context.router.canPop()) {
                     context.router.pop();
                   }
-                  break;
                 case TypewriterEndState.published:
                   context
                       .read<LibraryBloc>()
@@ -106,7 +105,6 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                       ),
                     ),
                   );
-                  break;
                 case TypewriterEndState.saved:
                   context
                       .read<LibraryBloc>()
@@ -120,6 +118,7 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                     ],
                     () => context.router.push(const LibraryRoute()),
                   );
+                case TypewriterEndState.unknown:
                   break;
               }
             },
@@ -190,7 +189,6 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                   if (context.router.canPop()) {
                     context.router.pop();
                   }
-                  break;
                 case TypewriterEndState.published:
                   context
                       .read<LibraryBloc>()
@@ -209,7 +207,6 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                       ),
                     ),
                   );
-                  break;
                 case TypewriterEndState.saved:
                   context
                       .read<LibraryBloc>()
@@ -223,6 +220,7 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                     ],
                     () => context.router.push(const LibraryRoute()),
                   );
+                case TypewriterEndState.unknown:
                   break;
               }
             },

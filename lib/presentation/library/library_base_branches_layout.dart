@@ -66,7 +66,6 @@ class LibraryBaseBranchesLayout extends StatelessWidget {
                         uid: branches[i].uid.getOrCrash(),
                       ),
                     );
-                    break;
                   default:
                     context.router.push(
                       BranchRoute(

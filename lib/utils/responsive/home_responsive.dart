@@ -8,17 +8,15 @@ EdgeInsets getDefaultAppBarButtonPadding(
 }) {
   final deviceType = getDeviceType(size);
 
-  switch (deviceType) {
-    case DeviceScreenType.desktop:
-      return isRight
-          ? const EdgeInsets.only(right: 10)
-          : const EdgeInsets.only(left: 10);
-    case DeviceScreenType.tablet:
-      return isRight
-          ? const EdgeInsets.only(right: 5)
-          : const EdgeInsets.only(left: 5);
-  }
-  return EdgeInsets.zero;
+  return switch (deviceType) {
+    DeviceScreenType.desktop => isRight
+        ? const EdgeInsets.only(right: 10)
+        : const EdgeInsets.only(left: 10),
+    DeviceScreenType.tablet => isRight
+        ? const EdgeInsets.only(right: 5)
+        : const EdgeInsets.only(left: 5),
+    _ => EdgeInsets.zero,
+  };
 }
 
 /// @nodoc

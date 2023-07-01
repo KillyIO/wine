@@ -111,23 +111,27 @@ class BranchDetails extends StatelessWidget {
                             isBookmarked: bState.isBookmarked,
                             isLiked: bState.isLiked,
                             likesCount: bState.branch.likesCount,
-                            onBookmarkTap: (isBookmarked) async {
-                              context.read<BranchBloc>().add(
-                                    BranchEvent.bookmarkButtonPressed(
-                                      isBookmarked: isBookmarked,
-                                    ),
-                                  );
+                            onBookmarkTap: ({bool? bookmarked}) async {
+                              if (bookmarked != null) {
+                                context.read<BranchBloc>().add(
+                                      BranchEvent.bookmarkButtonPressed(
+                                        isBookmarked: bookmarked,
+                                      ),
+                                    );
+                              }
 
                               return bState.isBookmarked;
                             },
-                            onLikeTap: (isLiked) async {
+                            onLikeTap: ({bool? liked}) async {
                               return aState.maybeMap(
                                 authenticated: (_) async {
-                                  context.read<BranchBloc>().add(
-                                        BranchEvent.likeButtonPressed(
-                                          isLiked: isLiked,
-                                        ),
-                                      );
+                                  if (liked != null) {
+                                    context.read<BranchBloc>().add(
+                                          BranchEvent.likeButtonPressed(
+                                            isLiked: liked,
+                                          ),
+                                        );
+                                  }
 
                                   return bState.isLiked;
                                 },

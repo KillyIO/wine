@@ -72,7 +72,6 @@ class LibraryBaseTreesLayout extends StatelessWidget {
                         uid: trees[i].uid.getOrCrash(),
                       ),
                     );
-                    break;
                   default:
                     context.router.push(
                       TreeRoute(

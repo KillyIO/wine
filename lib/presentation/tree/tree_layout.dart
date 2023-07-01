@@ -120,19 +120,23 @@ class TreeLayout extends StatelessWidget {
                         isBookmarked: state.isBookmarked,
                         isLiked: state.isLiked,
                         likesCount: state.tree.likesCount,
-                        onBookmarkTap: (isBookmarked) async {
-                          context.read<TreeBloc>().add(
-                                TreeEvent.bookmarkButtonPressed(
-                                  isBookmarked: isBookmarked,
-                                ),
-                              );
+                        onBookmarkTap: ({bool? bookmarked}) async {
+                          if (bookmarked != null) {
+                            context.read<TreeBloc>().add(
+                                  TreeEvent.bookmarkButtonPressed(
+                                    isBookmarked: bookmarked,
+                                  ),
+                                );
+                          }
 
                           return state.isBookmarked;
                         },
-                        onLikeTap: (isLiked) async {
-                          context.read<TreeBloc>().add(
-                                TreeEvent.likeButtonPressed(isLiked: isLiked),
-                              );
+                        onLikeTap: ({bool? liked}) async {
+                          if (liked != null) {
+                            context.read<TreeBloc>().add(
+                                  TreeEvent.likeButtonPressed(isLiked: liked),
+                                );
+                          }
 
                           return state.isLiked;
                         },

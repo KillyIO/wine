@@ -10,8 +10,8 @@ class HomeSplashLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: const <Widget>[
+    return const Stack(
+      children: <Widget>[
         FlareActor(
           logoAnimation,
           animation: 'logo',

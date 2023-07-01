@@ -33,7 +33,7 @@ void main() {
 
   group('cacheDefaultCovers -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarDefaultCoverSchema]);
+      isar = await Isar.open([IsarDefaultCoverSchema], directory: '');
 
       await isar.writeTxn(() async {
         await isar.defaultCovers.clear();
@@ -54,7 +54,7 @@ void main() {
 
   group('fetchDefaultCoverByKey -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarDefaultCoverSchema]);
+      isar = await Isar.open([IsarDefaultCoverSchema], directory: '');
     });
 
     setUp(() async {

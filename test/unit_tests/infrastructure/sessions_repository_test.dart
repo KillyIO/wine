@@ -40,7 +40,7 @@ void main() {
 
   group('deleteSession -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarUserSchema]);
+      isar = await Isar.open([IsarUserSchema], directory: '');
 
       await isar.writeTxn(() async {
         await isar.users.clear();
@@ -112,7 +112,7 @@ void main() {
 
   group('fetchSession -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarUserSchema]);
+      isar = await Isar.open([IsarUserSchema], directory: '');
 
       await isar.writeTxn(() async {
         await isar.users.clear();
@@ -191,7 +191,7 @@ void main() {
 
   group('insertSession -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarUserSchema]);
+      isar = await Isar.open([IsarUserSchema], directory: '');
 
       await isar.writeTxn(() async {
         await isar.users.clear();

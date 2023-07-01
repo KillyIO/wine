@@ -85,11 +85,9 @@ double getDialogTitleFontSize(Size size) {
 double getDialogWidth(Size size) {
   final deviceType = getDeviceType(size);
 
-  switch (deviceType) {
-    case DeviceScreenType.desktop:
-      return 500;
-    case DeviceScreenType.tablet:
-      return 350;
-  }
-  return 300;
+  return switch (deviceType) {
+    DeviceScreenType.desktop => 500,
+    DeviceScreenType.tablet => 350,
+    _ => 300,
+  };
 }

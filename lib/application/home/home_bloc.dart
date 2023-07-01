@@ -95,12 +95,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             if (state.topTrees.isEmpty) {
               add(const HomeEvent.loadTopTree());
             }
-            break;
           case 1:
             if (state.newTrees.isEmpty) {
               add(const HomeEvent.loadNewTree());
             }
-            break;
           default:
         }
       }

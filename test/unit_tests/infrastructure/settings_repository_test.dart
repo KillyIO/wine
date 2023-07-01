@@ -29,7 +29,7 @@ void main() {
 
   group('deleteSettings -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarSettingsSchema]);
+      isar = await Isar.open([IsarSettingsSchema], directory: '');
 
       await isar.writeTxn(() async {
         await isar.settings.clear();
@@ -70,7 +70,7 @@ void main() {
 
   group('fetchSettings -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarSettingsSchema]);
+      isar = await Isar.open([IsarSettingsSchema], directory: '');
 
       await isar.writeTxn(() async {
         await isar.settings.clear();
@@ -111,7 +111,7 @@ void main() {
 
   group('initializeSettings -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarSettingsSchema]);
+      isar = await Isar.open([IsarSettingsSchema], directory: '');
 
       await isar.writeTxn(() async {
         await isar.settings.clear();
@@ -131,7 +131,7 @@ void main() {
 
   group('updateSettings -', () {
     setUpAll(() async {
-      isar = await Isar.open([IsarSettingsSchema]);
+      isar = await Isar.open([IsarSettingsSchema], directory: '');
 
       await isar.writeTxn(() async {
         await isar.settings.clear();
