@@ -86,6 +86,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SettingsTreePage(),
       );
     },
+    SettingsWrapperRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const SettingsWrapper()),
+      );
+    },
     SignUpRoute.name: (routeData) {
       final args = routeData.argsAs<SignUpRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -152,12 +158,6 @@ abstract class _$AppRouter extends RootStackRouter {
           key: args.key,
           tree: args.tree,
         ),
-      );
-    },
-    SettingsWrapperRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const SettingsWrapper()),
       );
     },
     TypewriterWrapperRoute.name: (routeData) {
@@ -357,6 +357,20 @@ class SettingsTreeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SettingsTreeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsWrapper]
+class SettingsWrapperRoute extends PageRouteInfo<void> {
+  const SettingsWrapperRoute({List<PageRouteInfo>? children})
+      : super(
+          SettingsWrapperRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsWrapperRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -586,20 +600,6 @@ class TypewriterTreeUIDRouteArgs {
   String toString() {
     return 'TypewriterTreeUIDRouteArgs{uid: $uid, key: $key, tree: $tree}';
   }
-}
-
-/// generated route for
-/// [SettingsWrapper]
-class SettingsWrapperRoute extends PageRouteInfo<void> {
-  const SettingsWrapperRoute({List<PageRouteInfo>? children})
-      : super(
-          SettingsWrapperRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SettingsWrapperRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

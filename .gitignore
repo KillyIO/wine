@@ -80,6 +80,8 @@
 **/ios/Flutter/flutter_assets/
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/firebase_app_id_file.json
+**/ios/Runner/GoogleService-Info.plist
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -99,3 +101,6 @@ lib/production_firebase_options.dart
 isar.dll
 
 .fvm/flutter_sdk
+
+default.isar
+default.isar-lck

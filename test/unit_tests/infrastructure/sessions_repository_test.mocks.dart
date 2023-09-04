@@ -159,14 +159,14 @@ class MockUser extends _i1.Mock implements _i3.User {
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
   @override
-  _i5.Future<String> getIdToken([bool? forceRefresh = false]) =>
+  _i5.Future<String?> getIdToken([bool? forceRefresh = false]) =>
       (super.noSuchMethod(
         Invocation.method(
           #getIdToken,
           [forceRefresh],
         ),
-        returnValue: _i5.Future<String>.value(''),
-      ) as _i5.Future<String>);
+        returnValue: _i5.Future<String?>.value(),
+      ) as _i5.Future<String?>);
   @override
   _i5.Future<_i2.IdTokenResult> getIdTokenResult(
           [bool? forceRefresh = false]) =>
@@ -702,7 +702,7 @@ class MockFirebaseAuth extends _i1.Mock implements _i3.FirebaseAuth {
       ) as _i5.Future<void>);
   @override
   _i5.Future<void> setSettings({
-    bool? appVerificationDisabledForTesting,
+    bool? appVerificationDisabledForTesting = false,
     String? userAccessGroup,
     String? phoneNumber,
     String? smsCode,
@@ -1044,6 +1044,17 @@ class MockFirebaseAuth extends _i1.Mock implements _i3.FirebaseAuth {
             #forceResendingToken: forceResendingToken,
             #multiFactorSession: multiFactorSession,
           },
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+  @override
+  _i5.Future<void> revokeTokenWithAuthorizationCode(
+          String? authorizationCode) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #revokeTokenWithAuthorizationCode,
+          [authorizationCode],
         ),
         returnValue: _i5.Future<void>.value(),
         returnValueForMissingStub: _i5.Future<void>.value(),

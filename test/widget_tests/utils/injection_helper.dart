@@ -13,6 +13,7 @@ import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/routes/guards/auth_guard.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
 import '../../mocks/branch_mocks.dart';
@@ -34,6 +35,7 @@ Future<void> setupInjection() async {
   final ISettingsRepository settingsRepository = MockSettingsRepository();
   final ITreeRepository treeRepository = MockTreeRepository();
   final IUserRepository userRepository = MockUserRepository();
+  final authBloc = AuthBloc(authFacade);
 
   getIt
     ..registerLazySingleton<IAuthFacade>(() => authFacade)
@@ -44,7 +46,7 @@ Future<void> setupInjection() async {
     ..registerLazySingleton<ISettingsRepository>(() => settingsRepository)
     ..registerLazySingleton<ITreeRepository>(() => treeRepository)
     ..registerLazySingleton<IUserRepository>(() => userRepository)
-    ..registerLazySingleton<AuthBloc>(() => AuthBloc(authFacade))
+    ..registerLazySingleton<AuthBloc>(() => authBloc)
     ..registerLazySingleton<AuthDialogCubit>(AuthDialogCubit.new)
     ..registerLazySingleton<HomeBloc>(() => HomeBloc(treeRepository))
     ..registerLazySingleton<LibraryBloc>(
@@ -70,5 +72,6 @@ Future<void> setupInjection() async {
         settingsRepository,
         userRepository,
       ),
-    );
+    )
+    ..registerLazySingleton<AuthGuard>(() => AuthGuard(authBloc));
 }

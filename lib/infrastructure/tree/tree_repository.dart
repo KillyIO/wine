@@ -461,8 +461,8 @@ class TreeRepository implements ITreeRepository {
       final ref = _firebaseStorage.ref().child(
             '$treeCoversPath/${DateTime.now().millisecondsSinceEpoch}-$fileName',
           );
-      final uploadTask = await ref.putFile(cover);
-      final state = uploadTask.state;
+      final uploadTask = ref.putFile(cover);
+      final state = uploadTask.snapshot.state;
 
       if (state == TaskState.success) {
         final url = await ref.getDownloadURL();
