@@ -6,10 +6,8 @@ import 'package:wine/presentation/settings/settings_account/settings_account_lay
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/icons.dart';
 
-/// @nodoc
 @RoutePage()
 class SettingsAccountPage extends StatelessWidget {
-  /// @nodoc
   const SettingsAccountPage({super.key});
 
   @override

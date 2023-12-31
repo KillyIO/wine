@@ -4,16 +4,13 @@ import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
-/// @nodoc
 class UniqueID extends ValueObject<String> {
-  /// @nodoc
   factory UniqueID() {
     return UniqueID._(
-      Ok(const Uuid().v1()),
+      Ok(const Uuid().v4()),
     );
   }
 
-  /// @nodoc
   factory UniqueID.fromUniqueString(String uidStr) {
     return UniqueID._(
       validateUniqueID(uidStr),

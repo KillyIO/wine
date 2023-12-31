@@ -98,11 +98,11 @@ class _$SettingsDTOCopyWithImpl<$Res, $Val extends SettingsDTO>
 }
 
 /// @nodoc
-abstract class _$$_SettingsDTOCopyWith<$Res>
+abstract class _$$SettingsDTOImplCopyWith<$Res>
     implements $SettingsDTOCopyWith<$Res> {
-  factory _$$_SettingsDTOCopyWith(
-          _$_SettingsDTO value, $Res Function(_$_SettingsDTO) then) =
-      __$$_SettingsDTOCopyWithImpl<$Res>;
+  factory _$$SettingsDTOImplCopyWith(
+          _$SettingsDTOImpl value, $Res Function(_$SettingsDTOImpl) then) =
+      __$$SettingsDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,11 +115,11 @@ abstract class _$$_SettingsDTOCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SettingsDTOCopyWithImpl<$Res>
-    extends _$SettingsDTOCopyWithImpl<$Res, _$_SettingsDTO>
-    implements _$$_SettingsDTOCopyWith<$Res> {
-  __$$_SettingsDTOCopyWithImpl(
-      _$_SettingsDTO _value, $Res Function(_$_SettingsDTO) _then)
+class __$$SettingsDTOImplCopyWithImpl<$Res>
+    extends _$SettingsDTOCopyWithImpl<$Res, _$SettingsDTOImpl>
+    implements _$$SettingsDTOImplCopyWith<$Res> {
+  __$$SettingsDTOImplCopyWithImpl(
+      _$SettingsDTOImpl _value, $Res Function(_$SettingsDTOImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,7 +132,7 @@ class __$$_SettingsDTOCopyWithImpl<$Res>
     Object? enableTreesLikesCount = freezed,
     Object? enableTreesViewsCount = freezed,
   }) {
-    return _then(_$_SettingsDTO(
+    return _then(_$SettingsDTOImpl(
       enableBranchesBookmarksCount: freezed == enableBranchesBookmarksCount
           ? _value.enableBranchesBookmarksCount
           : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class __$$_SettingsDTOCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SettingsDTO implements _SettingsDTO {
-  _$_SettingsDTO(
+class _$SettingsDTOImpl implements _SettingsDTO {
+  _$SettingsDTOImpl(
       {required this.enableBranchesBookmarksCount,
       required this.enableBranchesLikesCount,
       required this.enableBranchesViewsCount,
@@ -172,8 +172,8 @@ class _$_SettingsDTO implements _SettingsDTO {
       required this.enableTreesLikesCount,
       required this.enableTreesViewsCount});
 
-  factory _$_SettingsDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_SettingsDTOFromJson(json);
+  factory _$SettingsDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SettingsDTOImplFromJson(json);
 
   @override
   final bool? enableBranchesBookmarksCount;
@@ -197,7 +197,7 @@ class _$_SettingsDTO implements _SettingsDTO {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsDTO &&
+            other is _$SettingsDTOImpl &&
             (identical(other.enableBranchesBookmarksCount,
                     enableBranchesBookmarksCount) ||
                 other.enableBranchesBookmarksCount ==
@@ -231,12 +231,12 @@ class _$_SettingsDTO implements _SettingsDTO {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SettingsDTOCopyWith<_$_SettingsDTO> get copyWith =>
-      __$$_SettingsDTOCopyWithImpl<_$_SettingsDTO>(this, _$identity);
+  _$$SettingsDTOImplCopyWith<_$SettingsDTOImpl> get copyWith =>
+      __$$SettingsDTOImplCopyWithImpl<_$SettingsDTOImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SettingsDTOToJson(
+    return _$$SettingsDTOImplToJson(
       this,
     );
   }
@@ -249,10 +249,10 @@ abstract class _SettingsDTO implements SettingsDTO {
       required final bool? enableBranchesViewsCount,
       required final bool? enableTreesBookmarksCount,
       required final bool? enableTreesLikesCount,
-      required final bool? enableTreesViewsCount}) = _$_SettingsDTO;
+      required final bool? enableTreesViewsCount}) = _$SettingsDTOImpl;
 
   factory _SettingsDTO.fromJson(Map<String, dynamic> json) =
-      _$_SettingsDTO.fromJson;
+      _$SettingsDTOImpl.fromJson;
 
   @override
   bool? get enableBranchesBookmarksCount;
@@ -268,6 +268,6 @@ abstract class _SettingsDTO implements SettingsDTO {
   bool? get enableTreesViewsCount;
   @override
   @JsonKey(ignore: true)
-  _$$_SettingsDTOCopyWith<_$_SettingsDTO> get copyWith =>
+  _$$SettingsDTOImplCopyWith<_$SettingsDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

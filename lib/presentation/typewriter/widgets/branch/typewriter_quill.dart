@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quill/flutter_quill.dart' hide Text;
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class TypewriterQuill extends StatelessWidget {
-  /// @nodoc
   const TypewriterQuill({
     required this.controller,
     required this.errorMessage,
@@ -16,95 +14,91 @@ class TypewriterQuill extends StatelessWidget {
     super.key,
   });
 
-  /// @nodoc
   final QuillController controller;
 
-  /// @nodoc
   final String errorMessage;
 
-  /// @nodoc
   final String hintText;
 
-  /// @nodoc
   final String label;
 
-  /// @nodoc
   final String wordCount;
 
-  /// @nodoc
   final bool wordCountError;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        TextFieldLabel(title: label),
-        DecoratedBox(
-          decoration: const BoxDecoration(
-            border: Border.symmetric(
-              horizontal: BorderSide(
-                color: Colors.black26,
-                width: 2,
-              ),
-            ),
-          ),
-          child: QuillToolbar.basic(
-            controller: controller,
-            showSmallButton: true,
-            showColorButton: false,
-            showBackgroundColorButton: false,
-            showAlignmentButtons: true,
-            showLink: false,
-            multiRowsDisplay: false,
-            toolbarIconAlignment: WrapAlignment.start,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: DecoratedBox(
-            decoration: const BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
+    return QuillProvider(
+      configurations: QuillConfigurations(controller: controller),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextFieldLabel(title: label),
+          const DecoratedBox(
+            decoration: BoxDecoration(
+              border: Border.symmetric(
+                horizontal: BorderSide(
                   color: Colors.black26,
                   width: 2,
                 ),
               ),
             ),
-            child: QuillEditor(
-              autoFocus: false,
-              controller: controller,
-              focusNode: FocusNode(),
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              placeholder: hintText,
-              readOnly: false,
-              scrollable: false,
-              scrollController: ScrollController(),
-              expands: false,
+            child: QuillToolbar(
+              configurations: QuillToolbarConfigurations(
+                showSmallButton: true,
+                showColorButton: false,
+                showBackgroundColorButton: false,
+                showAlignmentButtons: true,
+                showLink: false,
+                multiRowsDisplay: false,
+                toolbarIconAlignment: WrapAlignment.start,
+              ),
             ),
           ),
-        ),
-        if (wordCountError)
           Padding(
-            padding: const EdgeInsets.only(top: 5, left: 20),
+            padding: const EdgeInsets.only(top: 20),
+            child: DecoratedBox(
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.black26,
+                    width: 2,
+                  ),
+                ),
+              ),
+              child: QuillEditor(
+                configurations: QuillEditorConfigurations(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  placeholder: hintText,
+                  scrollable: false,
+                ),
+                focusNode: FocusNode(),
+                scrollController: ScrollController(),
+              ),
+            ),
+          ),
+          if (wordCountError)
+            Padding(
+              padding: const EdgeInsets.only(top: 5, left: 20),
+              child: Text(
+                errorMessage,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: wordCountError ? error : Colors.black,
+                ),
+              ),
+            ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5, left: 20, bottom: 25),
             child: Text(
-              errorMessage,
+              wordCount,
               style: TextStyle(
-                fontSize: 12,
                 color: wordCountError ? error : Colors.black,
               ),
             ),
           ),
-        Padding(
-          padding: const EdgeInsets.only(top: 5, left: 20, bottom: 25),
-          child: Text(
-            wordCount,
-            style: TextStyle(
-              color: wordCountError ? error : Colors.black,
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

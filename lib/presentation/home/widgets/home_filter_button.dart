@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class HomeFilterButton extends StatelessWidget {
-  /// @nodoc
   const HomeFilterButton({
     required this.isActive,
     required this.onPressed,
@@ -10,13 +8,10 @@ class HomeFilterButton extends StatelessWidget {
     super.key,
   });
 
-  /// @nodoc
   final bool isActive;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
-  /// @nodoc
   final String title;
 
   @override

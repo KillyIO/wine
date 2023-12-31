@@ -1,14 +1,10 @@
 part of 'auth_bloc.dart';
 
-/// @nodoc
 @freezed
-class AuthState with _$AuthState {
-  /// @nodoc
+sealed class AuthState with _$AuthState {
   const factory AuthState.anonymous() = _Anonymous;
 
-  /// @nodoc
   const factory AuthState.authenticated() = _Authenticated;
 
-  /// @nodoc
   const factory AuthState.initial() = _Initial;
 }

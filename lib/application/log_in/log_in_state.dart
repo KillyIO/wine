@@ -1,9 +1,7 @@
 part of 'log_in_bloc.dart';
 
-/// @nodoc
 @freezed
 class LogInState with _$LogInState {
-  /// @nodoc
   const factory LogInState({
     required EmailAddress emailAddress,
     required Option<Result<None, CoreFailure>> failureOption,
@@ -13,7 +11,6 @@ class LogInState with _$LogInState {
     required bool showErrorMessages,
   }) = _LogInState;
 
-  /// @nodoc
   factory LogInState.initial() => LogInState(
         emailAddress: EmailAddress(''),
         failureOption: const None(),

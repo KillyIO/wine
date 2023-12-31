@@ -3,9 +3,7 @@ import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
-/// @nodoc
 class Description extends ValueObject<String> {
-  /// @nodoc
   factory Description(String input) {
     return Description._(
       validateDescription(input),

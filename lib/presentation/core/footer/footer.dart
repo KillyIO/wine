@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class Footer extends StatelessWidget {
-  /// @nodoc
   const Footer({super.key});
 
   @override

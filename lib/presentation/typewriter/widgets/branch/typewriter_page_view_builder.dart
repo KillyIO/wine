@@ -4,15 +4,12 @@ import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
 import 'package:wine/presentation/typewriter/branch/typewriter_edition_layout.dart';
 import 'package:wine/presentation/typewriter/branch/typewriter_preview_layout.dart';
 
-/// @nodoc
 class TypewriterPageViewBuilder extends StatelessWidget {
-  /// @nodoc
   TypewriterPageViewBuilder({
     required this.pageController,
     super.key,
   });
 
-  /// @nodoc
   final PageController pageController;
 
   final List<Widget> _pageViewLayouts = <Widget>[

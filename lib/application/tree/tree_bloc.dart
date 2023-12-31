@@ -21,12 +21,8 @@ part 'tree_bloc.freezed.dart';
 part 'tree_event.dart';
 part 'tree_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class TreeBloc extends Bloc<TreeEvent, TreeState> {
-  /// @nodoc
   TreeBloc(
     this._authFacade,
     this._branchRepository,

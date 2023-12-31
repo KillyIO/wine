@@ -6,7 +6,8 @@ part of 'tree_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TreeDTO _$$_TreeDTOFromJson(Map<String, dynamic> json) => _$_TreeDTO(
+_$TreeDTOImpl _$$TreeDTOImplFromJson(Map<String, dynamic> json) =>
+    _$TreeDTOImpl(
       authorUID: json['authorUID'] as String,
       bookmarksCount: json['bookmarksCount'] as int,
       coverURL: json['coverURL'] as String,
@@ -25,7 +26,7 @@ _$_TreeDTO _$$_TreeDTOFromJson(Map<String, dynamic> json) => _$_TreeDTO(
       subtitle: json['subtitle'] as String?,
     );
 
-Map<String, dynamic> _$$_TreeDTOToJson(_$_TreeDTO instance) =>
+Map<String, dynamic> _$$TreeDTOImplToJson(_$TreeDTOImpl instance) =>
     <String, dynamic>{
       'authorUID': instance.authorUID,
       'bookmarksCount': instance.bookmarksCount,

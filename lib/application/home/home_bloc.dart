@@ -12,12 +12,10 @@ part 'home_bloc.freezed.dart';
 part 'home_event.dart';
 part 'home_state.dart';
 
-/// @nodoc
 @Environment(Environment.dev)
 @Environment(Environment.prod)
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  /// @nodoc
   HomeBloc(
     this._treeRepository,
   ) : super(HomeState.initial()) {

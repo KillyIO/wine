@@ -11,10 +11,8 @@ import 'package:wine/infrastructure/user/isar_user.dart';
 part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
 
-/// @nodoc
 @freezed
 class UserDTO with _$UserDTO {
-  /// @nodoc
   factory UserDTO({
     required String emailAddress,
     required String uid,
@@ -22,7 +20,6 @@ class UserDTO with _$UserDTO {
     required String username,
   }) = _UserDTO;
 
-  /// @nodoc
   factory UserDTO.fromDomain(User user) {
     return UserDTO(
       emailAddress: user.emailAddress.getOrCrash(),
@@ -32,7 +29,6 @@ class UserDTO with _$UserDTO {
     );
   }
 
-  /// @nodoc
   factory UserDTO.fromAdapter(IsarUser user) {
     return UserDTO(
       emailAddress: user.emailAddress,
@@ -42,21 +38,17 @@ class UserDTO with _$UserDTO {
     );
   }
 
-  /// @nodoc
   factory UserDTO.fromJson(Map<String, dynamic> json) =>
       _$UserDTOFromJson(json);
 }
 
-/// @nodoc
 extension UserDTOX on UserDTO {
-  /// @nodoc
   User toDomain() => User(
         emailAddress: EmailAddress(emailAddress),
         uid: UniqueID.fromUniqueString(uid),
         username: Username(username),
       );
 
-  /// @nodoc
   IsarUser toAdapter() => IsarUser(
         emailAddress: emailAddress,
         uid: uid,
@@ -64,7 +56,6 @@ extension UserDTOX on UserDTO {
         username: username,
       );
 
-  /// @nodoc
   Map<String, dynamic> toMap() => <String, dynamic>{
         'emailAddress': emailAddress,
         'uid': uid,
@@ -72,9 +63,7 @@ extension UserDTOX on UserDTO {
       };
 }
 
-/// @nodoc
 extension UserMapX on Map<dynamic, dynamic> {
-  /// @nodoc
   User toDomain() => User(
         emailAddress: EmailAddress(this['emailAddress'] as String),
         uid: UniqueID.fromUniqueString(this['uid'] as String),
@@ -82,9 +71,7 @@ extension UserMapX on Map<dynamic, dynamic> {
       );
 }
 
-/// @nodoc
 extension UserX on auth.User {
-  /// @nodoc
   User toDomain() => User(
         emailAddress: EmailAddress(email!),
         uid: UniqueID.fromUniqueString(uid),

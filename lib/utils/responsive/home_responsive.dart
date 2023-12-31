@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-/// @nodoc
 EdgeInsets getDefaultAppBarButtonPadding(
   Size size, {
   bool isRight = false,
@@ -19,7 +18,6 @@ EdgeInsets getDefaultAppBarButtonPadding(
   };
 }
 
-/// @nodoc
 bool isMenuContentBottom(Size size) {
   final deviceType = getDeviceType(size);
 

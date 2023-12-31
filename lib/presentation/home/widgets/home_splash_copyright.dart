@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class HomeSplashCopyright extends StatelessWidget {
-  /// @nodoc
   const HomeSplashCopyright({super.key});
 
   @override

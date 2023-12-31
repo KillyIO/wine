@@ -8,19 +8,15 @@ import 'package:wine/presentation/core/tree/tree_card.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/images.dart';
 
-/// @nodoc
 class LibraryBaseTreesLayout extends StatelessWidget {
-  /// @nodoc
   const LibraryBaseTreesLayout({
     required this.trees,
     required this.type,
     super.key,
   });
 
-  /// @nodoc
   final List<Tree> trees;
 
-  /// @nodoc
   final String type;
 
   @override

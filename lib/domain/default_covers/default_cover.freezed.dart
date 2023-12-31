@@ -63,22 +63,22 @@ class _$DefaultCoverCopyWithImpl<$Res, $Val extends DefaultCover>
 }
 
 /// @nodoc
-abstract class _$$_DefaultCoverCopyWith<$Res>
+abstract class _$$DefaultCoverImplCopyWith<$Res>
     implements $DefaultCoverCopyWith<$Res> {
-  factory _$$_DefaultCoverCopyWith(
-          _$_DefaultCover value, $Res Function(_$_DefaultCover) then) =
-      __$$_DefaultCoverCopyWithImpl<$Res>;
+  factory _$$DefaultCoverImplCopyWith(
+          _$DefaultCoverImpl value, $Res Function(_$DefaultCoverImpl) then) =
+      __$$DefaultCoverImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String key, CoverURL url});
 }
 
 /// @nodoc
-class __$$_DefaultCoverCopyWithImpl<$Res>
-    extends _$DefaultCoverCopyWithImpl<$Res, _$_DefaultCover>
-    implements _$$_DefaultCoverCopyWith<$Res> {
-  __$$_DefaultCoverCopyWithImpl(
-      _$_DefaultCover _value, $Res Function(_$_DefaultCover) _then)
+class __$$DefaultCoverImplCopyWithImpl<$Res>
+    extends _$DefaultCoverCopyWithImpl<$Res, _$DefaultCoverImpl>
+    implements _$$DefaultCoverImplCopyWith<$Res> {
+  __$$DefaultCoverImplCopyWithImpl(
+      _$DefaultCoverImpl _value, $Res Function(_$DefaultCoverImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_DefaultCoverCopyWithImpl<$Res>
     Object? key = null,
     Object? url = null,
   }) {
-    return _then(_$_DefaultCover(
+    return _then(_$DefaultCoverImpl(
       key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_DefaultCoverCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DefaultCover implements _DefaultCover {
-  _$_DefaultCover({required this.key, required this.url});
+class _$DefaultCoverImpl implements _DefaultCover {
+  _$DefaultCoverImpl({required this.key, required this.url});
 
   @override
   final String key;
@@ -119,7 +119,7 @@ class _$_DefaultCover implements _DefaultCover {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DefaultCover &&
+            other is _$DefaultCoverImpl &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.url, url) || other.url == url));
   }
@@ -130,14 +130,14 @@ class _$_DefaultCover implements _DefaultCover {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DefaultCoverCopyWith<_$_DefaultCover> get copyWith =>
-      __$$_DefaultCoverCopyWithImpl<_$_DefaultCover>(this, _$identity);
+  _$$DefaultCoverImplCopyWith<_$DefaultCoverImpl> get copyWith =>
+      __$$DefaultCoverImplCopyWithImpl<_$DefaultCoverImpl>(this, _$identity);
 }
 
 abstract class _DefaultCover implements DefaultCover {
   factory _DefaultCover(
       {required final String key,
-      required final CoverURL url}) = _$_DefaultCover;
+      required final CoverURL url}) = _$DefaultCoverImpl;
 
   @override
   String get key;
@@ -145,6 +145,6 @@ abstract class _DefaultCover implements DefaultCover {
   CoverURL get url;
   @override
   @JsonKey(ignore: true)
-  _$$_DefaultCoverCopyWith<_$_DefaultCover> get copyWith =>
+  _$$DefaultCoverImplCopyWith<_$DefaultCoverImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

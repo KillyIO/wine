@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-/// @nodoc
 EdgeInsets getAssetBackButtonPadding(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -11,7 +10,6 @@ EdgeInsets getAssetBackButtonPadding(Size size) {
   return const EdgeInsets.only(left: 10);
 }
 
-/// @nodoc
 double? getHorizontalPageViewNavbarButtonFontSize(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -21,7 +19,6 @@ double? getHorizontalPageViewNavbarButtonFontSize(Size size) {
   return null;
 }
 
-/// @nodoc
 double getHorizontalPageViewNavbarHeight(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -31,7 +28,6 @@ double getHorizontalPageViewNavbarHeight(Size size) {
   return 30;
 }
 
-/// @nodoc
 Border getTileButtonBorder(Size size, {bool isFirst = false}) {
   final deviceType = getDeviceType(size);
 

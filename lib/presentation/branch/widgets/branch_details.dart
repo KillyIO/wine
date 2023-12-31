@@ -10,9 +10,7 @@ import 'package:wine/presentation/core/common/content_genres.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class BranchDetails extends StatelessWidget {
-  /// @nodoc
   const BranchDetails({super.key});
 
   @override

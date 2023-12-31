@@ -104,22 +104,24 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
 }
 
 /// @nodoc
-abstract class _$$InitCopyWith<$Res> {
-  factory _$$InitCopyWith(_$Init value, $Res Function(_$Init) then) =
-      __$$InitCopyWithImpl<$Res>;
+abstract class _$$InitImplCopyWith<$Res> {
+  factory _$$InitImplCopyWith(
+          _$InitImpl value, $Res Function(_$InitImpl) then) =
+      __$$InitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res, _$Init>
-    implements _$$InitCopyWith<$Res> {
-  __$$InitCopyWithImpl(_$Init _value, $Res Function(_$Init) _then)
+class __$$InitImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$InitImpl>
+    implements _$$InitImplCopyWith<$Res> {
+  __$$InitImplCopyWithImpl(_$InitImpl _value, $Res Function(_$InitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Init implements Init {
-  const _$Init();
+class _$InitImpl implements Init {
+  const _$InitImpl();
 
   @override
   String toString() {
@@ -129,7 +131,7 @@ class _$Init implements Init {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Init);
+        (other.runtimeType == runtimeType && other is _$InitImpl);
   }
 
   @override
@@ -229,24 +231,24 @@ class _$Init implements Init {
 }
 
 abstract class Init implements HomeEvent {
-  const factory Init() = _$Init;
+  const factory Init() = _$InitImpl;
 }
 
 /// @nodoc
-abstract class _$$PageViewIndexChangedCopyWith<$Res> {
-  factory _$$PageViewIndexChangedCopyWith(_$PageViewIndexChanged value,
-          $Res Function(_$PageViewIndexChanged) then) =
-      __$$PageViewIndexChangedCopyWithImpl<$Res>;
+abstract class _$$PageViewIndexChangedImplCopyWith<$Res> {
+  factory _$$PageViewIndexChangedImplCopyWith(_$PageViewIndexChangedImpl value,
+          $Res Function(_$PageViewIndexChangedImpl) then) =
+      __$$PageViewIndexChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$PageViewIndexChangedCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$PageViewIndexChanged>
-    implements _$$PageViewIndexChangedCopyWith<$Res> {
-  __$$PageViewIndexChangedCopyWithImpl(_$PageViewIndexChanged _value,
-      $Res Function(_$PageViewIndexChanged) _then)
+class __$$PageViewIndexChangedImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$PageViewIndexChangedImpl>
+    implements _$$PageViewIndexChangedImplCopyWith<$Res> {
+  __$$PageViewIndexChangedImplCopyWithImpl(_$PageViewIndexChangedImpl _value,
+      $Res Function(_$PageViewIndexChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -254,7 +256,7 @@ class __$$PageViewIndexChangedCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$PageViewIndexChanged(
+    return _then(_$PageViewIndexChangedImpl(
       null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -265,8 +267,8 @@ class __$$PageViewIndexChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PageViewIndexChanged implements PageViewIndexChanged {
-  const _$PageViewIndexChanged(this.index);
+class _$PageViewIndexChangedImpl implements PageViewIndexChanged {
+  const _$PageViewIndexChangedImpl(this.index);
 
   @override
   final int index;
@@ -280,7 +282,7 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PageViewIndexChanged &&
+            other is _$PageViewIndexChangedImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -290,9 +292,10 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
-      __$$PageViewIndexChangedCopyWithImpl<_$PageViewIndexChanged>(
-          this, _$identity);
+  _$$PageViewIndexChangedImplCopyWith<_$PageViewIndexChangedImpl>
+      get copyWith =>
+          __$$PageViewIndexChangedImplCopyWithImpl<_$PageViewIndexChangedImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -388,34 +391,35 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 }
 
 abstract class PageViewIndexChanged implements HomeEvent {
-  const factory PageViewIndexChanged(final int index) = _$PageViewIndexChanged;
+  const factory PageViewIndexChanged(final int index) =
+      _$PageViewIndexChangedImpl;
 
   int get index;
   @JsonKey(ignore: true)
-  _$$PageViewIndexChangedCopyWith<_$PageViewIndexChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PageViewIndexChangedImplCopyWith<_$PageViewIndexChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadNewTreeCopyWith<$Res> {
-  factory _$$LoadNewTreeCopyWith(
-          _$LoadNewTree value, $Res Function(_$LoadNewTree) then) =
-      __$$LoadNewTreeCopyWithImpl<$Res>;
+abstract class _$$LoadNewTreeImplCopyWith<$Res> {
+  factory _$$LoadNewTreeImplCopyWith(
+          _$LoadNewTreeImpl value, $Res Function(_$LoadNewTreeImpl) then) =
+      __$$LoadNewTreeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadNewTreeCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$LoadNewTree>
-    implements _$$LoadNewTreeCopyWith<$Res> {
-  __$$LoadNewTreeCopyWithImpl(
-      _$LoadNewTree _value, $Res Function(_$LoadNewTree) _then)
+class __$$LoadNewTreeImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadNewTreeImpl>
+    implements _$$LoadNewTreeImplCopyWith<$Res> {
+  __$$LoadNewTreeImplCopyWithImpl(
+      _$LoadNewTreeImpl _value, $Res Function(_$LoadNewTreeImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadNewTree implements LoadNewTree {
-  const _$LoadNewTree();
+class _$LoadNewTreeImpl implements LoadNewTree {
+  const _$LoadNewTreeImpl();
 
   @override
   String toString() {
@@ -425,7 +429,7 @@ class _$LoadNewTree implements LoadNewTree {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadNewTree);
+        (other.runtimeType == runtimeType && other is _$LoadNewTreeImpl);
   }
 
   @override
@@ -525,29 +529,29 @@ class _$LoadNewTree implements LoadNewTree {
 }
 
 abstract class LoadNewTree implements HomeEvent {
-  const factory LoadNewTree() = _$LoadNewTree;
+  const factory LoadNewTree() = _$LoadNewTreeImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadTopTreeCopyWith<$Res> {
-  factory _$$LoadTopTreeCopyWith(
-          _$LoadTopTree value, $Res Function(_$LoadTopTree) then) =
-      __$$LoadTopTreeCopyWithImpl<$Res>;
+abstract class _$$LoadTopTreeImplCopyWith<$Res> {
+  factory _$$LoadTopTreeImplCopyWith(
+          _$LoadTopTreeImpl value, $Res Function(_$LoadTopTreeImpl) then) =
+      __$$LoadTopTreeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadTopTreeCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$LoadTopTree>
-    implements _$$LoadTopTreeCopyWith<$Res> {
-  __$$LoadTopTreeCopyWithImpl(
-      _$LoadTopTree _value, $Res Function(_$LoadTopTree) _then)
+class __$$LoadTopTreeImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadTopTreeImpl>
+    implements _$$LoadTopTreeImplCopyWith<$Res> {
+  __$$LoadTopTreeImplCopyWithImpl(
+      _$LoadTopTreeImpl _value, $Res Function(_$LoadTopTreeImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadTopTree implements LoadTopTree {
-  const _$LoadTopTree();
+class _$LoadTopTreeImpl implements LoadTopTree {
+  const _$LoadTopTreeImpl();
 
   @override
   String toString() {
@@ -557,7 +561,7 @@ class _$LoadTopTree implements LoadTopTree {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadTopTree);
+        (other.runtimeType == runtimeType && other is _$LoadTopTreeImpl);
   }
 
   @override
@@ -657,24 +661,24 @@ class _$LoadTopTree implements LoadTopTree {
 }
 
 abstract class LoadTopTree implements HomeEvent {
-  const factory LoadTopTree() = _$LoadTopTree;
+  const factory LoadTopTree() = _$LoadTopTreeImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadTreeByGenreCopyWith<$Res> {
-  factory _$$LoadTreeByGenreCopyWith(
-          _$LoadTreeByGenre value, $Res Function(_$LoadTreeByGenre) then) =
-      __$$LoadTreeByGenreCopyWithImpl<$Res>;
+abstract class _$$LoadTreeByGenreImplCopyWith<$Res> {
+  factory _$$LoadTreeByGenreImplCopyWith(_$LoadTreeByGenreImpl value,
+          $Res Function(_$LoadTreeByGenreImpl) then) =
+      __$$LoadTreeByGenreImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String key});
 }
 
 /// @nodoc
-class __$$LoadTreeByGenreCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByGenre>
-    implements _$$LoadTreeByGenreCopyWith<$Res> {
-  __$$LoadTreeByGenreCopyWithImpl(
-      _$LoadTreeByGenre _value, $Res Function(_$LoadTreeByGenre) _then)
+class __$$LoadTreeByGenreImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByGenreImpl>
+    implements _$$LoadTreeByGenreImplCopyWith<$Res> {
+  __$$LoadTreeByGenreImplCopyWithImpl(
+      _$LoadTreeByGenreImpl _value, $Res Function(_$LoadTreeByGenreImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -682,7 +686,7 @@ class __$$LoadTreeByGenreCopyWithImpl<$Res>
   $Res call({
     Object? key = null,
   }) {
-    return _then(_$LoadTreeByGenre(
+    return _then(_$LoadTreeByGenreImpl(
       null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -693,8 +697,8 @@ class __$$LoadTreeByGenreCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadTreeByGenre implements LoadTreeByGenre {
-  const _$LoadTreeByGenre(this.key);
+class _$LoadTreeByGenreImpl implements LoadTreeByGenre {
+  const _$LoadTreeByGenreImpl(this.key);
 
   @override
   final String key;
@@ -708,7 +712,7 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadTreeByGenre &&
+            other is _$LoadTreeByGenreImpl &&
             (identical(other.key, key) || other.key == key));
   }
 
@@ -718,8 +722,9 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadTreeByGenreCopyWith<_$LoadTreeByGenre> get copyWith =>
-      __$$LoadTreeByGenreCopyWithImpl<_$LoadTreeByGenre>(this, _$identity);
+  _$$LoadTreeByGenreImplCopyWith<_$LoadTreeByGenreImpl> get copyWith =>
+      __$$LoadTreeByGenreImplCopyWithImpl<_$LoadTreeByGenreImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -815,29 +820,29 @@ class _$LoadTreeByGenre implements LoadTreeByGenre {
 }
 
 abstract class LoadTreeByGenre implements HomeEvent {
-  const factory LoadTreeByGenre(final String key) = _$LoadTreeByGenre;
+  const factory LoadTreeByGenre(final String key) = _$LoadTreeByGenreImpl;
 
   String get key;
   @JsonKey(ignore: true)
-  _$$LoadTreeByGenreCopyWith<_$LoadTreeByGenre> get copyWith =>
+  _$$LoadTreeByGenreImplCopyWith<_$LoadTreeByGenreImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadTreeByLanguageCopyWith<$Res> {
-  factory _$$LoadTreeByLanguageCopyWith(_$LoadTreeByLanguage value,
-          $Res Function(_$LoadTreeByLanguage) then) =
-      __$$LoadTreeByLanguageCopyWithImpl<$Res>;
+abstract class _$$LoadTreeByLanguageImplCopyWith<$Res> {
+  factory _$$LoadTreeByLanguageImplCopyWith(_$LoadTreeByLanguageImpl value,
+          $Res Function(_$LoadTreeByLanguageImpl) then) =
+      __$$LoadTreeByLanguageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String key});
 }
 
 /// @nodoc
-class __$$LoadTreeByLanguageCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByLanguage>
-    implements _$$LoadTreeByLanguageCopyWith<$Res> {
-  __$$LoadTreeByLanguageCopyWithImpl(
-      _$LoadTreeByLanguage _value, $Res Function(_$LoadTreeByLanguage) _then)
+class __$$LoadTreeByLanguageImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByLanguageImpl>
+    implements _$$LoadTreeByLanguageImplCopyWith<$Res> {
+  __$$LoadTreeByLanguageImplCopyWithImpl(_$LoadTreeByLanguageImpl _value,
+      $Res Function(_$LoadTreeByLanguageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -845,7 +850,7 @@ class __$$LoadTreeByLanguageCopyWithImpl<$Res>
   $Res call({
     Object? key = null,
   }) {
-    return _then(_$LoadTreeByLanguage(
+    return _then(_$LoadTreeByLanguageImpl(
       null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -856,8 +861,8 @@ class __$$LoadTreeByLanguageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadTreeByLanguage implements LoadTreeByLanguage {
-  const _$LoadTreeByLanguage(this.key);
+class _$LoadTreeByLanguageImpl implements LoadTreeByLanguage {
+  const _$LoadTreeByLanguageImpl(this.key);
 
   @override
   final String key;
@@ -871,7 +876,7 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadTreeByLanguage &&
+            other is _$LoadTreeByLanguageImpl &&
             (identical(other.key, key) || other.key == key));
   }
 
@@ -881,8 +886,8 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadTreeByLanguageCopyWith<_$LoadTreeByLanguage> get copyWith =>
-      __$$LoadTreeByLanguageCopyWithImpl<_$LoadTreeByLanguage>(
+  _$$LoadTreeByLanguageImplCopyWith<_$LoadTreeByLanguageImpl> get copyWith =>
+      __$$LoadTreeByLanguageImplCopyWithImpl<_$LoadTreeByLanguageImpl>(
           this, _$identity);
 
   @override
@@ -979,29 +984,29 @@ class _$LoadTreeByLanguage implements LoadTreeByLanguage {
 }
 
 abstract class LoadTreeByLanguage implements HomeEvent {
-  const factory LoadTreeByLanguage(final String key) = _$LoadTreeByLanguage;
+  const factory LoadTreeByLanguage(final String key) = _$LoadTreeByLanguageImpl;
 
   String get key;
   @JsonKey(ignore: true)
-  _$$LoadTreeByLanguageCopyWith<_$LoadTreeByLanguage> get copyWith =>
+  _$$LoadTreeByLanguageImplCopyWith<_$LoadTreeByLanguageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadTreeByTimeCopyWith<$Res> {
-  factory _$$LoadTreeByTimeCopyWith(
-          _$LoadTreeByTime value, $Res Function(_$LoadTreeByTime) then) =
-      __$$LoadTreeByTimeCopyWithImpl<$Res>;
+abstract class _$$LoadTreeByTimeImplCopyWith<$Res> {
+  factory _$$LoadTreeByTimeImplCopyWith(_$LoadTreeByTimeImpl value,
+          $Res Function(_$LoadTreeByTimeImpl) then) =
+      __$$LoadTreeByTimeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String key});
 }
 
 /// @nodoc
-class __$$LoadTreeByTimeCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByTime>
-    implements _$$LoadTreeByTimeCopyWith<$Res> {
-  __$$LoadTreeByTimeCopyWithImpl(
-      _$LoadTreeByTime _value, $Res Function(_$LoadTreeByTime) _then)
+class __$$LoadTreeByTimeImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadTreeByTimeImpl>
+    implements _$$LoadTreeByTimeImplCopyWith<$Res> {
+  __$$LoadTreeByTimeImplCopyWithImpl(
+      _$LoadTreeByTimeImpl _value, $Res Function(_$LoadTreeByTimeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1009,7 +1014,7 @@ class __$$LoadTreeByTimeCopyWithImpl<$Res>
   $Res call({
     Object? key = null,
   }) {
-    return _then(_$LoadTreeByTime(
+    return _then(_$LoadTreeByTimeImpl(
       null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -1020,8 +1025,8 @@ class __$$LoadTreeByTimeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadTreeByTime implements LoadTreeByTime {
-  const _$LoadTreeByTime(this.key);
+class _$LoadTreeByTimeImpl implements LoadTreeByTime {
+  const _$LoadTreeByTimeImpl(this.key);
 
   @override
   final String key;
@@ -1035,7 +1040,7 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadTreeByTime &&
+            other is _$LoadTreeByTimeImpl &&
             (identical(other.key, key) || other.key == key));
   }
 
@@ -1045,8 +1050,9 @@ class _$LoadTreeByTime implements LoadTreeByTime {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadTreeByTimeCopyWith<_$LoadTreeByTime> get copyWith =>
-      __$$LoadTreeByTimeCopyWithImpl<_$LoadTreeByTime>(this, _$identity);
+  _$$LoadTreeByTimeImplCopyWith<_$LoadTreeByTimeImpl> get copyWith =>
+      __$$LoadTreeByTimeImplCopyWithImpl<_$LoadTreeByTimeImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1142,11 +1148,11 @@ class _$LoadTreeByTime implements LoadTreeByTime {
 }
 
 abstract class LoadTreeByTime implements HomeEvent {
-  const factory LoadTreeByTime(final String key) = _$LoadTreeByTime;
+  const factory LoadTreeByTime(final String key) = _$LoadTreeByTimeImpl;
 
   String get key;
   @JsonKey(ignore: true)
-  _$$LoadTreeByTimeCopyWith<_$LoadTreeByTime> get copyWith =>
+  _$$LoadTreeByTimeImplCopyWith<_$LoadTreeByTimeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1243,10 +1249,11 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 }
 
 /// @nodoc
-abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
-  factory _$$_HomeStateCopyWith(
-          _$_HomeState value, $Res Function(_$_HomeState) then) =
-      __$$_HomeStateCopyWithImpl<$Res>;
+abstract class _$$HomeStateImplCopyWith<$Res>
+    implements $HomeStateCopyWith<$Res> {
+  factory _$$HomeStateImplCopyWith(
+          _$HomeStateImpl value, $Res Function(_$HomeStateImpl) then) =
+      __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1261,11 +1268,11 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_HomeStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$_HomeState>
-    implements _$$_HomeStateCopyWith<$Res> {
-  __$$_HomeStateCopyWithImpl(
-      _$_HomeState _value, $Res Function(_$_HomeState) _then)
+class __$$HomeStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeStateImpl>
+    implements _$$HomeStateImplCopyWith<$Res> {
+  __$$HomeStateImplCopyWithImpl(
+      _$HomeStateImpl _value, $Res Function(_$HomeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1280,7 +1287,7 @@ class __$$_HomeStateCopyWithImpl<$Res>
     Object? timeFilterKey = null,
     Object? topTrees = null,
   }) {
-    return _then(_$_HomeState(
+    return _then(_$HomeStateImpl(
       currentPageViewIdx: null == currentPageViewIdx
           ? _value.currentPageViewIdx
           : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
@@ -1319,8 +1326,8 @@ class __$$_HomeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_HomeState implements _HomeState {
-  const _$_HomeState(
+class _$HomeStateImpl implements _HomeState {
+  const _$HomeStateImpl(
       {required this.currentPageViewIdx,
       required this.failureOption,
       required this.genreFilterKey,
@@ -1369,7 +1376,7 @@ class _$_HomeState implements _HomeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomeState &&
+            other is _$HomeStateImpl &&
             (identical(other.currentPageViewIdx, currentPageViewIdx) ||
                 other.currentPageViewIdx == currentPageViewIdx) &&
             (identical(other.failureOption, failureOption) ||
@@ -1401,8 +1408,8 @@ class _$_HomeState implements _HomeState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
-      __$$_HomeStateCopyWithImpl<_$_HomeState>(this, _$identity);
+  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
+      __$$HomeStateImplCopyWithImpl<_$HomeStateImpl>(this, _$identity);
 }
 
 abstract class _HomeState implements HomeState {
@@ -1414,7 +1421,7 @@ abstract class _HomeState implements HomeState {
       required final String languageFilterKey,
       required final List<Tree> newTrees,
       required final String timeFilterKey,
-      required final List<Tree> topTrees}) = _$_HomeState;
+      required final List<Tree> topTrees}) = _$HomeStateImpl;
 
   @override
   int get currentPageViewIdx;
@@ -1434,6 +1441,6 @@ abstract class _HomeState implements HomeState {
   List<Tree> get topTrees;
   @override
   @JsonKey(ignore: true)
-  _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
+  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

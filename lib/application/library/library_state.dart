@@ -1,9 +1,7 @@
 part of 'library_bloc.dart';
 
-/// @nodoc
 @freezed
 class LibraryState with _$LibraryState {
-  /// [treeList]: Used to display "published" and "drafts" page views.
   const factory LibraryState({
     required List<Branch> bookmarkedBranches,
     required List<Tree> bookmarkedTree,
@@ -16,7 +14,6 @@ class LibraryState with _$LibraryState {
     required List<Tree> trees,
   }) = _LibraryState;
 
-  /// @nodoc
   factory LibraryState.initial() => LibraryState(
         bookmarkedBranches: <Branch>[],
         bookmarkedTree: <Tree>[],

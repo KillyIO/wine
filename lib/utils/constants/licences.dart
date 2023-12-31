@@ -1,4 +1,3 @@
-/// @nodoc
 List<String> licencesKeys = <String>[
   'ccBy',
   'ccBySa',

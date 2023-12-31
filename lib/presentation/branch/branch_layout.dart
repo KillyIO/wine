@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:measured_size/measured_size.dart';
+import 'package:measure_size/measure_size.dart';
 import 'package:time/time.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/presentation/branch/widgets/branch_app_bar.dart';
@@ -15,9 +15,7 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 class BranchLayout extends StatefulWidget {
-  /// @nodoc
   const BranchLayout({super.key});
 
   @override
@@ -141,7 +139,7 @@ class _BranchLayoutState extends State<BranchLayout> {
                           padding: const EdgeInsets.symmetric(vertical: 50),
                           child: BlocBuilder<BranchBloc, BranchState>(
                             builder: (context, state) {
-                              return MeasuredSize(
+                              return MeasureSize(
                                 onChange: (size) =>
                                     setState(() => _size = size),
                                 child: BranchLeafBody(
@@ -246,7 +244,7 @@ class _BranchLayoutState extends State<BranchLayout> {
             const Align(
               alignment: Alignment.bottomCenter,
               child: BranchDetails(),
-            )
+            ),
           ],
         ),
       ),

@@ -6,9 +6,7 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/drawer_responsive.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';
 
-/// @nodoc
 class HomeMenuLayout extends StatelessWidget {
-  /// @nodoc
   const HomeMenuLayout({super.key});
 
   @override

@@ -10,19 +10,15 @@ import 'package:wine/presentation/sign_up/widgets/sign_up_tos_and_pp_button.dart
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 class SignUpLayout extends StatelessWidget {
-  /// @nodoc
   const SignUpLayout({
     required this.navigateTo,
     super.key,
     this.onDialogBackButtonPressed,
   });
 
-  /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
 
-  /// @nodoc
   final VoidCallback? onDialogBackButtonPressed;
 
   @override
@@ -91,11 +87,12 @@ class SignUpLayout extends StatelessWidget {
             context,
             <String>[
               'You have been successfully authenticated.',
-              'You will now be redirected.'
+              'You will now be redirected.',
             ],
-            () => context
+            onNavigate: () => context
               ..read<AuthBloc>().add(const AuthEvent.authChanged())
               ..router.replace(navigateTo),
+            onRouterPop: () => context.router.pop<bool>(true),
           );
         }
       },

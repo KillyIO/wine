@@ -4,9 +4,7 @@ import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
 import 'package:wine/presentation/core/branch/branch_leaf_body.dart';
 import 'package:wine/presentation/core/branch/branch_leaf_head.dart';
 
-/// @nodoc
 class TypewriterPreviewLayout extends StatelessWidget {
-  /// @nodoc
   const TypewriterPreviewLayout({super.key});
 
   @override
@@ -32,7 +30,7 @@ class TypewriterPreviewLayout extends StatelessWidget {
               );
             },
           ),
-        )
+        ),
       ],
     );
   }

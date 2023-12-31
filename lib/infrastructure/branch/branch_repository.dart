@@ -15,13 +15,11 @@ import 'package:wine/infrastructure/branch/branch_dto.dart';
 import 'package:wine/utils/constants/paths/branch.dart';
 import 'package:wine/utils/constants/paths/storage.dart';
 
-/// @nodoc
 @LazySingleton(
   as: IBranchRepository,
   env: [Environment.dev, Environment.prod],
 )
 class BranchRepository implements IBranchRepository {
-  /// @nodoc
   BranchRepository(this._firestore, this._firebaseStorage);
 
   final FirebaseFirestore _firestore;

@@ -6,10 +6,8 @@ import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/home_layout.dart';
 
-/// @nodoc
 @RoutePage()
 class HomePage extends StatelessWidget {
-  /// @nodoc
   const HomePage({super.key});
 
   @override

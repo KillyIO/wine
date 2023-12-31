@@ -6,7 +6,8 @@ part of 'branch_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_BranchDTO _$$_BranchDTOFromJson(Map<String, dynamic> json) => _$_BranchDTO(
+_$BranchDTOImpl _$$BranchDTOImplFromJson(Map<String, dynamic> json) =>
+    _$BranchDTOImpl(
       authorUID: json['authorUID'] as String,
       bookmarksCount: json['bookmarksCount'] as int,
       coverURL: json['coverURL'] as String,
@@ -28,7 +29,7 @@ _$_BranchDTO _$$_BranchDTOFromJson(Map<String, dynamic> json) => _$_BranchDTO(
       viewsCount: json['viewsCount'] as int,
     );
 
-Map<String, dynamic> _$$_BranchDTOToJson(_$_BranchDTO instance) =>
+Map<String, dynamic> _$$BranchDTOImplToJson(_$BranchDTOImpl instance) =>
     <String, dynamic>{
       'authorUID': instance.authorUID,
       'bookmarksCount': instance.bookmarksCount,

@@ -1,14 +1,10 @@
 part of 'auth_bloc.dart';
 
-/// @nodoc
 @freezed
-class AuthEvent with _$AuthEvent {
-  /// @nodoc
+sealed class AuthEvent with _$AuthEvent {
   const factory AuthEvent.authChanged() = AuthChanged;
 
-  /// @nodoc
-  const factory AuthEvent.anonymous() = Anonymous;
+  const factory AuthEvent.changedToAnonymous() = ChangedToAnonymous;
 
-  /// @nodoc
-  const factory AuthEvent.authenticated() = Authenticated;
+  const factory AuthEvent.changedToAuthenticated() = ChangedToAuthenticated;
 }

@@ -2,9 +2,12 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/injection.config.dart';
 
-/// @nodoc
+const devWeb = Environment('devWeb');
+const prodWeb = Environment('prodWeb');
+
 final getIt = GetIt.instance;
 
-/// @nodoc
 @InjectableInit()
-Future<void> configureInjection(String env) => getIt.init(environment: env);
+Future<void> configureInjection(String env) async {
+  await getIt.init(environment: env);
+}

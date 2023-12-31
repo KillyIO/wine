@@ -3,19 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/themes.dart';
 
-/// @nodoc
 class AppProduction extends StatelessWidget {
-  /// @nodoc
   AppProduction({super.key});
 
-  // /// @nodoc
   // final FirebaseAnalytics analytics = FirebaseAnalytics();
-  final _appRouter = AppRouter();
+  final _authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
+  late final _appRouter = AppRouter(_authBloc);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +20,7 @@ class AppProduction extends StatelessWidget {
       providers: [
         BlocProvider(
           lazy: false,
-          create: (_) => getIt<AuthBloc>()..add(const AuthEvent.authChanged()),
+          create: (_) => _authBloc,
         ),
         BlocProvider(create: (_) => getIt<HomeBloc>()),
         BlocProvider(create: (_) => getIt<LibraryBloc>()),
@@ -34,7 +31,7 @@ class AppProduction extends StatelessWidget {
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
         theme: lightTheme,
-        title: F.title,
+        title: 'Wine',
       ),
     );
   }

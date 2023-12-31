@@ -8,17 +8,14 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/branch/branch_layout.dart';
 
-/// @nodoc
 @RoutePage()
 class BranchPage extends StatelessWidget {
-  /// @nodoc
   const BranchPage({
     @PathParam('id') required this.uid,
     super.key,
     this.branch,
   });
 
-  /// @nodoc
   final Branch? branch;
 
   /// nodoc

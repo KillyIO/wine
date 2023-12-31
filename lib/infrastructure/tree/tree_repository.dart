@@ -15,13 +15,11 @@ import 'package:wine/infrastructure/tree/tree_dto.dart';
 import 'package:wine/utils/constants/paths/storage.dart';
 import 'package:wine/utils/constants/paths/tree.dart';
 
-/// @nodoc
 @LazySingleton(
   as: ITreeRepository,
   env: [Environment.dev, Environment.prod],
 )
 class TreeRepository implements ITreeRepository {
-  /// @nodoc
   TreeRepository(this._firestore, this._firebaseStorage);
 
   final FirebaseFirestore _firestore;

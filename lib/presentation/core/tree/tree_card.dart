@@ -4,9 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 
-/// @nodoc
 class TreeCard extends StatelessWidget {
-  /// @nodoc
   const TreeCard({
     required this.coverURL,
     required this.language,
@@ -17,22 +15,16 @@ class TreeCard extends StatelessWidget {
     this.titleFontSize = 14,
   });
 
-  /// @nodoc
   final String? coverURL;
 
-  /// @nodoc
   final String? language;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
-  /// @nodoc
   final String? title;
 
-  /// @nodoc
   final double titleFontSize;
 
-  /// @nodoc
   final String uid;
 
   @override
@@ -94,7 +86,7 @@ class TreeCard extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-          )
+          ),
         ],
       ),
     );

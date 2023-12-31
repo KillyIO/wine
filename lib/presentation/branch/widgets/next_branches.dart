@@ -9,9 +9,7 @@ import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/images.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class NextBranches extends StatelessWidget {
-  /// @nodoc
   const NextBranches({
     required this.branches,
     required this.title,
@@ -19,13 +17,10 @@ class NextBranches extends StatelessWidget {
     super.key,
   });
 
-  /// @nodoc
   final List<Branch> branches;
 
-  /// @nodoc
   final VoidCallback onRefreshPressed;
 
-  /// @nodoc
   final String title;
 
   @override

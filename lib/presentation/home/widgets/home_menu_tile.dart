@@ -1,19 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class HomeMenuTile extends StatelessWidget {
-  /// @nodoc
   const HomeMenuTile({
     required this.onPressed,
     required this.text,
     super.key,
   });
 
-  /// @nodoc
   final VoidCallback onPressed;
 
-  /// @nodoc
   final String text;
 
   @override

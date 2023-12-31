@@ -9,10 +9,8 @@ import 'package:wine/presentation/library/library_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class LibraryPage extends StatefulWidget {
-  /// @nodoc
   const LibraryPage({super.key});
 
   @override

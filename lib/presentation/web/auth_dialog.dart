@@ -6,15 +6,12 @@ import 'package:wine/presentation/log_in/log_in_layout.dart';
 import 'package:wine/presentation/sign_up/sign_up_layout.dart';
 import 'package:wine/utils/responsive/auth_dialog_responsive.dart';
 
-/// @nodoc
 class AuthDialog extends StatelessWidget {
-  /// @nodoc
   const AuthDialog({
     required this.navigateTo,
     super.key,
   });
 
-  /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
 
   @override

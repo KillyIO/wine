@@ -3,9 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:like_button/like_button.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class ContentActions extends StatelessWidget {
-  /// @nodoc
   const ContentActions({
     required this.bookmarksCount,
     required this.isBookmarked,
@@ -17,25 +15,18 @@ class ContentActions extends StatelessWidget {
     super.key,
   });
 
-  /// @nodoc
   final int bookmarksCount;
 
-  /// @nodoc
   final bool isBookmarked;
 
-  /// @nodoc
   final bool isLiked;
 
-  /// @nodoc
   final int likesCount;
 
-  /// @nodoc
   final Future<bool?> Function({bool bookmarked})? onBookmarkTap;
 
-  /// @nodoc
   final Future<bool?> Function({bool liked})? onLikeTap;
 
-  /// @nodoc
   final int viewsCount;
 
   @override

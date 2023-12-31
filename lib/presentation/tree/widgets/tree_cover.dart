@@ -1,19 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class TreeCover extends StatelessWidget {
-  /// @nodoc
   const TreeCover({
     required this.coverURL,
     required this.treeUID,
     super.key,
   });
 
-  /// @nodoc
   final String? coverURL;
 
-  /// @nodoc
   final String treeUID;
 
   @override

@@ -14,19 +14,15 @@ import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 import 'package:wine/utils/responsive/log_in_responsive.dart';
 
-/// @nodoc
 class LogInLayout extends StatelessWidget {
-  /// @nodoc
   const LogInLayout({
     required this.navigateTo,
     super.key,
     this.onSignUpButtonPressed,
   });
 
-  /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
 
-  /// @nodoc
   final VoidCallback? onSignUpButtonPressed;
 
   @override
@@ -100,11 +96,12 @@ class LogInLayout extends StatelessWidget {
             context,
             <String>[
               'You have been successfully authenticated.',
-              'You will now be redirected.'
+              'You will now be redirected.',
             ],
-            () => context
+            onNavigate: () => context
               ..read<AuthBloc>().add(const AuthEvent.authChanged())
               ..router.replace(navigateTo),
+            onRouterPop: () => context.router.pop<bool>(true),
           );
         }
       },
@@ -242,7 +239,7 @@ class LogInLayout extends StatelessWidget {
                                       const LogInEvent.logInWithGooglePressed(),
                                     ),
                             icon: LineIcons.googlePlus,
-                          )
+                          ),
                         ],
                       ),
                     ),

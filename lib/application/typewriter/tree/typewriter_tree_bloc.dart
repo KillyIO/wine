@@ -32,13 +32,11 @@ part 'typewriter_tree_bloc.freezed.dart';
 part 'typewriter_tree_event.dart';
 part 'typewriter_tree_state.dart';
 
-/// @nodoc
 @Environment(Environment.dev)
 @Environment(Environment.prod)
 @injectable
 class TypewriterTreeBloc
     extends Bloc<TypewriterTreeEvent, TypewriterTreeState> {
-  /// @nodoc
   TypewriterTreeBloc(
     this._defaultCoversRepository,
     this._sessionsRepository,

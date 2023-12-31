@@ -5,17 +5,14 @@ import 'package:wine/domain/default_covers/default_cover.dart';
 
 part 'isar_default_cover.g.dart';
 
-/// @nodoc
 @Collection(accessor: 'defaultCovers', inheritance: false)
 class IsarDefaultCover extends Equatable {
-  /// @nodoc
   const IsarDefaultCover({
     required this.key,
     required this.url,
     this.id = Isar.autoIncrement,
   });
 
-  /// @nodoc
   factory IsarDefaultCover.fromMap(Map<String, dynamic> map) {
     return IsarDefaultCover(
       id: map['id'] as int,
@@ -24,17 +21,13 @@ class IsarDefaultCover extends Equatable {
     );
   }
 
-  /// @nodoc
   final Id? id;
 
-  /// @nodoc
   @Index(unique: true)
   final String key;
 
-  /// @nodoc
   final String url;
 
-  /// @nodoc
   IsarDefaultCover copyWith({
     int? id,
     String? key,
@@ -47,7 +40,6 @@ class IsarDefaultCover extends Equatable {
     );
   }
 
-  /// @nodoc
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
@@ -56,7 +48,6 @@ class IsarDefaultCover extends Equatable {
     };
   }
 
-  /// @nodoc
   DefaultCover toDomain() {
     return DefaultCover(
       key: key,

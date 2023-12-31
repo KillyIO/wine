@@ -15,7 +15,6 @@ import 'package:wine/infrastructure/user/user_dto.dart';
 /// Implementation of [IAuthFacade] using Firebase.
 @LazySingleton(as: IAuthFacade, env: [Environment.dev, Environment.prod])
 class FirebaseAuthFacade implements IAuthFacade {
-  /// @nodoc
   FirebaseAuthFacade(
     this._firebaseAuth,
     this._googleSignIn,
@@ -24,7 +23,6 @@ class FirebaseAuthFacade implements IAuthFacade {
   final auth.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
-  /// @nodoc
   @override
   Stream<Option<User>> get authStateChanges =>
       _firebaseAuth.authStateChanges().map((user) {

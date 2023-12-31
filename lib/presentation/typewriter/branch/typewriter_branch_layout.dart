@@ -12,9 +12,7 @@ import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/constants/typewriter.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 class TypewriterBranchLayout extends StatelessWidget {
-  /// @nodoc
   TypewriterBranchLayout({super.key});
 
   final PageController _pageController = PageController(initialPage: 1000);
@@ -94,35 +92,35 @@ class TypewriterBranchLayout extends StatelessWidget {
                 context.router.pop();
               }
             case TypewriterEndState.published:
-              context
-                  .read<LibraryBloc>()
-                  .add(LibraryEvent.branchUpdated(state.branch));
-
               redirectDialog(
                 context,
                 <String>[
                   'Your branch has been successfully published.',
-                  'You will now be redirected.'
+                  'You will now be redirected.',
                 ],
-                () => context.router.replace(
-                  BranchRoute(
-                    branch: state.branch,
-                    uid: state.branch.uid.getOrCrash(),
+                onNavigate: () => context
+                  ..read<LibraryBloc>()
+                      .add(LibraryEvent.branchUpdated(state.branch))
+                  ..router.replace(
+                    BranchRoute(
+                      branch: state.branch,
+                      uid: state.branch.uid.getOrCrash(),
+                    ),
                   ),
-                ),
+                onRouterPop: () => context.router.pop<bool>(true),
               );
             case TypewriterEndState.saved:
-              context
-                  .read<LibraryBloc>()
-                  .add(LibraryEvent.branchUpdated(state.branch));
-
               redirectDialog(
                 context,
                 <String>[
                   'Your branch has been successfully saved.',
-                  'You will now be redirected.'
+                  'You will now be redirected.',
                 ],
-                () => context.router.replace(const LibraryRoute()),
+                onNavigate: () => context
+                  ..read<LibraryBloc>()
+                      .add(LibraryEvent.branchUpdated(state.branch))
+                  ..router.replace(const LibraryRoute()),
+                onRouterPop: () => context.router.pop<bool>(true),
               );
             case TypewriterEndState.unknown:
               break;

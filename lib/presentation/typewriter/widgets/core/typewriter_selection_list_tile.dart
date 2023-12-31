@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class TypewriterSelectionListTile extends StatelessWidget {
-  /// @nodoc
   const TypewriterSelectionListTile({
     required this.onPressed,
     required this.title,
@@ -10,13 +8,10 @@ class TypewriterSelectionListTile extends StatelessWidget {
     this.selectedItem,
   });
 
-  /// @nodoc
   final String? selectedItem;
 
-  /// @nodoc
   final String title;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
   @override

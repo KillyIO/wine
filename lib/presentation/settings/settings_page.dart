@@ -7,10 +7,8 @@ import 'package:wine/presentation/settings/settings_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class SettingsPage extends StatelessWidget {
-  /// @nodoc
   const SettingsPage({super.key});
 
   @override

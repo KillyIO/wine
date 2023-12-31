@@ -7,10 +7,8 @@ import 'package:wine/domain/user/user.dart';
 
 part 'isar_user.g.dart';
 
-/// @nodoc
 @Collection(accessor: 'users', inheritance: false)
 class IsarUser extends Equatable {
-  /// @nodoc
   const IsarUser({
     required this.emailAddress,
     required this.uid,
@@ -19,7 +17,6 @@ class IsarUser extends Equatable {
     this.id = Isar.autoIncrement,
   });
 
-  /// @nodoc
   factory IsarUser.fromMap(Map<String, dynamic> map) {
     return IsarUser(
       emailAddress: map['emailAddress'] as String,
@@ -30,23 +27,17 @@ class IsarUser extends Equatable {
     );
   }
 
-  /// @nodoc
   final String emailAddress;
 
-  /// @nodoc
   final Id? id;
 
-  /// @nodoc
   @Index(unique: true)
   final String uid;
 
-  /// @nodoc
   final DateTime updatedAt;
 
-  /// @nodoc
   final String username;
 
-  /// @nodoc
   IsarUser copyWith({
     String? emailAddress,
     int? id,
@@ -63,7 +54,6 @@ class IsarUser extends Equatable {
     );
   }
 
-  /// @nodoc
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'emailAddress': emailAddress,
@@ -74,7 +64,6 @@ class IsarUser extends Equatable {
     };
   }
 
-  /// @nodoc
   User toDomain() {
     return User(
       emailAddress: EmailAddress(emailAddress),

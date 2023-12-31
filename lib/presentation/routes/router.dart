@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
@@ -32,14 +33,17 @@ import 'package:wine/utils/constants/paths/router.dart';
 
 part 'router.gr.dart';
 
-/// @nodoc
 @AutoRouterConfig()
 class AppRouter extends _$AppRouter {
+  AppRouter(this._authBloc) : super();
+
+  final AuthBloc _authBloc;
+
   @override
   RouteType get defaultRouteType => const RouteType.adaptive();
 
   @override
-  final List<AutoRoute> routes = [
+  late final List<AutoRoute> routes = [
     AutoRoute(
       page: BranchRoute.page,
       path: branchPagePath,
@@ -51,7 +55,7 @@ class AppRouter extends _$AppRouter {
     AutoRoute(
       page: LibraryRoute.page,
       path: libraryPagePath,
-      guards: [getIt<AuthGuard>()],
+      guards: [AuthGuard(_authBloc)],
     ),
     CustomRoute(
       page: LogInRoute.page,
@@ -73,7 +77,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: SettingsAccountRoute.page,
           path: settingsAccountPagePath,
-          guards: [getIt<AuthGuard>()],
+          guards: [AuthGuard(_authBloc)],
         ),
         AutoRoute(
           page: SettingsBranchRoute.page,
@@ -100,7 +104,7 @@ class AppRouter extends _$AppRouter {
     AutoRoute(
       page: TypewriterWrapperRoute.page,
       path: typewriterPagePath,
-      guards: [getIt<AuthGuard>()],
+      guards: [AuthGuard(_authBloc)],
       children: [
         AutoRoute(
           page: TypewriterBranchUIDRoute.page,

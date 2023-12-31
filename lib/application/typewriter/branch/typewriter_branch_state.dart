@@ -1,9 +1,7 @@
 part of 'typewriter_branch_bloc.dart';
 
-/// @nodoc
 @freezed
 class TypewriterBranchState with _$TypewriterBranchState {
-  /// @nodoc
   const factory TypewriterBranchState({
     required Branch branch,
     required String coverURL,
@@ -25,7 +23,6 @@ class TypewriterBranchState with _$TypewriterBranchState {
     required int titleWordCount,
   }) = _TypewriterBranchState;
 
-  /// @nodoc
   factory TypewriterBranchState.initial() => TypewriterBranchState(
         branch: Branch.empty(),
         coverURL: '',

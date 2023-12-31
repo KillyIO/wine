@@ -4,16 +4,13 @@ import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
-/// @nodoc
 class Licence extends ValueObject<LicenceType> {
-  /// @nodoc
   factory Licence(LicenceType input) {
     return Licence._(
       validateLicence(input),
     );
   }
 
-  /// @nodoc
   factory Licence.forSaving(
     Result<LicenceType, ValueFailure<LicenceType>> input,
   ) {

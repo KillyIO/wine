@@ -1,9 +1,7 @@
 part of 'home_bloc.dart';
 
-/// @nodoc
 @freezed
 class HomeState with _$HomeState {
-  /// @nodoc
   const factory HomeState({
     required int currentPageViewIdx,
     required Option<Result<Unit, CoreFailure>> failureOption,
@@ -15,7 +13,6 @@ class HomeState with _$HomeState {
     required List<Tree> topTrees,
   }) = _HomeState;
 
-  /// @nodoc
   factory HomeState.initial() => const HomeState(
         currentPageViewIdx: 0,
         failureOption: None(),

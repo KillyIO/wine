@@ -1,9 +1,7 @@
 part of 'branch_bloc.dart';
 
-/// @nodoc
 @freezed
 class BranchState with _$BranchState {
-  /// @nodoc
   const factory BranchState({
     required bool authorIsUser,
     required User author,
@@ -21,7 +19,6 @@ class BranchState with _$BranchState {
     User? session,
   }) = _BranchState;
 
-  /// @nodoc
   factory BranchState.initial() => BranchState(
         authorIsUser: false,
         author: User.empty(),

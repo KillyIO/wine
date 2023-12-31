@@ -5,9 +5,7 @@ import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/responsive/dialog_responsive.dart';
 
-/// @nodoc
 class WarningDialog extends StatelessWidget {
-  /// @nodoc
   const WarningDialog({
     required this.messages,
     required this.onPressed,
@@ -15,13 +13,10 @@ class WarningDialog extends StatelessWidget {
     this.buttonText,
   });
 
-  /// @nodoc
   final String? buttonText;
 
-  /// @nodoc
   final List<String> messages;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
   @override

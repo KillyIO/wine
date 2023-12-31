@@ -5,9 +5,7 @@ import 'package:wine/presentation/tree/widgets/tree_author_username.dart';
 import 'package:wine/presentation/tree/widgets/tree_cover.dart';
 import 'package:wine/presentation/tree/widgets/tree_title.dart';
 
-/// @nodoc
 class TreeDetails extends StatelessWidget {
-  /// @nodoc
   const TreeDetails({super.key});
 
   @override

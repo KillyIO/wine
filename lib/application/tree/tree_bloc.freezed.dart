@@ -129,10 +129,10 @@ class _$TreeEventCopyWithImpl<$Res, $Val extends TreeEvent>
 }
 
 /// @nodoc
-abstract class _$$LaunchWithUIDCopyWith<$Res> {
-  factory _$$LaunchWithUIDCopyWith(
-          _$LaunchWithUID value, $Res Function(_$LaunchWithUID) then) =
-      __$$LaunchWithUIDCopyWithImpl<$Res>;
+abstract class _$$LaunchWithUIDImplCopyWith<$Res> {
+  factory _$$LaunchWithUIDImplCopyWith(
+          _$LaunchWithUIDImpl value, $Res Function(_$LaunchWithUIDImpl) then) =
+      __$$LaunchWithUIDImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UniqueID uid, Tree? tree});
 
@@ -140,11 +140,11 @@ abstract class _$$LaunchWithUIDCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LaunchWithUIDCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$LaunchWithUID>
-    implements _$$LaunchWithUIDCopyWith<$Res> {
-  __$$LaunchWithUIDCopyWithImpl(
-      _$LaunchWithUID _value, $Res Function(_$LaunchWithUID) _then)
+class __$$LaunchWithUIDImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$LaunchWithUIDImpl>
+    implements _$$LaunchWithUIDImplCopyWith<$Res> {
+  __$$LaunchWithUIDImplCopyWithImpl(
+      _$LaunchWithUIDImpl _value, $Res Function(_$LaunchWithUIDImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -153,7 +153,7 @@ class __$$LaunchWithUIDCopyWithImpl<$Res>
     Object? uid = null,
     Object? tree = freezed,
   }) {
-    return _then(_$LaunchWithUID(
+    return _then(_$LaunchWithUIDImpl(
       null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -180,8 +180,8 @@ class __$$LaunchWithUIDCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LaunchWithUID implements LaunchWithUID {
-  const _$LaunchWithUID(this.uid, {this.tree});
+class _$LaunchWithUIDImpl implements LaunchWithUID {
+  const _$LaunchWithUIDImpl(this.uid, {this.tree});
 
   @override
   final UniqueID uid;
@@ -197,7 +197,7 @@ class _$LaunchWithUID implements LaunchWithUID {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LaunchWithUID &&
+            other is _$LaunchWithUIDImpl &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.tree, tree) || other.tree == tree));
   }
@@ -208,8 +208,8 @@ class _$LaunchWithUID implements LaunchWithUID {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
-      __$$LaunchWithUIDCopyWithImpl<_$LaunchWithUID>(this, _$identity);
+  _$$LaunchWithUIDImplCopyWith<_$LaunchWithUIDImpl> get copyWith =>
+      __$$LaunchWithUIDImplCopyWithImpl<_$LaunchWithUIDImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -331,33 +331,35 @@ class _$LaunchWithUID implements LaunchWithUID {
 
 abstract class LaunchWithUID implements TreeEvent {
   const factory LaunchWithUID(final UniqueID uid, {final Tree? tree}) =
-      _$LaunchWithUID;
+      _$LaunchWithUIDImpl;
 
   UniqueID get uid;
   Tree? get tree;
   @JsonKey(ignore: true)
-  _$$LaunchWithUIDCopyWith<_$LaunchWithUID> get copyWith =>
+  _$$LaunchWithUIDImplCopyWith<_$LaunchWithUIDImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TreeSetCopyWith<$Res> {
-  factory _$$TreeSetCopyWith(_$TreeSet value, $Res Function(_$TreeSet) then) =
-      __$$TreeSetCopyWithImpl<$Res>;
+abstract class _$$TreeSetImplCopyWith<$Res> {
+  factory _$$TreeSetImplCopyWith(
+          _$TreeSetImpl value, $Res Function(_$TreeSetImpl) then) =
+      __$$TreeSetImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TreeSetCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$TreeSet>
-    implements _$$TreeSetCopyWith<$Res> {
-  __$$TreeSetCopyWithImpl(_$TreeSet _value, $Res Function(_$TreeSet) _then)
+class __$$TreeSetImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$TreeSetImpl>
+    implements _$$TreeSetImplCopyWith<$Res> {
+  __$$TreeSetImplCopyWithImpl(
+      _$TreeSetImpl _value, $Res Function(_$TreeSetImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$TreeSet implements TreeSet {
-  const _$TreeSet();
+class _$TreeSetImpl implements TreeSet {
+  const _$TreeSetImpl();
 
   @override
   String toString() {
@@ -367,7 +369,7 @@ class _$TreeSet implements TreeSet {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TreeSet);
+        (other.runtimeType == runtimeType && other is _$TreeSetImpl);
   }
 
   @override
@@ -492,29 +494,29 @@ class _$TreeSet implements TreeSet {
 }
 
 abstract class TreeSet implements TreeEvent {
-  const factory TreeSet() = _$TreeSet;
+  const factory TreeSet() = _$TreeSetImpl;
 }
 
 /// @nodoc
-abstract class _$$SessionFetchedCopyWith<$Res> {
-  factory _$$SessionFetchedCopyWith(
-          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
-      __$$SessionFetchedCopyWithImpl<$Res>;
+abstract class _$$SessionFetchedImplCopyWith<$Res> {
+  factory _$$SessionFetchedImplCopyWith(_$SessionFetchedImpl value,
+          $Res Function(_$SessionFetchedImpl) then) =
+      __$$SessionFetchedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$SessionFetched>
-    implements _$$SessionFetchedCopyWith<$Res> {
-  __$$SessionFetchedCopyWithImpl(
-      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
+class __$$SessionFetchedImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$SessionFetchedImpl>
+    implements _$$SessionFetchedImplCopyWith<$Res> {
+  __$$SessionFetchedImplCopyWithImpl(
+      _$SessionFetchedImpl _value, $Res Function(_$SessionFetchedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SessionFetched implements SessionFetched {
-  const _$SessionFetched();
+class _$SessionFetchedImpl implements SessionFetched {
+  const _$SessionFetchedImpl();
 
   @override
   String toString() {
@@ -524,7 +526,7 @@ class _$SessionFetched implements SessionFetched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionFetched);
+        (other.runtimeType == runtimeType && other is _$SessionFetchedImpl);
   }
 
   @override
@@ -649,29 +651,29 @@ class _$SessionFetched implements SessionFetched {
 }
 
 abstract class SessionFetched implements TreeEvent {
-  const factory SessionFetched() = _$SessionFetched;
+  const factory SessionFetched() = _$SessionFetchedImpl;
 }
 
 /// @nodoc
-abstract class _$$AuthorLoadedCopyWith<$Res> {
-  factory _$$AuthorLoadedCopyWith(
-          _$AuthorLoaded value, $Res Function(_$AuthorLoaded) then) =
-      __$$AuthorLoadedCopyWithImpl<$Res>;
+abstract class _$$AuthorLoadedImplCopyWith<$Res> {
+  factory _$$AuthorLoadedImplCopyWith(
+          _$AuthorLoadedImpl value, $Res Function(_$AuthorLoadedImpl) then) =
+      __$$AuthorLoadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AuthorLoadedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$AuthorLoaded>
-    implements _$$AuthorLoadedCopyWith<$Res> {
-  __$$AuthorLoadedCopyWithImpl(
-      _$AuthorLoaded _value, $Res Function(_$AuthorLoaded) _then)
+class __$$AuthorLoadedImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$AuthorLoadedImpl>
+    implements _$$AuthorLoadedImplCopyWith<$Res> {
+  __$$AuthorLoadedImplCopyWithImpl(
+      _$AuthorLoadedImpl _value, $Res Function(_$AuthorLoadedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AuthorLoaded implements AuthorLoaded {
-  const _$AuthorLoaded();
+class _$AuthorLoadedImpl implements AuthorLoaded {
+  const _$AuthorLoadedImpl();
 
   @override
   String toString() {
@@ -681,7 +683,7 @@ class _$AuthorLoaded implements AuthorLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AuthorLoaded);
+        (other.runtimeType == runtimeType && other is _$AuthorLoadedImpl);
   }
 
   @override
@@ -806,29 +808,29 @@ class _$AuthorLoaded implements AuthorLoaded {
 }
 
 abstract class AuthorLoaded implements TreeEvent {
-  const factory AuthorLoaded() = _$AuthorLoaded;
+  const factory AuthorLoaded() = _$AuthorLoadedImpl;
 }
 
 /// @nodoc
-abstract class _$$SettingsFetchedCopyWith<$Res> {
-  factory _$$SettingsFetchedCopyWith(
-          _$SettingsFetched value, $Res Function(_$SettingsFetched) then) =
-      __$$SettingsFetchedCopyWithImpl<$Res>;
+abstract class _$$SettingsFetchedImplCopyWith<$Res> {
+  factory _$$SettingsFetchedImplCopyWith(_$SettingsFetchedImpl value,
+          $Res Function(_$SettingsFetchedImpl) then) =
+      __$$SettingsFetchedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SettingsFetchedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$SettingsFetched>
-    implements _$$SettingsFetchedCopyWith<$Res> {
-  __$$SettingsFetchedCopyWithImpl(
-      _$SettingsFetched _value, $Res Function(_$SettingsFetched) _then)
+class __$$SettingsFetchedImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$SettingsFetchedImpl>
+    implements _$$SettingsFetchedImplCopyWith<$Res> {
+  __$$SettingsFetchedImplCopyWithImpl(
+      _$SettingsFetchedImpl _value, $Res Function(_$SettingsFetchedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SettingsFetched implements SettingsFetched {
-  const _$SettingsFetched();
+class _$SettingsFetchedImpl implements SettingsFetched {
+  const _$SettingsFetchedImpl();
 
   @override
   String toString() {
@@ -838,7 +840,7 @@ class _$SettingsFetched implements SettingsFetched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SettingsFetched);
+        (other.runtimeType == runtimeType && other is _$SettingsFetchedImpl);
   }
 
   @override
@@ -963,29 +965,29 @@ class _$SettingsFetched implements SettingsFetched {
 }
 
 abstract class SettingsFetched implements TreeEvent {
-  const factory SettingsFetched() = _$SettingsFetched;
+  const factory SettingsFetched() = _$SettingsFetchedImpl;
 }
 
 /// @nodoc
-abstract class _$$BranchOneLoadedCopyWith<$Res> {
-  factory _$$BranchOneLoadedCopyWith(
-          _$BranchOneLoaded value, $Res Function(_$BranchOneLoaded) then) =
-      __$$BranchOneLoadedCopyWithImpl<$Res>;
+abstract class _$$BranchOneLoadedImplCopyWith<$Res> {
+  factory _$$BranchOneLoadedImplCopyWith(_$BranchOneLoadedImpl value,
+          $Res Function(_$BranchOneLoadedImpl) then) =
+      __$$BranchOneLoadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BranchOneLoadedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$BranchOneLoaded>
-    implements _$$BranchOneLoadedCopyWith<$Res> {
-  __$$BranchOneLoadedCopyWithImpl(
-      _$BranchOneLoaded _value, $Res Function(_$BranchOneLoaded) _then)
+class __$$BranchOneLoadedImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$BranchOneLoadedImpl>
+    implements _$$BranchOneLoadedImplCopyWith<$Res> {
+  __$$BranchOneLoadedImplCopyWithImpl(
+      _$BranchOneLoadedImpl _value, $Res Function(_$BranchOneLoadedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$BranchOneLoaded implements BranchOneLoaded {
-  const _$BranchOneLoaded();
+class _$BranchOneLoadedImpl implements BranchOneLoaded {
+  const _$BranchOneLoadedImpl();
 
   @override
   String toString() {
@@ -995,7 +997,7 @@ class _$BranchOneLoaded implements BranchOneLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BranchOneLoaded);
+        (other.runtimeType == runtimeType && other is _$BranchOneLoadedImpl);
   }
 
   @override
@@ -1120,29 +1122,29 @@ class _$BranchOneLoaded implements BranchOneLoaded {
 }
 
 abstract class BranchOneLoaded implements TreeEvent {
-  const factory BranchOneLoaded() = _$BranchOneLoaded;
+  const factory BranchOneLoaded() = _$BranchOneLoadedImpl;
 }
 
 /// @nodoc
-abstract class _$$ViewsUpdatedCopyWith<$Res> {
-  factory _$$ViewsUpdatedCopyWith(
-          _$ViewsUpdated value, $Res Function(_$ViewsUpdated) then) =
-      __$$ViewsUpdatedCopyWithImpl<$Res>;
+abstract class _$$ViewsUpdatedImplCopyWith<$Res> {
+  factory _$$ViewsUpdatedImplCopyWith(
+          _$ViewsUpdatedImpl value, $Res Function(_$ViewsUpdatedImpl) then) =
+      __$$ViewsUpdatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ViewsUpdatedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$ViewsUpdated>
-    implements _$$ViewsUpdatedCopyWith<$Res> {
-  __$$ViewsUpdatedCopyWithImpl(
-      _$ViewsUpdated _value, $Res Function(_$ViewsUpdated) _then)
+class __$$ViewsUpdatedImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$ViewsUpdatedImpl>
+    implements _$$ViewsUpdatedImplCopyWith<$Res> {
+  __$$ViewsUpdatedImplCopyWithImpl(
+      _$ViewsUpdatedImpl _value, $Res Function(_$ViewsUpdatedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ViewsUpdated implements ViewsUpdated {
-  const _$ViewsUpdated();
+class _$ViewsUpdatedImpl implements ViewsUpdated {
+  const _$ViewsUpdatedImpl();
 
   @override
   String toString() {
@@ -1152,7 +1154,7 @@ class _$ViewsUpdated implements ViewsUpdated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ViewsUpdated);
+        (other.runtimeType == runtimeType && other is _$ViewsUpdatedImpl);
   }
 
   @override
@@ -1277,29 +1279,29 @@ class _$ViewsUpdated implements ViewsUpdated {
 }
 
 abstract class ViewsUpdated implements TreeEvent {
-  const factory ViewsUpdated() = _$ViewsUpdated;
+  const factory ViewsUpdated() = _$ViewsUpdatedImpl;
 }
 
 /// @nodoc
-abstract class _$$LikeStatusLoadedCopyWith<$Res> {
-  factory _$$LikeStatusLoadedCopyWith(
-          _$LikeStatusLoaded value, $Res Function(_$LikeStatusLoaded) then) =
-      __$$LikeStatusLoadedCopyWithImpl<$Res>;
+abstract class _$$LikeStatusLoadedImplCopyWith<$Res> {
+  factory _$$LikeStatusLoadedImplCopyWith(_$LikeStatusLoadedImpl value,
+          $Res Function(_$LikeStatusLoadedImpl) then) =
+      __$$LikeStatusLoadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LikeStatusLoadedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$LikeStatusLoaded>
-    implements _$$LikeStatusLoadedCopyWith<$Res> {
-  __$$LikeStatusLoadedCopyWithImpl(
-      _$LikeStatusLoaded _value, $Res Function(_$LikeStatusLoaded) _then)
+class __$$LikeStatusLoadedImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$LikeStatusLoadedImpl>
+    implements _$$LikeStatusLoadedImplCopyWith<$Res> {
+  __$$LikeStatusLoadedImplCopyWithImpl(_$LikeStatusLoadedImpl _value,
+      $Res Function(_$LikeStatusLoadedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LikeStatusLoaded implements LikeStatusLoaded {
-  const _$LikeStatusLoaded();
+class _$LikeStatusLoadedImpl implements LikeStatusLoaded {
+  const _$LikeStatusLoadedImpl();
 
   @override
   String toString() {
@@ -1309,7 +1311,7 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LikeStatusLoaded);
+        (other.runtimeType == runtimeType && other is _$LikeStatusLoadedImpl);
   }
 
   @override
@@ -1434,29 +1436,29 @@ class _$LikeStatusLoaded implements LikeStatusLoaded {
 }
 
 abstract class LikeStatusLoaded implements TreeEvent {
-  const factory LikeStatusLoaded() = _$LikeStatusLoaded;
+  const factory LikeStatusLoaded() = _$LikeStatusLoadedImpl;
 }
 
 /// @nodoc
-abstract class _$$BranchOneNotFoundCopyWith<$Res> {
-  factory _$$BranchOneNotFoundCopyWith(
-          _$BranchOneNotFound value, $Res Function(_$BranchOneNotFound) then) =
-      __$$BranchOneNotFoundCopyWithImpl<$Res>;
+abstract class _$$BranchOneNotFoundImplCopyWith<$Res> {
+  factory _$$BranchOneNotFoundImplCopyWith(_$BranchOneNotFoundImpl value,
+          $Res Function(_$BranchOneNotFoundImpl) then) =
+      __$$BranchOneNotFoundImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BranchOneNotFoundCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$BranchOneNotFound>
-    implements _$$BranchOneNotFoundCopyWith<$Res> {
-  __$$BranchOneNotFoundCopyWithImpl(
-      _$BranchOneNotFound _value, $Res Function(_$BranchOneNotFound) _then)
+class __$$BranchOneNotFoundImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$BranchOneNotFoundImpl>
+    implements _$$BranchOneNotFoundImplCopyWith<$Res> {
+  __$$BranchOneNotFoundImplCopyWithImpl(_$BranchOneNotFoundImpl _value,
+      $Res Function(_$BranchOneNotFoundImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$BranchOneNotFound implements BranchOneNotFound {
-  const _$BranchOneNotFound();
+class _$BranchOneNotFoundImpl implements BranchOneNotFound {
+  const _$BranchOneNotFoundImpl();
 
   @override
   String toString() {
@@ -1466,7 +1468,7 @@ class _$BranchOneNotFound implements BranchOneNotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BranchOneNotFound);
+        (other.runtimeType == runtimeType && other is _$BranchOneNotFoundImpl);
   }
 
   @override
@@ -1591,24 +1593,25 @@ class _$BranchOneNotFound implements BranchOneNotFound {
 }
 
 abstract class BranchOneNotFound implements TreeEvent {
-  const factory BranchOneNotFound() = _$BranchOneNotFound;
+  const factory BranchOneNotFound() = _$BranchOneNotFoundImpl;
 }
 
 /// @nodoc
-abstract class _$$BookmarkButtonPressedCopyWith<$Res> {
-  factory _$$BookmarkButtonPressedCopyWith(_$BookmarkButtonPressed value,
-          $Res Function(_$BookmarkButtonPressed) then) =
-      __$$BookmarkButtonPressedCopyWithImpl<$Res>;
+abstract class _$$BookmarkButtonPressedImplCopyWith<$Res> {
+  factory _$$BookmarkButtonPressedImplCopyWith(
+          _$BookmarkButtonPressedImpl value,
+          $Res Function(_$BookmarkButtonPressedImpl) then) =
+      __$$BookmarkButtonPressedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isBookmarked});
 }
 
 /// @nodoc
-class __$$BookmarkButtonPressedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$BookmarkButtonPressed>
-    implements _$$BookmarkButtonPressedCopyWith<$Res> {
-  __$$BookmarkButtonPressedCopyWithImpl(_$BookmarkButtonPressed _value,
-      $Res Function(_$BookmarkButtonPressed) _then)
+class __$$BookmarkButtonPressedImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$BookmarkButtonPressedImpl>
+    implements _$$BookmarkButtonPressedImplCopyWith<$Res> {
+  __$$BookmarkButtonPressedImplCopyWithImpl(_$BookmarkButtonPressedImpl _value,
+      $Res Function(_$BookmarkButtonPressedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1616,7 +1619,7 @@ class __$$BookmarkButtonPressedCopyWithImpl<$Res>
   $Res call({
     Object? isBookmarked = null,
   }) {
-    return _then(_$BookmarkButtonPressed(
+    return _then(_$BookmarkButtonPressedImpl(
       isBookmarked: null == isBookmarked
           ? _value.isBookmarked
           : isBookmarked // ignore: cast_nullable_to_non_nullable
@@ -1627,8 +1630,8 @@ class __$$BookmarkButtonPressedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BookmarkButtonPressed implements BookmarkButtonPressed {
-  const _$BookmarkButtonPressed({required this.isBookmarked});
+class _$BookmarkButtonPressedImpl implements BookmarkButtonPressed {
+  const _$BookmarkButtonPressedImpl({required this.isBookmarked});
 
   @override
   final bool isBookmarked;
@@ -1642,7 +1645,7 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BookmarkButtonPressed &&
+            other is _$BookmarkButtonPressedImpl &&
             (identical(other.isBookmarked, isBookmarked) ||
                 other.isBookmarked == isBookmarked));
   }
@@ -1653,9 +1656,9 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
-      __$$BookmarkButtonPressedCopyWithImpl<_$BookmarkButtonPressed>(
-          this, _$identity);
+  _$$BookmarkButtonPressedImplCopyWith<_$BookmarkButtonPressedImpl>
+      get copyWith => __$$BookmarkButtonPressedImplCopyWithImpl<
+          _$BookmarkButtonPressedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1777,29 +1780,29 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
 
 abstract class BookmarkButtonPressed implements TreeEvent {
   const factory BookmarkButtonPressed({required final bool isBookmarked}) =
-      _$BookmarkButtonPressed;
+      _$BookmarkButtonPressedImpl;
 
   bool get isBookmarked;
   @JsonKey(ignore: true)
-  _$$BookmarkButtonPressedCopyWith<_$BookmarkButtonPressed> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$BookmarkButtonPressedImplCopyWith<_$BookmarkButtonPressedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LikeButtonPressedCopyWith<$Res> {
-  factory _$$LikeButtonPressedCopyWith(
-          _$LikeButtonPressed value, $Res Function(_$LikeButtonPressed) then) =
-      __$$LikeButtonPressedCopyWithImpl<$Res>;
+abstract class _$$LikeButtonPressedImplCopyWith<$Res> {
+  factory _$$LikeButtonPressedImplCopyWith(_$LikeButtonPressedImpl value,
+          $Res Function(_$LikeButtonPressedImpl) then) =
+      __$$LikeButtonPressedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isLiked});
 }
 
 /// @nodoc
-class __$$LikeButtonPressedCopyWithImpl<$Res>
-    extends _$TreeEventCopyWithImpl<$Res, _$LikeButtonPressed>
-    implements _$$LikeButtonPressedCopyWith<$Res> {
-  __$$LikeButtonPressedCopyWithImpl(
-      _$LikeButtonPressed _value, $Res Function(_$LikeButtonPressed) _then)
+class __$$LikeButtonPressedImplCopyWithImpl<$Res>
+    extends _$TreeEventCopyWithImpl<$Res, _$LikeButtonPressedImpl>
+    implements _$$LikeButtonPressedImplCopyWith<$Res> {
+  __$$LikeButtonPressedImplCopyWithImpl(_$LikeButtonPressedImpl _value,
+      $Res Function(_$LikeButtonPressedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1807,7 +1810,7 @@ class __$$LikeButtonPressedCopyWithImpl<$Res>
   $Res call({
     Object? isLiked = null,
   }) {
-    return _then(_$LikeButtonPressed(
+    return _then(_$LikeButtonPressedImpl(
       isLiked: null == isLiked
           ? _value.isLiked
           : isLiked // ignore: cast_nullable_to_non_nullable
@@ -1818,8 +1821,8 @@ class __$$LikeButtonPressedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LikeButtonPressed implements LikeButtonPressed {
-  const _$LikeButtonPressed({required this.isLiked});
+class _$LikeButtonPressedImpl implements LikeButtonPressed {
+  const _$LikeButtonPressedImpl({required this.isLiked});
 
   @override
   final bool isLiked;
@@ -1833,7 +1836,7 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LikeButtonPressed &&
+            other is _$LikeButtonPressedImpl &&
             (identical(other.isLiked, isLiked) || other.isLiked == isLiked));
   }
 
@@ -1843,8 +1846,9 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LikeButtonPressedCopyWith<_$LikeButtonPressed> get copyWith =>
-      __$$LikeButtonPressedCopyWithImpl<_$LikeButtonPressed>(this, _$identity);
+  _$$LikeButtonPressedImplCopyWith<_$LikeButtonPressedImpl> get copyWith =>
+      __$$LikeButtonPressedImplCopyWithImpl<_$LikeButtonPressedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1966,11 +1970,11 @@ class _$LikeButtonPressed implements LikeButtonPressed {
 
 abstract class LikeButtonPressed implements TreeEvent {
   const factory LikeButtonPressed({required final bool isLiked}) =
-      _$LikeButtonPressed;
+      _$LikeButtonPressedImpl;
 
   bool get isLiked;
   @JsonKey(ignore: true)
-  _$$LikeButtonPressedCopyWith<_$LikeButtonPressed> get copyWith =>
+  _$$LikeButtonPressedImplCopyWith<_$LikeButtonPressedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2159,10 +2163,11 @@ class _$TreeStateCopyWithImpl<$Res, $Val extends TreeState>
 }
 
 /// @nodoc
-abstract class _$$_TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
-  factory _$$_TreeStateCopyWith(
-          _$_TreeState value, $Res Function(_$_TreeState) then) =
-      __$$_TreeStateCopyWithImpl<$Res>;
+abstract class _$$TreeStateImplCopyWith<$Res>
+    implements $TreeStateCopyWith<$Res> {
+  factory _$$TreeStateImplCopyWith(
+          _$TreeStateImpl value, $Res Function(_$TreeStateImpl) then) =
+      __$$TreeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -2193,11 +2198,11 @@ abstract class _$$_TreeStateCopyWith<$Res> implements $TreeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TreeStateCopyWithImpl<$Res>
-    extends _$TreeStateCopyWithImpl<$Res, _$_TreeState>
-    implements _$$_TreeStateCopyWith<$Res> {
-  __$$_TreeStateCopyWithImpl(
-      _$_TreeState _value, $Res Function(_$_TreeState) _then)
+class __$$TreeStateImplCopyWithImpl<$Res>
+    extends _$TreeStateCopyWithImpl<$Res, _$TreeStateImpl>
+    implements _$$TreeStateImplCopyWith<$Res> {
+  __$$TreeStateImplCopyWithImpl(
+      _$TreeStateImpl _value, $Res Function(_$TreeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2215,7 +2220,7 @@ class __$$_TreeStateCopyWithImpl<$Res>
     Object? branchResume = freezed,
     Object? session = freezed,
   }) {
-    return _then(_$_TreeState(
+    return _then(_$TreeStateImpl(
       authorIsUser: null == authorIsUser
           ? _value.authorIsUser
           : authorIsUser // ignore: cast_nullable_to_non_nullable
@@ -2266,8 +2271,8 @@ class __$$_TreeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TreeState implements _TreeState {
-  const _$_TreeState(
+class _$TreeStateImpl implements _TreeState {
+  const _$TreeStateImpl(
       {required this.authorIsUser,
       required this.author,
       required this.failureOption,
@@ -2312,7 +2317,7 @@ class _$_TreeState implements _TreeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TreeState &&
+            other is _$TreeStateImpl &&
             (identical(other.authorIsUser, authorIsUser) ||
                 other.authorIsUser == authorIsUser) &&
             (identical(other.author, author) || other.author == author) &&
@@ -2351,8 +2356,8 @@ class _$_TreeState implements _TreeState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TreeStateCopyWith<_$_TreeState> get copyWith =>
-      __$$_TreeStateCopyWithImpl<_$_TreeState>(this, _$identity);
+  _$$TreeStateImplCopyWith<_$TreeStateImpl> get copyWith =>
+      __$$TreeStateImplCopyWithImpl<_$TreeStateImpl>(this, _$identity);
 }
 
 abstract class _TreeState implements TreeState {
@@ -2367,7 +2372,7 @@ abstract class _TreeState implements TreeState {
       required final Tree tree,
       final Branch? branchOne,
       final Branch? branchResume,
-      final User? session}) = _$_TreeState;
+      final User? session}) = _$TreeStateImpl;
 
   @override
   bool get authorIsUser;
@@ -2393,6 +2398,6 @@ abstract class _TreeState implements TreeState {
   User? get session;
   @override
   @JsonKey(ignore: true)
-  _$$_TreeStateCopyWith<_$_TreeState> get copyWith =>
+  _$$TreeStateImplCopyWith<_$TreeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

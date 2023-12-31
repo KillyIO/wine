@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class TypewriterTextField extends StatelessWidget {
-  /// @nodoc
   const TypewriterTextField({
     required this.hintText,
     required this.label,
@@ -19,31 +17,22 @@ class TypewriterTextField extends StatelessWidget {
     this.maxLines = 1,
   });
 
-  /// @nodoc
   final TextEditingController? controller;
 
-  /// @nodoc
   final String hintText;
 
-  /// @nodoc
   final TextInputType keyboardType;
 
-  /// @nodoc
   final String label;
 
-  /// @nodoc
   final int? maxLines;
 
-  /// @nodoc
   final void Function(String) onChanged;
 
-  /// @nodoc
   final String? Function(String?)? validator;
 
-  /// @nodoc
   final String wordCount;
 
-  /// @nodoc
   final bool wordCountError;
 
   @override

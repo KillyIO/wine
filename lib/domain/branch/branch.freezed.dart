@@ -161,9 +161,10 @@ class _$BranchCopyWithImpl<$Res, $Val extends Branch>
 }
 
 /// @nodoc
-abstract class _$$_BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
-  factory _$$_BranchCopyWith(_$_Branch value, $Res Function(_$_Branch) then) =
-      __$$_BranchCopyWithImpl<$Res>;
+abstract class _$$BranchImplCopyWith<$Res> implements $BranchCopyWith<$Res> {
+  factory _$$BranchImplCopyWith(
+          _$BranchImpl value, $Res Function(_$BranchImpl) then) =
+      __$$BranchImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -186,10 +187,11 @@ abstract class _$$_BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BranchCopyWithImpl<$Res>
-    extends _$BranchCopyWithImpl<$Res, _$_Branch>
-    implements _$$_BranchCopyWith<$Res> {
-  __$$_BranchCopyWithImpl(_$_Branch _value, $Res Function(_$_Branch) _then)
+class __$$BranchImplCopyWithImpl<$Res>
+    extends _$BranchCopyWithImpl<$Res, _$BranchImpl>
+    implements _$$BranchImplCopyWith<$Res> {
+  __$$BranchImplCopyWithImpl(
+      _$BranchImpl _value, $Res Function(_$BranchImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -212,7 +214,7 @@ class __$$_BranchCopyWithImpl<$Res>
     Object? uid = null,
     Object? viewsCount = null,
   }) {
-    return _then(_$_Branch(
+    return _then(_$BranchImpl(
       authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
@@ -283,8 +285,8 @@ class __$$_BranchCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Branch implements _Branch {
-  _$_Branch(
+class _$BranchImpl implements _Branch {
+  _$BranchImpl(
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
@@ -351,7 +353,7 @@ class _$_Branch implements _Branch {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Branch &&
+            other is _$BranchImpl &&
             (identical(other.authorUID, authorUID) ||
                 other.authorUID == authorUID) &&
             (identical(other.bookmarksCount, bookmarksCount) ||
@@ -401,8 +403,8 @@ class _$_Branch implements _Branch {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BranchCopyWith<_$_Branch> get copyWith =>
-      __$$_BranchCopyWithImpl<_$_Branch>(this, _$identity);
+  _$$BranchImplCopyWith<_$BranchImpl> get copyWith =>
+      __$$BranchImplCopyWithImpl<_$BranchImpl>(this, _$identity);
 }
 
 abstract class _Branch implements Branch {
@@ -422,7 +424,7 @@ abstract class _Branch implements Branch {
       required final Title title,
       required final UniqueID treeUID,
       required final UniqueID uid,
-      required final int viewsCount}) = _$_Branch;
+      required final int viewsCount}) = _$BranchImpl;
 
   @override
   UniqueID get authorUID;
@@ -458,6 +460,6 @@ abstract class _Branch implements Branch {
   int get viewsCount;
   @override
   @JsonKey(ignore: true)
-  _$$_BranchCopyWith<_$_Branch> get copyWith =>
+  _$$BranchImplCopyWith<_$BranchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

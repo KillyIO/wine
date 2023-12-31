@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wine/presentation/home/widgets/home_splash_copyright.dart';
 import 'package:wine/utils/constants/animations.dart';
 
-/// @nodoc
 class HomeSplashLayout extends StatelessWidget {
-  /// @nodoc
   const HomeSplashLayout({super.key});
 
   @override

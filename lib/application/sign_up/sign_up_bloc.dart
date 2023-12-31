@@ -18,12 +18,8 @@ part 'sign_up_bloc.freezed.dart';
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  /// @nodoc
   SignUpBloc(
     this._authFacade,
     this._defaultCoversRepository,

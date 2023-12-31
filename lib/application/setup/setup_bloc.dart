@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -11,19 +12,22 @@ import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/infrastructure/default_covers/isar_default_covers_repository.dart';
+import 'package:wine/infrastructure/default_covers/shared_preferences_default_covers_repository.dart';
 
 part 'setup_bloc.freezed.dart';
 part 'setup_event.dart';
 part 'setup_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class SetupBloc extends Bloc<SetupEvent, SetupState> {
-  /// @nodoc
   SetupBloc(
     this._authFacade,
+    @Named.from(
+      kIsWeb
+          ? SharedPreferencesDefaultCoversRepository
+          : IsarDefaultCoversRepository,
+    )
     this._defaultCoversRepository,
     this._sessionsRepository,
     this._settingsRepository,

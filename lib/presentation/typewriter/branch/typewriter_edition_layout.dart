@@ -21,9 +21,7 @@ import 'package:wine/utils/constants/languages.dart';
 import 'package:wine/utils/constants/licences.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class TypewriterEditionLayout extends StatelessWidget {
-  /// @nodoc
   const TypewriterEditionLayout({super.key});
 
   String _getLeafErrorMessage(int wordCount) {
@@ -286,7 +284,7 @@ class TypewriterEditionLayout extends StatelessWidget {
               }
               return Container();
             },
-          )
+          ),
         ],
       ),
     );

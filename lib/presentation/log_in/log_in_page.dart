@@ -8,16 +8,13 @@ import 'package:wine/presentation/log_in/log_in_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class LogInPage extends StatelessWidget {
-  /// @nodoc
   const LogInPage({
     required this.navigateTo,
     super.key,
   });
 
-  /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
 
   @override

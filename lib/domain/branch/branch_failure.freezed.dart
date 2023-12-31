@@ -100,25 +100,25 @@ class _$BranchFailureCopyWithImpl<$Res, $Val extends BranchFailure>
 }
 
 /// @nodoc
-abstract class _$$BranchNotFoundCopyWith<$Res> {
-  factory _$$BranchNotFoundCopyWith(
-          _$BranchNotFound value, $Res Function(_$BranchNotFound) then) =
-      __$$BranchNotFoundCopyWithImpl<$Res>;
+abstract class _$$BranchNotFoundImplCopyWith<$Res> {
+  factory _$$BranchNotFoundImplCopyWith(_$BranchNotFoundImpl value,
+          $Res Function(_$BranchNotFoundImpl) then) =
+      __$$BranchNotFoundImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BranchNotFoundCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res, _$BranchNotFound>
-    implements _$$BranchNotFoundCopyWith<$Res> {
-  __$$BranchNotFoundCopyWithImpl(
-      _$BranchNotFound _value, $Res Function(_$BranchNotFound) _then)
+class __$$BranchNotFoundImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$BranchNotFoundImpl>
+    implements _$$BranchNotFoundImplCopyWith<$Res> {
+  __$$BranchNotFoundImplCopyWithImpl(
+      _$BranchNotFoundImpl _value, $Res Function(_$BranchNotFoundImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$BranchNotFound implements BranchNotFound {
-  const _$BranchNotFound();
+class _$BranchNotFoundImpl implements BranchNotFound {
+  const _$BranchNotFoundImpl();
 
   @override
   String toString() {
@@ -128,7 +128,7 @@ class _$BranchNotFound implements BranchNotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BranchNotFound);
+        (other.runtimeType == runtimeType && other is _$BranchNotFoundImpl);
   }
 
   @override
@@ -223,29 +223,31 @@ class _$BranchNotFound implements BranchNotFound {
 }
 
 abstract class BranchNotFound implements BranchFailure {
-  const factory BranchNotFound() = _$BranchNotFound;
+  const factory BranchNotFound() = _$BranchNotFoundImpl;
 }
 
 /// @nodoc
-abstract class _$$BranchOneAlreadyExistsCopyWith<$Res> {
-  factory _$$BranchOneAlreadyExistsCopyWith(_$BranchOneAlreadyExists value,
-          $Res Function(_$BranchOneAlreadyExists) then) =
-      __$$BranchOneAlreadyExistsCopyWithImpl<$Res>;
+abstract class _$$BranchOneAlreadyExistsImplCopyWith<$Res> {
+  factory _$$BranchOneAlreadyExistsImplCopyWith(
+          _$BranchOneAlreadyExistsImpl value,
+          $Res Function(_$BranchOneAlreadyExistsImpl) then) =
+      __$$BranchOneAlreadyExistsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BranchOneAlreadyExistsCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res, _$BranchOneAlreadyExists>
-    implements _$$BranchOneAlreadyExistsCopyWith<$Res> {
-  __$$BranchOneAlreadyExistsCopyWithImpl(_$BranchOneAlreadyExists _value,
-      $Res Function(_$BranchOneAlreadyExists) _then)
+class __$$BranchOneAlreadyExistsImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$BranchOneAlreadyExistsImpl>
+    implements _$$BranchOneAlreadyExistsImplCopyWith<$Res> {
+  __$$BranchOneAlreadyExistsImplCopyWithImpl(
+      _$BranchOneAlreadyExistsImpl _value,
+      $Res Function(_$BranchOneAlreadyExistsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$BranchOneAlreadyExists implements BranchOneAlreadyExists {
-  const _$BranchOneAlreadyExists();
+class _$BranchOneAlreadyExistsImpl implements BranchOneAlreadyExists {
+  const _$BranchOneAlreadyExistsImpl();
 
   @override
   String toString() {
@@ -255,7 +257,8 @@ class _$BranchOneAlreadyExists implements BranchOneAlreadyExists {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BranchOneAlreadyExists);
+        (other.runtimeType == runtimeType &&
+            other is _$BranchOneAlreadyExistsImpl);
   }
 
   @override
@@ -350,29 +353,29 @@ class _$BranchOneAlreadyExists implements BranchOneAlreadyExists {
 }
 
 abstract class BranchOneAlreadyExists implements BranchFailure {
-  const factory BranchOneAlreadyExists() = _$BranchOneAlreadyExists;
+  const factory BranchOneAlreadyExists() = _$BranchOneAlreadyExistsImpl;
 }
 
 /// @nodoc
-abstract class _$$CoverNotUploadedCopyWith<$Res> {
-  factory _$$CoverNotUploadedCopyWith(
-          _$CoverNotUploaded value, $Res Function(_$CoverNotUploaded) then) =
-      __$$CoverNotUploadedCopyWithImpl<$Res>;
+abstract class _$$CoverNotUploadedImplCopyWith<$Res> {
+  factory _$$CoverNotUploadedImplCopyWith(_$CoverNotUploadedImpl value,
+          $Res Function(_$CoverNotUploadedImpl) then) =
+      __$$CoverNotUploadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CoverNotUploadedCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res, _$CoverNotUploaded>
-    implements _$$CoverNotUploadedCopyWith<$Res> {
-  __$$CoverNotUploadedCopyWithImpl(
-      _$CoverNotUploaded _value, $Res Function(_$CoverNotUploaded) _then)
+class __$$CoverNotUploadedImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$CoverNotUploadedImpl>
+    implements _$$CoverNotUploadedImplCopyWith<$Res> {
+  __$$CoverNotUploadedImplCopyWithImpl(_$CoverNotUploadedImpl _value,
+      $Res Function(_$CoverNotUploadedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CoverNotUploaded implements CoverNotUploaded {
-  const _$CoverNotUploaded();
+class _$CoverNotUploadedImpl implements CoverNotUploaded {
+  const _$CoverNotUploadedImpl();
 
   @override
   String toString() {
@@ -382,7 +385,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CoverNotUploaded);
+        (other.runtimeType == runtimeType && other is _$CoverNotUploadedImpl);
   }
 
   @override
@@ -477,29 +480,29 @@ class _$CoverNotUploaded implements CoverNotUploaded {
 }
 
 abstract class CoverNotUploaded implements BranchFailure {
-  const factory CoverNotUploaded() = _$CoverNotUploaded;
+  const factory CoverNotUploaded() = _$CoverNotUploadedImpl;
 }
 
 /// @nodoc
-abstract class _$$PermissionDeniedCopyWith<$Res> {
-  factory _$$PermissionDeniedCopyWith(
-          _$PermissionDenied value, $Res Function(_$PermissionDenied) then) =
-      __$$PermissionDeniedCopyWithImpl<$Res>;
+abstract class _$$PermissionDeniedImplCopyWith<$Res> {
+  factory _$$PermissionDeniedImplCopyWith(_$PermissionDeniedImpl value,
+          $Res Function(_$PermissionDeniedImpl) then) =
+      __$$PermissionDeniedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PermissionDeniedCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res, _$PermissionDenied>
-    implements _$$PermissionDeniedCopyWith<$Res> {
-  __$$PermissionDeniedCopyWithImpl(
-      _$PermissionDenied _value, $Res Function(_$PermissionDenied) _then)
+class __$$PermissionDeniedImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$PermissionDeniedImpl>
+    implements _$$PermissionDeniedImplCopyWith<$Res> {
+  __$$PermissionDeniedImplCopyWithImpl(_$PermissionDeniedImpl _value,
+      $Res Function(_$PermissionDeniedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PermissionDenied implements PermissionDenied {
-  const _$PermissionDenied();
+class _$PermissionDeniedImpl implements PermissionDenied {
+  const _$PermissionDeniedImpl();
 
   @override
   String toString() {
@@ -509,7 +512,7 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PermissionDenied);
+        (other.runtimeType == runtimeType && other is _$PermissionDeniedImpl);
   }
 
   @override
@@ -604,29 +607,29 @@ class _$PermissionDenied implements PermissionDenied {
 }
 
 abstract class PermissionDenied implements BranchFailure {
-  const factory PermissionDenied() = _$PermissionDenied;
+  const factory PermissionDenied() = _$PermissionDeniedImpl;
 }
 
 /// @nodoc
-abstract class _$$ServerErrorCopyWith<$Res> {
-  factory _$$ServerErrorCopyWith(
-          _$ServerError value, $Res Function(_$ServerError) then) =
-      __$$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorImplCopyWith<$Res> {
+  factory _$$ServerErrorImplCopyWith(
+          _$ServerErrorImpl value, $Res Function(_$ServerErrorImpl) then) =
+      __$$ServerErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ServerErrorCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res, _$ServerError>
-    implements _$$ServerErrorCopyWith<$Res> {
-  __$$ServerErrorCopyWithImpl(
-      _$ServerError _value, $Res Function(_$ServerError) _then)
+class __$$ServerErrorImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$ServerErrorImpl>
+    implements _$$ServerErrorImplCopyWith<$Res> {
+  __$$ServerErrorImplCopyWithImpl(
+      _$ServerErrorImpl _value, $Res Function(_$ServerErrorImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ServerError implements ServerError {
-  const _$ServerError();
+class _$ServerErrorImpl implements ServerError {
+  const _$ServerErrorImpl();
 
   @override
   String toString() {
@@ -636,7 +639,7 @@ class _$ServerError implements ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ServerError);
+        (other.runtimeType == runtimeType && other is _$ServerErrorImpl);
   }
 
   @override
@@ -731,29 +734,29 @@ class _$ServerError implements ServerError {
 }
 
 abstract class ServerError implements BranchFailure {
-  const factory ServerError() = _$ServerError;
+  const factory ServerError() = _$ServerErrorImpl;
 }
 
 /// @nodoc
-abstract class _$$UnexpectedCopyWith<$Res> {
-  factory _$$UnexpectedCopyWith(
-          _$Unexpected value, $Res Function(_$Unexpected) then) =
-      __$$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$UnexpectedImplCopyWith<$Res> {
+  factory _$$UnexpectedImplCopyWith(
+          _$UnexpectedImpl value, $Res Function(_$UnexpectedImpl) then) =
+      __$$UnexpectedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UnexpectedCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res, _$Unexpected>
-    implements _$$UnexpectedCopyWith<$Res> {
-  __$$UnexpectedCopyWithImpl(
-      _$Unexpected _value, $Res Function(_$Unexpected) _then)
+class __$$UnexpectedImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$UnexpectedImpl>
+    implements _$$UnexpectedImplCopyWith<$Res> {
+  __$$UnexpectedImplCopyWithImpl(
+      _$UnexpectedImpl _value, $Res Function(_$UnexpectedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Unexpected implements Unexpected {
-  const _$Unexpected();
+class _$UnexpectedImpl implements Unexpected {
+  const _$UnexpectedImpl();
 
   @override
   String toString() {
@@ -763,7 +766,7 @@ class _$Unexpected implements Unexpected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Unexpected);
+        (other.runtimeType == runtimeType && other is _$UnexpectedImpl);
   }
 
   @override
@@ -858,5 +861,5 @@ class _$Unexpected implements Unexpected {
 }
 
 abstract class Unexpected implements BranchFailure {
-  const factory Unexpected() = _$Unexpected;
+  const factory Unexpected() = _$UnexpectedImpl;
 }
