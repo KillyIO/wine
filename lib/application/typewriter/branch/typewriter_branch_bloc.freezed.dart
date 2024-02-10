@@ -12,7 +12,7 @@ part of 'typewriter_branch_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TypewriterBranchEvent {
@@ -242,7 +242,7 @@ class _$LaunchAsNewBranchImpl implements LaunchAsNewBranch {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LaunchAsNewBranchImpl &&
@@ -451,7 +451,7 @@ class _$SessionFetchedImpl implements SessionFetched {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SessionFetchedImpl);
   }
@@ -642,7 +642,7 @@ class _$PublishButtonPressedImpl implements PublishButtonPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PublishButtonPressedImpl);
@@ -836,7 +836,7 @@ class _$BranchOneExistenceCheckedImpl implements BranchOneExistenceChecked {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BranchOneExistenceCheckedImpl);
@@ -1027,7 +1027,7 @@ class _$AddCoverPressedImpl implements AddCoverPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$AddCoverPressedImpl);
   }
@@ -1217,7 +1217,7 @@ class _$DeleteButtonPressedImpl implements DeleteButtonPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeleteButtonPressedImpl);
@@ -1426,7 +1426,7 @@ class _$GenreAddedImpl implements GenreAdded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GenreAddedImpl &&
@@ -1647,7 +1647,7 @@ class _$GenreRemovedImpl implements GenreRemoved {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GenreRemovedImpl &&
@@ -1868,7 +1868,7 @@ class _$IsNSFWChangedImpl implements IsNSFWChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IsNSFWChangedImpl &&
@@ -2090,7 +2090,7 @@ class _$LanguageSelectedImpl implements LanguageSelected {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LanguageSelectedImpl &&
@@ -2335,7 +2335,7 @@ class _$LaunchWithUIDImpl implements LaunchWithUID {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LaunchWithUIDImpl &&
@@ -2541,7 +2541,7 @@ class _$LeafChangedImpl implements LeafChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$LeafChangedImpl);
   }
@@ -2749,7 +2749,7 @@ class _$LicenceSelectedImpl implements LicenceSelected {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LicenceSelectedImpl &&
@@ -2973,7 +2973,7 @@ class _$PageViewIndexChangedImpl implements PageViewIndexChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageViewIndexChangedImpl &&
@@ -3179,7 +3179,7 @@ class _$SaveButtonPressedImpl implements SaveButtonPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SaveButtonPressedImpl);
   }
@@ -3387,7 +3387,7 @@ class _$TitleChangedImpl implements TitleChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TitleChangedImpl &&
@@ -3952,7 +3952,7 @@ class _$TypewriterBranchStateImpl implements _TypewriterBranchState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TypewriterBranchStateImpl &&

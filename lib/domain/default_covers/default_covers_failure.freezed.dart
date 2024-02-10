@@ -12,7 +12,7 @@ part of 'default_covers_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DefaultCoversFailure {
@@ -132,7 +132,7 @@ class _$DefaultCoversNotCachedImpl implements DefaultCoversNotCached {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DefaultCoversNotCachedImpl);
@@ -265,7 +265,7 @@ class _$DefaultCoverNotFetchedImpl implements DefaultCoverNotFetched {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DefaultCoverNotFetchedImpl);
@@ -398,7 +398,7 @@ class _$DefaultCoversNotLoadedImpl implements DefaultCoversNotLoaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DefaultCoversNotLoadedImpl);
@@ -528,7 +528,7 @@ class _$PermissionDeniedImpl implements PermissionDenied {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$PermissionDeniedImpl);
   }
@@ -657,7 +657,7 @@ class _$ServerErrorImpl implements ServerError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ServerErrorImpl);
   }
@@ -786,7 +786,7 @@ class _$UnexpectedImpl implements Unexpected {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$UnexpectedImpl);
   }

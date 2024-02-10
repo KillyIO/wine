@@ -12,7 +12,7 @@ part of 'library_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LibraryEvent {
@@ -139,7 +139,7 @@ class _$InitImpl implements Init {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$InitImpl);
   }
@@ -280,7 +280,7 @@ class _$SessionFetchedImpl implements SessionFetched {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SessionFetchedImpl);
   }
@@ -439,7 +439,7 @@ class _$BranchDeletedImpl implements BranchDeleted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BranchDeletedImpl &&
@@ -621,7 +621,7 @@ class _$BranchUpdatedImpl implements BranchUpdated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BranchUpdatedImpl &&
@@ -793,7 +793,7 @@ class _$PageViewIndexChangedImpl implements PageViewIndexChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageViewIndexChangedImpl &&
@@ -968,7 +968,7 @@ class _$TreeDeletedImpl implements TreeDeleted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TreeDeletedImpl &&
@@ -1150,7 +1150,7 @@ class _$TreeUpdatedImpl implements TreeUpdated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TreeUpdatedImpl &&
@@ -1324,7 +1324,7 @@ class _$VerticalNavbarIndexChangedImpl implements VerticalNavbarIndexChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VerticalNavbarIndexChangedImpl &&
@@ -1715,7 +1715,7 @@ class _$LibraryStateImpl implements _LibraryState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LibraryStateImpl &&

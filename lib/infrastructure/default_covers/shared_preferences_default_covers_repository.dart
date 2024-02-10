@@ -10,14 +10,11 @@ import 'package:wine/domain/default_covers/default_cover.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/infrastructure/default_covers/default_cover_dto.dart';
-import 'package:wine/injection.dart';
 import 'package:wine/utils/constants/paths/default_covers.dart';
 
-@devWeb
-@prodWeb
-@named
 @LazySingleton(
   as: IDefaultCoversRepository,
+  env: [Environment.dev, Environment.prod],
 )
 class SharedPreferencesDefaultCoversRepository
     implements IDefaultCoversRepository {

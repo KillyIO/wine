@@ -18,8 +18,6 @@ import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
-import 'package:wine/infrastructure/default_covers/isar_default_covers_repository.dart';
-import 'package:wine/infrastructure/default_covers/shared_preferences_default_covers_repository.dart';
 
 part 'log_in_bloc.freezed.dart';
 part 'log_in_event.dart';
@@ -29,11 +27,6 @@ part 'log_in_state.dart';
 class LogInBloc extends Bloc<LogInEvent, LogInState> {
   LogInBloc(
     this._authFacade,
-    @Named.from(
-      kIsWeb
-          ? SharedPreferencesDefaultCoversRepository
-          : IsarDefaultCoversRepository,
-    )
     this._defaultCoversRepository,
     this._sessionsRepository,
     this._userRepository,

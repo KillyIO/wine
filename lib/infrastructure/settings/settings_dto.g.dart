@@ -8,6 +8,7 @@ part of 'settings_dto.dart';
 
 _$SettingsDTOImpl _$$SettingsDTOImplFromJson(Map<String, dynamic> json) =>
     _$SettingsDTOImpl(
+      uid: json['uid'] as String,
       enableBranchesBookmarksCount:
           json['enableBranchesBookmarksCount'] as bool?,
       enableBranchesLikesCount: json['enableBranchesLikesCount'] as bool?,
@@ -19,6 +20,7 @@ _$SettingsDTOImpl _$$SettingsDTOImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$SettingsDTOImplToJson(_$SettingsDTOImpl instance) =>
     <String, dynamic>{
+      'uid': instance.uid,
       'enableBranchesBookmarksCount': instance.enableBranchesBookmarksCount,
       'enableBranchesLikesCount': instance.enableBranchesLikesCount,
       'enableBranchesViewsCount': instance.enableBranchesViewsCount,

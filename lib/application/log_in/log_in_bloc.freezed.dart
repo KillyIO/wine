@@ -12,7 +12,7 @@ part of 'log_in_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LogInEvent {
@@ -204,7 +204,7 @@ class _$LogInWithEmailAndPasswordPressedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LogInWithEmailAndPasswordPressedImpl);
@@ -410,7 +410,7 @@ class _$LoggedInWithEmailAndPasswordImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoggedInWithEmailAndPasswordImpl);
@@ -641,7 +641,7 @@ class _$UserLoadedImpl with DiagnosticableTreeMixin implements UserLoaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLoadedImpl &&
@@ -885,7 +885,7 @@ class _$UserDetailsSavedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserDetailsSavedImpl &&
@@ -1100,7 +1100,7 @@ class _$SessionInsertedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SessionInsertedImpl);
   }
@@ -1327,7 +1327,7 @@ class _$DefaultCoversLoadedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DefaultCoversLoadedImpl &&
@@ -1548,7 +1548,7 @@ class _$LogInWithGooglePressedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LogInWithGooglePressedImpl);
@@ -1751,7 +1751,7 @@ class _$LoggedInWithGoogleImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$LoggedInWithGoogleImpl);
   }
@@ -1980,7 +1980,7 @@ class _$UserNotFoundImpl with DiagnosticableTreeMixin implements UserNotFound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserNotFoundImpl &&
@@ -2227,7 +2227,7 @@ class _$UsernameAvailabilityConfirmedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsernameAvailabilityConfirmedImpl &&
@@ -2475,7 +2475,7 @@ class _$UsernameSavedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsernameSavedImpl &&
@@ -2721,7 +2721,7 @@ class _$CustomUsernameGeneratedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomUsernameGeneratedImpl &&
@@ -2940,7 +2940,7 @@ class _$CredentialAlreadyInUseImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CredentialAlreadyInUseImpl);
@@ -3162,7 +3162,7 @@ class _$EmailAddressChangedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmailAddressChangedImpl &&
@@ -3399,7 +3399,7 @@ class _$PasswordChangedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PasswordChangedImpl &&
@@ -3767,7 +3767,7 @@ class _$LogInStateImpl with DiagnosticableTreeMixin implements _LogInState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LogInStateImpl &&

@@ -12,7 +12,7 @@ part of 'value_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ValueFailure<T> {
@@ -186,7 +186,7 @@ class _$EmptyInputImpl<T> implements EmptyInput<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmptyInputImpl<T> &&
@@ -388,7 +388,7 @@ class _$EmptySelectionImpl<T> implements EmptySelection<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmptySelectionImpl<T> &&
@@ -591,7 +591,7 @@ class _$InvalidCoverFileImpl<T> implements InvalidCoverFile<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidCoverFileImpl<T> &&
@@ -795,7 +795,7 @@ class _$InvalidCoverURLImpl<T> implements InvalidCoverURL<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidCoverURLImpl<T> &&
@@ -998,7 +998,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidEmailImpl<T> &&
@@ -1201,7 +1201,7 @@ class _$InvalidLicenceImpl<T> implements InvalidLicence<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidLicenceImpl<T> &&
@@ -1404,7 +1404,7 @@ class _$InvalidPasswordImpl<T> implements InvalidPassword<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidPasswordImpl<T> &&
@@ -1609,7 +1609,7 @@ class _$InvalidConfirmPasswordImpl<T> implements InvalidConfirmPassword<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidConfirmPasswordImpl<T> &&
@@ -1813,7 +1813,7 @@ class _$InvalidUniqueIDImpl<T> implements InvalidUniqueID<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidUniqueIDImpl<T> &&
@@ -2016,7 +2016,7 @@ class _$InvalidUsernameImpl<T> implements InvalidUsername<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidUsernameImpl<T> &&
@@ -2219,7 +2219,7 @@ class _$InvalidViolationImpl<T> implements InvalidViolation<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidViolationImpl<T> &&
@@ -2423,7 +2423,7 @@ class _$TooLongInputImpl<T> implements TooLongInput<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TooLongInputImpl<T> &&
@@ -2626,7 +2626,7 @@ class _$TooShortInputImpl<T> implements TooShortInput<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TooShortInputImpl<T> &&

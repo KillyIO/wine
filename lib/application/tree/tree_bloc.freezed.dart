@@ -12,7 +12,7 @@ part of 'tree_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TreeEvent {
@@ -194,7 +194,7 @@ class _$LaunchWithUIDImpl implements LaunchWithUID {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LaunchWithUIDImpl &&
@@ -367,7 +367,7 @@ class _$TreeSetImpl implements TreeSet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$TreeSetImpl);
   }
@@ -524,7 +524,7 @@ class _$SessionFetchedImpl implements SessionFetched {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SessionFetchedImpl);
   }
@@ -681,7 +681,7 @@ class _$AuthorLoadedImpl implements AuthorLoaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$AuthorLoadedImpl);
   }
@@ -838,7 +838,7 @@ class _$SettingsFetchedImpl implements SettingsFetched {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SettingsFetchedImpl);
   }
@@ -995,7 +995,7 @@ class _$BranchOneLoadedImpl implements BranchOneLoaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$BranchOneLoadedImpl);
   }
@@ -1152,7 +1152,7 @@ class _$ViewsUpdatedImpl implements ViewsUpdated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ViewsUpdatedImpl);
   }
@@ -1309,7 +1309,7 @@ class _$LikeStatusLoadedImpl implements LikeStatusLoaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$LikeStatusLoadedImpl);
   }
@@ -1466,7 +1466,7 @@ class _$BranchOneNotFoundImpl implements BranchOneNotFound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$BranchOneNotFoundImpl);
   }
@@ -1642,7 +1642,7 @@ class _$BookmarkButtonPressedImpl implements BookmarkButtonPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookmarkButtonPressedImpl &&
@@ -1833,7 +1833,7 @@ class _$LikeButtonPressedImpl implements LikeButtonPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LikeButtonPressedImpl &&
@@ -2314,7 +2314,7 @@ class _$TreeStateImpl implements _TreeState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TreeStateImpl &&

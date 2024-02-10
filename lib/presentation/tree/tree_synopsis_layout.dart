@@ -25,7 +25,7 @@ class TreeSynopsisLayout extends StatelessWidget {
           builder: (context, state) {
             return TreeSynopsis(synopsis: state.tree.synopsis.getOrNull());
           },
-        )
+        ),
       ],
     );
   }

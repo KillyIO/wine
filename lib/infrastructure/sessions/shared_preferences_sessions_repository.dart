@@ -9,12 +9,10 @@ import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
-import 'package:wine/injection.dart';
 
-@devWeb
-@prodWeb
 @LazySingleton(
   as: ISessionsRepository,
+  env: [Environment.dev, Environment.prod],
 )
 class SharedPreferencesSessionsRepository implements ISessionsRepository {
   SharedPreferencesSessionsRepository(
@@ -27,26 +25,32 @@ class SharedPreferencesSessionsRepository implements ISessionsRepository {
 
   @override
   Future<Result<Unit, SessionsFailure>> deleteSession() async {
-    final firebaseUser = _firebaseAuth.currentUser;
+    try {
+      final firebaseUser = _firebaseAuth.currentUser;
 
-    if (firebaseUser != null) {
-      try {
-        return (await _sharedPreferences.remove(firebaseUser.uid))
-            ? const Ok(unit)
-            : const Err(SessionsFailure.sessionNotDeleted());
-      } catch (_) {
+      if (firebaseUser == null) {
         return const Err(SessionsFailure.sessionNotDeleted());
       }
+
+      return (await _sharedPreferences.remove('users_${firebaseUser.uid}'))
+          ? const Ok(unit)
+          : const Err(SessionsFailure.sessionNotDeleted());
+    } catch (_) {
+      return const Err(SessionsFailure.sessionNotDeleted());
     }
-    return const Err(SessionsFailure.sessionNotDeleted());
   }
 
   @override
   Future<Result<User, SessionsFailure>> fetchSession() async {
-    final firebaseUser = _firebaseAuth.currentUser;
+    try {
+      final firebaseUser = _firebaseAuth.currentUser;
 
-    if (firebaseUser != null) {
-      final sessionJson = _sharedPreferences.getString(firebaseUser.uid);
+      if (firebaseUser == null) {
+        return const Err(SessionsFailure.sessionNotFound());
+      }
+
+      final sessionJson =
+          _sharedPreferences.getString('users_${firebaseUser.uid}');
 
       if (sessionJson != null) {
         return Ok(
@@ -54,38 +58,41 @@ class SharedPreferencesSessionsRepository implements ISessionsRepository {
               .toDomain(),
         );
       }
+      return const Err(SessionsFailure.sessionNotFound());
+    } catch (_) {
+      return const Err(SessionsFailure.sessionNotFound());
     }
-    return const Err(SessionsFailure.sessionNotFound());
   }
 
   @override
   Future<Result<Unit, SessionsFailure>> insertSession(User user) async {
-    var tmpUser = user;
-    final firebaseUser = _firebaseAuth.currentUser;
+    try {
+      var tmpUser = user;
+      final firebaseUser = _firebaseAuth.currentUser;
 
-    if (firebaseUser != null) {
+      if (firebaseUser == null) {
+        return const Err(SessionsFailure.sessionNotInserted());
+      }
+
       if (firebaseUser.isAnonymous) {
         tmpUser = tmpUser.copyWith(
           uid: UniqueID.fromUniqueString(firebaseUser.uid),
         );
       }
 
-      try {
-        final result = await _sharedPreferences.setString(
-          firebaseUser.uid,
-          jsonEncode(
-            UserDTO.fromDomain(tmpUser).toJson(),
-          ),
-        );
+      final result = await _sharedPreferences.setString(
+        firebaseUser.uid,
+        jsonEncode(
+          UserDTO.fromDomain(tmpUser).toJson(),
+        ),
+      );
 
-        if (result) {
-          return const Ok(unit);
-        }
-        return const Err(SessionsFailure.sessionNotInserted());
-      } catch (_) {
-        return const Err(SessionsFailure.sessionNotInserted());
+      if (result) {
+        return const Ok(unit);
       }
+      return const Err(SessionsFailure.sessionNotInserted());
+    } catch (_) {
+      return const Err(SessionsFailure.sessionNotInserted());
     }
-    return const Err(SessionsFailure.sessionNotInserted());
   }
 }

@@ -12,7 +12,7 @@ part of 'sign_up_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SignUpEvent {
@@ -160,7 +160,7 @@ class _$SignUpPressedImpl implements SignUpPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SignUpPressedImpl);
   }
@@ -324,7 +324,7 @@ class _$UsernameAvailabilityConfirmedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsernameAvailabilityConfirmedImpl);
@@ -487,7 +487,7 @@ class _$AccountCreatedImpl implements AccountCreated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$AccountCreatedImpl);
   }
@@ -676,7 +676,7 @@ class _$UsernameSavedImpl implements UsernameSaved {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsernameSavedImpl &&
@@ -878,7 +878,7 @@ class _$UserDetailsSavedImpl implements UserDetailsSaved {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserDetailsSavedImpl &&
@@ -1053,7 +1053,7 @@ class _$SessionInsertedImpl implements SessionInserted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SessionInsertedImpl);
   }
@@ -1238,7 +1238,7 @@ class _$DefaultCoversLoadedImpl implements DefaultCoversLoaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DefaultCoversLoadedImpl &&
@@ -1436,7 +1436,7 @@ class _$ConfirmPasswordChangedImpl implements ConfirmPasswordChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConfirmPasswordChangedImpl &&
@@ -1631,7 +1631,7 @@ class _$EmailAddressChangedImpl implements EmailAddressChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmailAddressChangedImpl &&
@@ -1826,7 +1826,7 @@ class _$PasswordChangedImpl implements PasswordChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PasswordChangedImpl &&
@@ -2021,7 +2021,7 @@ class _$UsernameChangedImpl implements UsernameChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UsernameChangedImpl &&
@@ -2376,7 +2376,7 @@ class _$SignUpStateImpl implements _SignUpState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignUpStateImpl &&

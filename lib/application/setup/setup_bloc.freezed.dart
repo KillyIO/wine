@@ -12,7 +12,7 @@ part of 'setup_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SetupEvent {
@@ -150,7 +150,7 @@ class _$AppLaunchedImpl with DiagnosticableTreeMixin implements AppLaunched {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$AppLaunchedImpl);
   }
@@ -303,7 +303,7 @@ class _$AuthenticatedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$AuthenticatedImpl);
   }
@@ -456,7 +456,7 @@ class _$SettingsFetchedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SettingsFetchedImpl);
   }
@@ -639,7 +639,7 @@ class _$SessionFetchedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SessionFetchedImpl &&
@@ -834,7 +834,7 @@ class _$UserLoadedImpl with DiagnosticableTreeMixin implements UserLoaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLoadedImpl &&
@@ -1000,7 +1000,7 @@ class _$SettingsNotFoundImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SettingsNotFoundImpl);
   }
@@ -1154,7 +1154,7 @@ class _$SettingsInitializedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SettingsInitializedImpl);
@@ -1334,7 +1334,7 @@ class _$DefaultCoversLoadedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DefaultCoversLoadedImpl &&
@@ -1505,7 +1505,7 @@ class _$DefaultCoversCachedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DefaultCoversCachedImpl);
@@ -1723,7 +1723,7 @@ class _$ContentImpl with DiagnosticableTreeMixin implements _Content {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ContentImpl);
   }
@@ -1867,7 +1867,7 @@ class _$FailureImpl with DiagnosticableTreeMixin implements _Failure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailureImpl &&
@@ -1994,7 +1994,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$InitialImpl);
   }

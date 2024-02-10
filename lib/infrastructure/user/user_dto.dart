@@ -6,7 +6,6 @@ import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/core/converter.dart';
-import 'package:wine/infrastructure/user/isar_user.dart';
 
 part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
@@ -29,15 +28,6 @@ class UserDTO with _$UserDTO {
     );
   }
 
-  factory UserDTO.fromAdapter(IsarUser user) {
-    return UserDTO(
-      emailAddress: user.emailAddress,
-      uid: user.uid,
-      updatedAt: FieldValue.serverTimestamp(),
-      username: user.username,
-    );
-  }
-
   factory UserDTO.fromJson(Map<String, dynamic> json) =>
       _$UserDTOFromJson(json);
 }
@@ -47,13 +37,6 @@ extension UserDTOX on UserDTO {
         emailAddress: EmailAddress(emailAddress),
         uid: UniqueID.fromUniqueString(uid),
         username: Username(username),
-      );
-
-  IsarUser toAdapter() => IsarUser(
-        emailAddress: emailAddress,
-        uid: uid,
-        updatedAt: DateTime.now(),
-        username: username,
       );
 
   Map<String, dynamic> toMap() => <String, dynamic>{

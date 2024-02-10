@@ -10,18 +10,11 @@ class SettingsState with _$SettingsState {
     required String username,
   }) = _SettingsState;
 
-  factory SettingsState.initial() => const SettingsState(
-        failureOption: None(),
+  factory SettingsState.initial() => SettingsState(
+        failureOption: const None(),
         isLoggedOut: false,
         isProcessing: false,
-        settings: Settings(
-          enableBranchesBookmarksCount: false,
-          enableBranchesLikesCount: false,
-          enableBranchesViewsCount: false,
-          enableTreesBookmarksCount: false,
-          enableTreesLikesCount: false,
-          enableTreesViewsCount: false,
-        ),
+        settings: Settings.empty(),
         username: '',
       );
 }
