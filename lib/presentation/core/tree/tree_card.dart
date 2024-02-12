@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
+import 'package:wine/utils/constants/palette.dart';
 
 class TreeCard extends StatelessWidget {
   const TreeCard({
@@ -33,7 +34,6 @@ class TreeCard extends StatelessWidget {
       onTap: onPressed,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(bottom: 5),
@@ -57,7 +57,7 @@ class TreeCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Center(
               child: Text(
                 title ?? 'No title*',
@@ -73,7 +73,8 @@ class TreeCard extends StatelessWidget {
               ),
             ),
           ),
-          Center(
+          Padding(
+            padding: const EdgeInsets.only(left: 7.5, right: 7.5, bottom: 5),
             child: Text(
               language ?? 'No language*',
               maxLines: 1,

@@ -81,9 +81,9 @@ class SharedPreferencesSessionsRepository implements ISessionsRepository {
       }
 
       final result = await _sharedPreferences.setString(
-        firebaseUser.uid,
+        'users_${firebaseUser.uid}',
         jsonEncode(
-          UserDTO.fromDomain(tmpUser).toJson(),
+          UserDTO.fromDomain(tmpUser).toMap(),
         ),
       );
 

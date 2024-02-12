@@ -98,9 +98,7 @@ class LogInLayout extends StatelessWidget {
               'You have been successfully authenticated.',
               'You will now be redirected.',
             ],
-            onNavigate: () => context
-              ..read<AuthBloc>().add(const AuthEvent.authChanged())
-              ..router.replace(navigateTo),
+            onNavigate: () => context.router.replace(navigateTo),
             onRouterPop: () => context.router.pop<bool>(true),
           );
         }
@@ -250,7 +248,7 @@ class LogInLayout extends StatelessWidget {
                           onPressed: state.isProcessing
                               ? null
                               : onSignUpButtonPressed ??
-                                  () => context.router.push(
+                                  () => context.router.replace(
                                         SignUpRoute(navigateTo: navigateTo),
                                       ),
                         ),

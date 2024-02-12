@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
@@ -89,9 +88,7 @@ class SignUpLayout extends StatelessWidget {
               'You have been successfully authenticated.',
               'You will now be redirected.',
             ],
-            onNavigate: () => context
-              ..read<AuthBloc>().add(const AuthEvent.authChanged())
-              ..router.replace(navigateTo),
+            onNavigate: () => context.router.replace(navigateTo),
             onRouterPop: () => context.router.pop<bool>(true),
           );
         }

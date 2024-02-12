@@ -15,7 +15,7 @@ class UserDTO with _$UserDTO {
   factory UserDTO({
     required String emailAddress,
     required String uid,
-    @ServerTimestampConverter() required FieldValue updatedAt,
+    @ServerTimestampConverter() FieldValue? updatedAt,
     required String username,
   }) = _UserDTO;
 

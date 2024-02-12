@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Settings {
-  UniqueID get uid => throw _privateConstructorUsedError;
   bool? get enableBranchesBookmarksCount => throw _privateConstructorUsedError;
   bool? get enableBranchesLikesCount => throw _privateConstructorUsedError;
   bool? get enableBranchesViewsCount => throw _privateConstructorUsedError;
@@ -35,8 +34,7 @@ abstract class $SettingsCopyWith<$Res> {
       _$SettingsCopyWithImpl<$Res, Settings>;
   @useResult
   $Res call(
-      {UniqueID uid,
-      bool? enableBranchesBookmarksCount,
+      {bool? enableBranchesBookmarksCount,
       bool? enableBranchesLikesCount,
       bool? enableBranchesViewsCount,
       bool? enableTreesBookmarksCount,
@@ -57,7 +55,6 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
     Object? enableBranchesBookmarksCount = freezed,
     Object? enableBranchesLikesCount = freezed,
     Object? enableBranchesViewsCount = freezed,
@@ -66,10 +63,6 @@ class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
     Object? enableTreesViewsCount = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: null == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as UniqueID,
       enableBranchesBookmarksCount: freezed == enableBranchesBookmarksCount
           ? _value.enableBranchesBookmarksCount
           : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
@@ -107,8 +100,7 @@ abstract class _$$SettingsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {UniqueID uid,
-      bool? enableBranchesBookmarksCount,
+      {bool? enableBranchesBookmarksCount,
       bool? enableBranchesLikesCount,
       bool? enableBranchesViewsCount,
       bool? enableTreesBookmarksCount,
@@ -127,7 +119,6 @@ class __$$SettingsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
     Object? enableBranchesBookmarksCount = freezed,
     Object? enableBranchesLikesCount = freezed,
     Object? enableBranchesViewsCount = freezed,
@@ -136,10 +127,6 @@ class __$$SettingsImplCopyWithImpl<$Res>
     Object? enableTreesViewsCount = freezed,
   }) {
     return _then(_$SettingsImpl(
-      uid: null == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as UniqueID,
       enableBranchesBookmarksCount: freezed == enableBranchesBookmarksCount
           ? _value.enableBranchesBookmarksCount
           : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
@@ -172,16 +159,13 @@ class __$$SettingsImplCopyWithImpl<$Res>
 
 class _$SettingsImpl implements _Settings {
   const _$SettingsImpl(
-      {required this.uid,
-      required this.enableBranchesBookmarksCount,
+      {required this.enableBranchesBookmarksCount,
       required this.enableBranchesLikesCount,
       required this.enableBranchesViewsCount,
       required this.enableTreesBookmarksCount,
       required this.enableTreesLikesCount,
       required this.enableTreesViewsCount});
 
-  @override
-  final UniqueID uid;
   @override
   final bool? enableBranchesBookmarksCount;
   @override
@@ -197,7 +181,7 @@ class _$SettingsImpl implements _Settings {
 
   @override
   String toString() {
-    return 'Settings(uid: $uid, enableBranchesBookmarksCount: $enableBranchesBookmarksCount, enableBranchesLikesCount: $enableBranchesLikesCount, enableBranchesViewsCount: $enableBranchesViewsCount, enableTreesBookmarksCount: $enableTreesBookmarksCount, enableTreesLikesCount: $enableTreesLikesCount, enableTreesViewsCount: $enableTreesViewsCount)';
+    return 'Settings(enableBranchesBookmarksCount: $enableBranchesBookmarksCount, enableBranchesLikesCount: $enableBranchesLikesCount, enableBranchesViewsCount: $enableBranchesViewsCount, enableTreesBookmarksCount: $enableTreesBookmarksCount, enableTreesLikesCount: $enableTreesLikesCount, enableTreesViewsCount: $enableTreesViewsCount)';
   }
 
   @override
@@ -205,7 +189,6 @@ class _$SettingsImpl implements _Settings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SettingsImpl &&
-            (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.enableBranchesBookmarksCount,
                     enableBranchesBookmarksCount) ||
                 other.enableBranchesBookmarksCount ==
@@ -228,7 +211,6 @@ class _$SettingsImpl implements _Settings {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      uid,
       enableBranchesBookmarksCount,
       enableBranchesLikesCount,
       enableBranchesViewsCount,
@@ -245,16 +227,13 @@ class _$SettingsImpl implements _Settings {
 
 abstract class _Settings implements Settings {
   const factory _Settings(
-      {required final UniqueID uid,
-      required final bool? enableBranchesBookmarksCount,
+      {required final bool? enableBranchesBookmarksCount,
       required final bool? enableBranchesLikesCount,
       required final bool? enableBranchesViewsCount,
       required final bool? enableTreesBookmarksCount,
       required final bool? enableTreesLikesCount,
       required final bool? enableTreesViewsCount}) = _$SettingsImpl;
 
-  @override
-  UniqueID get uid;
   @override
   bool? get enableBranchesBookmarksCount;
   @override

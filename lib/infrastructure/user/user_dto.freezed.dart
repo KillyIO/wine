@@ -23,7 +23,7 @@ mixin _$UserDTO {
   String get emailAddress => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  FieldValue get updatedAt => throw _privateConstructorUsedError;
+  FieldValue? get updatedAt => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $UserDTOCopyWith<$Res> {
   $Res call(
       {String emailAddress,
       String uid,
-      @ServerTimestampConverter() FieldValue updatedAt,
+      @ServerTimestampConverter() FieldValue? updatedAt,
       String username});
 }
 
@@ -58,7 +58,7 @@ class _$UserDTOCopyWithImpl<$Res, $Val extends UserDTO>
   $Res call({
     Object? emailAddress = null,
     Object? uid = null,
-    Object? updatedAt = null,
+    Object? updatedAt = freezed,
     Object? username = null,
   }) {
     return _then(_value.copyWith(
@@ -70,10 +70,10 @@ class _$UserDTOCopyWithImpl<$Res, $Val extends UserDTO>
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: null == updatedAt
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
+              as FieldValue?,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -92,7 +92,7 @@ abstract class _$$UserDTOImplCopyWith<$Res> implements $UserDTOCopyWith<$Res> {
   $Res call(
       {String emailAddress,
       String uid,
-      @ServerTimestampConverter() FieldValue updatedAt,
+      @ServerTimestampConverter() FieldValue? updatedAt,
       String username});
 }
 
@@ -109,7 +109,7 @@ class __$$UserDTOImplCopyWithImpl<$Res>
   $Res call({
     Object? emailAddress = null,
     Object? uid = null,
-    Object? updatedAt = null,
+    Object? updatedAt = freezed,
     Object? username = null,
   }) {
     return _then(_$UserDTOImpl(
@@ -121,10 +121,10 @@ class __$$UserDTOImplCopyWithImpl<$Res>
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: null == updatedAt
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
+              as FieldValue?,
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -139,7 +139,7 @@ class _$UserDTOImpl implements _UserDTO {
   _$UserDTOImpl(
       {required this.emailAddress,
       required this.uid,
-      @ServerTimestampConverter() required this.updatedAt,
+      @ServerTimestampConverter() this.updatedAt,
       required this.username});
 
   factory _$UserDTOImpl.fromJson(Map<String, dynamic> json) =>
@@ -151,7 +151,7 @@ class _$UserDTOImpl implements _UserDTO {
   final String uid;
   @override
   @ServerTimestampConverter()
-  final FieldValue updatedAt;
+  final FieldValue? updatedAt;
   @override
   final String username;
 
@@ -197,7 +197,7 @@ abstract class _UserDTO implements UserDTO {
   factory _UserDTO(
       {required final String emailAddress,
       required final String uid,
-      @ServerTimestampConverter() required final FieldValue updatedAt,
+      @ServerTimestampConverter() final FieldValue? updatedAt,
       required final String username}) = _$UserDTOImpl;
 
   factory _UserDTO.fromJson(Map<String, dynamic> json) = _$UserDTOImpl.fromJson;
@@ -208,7 +208,7 @@ abstract class _UserDTO implements UserDTO {
   String get uid;
   @override
   @ServerTimestampConverter()
-  FieldValue get updatedAt;
+  FieldValue? get updatedAt;
   @override
   String get username;
   @override

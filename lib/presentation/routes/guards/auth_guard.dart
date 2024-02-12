@@ -12,12 +12,16 @@ class AuthGuard extends AutoRouteGuard {
     NavigationResolver resolver,
     StackRouter router,
   ) async {
+    _authBloc.add(const AuthChanged());
+
     _authBloc.state.maybeMap(
       authenticated: (_) {
         resolver.next();
       },
       orElse: () {
-        router.push(LogInRoute(navigateTo: resolver.route.toPageRouteInfo()));
+        final navigateTo = resolver.route.toPageRouteInfo();
+
+        router.push(LogInRoute(navigateTo: navigateTo));
       },
     );
   }

@@ -1,10 +1,8 @@
 import 'dart:convert';
 
-import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
@@ -15,24 +13,14 @@ import 'package:wine/infrastructure/settings/settings_dto.dart';
   env: [Environment.dev, Environment.prod],
 )
 class SharedPreferencesSettingsRepository implements ISettingsRepository {
-  SharedPreferencesSettingsRepository(
-    this._firebaseAuth,
-    this._sharedPreferences,
-  );
+  SharedPreferencesSettingsRepository(this._sharedPreferences);
 
-  final auth.FirebaseAuth _firebaseAuth;
   final SharedPreferences _sharedPreferences;
 
   @override
   Future<Result<Unit, SettingsFailure>> deleteSettings() async {
     try {
-      final firebaseUser = _firebaseAuth.currentUser;
-
-      if (firebaseUser == null) {
-        return const Err(SettingsFailure.settingsNotDeleted());
-      }
-
-      return (await _sharedPreferences.remove('settings_${firebaseUser.uid}'))
+      return (await _sharedPreferences.remove('settings'))
           ? const Ok(unit)
           : const Err(SettingsFailure.settingsNotDeleted());
     } catch (e) {
@@ -43,14 +31,7 @@ class SharedPreferencesSettingsRepository implements ISettingsRepository {
   @override
   Future<Result<Settings, SettingsFailure>> fetchSettings() async {
     try {
-      final firebaseUser = _firebaseAuth.currentUser;
-
-      if (firebaseUser == null) {
-        return const Err(SettingsFailure.settingsNotFound());
-      }
-
-      final settingsJson =
-          _sharedPreferences.getString('settings_${firebaseUser.uid}');
+      final settingsJson = _sharedPreferences.getString('settings');
 
       if (settingsJson != null) {
         return Ok(
@@ -68,22 +49,14 @@ class SharedPreferencesSettingsRepository implements ISettingsRepository {
   @override
   Future<Result<Unit, SettingsFailure>> initializeSettings() async {
     try {
-      final firebaseUser = _firebaseAuth.currentUser;
-
-      if (firebaseUser == null) {
-        return const Err(SettingsFailure.settingsNotInitialized());
-      }
-
-      final settingsJson =
-          _sharedPreferences.getString('settings_${firebaseUser.uid}');
+      final settingsJson = _sharedPreferences.getString('settings');
 
       if (settingsJson == null) {
         final result = await _sharedPreferences.setString(
-          'settings_${firebaseUser.uid}',
+          'settings',
           jsonEncode(
             SettingsDTO.fromDomain(
-              Settings(
-                uid: UniqueID.fromUniqueString(firebaseUser.uid),
+              const Settings(
                 enableBranchesViewsCount: false,
                 enableBranchesLikesCount: false,
                 enableBranchesBookmarksCount: false,
@@ -91,7 +64,7 @@ class SharedPreferencesSettingsRepository implements ISettingsRepository {
                 enableTreesLikesCount: false,
                 enableTreesBookmarksCount: false,
               ),
-            ).toJson(),
+            ).toMap(),
           ),
         );
 
@@ -111,14 +84,8 @@ class SharedPreferencesSettingsRepository implements ISettingsRepository {
     Settings settings,
   ) async {
     try {
-      final firebaseUser = _firebaseAuth.currentUser;
-
-      if (firebaseUser == null) {
-        return const Err(SettingsFailure.settingsNotUpdated());
-      }
-
       final result = await _sharedPreferences.setString(
-        'settings_${firebaseUser.uid}',
+        'settings',
         jsonEncode(
           SettingsDTO.fromDomain(settings).toJson(),
         ),

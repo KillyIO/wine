@@ -17,7 +17,7 @@ Future<void> redirectDialog(
 }) async {
   bool? result = false;
 
-  final timer = Timer(const Duration(seconds: 4), () {
+  final timer = Timer(const Duration(seconds: 3), () {
     onRouterPop();
 
     result = true;

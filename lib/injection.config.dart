@@ -157,9 +157,7 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.lazySingleton<_i24.ISettingsRepository>(
       () => _i25.SharedPreferencesSettingsRepository(
-        gh<_i4.FirebaseAuth>(),
-        gh<_i17.SharedPreferences>(),
-      ),
+          gh<_i17.SharedPreferences>()),
       registerFor: {
         _dev,
         _prod,

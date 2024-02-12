@@ -33,7 +33,7 @@ class SharedPreferencesDefaultCoversRepository
     try {
       final coversJson = defaultCovers
           .map(
-            (defaultCover) => DefaultCoverDTO.fromDomain(defaultCover).toJson(),
+            (defaultCover) => DefaultCoverDTO.fromDomain(defaultCover).toMap(),
           )
           .toList();
 

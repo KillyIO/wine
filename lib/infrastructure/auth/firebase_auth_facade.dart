@@ -164,14 +164,14 @@ class FirebaseAuthFacade implements IAuthFacade {
       }
       return const Err(AuthFailure.unexpected());
     } on FirebaseException catch (e) {
+      await _firebaseAuth.signInAnonymously();
+
       if (e.code == 'permission-denied') {
         return const Err(AuthFailure.permissionDenied());
       }
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return const Err(AuthFailure.invalidEmailAndPasswordCombination());
       }
-
-      await _firebaseAuth.signInAnonymously();
 
       return const Err(AuthFailure.serverError());
     } catch (_) {
