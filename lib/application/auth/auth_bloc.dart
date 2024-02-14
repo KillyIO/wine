@@ -15,12 +15,11 @@ part 'auth_bloc.freezed.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this._authFacade) : super(const AuthState.initial()) {
     on<AuthChanged>((_, emit) async {
-      await _authSubscription?.cancel();
-      _authSubscription = _authFacade.authStateChanges.listen(
-        (user) => user.match(
-          (some) => add(const AuthEvent.changedToAuthenticated()),
-          () => add(const AuthEvent.changedToAnonymous()),
-        ),
+      final user = await _authFacade.getLoggedInUser();
+
+      user.match(
+        (some) => emit(const AuthState.authenticated()),
+        () => emit(const AuthState.anonymous()),
       );
     });
     on<ChangedToAnonymous>((_, emit) => emit(const AuthState.anonymous()));
@@ -30,13 +29,4 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   final IAuthFacade _authFacade;
-
-  StreamSubscription<Option<User>>? _authSubscription;
-
-  @override
-  Future<void> close() {
-    _authSubscription?.cancel();
-
-    return super.close();
-  }
 }
