@@ -9,10 +9,8 @@ import 'package:wine/presentation/typewriter/tree/typewriter_tree_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class TypewriterTreeNewPage extends StatelessWidget {
-  /// @nodoc
   const TypewriterTreeNewPage({super.key});
 
   @override

@@ -10,9 +10,7 @@ import 'package:wine/presentation/tree/widgets/tree_resume_reading.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 class TreeLayout extends StatelessWidget {
-  /// @nodoc
   const TreeLayout({super.key});
 
   @override

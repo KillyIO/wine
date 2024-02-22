@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
-/// @nodoc
 class TreeTitle extends StatelessWidget {
-  /// @nodoc
   const TreeTitle({
     required this.title,
     super.key,
   });
 
-  /// @nodoc
   final String? title;
 
   @override

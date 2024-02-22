@@ -3,9 +3,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/responsive/dialog_responsive.dart';
 
-/// @nodoc
 class ErrorDialog extends StatelessWidget {
-  /// @nodoc
   const ErrorDialog({
     required this.messages,
     required this.onPressed,
@@ -13,13 +11,10 @@ class ErrorDialog extends StatelessWidget {
     this.buttonText,
   });
 
-  /// @nodoc
   final String? buttonText;
 
-  /// @nodoc
   final List<String> messages;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
   @override

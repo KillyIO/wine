@@ -7,9 +7,7 @@ import 'package:wine/utils/constants/library.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 class LibraryLayout extends StatelessWidget {
-  /// @nodoc
   LibraryLayout({super.key});
 
   final PageController _pageController = PageController(initialPage: 1000);

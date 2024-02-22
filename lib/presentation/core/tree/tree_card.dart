@@ -4,9 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 
-/// @nodoc
 class TreeCard extends StatelessWidget {
-  /// @nodoc
   const TreeCard({
     required this.coverURL,
     required this.language,
@@ -17,22 +15,16 @@ class TreeCard extends StatelessWidget {
     this.titleFontSize = 14,
   });
 
-  /// @nodoc
   final String? coverURL;
 
-  /// @nodoc
   final String? language;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
-  /// @nodoc
   final String? title;
 
-  /// @nodoc
   final double titleFontSize;
 
-  /// @nodoc
   final String uid;
 
   @override
@@ -65,11 +57,11 @@ class TreeCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Center(
               child: Text(
                 title ?? 'No title*',
-                maxLines: 1,
+                maxLines: 3,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: Colors.black,
@@ -77,11 +69,12 @@ class TreeCard extends StatelessWidget {
                   fontSize: titleFontSize,
                   letterSpacing: .25,
                 ),
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
               ),
             ),
           ),
-          Center(
+          Padding(
+            padding: const EdgeInsets.only(left: 7.5, right: 7.5, bottom: 5),
             child: Text(
               language ?? 'No language*',
               maxLines: 1,
@@ -94,7 +87,7 @@ class TreeCard extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-          )
+          ),
         ],
       ),
     );

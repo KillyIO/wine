@@ -1,11 +1,8 @@
 import 'package:wine/domain/core/value_failure.dart';
 
-/// @nodoc
 class UnexpectedValueError {
-  /// @nodoc
   UnexpectedValueError(this.valueFailure);
 
-  /// @nodoc
   final ValueFailure<dynamic> valueFailure;
 
   @override

@@ -3,15 +3,12 @@ import 'package:flutter/material.dart';
 
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class LogInCreateAccountButton extends StatelessWidget {
-  /// @nodoc
   const LogInCreateAccountButton({
     super.key,
     this.onPressed,
   });
 
-  /// @nodoc
   final VoidCallback? onPressed;
 
   @override

@@ -6,9 +6,7 @@ import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 class BranchAppBar extends StatelessWidget {
-  /// @nodoc
   const BranchAppBar({super.key});
 
   @override

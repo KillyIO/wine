@@ -6,9 +6,7 @@ import 'package:wine/presentation/core/buttons/tile_button.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 
-/// @nodoc
 class SettingsLayout extends StatelessWidget {
-  /// @nodoc
   const SettingsLayout({super.key});
 
   @override
@@ -38,7 +36,7 @@ class SettingsLayout extends StatelessWidget {
               title: 'BRANCH',
               trailingIconData: Icons.keyboard_arrow_right,
               onPressed: () => context.router.push(const SettingsBranchRoute()),
-            )
+            ),
           ],
         ),
       ),

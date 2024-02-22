@@ -1,9 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class SignUpTOSAndPPButton extends StatelessWidget {
-  /// @nodoc
   const SignUpTOSAndPPButton({super.key});
 
   @override

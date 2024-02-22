@@ -1,9 +1,7 @@
 part of 'tree_bloc.dart';
 
-/// @nodoc
 @freezed
 class TreeState with _$TreeState {
-  /// @nodoc
   const factory TreeState({
     required bool authorIsUser,
     required User? author,
@@ -18,7 +16,6 @@ class TreeState with _$TreeState {
     User? session,
   }) = _TreeState;
 
-  /// @nodoc
   factory TreeState.initial() => TreeState(
         authorIsUser: false,
         author: null,

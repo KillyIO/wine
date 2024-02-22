@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class TypewriterSwitchListTile extends StatelessWidget {
-  /// @nodoc
   const TypewriterSwitchListTile({
     required this.title,
     required this.onInfoPressed,
@@ -11,16 +9,12 @@ class TypewriterSwitchListTile extends StatelessWidget {
     super.key,
   });
 
-  /// @nodoc
   final String title;
 
-  /// @nodoc
   final VoidCallback onInfoPressed;
 
-  /// @nodoc
   final bool value;
 
-  /// @nodoc
   final ValueChanged<bool> onChanged;
 
   @override

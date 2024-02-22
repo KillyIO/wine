@@ -12,7 +12,7 @@ part of 'tree.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Tree {
@@ -140,9 +140,10 @@ class _$TreeCopyWithImpl<$Res, $Val extends Tree>
 }
 
 /// @nodoc
-abstract class _$$_TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
-  factory _$$_TreeCopyWith(_$_Tree value, $Res Function(_$_Tree) then) =
-      __$$_TreeCopyWithImpl<$Res>;
+abstract class _$$TreeImplCopyWith<$Res> implements $TreeCopyWith<$Res> {
+  factory _$$TreeImplCopyWith(
+          _$TreeImpl value, $Res Function(_$TreeImpl) then) =
+      __$$TreeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -162,9 +163,10 @@ abstract class _$$_TreeCopyWith<$Res> implements $TreeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res, _$_Tree>
-    implements _$$_TreeCopyWith<$Res> {
-  __$$_TreeCopyWithImpl(_$_Tree _value, $Res Function(_$_Tree) _then)
+class __$$TreeImplCopyWithImpl<$Res>
+    extends _$TreeCopyWithImpl<$Res, _$TreeImpl>
+    implements _$$TreeImplCopyWith<$Res> {
+  __$$TreeImplCopyWithImpl(_$TreeImpl _value, $Res Function(_$TreeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -184,7 +186,7 @@ class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res, _$_Tree>
     Object? viewsCount = null,
     Object? subtitle = freezed,
   }) {
-    return _then(_$_Tree(
+    return _then(_$TreeImpl(
       authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
@@ -243,8 +245,8 @@ class __$$_TreeCopyWithImpl<$Res> extends _$TreeCopyWithImpl<$Res, _$_Tree>
 
 /// @nodoc
 
-class _$_Tree implements _Tree {
-  _$_Tree(
+class _$TreeImpl implements _Tree {
+  _$TreeImpl(
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
@@ -299,10 +301,10 @@ class _$_Tree implements _Tree {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Tree &&
+            other is _$TreeImpl &&
             (identical(other.authorUID, authorUID) ||
                 other.authorUID == authorUID) &&
             (identical(other.bookmarksCount, bookmarksCount) ||
@@ -347,8 +349,8 @@ class _$_Tree implements _Tree {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TreeCopyWith<_$_Tree> get copyWith =>
-      __$$_TreeCopyWithImpl<_$_Tree>(this, _$identity);
+  _$$TreeImplCopyWith<_$TreeImpl> get copyWith =>
+      __$$TreeImplCopyWithImpl<_$TreeImpl>(this, _$identity);
 }
 
 abstract class _Tree implements Tree {
@@ -365,7 +367,7 @@ abstract class _Tree implements Tree {
       required final Title title,
       required final UniqueID uid,
       required final int viewsCount,
-      final Subtitle? subtitle}) = _$_Tree;
+      final Subtitle? subtitle}) = _$TreeImpl;
 
   @override
   UniqueID get authorUID;
@@ -395,5 +397,6 @@ abstract class _Tree implements Tree {
   Subtitle? get subtitle;
   @override
   @JsonKey(ignore: true)
-  _$$_TreeCopyWith<_$_Tree> get copyWith => throw _privateConstructorUsedError;
+  _$$TreeImplCopyWith<_$TreeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

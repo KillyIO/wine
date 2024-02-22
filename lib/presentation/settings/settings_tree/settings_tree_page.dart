@@ -5,10 +5,8 @@ import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/icons.dart';
 
-/// @nodoc
 @RoutePage()
 class SettingsTreePage extends StatelessWidget {
-  /// @nodoc
   const SettingsTreePage({super.key});
 
   @override

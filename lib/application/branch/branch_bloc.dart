@@ -22,12 +22,8 @@ part 'branch_bloc.freezed.dart';
 part 'branch_event.dart';
 part 'branch_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class BranchBloc extends Bloc<BranchEvent, BranchState> {
-  /// @nodoc
   BranchBloc(
     this._authFacade,
     this._branchRepository,

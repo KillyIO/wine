@@ -7,10 +7,8 @@ import 'package:wine/domain/report/violation.dart';
 
 part 'report.freezed.dart';
 
-/// @nodoc
 @freezed
 class Report with _$Report {
-  /// @nodoc
   factory Report({
     required Description description,
     required UniqueID reporterUID,
@@ -19,7 +17,6 @@ class Report with _$Report {
     required UniqueID uid,
   }) = _Report;
 
-  /// @nodoc
   factory Report.empty() => Report(
         description: Description(''),
         reporterUID: UniqueID(),

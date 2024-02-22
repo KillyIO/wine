@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class ReportLayout extends StatelessWidget {
-  /// @nodoc
   const ReportLayout({super.key});
 
   @override

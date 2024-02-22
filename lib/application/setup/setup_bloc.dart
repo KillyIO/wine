@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -16,12 +17,8 @@ part 'setup_bloc.freezed.dart';
 part 'setup_event.dart';
 part 'setup_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class SetupBloc extends Bloc<SetupEvent, SetupState> {
-  /// @nodoc
   SetupBloc(
     this._authFacade,
     this._defaultCoversRepository,

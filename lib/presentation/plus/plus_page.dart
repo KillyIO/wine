@@ -7,10 +7,8 @@ import 'package:wine/presentation/plus/plus_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class PlusPage extends StatelessWidget {
-  /// @nodoc
   const PlusPage({super.key});
 
   @override

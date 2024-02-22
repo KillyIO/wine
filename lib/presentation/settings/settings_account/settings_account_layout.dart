@@ -7,9 +7,7 @@ import 'package:wine/presentation/core/common/section_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class SettingsAccountLayout extends StatelessWidget {
-  /// @nodoc
   const SettingsAccountLayout({super.key});
 
   @override

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class TypewriterSelectionDialog extends StatelessWidget {
-  /// @nodoc
   const TypewriterSelectionDialog({
     required this.items,
     required this.onPressed,
@@ -14,22 +12,16 @@ class TypewriterSelectionDialog extends StatelessWidget {
     this.selectedItems,
   });
 
-  /// @nodoc
   final List<String> items;
 
-  /// @nodoc
   final VoidCallback? onInfoPressed;
 
-  /// @nodoc
   final void Function(String) onPressed;
 
-  /// @nodoc
   final String? selectedItem;
 
-  /// @nodoc
   final List<String>? selectedItems;
 
-  /// @nodoc
   final String title;
 
   Color _itemColor(String item) {

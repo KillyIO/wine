@@ -11,13 +11,14 @@ import 'package:wine/presentation/core/dialogs/success_dialog.dart';
 /// e.g. LogIn, SignUp, LogOut.
 Future<void> redirectDialog(
   BuildContext context,
-  List<String> messages,
-  void Function() onNavigate,
-) async {
+  List<String> messages, {
+  required VoidCallback onNavigate,
+  required Future<void> Function() onRouterPop,
+}) async {
   bool? result = false;
 
-  final timer = Timer(const Duration(seconds: 4), () {
-    context.router.pop<bool>(true);
+  final timer = Timer(const Duration(seconds: 3), () {
+    onRouterPop();
 
     result = true;
   });
@@ -32,7 +33,7 @@ Future<void> redirectDialog(
       onPressed: () async {
         timer.cancel();
 
-        await context.router.pop<bool>(true);
+        await onRouterPop();
       },
     ),
   );
@@ -42,7 +43,6 @@ Future<void> redirectDialog(
   }
 }
 
-/// @nodoc
 Future<void> baseErrorDialog(
   BuildContext context,
   List<String> errorMessages, {
@@ -62,7 +62,6 @@ Future<void> baseErrorDialog(
   );
 }
 
-/// Tries to restart the app by add initial [SetupBloc] event
 Future<void> restartAppDialog(
   BuildContext context,
   List<String> errorMessages,
@@ -81,8 +80,7 @@ Future<void> restartAppDialog(
     ),
   );
 
-  if (result != null && result) {
-    // ignore: use_build_context_synchronously
+  if (context.mounted && result != null && result) {
     context.read<SetupBloc>().add(const SetupEvent.appLaunched());
   }
 }

@@ -14,12 +14,8 @@ part 'settings_bloc.freezed.dart';
 part 'settings_event.dart';
 part 'settings_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
-  /// @nodoc
   SettingsBloc(
     this._authFacade,
     this._sessionsRepository,

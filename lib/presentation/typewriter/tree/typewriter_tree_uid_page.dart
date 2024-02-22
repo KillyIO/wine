@@ -11,20 +11,16 @@ import 'package:wine/presentation/typewriter/tree/typewriter_tree_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class TypewriterTreeUIDPage extends StatelessWidget {
-  /// @nodoc
   const TypewriterTreeUIDPage({
     @PathParam('id') required this.uid,
     super.key,
     this.tree,
   });
 
-  /// @nodoc
   final Tree? tree;
 
-  /// @nodoc
   final String uid;
 
   @override

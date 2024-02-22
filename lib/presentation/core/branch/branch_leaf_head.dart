@@ -6,9 +6,7 @@ import 'package:string_validator/string_validator.dart';
 import 'package:wine/presentation/core/branch/branch_index.dart';
 import 'package:wine/presentation/core/branch/branch_title.dart';
 
-/// @nodoc
 class BranchLeafHead extends StatelessWidget {
-  /// @nodoc
   const BranchLeafHead({
     required this.coverURL,
     required this.index,
@@ -16,13 +14,10 @@ class BranchLeafHead extends StatelessWidget {
     super.key,
   });
 
-  /// @nodoc
   final String? coverURL;
 
-  /// @nodoc
   final int? index;
 
-  /// @nodoc
   final String? title;
 
   @override

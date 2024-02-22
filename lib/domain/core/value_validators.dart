@@ -13,7 +13,6 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/report.dart';
 import 'package:wine/utils/constants/tree.dart';
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateConfirmPassword(
   String input,
   String input2,
@@ -24,7 +23,6 @@ Result<String, ValueFailure<String>> validateConfirmPassword(
   return Err(ValueFailure.invalidConfirmPassword(input));
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateCoverFile(String path) {
   final isImage = path.isImage;
 
@@ -34,7 +32,6 @@ Result<String, ValueFailure<String>> validateCoverFile(String path) {
   return Err(ValueFailure.invalidCoverFile(path));
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateCoverURL(String input) {
   if (isURL(input)) {
     return Ok(input);
@@ -42,7 +39,6 @@ Result<String, ValueFailure<String>> validateCoverURL(String input) {
   return Err(ValueFailure.invalidCoverURL(input));
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateEmailAddress(String input) {
   if (isEmail(input)) {
     return Ok(input);
@@ -50,7 +46,6 @@ Result<String, ValueFailure<String>> validateEmailAddress(String input) {
   return Err(ValueFailure.invalidEmailAddress(input));
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateLeaf(
   String input,
   List<dynamic> json,
@@ -67,7 +62,6 @@ Result<String, ValueFailure<String>> validateLeaf(
   return Ok(jsonEncode(json));
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validatePassword(String input) {
   const passwordRegex =
       r'^(?=.*\d)(?=.*[~!@#$%^&*()_\-+=|\\{}[\]:;<>?/])(?=.*[A-Z])(?=.*[a-z])\S{6,256}$';
@@ -77,7 +71,6 @@ Result<String, ValueFailure<String>> validatePassword(String input) {
   return Err(ValueFailure.invalidPassword(input));
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateSelectionNotEmpty(String input) {
   if (input.isNotEmpty) {
     return Ok(input);
@@ -85,7 +78,6 @@ Result<String, ValueFailure<String>> validateSelectionNotEmpty(String input) {
   return Err(ValueFailure.emptySelection(input));
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateSubtitle(String input) {
   if (input.countWords() > subtitleMaxWords) {
     return Err(ValueFailure.tooLongInput(input));
@@ -93,7 +85,6 @@ Result<String, ValueFailure<String>> validateSubtitle(String input) {
   return Ok(input);
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateSynopsis(String input) {
   if (input.isEmpty) {
     return Err(ValueFailure.emptyInput(input));
@@ -103,7 +94,6 @@ Result<String, ValueFailure<String>> validateSynopsis(String input) {
   return Ok(input);
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateTitle(String input) {
   if (input.isEmpty) {
     return Err(ValueFailure.emptyInput(input));
@@ -113,7 +103,6 @@ Result<String, ValueFailure<String>> validateTitle(String input) {
   return Ok(input);
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateUniqueID(String input) {
   if (input.isNotEmpty) {
     return Ok(input);
@@ -146,7 +135,6 @@ final maliciousUsernames = <String>[
   'ts3',
 ];
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateUsername(String input) {
   if (input.isNotEmpty &&
       RegExp(r'^(?=[a-zA-Z0-9._]{4,32}$)(?!.*[_.]{2})[^_.].*[^_.]$')
@@ -157,7 +145,6 @@ Result<String, ValueFailure<String>> validateUsername(String input) {
   return Err(ValueFailure.invalidUsername(input));
 }
 
-/// @nodoc
 Result<LicenceType, ValueFailure<LicenceType>> validateLicence(
   LicenceType input,
 ) {
@@ -168,7 +155,6 @@ Result<LicenceType, ValueFailure<LicenceType>> validateLicence(
   return Ok(input);
 }
 
-/// @nodoc
 Result<ReportType, ValueFailure<ReportType>> validateViolation(
   ReportType input,
 ) {
@@ -179,7 +165,6 @@ Result<ReportType, ValueFailure<ReportType>> validateViolation(
   return Ok(input);
 }
 
-/// @nodoc
 Result<String, ValueFailure<String>> validateDescription(String input) {
   if (input.isEmpty) {
     return Err(ValueFailure.emptyInput(input));

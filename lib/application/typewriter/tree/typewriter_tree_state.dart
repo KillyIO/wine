@@ -1,9 +1,7 @@
 part of 'typewriter_tree_bloc.dart';
 
-/// @nodoc
 @freezed
 class TypewriterTreeState with _$TypewriterTreeState {
-  /// @nodoc
   const factory TypewriterTreeState({
     required String coverURL,
     required TypewriterEndState endState,
@@ -26,7 +24,6 @@ class TypewriterTreeState with _$TypewriterTreeState {
     required Tree tree,
   }) = _TypewriterTreeState;
 
-  /// @nodoc
   factory TypewriterTreeState.initial() => TypewriterTreeState(
         coverURL: '',
         endState: TypewriterEndState.unknown,

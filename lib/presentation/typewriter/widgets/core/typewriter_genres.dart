@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class TypewriterGenres extends StatelessWidget {
-  /// @nodoc
   const TypewriterGenres({
     required this.onPressed,
     required this.genres,
     super.key,
   });
 
-  /// @nodoc
   final void Function(String) onPressed;
 
-  /// @nodoc
   final List<String> genres;
 
   @override

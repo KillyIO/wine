@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class AuthenticationTextField extends StatelessWidget {
-  /// @nodoc
   const AuthenticationTextField({
     required this.hintText,
     required this.validator,
@@ -15,28 +13,20 @@ class AuthenticationTextField extends StatelessWidget {
     this.onChanged,
   });
 
-  /// @nodoc
   final bool autocorrect;
 
-  /// @nodoc
   final TextEditingController? controller;
 
-  /// @nodoc
   final String hintText;
 
-  /// @nodoc
   final bool isLogInPage;
 
-  /// @nodoc
   final TextInputType? keyboardType;
 
-  /// @nodoc
   final bool obscureText;
 
-  /// @nodoc
   final void Function(String)? onChanged;
 
-  /// @nodoc
   final String? Function(String?)? validator;
 
   @override

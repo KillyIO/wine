@@ -10,9 +10,7 @@ import 'package:wine/presentation/home/home_splash_layout.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 class HomeLayout extends StatelessWidget {
-  /// @nodoc
   const HomeLayout({super.key});
 
   @override

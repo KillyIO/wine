@@ -11,20 +11,16 @@ import 'package:wine/presentation/typewriter/branch/typewriter_branch_layout.dar
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class TypewriterBranchUIDPage extends StatelessWidget {
-  /// @nodoc
   const TypewriterBranchUIDPage({
     @PathParam('id') required this.uid,
     super.key,
     this.branch,
   });
 
-  /// @nodoc
   final Branch? branch;
 
-  /// @nodoc
   final String uid;
 
   @override

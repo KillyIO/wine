@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
 import 'package:wine/presentation/tree/widgets/tree_synopsis.dart';
 
-/// @nodoc
 class TreeSynopsisLayout extends StatelessWidget {
-  /// @nodoc
   const TreeSynopsisLayout({super.key});
 
   @override
@@ -27,7 +25,7 @@ class TreeSynopsisLayout extends StatelessWidget {
           builder: (context, state) {
             return TreeSynopsis(synopsis: state.tree.synopsis.getOrNull());
           },
-        )
+        ),
       ],
     );
   }

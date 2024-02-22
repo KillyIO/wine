@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class BranchIndex extends StatelessWidget {
-  /// @nodoc
   const BranchIndex({
     required this.index,
     super.key,
   });
 
-  /// @nodoc
   final int? index;
 
   @override

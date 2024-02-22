@@ -8,12 +8,9 @@ part 'sessions_failure.freezed.dart';
 /// and calls to User in database.
 @freezed
 class SessionsFailure with _$SessionsFailure {
-  /// @nodoc
   const factory SessionsFailure.sessionNotDeleted() = SessionNotDeleted;
 
-  /// @nodoc
   const factory SessionsFailure.sessionNotFound() = SessionNotFound;
 
-  /// @nodoc
   const factory SessionsFailure.sessionNotInserted() = SessionNotInserted;
 }

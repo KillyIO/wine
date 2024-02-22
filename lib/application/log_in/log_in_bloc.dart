@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -22,12 +23,8 @@ part 'log_in_bloc.freezed.dart';
 part 'log_in_event.dart';
 part 'log_in_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class LogInBloc extends Bloc<LogInEvent, LogInState> {
-  /// @nodoc
   LogInBloc(
     this._authFacade,
     this._defaultCoversRepository,

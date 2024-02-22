@@ -4,9 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 
-/// @nodoc
 class BranchTile extends StatelessWidget {
-  /// @nodoc
   const BranchTile({
     required this.coverURL,
     required this.language,
@@ -16,19 +14,14 @@ class BranchTile extends StatelessWidget {
     super.key,
   });
 
-  /// @nodoc
   final String? coverURL;
 
-  /// @nodoc
   final String? language;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
-  /// @nodoc
   final String? title;
 
-  /// @nodoc
   final String uid;
 
   @override

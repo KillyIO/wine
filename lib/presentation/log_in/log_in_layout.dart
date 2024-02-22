@@ -14,100 +14,110 @@ import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 import 'package:wine/utils/responsive/log_in_responsive.dart';
 
-/// @nodoc
 class LogInLayout extends StatelessWidget {
-  /// @nodoc
   const LogInLayout({
     required this.navigateTo,
     super.key,
     this.onSignUpButtonPressed,
   });
 
-  /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
 
-  /// @nodoc
   final VoidCallback? onSignUpButtonPressed;
 
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
 
-    return BlocListener<LogInBloc, LogInState>(
-      listener: (context, state) {
-        state.failureOption.when(
-          some: (value) => value.when(
-            ok: (_) {},
-            err: (err) => err.maybeMap(
-              auth: (f) => f.f.maybeMap(
-                emailAlreadyInUse: (_) async => baseErrorDialog(
-                  context,
-                  <String>['Email address already in use.'],
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<LogInBloc, LogInState>(
+          listener: (context, state) {
+            state.failureOption.when(
+              some: (value) => value.when(
+                ok: (_) {},
+                err: (err) => err.maybeMap(
+                  auth: (f) => f.f.maybeMap(
+                    emailAlreadyInUse: (_) async => baseErrorDialog(
+                      context,
+                      <String>['Email address already in use.'],
+                    ),
+                    invalidEmailAndPasswordCombination: (_) async =>
+                        baseErrorDialog(
+                      context,
+                      <String>['Incorrect email or password.'],
+                    ),
+                    permissionDenied: (_) async => baseErrorDialog(
+                      context,
+                      <String>['Forbidden action. Permission denied!'],
+                    ),
+                    serverError: (_) async => baseErrorDialog(
+                      context,
+                      <String>['A problem occurred on our end!'],
+                    ),
+                    unexpected: (_) async => baseErrorDialog(
+                      context,
+                      <String>['An unexpected error occured!'],
+                    ),
+                    orElse: () {},
+                  ),
+                  sessions: (f) => f.f.maybeMap(
+                    sessionNotInserted: (_) async => baseErrorDialog(
+                      context,
+                      <String>['Session could not be updated!'],
+                    ),
+                    orElse: () {},
+                  ),
+                  user: (f) => f.f.maybeMap(
+                    permissionDenied: (_) async => baseErrorDialog(
+                      context,
+                      <String>['Forbidden action. Permission denied!'],
+                    ),
+                    serverError: (_) async => baseErrorDialog(
+                      context,
+                      <String>['A problem occurred on our end!'],
+                    ),
+                    unexpected: (_) async => baseErrorDialog(
+                      context,
+                      <String>['An unexpected error occured!'],
+                    ),
+                    userNotFound: (_) async => baseErrorDialog(
+                      context,
+                      <String>['User was not found!'],
+                    ),
+                    orElse: () {},
+                  ),
+                  orElse: () {},
                 ),
-                invalidEmailAndPasswordCombination: (_) async =>
-                    baseErrorDialog(
-                  context,
-                  <String>['Incorrect email or password.'],
-                ),
-                permissionDenied: (_) async => baseErrorDialog(
-                  context,
-                  <String>['Forbidden action. Permission denied!'],
-                ),
-                serverError: (_) async => baseErrorDialog(
-                  context,
-                  <String>['A problem occurred on our end!'],
-                ),
-                unexpected: (_) async => baseErrorDialog(
-                  context,
-                  <String>['An unexpected error occured!'],
-                ),
-                orElse: () {},
               ),
-              sessions: (f) => f.f.maybeMap(
-                sessionNotInserted: (_) async => baseErrorDialog(
-                  context,
-                  <String>['Session could not be updated!'],
-                ),
-                orElse: () {},
-              ),
-              user: (f) => f.f.maybeMap(
-                permissionDenied: (_) async => baseErrorDialog(
-                  context,
-                  <String>['Forbidden action. Permission denied!'],
-                ),
-                serverError: (_) async => baseErrorDialog(
-                  context,
-                  <String>['A problem occurred on our end!'],
-                ),
-                unexpected: (_) async => baseErrorDialog(
-                  context,
-                  <String>['An unexpected error occured!'],
-                ),
-                userNotFound: (_) async => baseErrorDialog(
-                  context,
-                  <String>['User was not found!'],
-                ),
-                orElse: () {},
-              ),
-              orElse: () {},
-            ),
-          ),
-          none: () {},
-        );
+              none: () {},
+            );
 
-        if (state.isAuthenticated) {
-          redirectDialog(
-            context,
-            <String>[
-              'You have been successfully authenticated.',
-              'You will now be redirected.'
-            ],
-            () => context
-              ..read<AuthBloc>().add(const AuthEvent.authChanged())
-              ..router.replace(navigateTo),
-          );
-        }
-      },
+            if (state.isAuthenticated) {
+              redirectDialog(
+                context,
+                <String>[
+                  'You have been successfully authenticated.',
+                  'You will now be redirected.',
+                ],
+                onNavigate: () =>
+                    context.read<AuthBloc>().add(const AuthEvent.authChanged()),
+                onRouterPop: () => context.router.pop<bool>(true),
+              );
+            }
+          },
+        ),
+        BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            state.maybeMap(
+              authenticated: (_) {
+                context.router.replace(navigateTo);
+              },
+              orElse: () {},
+            );
+          },
+        ),
+      ],
       child: BlocBuilder<LogInBloc, LogInState>(
         builder: (context, state) {
           return AbsorbPointer(
@@ -242,7 +252,7 @@ class LogInLayout extends StatelessWidget {
                                       const LogInEvent.logInWithGooglePressed(),
                                     ),
                             icon: LineIcons.googlePlus,
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -253,7 +263,7 @@ class LogInLayout extends StatelessWidget {
                           onPressed: state.isProcessing
                               ? null
                               : onSignUpButtonPressed ??
-                                  () => context.router.push(
+                                  () => context.router.replace(
                                         SignUpRoute(navigateTo: navigateTo),
                                       ),
                         ),

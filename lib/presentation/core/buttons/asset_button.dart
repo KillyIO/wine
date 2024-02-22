@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class AssetButton extends StatelessWidget {
-  /// @nodoc
   const AssetButton({
     required this.imagePath,
     required this.onPressed,
@@ -12,19 +10,14 @@ class AssetButton extends StatelessWidget {
     this.width = 24.0,
   });
 
-  /// @nodoc
   final Color color;
 
-  /// @nodoc
   final double height;
 
-  /// @nodoc
   final double width;
 
-  /// @nodoc
   final String imagePath;
 
-  /// @nodoc
   final VoidCallback? onPressed;
 
   @override

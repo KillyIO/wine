@@ -6,12 +6,10 @@ part 'report_event.dart';
 part 'report_state.dart';
 part 'report_bloc.freezed.dart';
 
-/// @nodoc
 @Environment(Environment.dev)
 @Environment(Environment.prod)
 @injectable
 class ReportBloc extends Bloc<ReportEvent, ReportState> {
-  /// @nodoc
   ReportBloc() : super(const _Initial()) {
     on<ReportEvent>((event, emit) {
       // TODO: implement event handler

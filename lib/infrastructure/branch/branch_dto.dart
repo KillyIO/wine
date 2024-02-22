@@ -17,10 +17,8 @@ import 'package:wine/infrastructure/core/converter.dart';
 part 'branch_dto.freezed.dart';
 part 'branch_dto.g.dart';
 
-/// @nodoc
 @freezed
 class BranchDTO with _$BranchDTO {
-  /// @nodoc
   factory BranchDTO({
     required String authorUID,
     required int bookmarksCount,
@@ -41,7 +39,6 @@ class BranchDTO with _$BranchDTO {
     required int viewsCount,
   }) = _BranchDTO;
 
-  /// @nodoc
   factory BranchDTO.fromDomain(Branch branch) {
     return BranchDTO(
       authorUID: branch.authorUID.getOrCrash(),
@@ -64,19 +61,15 @@ class BranchDTO with _$BranchDTO {
     );
   }
 
-  /// @nodoc
   factory BranchDTO.fromJson(Map<String, dynamic> json) =>
       _$BranchDTOFromJson(json);
 
-  /// @nodoc
   factory BranchDTO.fromFirestore(DocumentSnapshot doc) {
     return BranchDTO.fromJson(doc.data()! as Map<String, dynamic>);
   }
 }
 
-/// @nodoc
 extension BranchDTOX on BranchDTO {
-  /// @nodoc
   Branch toDomain() => Branch(
         authorUID: UniqueID.fromUniqueString(authorUID),
         bookmarksCount: bookmarksCount,
@@ -109,7 +102,6 @@ extension BranchDTOX on BranchDTO {
         viewsCount: viewsCount,
       );
 
-  /// @nodoc
   Map<String, dynamic> toMap() => <String, dynamic>{
         'authorUID': authorUID,
         'bookmarksCount': bookmarksCount,
@@ -130,9 +122,7 @@ extension BranchDTOX on BranchDTO {
       };
 }
 
-/// @nodoc
 extension BranchMapX on Map<dynamic, dynamic> {
-  /// @nodoc
   Branch toDomain() => Branch(
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
         bookmarksCount: this['bookmarksCount'] as int,

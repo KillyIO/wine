@@ -12,7 +12,7 @@ part of 'log_in_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LogInEvent {
@@ -166,39 +166,48 @@ class _$LogInEventCopyWithImpl<$Res, $Val extends LogInEvent>
 }
 
 /// @nodoc
-abstract class _$$LogInWithEmailAndPasswordPressedCopyWith<$Res> {
-  factory _$$LogInWithEmailAndPasswordPressedCopyWith(
-          _$LogInWithEmailAndPasswordPressed value,
-          $Res Function(_$LogInWithEmailAndPasswordPressed) then) =
-      __$$LogInWithEmailAndPasswordPressedCopyWithImpl<$Res>;
+abstract class _$$LogInWithEmailAndPasswordPressedImplCopyWith<$Res> {
+  factory _$$LogInWithEmailAndPasswordPressedImplCopyWith(
+          _$LogInWithEmailAndPasswordPressedImpl value,
+          $Res Function(_$LogInWithEmailAndPasswordPressedImpl) then) =
+      __$$LogInWithEmailAndPasswordPressedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LogInWithEmailAndPasswordPressedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$LogInWithEmailAndPasswordPressed>
-    implements _$$LogInWithEmailAndPasswordPressedCopyWith<$Res> {
-  __$$LogInWithEmailAndPasswordPressedCopyWithImpl(
-      _$LogInWithEmailAndPasswordPressed _value,
-      $Res Function(_$LogInWithEmailAndPasswordPressed) _then)
+class __$$LogInWithEmailAndPasswordPressedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res,
+        _$LogInWithEmailAndPasswordPressedImpl>
+    implements _$$LogInWithEmailAndPasswordPressedImplCopyWith<$Res> {
+  __$$LogInWithEmailAndPasswordPressedImplCopyWithImpl(
+      _$LogInWithEmailAndPasswordPressedImpl _value,
+      $Res Function(_$LogInWithEmailAndPasswordPressedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LogInWithEmailAndPasswordPressed
+class _$LogInWithEmailAndPasswordPressedImpl
+    with DiagnosticableTreeMixin
     implements LogInWithEmailAndPasswordPressed {
-  const _$LogInWithEmailAndPasswordPressed();
+  const _$LogInWithEmailAndPasswordPressedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.logInWithEmailAndPasswordPressed()';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'LogInEvent.logInWithEmailAndPasswordPressed'));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LogInWithEmailAndPasswordPressed);
+            other is _$LogInWithEmailAndPasswordPressedImpl);
   }
 
   @override
@@ -360,42 +369,51 @@ class _$LogInWithEmailAndPasswordPressed
 
 abstract class LogInWithEmailAndPasswordPressed implements LogInEvent {
   const factory LogInWithEmailAndPasswordPressed() =
-      _$LogInWithEmailAndPasswordPressed;
+      _$LogInWithEmailAndPasswordPressedImpl;
 }
 
 /// @nodoc
-abstract class _$$LoggedInWithEmailAndPasswordCopyWith<$Res> {
-  factory _$$LoggedInWithEmailAndPasswordCopyWith(
-          _$LoggedInWithEmailAndPassword value,
-          $Res Function(_$LoggedInWithEmailAndPassword) then) =
-      __$$LoggedInWithEmailAndPasswordCopyWithImpl<$Res>;
+abstract class _$$LoggedInWithEmailAndPasswordImplCopyWith<$Res> {
+  factory _$$LoggedInWithEmailAndPasswordImplCopyWith(
+          _$LoggedInWithEmailAndPasswordImpl value,
+          $Res Function(_$LoggedInWithEmailAndPasswordImpl) then) =
+      __$$LoggedInWithEmailAndPasswordImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoggedInWithEmailAndPasswordCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$LoggedInWithEmailAndPassword>
-    implements _$$LoggedInWithEmailAndPasswordCopyWith<$Res> {
-  __$$LoggedInWithEmailAndPasswordCopyWithImpl(
-      _$LoggedInWithEmailAndPassword _value,
-      $Res Function(_$LoggedInWithEmailAndPassword) _then)
+class __$$LoggedInWithEmailAndPasswordImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$LoggedInWithEmailAndPasswordImpl>
+    implements _$$LoggedInWithEmailAndPasswordImplCopyWith<$Res> {
+  __$$LoggedInWithEmailAndPasswordImplCopyWithImpl(
+      _$LoggedInWithEmailAndPasswordImpl _value,
+      $Res Function(_$LoggedInWithEmailAndPasswordImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
-  const _$LoggedInWithEmailAndPassword();
+class _$LoggedInWithEmailAndPasswordImpl
+    with DiagnosticableTreeMixin
+    implements LoggedInWithEmailAndPassword {
+  const _$LoggedInWithEmailAndPasswordImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.loggedInWithEmailAndPassword()';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+        DiagnosticsProperty('type', 'LogInEvent.loggedInWithEmailAndPassword'));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoggedInWithEmailAndPassword);
+            other is _$LoggedInWithEmailAndPasswordImpl);
   }
 
   @override
@@ -556,14 +574,15 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
 }
 
 abstract class LoggedInWithEmailAndPassword implements LogInEvent {
-  const factory LoggedInWithEmailAndPassword() = _$LoggedInWithEmailAndPassword;
+  const factory LoggedInWithEmailAndPassword() =
+      _$LoggedInWithEmailAndPasswordImpl;
 }
 
 /// @nodoc
-abstract class _$$UserLoadedCopyWith<$Res> {
-  factory _$$UserLoadedCopyWith(
-          _$UserLoaded value, $Res Function(_$UserLoaded) then) =
-      __$$UserLoadedCopyWithImpl<$Res>;
+abstract class _$$UserLoadedImplCopyWith<$Res> {
+  factory _$$UserLoadedImplCopyWith(
+          _$UserLoadedImpl value, $Res Function(_$UserLoadedImpl) then) =
+      __$$UserLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
 
@@ -571,11 +590,11 @@ abstract class _$$UserLoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserLoadedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$UserLoaded>
-    implements _$$UserLoadedCopyWith<$Res> {
-  __$$UserLoadedCopyWithImpl(
-      _$UserLoaded _value, $Res Function(_$UserLoaded) _then)
+class __$$UserLoadedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UserLoadedImpl>
+    implements _$$UserLoadedImplCopyWith<$Res> {
+  __$$UserLoadedImplCopyWithImpl(
+      _$UserLoadedImpl _value, $Res Function(_$UserLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -583,7 +602,7 @@ class __$$UserLoadedCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$UserLoaded(
+    return _then(_$UserLoadedImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -602,22 +621,30 @@ class __$$UserLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserLoaded implements UserLoaded {
-  const _$UserLoaded(this.user);
+class _$UserLoadedImpl with DiagnosticableTreeMixin implements UserLoaded {
+  const _$UserLoadedImpl(this.user);
 
   @override
   final User user;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.userLoaded(user: $user)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInEvent.userLoaded'))
+      ..add(DiagnosticsProperty('user', user));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserLoaded &&
+            other is _$UserLoadedImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -627,8 +654,8 @@ class _$UserLoaded implements UserLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
-      __$$UserLoadedCopyWithImpl<_$UserLoaded>(this, _$identity);
+  _$$UserLoadedImplCopyWith<_$UserLoadedImpl> get copyWith =>
+      __$$UserLoadedImplCopyWithImpl<_$UserLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -785,19 +812,19 @@ class _$UserLoaded implements UserLoaded {
 }
 
 abstract class UserLoaded implements LogInEvent {
-  const factory UserLoaded(final User user) = _$UserLoaded;
+  const factory UserLoaded(final User user) = _$UserLoadedImpl;
 
   User get user;
   @JsonKey(ignore: true)
-  _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
+  _$$UserLoadedImplCopyWith<_$UserLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserDetailsSavedCopyWith<$Res> {
-  factory _$$UserDetailsSavedCopyWith(
-          _$UserDetailsSaved value, $Res Function(_$UserDetailsSaved) then) =
-      __$$UserDetailsSavedCopyWithImpl<$Res>;
+abstract class _$$UserDetailsSavedImplCopyWith<$Res> {
+  factory _$$UserDetailsSavedImplCopyWith(_$UserDetailsSavedImpl value,
+          $Res Function(_$UserDetailsSavedImpl) then) =
+      __$$UserDetailsSavedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
 
@@ -805,11 +832,11 @@ abstract class _$$UserDetailsSavedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserDetailsSavedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$UserDetailsSaved>
-    implements _$$UserDetailsSavedCopyWith<$Res> {
-  __$$UserDetailsSavedCopyWithImpl(
-      _$UserDetailsSaved _value, $Res Function(_$UserDetailsSaved) _then)
+class __$$UserDetailsSavedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UserDetailsSavedImpl>
+    implements _$$UserDetailsSavedImplCopyWith<$Res> {
+  __$$UserDetailsSavedImplCopyWithImpl(_$UserDetailsSavedImpl _value,
+      $Res Function(_$UserDetailsSavedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -817,7 +844,7 @@ class __$$UserDetailsSavedCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$UserDetailsSaved(
+    return _then(_$UserDetailsSavedImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -836,22 +863,32 @@ class __$$UserDetailsSavedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserDetailsSaved implements UserDetailsSaved {
-  const _$UserDetailsSaved(this.user);
+class _$UserDetailsSavedImpl
+    with DiagnosticableTreeMixin
+    implements UserDetailsSaved {
+  const _$UserDetailsSavedImpl(this.user);
 
   @override
   final User user;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.userDetailsSaved(user: $user)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInEvent.userDetailsSaved'))
+      ..add(DiagnosticsProperty('user', user));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserDetailsSaved &&
+            other is _$UserDetailsSavedImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -861,8 +898,9 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserDetailsSavedCopyWith<_$UserDetailsSaved> get copyWith =>
-      __$$UserDetailsSavedCopyWithImpl<_$UserDetailsSaved>(this, _$identity);
+  _$$UserDetailsSavedImplCopyWith<_$UserDetailsSavedImpl> get copyWith =>
+      __$$UserDetailsSavedImplCopyWithImpl<_$UserDetailsSavedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1019,44 +1057,52 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 }
 
 abstract class UserDetailsSaved implements LogInEvent {
-  const factory UserDetailsSaved(final User user) = _$UserDetailsSaved;
+  const factory UserDetailsSaved(final User user) = _$UserDetailsSavedImpl;
 
   User get user;
   @JsonKey(ignore: true)
-  _$$UserDetailsSavedCopyWith<_$UserDetailsSaved> get copyWith =>
+  _$$UserDetailsSavedImplCopyWith<_$UserDetailsSavedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SessionInsertedCopyWith<$Res> {
-  factory _$$SessionInsertedCopyWith(
-          _$SessionInserted value, $Res Function(_$SessionInserted) then) =
-      __$$SessionInsertedCopyWithImpl<$Res>;
+abstract class _$$SessionInsertedImplCopyWith<$Res> {
+  factory _$$SessionInsertedImplCopyWith(_$SessionInsertedImpl value,
+          $Res Function(_$SessionInsertedImpl) then) =
+      __$$SessionInsertedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SessionInsertedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$SessionInserted>
-    implements _$$SessionInsertedCopyWith<$Res> {
-  __$$SessionInsertedCopyWithImpl(
-      _$SessionInserted _value, $Res Function(_$SessionInserted) _then)
+class __$$SessionInsertedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$SessionInsertedImpl>
+    implements _$$SessionInsertedImplCopyWith<$Res> {
+  __$$SessionInsertedImplCopyWithImpl(
+      _$SessionInsertedImpl _value, $Res Function(_$SessionInsertedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SessionInserted implements SessionInserted {
-  const _$SessionInserted();
+class _$SessionInsertedImpl
+    with DiagnosticableTreeMixin
+    implements SessionInserted {
+  const _$SessionInsertedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.sessionInserted()';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'LogInEvent.sessionInserted'));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionInserted);
+        (other.runtimeType == runtimeType && other is _$SessionInsertedImpl);
   }
 
   @override
@@ -1217,24 +1263,24 @@ class _$SessionInserted implements SessionInserted {
 }
 
 abstract class SessionInserted implements LogInEvent {
-  const factory SessionInserted() = _$SessionInserted;
+  const factory SessionInserted() = _$SessionInsertedImpl;
 }
 
 /// @nodoc
-abstract class _$$DefaultCoversLoadedCopyWith<$Res> {
-  factory _$$DefaultCoversLoadedCopyWith(_$DefaultCoversLoaded value,
-          $Res Function(_$DefaultCoversLoaded) then) =
-      __$$DefaultCoversLoadedCopyWithImpl<$Res>;
+abstract class _$$DefaultCoversLoadedImplCopyWith<$Res> {
+  factory _$$DefaultCoversLoadedImplCopyWith(_$DefaultCoversLoadedImpl value,
+          $Res Function(_$DefaultCoversLoadedImpl) then) =
+      __$$DefaultCoversLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<DefaultCover> defaultCovers});
 }
 
 /// @nodoc
-class __$$DefaultCoversLoadedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$DefaultCoversLoaded>
-    implements _$$DefaultCoversLoadedCopyWith<$Res> {
-  __$$DefaultCoversLoadedCopyWithImpl(
-      _$DefaultCoversLoaded _value, $Res Function(_$DefaultCoversLoaded) _then)
+class __$$DefaultCoversLoadedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$DefaultCoversLoadedImpl>
+    implements _$$DefaultCoversLoadedImplCopyWith<$Res> {
+  __$$DefaultCoversLoadedImplCopyWithImpl(_$DefaultCoversLoadedImpl _value,
+      $Res Function(_$DefaultCoversLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1242,7 +1288,7 @@ class __$$DefaultCoversLoadedCopyWithImpl<$Res>
   $Res call({
     Object? defaultCovers = null,
   }) {
-    return _then(_$DefaultCoversLoaded(
+    return _then(_$DefaultCoversLoadedImpl(
       null == defaultCovers
           ? _value._defaultCovers
           : defaultCovers // ignore: cast_nullable_to_non_nullable
@@ -1253,8 +1299,10 @@ class __$$DefaultCoversLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DefaultCoversLoaded implements DefaultCoversLoaded {
-  const _$DefaultCoversLoaded(final List<DefaultCover> defaultCovers)
+class _$DefaultCoversLoadedImpl
+    with DiagnosticableTreeMixin
+    implements DefaultCoversLoaded {
+  const _$DefaultCoversLoadedImpl(final List<DefaultCover> defaultCovers)
       : _defaultCovers = defaultCovers;
 
   final List<DefaultCover> _defaultCovers;
@@ -1266,15 +1314,23 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.defaultCoversLoaded(defaultCovers: $defaultCovers)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInEvent.defaultCoversLoaded'))
+      ..add(DiagnosticsProperty('defaultCovers', defaultCovers));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DefaultCoversLoaded &&
+            other is _$DefaultCoversLoadedImpl &&
             const DeepCollectionEquality()
                 .equals(other._defaultCovers, _defaultCovers));
   }
@@ -1286,8 +1342,8 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
-      __$$DefaultCoversLoadedCopyWithImpl<_$DefaultCoversLoaded>(
+  _$$DefaultCoversLoadedImplCopyWith<_$DefaultCoversLoadedImpl> get copyWith =>
+      __$$DefaultCoversLoadedImplCopyWithImpl<_$DefaultCoversLoadedImpl>(
           this, _$identity);
 
   @override
@@ -1446,44 +1502,56 @@ class _$DefaultCoversLoaded implements DefaultCoversLoaded {
 
 abstract class DefaultCoversLoaded implements LogInEvent {
   const factory DefaultCoversLoaded(final List<DefaultCover> defaultCovers) =
-      _$DefaultCoversLoaded;
+      _$DefaultCoversLoadedImpl;
 
   List<DefaultCover> get defaultCovers;
   @JsonKey(ignore: true)
-  _$$DefaultCoversLoadedCopyWith<_$DefaultCoversLoaded> get copyWith =>
+  _$$DefaultCoversLoadedImplCopyWith<_$DefaultCoversLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LogInWithGooglePressedCopyWith<$Res> {
-  factory _$$LogInWithGooglePressedCopyWith(_$LogInWithGooglePressed value,
-          $Res Function(_$LogInWithGooglePressed) then) =
-      __$$LogInWithGooglePressedCopyWithImpl<$Res>;
+abstract class _$$LogInWithGooglePressedImplCopyWith<$Res> {
+  factory _$$LogInWithGooglePressedImplCopyWith(
+          _$LogInWithGooglePressedImpl value,
+          $Res Function(_$LogInWithGooglePressedImpl) then) =
+      __$$LogInWithGooglePressedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LogInWithGooglePressedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$LogInWithGooglePressed>
-    implements _$$LogInWithGooglePressedCopyWith<$Res> {
-  __$$LogInWithGooglePressedCopyWithImpl(_$LogInWithGooglePressed _value,
-      $Res Function(_$LogInWithGooglePressed) _then)
+class __$$LogInWithGooglePressedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$LogInWithGooglePressedImpl>
+    implements _$$LogInWithGooglePressedImplCopyWith<$Res> {
+  __$$LogInWithGooglePressedImplCopyWithImpl(
+      _$LogInWithGooglePressedImpl _value,
+      $Res Function(_$LogInWithGooglePressedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LogInWithGooglePressed implements LogInWithGooglePressed {
-  const _$LogInWithGooglePressed();
+class _$LogInWithGooglePressedImpl
+    with DiagnosticableTreeMixin
+    implements LogInWithGooglePressed {
+  const _$LogInWithGooglePressedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.logInWithGooglePressed()';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'LogInEvent.logInWithGooglePressed'));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogInWithGooglePressed);
+        (other.runtimeType == runtimeType &&
+            other is _$LogInWithGooglePressedImpl);
   }
 
   @override
@@ -1644,39 +1712,48 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
 }
 
 abstract class LogInWithGooglePressed implements LogInEvent {
-  const factory LogInWithGooglePressed() = _$LogInWithGooglePressed;
+  const factory LogInWithGooglePressed() = _$LogInWithGooglePressedImpl;
 }
 
 /// @nodoc
-abstract class _$$LoggedInWithGoogleCopyWith<$Res> {
-  factory _$$LoggedInWithGoogleCopyWith(_$LoggedInWithGoogle value,
-          $Res Function(_$LoggedInWithGoogle) then) =
-      __$$LoggedInWithGoogleCopyWithImpl<$Res>;
+abstract class _$$LoggedInWithGoogleImplCopyWith<$Res> {
+  factory _$$LoggedInWithGoogleImplCopyWith(_$LoggedInWithGoogleImpl value,
+          $Res Function(_$LoggedInWithGoogleImpl) then) =
+      __$$LoggedInWithGoogleImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoggedInWithGoogleCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$LoggedInWithGoogle>
-    implements _$$LoggedInWithGoogleCopyWith<$Res> {
-  __$$LoggedInWithGoogleCopyWithImpl(
-      _$LoggedInWithGoogle _value, $Res Function(_$LoggedInWithGoogle) _then)
+class __$$LoggedInWithGoogleImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$LoggedInWithGoogleImpl>
+    implements _$$LoggedInWithGoogleImplCopyWith<$Res> {
+  __$$LoggedInWithGoogleImplCopyWithImpl(_$LoggedInWithGoogleImpl _value,
+      $Res Function(_$LoggedInWithGoogleImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoggedInWithGoogle implements LoggedInWithGoogle {
-  const _$LoggedInWithGoogle();
+class _$LoggedInWithGoogleImpl
+    with DiagnosticableTreeMixin
+    implements LoggedInWithGoogle {
+  const _$LoggedInWithGoogleImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.loggedInWithGoogle()';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'LogInEvent.loggedInWithGoogle'));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoggedInWithGoogle);
+        (other.runtimeType == runtimeType && other is _$LoggedInWithGoogleImpl);
   }
 
   @override
@@ -1837,14 +1914,14 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
 }
 
 abstract class LoggedInWithGoogle implements LogInEvent {
-  const factory LoggedInWithGoogle() = _$LoggedInWithGoogle;
+  const factory LoggedInWithGoogle() = _$LoggedInWithGoogleImpl;
 }
 
 /// @nodoc
-abstract class _$$UserNotFoundCopyWith<$Res> {
-  factory _$$UserNotFoundCopyWith(
-          _$UserNotFound value, $Res Function(_$UserNotFound) then) =
-      __$$UserNotFoundCopyWithImpl<$Res>;
+abstract class _$$UserNotFoundImplCopyWith<$Res> {
+  factory _$$UserNotFoundImplCopyWith(
+          _$UserNotFoundImpl value, $Res Function(_$UserNotFoundImpl) then) =
+      __$$UserNotFoundImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
 
@@ -1852,11 +1929,11 @@ abstract class _$$UserNotFoundCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserNotFoundCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$UserNotFound>
-    implements _$$UserNotFoundCopyWith<$Res> {
-  __$$UserNotFoundCopyWithImpl(
-      _$UserNotFound _value, $Res Function(_$UserNotFound) _then)
+class __$$UserNotFoundImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UserNotFoundImpl>
+    implements _$$UserNotFoundImplCopyWith<$Res> {
+  __$$UserNotFoundImplCopyWithImpl(
+      _$UserNotFoundImpl _value, $Res Function(_$UserNotFoundImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1864,7 +1941,7 @@ class __$$UserNotFoundCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$UserNotFound(
+    return _then(_$UserNotFoundImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -1883,22 +1960,30 @@ class __$$UserNotFoundCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserNotFound implements UserNotFound {
-  const _$UserNotFound(this.user);
+class _$UserNotFoundImpl with DiagnosticableTreeMixin implements UserNotFound {
+  const _$UserNotFoundImpl(this.user);
 
   @override
   final User user;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.userNotFound(user: $user)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInEvent.userNotFound'))
+      ..add(DiagnosticsProperty('user', user));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserNotFound &&
+            other is _$UserNotFoundImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -1908,8 +1993,8 @@ class _$UserNotFound implements UserNotFound {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserNotFoundCopyWith<_$UserNotFound> get copyWith =>
-      __$$UserNotFoundCopyWithImpl<_$UserNotFound>(this, _$identity);
+  _$$UserNotFoundImplCopyWith<_$UserNotFoundImpl> get copyWith =>
+      __$$UserNotFoundImplCopyWithImpl<_$UserNotFoundImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2066,20 +2151,20 @@ class _$UserNotFound implements UserNotFound {
 }
 
 abstract class UserNotFound implements LogInEvent {
-  const factory UserNotFound(final User user) = _$UserNotFound;
+  const factory UserNotFound(final User user) = _$UserNotFoundImpl;
 
   User get user;
   @JsonKey(ignore: true)
-  _$$UserNotFoundCopyWith<_$UserNotFound> get copyWith =>
+  _$$UserNotFoundImplCopyWith<_$UserNotFoundImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
-  factory _$$UsernameAvailabilityConfirmedCopyWith(
-          _$UsernameAvailabilityConfirmed value,
-          $Res Function(_$UsernameAvailabilityConfirmed) then) =
-      __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>;
+abstract class _$$UsernameAvailabilityConfirmedImplCopyWith<$Res> {
+  factory _$$UsernameAvailabilityConfirmedImplCopyWith(
+          _$UsernameAvailabilityConfirmedImpl value,
+          $Res Function(_$UsernameAvailabilityConfirmedImpl) then) =
+      __$$UsernameAvailabilityConfirmedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
 
@@ -2087,12 +2172,12 @@ abstract class _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$UsernameAvailabilityConfirmed>
-    implements _$$UsernameAvailabilityConfirmedCopyWith<$Res> {
-  __$$UsernameAvailabilityConfirmedCopyWithImpl(
-      _$UsernameAvailabilityConfirmed _value,
-      $Res Function(_$UsernameAvailabilityConfirmed) _then)
+class __$$UsernameAvailabilityConfirmedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UsernameAvailabilityConfirmedImpl>
+    implements _$$UsernameAvailabilityConfirmedImplCopyWith<$Res> {
+  __$$UsernameAvailabilityConfirmedImplCopyWithImpl(
+      _$UsernameAvailabilityConfirmedImpl _value,
+      $Res Function(_$UsernameAvailabilityConfirmedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2100,7 +2185,7 @@ class __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$UsernameAvailabilityConfirmed(
+    return _then(_$UsernameAvailabilityConfirmedImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2119,22 +2204,33 @@ class __$$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
-  const _$UsernameAvailabilityConfirmed(this.user);
+class _$UsernameAvailabilityConfirmedImpl
+    with DiagnosticableTreeMixin
+    implements UsernameAvailabilityConfirmed {
+  const _$UsernameAvailabilityConfirmedImpl(this.user);
 
   @override
   final User user;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.usernameAvailabilityConfirmed(user: $user)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'LogInEvent.usernameAvailabilityConfirmed'))
+      ..add(DiagnosticsProperty('user', user));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsernameAvailabilityConfirmed &&
+            other is _$UsernameAvailabilityConfirmedImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -2144,9 +2240,10 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UsernameAvailabilityConfirmedCopyWith<_$UsernameAvailabilityConfirmed>
-      get copyWith => __$$UsernameAvailabilityConfirmedCopyWithImpl<
-          _$UsernameAvailabilityConfirmed>(this, _$identity);
+  _$$UsernameAvailabilityConfirmedImplCopyWith<
+          _$UsernameAvailabilityConfirmedImpl>
+      get copyWith => __$$UsernameAvailabilityConfirmedImplCopyWithImpl<
+          _$UsernameAvailabilityConfirmedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2304,19 +2401,20 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
 
 abstract class UsernameAvailabilityConfirmed implements LogInEvent {
   const factory UsernameAvailabilityConfirmed(final User user) =
-      _$UsernameAvailabilityConfirmed;
+      _$UsernameAvailabilityConfirmedImpl;
 
   User get user;
   @JsonKey(ignore: true)
-  _$$UsernameAvailabilityConfirmedCopyWith<_$UsernameAvailabilityConfirmed>
+  _$$UsernameAvailabilityConfirmedImplCopyWith<
+          _$UsernameAvailabilityConfirmedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UsernameSavedCopyWith<$Res> {
-  factory _$$UsernameSavedCopyWith(
-          _$UsernameSaved value, $Res Function(_$UsernameSaved) then) =
-      __$$UsernameSavedCopyWithImpl<$Res>;
+abstract class _$$UsernameSavedImplCopyWith<$Res> {
+  factory _$$UsernameSavedImplCopyWith(
+          _$UsernameSavedImpl value, $Res Function(_$UsernameSavedImpl) then) =
+      __$$UsernameSavedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
 
@@ -2324,11 +2422,11 @@ abstract class _$$UsernameSavedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UsernameSavedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$UsernameSaved>
-    implements _$$UsernameSavedCopyWith<$Res> {
-  __$$UsernameSavedCopyWithImpl(
-      _$UsernameSaved _value, $Res Function(_$UsernameSaved) _then)
+class __$$UsernameSavedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$UsernameSavedImpl>
+    implements _$$UsernameSavedImplCopyWith<$Res> {
+  __$$UsernameSavedImplCopyWithImpl(
+      _$UsernameSavedImpl _value, $Res Function(_$UsernameSavedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2336,7 +2434,7 @@ class __$$UsernameSavedCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$UsernameSaved(
+    return _then(_$UsernameSavedImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2355,22 +2453,32 @@ class __$$UsernameSavedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UsernameSaved implements UsernameSaved {
-  const _$UsernameSaved(this.user);
+class _$UsernameSavedImpl
+    with DiagnosticableTreeMixin
+    implements UsernameSaved {
+  const _$UsernameSavedImpl(this.user);
 
   @override
   final User user;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.usernameSaved(user: $user)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInEvent.usernameSaved'))
+      ..add(DiagnosticsProperty('user', user));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsernameSaved &&
+            other is _$UsernameSavedImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -2380,8 +2488,8 @@ class _$UsernameSaved implements UsernameSaved {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UsernameSavedCopyWith<_$UsernameSaved> get copyWith =>
-      __$$UsernameSavedCopyWithImpl<_$UsernameSaved>(this, _$identity);
+  _$$UsernameSavedImplCopyWith<_$UsernameSavedImpl> get copyWith =>
+      __$$UsernameSavedImplCopyWithImpl<_$UsernameSavedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2538,19 +2646,20 @@ class _$UsernameSaved implements UsernameSaved {
 }
 
 abstract class UsernameSaved implements LogInEvent {
-  const factory UsernameSaved(final User user) = _$UsernameSaved;
+  const factory UsernameSaved(final User user) = _$UsernameSavedImpl;
 
   User get user;
   @JsonKey(ignore: true)
-  _$$UsernameSavedCopyWith<_$UsernameSaved> get copyWith =>
+  _$$UsernameSavedImplCopyWith<_$UsernameSavedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CustomUsernameGeneratedCopyWith<$Res> {
-  factory _$$CustomUsernameGeneratedCopyWith(_$CustomUsernameGenerated value,
-          $Res Function(_$CustomUsernameGenerated) then) =
-      __$$CustomUsernameGeneratedCopyWithImpl<$Res>;
+abstract class _$$CustomUsernameGeneratedImplCopyWith<$Res> {
+  factory _$$CustomUsernameGeneratedImplCopyWith(
+          _$CustomUsernameGeneratedImpl value,
+          $Res Function(_$CustomUsernameGeneratedImpl) then) =
+      __$$CustomUsernameGeneratedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
 
@@ -2558,11 +2667,12 @@ abstract class _$$CustomUsernameGeneratedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CustomUsernameGeneratedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$CustomUsernameGenerated>
-    implements _$$CustomUsernameGeneratedCopyWith<$Res> {
-  __$$CustomUsernameGeneratedCopyWithImpl(_$CustomUsernameGenerated _value,
-      $Res Function(_$CustomUsernameGenerated) _then)
+class __$$CustomUsernameGeneratedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$CustomUsernameGeneratedImpl>
+    implements _$$CustomUsernameGeneratedImplCopyWith<$Res> {
+  __$$CustomUsernameGeneratedImplCopyWithImpl(
+      _$CustomUsernameGeneratedImpl _value,
+      $Res Function(_$CustomUsernameGeneratedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2570,7 +2680,7 @@ class __$$CustomUsernameGeneratedCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$CustomUsernameGenerated(
+    return _then(_$CustomUsernameGeneratedImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2589,22 +2699,32 @@ class __$$CustomUsernameGeneratedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CustomUsernameGenerated implements CustomUsernameGenerated {
-  const _$CustomUsernameGenerated(this.user);
+class _$CustomUsernameGeneratedImpl
+    with DiagnosticableTreeMixin
+    implements CustomUsernameGenerated {
+  const _$CustomUsernameGeneratedImpl(this.user);
 
   @override
   final User user;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.customUsernameGenerated(user: $user)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInEvent.customUsernameGenerated'))
+      ..add(DiagnosticsProperty('user', user));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CustomUsernameGenerated &&
+            other is _$CustomUsernameGeneratedImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -2614,9 +2734,9 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CustomUsernameGeneratedCopyWith<_$CustomUsernameGenerated> get copyWith =>
-      __$$CustomUsernameGeneratedCopyWithImpl<_$CustomUsernameGenerated>(
-          this, _$identity);
+  _$$CustomUsernameGeneratedImplCopyWith<_$CustomUsernameGeneratedImpl>
+      get copyWith => __$$CustomUsernameGeneratedImplCopyWithImpl<
+          _$CustomUsernameGeneratedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2774,44 +2894,56 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
 
 abstract class CustomUsernameGenerated implements LogInEvent {
   const factory CustomUsernameGenerated(final User user) =
-      _$CustomUsernameGenerated;
+      _$CustomUsernameGeneratedImpl;
 
   User get user;
   @JsonKey(ignore: true)
-  _$$CustomUsernameGeneratedCopyWith<_$CustomUsernameGenerated> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CustomUsernameGeneratedImplCopyWith<_$CustomUsernameGeneratedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CredentialAlreadyInUseCopyWith<$Res> {
-  factory _$$CredentialAlreadyInUseCopyWith(_$CredentialAlreadyInUse value,
-          $Res Function(_$CredentialAlreadyInUse) then) =
-      __$$CredentialAlreadyInUseCopyWithImpl<$Res>;
+abstract class _$$CredentialAlreadyInUseImplCopyWith<$Res> {
+  factory _$$CredentialAlreadyInUseImplCopyWith(
+          _$CredentialAlreadyInUseImpl value,
+          $Res Function(_$CredentialAlreadyInUseImpl) then) =
+      __$$CredentialAlreadyInUseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CredentialAlreadyInUseCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$CredentialAlreadyInUse>
-    implements _$$CredentialAlreadyInUseCopyWith<$Res> {
-  __$$CredentialAlreadyInUseCopyWithImpl(_$CredentialAlreadyInUse _value,
-      $Res Function(_$CredentialAlreadyInUse) _then)
+class __$$CredentialAlreadyInUseImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$CredentialAlreadyInUseImpl>
+    implements _$$CredentialAlreadyInUseImplCopyWith<$Res> {
+  __$$CredentialAlreadyInUseImplCopyWithImpl(
+      _$CredentialAlreadyInUseImpl _value,
+      $Res Function(_$CredentialAlreadyInUseImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
-  const _$CredentialAlreadyInUse();
+class _$CredentialAlreadyInUseImpl
+    with DiagnosticableTreeMixin
+    implements CredentialAlreadyInUse {
+  const _$CredentialAlreadyInUseImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.credentialAlreadyInUse()';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'LogInEvent.credentialAlreadyInUse'));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CredentialAlreadyInUse);
+        (other.runtimeType == runtimeType &&
+            other is _$CredentialAlreadyInUseImpl);
   }
 
   @override
@@ -2972,24 +3104,24 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
 }
 
 abstract class CredentialAlreadyInUse implements LogInEvent {
-  const factory CredentialAlreadyInUse() = _$CredentialAlreadyInUse;
+  const factory CredentialAlreadyInUse() = _$CredentialAlreadyInUseImpl;
 }
 
 /// @nodoc
-abstract class _$$EmailAddressChangedCopyWith<$Res> {
-  factory _$$EmailAddressChangedCopyWith(_$EmailAddressChanged value,
-          $Res Function(_$EmailAddressChanged) then) =
-      __$$EmailAddressChangedCopyWithImpl<$Res>;
+abstract class _$$EmailAddressChangedImplCopyWith<$Res> {
+  factory _$$EmailAddressChangedImplCopyWith(_$EmailAddressChangedImpl value,
+          $Res Function(_$EmailAddressChangedImpl) then) =
+      __$$EmailAddressChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String emailAddressStr});
 }
 
 /// @nodoc
-class __$$EmailAddressChangedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$EmailAddressChanged>
-    implements _$$EmailAddressChangedCopyWith<$Res> {
-  __$$EmailAddressChangedCopyWithImpl(
-      _$EmailAddressChanged _value, $Res Function(_$EmailAddressChanged) _then)
+class __$$EmailAddressChangedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$EmailAddressChangedImpl>
+    implements _$$EmailAddressChangedImplCopyWith<$Res> {
+  __$$EmailAddressChangedImplCopyWithImpl(_$EmailAddressChangedImpl _value,
+      $Res Function(_$EmailAddressChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2997,7 +3129,7 @@ class __$$EmailAddressChangedCopyWithImpl<$Res>
   $Res call({
     Object? emailAddressStr = null,
   }) {
-    return _then(_$EmailAddressChanged(
+    return _then(_$EmailAddressChangedImpl(
       null == emailAddressStr
           ? _value.emailAddressStr
           : emailAddressStr // ignore: cast_nullable_to_non_nullable
@@ -3008,22 +3140,32 @@ class __$$EmailAddressChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmailAddressChanged implements EmailAddressChanged {
-  const _$EmailAddressChanged(this.emailAddressStr);
+class _$EmailAddressChangedImpl
+    with DiagnosticableTreeMixin
+    implements EmailAddressChanged {
+  const _$EmailAddressChangedImpl(this.emailAddressStr);
 
   @override
   final String emailAddressStr;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.emailAddressChanged(emailAddressStr: $emailAddressStr)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInEvent.emailAddressChanged'))
+      ..add(DiagnosticsProperty('emailAddressStr', emailAddressStr));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmailAddressChanged &&
+            other is _$EmailAddressChangedImpl &&
             (identical(other.emailAddressStr, emailAddressStr) ||
                 other.emailAddressStr == emailAddressStr));
   }
@@ -3034,8 +3176,8 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EmailAddressChangedCopyWith<_$EmailAddressChanged> get copyWith =>
-      __$$EmailAddressChangedCopyWithImpl<_$EmailAddressChanged>(
+  _$$EmailAddressChangedImplCopyWith<_$EmailAddressChangedImpl> get copyWith =>
+      __$$EmailAddressChangedImplCopyWithImpl<_$EmailAddressChangedImpl>(
           this, _$identity);
 
   @override
@@ -3194,29 +3336,29 @@ class _$EmailAddressChanged implements EmailAddressChanged {
 
 abstract class EmailAddressChanged implements LogInEvent {
   const factory EmailAddressChanged(final String emailAddressStr) =
-      _$EmailAddressChanged;
+      _$EmailAddressChangedImpl;
 
   String get emailAddressStr;
   @JsonKey(ignore: true)
-  _$$EmailAddressChangedCopyWith<_$EmailAddressChanged> get copyWith =>
+  _$$EmailAddressChangedImplCopyWith<_$EmailAddressChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PasswordChangedCopyWith<$Res> {
-  factory _$$PasswordChangedCopyWith(
-          _$PasswordChanged value, $Res Function(_$PasswordChanged) then) =
-      __$$PasswordChangedCopyWithImpl<$Res>;
+abstract class _$$PasswordChangedImplCopyWith<$Res> {
+  factory _$$PasswordChangedImplCopyWith(_$PasswordChangedImpl value,
+          $Res Function(_$PasswordChangedImpl) then) =
+      __$$PasswordChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String passwordStr});
 }
 
 /// @nodoc
-class __$$PasswordChangedCopyWithImpl<$Res>
-    extends _$LogInEventCopyWithImpl<$Res, _$PasswordChanged>
-    implements _$$PasswordChangedCopyWith<$Res> {
-  __$$PasswordChangedCopyWithImpl(
-      _$PasswordChanged _value, $Res Function(_$PasswordChanged) _then)
+class __$$PasswordChangedImplCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res, _$PasswordChangedImpl>
+    implements _$$PasswordChangedImplCopyWith<$Res> {
+  __$$PasswordChangedImplCopyWithImpl(
+      _$PasswordChangedImpl _value, $Res Function(_$PasswordChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3224,7 +3366,7 @@ class __$$PasswordChangedCopyWithImpl<$Res>
   $Res call({
     Object? passwordStr = null,
   }) {
-    return _then(_$PasswordChanged(
+    return _then(_$PasswordChangedImpl(
       null == passwordStr
           ? _value.passwordStr
           : passwordStr // ignore: cast_nullable_to_non_nullable
@@ -3235,22 +3377,32 @@ class __$$PasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.passwordStr);
+class _$PasswordChangedImpl
+    with DiagnosticableTreeMixin
+    implements PasswordChanged {
+  const _$PasswordChangedImpl(this.passwordStr);
 
   @override
   final String passwordStr;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInEvent.passwordChanged(passwordStr: $passwordStr)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInEvent.passwordChanged'))
+      ..add(DiagnosticsProperty('passwordStr', passwordStr));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PasswordChanged &&
+            other is _$PasswordChangedImpl &&
             (identical(other.passwordStr, passwordStr) ||
                 other.passwordStr == passwordStr));
   }
@@ -3261,8 +3413,9 @@ class _$PasswordChanged implements PasswordChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
-      __$$PasswordChangedCopyWithImpl<_$PasswordChanged>(this, _$identity);
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
+      __$$PasswordChangedImplCopyWithImpl<_$PasswordChangedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3419,11 +3572,12 @@ class _$PasswordChanged implements PasswordChanged {
 }
 
 abstract class PasswordChanged implements LogInEvent {
-  const factory PasswordChanged(final String passwordStr) = _$PasswordChanged;
+  const factory PasswordChanged(final String passwordStr) =
+      _$PasswordChangedImpl;
 
   String get passwordStr;
   @JsonKey(ignore: true)
-  _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3507,11 +3661,11 @@ class _$LogInStateCopyWithImpl<$Res, $Val extends LogInState>
 }
 
 /// @nodoc
-abstract class _$$_LogInStateCopyWith<$Res>
+abstract class _$$LogInStateImplCopyWith<$Res>
     implements $LogInStateCopyWith<$Res> {
-  factory _$$_LogInStateCopyWith(
-          _$_LogInState value, $Res Function(_$_LogInState) then) =
-      __$$_LogInStateCopyWithImpl<$Res>;
+  factory _$$LogInStateImplCopyWith(
+          _$LogInStateImpl value, $Res Function(_$LogInStateImpl) then) =
+      __$$LogInStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -3524,11 +3678,11 @@ abstract class _$$_LogInStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_LogInStateCopyWithImpl<$Res>
-    extends _$LogInStateCopyWithImpl<$Res, _$_LogInState>
-    implements _$$_LogInStateCopyWith<$Res> {
-  __$$_LogInStateCopyWithImpl(
-      _$_LogInState _value, $Res Function(_$_LogInState) _then)
+class __$$LogInStateImplCopyWithImpl<$Res>
+    extends _$LogInStateCopyWithImpl<$Res, _$LogInStateImpl>
+    implements _$$LogInStateImplCopyWith<$Res> {
+  __$$LogInStateImplCopyWithImpl(
+      _$LogInStateImpl _value, $Res Function(_$LogInStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3541,7 +3695,7 @@ class __$$_LogInStateCopyWithImpl<$Res>
     Object? password = null,
     Object? showErrorMessages = null,
   }) {
-    return _then(_$_LogInState(
+    return _then(_$LogInStateImpl(
       emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
@@ -3572,8 +3726,8 @@ class __$$_LogInStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LogInState implements _LogInState {
-  const _$_LogInState(
+class _$LogInStateImpl with DiagnosticableTreeMixin implements _LogInState {
+  const _$LogInStateImpl(
       {required this.emailAddress,
       required this.failureOption,
       required this.isAuthenticated,
@@ -3595,15 +3749,28 @@ class _$_LogInState implements _LogInState {
   final bool showErrorMessages;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'LogInState(emailAddress: $emailAddress, failureOption: $failureOption, isAuthenticated: $isAuthenticated, isProcessing: $isProcessing, password: $password, showErrorMessages: $showErrorMessages)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'LogInState'))
+      ..add(DiagnosticsProperty('emailAddress', emailAddress))
+      ..add(DiagnosticsProperty('failureOption', failureOption))
+      ..add(DiagnosticsProperty('isAuthenticated', isAuthenticated))
+      ..add(DiagnosticsProperty('isProcessing', isProcessing))
+      ..add(DiagnosticsProperty('password', password))
+      ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages));
+  }
+
+  @override
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LogInState &&
+            other is _$LogInStateImpl &&
             (identical(other.emailAddress, emailAddress) ||
                 other.emailAddress == emailAddress) &&
             (identical(other.failureOption, failureOption) ||
@@ -3625,8 +3792,8 @@ class _$_LogInState implements _LogInState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LogInStateCopyWith<_$_LogInState> get copyWith =>
-      __$$_LogInStateCopyWithImpl<_$_LogInState>(this, _$identity);
+  _$$LogInStateImplCopyWith<_$LogInStateImpl> get copyWith =>
+      __$$LogInStateImplCopyWithImpl<_$LogInStateImpl>(this, _$identity);
 }
 
 abstract class _LogInState implements LogInState {
@@ -3636,7 +3803,7 @@ abstract class _LogInState implements LogInState {
       required final bool isAuthenticated,
       required final bool isProcessing,
       required final Password password,
-      required final bool showErrorMessages}) = _$_LogInState;
+      required final bool showErrorMessages}) = _$LogInStateImpl;
 
   @override
   EmailAddress get emailAddress;
@@ -3652,6 +3819,6 @@ abstract class _LogInState implements LogInState {
   bool get showErrorMessages;
   @override
   @JsonKey(ignore: true)
-  _$$_LogInStateCopyWith<_$_LogInState> get copyWith =>
+  _$$LogInStateImplCopyWith<_$LogInStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

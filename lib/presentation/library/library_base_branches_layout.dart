@@ -7,19 +7,15 @@ import 'package:wine/presentation/core/branch/branch_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/images.dart';
 
-/// @nodoc
 class LibraryBaseBranchesLayout extends StatelessWidget {
-  /// @nodoc
   const LibraryBaseBranchesLayout({
     required this.branches,
     required this.type,
     super.key,
   });
 
-  /// @nodoc
   final List<Branch> branches;
 
-  /// @nodoc
   final String type;
 
   @override

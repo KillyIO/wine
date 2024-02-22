@@ -6,9 +6,7 @@ import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';
 
-/// @nodoc
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  /// @nodoc
   const HomeAppBar({
     super.key,
     this.preferredSize = const Size.fromHeight(defaultAppBarHeight),

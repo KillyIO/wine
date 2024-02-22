@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class LogInSeparator extends StatelessWidget {
-  /// @nodoc
   const LogInSeparator({super.key});
 
   @override

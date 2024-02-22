@@ -10,10 +10,8 @@ import 'package:wine/domain/core/unique_id.dart';
 
 part 'branch.freezed.dart';
 
-/// @nodoc
 @freezed
 class Branch with _$Branch {
-  /// @nodoc
   factory Branch({
     required UniqueID authorUID,
     required int bookmarksCount,
@@ -33,7 +31,6 @@ class Branch with _$Branch {
     required int viewsCount,
   }) = _Branch;
 
-  /// @nodoc
   factory Branch.empty() => Branch(
         authorUID: UniqueID(),
         bookmarksCount: 0,

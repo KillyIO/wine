@@ -11,20 +11,16 @@ import 'package:wine/presentation/typewriter/branch/typewriter_branch_layout.dar
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class TypewriterBranchNewPage extends StatelessWidget {
-  /// @nodoc
   const TypewriterBranchNewPage({
     required this.tree,
     super.key,
     this.previousBranch,
   });
 
-  /// @nodoc
   final Branch? previousBranch;
 
-  /// @nodoc
   final Tree? tree;
 
   @override

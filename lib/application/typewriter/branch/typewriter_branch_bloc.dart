@@ -37,13 +37,11 @@ part 'typewriter_branch_bloc.freezed.dart';
 part 'typewriter_branch_event.dart';
 part 'typewriter_branch_state.dart';
 
-/// @nodoc
 @Environment(Environment.dev)
 @Environment(Environment.prod)
 @injectable
 class TypewriterBranchBloc
     extends Bloc<TypewriterBranchEvent, TypewriterBranchState> {
-  /// @nodoc
   TypewriterBranchBloc(
     this._branchRepository,
     this._defaultCoversRepository,

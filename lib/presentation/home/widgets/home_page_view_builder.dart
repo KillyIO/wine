@@ -3,15 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/presentation/home/home_trees_layout.dart';
 
-/// @nodoc
 class HomePageViewBuilder extends StatelessWidget {
-  /// @nodoc
   const HomePageViewBuilder({
     required this.controller,
     super.key,
   });
 
-  /// @nodoc
   final PageController controller;
 
   @override

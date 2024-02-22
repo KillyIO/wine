@@ -6,19 +6,15 @@ import 'package:wine/presentation/core/tree/tree_card.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/images.dart';
 
-/// @nodoc
 class HomeTreesLayout extends StatelessWidget {
-  /// @nodoc
   const HomeTreesLayout({
     required this.timeKey,
     required this.trees,
     super.key,
   });
 
-  /// @nodoc
   final String timeKey;
 
-  /// @nodoc
   final List<Tree> trees;
 
   @override
@@ -49,7 +45,7 @@ class HomeTreesLayout extends StatelessWidget {
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
-            )
+            ),
           ],
         ),
       );

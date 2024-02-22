@@ -9,10 +9,8 @@ import 'package:wine/injection.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 @RoutePage(name: 'TypewriterWrapperRoute')
 class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
-  /// @nodoc
   const TypewriterWrapper({super.key});
 
   @override
@@ -88,35 +86,35 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                     context.router.pop();
                   }
                 case TypewriterEndState.published:
-                  context
-                      .read<LibraryBloc>()
-                      .add(LibraryEvent.treeUpdated(state.tree));
-
                   redirectDialog(
                     context,
                     <String>[
                       'Your tree has been successfully published.',
-                      'You will now be redirected.'
+                      'You will now be redirected.',
                     ],
-                    () => context.router.replace(
-                      TreeRoute(
-                        tree: state.tree,
-                        uid: state.tree.uid.getOrCrash(),
+                    onNavigate: () => context
+                      ..read<LibraryBloc>()
+                          .add(LibraryEvent.treeUpdated(state.tree))
+                      ..router.replace(
+                        TreeRoute(
+                          tree: state.tree,
+                          uid: state.tree.uid.getOrCrash(),
+                        ),
                       ),
-                    ),
+                    onRouterPop: () => context.router.pop<bool>(true),
                   );
                 case TypewriterEndState.saved:
-                  context
-                      .read<LibraryBloc>()
-                      .add(LibraryEvent.treeUpdated(state.tree));
-
                   redirectDialog(
                     context,
                     <String>[
                       'Your tree has been successfully saved.',
-                      'You will now be redirected.'
+                      'You will now be redirected.',
                     ],
-                    () => context.router.push(const LibraryRoute()),
+                    onNavigate: () => context
+                      ..read<LibraryBloc>()
+                          .add(LibraryEvent.treeUpdated(state.tree))
+                      ..router.push(const LibraryRoute()),
+                    onRouterPop: () => context.router.pop<bool>(true),
                   );
                 case TypewriterEndState.unknown:
                   break;
@@ -190,22 +188,22 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                     context.router.pop();
                   }
                 case TypewriterEndState.published:
-                  context
-                      .read<LibraryBloc>()
-                      .add(LibraryEvent.branchUpdated(state.branch));
-
                   redirectDialog(
                     context,
                     <String>[
                       'Your branch has been successfully published.',
-                      'You will now be redirected.'
+                      'You will now be redirected.',
                     ],
-                    () => context.router.replace(
-                      BranchRoute(
-                        branch: state.branch,
-                        uid: state.branch.uid.getOrCrash(),
+                    onNavigate: () => context
+                      ..read<LibraryBloc>()
+                          .add(LibraryEvent.branchUpdated(state.branch))
+                      ..router.replace(
+                        BranchRoute(
+                          branch: state.branch,
+                          uid: state.branch.uid.getOrCrash(),
+                        ),
                       ),
-                    ),
+                    onRouterPop: () => context.router.pop<bool>(true),
                   );
                 case TypewriterEndState.saved:
                   context
@@ -216,9 +214,13 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                     context,
                     <String>[
                       'Your branch has been successfully saved.',
-                      'You will now be redirected.'
+                      'You will now be redirected.',
                     ],
-                    () => context.router.push(const LibraryRoute()),
+                    onNavigate: () => context
+                      ..read<LibraryBloc>()
+                          .add(LibraryEvent.branchUpdated(state.branch))
+                      ..router.push(const LibraryRoute()),
+                    onRouterPop: () => context.router.pop<bool>(true),
                   );
                 case TypewriterEndState.unknown:
                   break;

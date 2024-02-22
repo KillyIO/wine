@@ -12,7 +12,7 @@ part of 'settings_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SettingsFailure {
@@ -88,25 +88,25 @@ class _$SettingsFailureCopyWithImpl<$Res, $Val extends SettingsFailure>
 }
 
 /// @nodoc
-abstract class _$$SettingsNotDeletedCopyWith<$Res> {
-  factory _$$SettingsNotDeletedCopyWith(_$SettingsNotDeleted value,
-          $Res Function(_$SettingsNotDeleted) then) =
-      __$$SettingsNotDeletedCopyWithImpl<$Res>;
+abstract class _$$SettingsNotDeletedImplCopyWith<$Res> {
+  factory _$$SettingsNotDeletedImplCopyWith(_$SettingsNotDeletedImpl value,
+          $Res Function(_$SettingsNotDeletedImpl) then) =
+      __$$SettingsNotDeletedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SettingsNotDeletedCopyWithImpl<$Res>
-    extends _$SettingsFailureCopyWithImpl<$Res, _$SettingsNotDeleted>
-    implements _$$SettingsNotDeletedCopyWith<$Res> {
-  __$$SettingsNotDeletedCopyWithImpl(
-      _$SettingsNotDeleted _value, $Res Function(_$SettingsNotDeleted) _then)
+class __$$SettingsNotDeletedImplCopyWithImpl<$Res>
+    extends _$SettingsFailureCopyWithImpl<$Res, _$SettingsNotDeletedImpl>
+    implements _$$SettingsNotDeletedImplCopyWith<$Res> {
+  __$$SettingsNotDeletedImplCopyWithImpl(_$SettingsNotDeletedImpl _value,
+      $Res Function(_$SettingsNotDeletedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SettingsNotDeleted implements SettingsNotDeleted {
-  const _$SettingsNotDeleted();
+class _$SettingsNotDeletedImpl implements SettingsNotDeleted {
+  const _$SettingsNotDeletedImpl();
 
   @override
   String toString() {
@@ -114,9 +114,9 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SettingsNotDeleted);
+        (other.runtimeType == runtimeType && other is _$SettingsNotDeletedImpl);
   }
 
   @override
@@ -199,29 +199,29 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
 }
 
 abstract class SettingsNotDeleted implements SettingsFailure {
-  const factory SettingsNotDeleted() = _$SettingsNotDeleted;
+  const factory SettingsNotDeleted() = _$SettingsNotDeletedImpl;
 }
 
 /// @nodoc
-abstract class _$$SettingsNotFoundCopyWith<$Res> {
-  factory _$$SettingsNotFoundCopyWith(
-          _$SettingsNotFound value, $Res Function(_$SettingsNotFound) then) =
-      __$$SettingsNotFoundCopyWithImpl<$Res>;
+abstract class _$$SettingsNotFoundImplCopyWith<$Res> {
+  factory _$$SettingsNotFoundImplCopyWith(_$SettingsNotFoundImpl value,
+          $Res Function(_$SettingsNotFoundImpl) then) =
+      __$$SettingsNotFoundImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SettingsNotFoundCopyWithImpl<$Res>
-    extends _$SettingsFailureCopyWithImpl<$Res, _$SettingsNotFound>
-    implements _$$SettingsNotFoundCopyWith<$Res> {
-  __$$SettingsNotFoundCopyWithImpl(
-      _$SettingsNotFound _value, $Res Function(_$SettingsNotFound) _then)
+class __$$SettingsNotFoundImplCopyWithImpl<$Res>
+    extends _$SettingsFailureCopyWithImpl<$Res, _$SettingsNotFoundImpl>
+    implements _$$SettingsNotFoundImplCopyWith<$Res> {
+  __$$SettingsNotFoundImplCopyWithImpl(_$SettingsNotFoundImpl _value,
+      $Res Function(_$SettingsNotFoundImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SettingsNotFound implements SettingsNotFound {
-  const _$SettingsNotFound();
+class _$SettingsNotFoundImpl implements SettingsNotFound {
+  const _$SettingsNotFoundImpl();
 
   @override
   String toString() {
@@ -229,9 +229,9 @@ class _$SettingsNotFound implements SettingsNotFound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SettingsNotFound);
+        (other.runtimeType == runtimeType && other is _$SettingsNotFoundImpl);
   }
 
   @override
@@ -314,29 +314,31 @@ class _$SettingsNotFound implements SettingsNotFound {
 }
 
 abstract class SettingsNotFound implements SettingsFailure {
-  const factory SettingsNotFound() = _$SettingsNotFound;
+  const factory SettingsNotFound() = _$SettingsNotFoundImpl;
 }
 
 /// @nodoc
-abstract class _$$SettingsNotInitializedCopyWith<$Res> {
-  factory _$$SettingsNotInitializedCopyWith(_$SettingsNotInitialized value,
-          $Res Function(_$SettingsNotInitialized) then) =
-      __$$SettingsNotInitializedCopyWithImpl<$Res>;
+abstract class _$$SettingsNotInitializedImplCopyWith<$Res> {
+  factory _$$SettingsNotInitializedImplCopyWith(
+          _$SettingsNotInitializedImpl value,
+          $Res Function(_$SettingsNotInitializedImpl) then) =
+      __$$SettingsNotInitializedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SettingsNotInitializedCopyWithImpl<$Res>
-    extends _$SettingsFailureCopyWithImpl<$Res, _$SettingsNotInitialized>
-    implements _$$SettingsNotInitializedCopyWith<$Res> {
-  __$$SettingsNotInitializedCopyWithImpl(_$SettingsNotInitialized _value,
-      $Res Function(_$SettingsNotInitialized) _then)
+class __$$SettingsNotInitializedImplCopyWithImpl<$Res>
+    extends _$SettingsFailureCopyWithImpl<$Res, _$SettingsNotInitializedImpl>
+    implements _$$SettingsNotInitializedImplCopyWith<$Res> {
+  __$$SettingsNotInitializedImplCopyWithImpl(
+      _$SettingsNotInitializedImpl _value,
+      $Res Function(_$SettingsNotInitializedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SettingsNotInitialized implements SettingsNotInitialized {
-  const _$SettingsNotInitialized();
+class _$SettingsNotInitializedImpl implements SettingsNotInitialized {
+  const _$SettingsNotInitializedImpl();
 
   @override
   String toString() {
@@ -344,9 +346,10 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SettingsNotInitialized);
+        (other.runtimeType == runtimeType &&
+            other is _$SettingsNotInitializedImpl);
   }
 
   @override
@@ -429,29 +432,29 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
 }
 
 abstract class SettingsNotInitialized implements SettingsFailure {
-  const factory SettingsNotInitialized() = _$SettingsNotInitialized;
+  const factory SettingsNotInitialized() = _$SettingsNotInitializedImpl;
 }
 
 /// @nodoc
-abstract class _$$SettingsNotUpdatedCopyWith<$Res> {
-  factory _$$SettingsNotUpdatedCopyWith(_$SettingsNotUpdated value,
-          $Res Function(_$SettingsNotUpdated) then) =
-      __$$SettingsNotUpdatedCopyWithImpl<$Res>;
+abstract class _$$SettingsNotUpdatedImplCopyWith<$Res> {
+  factory _$$SettingsNotUpdatedImplCopyWith(_$SettingsNotUpdatedImpl value,
+          $Res Function(_$SettingsNotUpdatedImpl) then) =
+      __$$SettingsNotUpdatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SettingsNotUpdatedCopyWithImpl<$Res>
-    extends _$SettingsFailureCopyWithImpl<$Res, _$SettingsNotUpdated>
-    implements _$$SettingsNotUpdatedCopyWith<$Res> {
-  __$$SettingsNotUpdatedCopyWithImpl(
-      _$SettingsNotUpdated _value, $Res Function(_$SettingsNotUpdated) _then)
+class __$$SettingsNotUpdatedImplCopyWithImpl<$Res>
+    extends _$SettingsFailureCopyWithImpl<$Res, _$SettingsNotUpdatedImpl>
+    implements _$$SettingsNotUpdatedImplCopyWith<$Res> {
+  __$$SettingsNotUpdatedImplCopyWithImpl(_$SettingsNotUpdatedImpl _value,
+      $Res Function(_$SettingsNotUpdatedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SettingsNotUpdated implements SettingsNotUpdated {
-  const _$SettingsNotUpdated();
+class _$SettingsNotUpdatedImpl implements SettingsNotUpdated {
+  const _$SettingsNotUpdatedImpl();
 
   @override
   String toString() {
@@ -459,9 +462,9 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SettingsNotUpdated);
+        (other.runtimeType == runtimeType && other is _$SettingsNotUpdatedImpl);
   }
 
   @override
@@ -544,5 +547,5 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
 }
 
 abstract class SettingsNotUpdated implements SettingsFailure {
-  const factory SettingsNotUpdated() = _$SettingsNotUpdated;
+  const factory SettingsNotUpdated() = _$SettingsNotUpdatedImpl;
 }

@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/presentation/core/navbars/vertical_navbar_button.dart';
 
-/// @nodoc
 class LibraryVerticalNavbar extends StatelessWidget {
-  /// @nodoc
   const LibraryVerticalNavbar({
     required this.currentIndex,
     required this.items,
@@ -13,13 +11,10 @@ class LibraryVerticalNavbar extends StatelessWidget {
     super.key,
   });
 
-  /// @nodoc
   final int currentIndex;
 
-  /// @nodoc
   final List<String> items;
 
-  /// @nodoc
   final double width;
 
   @override

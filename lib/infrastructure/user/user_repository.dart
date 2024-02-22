@@ -9,13 +9,11 @@ import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
 import 'package:wine/utils/constants/paths/users.dart';
 
-/// @nodoc
 @LazySingleton(
   as: IUserRepository,
   env: [Environment.dev, Environment.prod],
 )
 class UserRepository implements IUserRepository {
-  /// @nodoc
   UserRepository(this._firestore);
 
   final FirebaseFirestore _firestore;

@@ -4,20 +4,18 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/sign_up/sign_up_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class SignUpPage extends StatelessWidget {
-  /// @nodoc
   const SignUpPage({
     required this.navigateTo,
     super.key,
   });
 
-  /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
 
   @override
@@ -55,7 +53,7 @@ class SignUpPage extends StatelessWidget {
               ),
               onPressed: () {
                 FocusScope.of(context).requestFocus(FocusNode());
-                context.router.pop();
+                context.router.replace(LogInRoute(navigateTo: navigateTo));
               },
               splashColor: Colors.transparent,
             ),

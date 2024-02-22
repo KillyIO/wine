@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class BranchTitle extends StatelessWidget {
-  /// @nodoc
   const BranchTitle({
     required this.title,
     super.key,
   });
 
-  /// @nodoc
   final String? title;
 
   @override

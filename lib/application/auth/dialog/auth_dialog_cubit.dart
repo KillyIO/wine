@@ -5,15 +5,10 @@ import 'package:injectable/injectable.dart';
 part 'auth_dialog_state.dart';
 part 'auth_dialog_cubit.freezed.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class AuthDialogCubit extends Cubit<AuthDialogState> {
-  /// @nodoc
   AuthDialogCubit() : super(const AuthDialogState.initial());
 
-  /// @nodoc
   void updateLayout() {
     state.maybeMap(
       signUp: (_) {

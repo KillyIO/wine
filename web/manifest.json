@@ -1,11 +1,11 @@
 {
-    "name": "wine",
-    "short_name": "wine",
+    "name": "Wine",
+    "short_name": "Wine",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A collaborative social reading platorm.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

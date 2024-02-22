@@ -22,9 +22,7 @@ import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/constants/tree.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 class TypewriterTreeLayout extends StatelessWidget {
-  /// @nodoc
   const TypewriterTreeLayout({super.key});
 
   @override
@@ -97,35 +95,35 @@ class TypewriterTreeLayout extends StatelessWidget {
                 context.router.pop();
               }
             case TypewriterEndState.published:
-              context
-                  .read<LibraryBloc>()
-                  .add(LibraryEvent.treeUpdated(state.tree));
-
               redirectDialog(
                 context,
                 <String>[
                   'Your tree has been successfully published.',
-                  'You will now be redirected.'
+                  'You will now be redirected.',
                 ],
-                () => context.router.replace(
-                  TreeRoute(
-                    tree: state.tree,
-                    uid: state.tree.uid.getOrCrash(),
+                onNavigate: () => context
+                  ..read<LibraryBloc>()
+                      .add(LibraryEvent.treeUpdated(state.tree))
+                  ..router.replace(
+                    TreeRoute(
+                      tree: state.tree,
+                      uid: state.tree.uid.getOrCrash(),
+                    ),
                   ),
-                ),
+                onRouterPop: () => context.router.pop<bool>(true),
               );
             case TypewriterEndState.saved:
-              context
-                  .read<LibraryBloc>()
-                  .add(LibraryEvent.treeUpdated(state.tree));
-
               redirectDialog(
                 context,
                 <String>[
                   'Your tree has been successfully saved.',
-                  'You will now be redirected.'
+                  'You will now be redirected.',
                 ],
-                () => context.router.replace(const LibraryRoute()),
+                onNavigate: () => context
+                  ..read<LibraryBloc>()
+                      .add(LibraryEvent.treeUpdated(state.tree))
+                  ..router.replace(const LibraryRoute()),
+                onRouterPop: () => context.router.pop<bool>(true),
               );
             case TypewriterEndState.unknown:
               break;

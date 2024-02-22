@@ -12,7 +12,7 @@ part of 'auth_dialog_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AuthDialogState {
@@ -81,24 +81,25 @@ class _$AuthDialogStateCopyWithImpl<$Res, $Val extends AuthDialogState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$AuthDialogStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$AuthDialogStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -106,9 +107,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -184,27 +185,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements AuthDialogState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_LogInCopyWith<$Res> {
-  factory _$$_LogInCopyWith(_$_LogIn value, $Res Function(_$_LogIn) then) =
-      __$$_LogInCopyWithImpl<$Res>;
+abstract class _$$LogInImplCopyWith<$Res> {
+  factory _$$LogInImplCopyWith(
+          _$LogInImpl value, $Res Function(_$LogInImpl) then) =
+      __$$LogInImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LogInCopyWithImpl<$Res>
-    extends _$AuthDialogStateCopyWithImpl<$Res, _$_LogIn>
-    implements _$$_LogInCopyWith<$Res> {
-  __$$_LogInCopyWithImpl(_$_LogIn _value, $Res Function(_$_LogIn) _then)
+class __$$LogInImplCopyWithImpl<$Res>
+    extends _$AuthDialogStateCopyWithImpl<$Res, _$LogInImpl>
+    implements _$$LogInImplCopyWith<$Res> {
+  __$$LogInImplCopyWithImpl(
+      _$LogInImpl _value, $Res Function(_$LogInImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LogIn implements _LogIn {
-  const _$_LogIn();
+class _$LogInImpl implements _LogIn {
+  const _$LogInImpl();
 
   @override
   String toString() {
@@ -212,9 +215,9 @@ class _$_LogIn implements _LogIn {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LogIn);
+        (other.runtimeType == runtimeType && other is _$LogInImpl);
   }
 
   @override
@@ -290,27 +293,29 @@ class _$_LogIn implements _LogIn {
 }
 
 abstract class _LogIn implements AuthDialogState {
-  const factory _LogIn() = _$_LogIn;
+  const factory _LogIn() = _$LogInImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignUpCopyWith<$Res> {
-  factory _$$_SignUpCopyWith(_$_SignUp value, $Res Function(_$_SignUp) then) =
-      __$$_SignUpCopyWithImpl<$Res>;
+abstract class _$$SignUpImplCopyWith<$Res> {
+  factory _$$SignUpImplCopyWith(
+          _$SignUpImpl value, $Res Function(_$SignUpImpl) then) =
+      __$$SignUpImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignUpCopyWithImpl<$Res>
-    extends _$AuthDialogStateCopyWithImpl<$Res, _$_SignUp>
-    implements _$$_SignUpCopyWith<$Res> {
-  __$$_SignUpCopyWithImpl(_$_SignUp _value, $Res Function(_$_SignUp) _then)
+class __$$SignUpImplCopyWithImpl<$Res>
+    extends _$AuthDialogStateCopyWithImpl<$Res, _$SignUpImpl>
+    implements _$$SignUpImplCopyWith<$Res> {
+  __$$SignUpImplCopyWithImpl(
+      _$SignUpImpl _value, $Res Function(_$SignUpImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignUp implements _SignUp {
-  const _$_SignUp();
+class _$SignUpImpl implements _SignUp {
+  const _$SignUpImpl();
 
   @override
   String toString() {
@@ -318,9 +323,9 @@ class _$_SignUp implements _SignUp {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignUp);
+        (other.runtimeType == runtimeType && other is _$SignUpImpl);
   }
 
   @override
@@ -396,5 +401,5 @@ class _$_SignUp implements _SignUp {
 }
 
 abstract class _SignUp implements AuthDialogState {
-  const factory _SignUp() = _$_SignUp;
+  const factory _SignUp() = _$SignUpImpl;
 }

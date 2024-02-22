@@ -12,7 +12,7 @@ part of 'branch_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 BranchDTO _$BranchDTOFromJson(Map<String, dynamic> json) {
   return _BranchDTO.fromJson(json);
@@ -175,10 +175,11 @@ class _$BranchDTOCopyWithImpl<$Res, $Val extends BranchDTO>
 }
 
 /// @nodoc
-abstract class _$$_BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
-  factory _$$_BranchDTOCopyWith(
-          _$_BranchDTO value, $Res Function(_$_BranchDTO) then) =
-      __$$_BranchDTOCopyWithImpl<$Res>;
+abstract class _$$BranchDTOImplCopyWith<$Res>
+    implements $BranchDTOCopyWith<$Res> {
+  factory _$$BranchDTOImplCopyWith(
+          _$BranchDTOImpl value, $Res Function(_$BranchDTOImpl) then) =
+      __$$BranchDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -202,11 +203,11 @@ abstract class _$$_BranchDTOCopyWith<$Res> implements $BranchDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BranchDTOCopyWithImpl<$Res>
-    extends _$BranchDTOCopyWithImpl<$Res, _$_BranchDTO>
-    implements _$$_BranchDTOCopyWith<$Res> {
-  __$$_BranchDTOCopyWithImpl(
-      _$_BranchDTO _value, $Res Function(_$_BranchDTO) _then)
+class __$$BranchDTOImplCopyWithImpl<$Res>
+    extends _$BranchDTOCopyWithImpl<$Res, _$BranchDTOImpl>
+    implements _$$BranchDTOImplCopyWith<$Res> {
+  __$$BranchDTOImplCopyWithImpl(
+      _$BranchDTOImpl _value, $Res Function(_$BranchDTOImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -230,7 +231,7 @@ class __$$_BranchDTOCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? viewsCount = null,
   }) {
-    return _then(_$_BranchDTO(
+    return _then(_$BranchDTOImpl(
       authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
@@ -305,8 +306,8 @@ class __$$_BranchDTOCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BranchDTO implements _BranchDTO {
-  _$_BranchDTO(
+class _$BranchDTOImpl implements _BranchDTO {
+  _$BranchDTOImpl(
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
@@ -326,8 +327,8 @@ class _$_BranchDTO implements _BranchDTO {
       required this.viewsCount})
       : _genres = genres;
 
-  factory _$_BranchDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_BranchDTOFromJson(json);
+  factory _$BranchDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BranchDTOImplFromJson(json);
 
   @override
   final String authorUID;
@@ -377,10 +378,10 @@ class _$_BranchDTO implements _BranchDTO {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BranchDTO &&
+            other is _$BranchDTOImpl &&
             (identical(other.authorUID, authorUID) ||
                 other.authorUID == authorUID) &&
             (identical(other.bookmarksCount, bookmarksCount) ||
@@ -434,12 +435,12 @@ class _$_BranchDTO implements _BranchDTO {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BranchDTOCopyWith<_$_BranchDTO> get copyWith =>
-      __$$_BranchDTOCopyWithImpl<_$_BranchDTO>(this, _$identity);
+  _$$BranchDTOImplCopyWith<_$BranchDTOImpl> get copyWith =>
+      __$$BranchDTOImplCopyWithImpl<_$BranchDTOImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BranchDTOToJson(
+    return _$$BranchDTOImplToJson(
       this,
     );
   }
@@ -463,10 +464,10 @@ abstract class _BranchDTO implements BranchDTO {
       required final String treeUID,
       required final String uid,
       @ServerTimestampConverter() required final FieldValue updatedAt,
-      required final int viewsCount}) = _$_BranchDTO;
+      required final int viewsCount}) = _$BranchDTOImpl;
 
   factory _BranchDTO.fromJson(Map<String, dynamic> json) =
-      _$_BranchDTO.fromJson;
+      _$BranchDTOImpl.fromJson;
 
   @override
   String get authorUID;
@@ -505,6 +506,6 @@ abstract class _BranchDTO implements BranchDTO {
   int get viewsCount;
   @override
   @JsonKey(ignore: true)
-  _$$_BranchDTOCopyWith<_$_BranchDTO> get copyWith =>
+  _$$BranchDTOImplCopyWith<_$BranchDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 class TileButton extends StatelessWidget {
-  /// @nodoc
   const TileButton({
     required this.leadingIconData,
     required this.onPressed,
@@ -13,19 +11,14 @@ class TileButton extends StatelessWidget {
     this.isFirst = false,
   });
 
-  /// @nodoc
   final bool isFirst;
 
-  /// @nodoc
   final IconData leadingIconData;
 
-  /// @nodoc
   final IconData trailingIconData;
 
-  /// @nodoc
   final String title;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
   @override

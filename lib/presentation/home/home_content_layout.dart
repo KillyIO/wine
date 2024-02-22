@@ -9,9 +9,7 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/home.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class HomeContentLayout extends StatefulWidget {
-  /// @nodoc
   const HomeContentLayout({super.key});
 
   @override

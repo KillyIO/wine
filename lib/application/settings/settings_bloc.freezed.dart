@@ -12,7 +12,7 @@ part of 'settings_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SettingsEvent {
@@ -87,23 +87,24 @@ class _$SettingsEventCopyWithImpl<$Res, $Val extends SettingsEvent>
 }
 
 /// @nodoc
-abstract class _$$InitCopyWith<$Res> {
-  factory _$$InitCopyWith(_$Init value, $Res Function(_$Init) then) =
-      __$$InitCopyWithImpl<$Res>;
+abstract class _$$InitImplCopyWith<$Res> {
+  factory _$$InitImplCopyWith(
+          _$InitImpl value, $Res Function(_$InitImpl) then) =
+      __$$InitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res, _$Init>
-    implements _$$InitCopyWith<$Res> {
-  __$$InitCopyWithImpl(_$Init _value, $Res Function(_$Init) _then)
+class __$$InitImplCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$InitImpl>
+    implements _$$InitImplCopyWith<$Res> {
+  __$$InitImplCopyWithImpl(_$InitImpl _value, $Res Function(_$InitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Init implements Init {
-  const _$Init();
+class _$InitImpl implements Init {
+  const _$InitImpl();
 
   @override
   String toString() {
@@ -111,9 +112,9 @@ class _$Init implements Init {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Init);
+        (other.runtimeType == runtimeType && other is _$InitImpl);
   }
 
   @override
@@ -195,29 +196,29 @@ class _$Init implements Init {
 }
 
 abstract class Init implements SettingsEvent {
-  const factory Init() = _$Init;
+  const factory Init() = _$InitImpl;
 }
 
 /// @nodoc
-abstract class _$$SessionFetchedCopyWith<$Res> {
-  factory _$$SessionFetchedCopyWith(
-          _$SessionFetched value, $Res Function(_$SessionFetched) then) =
-      __$$SessionFetchedCopyWithImpl<$Res>;
+abstract class _$$SessionFetchedImplCopyWith<$Res> {
+  factory _$$SessionFetchedImplCopyWith(_$SessionFetchedImpl value,
+          $Res Function(_$SessionFetchedImpl) then) =
+      __$$SessionFetchedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SessionFetchedCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res, _$SessionFetched>
-    implements _$$SessionFetchedCopyWith<$Res> {
-  __$$SessionFetchedCopyWithImpl(
-      _$SessionFetched _value, $Res Function(_$SessionFetched) _then)
+class __$$SessionFetchedImplCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$SessionFetchedImpl>
+    implements _$$SessionFetchedImplCopyWith<$Res> {
+  __$$SessionFetchedImplCopyWithImpl(
+      _$SessionFetchedImpl _value, $Res Function(_$SessionFetchedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SessionFetched implements SessionFetched {
-  const _$SessionFetched();
+class _$SessionFetchedImpl implements SessionFetched {
+  const _$SessionFetchedImpl();
 
   @override
   String toString() {
@@ -225,9 +226,9 @@ class _$SessionFetched implements SessionFetched {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionFetched);
+        (other.runtimeType == runtimeType && other is _$SessionFetchedImpl);
   }
 
   @override
@@ -309,29 +310,29 @@ class _$SessionFetched implements SessionFetched {
 }
 
 abstract class SessionFetched implements SettingsEvent {
-  const factory SessionFetched() = _$SessionFetched;
+  const factory SessionFetched() = _$SessionFetchedImpl;
 }
 
 /// @nodoc
-abstract class _$$LogOutPressedCopyWith<$Res> {
-  factory _$$LogOutPressedCopyWith(
-          _$LogOutPressed value, $Res Function(_$LogOutPressed) then) =
-      __$$LogOutPressedCopyWithImpl<$Res>;
+abstract class _$$LogOutPressedImplCopyWith<$Res> {
+  factory _$$LogOutPressedImplCopyWith(
+          _$LogOutPressedImpl value, $Res Function(_$LogOutPressedImpl) then) =
+      __$$LogOutPressedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LogOutPressedCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res, _$LogOutPressed>
-    implements _$$LogOutPressedCopyWith<$Res> {
-  __$$LogOutPressedCopyWithImpl(
-      _$LogOutPressed _value, $Res Function(_$LogOutPressed) _then)
+class __$$LogOutPressedImplCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$LogOutPressedImpl>
+    implements _$$LogOutPressedImplCopyWith<$Res> {
+  __$$LogOutPressedImplCopyWithImpl(
+      _$LogOutPressedImpl _value, $Res Function(_$LogOutPressedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LogOutPressed implements LogOutPressed {
-  const _$LogOutPressed();
+class _$LogOutPressedImpl implements LogOutPressed {
+  const _$LogOutPressedImpl();
 
   @override
   String toString() {
@@ -339,9 +340,9 @@ class _$LogOutPressed implements LogOutPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogOutPressed);
+        (other.runtimeType == runtimeType && other is _$LogOutPressedImpl);
   }
 
   @override
@@ -423,29 +424,29 @@ class _$LogOutPressed implements LogOutPressed {
 }
 
 abstract class LogOutPressed implements SettingsEvent {
-  const factory LogOutPressed() = _$LogOutPressed;
+  const factory LogOutPressed() = _$LogOutPressedImpl;
 }
 
 /// @nodoc
-abstract class _$$SessionDeletedCopyWith<$Res> {
-  factory _$$SessionDeletedCopyWith(
-          _$SessionDeleted value, $Res Function(_$SessionDeleted) then) =
-      __$$SessionDeletedCopyWithImpl<$Res>;
+abstract class _$$SessionDeletedImplCopyWith<$Res> {
+  factory _$$SessionDeletedImplCopyWith(_$SessionDeletedImpl value,
+          $Res Function(_$SessionDeletedImpl) then) =
+      __$$SessionDeletedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SessionDeletedCopyWithImpl<$Res>
-    extends _$SettingsEventCopyWithImpl<$Res, _$SessionDeleted>
-    implements _$$SessionDeletedCopyWith<$Res> {
-  __$$SessionDeletedCopyWithImpl(
-      _$SessionDeleted _value, $Res Function(_$SessionDeleted) _then)
+class __$$SessionDeletedImplCopyWithImpl<$Res>
+    extends _$SettingsEventCopyWithImpl<$Res, _$SessionDeletedImpl>
+    implements _$$SessionDeletedImplCopyWith<$Res> {
+  __$$SessionDeletedImplCopyWithImpl(
+      _$SessionDeletedImpl _value, $Res Function(_$SessionDeletedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SessionDeleted implements SessionDeleted {
-  const _$SessionDeleted();
+class _$SessionDeletedImpl implements SessionDeleted {
+  const _$SessionDeletedImpl();
 
   @override
   String toString() {
@@ -453,9 +454,9 @@ class _$SessionDeleted implements SessionDeleted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionDeleted);
+        (other.runtimeType == runtimeType && other is _$SessionDeletedImpl);
   }
 
   @override
@@ -537,7 +538,7 @@ class _$SessionDeleted implements SessionDeleted {
 }
 
 abstract class SessionDeleted implements SettingsEvent {
-  const factory SessionDeleted() = _$SessionDeleted;
+  const factory SessionDeleted() = _$SessionDeletedImpl;
 }
 
 /// @nodoc
@@ -623,11 +624,11 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
 }
 
 /// @nodoc
-abstract class _$$_SettingsStateCopyWith<$Res>
+abstract class _$$SettingsStateImplCopyWith<$Res>
     implements $SettingsStateCopyWith<$Res> {
-  factory _$$_SettingsStateCopyWith(
-          _$_SettingsState value, $Res Function(_$_SettingsState) then) =
-      __$$_SettingsStateCopyWithImpl<$Res>;
+  factory _$$SettingsStateImplCopyWith(
+          _$SettingsStateImpl value, $Res Function(_$SettingsStateImpl) then) =
+      __$$SettingsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -642,11 +643,11 @@ abstract class _$$_SettingsStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SettingsStateCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res, _$_SettingsState>
-    implements _$$_SettingsStateCopyWith<$Res> {
-  __$$_SettingsStateCopyWithImpl(
-      _$_SettingsState _value, $Res Function(_$_SettingsState) _then)
+class __$$SettingsStateImplCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$SettingsStateImpl>
+    implements _$$SettingsStateImplCopyWith<$Res> {
+  __$$SettingsStateImplCopyWithImpl(
+      _$SettingsStateImpl _value, $Res Function(_$SettingsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -658,7 +659,7 @@ class __$$_SettingsStateCopyWithImpl<$Res>
     Object? settings = null,
     Object? username = null,
   }) {
-    return _then(_$_SettingsState(
+    return _then(_$SettingsStateImpl(
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -685,8 +686,8 @@ class __$$_SettingsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsState implements _SettingsState {
-  const _$_SettingsState(
+class _$SettingsStateImpl implements _SettingsState {
+  const _$SettingsStateImpl(
       {required this.failureOption,
       required this.isLoggedOut,
       required this.isProcessing,
@@ -710,10 +711,10 @@ class _$_SettingsState implements _SettingsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsState &&
+            other is _$SettingsStateImpl &&
             (identical(other.failureOption, failureOption) ||
                 other.failureOption == failureOption) &&
             (identical(other.isLoggedOut, isLoggedOut) ||
@@ -733,8 +734,8 @@ class _$_SettingsState implements _SettingsState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>
-      __$$_SettingsStateCopyWithImpl<_$_SettingsState>(this, _$identity);
+  _$$SettingsStateImplCopyWith<_$SettingsStateImpl> get copyWith =>
+      __$$SettingsStateImplCopyWithImpl<_$SettingsStateImpl>(this, _$identity);
 }
 
 abstract class _SettingsState implements SettingsState {
@@ -743,7 +744,7 @@ abstract class _SettingsState implements SettingsState {
       required final bool isLoggedOut,
       required final bool isProcessing,
       required final Settings settings,
-      required final String username}) = _$_SettingsState;
+      required final String username}) = _$SettingsStateImpl;
 
   @override
   Option<Result<None<Object>, CoreFailure>> get failureOption;
@@ -757,6 +758,6 @@ abstract class _SettingsState implements SettingsState {
   String get username;
   @override
   @JsonKey(ignore: true)
-  _$$_SettingsStateCopyWith<_$_SettingsState> get copyWith =>
+  _$$SettingsStateImplCopyWith<_$SettingsStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

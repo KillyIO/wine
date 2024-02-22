@@ -11,10 +11,8 @@ import 'package:wine/presentation/tree/tree_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 @RoutePage()
 class TreePage extends StatelessWidget {
-  /// @nodoc
   const TreePage({
     @PathParam('id') required this.uid,
     super.key,
@@ -24,7 +22,6 @@ class TreePage extends StatelessWidget {
   /// nodoc
   final String uid;
 
-  /// @nodoc
   final Tree? tree;
 
   @override

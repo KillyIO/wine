@@ -12,7 +12,7 @@ part of 'core_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CoreFailure {
@@ -106,9 +106,10 @@ class _$CoreFailureCopyWithImpl<$Res, $Val extends CoreFailure>
 }
 
 /// @nodoc
-abstract class _$$_AuthCopyWith<$Res> {
-  factory _$$_AuthCopyWith(_$_Auth value, $Res Function(_$_Auth) then) =
-      __$$_AuthCopyWithImpl<$Res>;
+abstract class _$$AuthImplCopyWith<$Res> {
+  factory _$$AuthImplCopyWith(
+          _$AuthImpl value, $Res Function(_$AuthImpl) then) =
+      __$$AuthImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AuthFailure f});
 
@@ -116,10 +117,10 @@ abstract class _$$_AuthCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AuthCopyWithImpl<$Res>
-    extends _$CoreFailureCopyWithImpl<$Res, _$_Auth>
-    implements _$$_AuthCopyWith<$Res> {
-  __$$_AuthCopyWithImpl(_$_Auth _value, $Res Function(_$_Auth) _then)
+class __$$AuthImplCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$AuthImpl>
+    implements _$$AuthImplCopyWith<$Res> {
+  __$$AuthImplCopyWithImpl(_$AuthImpl _value, $Res Function(_$AuthImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,7 +128,7 @@ class __$$_AuthCopyWithImpl<$Res>
   $Res call({
     Object? f = null,
   }) {
-    return _then(_$_Auth(
+    return _then(_$AuthImpl(
       null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
@@ -146,8 +147,8 @@ class __$$_AuthCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Auth implements _Auth {
-  const _$_Auth(this.f);
+class _$AuthImpl implements _Auth {
+  const _$AuthImpl(this.f);
 
   @override
   final AuthFailure f;
@@ -158,10 +159,10 @@ class _$_Auth implements _Auth {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Auth &&
+            other is _$AuthImpl &&
             (identical(other.f, f) || other.f == f));
   }
 
@@ -171,8 +172,8 @@ class _$_Auth implements _Auth {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AuthCopyWith<_$_Auth> get copyWith =>
-      __$$_AuthCopyWithImpl<_$_Auth>(this, _$identity);
+  _$$AuthImplCopyWith<_$AuthImpl> get copyWith =>
+      __$$AuthImplCopyWithImpl<_$AuthImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -268,18 +269,20 @@ class _$_Auth implements _Auth {
 }
 
 abstract class _Auth implements CoreFailure {
-  const factory _Auth(final AuthFailure f) = _$_Auth;
+  const factory _Auth(final AuthFailure f) = _$AuthImpl;
 
   @override
   AuthFailure get f;
   @JsonKey(ignore: true)
-  _$$_AuthCopyWith<_$_Auth> get copyWith => throw _privateConstructorUsedError;
+  _$$AuthImplCopyWith<_$AuthImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_BranchCopyWith<$Res> {
-  factory _$$_BranchCopyWith(_$_Branch value, $Res Function(_$_Branch) then) =
-      __$$_BranchCopyWithImpl<$Res>;
+abstract class _$$BranchImplCopyWith<$Res> {
+  factory _$$BranchImplCopyWith(
+          _$BranchImpl value, $Res Function(_$BranchImpl) then) =
+      __$$BranchImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BranchFailure f});
 
@@ -287,10 +290,11 @@ abstract class _$$_BranchCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BranchCopyWithImpl<$Res>
-    extends _$CoreFailureCopyWithImpl<$Res, _$_Branch>
-    implements _$$_BranchCopyWith<$Res> {
-  __$$_BranchCopyWithImpl(_$_Branch _value, $Res Function(_$_Branch) _then)
+class __$$BranchImplCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$BranchImpl>
+    implements _$$BranchImplCopyWith<$Res> {
+  __$$BranchImplCopyWithImpl(
+      _$BranchImpl _value, $Res Function(_$BranchImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -298,7 +302,7 @@ class __$$_BranchCopyWithImpl<$Res>
   $Res call({
     Object? f = null,
   }) {
-    return _then(_$_Branch(
+    return _then(_$BranchImpl(
       null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
@@ -317,8 +321,8 @@ class __$$_BranchCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Branch implements _Branch {
-  const _$_Branch(this.f);
+class _$BranchImpl implements _Branch {
+  const _$BranchImpl(this.f);
 
   @override
   final BranchFailure f;
@@ -329,10 +333,10 @@ class _$_Branch implements _Branch {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Branch &&
+            other is _$BranchImpl &&
             (identical(other.f, f) || other.f == f));
   }
 
@@ -342,8 +346,8 @@ class _$_Branch implements _Branch {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BranchCopyWith<_$_Branch> get copyWith =>
-      __$$_BranchCopyWithImpl<_$_Branch>(this, _$identity);
+  _$$BranchImplCopyWith<_$BranchImpl> get copyWith =>
+      __$$BranchImplCopyWithImpl<_$BranchImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -439,20 +443,20 @@ class _$_Branch implements _Branch {
 }
 
 abstract class _Branch implements CoreFailure {
-  const factory _Branch(final BranchFailure f) = _$_Branch;
+  const factory _Branch(final BranchFailure f) = _$BranchImpl;
 
   @override
   BranchFailure get f;
   @JsonKey(ignore: true)
-  _$$_BranchCopyWith<_$_Branch> get copyWith =>
+  _$$BranchImplCopyWith<_$BranchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_DefaultCoversCopyWith<$Res> {
-  factory _$$_DefaultCoversCopyWith(
-          _$_DefaultCovers value, $Res Function(_$_DefaultCovers) then) =
-      __$$_DefaultCoversCopyWithImpl<$Res>;
+abstract class _$$DefaultCoversImplCopyWith<$Res> {
+  factory _$$DefaultCoversImplCopyWith(
+          _$DefaultCoversImpl value, $Res Function(_$DefaultCoversImpl) then) =
+      __$$DefaultCoversImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DefaultCoversFailure f});
 
@@ -460,11 +464,11 @@ abstract class _$$_DefaultCoversCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_DefaultCoversCopyWithImpl<$Res>
-    extends _$CoreFailureCopyWithImpl<$Res, _$_DefaultCovers>
-    implements _$$_DefaultCoversCopyWith<$Res> {
-  __$$_DefaultCoversCopyWithImpl(
-      _$_DefaultCovers _value, $Res Function(_$_DefaultCovers) _then)
+class __$$DefaultCoversImplCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$DefaultCoversImpl>
+    implements _$$DefaultCoversImplCopyWith<$Res> {
+  __$$DefaultCoversImplCopyWithImpl(
+      _$DefaultCoversImpl _value, $Res Function(_$DefaultCoversImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -472,7 +476,7 @@ class __$$_DefaultCoversCopyWithImpl<$Res>
   $Res call({
     Object? f = null,
   }) {
-    return _then(_$_DefaultCovers(
+    return _then(_$DefaultCoversImpl(
       null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
@@ -491,8 +495,8 @@ class __$$_DefaultCoversCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DefaultCovers implements _DefaultCovers {
-  const _$_DefaultCovers(this.f);
+class _$DefaultCoversImpl implements _DefaultCovers {
+  const _$DefaultCoversImpl(this.f);
 
   @override
   final DefaultCoversFailure f;
@@ -503,10 +507,10 @@ class _$_DefaultCovers implements _DefaultCovers {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DefaultCovers &&
+            other is _$DefaultCoversImpl &&
             (identical(other.f, f) || other.f == f));
   }
 
@@ -516,8 +520,8 @@ class _$_DefaultCovers implements _DefaultCovers {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DefaultCoversCopyWith<_$_DefaultCovers> get copyWith =>
-      __$$_DefaultCoversCopyWithImpl<_$_DefaultCovers>(this, _$identity);
+  _$$DefaultCoversImplCopyWith<_$DefaultCoversImpl> get copyWith =>
+      __$$DefaultCoversImplCopyWithImpl<_$DefaultCoversImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -613,20 +617,21 @@ class _$_DefaultCovers implements _DefaultCovers {
 }
 
 abstract class _DefaultCovers implements CoreFailure {
-  const factory _DefaultCovers(final DefaultCoversFailure f) = _$_DefaultCovers;
+  const factory _DefaultCovers(final DefaultCoversFailure f) =
+      _$DefaultCoversImpl;
 
   @override
   DefaultCoversFailure get f;
   @JsonKey(ignore: true)
-  _$$_DefaultCoversCopyWith<_$_DefaultCovers> get copyWith =>
+  _$$DefaultCoversImplCopyWith<_$DefaultCoversImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SessionsCopyWith<$Res> {
-  factory _$$_SessionsCopyWith(
-          _$_Sessions value, $Res Function(_$_Sessions) then) =
-      __$$_SessionsCopyWithImpl<$Res>;
+abstract class _$$SessionsImplCopyWith<$Res> {
+  factory _$$SessionsImplCopyWith(
+          _$SessionsImpl value, $Res Function(_$SessionsImpl) then) =
+      __$$SessionsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SessionsFailure f});
 
@@ -634,11 +639,11 @@ abstract class _$$_SessionsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SessionsCopyWithImpl<$Res>
-    extends _$CoreFailureCopyWithImpl<$Res, _$_Sessions>
-    implements _$$_SessionsCopyWith<$Res> {
-  __$$_SessionsCopyWithImpl(
-      _$_Sessions _value, $Res Function(_$_Sessions) _then)
+class __$$SessionsImplCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$SessionsImpl>
+    implements _$$SessionsImplCopyWith<$Res> {
+  __$$SessionsImplCopyWithImpl(
+      _$SessionsImpl _value, $Res Function(_$SessionsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -646,7 +651,7 @@ class __$$_SessionsCopyWithImpl<$Res>
   $Res call({
     Object? f = null,
   }) {
-    return _then(_$_Sessions(
+    return _then(_$SessionsImpl(
       null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
@@ -665,8 +670,8 @@ class __$$_SessionsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Sessions implements _Sessions {
-  const _$_Sessions(this.f);
+class _$SessionsImpl implements _Sessions {
+  const _$SessionsImpl(this.f);
 
   @override
   final SessionsFailure f;
@@ -677,10 +682,10 @@ class _$_Sessions implements _Sessions {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Sessions &&
+            other is _$SessionsImpl &&
             (identical(other.f, f) || other.f == f));
   }
 
@@ -690,8 +695,8 @@ class _$_Sessions implements _Sessions {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SessionsCopyWith<_$_Sessions> get copyWith =>
-      __$$_SessionsCopyWithImpl<_$_Sessions>(this, _$identity);
+  _$$SessionsImplCopyWith<_$SessionsImpl> get copyWith =>
+      __$$SessionsImplCopyWithImpl<_$SessionsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -787,20 +792,20 @@ class _$_Sessions implements _Sessions {
 }
 
 abstract class _Sessions implements CoreFailure {
-  const factory _Sessions(final SessionsFailure f) = _$_Sessions;
+  const factory _Sessions(final SessionsFailure f) = _$SessionsImpl;
 
   @override
   SessionsFailure get f;
   @JsonKey(ignore: true)
-  _$$_SessionsCopyWith<_$_Sessions> get copyWith =>
+  _$$SessionsImplCopyWith<_$SessionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SettingsCopyWith<$Res> {
-  factory _$$_SettingsCopyWith(
-          _$_Settings value, $Res Function(_$_Settings) then) =
-      __$$_SettingsCopyWithImpl<$Res>;
+abstract class _$$SettingsImplCopyWith<$Res> {
+  factory _$$SettingsImplCopyWith(
+          _$SettingsImpl value, $Res Function(_$SettingsImpl) then) =
+      __$$SettingsImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SettingsFailure f});
 
@@ -808,11 +813,11 @@ abstract class _$$_SettingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SettingsCopyWithImpl<$Res>
-    extends _$CoreFailureCopyWithImpl<$Res, _$_Settings>
-    implements _$$_SettingsCopyWith<$Res> {
-  __$$_SettingsCopyWithImpl(
-      _$_Settings _value, $Res Function(_$_Settings) _then)
+class __$$SettingsImplCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$SettingsImpl>
+    implements _$$SettingsImplCopyWith<$Res> {
+  __$$SettingsImplCopyWithImpl(
+      _$SettingsImpl _value, $Res Function(_$SettingsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -820,7 +825,7 @@ class __$$_SettingsCopyWithImpl<$Res>
   $Res call({
     Object? f = null,
   }) {
-    return _then(_$_Settings(
+    return _then(_$SettingsImpl(
       null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
@@ -839,8 +844,8 @@ class __$$_SettingsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Settings implements _Settings {
-  const _$_Settings(this.f);
+class _$SettingsImpl implements _Settings {
+  const _$SettingsImpl(this.f);
 
   @override
   final SettingsFailure f;
@@ -851,10 +856,10 @@ class _$_Settings implements _Settings {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Settings &&
+            other is _$SettingsImpl &&
             (identical(other.f, f) || other.f == f));
   }
 
@@ -864,8 +869,8 @@ class _$_Settings implements _Settings {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SettingsCopyWith<_$_Settings> get copyWith =>
-      __$$_SettingsCopyWithImpl<_$_Settings>(this, _$identity);
+  _$$SettingsImplCopyWith<_$SettingsImpl> get copyWith =>
+      __$$SettingsImplCopyWithImpl<_$SettingsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -961,19 +966,20 @@ class _$_Settings implements _Settings {
 }
 
 abstract class _Settings implements CoreFailure {
-  const factory _Settings(final SettingsFailure f) = _$_Settings;
+  const factory _Settings(final SettingsFailure f) = _$SettingsImpl;
 
   @override
   SettingsFailure get f;
   @JsonKey(ignore: true)
-  _$$_SettingsCopyWith<_$_Settings> get copyWith =>
+  _$$SettingsImplCopyWith<_$SettingsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_TreeCopyWith<$Res> {
-  factory _$$_TreeCopyWith(_$_Tree value, $Res Function(_$_Tree) then) =
-      __$$_TreeCopyWithImpl<$Res>;
+abstract class _$$TreeImplCopyWith<$Res> {
+  factory _$$TreeImplCopyWith(
+          _$TreeImpl value, $Res Function(_$TreeImpl) then) =
+      __$$TreeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TreeFailure f});
 
@@ -981,10 +987,10 @@ abstract class _$$_TreeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TreeCopyWithImpl<$Res>
-    extends _$CoreFailureCopyWithImpl<$Res, _$_Tree>
-    implements _$$_TreeCopyWith<$Res> {
-  __$$_TreeCopyWithImpl(_$_Tree _value, $Res Function(_$_Tree) _then)
+class __$$TreeImplCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$TreeImpl>
+    implements _$$TreeImplCopyWith<$Res> {
+  __$$TreeImplCopyWithImpl(_$TreeImpl _value, $Res Function(_$TreeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -992,7 +998,7 @@ class __$$_TreeCopyWithImpl<$Res>
   $Res call({
     Object? f = null,
   }) {
-    return _then(_$_Tree(
+    return _then(_$TreeImpl(
       null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
@@ -1011,8 +1017,8 @@ class __$$_TreeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Tree implements _Tree {
-  const _$_Tree(this.f);
+class _$TreeImpl implements _Tree {
+  const _$TreeImpl(this.f);
 
   @override
   final TreeFailure f;
@@ -1023,10 +1029,10 @@ class _$_Tree implements _Tree {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Tree &&
+            other is _$TreeImpl &&
             (identical(other.f, f) || other.f == f));
   }
 
@@ -1036,8 +1042,8 @@ class _$_Tree implements _Tree {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TreeCopyWith<_$_Tree> get copyWith =>
-      __$$_TreeCopyWithImpl<_$_Tree>(this, _$identity);
+  _$$TreeImplCopyWith<_$TreeImpl> get copyWith =>
+      __$$TreeImplCopyWithImpl<_$TreeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1133,18 +1139,20 @@ class _$_Tree implements _Tree {
 }
 
 abstract class _Tree implements CoreFailure {
-  const factory _Tree(final TreeFailure f) = _$_Tree;
+  const factory _Tree(final TreeFailure f) = _$TreeImpl;
 
   @override
   TreeFailure get f;
   @JsonKey(ignore: true)
-  _$$_TreeCopyWith<_$_Tree> get copyWith => throw _privateConstructorUsedError;
+  _$$TreeImplCopyWith<_$TreeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$UserImplCopyWith<$Res> {
+  factory _$$UserImplCopyWith(
+          _$UserImpl value, $Res Function(_$UserImpl) then) =
+      __$$UserImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserFailure f});
 
@@ -1152,10 +1160,10 @@ abstract class _$$_UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res>
-    extends _$CoreFailureCopyWithImpl<$Res, _$_User>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+class __$$UserImplCopyWithImpl<$Res>
+    extends _$CoreFailureCopyWithImpl<$Res, _$UserImpl>
+    implements _$$UserImplCopyWith<$Res> {
+  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1163,7 +1171,7 @@ class __$$_UserCopyWithImpl<$Res>
   $Res call({
     Object? f = null,
   }) {
-    return _then(_$_User(
+    return _then(_$UserImpl(
       null == f
           ? _value.f
           : f // ignore: cast_nullable_to_non_nullable
@@ -1182,8 +1190,8 @@ class __$$_UserCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_User implements _User {
-  const _$_User(this.f);
+class _$UserImpl implements _User {
+  const _$UserImpl(this.f);
 
   @override
   final UserFailure f;
@@ -1194,10 +1202,10 @@ class _$_User implements _User {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$UserImpl &&
             (identical(other.f, f) || other.f == f));
   }
 
@@ -1207,8 +1215,8 @@ class _$_User implements _User {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1304,10 +1312,11 @@ class _$_User implements _User {
 }
 
 abstract class _User implements CoreFailure {
-  const factory _User(final UserFailure f) = _$_User;
+  const factory _User(final UserFailure f) = _$UserImpl;
 
   @override
   UserFailure get f;
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

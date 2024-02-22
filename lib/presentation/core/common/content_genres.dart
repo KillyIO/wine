@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:wine/presentation/core/common/genre_item.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class ContentGenres extends StatelessWidget {
-  /// @nodoc
   const ContentGenres({
     required this.genres,
     super.key,
   });
 
-  /// @nodoc
   final List<String> genres;
 
   @override
@@ -29,12 +26,12 @@ class ContentGenres extends StatelessWidget {
                   pastelBlue,
                   pastelCyan,
                   pastelPink,
-                  pastelYellow
+                  pastelYellow,
                 ][i % 4],
                 textColor: Colors.white,
                 title: genres[i],
               ),
-            )
+            ),
         ],
       ),
     );

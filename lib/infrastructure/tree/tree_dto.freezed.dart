@@ -12,7 +12,7 @@ part of 'tree_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TreeDTO _$TreeDTOFromJson(Map<String, dynamic> json) {
   return _TreeDTO.fromJson(json);
@@ -153,10 +153,10 @@ class _$TreeDTOCopyWithImpl<$Res, $Val extends TreeDTO>
 }
 
 /// @nodoc
-abstract class _$$_TreeDTOCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
-  factory _$$_TreeDTOCopyWith(
-          _$_TreeDTO value, $Res Function(_$_TreeDTO) then) =
-      __$$_TreeDTOCopyWithImpl<$Res>;
+abstract class _$$TreeDTOImplCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
+  factory _$$TreeDTOImplCopyWith(
+          _$TreeDTOImpl value, $Res Function(_$TreeDTOImpl) then) =
+      __$$TreeDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -177,10 +177,11 @@ abstract class _$$_TreeDTOCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TreeDTOCopyWithImpl<$Res>
-    extends _$TreeDTOCopyWithImpl<$Res, _$_TreeDTO>
-    implements _$$_TreeDTOCopyWith<$Res> {
-  __$$_TreeDTOCopyWithImpl(_$_TreeDTO _value, $Res Function(_$_TreeDTO) _then)
+class __$$TreeDTOImplCopyWithImpl<$Res>
+    extends _$TreeDTOCopyWithImpl<$Res, _$TreeDTOImpl>
+    implements _$$TreeDTOImplCopyWith<$Res> {
+  __$$TreeDTOImplCopyWithImpl(
+      _$TreeDTOImpl _value, $Res Function(_$TreeDTOImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -201,7 +202,7 @@ class __$$_TreeDTOCopyWithImpl<$Res>
     Object? viewsCount = null,
     Object? subtitle = freezed,
   }) {
-    return _then(_$_TreeDTO(
+    return _then(_$TreeDTOImpl(
       authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
@@ -264,8 +265,8 @@ class __$$_TreeDTOCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TreeDTO implements _TreeDTO {
-  _$_TreeDTO(
+class _$TreeDTOImpl implements _TreeDTO {
+  _$TreeDTOImpl(
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
@@ -282,8 +283,8 @@ class _$_TreeDTO implements _TreeDTO {
       this.subtitle})
       : _genres = genres;
 
-  factory _$_TreeDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_TreeDTOFromJson(json);
+  factory _$TreeDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TreeDTOImplFromJson(json);
 
   @override
   final String authorUID;
@@ -327,10 +328,10 @@ class _$_TreeDTO implements _TreeDTO {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TreeDTO &&
+            other is _$TreeDTOImpl &&
             (identical(other.authorUID, authorUID) ||
                 other.authorUID == authorUID) &&
             (identical(other.bookmarksCount, bookmarksCount) ||
@@ -379,12 +380,12 @@ class _$_TreeDTO implements _TreeDTO {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TreeDTOCopyWith<_$_TreeDTO> get copyWith =>
-      __$$_TreeDTOCopyWithImpl<_$_TreeDTO>(this, _$identity);
+  _$$TreeDTOImplCopyWith<_$TreeDTOImpl> get copyWith =>
+      __$$TreeDTOImplCopyWithImpl<_$TreeDTOImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TreeDTOToJson(
+    return _$$TreeDTOImplToJson(
       this,
     );
   }
@@ -405,9 +406,9 @@ abstract class _TreeDTO implements TreeDTO {
       required final String uid,
       @ServerTimestampConverter() required final FieldValue updatedAt,
       required final int viewsCount,
-      final String? subtitle}) = _$_TreeDTO;
+      final String? subtitle}) = _$TreeDTOImpl;
 
-  factory _TreeDTO.fromJson(Map<String, dynamic> json) = _$_TreeDTO.fromJson;
+  factory _TreeDTO.fromJson(Map<String, dynamic> json) = _$TreeDTOImpl.fromJson;
 
   @override
   String get authorUID;
@@ -440,6 +441,6 @@ abstract class _TreeDTO implements TreeDTO {
   String? get subtitle;
   @override
   @JsonKey(ignore: true)
-  _$$_TreeDTOCopyWith<_$_TreeDTO> get copyWith =>
+  _$$TreeDTOImplCopyWith<_$TreeDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

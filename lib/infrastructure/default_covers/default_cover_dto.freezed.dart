@@ -12,7 +12,7 @@ part of 'default_cover_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 DefaultCoverDTO _$DefaultCoverDTOFromJson(Map<String, dynamic> json) {
   return _DefaultCoverDTO.fromJson(json);
@@ -68,22 +68,22 @@ class _$DefaultCoverDTOCopyWithImpl<$Res, $Val extends DefaultCoverDTO>
 }
 
 /// @nodoc
-abstract class _$$_DefaultCoverDTOCopyWith<$Res>
+abstract class _$$DefaultCoverDTOImplCopyWith<$Res>
     implements $DefaultCoverDTOCopyWith<$Res> {
-  factory _$$_DefaultCoverDTOCopyWith(
-          _$_DefaultCoverDTO value, $Res Function(_$_DefaultCoverDTO) then) =
-      __$$_DefaultCoverDTOCopyWithImpl<$Res>;
+  factory _$$DefaultCoverDTOImplCopyWith(_$DefaultCoverDTOImpl value,
+          $Res Function(_$DefaultCoverDTOImpl) then) =
+      __$$DefaultCoverDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String key, String url});
 }
 
 /// @nodoc
-class __$$_DefaultCoverDTOCopyWithImpl<$Res>
-    extends _$DefaultCoverDTOCopyWithImpl<$Res, _$_DefaultCoverDTO>
-    implements _$$_DefaultCoverDTOCopyWith<$Res> {
-  __$$_DefaultCoverDTOCopyWithImpl(
-      _$_DefaultCoverDTO _value, $Res Function(_$_DefaultCoverDTO) _then)
+class __$$DefaultCoverDTOImplCopyWithImpl<$Res>
+    extends _$DefaultCoverDTOCopyWithImpl<$Res, _$DefaultCoverDTOImpl>
+    implements _$$DefaultCoverDTOImplCopyWith<$Res> {
+  __$$DefaultCoverDTOImplCopyWithImpl(
+      _$DefaultCoverDTOImpl _value, $Res Function(_$DefaultCoverDTOImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_DefaultCoverDTOCopyWithImpl<$Res>
     Object? key = null,
     Object? url = null,
   }) {
-    return _then(_$_DefaultCoverDTO(
+    return _then(_$DefaultCoverDTOImpl(
       key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -107,11 +107,11 @@ class __$$_DefaultCoverDTOCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultCoverDTO implements _DefaultCoverDTO {
-  _$_DefaultCoverDTO({required this.key, required this.url});
+class _$DefaultCoverDTOImpl implements _DefaultCoverDTO {
+  _$DefaultCoverDTOImpl({required this.key, required this.url});
 
-  factory _$_DefaultCoverDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultCoverDTOFromJson(json);
+  factory _$DefaultCoverDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DefaultCoverDTOImplFromJson(json);
 
   @override
   final String key;
@@ -124,10 +124,10 @@ class _$_DefaultCoverDTO implements _DefaultCoverDTO {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DefaultCoverDTO &&
+            other is _$DefaultCoverDTOImpl &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.url, url) || other.url == url));
   }
@@ -139,12 +139,13 @@ class _$_DefaultCoverDTO implements _DefaultCoverDTO {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DefaultCoverDTOCopyWith<_$_DefaultCoverDTO> get copyWith =>
-      __$$_DefaultCoverDTOCopyWithImpl<_$_DefaultCoverDTO>(this, _$identity);
+  _$$DefaultCoverDTOImplCopyWith<_$DefaultCoverDTOImpl> get copyWith =>
+      __$$DefaultCoverDTOImplCopyWithImpl<_$DefaultCoverDTOImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultCoverDTOToJson(
+    return _$$DefaultCoverDTOImplToJson(
       this,
     );
   }
@@ -153,10 +154,10 @@ class _$_DefaultCoverDTO implements _DefaultCoverDTO {
 abstract class _DefaultCoverDTO implements DefaultCoverDTO {
   factory _DefaultCoverDTO(
       {required final String key,
-      required final String url}) = _$_DefaultCoverDTO;
+      required final String url}) = _$DefaultCoverDTOImpl;
 
   factory _DefaultCoverDTO.fromJson(Map<String, dynamic> json) =
-      _$_DefaultCoverDTO.fromJson;
+      _$DefaultCoverDTOImpl.fromJson;
 
   @override
   String get key;
@@ -164,6 +165,6 @@ abstract class _DefaultCoverDTO implements DefaultCoverDTO {
   String get url;
   @override
   @JsonKey(ignore: true)
-  _$$_DefaultCoverDTOCopyWith<_$_DefaultCoverDTO> get copyWith =>
+  _$$DefaultCoverDTOImplCopyWith<_$DefaultCoverDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

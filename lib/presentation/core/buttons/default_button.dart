@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class DefaultButton extends StatelessWidget {
-  /// @nodoc
   const DefaultButton({
     required this.color,
     required this.title,
@@ -15,28 +13,20 @@ class DefaultButton extends StatelessWidget {
     this.width = 100,
   });
 
-  /// @nodoc
   final Color color;
 
-  /// @nodoc
   final double? fontSize;
 
-  /// @nodoc
   final bool isProcessing;
 
-  /// @nodoc
   final bool hasRoundedCorners;
 
-  /// @nodoc
   final double? height;
 
-  /// @nodoc
   final String title;
 
-  /// @nodoc
   final VoidCallback? onPressed;
 
-  /// @nodoc
   final double? width;
 
   @override

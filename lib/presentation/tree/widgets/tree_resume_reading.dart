@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class TreeResumeReading extends StatelessWidget {
-  /// @nodoc
   const TreeResumeReading({super.key});
 
   @override

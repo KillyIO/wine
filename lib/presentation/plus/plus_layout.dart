@@ -6,9 +6,7 @@ import 'package:wine/presentation/plus/widgets/plus_banner.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 
-/// @nodoc
 class PlusLayout extends StatelessWidget {
-  /// @nodoc
   const PlusLayout({super.key});
 
   @override

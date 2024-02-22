@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class HomeSplashCopyright extends StatelessWidget {
-  /// @nodoc
   const HomeSplashCopyright({super.key});
 
   @override
@@ -27,7 +25,7 @@ class HomeSplashCopyright extends StatelessWidget {
           ),
         ),
         const Text(
-          'KILLY.IO | WINE',
+          'WHISPERING STARS | FORKTALE',
           style: TextStyle(
             color: Colors.black,
             fontSize: 9,

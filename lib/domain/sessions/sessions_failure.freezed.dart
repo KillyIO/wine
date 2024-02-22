@@ -12,7 +12,7 @@ part of 'sessions_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SessionsFailure {
@@ -81,25 +81,25 @@ class _$SessionsFailureCopyWithImpl<$Res, $Val extends SessionsFailure>
 }
 
 /// @nodoc
-abstract class _$$SessionNotDeletedCopyWith<$Res> {
-  factory _$$SessionNotDeletedCopyWith(
-          _$SessionNotDeleted value, $Res Function(_$SessionNotDeleted) then) =
-      __$$SessionNotDeletedCopyWithImpl<$Res>;
+abstract class _$$SessionNotDeletedImplCopyWith<$Res> {
+  factory _$$SessionNotDeletedImplCopyWith(_$SessionNotDeletedImpl value,
+          $Res Function(_$SessionNotDeletedImpl) then) =
+      __$$SessionNotDeletedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SessionNotDeletedCopyWithImpl<$Res>
-    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotDeleted>
-    implements _$$SessionNotDeletedCopyWith<$Res> {
-  __$$SessionNotDeletedCopyWithImpl(
-      _$SessionNotDeleted _value, $Res Function(_$SessionNotDeleted) _then)
+class __$$SessionNotDeletedImplCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotDeletedImpl>
+    implements _$$SessionNotDeletedImplCopyWith<$Res> {
+  __$$SessionNotDeletedImplCopyWithImpl(_$SessionNotDeletedImpl _value,
+      $Res Function(_$SessionNotDeletedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SessionNotDeleted implements SessionNotDeleted {
-  const _$SessionNotDeleted();
+class _$SessionNotDeletedImpl implements SessionNotDeleted {
+  const _$SessionNotDeletedImpl();
 
   @override
   String toString() {
@@ -107,9 +107,9 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionNotDeleted);
+        (other.runtimeType == runtimeType && other is _$SessionNotDeletedImpl);
   }
 
   @override
@@ -185,29 +185,29 @@ class _$SessionNotDeleted implements SessionNotDeleted {
 }
 
 abstract class SessionNotDeleted implements SessionsFailure {
-  const factory SessionNotDeleted() = _$SessionNotDeleted;
+  const factory SessionNotDeleted() = _$SessionNotDeletedImpl;
 }
 
 /// @nodoc
-abstract class _$$SessionNotFoundCopyWith<$Res> {
-  factory _$$SessionNotFoundCopyWith(
-          _$SessionNotFound value, $Res Function(_$SessionNotFound) then) =
-      __$$SessionNotFoundCopyWithImpl<$Res>;
+abstract class _$$SessionNotFoundImplCopyWith<$Res> {
+  factory _$$SessionNotFoundImplCopyWith(_$SessionNotFoundImpl value,
+          $Res Function(_$SessionNotFoundImpl) then) =
+      __$$SessionNotFoundImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SessionNotFoundCopyWithImpl<$Res>
-    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotFound>
-    implements _$$SessionNotFoundCopyWith<$Res> {
-  __$$SessionNotFoundCopyWithImpl(
-      _$SessionNotFound _value, $Res Function(_$SessionNotFound) _then)
+class __$$SessionNotFoundImplCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotFoundImpl>
+    implements _$$SessionNotFoundImplCopyWith<$Res> {
+  __$$SessionNotFoundImplCopyWithImpl(
+      _$SessionNotFoundImpl _value, $Res Function(_$SessionNotFoundImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SessionNotFound implements SessionNotFound {
-  const _$SessionNotFound();
+class _$SessionNotFoundImpl implements SessionNotFound {
+  const _$SessionNotFoundImpl();
 
   @override
   String toString() {
@@ -215,9 +215,9 @@ class _$SessionNotFound implements SessionNotFound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionNotFound);
+        (other.runtimeType == runtimeType && other is _$SessionNotFoundImpl);
   }
 
   @override
@@ -293,29 +293,29 @@ class _$SessionNotFound implements SessionNotFound {
 }
 
 abstract class SessionNotFound implements SessionsFailure {
-  const factory SessionNotFound() = _$SessionNotFound;
+  const factory SessionNotFound() = _$SessionNotFoundImpl;
 }
 
 /// @nodoc
-abstract class _$$SessionNotInsertedCopyWith<$Res> {
-  factory _$$SessionNotInsertedCopyWith(_$SessionNotInserted value,
-          $Res Function(_$SessionNotInserted) then) =
-      __$$SessionNotInsertedCopyWithImpl<$Res>;
+abstract class _$$SessionNotInsertedImplCopyWith<$Res> {
+  factory _$$SessionNotInsertedImplCopyWith(_$SessionNotInsertedImpl value,
+          $Res Function(_$SessionNotInsertedImpl) then) =
+      __$$SessionNotInsertedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SessionNotInsertedCopyWithImpl<$Res>
-    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotInserted>
-    implements _$$SessionNotInsertedCopyWith<$Res> {
-  __$$SessionNotInsertedCopyWithImpl(
-      _$SessionNotInserted _value, $Res Function(_$SessionNotInserted) _then)
+class __$$SessionNotInsertedImplCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res, _$SessionNotInsertedImpl>
+    implements _$$SessionNotInsertedImplCopyWith<$Res> {
+  __$$SessionNotInsertedImplCopyWithImpl(_$SessionNotInsertedImpl _value,
+      $Res Function(_$SessionNotInsertedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SessionNotInserted implements SessionNotInserted {
-  const _$SessionNotInserted();
+class _$SessionNotInsertedImpl implements SessionNotInserted {
+  const _$SessionNotInsertedImpl();
 
   @override
   String toString() {
@@ -323,9 +323,9 @@ class _$SessionNotInserted implements SessionNotInserted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SessionNotInserted);
+        (other.runtimeType == runtimeType && other is _$SessionNotInsertedImpl);
   }
 
   @override
@@ -401,5 +401,5 @@ class _$SessionNotInserted implements SessionNotInserted {
 }
 
 abstract class SessionNotInserted implements SessionsFailure {
-  const factory SessionNotInserted() = _$SessionNotInserted;
+  const factory SessionNotInserted() = _$SessionNotInsertedImpl;
 }

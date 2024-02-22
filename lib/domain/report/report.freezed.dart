@@ -12,7 +12,7 @@ part of 'report.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Report {
@@ -84,9 +84,10 @@ class _$ReportCopyWithImpl<$Res, $Val extends Report>
 }
 
 /// @nodoc
-abstract class _$$_ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
-  factory _$$_ReportCopyWith(_$_Report value, $Res Function(_$_Report) then) =
-      __$$_ReportCopyWithImpl<$Res>;
+abstract class _$$ReportImplCopyWith<$Res> implements $ReportCopyWith<$Res> {
+  factory _$$ReportImplCopyWith(
+          _$ReportImpl value, $Res Function(_$ReportImpl) then) =
+      __$$ReportImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -98,10 +99,11 @@ abstract class _$$_ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ReportCopyWithImpl<$Res>
-    extends _$ReportCopyWithImpl<$Res, _$_Report>
-    implements _$$_ReportCopyWith<$Res> {
-  __$$_ReportCopyWithImpl(_$_Report _value, $Res Function(_$_Report) _then)
+class __$$ReportImplCopyWithImpl<$Res>
+    extends _$ReportCopyWithImpl<$Res, _$ReportImpl>
+    implements _$$ReportImplCopyWith<$Res> {
+  __$$ReportImplCopyWithImpl(
+      _$ReportImpl _value, $Res Function(_$ReportImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -113,7 +115,7 @@ class __$$_ReportCopyWithImpl<$Res>
     Object? violation = null,
     Object? uid = null,
   }) {
-    return _then(_$_Report(
+    return _then(_$ReportImpl(
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -140,8 +142,8 @@ class __$$_ReportCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Report implements _Report {
-  _$_Report(
+class _$ReportImpl implements _Report {
+  _$ReportImpl(
       {required this.description,
       required this.reporterUID,
       required this.title,
@@ -165,10 +167,10 @@ class _$_Report implements _Report {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Report &&
+            other is _$ReportImpl &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.reporterUID, reporterUID) ||
@@ -186,8 +188,8 @@ class _$_Report implements _Report {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReportCopyWith<_$_Report> get copyWith =>
-      __$$_ReportCopyWithImpl<_$_Report>(this, _$identity);
+  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
+      __$$ReportImplCopyWithImpl<_$ReportImpl>(this, _$identity);
 }
 
 abstract class _Report implements Report {
@@ -196,7 +198,7 @@ abstract class _Report implements Report {
       required final UniqueID reporterUID,
       required final Title title,
       required final Violation violation,
-      required final UniqueID uid}) = _$_Report;
+      required final UniqueID uid}) = _$ReportImpl;
 
   @override
   Description get description;
@@ -210,6 +212,6 @@ abstract class _Report implements Report {
   UniqueID get uid;
   @override
   @JsonKey(ignore: true)
-  _$$_ReportCopyWith<_$_Report> get copyWith =>
+  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

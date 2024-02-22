@@ -7,9 +7,7 @@ import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class TreeBranchOne extends StatelessWidget {
-  /// @nodoc
   const TreeBranchOne({super.key});
 
   @override

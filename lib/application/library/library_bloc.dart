@@ -16,12 +16,8 @@ part 'library_bloc.freezed.dart';
 part 'library_event.dart';
 part 'library_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
-  /// @nodoc
   LibraryBloc(
     this._branchRepository,
     this._sessionsRepository,

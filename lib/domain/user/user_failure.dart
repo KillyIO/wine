@@ -8,18 +8,13 @@ part 'user_failure.freezed.dart';
 /// calls to User in database.
 @freezed
 class UserFailure with _$UserFailure {
-  /// @nodoc
   const factory UserFailure.permissionDenied() = PermissionDenied;
 
-  /// @nodoc
   const factory UserFailure.serverError() = ServerError;
 
-  /// @nodoc
   const factory UserFailure.unexpected() = Unexpected;
 
-  /// @nodoc
   const factory UserFailure.usernameAlreadyInUse() = UsernameAlreadyInUse;
 
-  /// @nodoc
   const factory UserFailure.userNotFound() = UserNotFound;
 }
