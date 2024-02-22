@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'tree_dto.dart';
 
@@ -12,56 +12,11 @@ part of 'tree_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TreeDTO _$TreeDTOFromJson(Map<String, dynamic> json) {
   return _TreeDTO.fromJson(json);
 }
-
-/// @nodoc
-class _$TreeDTOTearOff {
-  const _$TreeDTOTearOff();
-
-  _TreeDTO call(
-      {required String authorUID,
-      required int bookmarksCount,
-      required String coverURL,
-      required List<String> genres,
-      required bool isNSFW,
-      required bool isPublished,
-      required String language,
-      required int likesCount,
-      String? subtitle,
-      required String synopsis,
-      required String title,
-      required String uid,
-      @ServerTimestampConverter() required FieldValue updatedAt,
-      required int viewsCount}) {
-    return _TreeDTO(
-      authorUID: authorUID,
-      bookmarksCount: bookmarksCount,
-      coverURL: coverURL,
-      genres: genres,
-      isNSFW: isNSFW,
-      isPublished: isPublished,
-      language: language,
-      likesCount: likesCount,
-      subtitle: subtitle,
-      synopsis: synopsis,
-      title: title,
-      uid: uid,
-      updatedAt: updatedAt,
-      viewsCount: viewsCount,
-    );
-  }
-
-  TreeDTO fromJson(Map<String, Object?> json) {
-    return TreeDTO.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TreeDTO = _$TreeDTOTearOff();
 
 /// @nodoc
 mixin _$TreeDTO {
@@ -73,13 +28,13 @@ mixin _$TreeDTO {
   bool get isPublished => throw _privateConstructorUsedError;
   String get language => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
-  String? get subtitle => throw _privateConstructorUsedError;
   String get synopsis => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   FieldValue get updatedAt => throw _privateConstructorUsedError;
   int get viewsCount => throw _privateConstructorUsedError;
+  String? get subtitle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -89,7 +44,8 @@ mixin _$TreeDTO {
 /// @nodoc
 abstract class $TreeDTOCopyWith<$Res> {
   factory $TreeDTOCopyWith(TreeDTO value, $Res Function(TreeDTO) then) =
-      _$TreeDTOCopyWithImpl<$Res>;
+      _$TreeDTOCopyWithImpl<$Res, TreeDTO>;
+  @useResult
   $Res call(
       {String authorUID,
       int bookmarksCount,
@@ -99,105 +55,110 @@ abstract class $TreeDTOCopyWith<$Res> {
       bool isPublished,
       String language,
       int likesCount,
-      String? subtitle,
       String synopsis,
       String title,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
-      int viewsCount});
+      int viewsCount,
+      String? subtitle});
 }
 
 /// @nodoc
-class _$TreeDTOCopyWithImpl<$Res> implements $TreeDTOCopyWith<$Res> {
+class _$TreeDTOCopyWithImpl<$Res, $Val extends TreeDTO>
+    implements $TreeDTOCopyWith<$Res> {
   _$TreeDTOCopyWithImpl(this._value, this._then);
 
-  final TreeDTO _value;
   // ignore: unused_field
-  final $Res Function(TreeDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? likesCount = null,
+    Object? synopsis = null,
+    Object? title = null,
+    Object? uid = null,
+    Object? updatedAt = null,
+    Object? viewsCount = null,
     Object? subtitle = freezed,
-    Object? synopsis = freezed,
-    Object? title = freezed,
-    Object? uid = freezed,
-    Object? updatedAt = freezed,
-    Object? viewsCount = freezed,
   }) {
     return _then(_value.copyWith(
-      authorUID: authorUID == freezed
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as String,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
-      genres: genres == freezed
+      genres: null == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: subtitle == freezed
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      synopsis: synopsis == freezed
+      synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+      subtitle: freezed == subtitle
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TreeDTOCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
-  factory _$TreeDTOCopyWith(_TreeDTO value, $Res Function(_TreeDTO) then) =
-      __$TreeDTOCopyWithImpl<$Res>;
+abstract class _$$TreeDTOImplCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
+  factory _$$TreeDTOImplCopyWith(
+          _$TreeDTOImpl value, $Res Function(_$TreeDTOImpl) then) =
+      __$$TreeDTOImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String authorUID,
       int bookmarksCount,
@@ -207,122 +168,123 @@ abstract class _$TreeDTOCopyWith<$Res> implements $TreeDTOCopyWith<$Res> {
       bool isPublished,
       String language,
       int likesCount,
-      String? subtitle,
       String synopsis,
       String title,
       String uid,
       @ServerTimestampConverter() FieldValue updatedAt,
-      int viewsCount});
+      int viewsCount,
+      String? subtitle});
 }
 
 /// @nodoc
-class __$TreeDTOCopyWithImpl<$Res> extends _$TreeDTOCopyWithImpl<$Res>
-    implements _$TreeDTOCopyWith<$Res> {
-  __$TreeDTOCopyWithImpl(_TreeDTO _value, $Res Function(_TreeDTO) _then)
-      : super(_value, (v) => _then(v as _TreeDTO));
+class __$$TreeDTOImplCopyWithImpl<$Res>
+    extends _$TreeDTOCopyWithImpl<$Res, _$TreeDTOImpl>
+    implements _$$TreeDTOImplCopyWith<$Res> {
+  __$$TreeDTOImplCopyWithImpl(
+      _$TreeDTOImpl _value, $Res Function(_$TreeDTOImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _TreeDTO get _value => super._value as _TreeDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? likesCount = null,
+    Object? synopsis = null,
+    Object? title = null,
+    Object? uid = null,
+    Object? updatedAt = null,
+    Object? viewsCount = null,
     Object? subtitle = freezed,
-    Object? synopsis = freezed,
-    Object? title = freezed,
-    Object? uid = freezed,
-    Object? updatedAt = freezed,
-    Object? viewsCount = freezed,
   }) {
-    return _then(_TreeDTO(
-      authorUID: authorUID == freezed
+    return _then(_$TreeDTOImpl(
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as String,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
-      genres: genres == freezed
-          ? _value.genres
+      genres: null == genres
+          ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      subtitle: subtitle == freezed
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      synopsis: synopsis == freezed
+      synopsis: null == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as FieldValue,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
+      subtitle: freezed == subtitle
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_TreeDTO implements _TreeDTO {
-  _$_TreeDTO(
+class _$TreeDTOImpl implements _TreeDTO {
+  _$TreeDTOImpl(
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
-      required this.genres,
+      required final List<String> genres,
       required this.isNSFW,
       required this.isPublished,
       required this.language,
       required this.likesCount,
-      this.subtitle,
       required this.synopsis,
       required this.title,
       required this.uid,
       @ServerTimestampConverter() required this.updatedAt,
-      required this.viewsCount});
+      required this.viewsCount,
+      this.subtitle})
+      : _genres = genres;
 
-  factory _$_TreeDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_TreeDTOFromJson(json);
+  factory _$TreeDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TreeDTOImplFromJson(json);
 
   @override
   final String authorUID;
@@ -330,8 +292,14 @@ class _$_TreeDTO implements _TreeDTO {
   final int bookmarksCount;
   @override
   final String coverURL;
+  final List<String> _genres;
   @override
-  final List<String> genres;
+  List<String> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
+
   @override
   final bool isNSFW;
   @override
@@ -340,8 +308,6 @@ class _$_TreeDTO implements _TreeDTO {
   final String language;
   @override
   final int likesCount;
-  @override
-  final String? subtitle;
   @override
   final String synopsis;
   @override
@@ -353,84 +319,96 @@ class _$_TreeDTO implements _TreeDTO {
   final FieldValue updatedAt;
   @override
   final int viewsCount;
+  @override
+  final String? subtitle;
 
   @override
   String toString() {
-    return 'TreeDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, synopsis: $synopsis, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
+    return 'TreeDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, synopsis: $synopsis, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount, subtitle: $subtitle)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TreeDTO &&
-            const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
-            const DeepCollectionEquality()
-                .equals(other.bookmarksCount, bookmarksCount) &&
-            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
-            const DeepCollectionEquality().equals(other.genres, genres) &&
-            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
-            const DeepCollectionEquality()
-                .equals(other.isPublished, isPublished) &&
-            const DeepCollectionEquality().equals(other.language, language) &&
-            const DeepCollectionEquality()
-                .equals(other.likesCount, likesCount) &&
-            const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
-            const DeepCollectionEquality().equals(other.synopsis, synopsis) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality()
-                .equals(other.viewsCount, viewsCount));
+            other is _$TreeDTOImpl &&
+            (identical(other.authorUID, authorUID) ||
+                other.authorUID == authorUID) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                other.bookmarksCount == bookmarksCount) &&
+            (identical(other.coverURL, coverURL) ||
+                other.coverURL == coverURL) &&
+            const DeepCollectionEquality().equals(other._genres, _genres) &&
+            (identical(other.isNSFW, isNSFW) || other.isNSFW == isNSFW) &&
+            (identical(other.isPublished, isPublished) ||
+                other.isPublished == isPublished) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.likesCount, likesCount) ||
+                other.likesCount == likesCount) &&
+            (identical(other.synopsis, synopsis) ||
+                other.synopsis == synopsis) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.viewsCount, viewsCount) ||
+                other.viewsCount == viewsCount) &&
+            (identical(other.subtitle, subtitle) ||
+                other.subtitle == subtitle));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(authorUID),
-      const DeepCollectionEquality().hash(bookmarksCount),
-      const DeepCollectionEquality().hash(coverURL),
-      const DeepCollectionEquality().hash(genres),
-      const DeepCollectionEquality().hash(isNSFW),
-      const DeepCollectionEquality().hash(isPublished),
-      const DeepCollectionEquality().hash(language),
-      const DeepCollectionEquality().hash(likesCount),
-      const DeepCollectionEquality().hash(subtitle),
-      const DeepCollectionEquality().hash(synopsis),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(viewsCount));
 
   @JsonKey(ignore: true)
   @override
-  _$TreeDTOCopyWith<_TreeDTO> get copyWith =>
-      __$TreeDTOCopyWithImpl<_TreeDTO>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      authorUID,
+      bookmarksCount,
+      coverURL,
+      const DeepCollectionEquality().hash(_genres),
+      isNSFW,
+      isPublished,
+      language,
+      likesCount,
+      synopsis,
+      title,
+      uid,
+      updatedAt,
+      viewsCount,
+      subtitle);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TreeDTOImplCopyWith<_$TreeDTOImpl> get copyWith =>
+      __$$TreeDTOImplCopyWithImpl<_$TreeDTOImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TreeDTOToJson(this);
+    return _$$TreeDTOImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _TreeDTO implements TreeDTO {
   factory _TreeDTO(
-      {required String authorUID,
-      required int bookmarksCount,
-      required String coverURL,
-      required List<String> genres,
-      required bool isNSFW,
-      required bool isPublished,
-      required String language,
-      required int likesCount,
-      String? subtitle,
-      required String synopsis,
-      required String title,
-      required String uid,
-      @ServerTimestampConverter() required FieldValue updatedAt,
-      required int viewsCount}) = _$_TreeDTO;
+      {required final String authorUID,
+      required final int bookmarksCount,
+      required final String coverURL,
+      required final List<String> genres,
+      required final bool isNSFW,
+      required final bool isPublished,
+      required final String language,
+      required final int likesCount,
+      required final String synopsis,
+      required final String title,
+      required final String uid,
+      @ServerTimestampConverter() required final FieldValue updatedAt,
+      required final int viewsCount,
+      final String? subtitle}) = _$TreeDTOImpl;
 
-  factory _TreeDTO.fromJson(Map<String, dynamic> json) = _$_TreeDTO.fromJson;
+  factory _TreeDTO.fromJson(Map<String, dynamic> json) = _$TreeDTOImpl.fromJson;
 
   @override
   String get authorUID;
@@ -449,8 +427,6 @@ abstract class _TreeDTO implements TreeDTO {
   @override
   int get likesCount;
   @override
-  String? get subtitle;
-  @override
   String get synopsis;
   @override
   String get title;
@@ -462,7 +438,9 @@ abstract class _TreeDTO implements TreeDTO {
   @override
   int get viewsCount;
   @override
+  String? get subtitle;
+  @override
   @JsonKey(ignore: true)
-  _$TreeDTOCopyWith<_TreeDTO> get copyWith =>
+  _$$TreeDTOImplCopyWith<_$TreeDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

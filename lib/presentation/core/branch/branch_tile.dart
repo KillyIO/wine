@@ -4,31 +4,24 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 
-/// @nodoc
 class BranchTile extends StatelessWidget {
-  /// @nodoc
   const BranchTile({
-    Key? key,
     required this.coverURL,
     required this.language,
     required this.onPressed,
     required this.title,
     required this.uid,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final String? coverURL;
 
-  /// @nodoc
   final String? language;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
-  /// @nodoc
   final String? title;
 
-  /// @nodoc
   final String uid;
 
   @override
@@ -81,7 +74,7 @@ class BranchTile extends StatelessWidget {
             Hero(
               tag: uid,
               child: coverURL != null
-                  ? isURL(coverURL!)
+                  ? isURL(coverURL)
                       ? CachedNetworkImage(
                           fit: BoxFit.contain,
                           imageUrl: coverURL!,

@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
-/// @nodoc
 class TreeSynopsis extends StatelessWidget {
-  /// @nodoc
   const TreeSynopsis({
-    Key? key,
     required this.synopsis,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final String? synopsis;
 
   @override

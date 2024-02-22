@@ -1,8 +1,9 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
@@ -13,12 +14,8 @@ part 'settings_bloc.freezed.dart';
 part 'settings_event.dart';
 part 'settings_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
-  /// @nodoc
   SettingsBloc(
     this._authFacade,
     this._sessionsRepository,
@@ -32,22 +29,27 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         ),
       );
 
-      (await _sessionsRepository.fetchSession()).match(
-        (user) {
-          emit(state.copyWith(username: user.username.getOrCrash()));
+      if (!_authFacade.isAnonymous) {
+        (await _sessionsRepository.fetchSession()).match(
+          (user) {
+            emit(state.copyWith(username: user.username.getOrCrash()));
 
-          add(const SettingsEvent.sessionFetched());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
+            add(const SettingsEvent.sessionFetched());
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+                isProcessing: false,
+              ),
+            );
+          },
+        );
+      } else {
+        await _fetchSettings(emit);
+      }
     });
+    on<SessionFetched>((_, emit) async => await _fetchSettings(emit));
     on<LogOutPressed>((_, emit) async {
       emit(
         state.copyWith(
@@ -90,29 +92,30 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
       ),
     );
-    on<SessionFetched>(
-      (_, emit) async => (await _settingsRepository.fetchSettings()).match(
-        (settings) {
-          emit(
-            state.copyWith(
-              isProcessing: false,
-              settings: settings,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.settings(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      ),
-    );
   }
 
   final IAuthFacade _authFacade;
   final ISessionsRepository _sessionsRepository;
   final ISettingsRepository _settingsRepository;
+
+  FutureOr<void> _fetchSettings(Emitter<SettingsState> emit) async {
+    (await _settingsRepository.fetchSettings()).match(
+      (settings) {
+        emit(
+          state.copyWith(
+            isProcessing: false,
+            settings: settings,
+          ),
+        );
+      },
+      (failure) {
+        emit(
+          state.copyWith(
+            failureOption: Option.some(Err(CoreFailure.settings(failure))),
+            isProcessing: false,
+          ),
+        );
+      },
+    );
+  }
 }

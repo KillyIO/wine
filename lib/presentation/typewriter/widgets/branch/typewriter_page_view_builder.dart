@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/typewriter/typewriter_branch/typewriter_branch_bloc.dart';
-import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_edition_layout.dart';
-import 'package:wine/presentation/typewriter/typewriter_branch/typewriter_preview_layout.dart';
+import 'package:wine/application/typewriter/branch/typewriter_branch_bloc.dart';
+import 'package:wine/presentation/typewriter/branch/typewriter_edition_layout.dart';
+import 'package:wine/presentation/typewriter/branch/typewriter_preview_layout.dart';
 
-/// @nodoc
 class TypewriterPageViewBuilder extends StatelessWidget {
-  /// @nodoc
   TypewriterPageViewBuilder({
-    Key? key,
     required this.pageController,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final PageController pageController;
 
   final List<Widget> _pageViewLayouts = <Widget>[

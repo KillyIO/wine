@@ -2,17 +2,16 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/presentation/branch/widgets/branch_detail_container.dart';
 import 'package:wine/presentation/core/common/content_actions.dart';
 import 'package:wine/presentation/core/common/content_genres.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
 
-/// @nodoc
 class BranchDetails extends StatelessWidget {
-  /// @nodoc
-  const BranchDetails({Key? key}) : super(key: key);
+  const BranchDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +86,7 @@ class BranchDetails extends StatelessWidget {
                         BlocBuilder<BranchBloc, BranchState>(
                           builder: (context, state) {
                             return Text(
-                              state.branch.licence.getOrNull() ?? '',
+                              state.branch.licence.getOrNull()?.name ?? '',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -102,38 +101,54 @@ class BranchDetails extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 25),
                   child: BlocBuilder<BranchBloc, BranchState>(
-                    builder: (context, state) {
-                      return ContentActions(
-                        bookmarksCount: state.branch.bookmarksCount,
-                        isBookmarked: state.isBookmarked,
-                        isLiked: state.isLiked,
-                        likesCount: state.branch.likesCount,
-                        onBookmarkTap: (isBookmarked) async {
-                          context.read<BranchBloc>().add(
-                                BranchEvent.bookmarkButtonPressed(
-                                  isBookmarked: isBookmarked,
-                                ),
+                    builder: (context, bState) {
+                      return BlocBuilder<AuthBloc, AuthState>(
+                        builder: (context, aState) {
+                          return ContentActions(
+                            bookmarksCount: bState.branch.bookmarksCount,
+                            isBookmarked: bState.isBookmarked,
+                            isLiked: bState.isLiked,
+                            likesCount: bState.branch.likesCount,
+                            onBookmarkTap: ({bool? bookmarked}) async {
+                              if (bookmarked != null) {
+                                context.read<BranchBloc>().add(
+                                      BranchEvent.bookmarkButtonPressed(
+                                        isBookmarked: bookmarked,
+                                      ),
+                                    );
+                              }
+
+                              return bState.isBookmarked;
+                            },
+                            onLikeTap: ({bool? liked}) async {
+                              return aState.maybeMap(
+                                authenticated: (_) async {
+                                  if (liked != null) {
+                                    context.read<BranchBloc>().add(
+                                          BranchEvent.likeButtonPressed(
+                                            isLiked: liked,
+                                          ),
+                                        );
+                                  }
+
+                                  return bState.isLiked;
+                                },
+                                orElse: () async {
+                                  await context.router.push(
+                                    LogInRoute(
+                                      navigateTo: PageRouteInfo<dynamic>(
+                                        context.router.current.name,
+                                      ),
+                                    ),
+                                  );
+
+                                  return bState.isLiked;
+                                },
                               );
-
-                          return state.isBookmarked;
-                        },
-                        onLikeTap: (isLiked) async {
-                          await handleAuthGuardedAction(
-                            context,
-                            () => context.read<BranchBloc>().add(
-                                  BranchEvent.likeButtonPressed(
-                                    isLiked: isLiked,
-                                  ),
-                                ),
-                            navigateTo: PageRouteInfo<dynamic>(
-                              context.router.root.current.name,
-                              path: context.router.root.current.path,
-                            ),
+                            },
+                            viewsCount: bState.branch.viewsCount,
                           );
-
-                          return state.isLiked;
                         },
-                        viewsCount: state.branch.viewsCount,
                       );
                     },
                   ),

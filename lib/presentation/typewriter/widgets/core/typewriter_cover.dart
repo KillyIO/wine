@@ -3,19 +3,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 
-/// @nodoc
 class TypewriterCover extends StatelessWidget {
-  /// @nodoc
   const TypewriterCover({
-    Key? key,
     required this.coverURL,
     required this.onPressed,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final String coverURL;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
   @override
@@ -45,7 +41,7 @@ class TypewriterCover extends StatelessWidget {
               size: 40,
             ),
           ),
-        )
+        ),
       ],
     );
   }

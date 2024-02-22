@@ -3,27 +3,21 @@ import 'package:time/time.dart';
 import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar_button.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 class HorizontalPageViewNavbar extends StatelessWidget {
-  /// @nodoc
   const HorizontalPageViewNavbar({
-    Key? key,
     required this.colors,
     required this.controller,
     required this.titles,
     required this.pageIndex,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final List<Color> colors;
 
-  /// @nodoc
   final PageController controller;
 
-  /// @nodoc
   final List<String> titles;
 
-  /// @nodoc
   final int pageIndex;
 
   @override

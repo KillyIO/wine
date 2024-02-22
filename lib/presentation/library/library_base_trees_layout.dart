@@ -1,27 +1,22 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/presentation/core/tree/tree_card.dart';
 import 'package:wine/presentation/routes/router.dart';
-import 'package:wine/utils/assets/images.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
+import 'package:wine/utils/constants/images.dart';
 
-/// @nodoc
 class LibraryBaseTreesLayout extends StatelessWidget {
-  /// @nodoc
   const LibraryBaseTreesLayout({
-    Key? key,
     required this.trees,
     required this.type,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final List<Tree> trees;
 
-  /// @nodoc
   final String type;
 
   @override
@@ -67,19 +62,15 @@ class LibraryBaseTreesLayout extends StatelessWidget {
               onPressed: () {
                 switch (type) {
                   case 'drafts':
-                    handleAuthGuardedNavigation(
-                      context,
-                      navigateTo: TypewriterTreeUID(
+                    context.router.push(
+                      TypewriterTreeUIDRoute(
                         tree: trees[i],
-                        type: TypewriterType.tree,
                         uid: trees[i].uid.getOrCrash(),
                       ),
                     );
-                    break;
                   default:
-                    handleAuthGuardedNavigation(
-                      context,
-                      navigateTo: TreeRoute(
+                    context.router.push(
+                      TreeRoute(
                         tree: trees[i],
                         uid: trees[i].uid.getOrCrash(),
                       ),

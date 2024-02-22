@@ -1,23 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
-import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
-import 'package:wine/utils/constants/users.dart';
-import 'package:wine/utils/paths/users.dart';
+import 'package:wine/utils/constants/paths/users.dart';
 
-/// @nodoc
 @LazySingleton(
   as: IUserRepository,
   env: [Environment.dev, Environment.prod],
 )
 class UserRepository implements IUserRepository {
-  /// @nodoc
   UserRepository(this._firestore);
 
   final FirebaseFirestore _firestore;
@@ -35,16 +31,16 @@ class UserRepository implements IUserRepository {
           .get();
 
       if (documentSnapshot.exists) {
-        return Err(const UserFailure.usernameAlreadyInUse());
+        return const Err(UserFailure.usernameAlreadyInUse());
       }
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const UserFailure.permissionDenied());
+        return const Err(UserFailure.permissionDenied());
       }
-      return Err(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return Err(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
@@ -53,18 +49,15 @@ class UserRepository implements IUserRepository {
     try {
       final user = await _firestore
           .collection(usersPath)
-          .withConverter<User>(
+          .withConverter<User?>(
             fromFirestore: (snapshot, _) {
               if (snapshot.exists) {
                 return UserDTO.fromJson(snapshot.data()!).toDomain();
               }
-              return User(
-                emailAddress: EmailAddress(defaultEmailAddress),
-                uid: UniqueID.fromUniqueString(snapshot.id),
-                username: Username(defaultUsername),
-              );
+              return null;
             },
-            toFirestore: (value, _) => UserDTO.fromDomain(value).toJson(),
+            toFirestore: (value, _) =>
+                value != null ? UserDTO.fromDomain(value).toJson() : {},
           )
           .doc(userUID.getOrCrash())
           .get()
@@ -73,14 +66,14 @@ class UserRepository implements IUserRepository {
       if (user != null) {
         return Ok(user);
       }
-      return Err(const UserFailure.userNotFound());
+      return const Err(UserFailure.userNotFound());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const UserFailure.permissionDenied());
+        return const Err(UserFailure.permissionDenied());
       }
-      return Err(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return Err(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
@@ -98,14 +91,14 @@ class UserRepository implements IUserRepository {
 
       await usersRef.set(user, SetOptions(merge: true));
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const UserFailure.permissionDenied());
+        return const Err(UserFailure.permissionDenied());
       }
-      return Err(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return Err(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
@@ -124,14 +117,14 @@ class UserRepository implements IUserRepository {
       await mapReference
           .set(<String, dynamic>{'uid': uid}, SetOptions(merge: true));
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const UserFailure.permissionDenied());
+        return const Err(UserFailure.permissionDenied());
       }
-      return Err(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return Err(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 }

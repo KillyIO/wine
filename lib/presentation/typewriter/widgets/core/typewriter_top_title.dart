@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class TypewriterTopTitle extends StatelessWidget {
-  /// @nodoc
   const TypewriterTopTitle({
-    Key? key,
     required this.title,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final String title;
 
   @override

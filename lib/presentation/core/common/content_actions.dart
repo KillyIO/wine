@@ -3,11 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:like_button/like_button.dart';
 import 'package:wine/utils/constants/palette.dart';
 
-/// @nodoc
 class ContentActions extends StatelessWidget {
-  /// @nodoc
   const ContentActions({
-    Key? key,
     required this.bookmarksCount,
     required this.isBookmarked,
     required this.isLiked,
@@ -15,27 +12,21 @@ class ContentActions extends StatelessWidget {
     required this.onBookmarkTap,
     required this.onLikeTap,
     required this.viewsCount,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final int bookmarksCount;
 
-  /// @nodoc
   final bool isBookmarked;
 
-  /// @nodoc
   final bool isLiked;
 
-  /// @nodoc
   final int likesCount;
 
-  /// @nodoc
-  final Future<bool?> Function(bool)? onBookmarkTap;
+  final Future<bool?> Function({bool bookmarked})? onBookmarkTap;
 
-  /// @nodoc
-  final Future<bool?> Function(bool)? onLikeTap;
+  final Future<bool?> Function({bool liked})? onLikeTap;
 
-  /// @nodoc
   final int viewsCount;
 
   @override
@@ -97,7 +88,12 @@ class ContentActions extends StatelessWidget {
             },
             likeCount: likesCount,
             likeCountPadding: const EdgeInsets.only(left: 5),
-            onTap: onLikeTap,
+            onTap: (value) async {
+              if (onLikeTap != null) {
+                return onLikeTap!(liked: value);
+              }
+              return false;
+            },
           ),
           LikeButton(
             bubblesColor: BubblesColor(
@@ -127,7 +123,12 @@ class ContentActions extends StatelessWidget {
             },
             likeCount: bookmarksCount,
             likeCountPadding: const EdgeInsets.only(left: 5),
-            onTap: onBookmarkTap,
+            onTap: (value) async {
+              if (onBookmarkTap != null) {
+                return onBookmarkTap!(bookmarked: value);
+              }
+              return false;
+            },
           ),
         ],
       ),

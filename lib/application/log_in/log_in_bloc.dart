@@ -1,17 +1,19 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wine/domain/auth/auth_failure.dart' as auth_failure;
-
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/default_covers/default_cover.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
@@ -21,99 +23,14 @@ part 'log_in_bloc.freezed.dart';
 part 'log_in_event.dart';
 part 'log_in_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class LogInBloc extends Bloc<LogInEvent, LogInState> {
-  /// @nodoc
   LogInBloc(
     this._authFacade,
+    this._defaultCoversRepository,
     this._sessionsRepository,
     this._userRepository,
   ) : super(LogInState.initial()) {
-    on<CredentialAlreadyInUse>(
-      (_, emit) async =>
-          (await _authFacade.logInWithCredentialAlreadyInUse()).match(
-        (_) {
-          add(const LogInEvent.loggedInWithGoogle());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.auth(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ),
-          );
-        },
-      ),
-    );
-    on<CustomUsernameGenerated>(
-      (value, emit) async => await _saveUsername(value.user, emit),
-    );
-    on<EmailAddressChanged>(
-      (value, emit) => emit(
-        state.copyWith(
-          emailAddress: EmailAddress(value.emailAddressStr),
-          failureOption: const None(),
-        ),
-      ),
-    );
-    on<LoggedInWithEmailAndPassword>((_, emit) async {
-      if (_authFacade.isLoggedIn) {
-        final userOption = await _authFacade.getLoggedInUser();
-        final userAsplain = userOption.toNullable();
-
-        if (userAsplain != null) {
-          (await _userRepository.loadUser(userAsplain.uid)).match(
-            (user) {
-              add(LogInEvent.userLoaded(user));
-            },
-            (failure) {
-              emit(
-                state.copyWith(
-                  failureOption: Option.some(Err(CoreFailure.user(failure))),
-                  isProcessing: false,
-                  showErrorMessages: true,
-                ),
-              );
-            },
-          );
-        }
-      }
-    });
-    on<LoggedInWithGoogle>((_, emit) async {
-      if (_authFacade.isLoggedIn) {
-        final userOption = await _authFacade.getLoggedInUser();
-        final userAsplain = userOption.toNullable();
-
-        if (userAsplain != null) {
-          (await _userRepository.loadUser(userAsplain.uid)).match(
-            (user) {
-              add(LogInEvent.userLoaded(user));
-            },
-            (failure) {
-              failure.maybeMap(
-                userNotFound: (_) {
-                  add(LogInEvent.userNotFound(userAsplain));
-                },
-                orElse: () {
-                  emit(
-                    state.copyWith(
-                      failureOption:
-                          Option.some(Err(CoreFailure.user(failure))),
-                      isProcessing: false,
-                      showErrorMessages: true,
-                    ),
-                  );
-                },
-              );
-            },
-          );
-        }
-      }
-    });
     on<LogInWithEmailAndPasswordPressed>((_, emit) async {
       final isEmailValid = state.emailAddress.isValid;
       final isPasswordValid = state.password.isValid;
@@ -146,6 +63,90 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         );
       }
     });
+    on<LoggedInWithEmailAndPassword>((_, emit) async {
+      if (_authFacade.isLoggedIn) {
+        final userOption = await _authFacade.getLoggedInUser();
+        final userAsplain = userOption.toNullable();
+
+        if (userAsplain != null) {
+          (await _userRepository.loadUser(userAsplain.uid)).match(
+            (user) {
+              add(LogInEvent.userLoaded(user));
+            },
+            (failure) {
+              emit(
+                state.copyWith(
+                  failureOption: Option.some(Err(CoreFailure.user(failure))),
+                  isProcessing: false,
+                  showErrorMessages: true,
+                ),
+              );
+            },
+          );
+        }
+      }
+    });
+    on<UserLoaded>(
+      (value, emit) async => await _saveDetailsFromUser(value.user, emit),
+    );
+    on<UserDetailsSaved>(
+      (value, emit) async =>
+          (await _sessionsRepository.insertSession(value.user)).match(
+        (_) {
+          add(const LogInEvent.sessionInserted());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
+        },
+      ),
+    );
+    on<SessionInserted>((_, emit) async {
+      (await _defaultCoversRepository.loadDefaultCovers()).match(
+        (defaultCoverURLs) {
+          add(LogInEvent.defaultCoversLoaded(defaultCoverURLs));
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption:
+                  Option.some(Err(CoreFailure.defaultCovers(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
+        },
+      );
+    });
+    on<DefaultCoversLoaded>((value, emit) async {
+      (await _defaultCoversRepository.cacheDefaultCovers(value.defaultCovers))
+          .match(
+        (_) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              isAuthenticated: true,
+              isProcessing: false,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption:
+                  Option.some(Err(CoreFailure.defaultCovers(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
+        },
+      );
+    });
     on<LogInWithGooglePressed>((_, emit) async {
       emit(
         state.copyWith(
@@ -173,46 +174,37 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         },
       );
     });
-    on<PasswordChanged>(
-      (value, emit) => emit(
-        state.copyWith(
-          failureOption: const None(),
-          password: Password(value.passwordStr),
-        ),
-      ),
-    );
-    on<UserDetailsSaved>(
-      (value, emit) async =>
-          (await _sessionsRepository.insertSession(value.user)).match(
-        (_) {
-          emit(
-            state.copyWith(
-              failureOption: const None(),
-              isAuthenticated: true,
-              isProcessing: false,
-            ),
+    on<LoggedInWithGoogle>((_, emit) async {
+      if (_authFacade.isLoggedIn) {
+        final userOption = await _authFacade.getLoggedInUser();
+        final userAsplain = userOption.toNullable();
+
+        if (userAsplain != null) {
+          (await _userRepository.loadUser(userAsplain.uid)).match(
+            (user) {
+              add(LogInEvent.userLoaded(user));
+            },
+            (failure) {
+              failure.maybeMap(
+                userNotFound: (_) {
+                  add(LogInEvent.userNotFound(userAsplain));
+                },
+                orElse: () {
+                  emit(
+                    state.copyWith(
+                      failureOption:
+                          Option.some(Err(CoreFailure.user(failure))),
+                      isProcessing: false,
+                      showErrorMessages: true,
+                    ),
+                  );
+                },
+              );
+            },
           );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ),
-          );
-        },
-      ),
-    );
-    on<UserLoaded>(
-      (value, emit) async => await _saveDetailsFromUser(value.user, emit),
-    );
-    on<UsernameAvailabilityConfirmed>(
-      (value, emit) async => await _saveUsername(value.user, emit),
-    );
-    on<UsernameSaved>(
-      (value, emit) async => await _saveDetailsFromUser(value.user, emit),
-    );
+        }
+      }
+    });
     on<UserNotFound>((value, emit) async {
       (await _userRepository.checkUsernameAvailability(
         value.user.username,
@@ -242,9 +234,52 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         },
       );
     });
+    on<UsernameAvailabilityConfirmed>(
+      (value, emit) async => await _saveUsername(value.user, emit),
+    );
+    on<UsernameSaved>(
+      (value, emit) async => await _saveDetailsFromUser(value.user, emit),
+    );
+    on<CustomUsernameGenerated>(
+      (value, emit) async => await _saveUsername(value.user, emit),
+    );
+    on<CredentialAlreadyInUse>(
+      (_, emit) async =>
+          (await _authFacade.logInWithCredentialAlreadyInUse()).match(
+        (_) {
+          add(const LogInEvent.loggedInWithGoogle());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.auth(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
+        },
+      ),
+    );
+    on<EmailAddressChanged>(
+      (value, emit) => emit(
+        state.copyWith(
+          emailAddress: EmailAddress(value.emailAddressStr),
+          failureOption: const None(),
+        ),
+      ),
+    );
+    on<PasswordChanged>(
+      (value, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          password: Password(value.passwordStr),
+        ),
+      ),
+    );
   }
 
   final IAuthFacade _authFacade;
+  final IDefaultCoversRepository _defaultCoversRepository;
   final ISessionsRepository _sessionsRepository;
   final IUserRepository _userRepository;
 

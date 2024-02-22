@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class TextFieldLabel extends StatelessWidget {
-  /// @nodoc
   const TextFieldLabel({
-    Key? key,
     required this.title,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final String title;
 
   @override

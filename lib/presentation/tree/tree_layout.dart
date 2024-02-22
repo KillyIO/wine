@@ -3,17 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/tree/tree_bloc.dart';
 import 'package:wine/presentation/core/common/content_actions.dart';
 import 'package:wine/presentation/core/common/content_genres.dart';
+import 'package:wine/presentation/tree/tree_synopsis_layout.dart';
 import 'package:wine/presentation/tree/widgets/tree_branch_one.dart';
 import 'package:wine/presentation/tree/widgets/tree_details.dart';
 import 'package:wine/presentation/tree/widgets/tree_resume_reading.dart';
-import 'package:wine/presentation/tree/widgets/tree_synopsis_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
 class TreeLayout extends StatelessWidget {
-  /// @nodoc
-  const TreeLayout({Key? key}) : super(key: key);
+  const TreeLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -120,19 +118,23 @@ class TreeLayout extends StatelessWidget {
                         isBookmarked: state.isBookmarked,
                         isLiked: state.isLiked,
                         likesCount: state.tree.likesCount,
-                        onBookmarkTap: (isBookmarked) async {
-                          context.read<TreeBloc>().add(
-                                TreeEvent.bookmarkButtonPressed(
-                                  isBookmarked: isBookmarked,
-                                ),
-                              );
+                        onBookmarkTap: ({bool? bookmarked}) async {
+                          if (bookmarked != null) {
+                            context.read<TreeBloc>().add(
+                                  TreeEvent.bookmarkButtonPressed(
+                                    isBookmarked: bookmarked,
+                                  ),
+                                );
+                          }
 
                           return state.isBookmarked;
                         },
-                        onLikeTap: (isLiked) async {
-                          context.read<TreeBloc>().add(
-                                TreeEvent.likeButtonPressed(isLiked: isLiked),
-                              );
+                        onLikeTap: ({bool? liked}) async {
+                          if (liked != null) {
+                            context.read<TreeBloc>().add(
+                                  TreeEvent.likeButtonPressed(isLiked: liked),
+                                );
+                          }
 
                           return state.isLiked;
                         },

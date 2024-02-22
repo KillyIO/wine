@@ -2,22 +2,20 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/sign_up/sign_up_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
+@RoutePage()
 class SignUpPage extends StatelessWidget {
-  /// @nodoc
   const SignUpPage({
-    Key? key,
     required this.navigateTo,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
 
   @override
@@ -55,7 +53,7 @@ class SignUpPage extends StatelessWidget {
               ),
               onPressed: () {
                 FocusScope.of(context).requestFocus(FocusNode());
-                context.router.root.pop();
+                context.router.replace(LogInRoute(navigateTo: navigateTo));
               },
               splashColor: Colors.transparent,
             ),
@@ -65,7 +63,11 @@ class SignUpPage extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (_) => getIt<SignUpBloc>(),
-        child: SafeArea(child: SignUpLayout(navigateTo: navigateTo)),
+        child: SafeArea(
+          child: SignUpLayout(
+            navigateTo: navigateTo,
+          ),
+        ),
       ),
     );
   }

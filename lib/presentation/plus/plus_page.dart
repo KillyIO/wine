@@ -7,10 +7,9 @@ import 'package:wine/presentation/plus/plus_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
+@RoutePage()
 class PlusPage extends StatelessWidget {
-  /// @nodoc
-  const PlusPage({Key? key}) : super(key: key);
+  const PlusPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +42,7 @@ class PlusPage extends StatelessWidget {
                       Icons.keyboard_backspace_outlined,
                       color: Colors.black,
                     ),
-                    onPressed: context.router.root.pop,
+                    onPressed: context.router.pop,
                     splashColor: Colors.transparent,
                   ),
                 )

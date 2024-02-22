@@ -11,10 +11,8 @@ import 'package:wine/utils/constants/languages.dart';
 import 'package:wine/utils/responsive/drawer_responsive.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';
 
-/// @nodoc
 class HomeFiltersMenuLayout extends StatelessWidget {
-  /// @nodoc
-  const HomeFiltersMenuLayout({Key? key}) : super(key: key);
+  const HomeFiltersMenuLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

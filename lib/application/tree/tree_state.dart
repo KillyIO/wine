@@ -1,32 +1,28 @@
 part of 'tree_bloc.dart';
 
-/// @nodoc
 @freezed
 class TreeState with _$TreeState {
-  /// @nodoc
   const factory TreeState({
     required bool authorIsUser,
-    required User author,
-    Branch? branchOne,
-    Branch? branchResume,
+    required User? author,
     required Option<Result<None, CoreFailure>> failureOption,
     required bool isBookmarked,
     required bool isLiked,
     required bool isProcessing,
-    required User session,
     required Settings settings,
     required Tree tree,
+    Branch? branchOne,
+    Branch? branchResume,
+    User? session,
   }) = _TreeState;
 
-  /// @nodoc
   factory TreeState.initial() => TreeState(
         authorIsUser: false,
-        author: User.empty(),
+        author: null,
         failureOption: const None(),
         isBookmarked: false,
         isLiked: false,
         isProcessing: false,
-        session: User.empty(),
         settings: Settings.empty(),
         tree: Tree.empty(),
       );

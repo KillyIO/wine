@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class TypewriterGenres extends StatelessWidget {
-  /// @nodoc
   const TypewriterGenres({
-    Key? key,
     required this.onPressed,
     required this.genres,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final void Function(String) onPressed;
 
-  /// @nodoc
   final List<String> genres;
 
   @override
@@ -22,7 +18,7 @@ class TypewriterGenres extends StatelessWidget {
       child: Column(
         children: <Widget>[
           for (final genre in genres)
-            Container(
+            DecoratedBox(
               decoration: const BoxDecoration(
                 border: Border(
                   bottom: BorderSide(),

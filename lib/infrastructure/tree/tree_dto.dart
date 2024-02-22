@@ -13,10 +13,8 @@ import 'package:wine/infrastructure/core/converter.dart';
 part 'tree_dto.freezed.dart';
 part 'tree_dto.g.dart';
 
-/// @nodoc
 @freezed
 class TreeDTO with _$TreeDTO {
-  /// @nodoc
   factory TreeDTO({
     required String authorUID,
     required int bookmarksCount,
@@ -26,15 +24,14 @@ class TreeDTO with _$TreeDTO {
     required bool isPublished,
     required String language,
     required int likesCount,
-    String? subtitle,
     required String synopsis,
     required String title,
     required String uid,
     @ServerTimestampConverter() required FieldValue updatedAt,
     required int viewsCount,
+    String? subtitle,
   }) = _TreeDTO;
 
-  /// @nodoc
   factory TreeDTO.fromDomain(Tree tree) {
     return TreeDTO(
       authorUID: tree.authorUID.getOrCrash(),
@@ -54,19 +51,15 @@ class TreeDTO with _$TreeDTO {
     );
   }
 
-  /// @nodoc
   factory TreeDTO.fromJson(Map<String, dynamic> json) =>
       _$TreeDTOFromJson(json);
 
-  /// @nodoc
   factory TreeDTO.fromFirestore(DocumentSnapshot doc) {
     return TreeDTO.fromJson(doc.data()! as Map<String, dynamic>);
   }
 }
 
-/// @nodoc
 extension TreeDTOX on TreeDTO {
-  /// @nodoc
   Tree toDomain() => Tree(
         authorUID: UniqueID.fromUniqueString(authorUID),
         bookmarksCount: bookmarksCount,
@@ -83,7 +76,6 @@ extension TreeDTOX on TreeDTO {
         viewsCount: viewsCount,
       );
 
-  /// @nodoc
   Map<String, dynamic> toMap() => <String, dynamic>{
         'authorUID': authorUID,
         'bookmarksCount': bookmarksCount,
@@ -101,9 +93,7 @@ extension TreeDTOX on TreeDTO {
       };
 }
 
-/// @nodoc
-extension TreeMapX on Map {
-  /// @nodoc
+extension TreeMapX on Map<dynamic, dynamic> {
   Tree toDomain() => Tree(
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
         bookmarksCount: this['bookmarksCount'] as int,

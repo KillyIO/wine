@@ -6,10 +6,8 @@ import 'package:wine/presentation/library/library_base_trees_layout.dart';
 import 'package:wine/presentation/library/widgets/library_vertical_navbar.dart';
 import 'package:wine/utils/constants/library.dart';
 
-/// @nodoc
 class LibraryTreesLayout extends StatelessWidget {
-  /// @nodoc
-  const LibraryTreesLayout({Key? key}) : super(key: key);
+  const LibraryTreesLayout({super.key});
 
   List<Tree> _getTrees(LibraryState state, String type) {
     switch (type) {

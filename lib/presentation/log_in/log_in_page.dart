@@ -4,20 +4,17 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/injection.dart';
-
 import 'package:wine/presentation/log_in/log_in_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
+@RoutePage()
 class LogInPage extends StatelessWidget {
-  /// @nodoc
   const LogInPage({
-    Key? key,
     required this.navigateTo,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
 
   @override
@@ -55,7 +52,7 @@ class LogInPage extends StatelessWidget {
               ),
               onPressed: () {
                 FocusScope.of(context).requestFocus(FocusNode());
-                context.router.root.pop();
+                context.router.pop();
               },
               splashColor: Colors.transparent,
             ),

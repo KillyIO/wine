@@ -7,10 +7,9 @@ import 'package:wine/presentation/settings/settings_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
+@RoutePage()
 class SettingsPage extends StatelessWidget {
-  /// @nodoc
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +47,7 @@ class SettingsPage extends StatelessWidget {
                     ),
                     onPressed: () {
                       FocusScope.of(context).requestFocus(FocusNode());
-                      context.router.root.pop();
+                      context.router.pop();
                     },
                     splashColor: Colors.transparent,
                   ),

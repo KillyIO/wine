@@ -6,10 +6,8 @@ import 'package:wine/presentation/library/library_base_branches_layout.dart';
 import 'package:wine/presentation/library/widgets/library_vertical_navbar.dart';
 import 'package:wine/utils/constants/library.dart';
 
-/// @nodoc
 class LibraryBranchesLayout extends StatelessWidget {
-  /// @nodoc
-  const LibraryBranchesLayout({Key? key}) : super(key: key);
+  const LibraryBranchesLayout({super.key});
 
   List<Branch> _getBranches(LibraryState state, String type) {
     switch (type) {

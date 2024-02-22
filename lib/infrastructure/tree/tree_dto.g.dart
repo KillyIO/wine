@@ -6,7 +6,8 @@ part of 'tree_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TreeDTO _$$_TreeDTOFromJson(Map<String, dynamic> json) => _$_TreeDTO(
+_$TreeDTOImpl _$$TreeDTOImplFromJson(Map<String, dynamic> json) =>
+    _$TreeDTOImpl(
       authorUID: json['authorUID'] as String,
       bookmarksCount: json['bookmarksCount'] as int,
       coverURL: json['coverURL'] as String,
@@ -16,16 +17,16 @@ _$_TreeDTO _$$_TreeDTOFromJson(Map<String, dynamic> json) => _$_TreeDTO(
       isPublished: json['isPublished'] as bool,
       language: json['language'] as String,
       likesCount: json['likesCount'] as int,
-      subtitle: json['subtitle'] as String?,
       synopsis: json['synopsis'] as String,
       title: json['title'] as String,
       uid: json['uid'] as String,
       updatedAt: const ServerTimestampConverter()
           .fromJson(json['updatedAt'] as Object),
       viewsCount: json['viewsCount'] as int,
+      subtitle: json['subtitle'] as String?,
     );
 
-Map<String, dynamic> _$$_TreeDTOToJson(_$_TreeDTO instance) =>
+Map<String, dynamic> _$$TreeDTOImplToJson(_$TreeDTOImpl instance) =>
     <String, dynamic>{
       'authorUID': instance.authorUID,
       'bookmarksCount': instance.bookmarksCount,
@@ -35,10 +36,10 @@ Map<String, dynamic> _$$_TreeDTOToJson(_$_TreeDTO instance) =>
       'isPublished': instance.isPublished,
       'language': instance.language,
       'likesCount': instance.likesCount,
-      'subtitle': instance.subtitle,
       'synopsis': instance.synopsis,
       'title': instance.title,
       'uid': instance.uid,
       'updatedAt': const ServerTimestampConverter().toJson(instance.updatedAt),
       'viewsCount': instance.viewsCount,
+      'subtitle': instance.subtitle,
     };

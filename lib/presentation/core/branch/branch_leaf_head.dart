@@ -6,23 +6,18 @@ import 'package:string_validator/string_validator.dart';
 import 'package:wine/presentation/core/branch/branch_index.dart';
 import 'package:wine/presentation/core/branch/branch_title.dart';
 
-/// @nodoc
 class BranchLeafHead extends StatelessWidget {
-  /// @nodoc
   const BranchLeafHead({
-    Key? key,
     required this.coverURL,
     required this.index,
     required this.title,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final String? coverURL;
 
-  /// @nodoc
   final int? index;
 
-  /// @nodoc
   final String? title;
 
   @override
@@ -41,7 +36,7 @@ class BranchLeafHead extends StatelessWidget {
                 height: 250,
                 width: mediaQuery.width,
                 child: coverURL != null
-                    ? isURL(coverURL!)
+                    ? isURL(coverURL)
                         ? CachedNetworkImage(
                             imageUrl: coverURL!,
                             fit: BoxFit.fitWidth,

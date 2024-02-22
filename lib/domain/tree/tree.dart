@@ -9,10 +9,8 @@ import 'package:wine/domain/tree/synopsis.dart';
 
 part 'tree.freezed.dart';
 
-/// @nodoc
 @freezed
 class Tree with _$Tree {
-  /// @nodoc
   factory Tree({
     required UniqueID authorUID,
     required int bookmarksCount,
@@ -22,14 +20,13 @@ class Tree with _$Tree {
     required bool isPublished,
     required Language language,
     required int likesCount,
-    Subtitle? subtitle,
     required Synopsis synopsis,
     required Title title,
     required UniqueID uid,
     required int viewsCount,
+    Subtitle? subtitle,
   }) = _Tree;
 
-  /// @nodoc
   factory Tree.empty() => Tree(
         authorUID: UniqueID(),
         bookmarksCount: 0,

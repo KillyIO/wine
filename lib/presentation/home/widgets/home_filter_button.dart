@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class HomeFilterButton extends StatelessWidget {
-  /// @nodoc
   const HomeFilterButton({
-    Key? key,
     required this.isActive,
     required this.onPressed,
     required this.title,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final bool isActive;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
-  /// @nodoc
   final String title;
 
   @override

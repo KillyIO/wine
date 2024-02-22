@@ -3,12 +3,9 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/errors.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
-/// @nodoc
 abstract class ValueObject<T extends Object> extends Equatable {
-  /// @nodoc
   const ValueObject();
 
-  /// @nodoc
   Result<T, ValueFailure<T>> get value;
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
@@ -22,15 +19,13 @@ abstract class ValueObject<T extends Object> extends Equatable {
     return value.match((ok) => ok, (err) => null);
   }
 
-  /// @nodoc
   Result<Unit, ValueFailure<dynamic>> get failureOrUnit {
     return value.match(
-      (_) => Ok(unit),
+      (_) => const Ok(unit),
       Err.new,
     );
   }
 
-  /// @nodoc
   bool get isValid => value.isOk();
 
   @override

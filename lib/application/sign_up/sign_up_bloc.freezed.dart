@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'sign_up_bloc.dart';
 
@@ -12,146 +12,103 @@ part of 'sign_up_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SignUpEventTearOff {
-  const _$SignUpEventTearOff();
-
-  AccountCreated accountCreated() {
-    return const AccountCreated();
-  }
-
-  ConfirmPasswordChanged confirmPasswordChanged(String confirmPasswordStr) {
-    return ConfirmPasswordChanged(
-      confirmPasswordStr,
-    );
-  }
-
-  EmailAddressChanged emailAddressChanged(String emailAddressStr) {
-    return EmailAddressChanged(
-      emailAddressStr,
-    );
-  }
-
-  PasswordChanged passwordChanged(String passwordStr) {
-    return PasswordChanged(
-      passwordStr,
-    );
-  }
-
-  SignUpPressed signUpPressed() {
-    return const SignUpPressed();
-  }
-
-  UserDetailsSaved userDetailsSaved(User user) {
-    return UserDetailsSaved(
-      user,
-    );
-  }
-
-  UsernameAvailabilityConfirmed usernameAvailabilityConfirmed() {
-    return const UsernameAvailabilityConfirmed();
-  }
-
-  UsernameSaved usernameSaved(User user) {
-    return UsernameSaved(
-      user,
-    );
-  }
-
-  UsernameChanged usernameChanged(String usernameStr) {
-    return UsernameChanged(
-      usernameStr,
-    );
-  }
-}
-
-/// @nodoc
-const $SignUpEvent = _$SignUpEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SignUpEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
     required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
     required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
     TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
     required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
     required TResult Function(ConfirmPasswordChanged value)
         confirmPasswordChanged,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
     TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) =>
@@ -162,736 +119,40 @@ mixin _$SignUpEvent {
 abstract class $SignUpEventCopyWith<$Res> {
   factory $SignUpEventCopyWith(
           SignUpEvent value, $Res Function(SignUpEvent) then) =
-      _$SignUpEventCopyWithImpl<$Res>;
+      _$SignUpEventCopyWithImpl<$Res, SignUpEvent>;
 }
 
 /// @nodoc
-class _$SignUpEventCopyWithImpl<$Res> implements $SignUpEventCopyWith<$Res> {
+class _$SignUpEventCopyWithImpl<$Res, $Val extends SignUpEvent>
+    implements $SignUpEventCopyWith<$Res> {
   _$SignUpEventCopyWithImpl(this._value, this._then);
 
-  final SignUpEvent _value;
   // ignore: unused_field
-  final $Res Function(SignUpEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $AccountCreatedCopyWith<$Res> {
-  factory $AccountCreatedCopyWith(
-          AccountCreated value, $Res Function(AccountCreated) then) =
-      _$AccountCreatedCopyWithImpl<$Res>;
+abstract class _$$SignUpPressedImplCopyWith<$Res> {
+  factory _$$SignUpPressedImplCopyWith(
+          _$SignUpPressedImpl value, $Res Function(_$SignUpPressedImpl) then) =
+      __$$SignUpPressedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AccountCreatedCopyWithImpl<$Res> extends _$SignUpEventCopyWithImpl<$Res>
-    implements $AccountCreatedCopyWith<$Res> {
-  _$AccountCreatedCopyWithImpl(
-      AccountCreated _value, $Res Function(AccountCreated) _then)
-      : super(_value, (v) => _then(v as AccountCreated));
-
-  @override
-  AccountCreated get _value => super._value as AccountCreated;
-}
-
-/// @nodoc
-
-class _$AccountCreated implements AccountCreated {
-  const _$AccountCreated();
-
-  @override
-  String toString() {
-    return 'SignUpEvent.accountCreated()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AccountCreated);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountCreated,
-    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
-    required TResult Function(String emailAddressStr) emailAddressChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
-    required TResult Function(String usernameStr) usernameChanged,
-  }) {
-    return accountCreated();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-  }) {
-    return accountCreated?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (accountCreated != null) {
-      return accountCreated();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountCreated value) accountCreated,
-    required TResult Function(ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
-    required TResult Function(UsernameChanged value) usernameChanged,
-  }) {
-    return accountCreated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-  }) {
-    return accountCreated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (accountCreated != null) {
-      return accountCreated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AccountCreated implements SignUpEvent {
-  const factory AccountCreated() = _$AccountCreated;
-}
-
-/// @nodoc
-abstract class $ConfirmPasswordChangedCopyWith<$Res> {
-  factory $ConfirmPasswordChangedCopyWith(ConfirmPasswordChanged value,
-          $Res Function(ConfirmPasswordChanged) then) =
-      _$ConfirmPasswordChangedCopyWithImpl<$Res>;
-  $Res call({String confirmPasswordStr});
-}
-
-/// @nodoc
-class _$ConfirmPasswordChangedCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res>
-    implements $ConfirmPasswordChangedCopyWith<$Res> {
-  _$ConfirmPasswordChangedCopyWithImpl(ConfirmPasswordChanged _value,
-      $Res Function(ConfirmPasswordChanged) _then)
-      : super(_value, (v) => _then(v as ConfirmPasswordChanged));
-
-  @override
-  ConfirmPasswordChanged get _value => super._value as ConfirmPasswordChanged;
-
-  @override
-  $Res call({
-    Object? confirmPasswordStr = freezed,
-  }) {
-    return _then(ConfirmPasswordChanged(
-      confirmPasswordStr == freezed
-          ? _value.confirmPasswordStr
-          : confirmPasswordStr // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+class __$$SignUpPressedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$SignUpPressedImpl>
+    implements _$$SignUpPressedImplCopyWith<$Res> {
+  __$$SignUpPressedImplCopyWithImpl(
+      _$SignUpPressedImpl _value, $Res Function(_$SignUpPressedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
-  const _$ConfirmPasswordChanged(this.confirmPasswordStr);
-
-  @override
-  final String confirmPasswordStr;
-
-  @override
-  String toString() {
-    return 'SignUpEvent.confirmPasswordChanged(confirmPasswordStr: $confirmPasswordStr)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ConfirmPasswordChanged &&
-            const DeepCollectionEquality()
-                .equals(other.confirmPasswordStr, confirmPasswordStr));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(confirmPasswordStr));
-
-  @JsonKey(ignore: true)
-  @override
-  $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith =>
-      _$ConfirmPasswordChangedCopyWithImpl<ConfirmPasswordChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountCreated,
-    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
-    required TResult Function(String emailAddressStr) emailAddressChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
-    required TResult Function(String usernameStr) usernameChanged,
-  }) {
-    return confirmPasswordChanged(confirmPasswordStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-  }) {
-    return confirmPasswordChanged?.call(confirmPasswordStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (confirmPasswordChanged != null) {
-      return confirmPasswordChanged(confirmPasswordStr);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountCreated value) accountCreated,
-    required TResult Function(ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
-    required TResult Function(UsernameChanged value) usernameChanged,
-  }) {
-    return confirmPasswordChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-  }) {
-    return confirmPasswordChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (confirmPasswordChanged != null) {
-      return confirmPasswordChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ConfirmPasswordChanged implements SignUpEvent {
-  const factory ConfirmPasswordChanged(String confirmPasswordStr) =
-      _$ConfirmPasswordChanged;
-
-  String get confirmPasswordStr;
-  @JsonKey(ignore: true)
-  $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EmailAddressChangedCopyWith<$Res> {
-  factory $EmailAddressChangedCopyWith(
-          EmailAddressChanged value, $Res Function(EmailAddressChanged) then) =
-      _$EmailAddressChangedCopyWithImpl<$Res>;
-  $Res call({String emailAddressStr});
-}
-
-/// @nodoc
-class _$EmailAddressChangedCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res>
-    implements $EmailAddressChangedCopyWith<$Res> {
-  _$EmailAddressChangedCopyWithImpl(
-      EmailAddressChanged _value, $Res Function(EmailAddressChanged) _then)
-      : super(_value, (v) => _then(v as EmailAddressChanged));
-
-  @override
-  EmailAddressChanged get _value => super._value as EmailAddressChanged;
-
-  @override
-  $Res call({
-    Object? emailAddressStr = freezed,
-  }) {
-    return _then(EmailAddressChanged(
-      emailAddressStr == freezed
-          ? _value.emailAddressStr
-          : emailAddressStr // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$EmailAddressChanged implements EmailAddressChanged {
-  const _$EmailAddressChanged(this.emailAddressStr);
-
-  @override
-  final String emailAddressStr;
-
-  @override
-  String toString() {
-    return 'SignUpEvent.emailAddressChanged(emailAddressStr: $emailAddressStr)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is EmailAddressChanged &&
-            const DeepCollectionEquality()
-                .equals(other.emailAddressStr, emailAddressStr));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(emailAddressStr));
-
-  @JsonKey(ignore: true)
-  @override
-  $EmailAddressChangedCopyWith<EmailAddressChanged> get copyWith =>
-      _$EmailAddressChangedCopyWithImpl<EmailAddressChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountCreated,
-    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
-    required TResult Function(String emailAddressStr) emailAddressChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
-    required TResult Function(String usernameStr) usernameChanged,
-  }) {
-    return emailAddressChanged(emailAddressStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-  }) {
-    return emailAddressChanged?.call(emailAddressStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (emailAddressChanged != null) {
-      return emailAddressChanged(emailAddressStr);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountCreated value) accountCreated,
-    required TResult Function(ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
-    required TResult Function(UsernameChanged value) usernameChanged,
-  }) {
-    return emailAddressChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-  }) {
-    return emailAddressChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (emailAddressChanged != null) {
-      return emailAddressChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class EmailAddressChanged implements SignUpEvent {
-  const factory EmailAddressChanged(String emailAddressStr) =
-      _$EmailAddressChanged;
-
-  String get emailAddressStr;
-  @JsonKey(ignore: true)
-  $EmailAddressChangedCopyWith<EmailAddressChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PasswordChangedCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(
-          PasswordChanged value, $Res Function(PasswordChanged) then) =
-      _$PasswordChangedCopyWithImpl<$Res>;
-  $Res call({String passwordStr});
-}
-
-/// @nodoc
-class _$PasswordChangedCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res>
-    implements $PasswordChangedCopyWith<$Res> {
-  _$PasswordChangedCopyWithImpl(
-      PasswordChanged _value, $Res Function(PasswordChanged) _then)
-      : super(_value, (v) => _then(v as PasswordChanged));
-
-  @override
-  PasswordChanged get _value => super._value as PasswordChanged;
-
-  @override
-  $Res call({
-    Object? passwordStr = freezed,
-  }) {
-    return _then(PasswordChanged(
-      passwordStr == freezed
-          ? _value.passwordStr
-          : passwordStr // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.passwordStr);
-
-  @override
-  final String passwordStr;
-
-  @override
-  String toString() {
-    return 'SignUpEvent.passwordChanged(passwordStr: $passwordStr)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is PasswordChanged &&
-            const DeepCollectionEquality()
-                .equals(other.passwordStr, passwordStr));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(passwordStr));
-
-  @JsonKey(ignore: true)
-  @override
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
-      _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountCreated,
-    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
-    required TResult Function(String emailAddressStr) emailAddressChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
-    required TResult Function(String usernameStr) usernameChanged,
-  }) {
-    return passwordChanged(passwordStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-  }) {
-    return passwordChanged?.call(passwordStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (passwordChanged != null) {
-      return passwordChanged(passwordStr);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountCreated value) accountCreated,
-    required TResult Function(ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
-    required TResult Function(UsernameChanged value) usernameChanged,
-  }) {
-    return passwordChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-  }) {
-    return passwordChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (passwordChanged != null) {
-      return passwordChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PasswordChanged implements SignUpEvent {
-  const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
-
-  String get passwordStr;
-  @JsonKey(ignore: true)
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignUpPressedCopyWith<$Res> {
-  factory $SignUpPressedCopyWith(
-          SignUpPressed value, $Res Function(SignUpPressed) then) =
-      _$SignUpPressedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SignUpPressedCopyWithImpl<$Res> extends _$SignUpEventCopyWithImpl<$Res>
-    implements $SignUpPressedCopyWith<$Res> {
-  _$SignUpPressedCopyWithImpl(
-      SignUpPressed _value, $Res Function(SignUpPressed) _then)
-      : super(_value, (v) => _then(v as SignUpPressed));
-
-  @override
-  SignUpPressed get _value => super._value as SignUpPressed;
-}
-
-/// @nodoc
-
-class _$SignUpPressed implements SignUpPressed {
-  const _$SignUpPressed();
+class _$SignUpPressedImpl implements SignUpPressed {
+  const _$SignUpPressedImpl();
 
   @override
   String toString() {
@@ -899,9 +160,9 @@ class _$SignUpPressed implements SignUpPressed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SignUpPressed);
+        (other.runtimeType == runtimeType && other is _$SignUpPressedImpl);
   }
 
   @override
@@ -910,14 +171,17 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
     required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
     required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return signUpPressed();
@@ -926,15 +190,17 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
   }) {
     return signUpPressed?.call();
   }
@@ -942,14 +208,16 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
     TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -962,16 +230,18 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
     required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
     required TResult Function(ConfirmPasswordChanged value)
         confirmPasswordChanged,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return signUpPressed(this);
@@ -980,16 +250,18 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
   }) {
     return signUpPressed?.call(this);
   }
@@ -997,15 +269,17 @@ class _$SignUpPressed implements SignUpPressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
     TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1017,224 +291,32 @@ class _$SignUpPressed implements SignUpPressed {
 }
 
 abstract class SignUpPressed implements SignUpEvent {
-  const factory SignUpPressed() = _$SignUpPressed;
+  const factory SignUpPressed() = _$SignUpPressedImpl;
 }
 
 /// @nodoc
-abstract class $UserDetailsSavedCopyWith<$Res> {
-  factory $UserDetailsSavedCopyWith(
-          UserDetailsSaved value, $Res Function(UserDetailsSaved) then) =
-      _$UserDetailsSavedCopyWithImpl<$Res>;
-  $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
+abstract class _$$UsernameAvailabilityConfirmedImplCopyWith<$Res> {
+  factory _$$UsernameAvailabilityConfirmedImplCopyWith(
+          _$UsernameAvailabilityConfirmedImpl value,
+          $Res Function(_$UsernameAvailabilityConfirmedImpl) then) =
+      __$$UsernameAvailabilityConfirmedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserDetailsSavedCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res>
-    implements $UserDetailsSavedCopyWith<$Res> {
-  _$UserDetailsSavedCopyWithImpl(
-      UserDetailsSaved _value, $Res Function(UserDetailsSaved) _then)
-      : super(_value, (v) => _then(v as UserDetailsSaved));
-
-  @override
-  UserDetailsSaved get _value => super._value as UserDetailsSaved;
-
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(UserDetailsSaved(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-    ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
-  }
+class __$$UsernameAvailabilityConfirmedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$UsernameAvailabilityConfirmedImpl>
+    implements _$$UsernameAvailabilityConfirmedImplCopyWith<$Res> {
+  __$$UsernameAvailabilityConfirmedImplCopyWithImpl(
+      _$UsernameAvailabilityConfirmedImpl _value,
+      $Res Function(_$UsernameAvailabilityConfirmedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UserDetailsSaved implements UserDetailsSaved {
-  const _$UserDetailsSaved(this.user);
-
-  @override
-  final User user;
-
-  @override
-  String toString() {
-    return 'SignUpEvent.userDetailsSaved(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is UserDetailsSaved &&
-            const DeepCollectionEquality().equals(other.user, user));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
-
-  @JsonKey(ignore: true)
-  @override
-  $UserDetailsSavedCopyWith<UserDetailsSaved> get copyWith =>
-      _$UserDetailsSavedCopyWithImpl<UserDetailsSaved>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() accountCreated,
-    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
-    required TResult Function(String emailAddressStr) emailAddressChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
-    required TResult Function(String usernameStr) usernameChanged,
-  }) {
-    return userDetailsSaved(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-  }) {
-    return userDetailsSaved?.call(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (userDetailsSaved != null) {
-      return userDetailsSaved(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AccountCreated value) accountCreated,
-    required TResult Function(ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
-    required TResult Function(UsernameChanged value) usernameChanged,
-  }) {
-    return userDetailsSaved(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-  }) {
-    return userDetailsSaved?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
-    required TResult orElse(),
-  }) {
-    if (userDetailsSaved != null) {
-      return userDetailsSaved(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UserDetailsSaved implements SignUpEvent {
-  const factory UserDetailsSaved(User user) = _$UserDetailsSaved;
-
-  User get user;
-  @JsonKey(ignore: true)
-  $UserDetailsSavedCopyWith<UserDetailsSaved> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UsernameAvailabilityConfirmedCopyWith<$Res> {
-  factory $UsernameAvailabilityConfirmedCopyWith(
-          UsernameAvailabilityConfirmed value,
-          $Res Function(UsernameAvailabilityConfirmed) then) =
-      _$UsernameAvailabilityConfirmedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res>
-    implements $UsernameAvailabilityConfirmedCopyWith<$Res> {
-  _$UsernameAvailabilityConfirmedCopyWithImpl(
-      UsernameAvailabilityConfirmed _value,
-      $Res Function(UsernameAvailabilityConfirmed) _then)
-      : super(_value, (v) => _then(v as UsernameAvailabilityConfirmed));
-
-  @override
-  UsernameAvailabilityConfirmed get _value =>
-      super._value as UsernameAvailabilityConfirmed;
-}
-
-/// @nodoc
-
-class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
-  const _$UsernameAvailabilityConfirmed();
+class _$UsernameAvailabilityConfirmedImpl
+    implements UsernameAvailabilityConfirmed {
+  const _$UsernameAvailabilityConfirmedImpl();
 
   @override
   String toString() {
@@ -1242,10 +324,10 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UsernameAvailabilityConfirmed);
+            other is _$UsernameAvailabilityConfirmedImpl);
   }
 
   @override
@@ -1254,14 +336,17 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
     required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
     required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return usernameAvailabilityConfirmed();
@@ -1270,15 +355,17 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
   }) {
     return usernameAvailabilityConfirmed?.call();
   }
@@ -1286,14 +373,16 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
     TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1306,16 +395,18 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
     required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
     required TResult Function(ConfirmPasswordChanged value)
         confirmPasswordChanged,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameAvailabilityConfirmed(this);
@@ -1324,16 +415,18 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
   }) {
     return usernameAvailabilityConfirmed?.call(this);
   }
@@ -1341,15 +434,17 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
     TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1362,35 +457,196 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
 
 abstract class UsernameAvailabilityConfirmed implements SignUpEvent {
   const factory UsernameAvailabilityConfirmed() =
-      _$UsernameAvailabilityConfirmed;
+      _$UsernameAvailabilityConfirmedImpl;
 }
 
 /// @nodoc
-abstract class $UsernameSavedCopyWith<$Res> {
-  factory $UsernameSavedCopyWith(
-          UsernameSaved value, $Res Function(UsernameSaved) then) =
-      _$UsernameSavedCopyWithImpl<$Res>;
+abstract class _$$AccountCreatedImplCopyWith<$Res> {
+  factory _$$AccountCreatedImplCopyWith(_$AccountCreatedImpl value,
+          $Res Function(_$AccountCreatedImpl) then) =
+      __$$AccountCreatedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AccountCreatedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$AccountCreatedImpl>
+    implements _$$AccountCreatedImplCopyWith<$Res> {
+  __$$AccountCreatedImplCopyWithImpl(
+      _$AccountCreatedImpl _value, $Res Function(_$AccountCreatedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AccountCreatedImpl implements AccountCreated {
+  const _$AccountCreatedImpl();
+
+  @override
+  String toString() {
+    return 'SignUpEvent.accountCreated()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AccountCreatedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
+    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String usernameStr) usernameChanged,
+  }) {
+    return accountCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
+  }) {
+    return accountCreated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String usernameStr)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (accountCreated != null) {
+      return accountCreated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
+    required TResult Function(ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+  }) {
+    return accountCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return accountCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (accountCreated != null) {
+      return accountCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AccountCreated implements SignUpEvent {
+  const factory AccountCreated() = _$AccountCreatedImpl;
+}
+
+/// @nodoc
+abstract class _$$UsernameSavedImplCopyWith<$Res> {
+  factory _$$UsernameSavedImplCopyWith(
+          _$UsernameSavedImpl value, $Res Function(_$UsernameSavedImpl) then) =
+      __$$UsernameSavedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UsernameSavedCopyWithImpl<$Res> extends _$SignUpEventCopyWithImpl<$Res>
-    implements $UsernameSavedCopyWith<$Res> {
-  _$UsernameSavedCopyWithImpl(
-      UsernameSaved _value, $Res Function(UsernameSaved) _then)
-      : super(_value, (v) => _then(v as UsernameSaved));
+class __$$UsernameSavedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$UsernameSavedImpl>
+    implements _$$UsernameSavedImplCopyWith<$Res> {
+  __$$UsernameSavedImplCopyWithImpl(
+      _$UsernameSavedImpl _value, $Res Function(_$UsernameSavedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  UsernameSaved get _value => super._value as UsernameSaved;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
   }) {
-    return _then(UsernameSaved(
-      user == freezed
+    return _then(_$UsernameSavedImpl(
+      null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
@@ -1398,6 +654,7 @@ class _$UsernameSavedCopyWithImpl<$Res> extends _$SignUpEventCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -1407,8 +664,8 @@ class _$UsernameSavedCopyWithImpl<$Res> extends _$SignUpEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UsernameSaved implements UsernameSaved {
-  const _$UsernameSaved(this.user);
+class _$UsernameSavedImpl implements UsernameSaved {
+  const _$UsernameSavedImpl(this.user);
 
   @override
   final User user;
@@ -1419,33 +676,36 @@ class _$UsernameSaved implements UsernameSaved {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UsernameSaved &&
-            const DeepCollectionEquality().equals(other.user, user));
+            other is _$UsernameSavedImpl &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
-  $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
-      _$UsernameSavedCopyWithImpl<UsernameSaved>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UsernameSavedImplCopyWith<_$UsernameSavedImpl> get copyWith =>
+      __$$UsernameSavedImplCopyWithImpl<_$UsernameSavedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
     required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
     required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return usernameSaved(user);
@@ -1454,15 +714,17 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
   }) {
     return usernameSaved?.call(user);
   }
@@ -1470,14 +732,16 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
     TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1490,16 +754,18 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
     required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
     required TResult Function(ConfirmPasswordChanged value)
         confirmPasswordChanged,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameSaved(this);
@@ -1508,16 +774,18 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
   }) {
     return usernameSaved?.call(this);
   }
@@ -1525,15 +793,17 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
     TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1545,39 +815,1191 @@ class _$UsernameSaved implements UsernameSaved {
 }
 
 abstract class UsernameSaved implements SignUpEvent {
-  const factory UsernameSaved(User user) = _$UsernameSaved;
+  const factory UsernameSaved(final User user) = _$UsernameSavedImpl;
 
   User get user;
   @JsonKey(ignore: true)
-  $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
+  _$$UsernameSavedImplCopyWith<_$UsernameSavedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UsernameChangedCopyWith<$Res> {
-  factory $UsernameChangedCopyWith(
-          UsernameChanged value, $Res Function(UsernameChanged) then) =
-      _$UsernameChangedCopyWithImpl<$Res>;
+abstract class _$$UserDetailsSavedImplCopyWith<$Res> {
+  factory _$$UserDetailsSavedImplCopyWith(_$UserDetailsSavedImpl value,
+          $Res Function(_$UserDetailsSavedImpl) then) =
+      __$$UserDetailsSavedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$UserDetailsSavedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$UserDetailsSavedImpl>
+    implements _$$UserDetailsSavedImplCopyWith<$Res> {
+  __$$UserDetailsSavedImplCopyWithImpl(_$UserDetailsSavedImpl _value,
+      $Res Function(_$UserDetailsSavedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$UserDetailsSavedImpl(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UserDetailsSavedImpl implements UserDetailsSaved {
+  const _$UserDetailsSavedImpl(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.userDetailsSaved(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserDetailsSavedImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserDetailsSavedImplCopyWith<_$UserDetailsSavedImpl> get copyWith =>
+      __$$UserDetailsSavedImplCopyWithImpl<_$UserDetailsSavedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
+    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String usernameStr) usernameChanged,
+  }) {
+    return userDetailsSaved(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
+  }) {
+    return userDetailsSaved?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String usernameStr)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (userDetailsSaved != null) {
+      return userDetailsSaved(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
+    required TResult Function(ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+  }) {
+    return userDetailsSaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return userDetailsSaved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (userDetailsSaved != null) {
+      return userDetailsSaved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserDetailsSaved implements SignUpEvent {
+  const factory UserDetailsSaved(final User user) = _$UserDetailsSavedImpl;
+
+  User get user;
+  @JsonKey(ignore: true)
+  _$$UserDetailsSavedImplCopyWith<_$UserDetailsSavedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SessionInsertedImplCopyWith<$Res> {
+  factory _$$SessionInsertedImplCopyWith(_$SessionInsertedImpl value,
+          $Res Function(_$SessionInsertedImpl) then) =
+      __$$SessionInsertedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SessionInsertedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$SessionInsertedImpl>
+    implements _$$SessionInsertedImplCopyWith<$Res> {
+  __$$SessionInsertedImplCopyWithImpl(
+      _$SessionInsertedImpl _value, $Res Function(_$SessionInsertedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SessionInsertedImpl implements SessionInserted {
+  const _$SessionInsertedImpl();
+
+  @override
+  String toString() {
+    return 'SignUpEvent.sessionInserted()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SessionInsertedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
+    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String usernameStr) usernameChanged,
+  }) {
+    return sessionInserted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
+  }) {
+    return sessionInserted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String usernameStr)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (sessionInserted != null) {
+      return sessionInserted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
+    required TResult Function(ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+  }) {
+    return sessionInserted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return sessionInserted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (sessionInserted != null) {
+      return sessionInserted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionInserted implements SignUpEvent {
+  const factory SessionInserted() = _$SessionInsertedImpl;
+}
+
+/// @nodoc
+abstract class _$$DefaultCoversLoadedImplCopyWith<$Res> {
+  factory _$$DefaultCoversLoadedImplCopyWith(_$DefaultCoversLoadedImpl value,
+          $Res Function(_$DefaultCoversLoadedImpl) then) =
+      __$$DefaultCoversLoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<DefaultCover> defaultCovers});
+}
+
+/// @nodoc
+class __$$DefaultCoversLoadedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$DefaultCoversLoadedImpl>
+    implements _$$DefaultCoversLoadedImplCopyWith<$Res> {
+  __$$DefaultCoversLoadedImplCopyWithImpl(_$DefaultCoversLoadedImpl _value,
+      $Res Function(_$DefaultCoversLoadedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? defaultCovers = null,
+  }) {
+    return _then(_$DefaultCoversLoadedImpl(
+      null == defaultCovers
+          ? _value._defaultCovers
+          : defaultCovers // ignore: cast_nullable_to_non_nullable
+              as List<DefaultCover>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DefaultCoversLoadedImpl implements DefaultCoversLoaded {
+  const _$DefaultCoversLoadedImpl(final List<DefaultCover> defaultCovers)
+      : _defaultCovers = defaultCovers;
+
+  final List<DefaultCover> _defaultCovers;
+  @override
+  List<DefaultCover> get defaultCovers {
+    if (_defaultCovers is EqualUnmodifiableListView) return _defaultCovers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_defaultCovers);
+  }
+
+  @override
+  String toString() {
+    return 'SignUpEvent.defaultCoversLoaded(defaultCovers: $defaultCovers)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DefaultCoversLoadedImpl &&
+            const DeepCollectionEquality()
+                .equals(other._defaultCovers, _defaultCovers));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_defaultCovers));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DefaultCoversLoadedImplCopyWith<_$DefaultCoversLoadedImpl> get copyWith =>
+      __$$DefaultCoversLoadedImplCopyWithImpl<_$DefaultCoversLoadedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
+    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String usernameStr) usernameChanged,
+  }) {
+    return defaultCoversLoaded(defaultCovers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
+  }) {
+    return defaultCoversLoaded?.call(defaultCovers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String usernameStr)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (defaultCoversLoaded != null) {
+      return defaultCoversLoaded(defaultCovers);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
+    required TResult Function(ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+  }) {
+    return defaultCoversLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return defaultCoversLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (defaultCoversLoaded != null) {
+      return defaultCoversLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DefaultCoversLoaded implements SignUpEvent {
+  const factory DefaultCoversLoaded(final List<DefaultCover> defaultCovers) =
+      _$DefaultCoversLoadedImpl;
+
+  List<DefaultCover> get defaultCovers;
+  @JsonKey(ignore: true)
+  _$$DefaultCoversLoadedImplCopyWith<_$DefaultCoversLoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConfirmPasswordChangedImplCopyWith<$Res> {
+  factory _$$ConfirmPasswordChangedImplCopyWith(
+          _$ConfirmPasswordChangedImpl value,
+          $Res Function(_$ConfirmPasswordChangedImpl) then) =
+      __$$ConfirmPasswordChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String confirmPasswordStr});
+}
+
+/// @nodoc
+class __$$ConfirmPasswordChangedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$ConfirmPasswordChangedImpl>
+    implements _$$ConfirmPasswordChangedImplCopyWith<$Res> {
+  __$$ConfirmPasswordChangedImplCopyWithImpl(
+      _$ConfirmPasswordChangedImpl _value,
+      $Res Function(_$ConfirmPasswordChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? confirmPasswordStr = null,
+  }) {
+    return _then(_$ConfirmPasswordChangedImpl(
+      null == confirmPasswordStr
+          ? _value.confirmPasswordStr
+          : confirmPasswordStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConfirmPasswordChangedImpl implements ConfirmPasswordChanged {
+  const _$ConfirmPasswordChangedImpl(this.confirmPasswordStr);
+
+  @override
+  final String confirmPasswordStr;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.confirmPasswordChanged(confirmPasswordStr: $confirmPasswordStr)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfirmPasswordChangedImpl &&
+            (identical(other.confirmPasswordStr, confirmPasswordStr) ||
+                other.confirmPasswordStr == confirmPasswordStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, confirmPasswordStr);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfirmPasswordChangedImplCopyWith<_$ConfirmPasswordChangedImpl>
+      get copyWith => __$$ConfirmPasswordChangedImplCopyWithImpl<
+          _$ConfirmPasswordChangedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
+    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String usernameStr) usernameChanged,
+  }) {
+    return confirmPasswordChanged(confirmPasswordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
+  }) {
+    return confirmPasswordChanged?.call(confirmPasswordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String usernameStr)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (confirmPasswordChanged != null) {
+      return confirmPasswordChanged(confirmPasswordStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
+    required TResult Function(ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+  }) {
+    return confirmPasswordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return confirmPasswordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (confirmPasswordChanged != null) {
+      return confirmPasswordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConfirmPasswordChanged implements SignUpEvent {
+  const factory ConfirmPasswordChanged(final String confirmPasswordStr) =
+      _$ConfirmPasswordChangedImpl;
+
+  String get confirmPasswordStr;
+  @JsonKey(ignore: true)
+  _$$ConfirmPasswordChangedImplCopyWith<_$ConfirmPasswordChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmailAddressChangedImplCopyWith<$Res> {
+  factory _$$EmailAddressChangedImplCopyWith(_$EmailAddressChangedImpl value,
+          $Res Function(_$EmailAddressChangedImpl) then) =
+      __$$EmailAddressChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String emailAddressStr});
+}
+
+/// @nodoc
+class __$$EmailAddressChangedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$EmailAddressChangedImpl>
+    implements _$$EmailAddressChangedImplCopyWith<$Res> {
+  __$$EmailAddressChangedImplCopyWithImpl(_$EmailAddressChangedImpl _value,
+      $Res Function(_$EmailAddressChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? emailAddressStr = null,
+  }) {
+    return _then(_$EmailAddressChangedImpl(
+      null == emailAddressStr
+          ? _value.emailAddressStr
+          : emailAddressStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EmailAddressChangedImpl implements EmailAddressChanged {
+  const _$EmailAddressChangedImpl(this.emailAddressStr);
+
+  @override
+  final String emailAddressStr;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.emailAddressChanged(emailAddressStr: $emailAddressStr)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EmailAddressChangedImpl &&
+            (identical(other.emailAddressStr, emailAddressStr) ||
+                other.emailAddressStr == emailAddressStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, emailAddressStr);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmailAddressChangedImplCopyWith<_$EmailAddressChangedImpl> get copyWith =>
+      __$$EmailAddressChangedImplCopyWithImpl<_$EmailAddressChangedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
+    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String usernameStr) usernameChanged,
+  }) {
+    return emailAddressChanged(emailAddressStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
+  }) {
+    return emailAddressChanged?.call(emailAddressStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String usernameStr)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (emailAddressChanged != null) {
+      return emailAddressChanged(emailAddressStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
+    required TResult Function(ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+  }) {
+    return emailAddressChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return emailAddressChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (emailAddressChanged != null) {
+      return emailAddressChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailAddressChanged implements SignUpEvent {
+  const factory EmailAddressChanged(final String emailAddressStr) =
+      _$EmailAddressChangedImpl;
+
+  String get emailAddressStr;
+  @JsonKey(ignore: true)
+  _$$EmailAddressChangedImplCopyWith<_$EmailAddressChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PasswordChangedImplCopyWith<$Res> {
+  factory _$$PasswordChangedImplCopyWith(_$PasswordChangedImpl value,
+          $Res Function(_$PasswordChangedImpl) then) =
+      __$$PasswordChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String passwordStr});
+}
+
+/// @nodoc
+class __$$PasswordChangedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$PasswordChangedImpl>
+    implements _$$PasswordChangedImplCopyWith<$Res> {
+  __$$PasswordChangedImplCopyWithImpl(
+      _$PasswordChangedImpl _value, $Res Function(_$PasswordChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? passwordStr = null,
+  }) {
+    return _then(_$PasswordChangedImpl(
+      null == passwordStr
+          ? _value.passwordStr
+          : passwordStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PasswordChangedImpl implements PasswordChanged {
+  const _$PasswordChangedImpl(this.passwordStr);
+
+  @override
+  final String passwordStr;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.passwordChanged(passwordStr: $passwordStr)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PasswordChangedImpl &&
+            (identical(other.passwordStr, passwordStr) ||
+                other.passwordStr == passwordStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, passwordStr);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
+      __$$PasswordChangedImplCopyWithImpl<_$PasswordChangedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
+    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String usernameStr) usernameChanged,
+  }) {
+    return passwordChanged(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
+  }) {
+    return passwordChanged?.call(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String usernameStr)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(passwordStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
+    required TResult Function(ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UsernameChanged value) usernameChanged,
+  }) {
+    return passwordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return passwordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PasswordChanged implements SignUpEvent {
+  const factory PasswordChanged(final String passwordStr) =
+      _$PasswordChangedImpl;
+
+  String get passwordStr;
+  @JsonKey(ignore: true)
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UsernameChangedImplCopyWith<$Res> {
+  factory _$$UsernameChangedImplCopyWith(_$UsernameChangedImpl value,
+          $Res Function(_$UsernameChangedImpl) then) =
+      __$$UsernameChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String usernameStr});
 }
 
 /// @nodoc
-class _$UsernameChangedCopyWithImpl<$Res>
-    extends _$SignUpEventCopyWithImpl<$Res>
-    implements $UsernameChangedCopyWith<$Res> {
-  _$UsernameChangedCopyWithImpl(
-      UsernameChanged _value, $Res Function(UsernameChanged) _then)
-      : super(_value, (v) => _then(v as UsernameChanged));
+class __$$UsernameChangedImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$UsernameChangedImpl>
+    implements _$$UsernameChangedImplCopyWith<$Res> {
+  __$$UsernameChangedImplCopyWithImpl(
+      _$UsernameChangedImpl _value, $Res Function(_$UsernameChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  UsernameChanged get _value => super._value as UsernameChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? usernameStr = freezed,
+    Object? usernameStr = null,
   }) {
-    return _then(UsernameChanged(
-      usernameStr == freezed
+    return _then(_$UsernameChangedImpl(
+      null == usernameStr
           ? _value.usernameStr
           : usernameStr // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1587,8 +2009,8 @@ class _$UsernameChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UsernameChanged implements UsernameChanged {
-  const _$UsernameChanged(this.usernameStr);
+class _$UsernameChangedImpl implements UsernameChanged {
+  const _$UsernameChangedImpl(this.usernameStr);
 
   @override
   final String usernameStr;
@@ -1599,34 +2021,38 @@ class _$UsernameChanged implements UsernameChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UsernameChanged &&
-            const DeepCollectionEquality()
-                .equals(other.usernameStr, usernameStr));
+            other is _$UsernameChangedImpl &&
+            (identical(other.usernameStr, usernameStr) ||
+                other.usernameStr == usernameStr));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(usernameStr));
+  int get hashCode => Object.hash(runtimeType, usernameStr);
 
   @JsonKey(ignore: true)
   @override
-  $UsernameChangedCopyWith<UsernameChanged> get copyWith =>
-      _$UsernameChangedCopyWithImpl<UsernameChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UsernameChangedImplCopyWith<_$UsernameChangedImpl> get copyWith =>
+      __$$UsernameChangedImplCopyWithImpl<_$UsernameChangedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() signUpPressed,
+    required TResult Function() usernameAvailabilityConfirmed,
     required TResult Function() accountCreated,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() sessionInserted,
+    required TResult Function(List<DefaultCover> defaultCovers)
+        defaultCoversLoaded,
     required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function() signUpPressed,
-    required TResult Function(User user) userDetailsSaved,
-    required TResult Function() usernameAvailabilityConfirmed,
-    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return usernameChanged(usernameStr);
@@ -1635,15 +2061,17 @@ class _$UsernameChanged implements UsernameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? accountCreated,
-    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
-    TResult Function(String emailAddressStr)? emailAddressChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
-    TResult Function(String usernameStr)? usernameChanged,
+    TResult? Function()? signUpPressed,
+    TResult? Function()? usernameAvailabilityConfirmed,
+    TResult? Function()? accountCreated,
+    TResult? Function(User user)? usernameSaved,
+    TResult? Function(User user)? userDetailsSaved,
+    TResult? Function()? sessionInserted,
+    TResult? Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
+    TResult? Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult? Function(String emailAddressStr)? emailAddressChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String usernameStr)? usernameChanged,
   }) {
     return usernameChanged?.call(usernameStr);
   }
@@ -1651,14 +2079,16 @@ class _$UsernameChanged implements UsernameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUpPressed,
+    TResult Function()? usernameAvailabilityConfirmed,
     TResult Function()? accountCreated,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? sessionInserted,
+    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function()? signUpPressed,
-    TResult Function(User user)? userDetailsSaved,
-    TResult Function()? usernameAvailabilityConfirmed,
-    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1671,16 +2101,18 @@ class _$UsernameChanged implements UsernameChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
     required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(SessionInserted value) sessionInserted,
+    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
     required TResult Function(ConfirmPasswordChanged value)
         confirmPasswordChanged,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(SignUpPressed value) signUpPressed,
-    required TResult Function(UserDetailsSaved value) userDetailsSaved,
-    required TResult Function(UsernameAvailabilityConfirmed value)
-        usernameAvailabilityConfirmed,
-    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameChanged(this);
@@ -1689,16 +2121,18 @@ class _$UsernameChanged implements UsernameChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AccountCreated value)? accountCreated,
-    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
+    TResult? Function(SignUpPressed value)? signUpPressed,
+    TResult? Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
-    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(AccountCreated value)? accountCreated,
+    TResult? Function(UsernameSaved value)? usernameSaved,
+    TResult? Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult? Function(SessionInserted value)? sessionInserted,
+    TResult? Function(DefaultCoversLoaded value)? defaultCoversLoaded,
+    TResult? Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult? Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UsernameChanged value)? usernameChanged,
   }) {
     return usernameChanged?.call(this);
   }
@@ -1706,15 +2140,17 @@ class _$UsernameChanged implements UsernameChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
     TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(SessionInserted value)? sessionInserted,
+    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(SignUpPressed value)? signUpPressed,
-    TResult Function(UserDetailsSaved value)? userDetailsSaved,
-    TResult Function(UsernameAvailabilityConfirmed value)?
-        usernameAvailabilityConfirmed,
-    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1726,42 +2162,14 @@ class _$UsernameChanged implements UsernameChanged {
 }
 
 abstract class UsernameChanged implements SignUpEvent {
-  const factory UsernameChanged(String usernameStr) = _$UsernameChanged;
+  const factory UsernameChanged(final String usernameStr) =
+      _$UsernameChangedImpl;
 
   String get usernameStr;
   @JsonKey(ignore: true)
-  $UsernameChangedCopyWith<UsernameChanged> get copyWith =>
+  _$$UsernameChangedImplCopyWith<_$UsernameChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignUpStateTearOff {
-  const _$SignUpStateTearOff();
-
-  _SignUpState call(
-      {required ConfirmPassword confirmPassword,
-      required EmailAddress emailAddress,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required bool isAuthenticated,
-      required bool isProcessing,
-      required Password password,
-      required bool showErrorMessages,
-      required Username username}) {
-    return _SignUpState(
-      confirmPassword: confirmPassword,
-      emailAddress: emailAddress,
-      failureOption: failureOption,
-      isAuthenticated: isAuthenticated,
-      isProcessing: isProcessing,
-      password: password,
-      showErrorMessages: showErrorMessages,
-      username: username,
-    );
-  }
-}
-
-/// @nodoc
-const $SignUpState = _$SignUpStateTearOff();
 
 /// @nodoc
 mixin _$SignUpState {
@@ -1784,7 +2192,8 @@ mixin _$SignUpState {
 abstract class $SignUpStateCopyWith<$Res> {
   factory $SignUpStateCopyWith(
           SignUpState value, $Res Function(SignUpState) then) =
-      _$SignUpStateCopyWithImpl<$Res>;
+      _$SignUpStateCopyWithImpl<$Res, SignUpState>;
+  @useResult
   $Res call(
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
@@ -1797,68 +2206,72 @@ abstract class $SignUpStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
+class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
+    implements $SignUpStateCopyWith<$Res> {
   _$SignUpStateCopyWithImpl(this._value, this._then);
 
-  final SignUpState _value;
   // ignore: unused_field
-  final $Res Function(SignUpState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? confirmPassword = freezed,
-    Object? emailAddress = freezed,
-    Object? failureOption = freezed,
-    Object? isAuthenticated = freezed,
-    Object? isProcessing = freezed,
-    Object? password = freezed,
-    Object? showErrorMessages = freezed,
-    Object? username = freezed,
+    Object? confirmPassword = null,
+    Object? emailAddress = null,
+    Object? failureOption = null,
+    Object? isAuthenticated = null,
+    Object? isProcessing = null,
+    Object? password = null,
+    Object? showErrorMessages = null,
+    Object? username = null,
   }) {
     return _then(_value.copyWith(
-      confirmPassword: confirmPassword == freezed
+      confirmPassword: null == confirmPassword
           ? _value.confirmPassword
           : confirmPassword // ignore: cast_nullable_to_non_nullable
               as ConfirmPassword,
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isAuthenticated: isAuthenticated == freezed
+      isAuthenticated: null == isAuthenticated
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as Username,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SignUpStateCopyWith<$Res>
+abstract class _$$SignUpStateImplCopyWith<$Res>
     implements $SignUpStateCopyWith<$Res> {
-  factory _$SignUpStateCopyWith(
-          _SignUpState value, $Res Function(_SignUpState) then) =
-      __$SignUpStateCopyWithImpl<$Res>;
+  factory _$$SignUpStateImplCopyWith(
+          _$SignUpStateImpl value, $Res Function(_$SignUpStateImpl) then) =
+      __$$SignUpStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
@@ -1871,56 +2284,55 @@ abstract class _$SignUpStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
-    implements _$SignUpStateCopyWith<$Res> {
-  __$SignUpStateCopyWithImpl(
-      _SignUpState _value, $Res Function(_SignUpState) _then)
-      : super(_value, (v) => _then(v as _SignUpState));
+class __$$SignUpStateImplCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$SignUpStateImpl>
+    implements _$$SignUpStateImplCopyWith<$Res> {
+  __$$SignUpStateImplCopyWithImpl(
+      _$SignUpStateImpl _value, $Res Function(_$SignUpStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _SignUpState get _value => super._value as _SignUpState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? confirmPassword = freezed,
-    Object? emailAddress = freezed,
-    Object? failureOption = freezed,
-    Object? isAuthenticated = freezed,
-    Object? isProcessing = freezed,
-    Object? password = freezed,
-    Object? showErrorMessages = freezed,
-    Object? username = freezed,
+    Object? confirmPassword = null,
+    Object? emailAddress = null,
+    Object? failureOption = null,
+    Object? isAuthenticated = null,
+    Object? isProcessing = null,
+    Object? password = null,
+    Object? showErrorMessages = null,
+    Object? username = null,
   }) {
-    return _then(_SignUpState(
-      confirmPassword: confirmPassword == freezed
+    return _then(_$SignUpStateImpl(
+      confirmPassword: null == confirmPassword
           ? _value.confirmPassword
           : confirmPassword // ignore: cast_nullable_to_non_nullable
               as ConfirmPassword,
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None<Object>, CoreFailure>>,
-      isAuthenticated: isAuthenticated == freezed
+      isAuthenticated: null == isAuthenticated
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
               as bool,
-      isProcessing: isProcessing == freezed
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as Username,
@@ -1930,8 +2342,8 @@ class __$SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignUpState implements _SignUpState {
-  const _$_SignUpState(
+class _$SignUpStateImpl implements _SignUpState {
+  const _$SignUpStateImpl(
       {required this.confirmPassword,
       required this.emailAddress,
       required this.failureOption,
@@ -1964,54 +2376,57 @@ class _$_SignUpState implements _SignUpState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignUpState &&
-            const DeepCollectionEquality()
-                .equals(other.confirmPassword, confirmPassword) &&
-            const DeepCollectionEquality()
-                .equals(other.emailAddress, emailAddress) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption) &&
-            const DeepCollectionEquality()
-                .equals(other.isAuthenticated, isAuthenticated) &&
-            const DeepCollectionEquality()
-                .equals(other.isProcessing, isProcessing) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality().equals(other.username, username));
+            other is _$SignUpStateImpl &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                other.confirmPassword == confirmPassword) &&
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption) &&
+            (identical(other.isAuthenticated, isAuthenticated) ||
+                other.isAuthenticated == isAuthenticated) &&
+            (identical(other.isProcessing, isProcessing) ||
+                other.isProcessing == isProcessing) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.username, username) ||
+                other.username == username));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(confirmPassword),
-      const DeepCollectionEquality().hash(emailAddress),
-      const DeepCollectionEquality().hash(failureOption),
-      const DeepCollectionEquality().hash(isAuthenticated),
-      const DeepCollectionEquality().hash(isProcessing),
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(username));
+      confirmPassword,
+      emailAddress,
+      failureOption,
+      isAuthenticated,
+      isProcessing,
+      password,
+      showErrorMessages,
+      username);
 
   @JsonKey(ignore: true)
   @override
-  _$SignUpStateCopyWith<_SignUpState> get copyWith =>
-      __$SignUpStateCopyWithImpl<_SignUpState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignUpStateImplCopyWith<_$SignUpStateImpl> get copyWith =>
+      __$$SignUpStateImplCopyWithImpl<_$SignUpStateImpl>(this, _$identity);
 }
 
 abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
-      {required ConfirmPassword confirmPassword,
-      required EmailAddress emailAddress,
-      required Option<Result<None<Object>, CoreFailure>> failureOption,
-      required bool isAuthenticated,
-      required bool isProcessing,
-      required Password password,
-      required bool showErrorMessages,
-      required Username username}) = _$_SignUpState;
+      {required final ConfirmPassword confirmPassword,
+      required final EmailAddress emailAddress,
+      required final Option<Result<None<Object>, CoreFailure>> failureOption,
+      required final bool isAuthenticated,
+      required final bool isProcessing,
+      required final Password password,
+      required final bool showErrorMessages,
+      required final Username username}) = _$SignUpStateImpl;
 
   @override
   ConfirmPassword get confirmPassword;
@@ -2031,6 +2446,6 @@ abstract class _SignUpState implements SignUpState {
   Username get username;
   @override
   @JsonKey(ignore: true)
-  _$SignUpStateCopyWith<_SignUpState> get copyWith =>
+  _$$SignUpStateImplCopyWith<_$SignUpStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

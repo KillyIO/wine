@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class VerticalNavbarButton extends StatelessWidget {
-  /// @nodoc
   const VerticalNavbarButton({
-    Key? key,
     required this.color,
     required this.onPressed,
     required this.title,
     required this.width,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final Color color;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
-  /// @nodoc
   final String title;
 
-  /// @nodoc
   final double width;
 
   @override

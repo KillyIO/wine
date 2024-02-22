@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'branch_failure.dart';
 
@@ -12,39 +12,7 @@ part of 'branch_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$BranchFailureTearOff {
-  const _$BranchFailureTearOff();
-
-  BranchNotFound branchNotFound() {
-    return const BranchNotFound();
-  }
-
-  BranchOneAlreadyExists branchOneAlreadyExists() {
-    return const BranchOneAlreadyExists();
-  }
-
-  CoverNotUploaded coverNotUploaded() {
-    return const CoverNotUploaded();
-  }
-
-  PermissionDenied permissionDenied() {
-    return const PermissionDenied();
-  }
-
-  ServerError serverError() {
-    return const ServerError();
-  }
-
-  Unexpected unexpected() {
-    return const Unexpected();
-  }
-}
-
-/// @nodoc
-const $BranchFailure = _$BranchFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BranchFailure {
@@ -60,12 +28,12 @@ mixin _$BranchFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? branchNotFound,
-    TResult Function()? branchOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? branchNotFound,
+    TResult? Function()? branchOneAlreadyExists,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,12 +60,12 @@ mixin _$BranchFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BranchNotFound value)? branchNotFound,
-    TResult Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(BranchNotFound value)? branchNotFound,
+    TResult? Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -117,42 +85,40 @@ mixin _$BranchFailure {
 abstract class $BranchFailureCopyWith<$Res> {
   factory $BranchFailureCopyWith(
           BranchFailure value, $Res Function(BranchFailure) then) =
-      _$BranchFailureCopyWithImpl<$Res>;
+      _$BranchFailureCopyWithImpl<$Res, BranchFailure>;
 }
 
 /// @nodoc
-class _$BranchFailureCopyWithImpl<$Res>
+class _$BranchFailureCopyWithImpl<$Res, $Val extends BranchFailure>
     implements $BranchFailureCopyWith<$Res> {
   _$BranchFailureCopyWithImpl(this._value, this._then);
 
-  final BranchFailure _value;
   // ignore: unused_field
-  final $Res Function(BranchFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $BranchNotFoundCopyWith<$Res> {
-  factory $BranchNotFoundCopyWith(
-          BranchNotFound value, $Res Function(BranchNotFound) then) =
-      _$BranchNotFoundCopyWithImpl<$Res>;
+abstract class _$$BranchNotFoundImplCopyWith<$Res> {
+  factory _$$BranchNotFoundImplCopyWith(_$BranchNotFoundImpl value,
+          $Res Function(_$BranchNotFoundImpl) then) =
+      __$$BranchNotFoundImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BranchNotFoundCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res>
-    implements $BranchNotFoundCopyWith<$Res> {
-  _$BranchNotFoundCopyWithImpl(
-      BranchNotFound _value, $Res Function(BranchNotFound) _then)
-      : super(_value, (v) => _then(v as BranchNotFound));
-
-  @override
-  BranchNotFound get _value => super._value as BranchNotFound;
+class __$$BranchNotFoundImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$BranchNotFoundImpl>
+    implements _$$BranchNotFoundImplCopyWith<$Res> {
+  __$$BranchNotFoundImplCopyWithImpl(
+      _$BranchNotFoundImpl _value, $Res Function(_$BranchNotFoundImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$BranchNotFound implements BranchNotFound {
-  const _$BranchNotFound();
+class _$BranchNotFoundImpl implements BranchNotFound {
+  const _$BranchNotFoundImpl();
 
   @override
   String toString() {
@@ -160,9 +126,9 @@ class _$BranchNotFound implements BranchNotFound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is BranchNotFound);
+        (other.runtimeType == runtimeType && other is _$BranchNotFoundImpl);
   }
 
   @override
@@ -184,12 +150,12 @@ class _$BranchNotFound implements BranchNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? branchNotFound,
-    TResult Function()? branchOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? branchNotFound,
+    TResult? Function()? branchOneAlreadyExists,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return branchNotFound?.call();
   }
@@ -228,12 +194,12 @@ class _$BranchNotFound implements BranchNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BranchNotFound value)? branchNotFound,
-    TResult Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(BranchNotFound value)? branchNotFound,
+    TResult? Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return branchNotFound?.call(this);
   }
@@ -257,32 +223,31 @@ class _$BranchNotFound implements BranchNotFound {
 }
 
 abstract class BranchNotFound implements BranchFailure {
-  const factory BranchNotFound() = _$BranchNotFound;
+  const factory BranchNotFound() = _$BranchNotFoundImpl;
 }
 
 /// @nodoc
-abstract class $BranchOneAlreadyExistsCopyWith<$Res> {
-  factory $BranchOneAlreadyExistsCopyWith(BranchOneAlreadyExists value,
-          $Res Function(BranchOneAlreadyExists) then) =
-      _$BranchOneAlreadyExistsCopyWithImpl<$Res>;
+abstract class _$$BranchOneAlreadyExistsImplCopyWith<$Res> {
+  factory _$$BranchOneAlreadyExistsImplCopyWith(
+          _$BranchOneAlreadyExistsImpl value,
+          $Res Function(_$BranchOneAlreadyExistsImpl) then) =
+      __$$BranchOneAlreadyExistsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BranchOneAlreadyExistsCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res>
-    implements $BranchOneAlreadyExistsCopyWith<$Res> {
-  _$BranchOneAlreadyExistsCopyWithImpl(BranchOneAlreadyExists _value,
-      $Res Function(BranchOneAlreadyExists) _then)
-      : super(_value, (v) => _then(v as BranchOneAlreadyExists));
-
-  @override
-  BranchOneAlreadyExists get _value => super._value as BranchOneAlreadyExists;
+class __$$BranchOneAlreadyExistsImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$BranchOneAlreadyExistsImpl>
+    implements _$$BranchOneAlreadyExistsImplCopyWith<$Res> {
+  __$$BranchOneAlreadyExistsImplCopyWithImpl(
+      _$BranchOneAlreadyExistsImpl _value,
+      $Res Function(_$BranchOneAlreadyExistsImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$BranchOneAlreadyExists implements BranchOneAlreadyExists {
-  const _$BranchOneAlreadyExists();
+class _$BranchOneAlreadyExistsImpl implements BranchOneAlreadyExists {
+  const _$BranchOneAlreadyExistsImpl();
 
   @override
   String toString() {
@@ -290,9 +255,10 @@ class _$BranchOneAlreadyExists implements BranchOneAlreadyExists {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is BranchOneAlreadyExists);
+        (other.runtimeType == runtimeType &&
+            other is _$BranchOneAlreadyExistsImpl);
   }
 
   @override
@@ -314,12 +280,12 @@ class _$BranchOneAlreadyExists implements BranchOneAlreadyExists {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? branchNotFound,
-    TResult Function()? branchOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? branchNotFound,
+    TResult? Function()? branchOneAlreadyExists,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return branchOneAlreadyExists?.call();
   }
@@ -358,12 +324,12 @@ class _$BranchOneAlreadyExists implements BranchOneAlreadyExists {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BranchNotFound value)? branchNotFound,
-    TResult Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(BranchNotFound value)? branchNotFound,
+    TResult? Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return branchOneAlreadyExists?.call(this);
   }
@@ -387,32 +353,29 @@ class _$BranchOneAlreadyExists implements BranchOneAlreadyExists {
 }
 
 abstract class BranchOneAlreadyExists implements BranchFailure {
-  const factory BranchOneAlreadyExists() = _$BranchOneAlreadyExists;
+  const factory BranchOneAlreadyExists() = _$BranchOneAlreadyExistsImpl;
 }
 
 /// @nodoc
-abstract class $CoverNotUploadedCopyWith<$Res> {
-  factory $CoverNotUploadedCopyWith(
-          CoverNotUploaded value, $Res Function(CoverNotUploaded) then) =
-      _$CoverNotUploadedCopyWithImpl<$Res>;
+abstract class _$$CoverNotUploadedImplCopyWith<$Res> {
+  factory _$$CoverNotUploadedImplCopyWith(_$CoverNotUploadedImpl value,
+          $Res Function(_$CoverNotUploadedImpl) then) =
+      __$$CoverNotUploadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CoverNotUploadedCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res>
-    implements $CoverNotUploadedCopyWith<$Res> {
-  _$CoverNotUploadedCopyWithImpl(
-      CoverNotUploaded _value, $Res Function(CoverNotUploaded) _then)
-      : super(_value, (v) => _then(v as CoverNotUploaded));
-
-  @override
-  CoverNotUploaded get _value => super._value as CoverNotUploaded;
+class __$$CoverNotUploadedImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$CoverNotUploadedImpl>
+    implements _$$CoverNotUploadedImplCopyWith<$Res> {
+  __$$CoverNotUploadedImplCopyWithImpl(_$CoverNotUploadedImpl _value,
+      $Res Function(_$CoverNotUploadedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CoverNotUploaded implements CoverNotUploaded {
-  const _$CoverNotUploaded();
+class _$CoverNotUploadedImpl implements CoverNotUploaded {
+  const _$CoverNotUploadedImpl();
 
   @override
   String toString() {
@@ -420,9 +383,9 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is CoverNotUploaded);
+        (other.runtimeType == runtimeType && other is _$CoverNotUploadedImpl);
   }
 
   @override
@@ -444,12 +407,12 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? branchNotFound,
-    TResult Function()? branchOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? branchNotFound,
+    TResult? Function()? branchOneAlreadyExists,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return coverNotUploaded?.call();
   }
@@ -488,12 +451,12 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BranchNotFound value)? branchNotFound,
-    TResult Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(BranchNotFound value)? branchNotFound,
+    TResult? Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return coverNotUploaded?.call(this);
   }
@@ -517,32 +480,29 @@ class _$CoverNotUploaded implements CoverNotUploaded {
 }
 
 abstract class CoverNotUploaded implements BranchFailure {
-  const factory CoverNotUploaded() = _$CoverNotUploaded;
+  const factory CoverNotUploaded() = _$CoverNotUploadedImpl;
 }
 
 /// @nodoc
-abstract class $PermissionDeniedCopyWith<$Res> {
-  factory $PermissionDeniedCopyWith(
-          PermissionDenied value, $Res Function(PermissionDenied) then) =
-      _$PermissionDeniedCopyWithImpl<$Res>;
+abstract class _$$PermissionDeniedImplCopyWith<$Res> {
+  factory _$$PermissionDeniedImplCopyWith(_$PermissionDeniedImpl value,
+          $Res Function(_$PermissionDeniedImpl) then) =
+      __$$PermissionDeniedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PermissionDeniedCopyWithImpl<$Res>
-    extends _$BranchFailureCopyWithImpl<$Res>
-    implements $PermissionDeniedCopyWith<$Res> {
-  _$PermissionDeniedCopyWithImpl(
-      PermissionDenied _value, $Res Function(PermissionDenied) _then)
-      : super(_value, (v) => _then(v as PermissionDenied));
-
-  @override
-  PermissionDenied get _value => super._value as PermissionDenied;
+class __$$PermissionDeniedImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$PermissionDeniedImpl>
+    implements _$$PermissionDeniedImplCopyWith<$Res> {
+  __$$PermissionDeniedImplCopyWithImpl(_$PermissionDeniedImpl _value,
+      $Res Function(_$PermissionDeniedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PermissionDenied implements PermissionDenied {
-  const _$PermissionDenied();
+class _$PermissionDeniedImpl implements PermissionDenied {
+  const _$PermissionDeniedImpl();
 
   @override
   String toString() {
@@ -550,9 +510,9 @@ class _$PermissionDenied implements PermissionDenied {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is PermissionDenied);
+        (other.runtimeType == runtimeType && other is _$PermissionDeniedImpl);
   }
 
   @override
@@ -574,12 +534,12 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? branchNotFound,
-    TResult Function()? branchOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? branchNotFound,
+    TResult? Function()? branchOneAlreadyExists,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return permissionDenied?.call();
   }
@@ -618,12 +578,12 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BranchNotFound value)? branchNotFound,
-    TResult Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(BranchNotFound value)? branchNotFound,
+    TResult? Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return permissionDenied?.call(this);
   }
@@ -647,31 +607,29 @@ class _$PermissionDenied implements PermissionDenied {
 }
 
 abstract class PermissionDenied implements BranchFailure {
-  const factory PermissionDenied() = _$PermissionDenied;
+  const factory PermissionDenied() = _$PermissionDeniedImpl;
 }
 
 /// @nodoc
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(
-          ServerError value, $Res Function(ServerError) then) =
-      _$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$ServerErrorImplCopyWith<$Res> {
+  factory _$$ServerErrorImplCopyWith(
+          _$ServerErrorImpl value, $Res Function(_$ServerErrorImpl) then) =
+      __$$ServerErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerErrorCopyWithImpl<$Res> extends _$BranchFailureCopyWithImpl<$Res>
-    implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError _value, $Res Function(ServerError) _then)
-      : super(_value, (v) => _then(v as ServerError));
-
-  @override
-  ServerError get _value => super._value as ServerError;
+class __$$ServerErrorImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$ServerErrorImpl>
+    implements _$$ServerErrorImplCopyWith<$Res> {
+  __$$ServerErrorImplCopyWithImpl(
+      _$ServerErrorImpl _value, $Res Function(_$ServerErrorImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ServerError implements ServerError {
-  const _$ServerError();
+class _$ServerErrorImpl implements ServerError {
+  const _$ServerErrorImpl();
 
   @override
   String toString() {
@@ -679,9 +637,9 @@ class _$ServerError implements ServerError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ServerError);
+        (other.runtimeType == runtimeType && other is _$ServerErrorImpl);
   }
 
   @override
@@ -703,12 +661,12 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? branchNotFound,
-    TResult Function()? branchOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? branchNotFound,
+    TResult? Function()? branchOneAlreadyExists,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return serverError?.call();
   }
@@ -747,12 +705,12 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BranchNotFound value)? branchNotFound,
-    TResult Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(BranchNotFound value)? branchNotFound,
+    TResult? Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return serverError?.call(this);
   }
@@ -776,30 +734,29 @@ class _$ServerError implements ServerError {
 }
 
 abstract class ServerError implements BranchFailure {
-  const factory ServerError() = _$ServerError;
+  const factory ServerError() = _$ServerErrorImpl;
 }
 
 /// @nodoc
-abstract class $UnexpectedCopyWith<$Res> {
-  factory $UnexpectedCopyWith(
-          Unexpected value, $Res Function(Unexpected) then) =
-      _$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$UnexpectedImplCopyWith<$Res> {
+  factory _$$UnexpectedImplCopyWith(
+          _$UnexpectedImpl value, $Res Function(_$UnexpectedImpl) then) =
+      __$$UnexpectedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnexpectedCopyWithImpl<$Res> extends _$BranchFailureCopyWithImpl<$Res>
-    implements $UnexpectedCopyWith<$Res> {
-  _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
-      : super(_value, (v) => _then(v as Unexpected));
-
-  @override
-  Unexpected get _value => super._value as Unexpected;
+class __$$UnexpectedImplCopyWithImpl<$Res>
+    extends _$BranchFailureCopyWithImpl<$Res, _$UnexpectedImpl>
+    implements _$$UnexpectedImplCopyWith<$Res> {
+  __$$UnexpectedImplCopyWithImpl(
+      _$UnexpectedImpl _value, $Res Function(_$UnexpectedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Unexpected implements Unexpected {
-  const _$Unexpected();
+class _$UnexpectedImpl implements Unexpected {
+  const _$UnexpectedImpl();
 
   @override
   String toString() {
@@ -807,9 +764,9 @@ class _$Unexpected implements Unexpected {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Unexpected);
+        (other.runtimeType == runtimeType && other is _$UnexpectedImpl);
   }
 
   @override
@@ -831,12 +788,12 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? branchNotFound,
-    TResult Function()? branchOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
+    TResult? Function()? branchNotFound,
+    TResult? Function()? branchOneAlreadyExists,
+    TResult? Function()? coverNotUploaded,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? serverError,
+    TResult? Function()? unexpected,
   }) {
     return unexpected?.call();
   }
@@ -875,12 +832,12 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BranchNotFound value)? branchNotFound,
-    TResult Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
+    TResult? Function(BranchNotFound value)? branchNotFound,
+    TResult? Function(BranchOneAlreadyExists value)? branchOneAlreadyExists,
+    TResult? Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult? Function(PermissionDenied value)? permissionDenied,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(Unexpected value)? unexpected,
   }) {
     return unexpected?.call(this);
   }
@@ -904,5 +861,5 @@ class _$Unexpected implements Unexpected {
 }
 
 abstract class Unexpected implements BranchFailure {
-  const factory Unexpected() = _$Unexpected;
+  const factory Unexpected() = _$UnexpectedImpl;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings.dart';
 
@@ -12,32 +12,7 @@ part of 'settings.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SettingsTearOff {
-  const _$SettingsTearOff();
-
-  _Settings call(
-      {required bool? enableBranchesBookmarksCount,
-      required bool? enableBranchesLikesCount,
-      required bool? enableBranchesViewsCount,
-      required bool? enableTreesBookmarksCount,
-      required bool? enableTreesLikesCount,
-      required bool? enableTreesViewsCount}) {
-    return _Settings(
-      enableBranchesBookmarksCount: enableBranchesBookmarksCount,
-      enableBranchesLikesCount: enableBranchesLikesCount,
-      enableBranchesViewsCount: enableBranchesViewsCount,
-      enableTreesBookmarksCount: enableTreesBookmarksCount,
-      enableTreesLikesCount: enableTreesLikesCount,
-      enableTreesViewsCount: enableTreesViewsCount,
-    );
-  }
-}
-
-/// @nodoc
-const $Settings = _$SettingsTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Settings {
@@ -56,7 +31,8 @@ mixin _$Settings {
 /// @nodoc
 abstract class $SettingsCopyWith<$Res> {
   factory $SettingsCopyWith(Settings value, $Res Function(Settings) then) =
-      _$SettingsCopyWithImpl<$Res>;
+      _$SettingsCopyWithImpl<$Res, Settings>;
+  @useResult
   $Res call(
       {bool? enableBranchesBookmarksCount,
       bool? enableBranchesLikesCount,
@@ -67,13 +43,16 @@ abstract class $SettingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingsCopyWithImpl<$Res> implements $SettingsCopyWith<$Res> {
+class _$SettingsCopyWithImpl<$Res, $Val extends Settings>
+    implements $SettingsCopyWith<$Res> {
   _$SettingsCopyWithImpl(this._value, this._then);
 
-  final Settings _value;
   // ignore: unused_field
-  final $Res Function(Settings) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? enableBranchesBookmarksCount = freezed,
@@ -84,39 +63,42 @@ class _$SettingsCopyWithImpl<$Res> implements $SettingsCopyWith<$Res> {
     Object? enableTreesViewsCount = freezed,
   }) {
     return _then(_value.copyWith(
-      enableBranchesBookmarksCount: enableBranchesBookmarksCount == freezed
+      enableBranchesBookmarksCount: freezed == enableBranchesBookmarksCount
           ? _value.enableBranchesBookmarksCount
           : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableBranchesLikesCount: enableBranchesLikesCount == freezed
+      enableBranchesLikesCount: freezed == enableBranchesLikesCount
           ? _value.enableBranchesLikesCount
           : enableBranchesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableBranchesViewsCount: enableBranchesViewsCount == freezed
+      enableBranchesViewsCount: freezed == enableBranchesViewsCount
           ? _value.enableBranchesViewsCount
           : enableBranchesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesBookmarksCount: enableTreesBookmarksCount == freezed
+      enableTreesBookmarksCount: freezed == enableTreesBookmarksCount
           ? _value.enableTreesBookmarksCount
           : enableTreesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesLikesCount: enableTreesLikesCount == freezed
+      enableTreesLikesCount: freezed == enableTreesLikesCount
           ? _value.enableTreesLikesCount
           : enableTreesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesViewsCount: enableTreesViewsCount == freezed
+      enableTreesViewsCount: freezed == enableTreesViewsCount
           ? _value.enableTreesViewsCount
           : enableTreesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SettingsCopyWith<$Res> implements $SettingsCopyWith<$Res> {
-  factory _$SettingsCopyWith(_Settings value, $Res Function(_Settings) then) =
-      __$SettingsCopyWithImpl<$Res>;
+abstract class _$$SettingsImplCopyWith<$Res>
+    implements $SettingsCopyWith<$Res> {
+  factory _$$SettingsImplCopyWith(
+          _$SettingsImpl value, $Res Function(_$SettingsImpl) then) =
+      __$$SettingsImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool? enableBranchesBookmarksCount,
       bool? enableBranchesLikesCount,
@@ -127,14 +109,14 @@ abstract class _$SettingsCopyWith<$Res> implements $SettingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$SettingsCopyWithImpl<$Res> extends _$SettingsCopyWithImpl<$Res>
-    implements _$SettingsCopyWith<$Res> {
-  __$SettingsCopyWithImpl(_Settings _value, $Res Function(_Settings) _then)
-      : super(_value, (v) => _then(v as _Settings));
+class __$$SettingsImplCopyWithImpl<$Res>
+    extends _$SettingsCopyWithImpl<$Res, _$SettingsImpl>
+    implements _$$SettingsImplCopyWith<$Res> {
+  __$$SettingsImplCopyWithImpl(
+      _$SettingsImpl _value, $Res Function(_$SettingsImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Settings get _value => super._value as _Settings;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? enableBranchesBookmarksCount = freezed,
@@ -144,28 +126,28 @@ class __$SettingsCopyWithImpl<$Res> extends _$SettingsCopyWithImpl<$Res>
     Object? enableTreesLikesCount = freezed,
     Object? enableTreesViewsCount = freezed,
   }) {
-    return _then(_Settings(
-      enableBranchesBookmarksCount: enableBranchesBookmarksCount == freezed
+    return _then(_$SettingsImpl(
+      enableBranchesBookmarksCount: freezed == enableBranchesBookmarksCount
           ? _value.enableBranchesBookmarksCount
           : enableBranchesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableBranchesLikesCount: enableBranchesLikesCount == freezed
+      enableBranchesLikesCount: freezed == enableBranchesLikesCount
           ? _value.enableBranchesLikesCount
           : enableBranchesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableBranchesViewsCount: enableBranchesViewsCount == freezed
+      enableBranchesViewsCount: freezed == enableBranchesViewsCount
           ? _value.enableBranchesViewsCount
           : enableBranchesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesBookmarksCount: enableTreesBookmarksCount == freezed
+      enableTreesBookmarksCount: freezed == enableTreesBookmarksCount
           ? _value.enableTreesBookmarksCount
           : enableTreesBookmarksCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesLikesCount: enableTreesLikesCount == freezed
+      enableTreesLikesCount: freezed == enableTreesLikesCount
           ? _value.enableTreesLikesCount
           : enableTreesLikesCount // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableTreesViewsCount: enableTreesViewsCount == freezed
+      enableTreesViewsCount: freezed == enableTreesViewsCount
           ? _value.enableTreesViewsCount
           : enableTreesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -175,8 +157,8 @@ class __$SettingsCopyWithImpl<$Res> extends _$SettingsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Settings implements _Settings {
-  const _$_Settings(
+class _$SettingsImpl implements _Settings {
+  const _$SettingsImpl(
       {required this.enableBranchesBookmarksCount,
       required this.enableBranchesLikesCount,
       required this.enableBranchesViewsCount,
@@ -203,49 +185,54 @@ class _$_Settings implements _Settings {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Settings &&
-            const DeepCollectionEquality().equals(
-                other.enableBranchesBookmarksCount,
-                enableBranchesBookmarksCount) &&
-            const DeepCollectionEquality().equals(
-                other.enableBranchesLikesCount, enableBranchesLikesCount) &&
-            const DeepCollectionEquality().equals(
-                other.enableBranchesViewsCount, enableBranchesViewsCount) &&
-            const DeepCollectionEquality().equals(
-                other.enableTreesBookmarksCount, enableTreesBookmarksCount) &&
-            const DeepCollectionEquality()
-                .equals(other.enableTreesLikesCount, enableTreesLikesCount) &&
-            const DeepCollectionEquality()
-                .equals(other.enableTreesViewsCount, enableTreesViewsCount));
+            other is _$SettingsImpl &&
+            (identical(other.enableBranchesBookmarksCount,
+                    enableBranchesBookmarksCount) ||
+                other.enableBranchesBookmarksCount ==
+                    enableBranchesBookmarksCount) &&
+            (identical(
+                    other.enableBranchesLikesCount, enableBranchesLikesCount) ||
+                other.enableBranchesLikesCount == enableBranchesLikesCount) &&
+            (identical(
+                    other.enableBranchesViewsCount, enableBranchesViewsCount) ||
+                other.enableBranchesViewsCount == enableBranchesViewsCount) &&
+            (identical(other.enableTreesBookmarksCount,
+                    enableTreesBookmarksCount) ||
+                other.enableTreesBookmarksCount == enableTreesBookmarksCount) &&
+            (identical(other.enableTreesLikesCount, enableTreesLikesCount) ||
+                other.enableTreesLikesCount == enableTreesLikesCount) &&
+            (identical(other.enableTreesViewsCount, enableTreesViewsCount) ||
+                other.enableTreesViewsCount == enableTreesViewsCount));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(enableBranchesBookmarksCount),
-      const DeepCollectionEquality().hash(enableBranchesLikesCount),
-      const DeepCollectionEquality().hash(enableBranchesViewsCount),
-      const DeepCollectionEquality().hash(enableTreesBookmarksCount),
-      const DeepCollectionEquality().hash(enableTreesLikesCount),
-      const DeepCollectionEquality().hash(enableTreesViewsCount));
+      enableBranchesBookmarksCount,
+      enableBranchesLikesCount,
+      enableBranchesViewsCount,
+      enableTreesBookmarksCount,
+      enableTreesLikesCount,
+      enableTreesViewsCount);
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsCopyWith<_Settings> get copyWith =>
-      __$SettingsCopyWithImpl<_Settings>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SettingsImplCopyWith<_$SettingsImpl> get copyWith =>
+      __$$SettingsImplCopyWithImpl<_$SettingsImpl>(this, _$identity);
 }
 
 abstract class _Settings implements Settings {
   const factory _Settings(
-      {required bool? enableBranchesBookmarksCount,
-      required bool? enableBranchesLikesCount,
-      required bool? enableBranchesViewsCount,
-      required bool? enableTreesBookmarksCount,
-      required bool? enableTreesLikesCount,
-      required bool? enableTreesViewsCount}) = _$_Settings;
+      {required final bool? enableBranchesBookmarksCount,
+      required final bool? enableBranchesLikesCount,
+      required final bool? enableBranchesViewsCount,
+      required final bool? enableTreesBookmarksCount,
+      required final bool? enableTreesLikesCount,
+      required final bool? enableTreesViewsCount}) = _$SettingsImpl;
 
   @override
   bool? get enableBranchesBookmarksCount;
@@ -261,6 +248,6 @@ abstract class _Settings implements Settings {
   bool? get enableTreesViewsCount;
   @override
   @JsonKey(ignore: true)
-  _$SettingsCopyWith<_Settings> get copyWith =>
+  _$$SettingsImplCopyWith<_$SettingsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

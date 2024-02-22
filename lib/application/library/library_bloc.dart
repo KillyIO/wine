@@ -16,17 +16,65 @@ part 'library_bloc.freezed.dart';
 part 'library_event.dart';
 part 'library_state.dart';
 
-/// @nodoc
-@Environment(Environment.dev)
-@Environment(Environment.prod)
 @injectable
 class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
-  /// @nodoc
   LibraryBloc(
     this._branchRepository,
     this._sessionsRepository,
     this._treeRepository,
   ) : super(LibraryState.initial()) {
+    on<Init>((_, emit) async {
+      emit(
+        state.copyWith(
+          currentPageViewIdx: 0,
+          currentVerticalNavbarIdx: 0,
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      (await _sessionsRepository.fetchSession()).match(
+        (user) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              session: user,
+            ),
+          );
+
+          add(const LibraryEvent.sessionFetched());
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
+    on<SessionFetched>((_, emit) async {
+      (await _treeRepository.loadTreesByUserUID(state.session.uid)).match(
+        (trees) {
+          emit(
+            state.copyWith(
+              failureOption: const Option.none(),
+              isProcessing: false,
+              trees: trees,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.tree(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    });
     on<BranchDeleted>((value, emit) async {
       emit(
         state.copyWith(
@@ -75,37 +123,6 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         ),
       );
     });
-    on<Init>((_, emit) async {
-      emit(
-        state.copyWith(
-          currentPageViewIdx: 0,
-          currentVerticalNavbarIdx: 0,
-          failureOption: const None(),
-          isProcessing: true,
-        ),
-      );
-
-      (await _sessionsRepository.fetchSession()).match(
-        (user) {
-          emit(
-            state.copyWith(
-              failureOption: const None(),
-              session: user,
-            ),
-          );
-
-          add(const LibraryEvent.sessionFetched());
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
-    });
     on<PageViewIndexChanged>((value, emit) async {
       if (state.currentPageViewIdx != value.index) {
         var newIdx = value.index;
@@ -118,7 +135,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         emit(
           state.copyWith(
             currentPageViewIdx: newIdx,
-            failureOption: Option.none(),
+            failureOption: const Option.none(),
           ),
         );
 
@@ -130,7 +147,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                 (trees) {
                   emit(
                     state.copyWith(
-                      failureOption: Option.none(),
+                      failureOption: const Option.none(),
                       isProcessing: false,
                       trees: trees,
                     ),
@@ -147,7 +164,6 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                 },
               );
             }
-            break;
           case 1:
             if (state.branches.isEmpty) {
               (await _branchRepository.loadBranchesByUserUID(state.session.uid))
@@ -156,7 +172,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                   emit(
                     state.copyWith(
                       branches: branches,
-                      failureOption: Option.none(),
+                      failureOption: const Option.none(),
                       isProcessing: false,
                     ),
                   );
@@ -172,31 +188,9 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
                 },
               );
             }
-            break;
           default:
         }
       }
-    });
-    on<SessionFetched>((_, emit) async {
-      (await _treeRepository.loadTreesByUserUID(state.session.uid)).match(
-        (trees) {
-          emit(
-            state.copyWith(
-              failureOption: Option.none(),
-              isProcessing: false,
-              trees: trees,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.tree(failure))),
-              isProcessing: false,
-            ),
-          );
-        },
-      );
     });
     on<TreeDeleted>((value, emit) async {
       emit(
@@ -253,7 +247,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         emit(
           state.copyWith(
             currentVerticalNavbarIdx: newIdx,
-            failureOption: Option.none(),
+            failureOption: const Option.none(),
           ),
         );
       }

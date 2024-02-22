@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 
-/// @nodoc
 class BranchLeafBody extends StatelessWidget {
-  /// @nodoc
   const BranchLeafBody({
-    Key? key,
     required this.leafController,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final QuillController? leafController;
 
   @override
@@ -17,16 +14,18 @@ class BranchLeafBody extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context).size;
 
     if (leafController != null) {
-      return QuillEditor(
-        autoFocus: false,
-        controller: leafController!,
-        expands: false,
-        focusNode: FocusNode(),
-        padding: EdgeInsets.zero,
-        readOnly: true,
-        scrollable: true,
-        scrollController: ScrollController(),
-        showCursor: false,
+      return QuillProvider(
+        configurations: QuillConfigurations(
+          controller: leafController!,
+        ),
+        child: QuillEditor(
+          configurations: const QuillEditorConfigurations(
+            readOnly: true,
+            showCursor: false,
+          ),
+          scrollController: ScrollController(),
+          focusNode: FocusNode(),
+        ),
       );
     }
     return Column(

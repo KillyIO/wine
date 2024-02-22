@@ -1,38 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 class TileButton extends StatelessWidget {
-  /// @nodoc
   const TileButton({
-    Key? key,
-    this.isFirst = false,
     required this.leadingIconData,
     required this.onPressed,
     required this.title,
     required this.trailingIconData,
-  }) : super(key: key);
+    super.key,
+    this.isFirst = false,
+  });
 
-  /// @nodoc
   final bool isFirst;
 
-  /// @nodoc
   final IconData leadingIconData;
 
-  /// @nodoc
   final IconData trailingIconData;
 
-  /// @nodoc
   final String title;
 
-  /// @nodoc
   final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
 
-    return Container(
+    return DecoratedBox(
       decoration: BoxDecoration(
         border: getTileButtonBorder(mediaQuery, isFirst: isFirst),
       ),

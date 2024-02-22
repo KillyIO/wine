@@ -1,26 +1,21 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/domain/branch/branch.dart';
-import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/presentation/core/branch/branch_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
-import 'package:wine/utils/assets/images.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
+import 'package:wine/utils/constants/images.dart';
 
-/// @nodoc
 class LibraryBaseBranchesLayout extends StatelessWidget {
-  /// @nodoc
   const LibraryBaseBranchesLayout({
-    Key? key,
     required this.branches,
     required this.type,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final List<Branch> branches;
 
-  /// @nodoc
   final String type;
 
   @override
@@ -61,19 +56,15 @@ class LibraryBaseBranchesLayout extends StatelessWidget {
               onPressed: () {
                 switch (type) {
                   case 'drafts':
-                    handleAuthGuardedNavigation(
-                      context,
-                      navigateTo: TypewriterBranchUID(
+                    context.router.push(
+                      TypewriterBranchUIDRoute(
                         branch: branches[i],
-                        type: TypewriterType.branch,
                         uid: branches[i].uid.getOrCrash(),
                       ),
                     );
-                    break;
                   default:
-                    handleAuthGuardedNavigation(
-                      context,
-                      navigateTo: BranchRoute(
+                    context.router.push(
+                      BranchRoute(
                         branch: branches[i],
                         uid: branches[i].uid.getOrCrash(),
                       ),

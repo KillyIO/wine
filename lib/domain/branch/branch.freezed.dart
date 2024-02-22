@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'branch.dart';
 
@@ -12,52 +12,7 @@ part of 'branch.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$BranchTearOff {
-  const _$BranchTearOff();
-
-  _Branch call(
-      {required UniqueID authorUID,
-      required int bookmarksCount,
-      required CoverURL coverURL,
-      required List<Genre> genres,
-      required int index,
-      required bool isNSFW,
-      required bool isPublished,
-      required Language language,
-      required Leaf leaf,
-      required Licence licence,
-      required int likesCount,
-      required UniqueID? previousBranchUID,
-      required Title title,
-      required UniqueID treeUID,
-      required UniqueID uid,
-      required int viewsCount}) {
-    return _Branch(
-      authorUID: authorUID,
-      bookmarksCount: bookmarksCount,
-      coverURL: coverURL,
-      genres: genres,
-      index: index,
-      isNSFW: isNSFW,
-      isPublished: isPublished,
-      language: language,
-      leaf: leaf,
-      licence: licence,
-      likesCount: likesCount,
-      previousBranchUID: previousBranchUID,
-      title: title,
-      treeUID: treeUID,
-      uid: uid,
-      viewsCount: viewsCount,
-    );
-  }
-}
-
-/// @nodoc
-const $Branch = _$BranchTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Branch {
@@ -85,7 +40,8 @@ mixin _$Branch {
 /// @nodoc
 abstract class $BranchCopyWith<$Res> {
   factory $BranchCopyWith(Branch value, $Res Function(Branch) then) =
-      _$BranchCopyWithImpl<$Res>;
+      _$BranchCopyWithImpl<$Res, Branch>;
+  @useResult
   $Res call(
       {UniqueID authorUID,
       int bookmarksCount,
@@ -106,106 +62,111 @@ abstract class $BranchCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BranchCopyWithImpl<$Res> implements $BranchCopyWith<$Res> {
+class _$BranchCopyWithImpl<$Res, $Val extends Branch>
+    implements $BranchCopyWith<$Res> {
   _$BranchCopyWithImpl(this._value, this._then);
 
-  final Branch _value;
   // ignore: unused_field
-  final $Res Function(Branch) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? index = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? leaf = freezed,
-    Object? licence = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? index = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? leaf = null,
+    Object? licence = null,
+    Object? likesCount = null,
     Object? previousBranchUID = freezed,
-    Object? title = freezed,
-    Object? treeUID = freezed,
-    Object? uid = freezed,
-    Object? viewsCount = freezed,
+    Object? title = null,
+    Object? treeUID = null,
+    Object? uid = null,
+    Object? viewsCount = null,
   }) {
     return _then(_value.copyWith(
-      authorUID: authorUID == freezed
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as CoverURL,
-      genres: genres == freezed
+      genres: null == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
-      index: index == freezed
+      index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
-      leaf: leaf == freezed
+      leaf: null == leaf
           ? _value.leaf
           : leaf // ignore: cast_nullable_to_non_nullable
               as Leaf,
-      licence: licence == freezed
+      licence: null == licence
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
               as Licence,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      previousBranchUID: previousBranchUID == freezed
+      previousBranchUID: freezed == previousBranchUID
           ? _value.previousBranchUID
           : previousBranchUID // ignore: cast_nullable_to_non_nullable
               as UniqueID?,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Title,
-      treeUID: treeUID == freezed
+      treeUID: null == treeUID
           ? _value.treeUID
           : treeUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
-  factory _$BranchCopyWith(_Branch value, $Res Function(_Branch) then) =
-      __$BranchCopyWithImpl<$Res>;
+abstract class _$$BranchImplCopyWith<$Res> implements $BranchCopyWith<$Res> {
+  factory _$$BranchImplCopyWith(
+          _$BranchImpl value, $Res Function(_$BranchImpl) then) =
+      __$$BranchImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {UniqueID authorUID,
       int bookmarksCount,
@@ -226,95 +187,95 @@ abstract class _$BranchCopyWith<$Res> implements $BranchCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
-    implements _$BranchCopyWith<$Res> {
-  __$BranchCopyWithImpl(_Branch _value, $Res Function(_Branch) _then)
-      : super(_value, (v) => _then(v as _Branch));
+class __$$BranchImplCopyWithImpl<$Res>
+    extends _$BranchCopyWithImpl<$Res, _$BranchImpl>
+    implements _$$BranchImplCopyWith<$Res> {
+  __$$BranchImplCopyWithImpl(
+      _$BranchImpl _value, $Res Function(_$BranchImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Branch get _value => super._value as _Branch;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authorUID = freezed,
-    Object? bookmarksCount = freezed,
-    Object? coverURL = freezed,
-    Object? genres = freezed,
-    Object? index = freezed,
-    Object? isNSFW = freezed,
-    Object? isPublished = freezed,
-    Object? language = freezed,
-    Object? leaf = freezed,
-    Object? licence = freezed,
-    Object? likesCount = freezed,
+    Object? authorUID = null,
+    Object? bookmarksCount = null,
+    Object? coverURL = null,
+    Object? genres = null,
+    Object? index = null,
+    Object? isNSFW = null,
+    Object? isPublished = null,
+    Object? language = null,
+    Object? leaf = null,
+    Object? licence = null,
+    Object? likesCount = null,
     Object? previousBranchUID = freezed,
-    Object? title = freezed,
-    Object? treeUID = freezed,
-    Object? uid = freezed,
-    Object? viewsCount = freezed,
+    Object? title = null,
+    Object? treeUID = null,
+    Object? uid = null,
+    Object? viewsCount = null,
   }) {
-    return _then(_Branch(
-      authorUID: authorUID == freezed
+    return _then(_$BranchImpl(
+      authorUID: null == authorUID
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      bookmarksCount: bookmarksCount == freezed
+      bookmarksCount: null == bookmarksCount
           ? _value.bookmarksCount
           : bookmarksCount // ignore: cast_nullable_to_non_nullable
               as int,
-      coverURL: coverURL == freezed
+      coverURL: null == coverURL
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as CoverURL,
-      genres: genres == freezed
-          ? _value.genres
+      genres: null == genres
+          ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
-      index: index == freezed
+      index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
-      isNSFW: isNSFW == freezed
+      isNSFW: null == isNSFW
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPublished: isPublished == freezed
+      isPublished: null == isPublished
           ? _value.isPublished
           : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
-      language: language == freezed
+      language: null == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
-      leaf: leaf == freezed
+      leaf: null == leaf
           ? _value.leaf
           : leaf // ignore: cast_nullable_to_non_nullable
               as Leaf,
-      licence: licence == freezed
+      licence: null == licence
           ? _value.licence
           : licence // ignore: cast_nullable_to_non_nullable
               as Licence,
-      likesCount: likesCount == freezed
+      likesCount: null == likesCount
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      previousBranchUID: previousBranchUID == freezed
+      previousBranchUID: freezed == previousBranchUID
           ? _value.previousBranchUID
           : previousBranchUID // ignore: cast_nullable_to_non_nullable
               as UniqueID?,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Title,
-      treeUID: treeUID == freezed
+      treeUID: null == treeUID
           ? _value.treeUID
           : treeUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
-      viewsCount: viewsCount == freezed
+      viewsCount: null == viewsCount
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
               as int,
@@ -324,12 +285,12 @@ class __$BranchCopyWithImpl<$Res> extends _$BranchCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Branch implements _Branch {
-  _$_Branch(
+class _$BranchImpl implements _Branch {
+  _$BranchImpl(
       {required this.authorUID,
       required this.bookmarksCount,
       required this.coverURL,
-      required this.genres,
+      required final List<Genre> genres,
       required this.index,
       required this.isNSFW,
       required this.isPublished,
@@ -341,7 +302,8 @@ class _$_Branch implements _Branch {
       required this.title,
       required this.treeUID,
       required this.uid,
-      required this.viewsCount});
+      required this.viewsCount})
+      : _genres = genres;
 
   @override
   final UniqueID authorUID;
@@ -349,8 +311,14 @@ class _$_Branch implements _Branch {
   final int bookmarksCount;
   @override
   final CoverURL coverURL;
+  final List<Genre> _genres;
   @override
-  final List<Genre> genres;
+  List<Genre> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
+
   @override
   final int index;
   @override
@@ -382,77 +350,81 @@ class _$_Branch implements _Branch {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Branch &&
-            const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
-            const DeepCollectionEquality()
-                .equals(other.bookmarksCount, bookmarksCount) &&
-            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
-            const DeepCollectionEquality().equals(other.genres, genres) &&
-            const DeepCollectionEquality().equals(other.index, index) &&
-            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
-            const DeepCollectionEquality()
-                .equals(other.isPublished, isPublished) &&
-            const DeepCollectionEquality().equals(other.language, language) &&
-            const DeepCollectionEquality().equals(other.leaf, leaf) &&
-            const DeepCollectionEquality().equals(other.licence, licence) &&
-            const DeepCollectionEquality()
-                .equals(other.likesCount, likesCount) &&
-            const DeepCollectionEquality()
-                .equals(other.previousBranchUID, previousBranchUID) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.treeUID, treeUID) &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality()
-                .equals(other.viewsCount, viewsCount));
+            other is _$BranchImpl &&
+            (identical(other.authorUID, authorUID) ||
+                other.authorUID == authorUID) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                other.bookmarksCount == bookmarksCount) &&
+            (identical(other.coverURL, coverURL) ||
+                other.coverURL == coverURL) &&
+            const DeepCollectionEquality().equals(other._genres, _genres) &&
+            (identical(other.index, index) || other.index == index) &&
+            (identical(other.isNSFW, isNSFW) || other.isNSFW == isNSFW) &&
+            (identical(other.isPublished, isPublished) ||
+                other.isPublished == isPublished) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.leaf, leaf) || other.leaf == leaf) &&
+            (identical(other.licence, licence) || other.licence == licence) &&
+            (identical(other.likesCount, likesCount) ||
+                other.likesCount == likesCount) &&
+            (identical(other.previousBranchUID, previousBranchUID) ||
+                other.previousBranchUID == previousBranchUID) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.treeUID, treeUID) || other.treeUID == treeUID) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.viewsCount, viewsCount) ||
+                other.viewsCount == viewsCount));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(authorUID),
-      const DeepCollectionEquality().hash(bookmarksCount),
-      const DeepCollectionEquality().hash(coverURL),
-      const DeepCollectionEquality().hash(genres),
-      const DeepCollectionEquality().hash(index),
-      const DeepCollectionEquality().hash(isNSFW),
-      const DeepCollectionEquality().hash(isPublished),
-      const DeepCollectionEquality().hash(language),
-      const DeepCollectionEquality().hash(leaf),
-      const DeepCollectionEquality().hash(licence),
-      const DeepCollectionEquality().hash(likesCount),
-      const DeepCollectionEquality().hash(previousBranchUID),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(treeUID),
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(viewsCount));
+      authorUID,
+      bookmarksCount,
+      coverURL,
+      const DeepCollectionEquality().hash(_genres),
+      index,
+      isNSFW,
+      isPublished,
+      language,
+      leaf,
+      licence,
+      likesCount,
+      previousBranchUID,
+      title,
+      treeUID,
+      uid,
+      viewsCount);
 
   @JsonKey(ignore: true)
   @override
-  _$BranchCopyWith<_Branch> get copyWith =>
-      __$BranchCopyWithImpl<_Branch>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$BranchImplCopyWith<_$BranchImpl> get copyWith =>
+      __$$BranchImplCopyWithImpl<_$BranchImpl>(this, _$identity);
 }
 
 abstract class _Branch implements Branch {
   factory _Branch(
-      {required UniqueID authorUID,
-      required int bookmarksCount,
-      required CoverURL coverURL,
-      required List<Genre> genres,
-      required int index,
-      required bool isNSFW,
-      required bool isPublished,
-      required Language language,
-      required Leaf leaf,
-      required Licence licence,
-      required int likesCount,
-      required UniqueID? previousBranchUID,
-      required Title title,
-      required UniqueID treeUID,
-      required UniqueID uid,
-      required int viewsCount}) = _$_Branch;
+      {required final UniqueID authorUID,
+      required final int bookmarksCount,
+      required final CoverURL coverURL,
+      required final List<Genre> genres,
+      required final int index,
+      required final bool isNSFW,
+      required final bool isPublished,
+      required final Language language,
+      required final Leaf leaf,
+      required final Licence licence,
+      required final int likesCount,
+      required final UniqueID? previousBranchUID,
+      required final Title title,
+      required final UniqueID treeUID,
+      required final UniqueID uid,
+      required final int viewsCount}) = _$BranchImpl;
 
   @override
   UniqueID get authorUID;
@@ -488,5 +460,6 @@ abstract class _Branch implements Branch {
   int get viewsCount;
   @override
   @JsonKey(ignore: true)
-  _$BranchCopyWith<_Branch> get copyWith => throw _privateConstructorUsedError;
+  _$$BranchImplCopyWith<_$BranchImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

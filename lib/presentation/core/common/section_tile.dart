@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 
-/// @nodoc
 class SectionTile extends StatelessWidget {
-  /// @nodoc
   const SectionTile({
-    Key? key,
     required this.title,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final String title;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(color: Colors.black12),

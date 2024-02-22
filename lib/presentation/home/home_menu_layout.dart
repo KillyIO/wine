@@ -3,14 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
 import 'package:wine/utils/responsive/drawer_responsive.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';
 
-/// @nodoc
 class HomeMenuLayout extends StatelessWidget {
-  /// @nodoc
-  const HomeMenuLayout({Key? key}) : super(key: key);
+  const HomeMenuLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,18 +54,15 @@ class HomeMenuLayout extends StatelessWidget {
                       const SizedBox(height: 100),
                     HomeMenuTile(
                       key: const Key('home_menu_library_tile'),
-                      onPressed: () => handleAuthGuardedNavigation(
-                        context,
-                        navigateTo: const LibraryRoute(),
-                      ),
+                      onPressed: () =>
+                          context.router.push(const LibraryRoute()),
                       text: 'LIBRARY',
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 25),
                       child: HomeMenuTile(
                         key: const Key('home_menu_plus_tile'),
-                        onPressed: () =>
-                            context.router.root.push(const PlusRoute()),
+                        onPressed: () => context.router.push(const PlusRoute()),
                         text: 'PLUS',
                       ),
                     ),

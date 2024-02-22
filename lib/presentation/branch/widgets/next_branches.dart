@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/branch/branch_bloc.dart';
@@ -5,27 +6,21 @@ import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/presentation/core/branch/branch_tile.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/routes/router.dart';
-import 'package:wine/utils/assets/images.dart';
+import 'package:wine/utils/constants/images.dart';
 import 'package:wine/utils/constants/palette.dart';
-import 'package:wine/utils/functions/navigation_functions.dart';
 
-/// @nodoc
 class NextBranches extends StatelessWidget {
-  /// @nodoc
   const NextBranches({
-    Key? key,
     required this.branches,
     required this.title,
     required this.onRefreshPressed,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final List<Branch> branches;
 
-  /// @nodoc
   final VoidCallback onRefreshPressed;
 
-  /// @nodoc
   final String title;
 
   @override
@@ -53,9 +48,8 @@ class NextBranches extends StatelessWidget {
                 BranchTile(
                   coverURL: branch.coverURL.getOrCrash(),
                   language: branch.language.getOrCrash(),
-                  onPressed: () => handleAuthGuardedNavigation(
-                    context,
-                    navigateTo: BranchRoute(
+                  onPressed: () => context.router.push(
+                    BranchRoute(
                       branch: branch,
                       uid: branch.uid.getOrCrash(),
                     ),

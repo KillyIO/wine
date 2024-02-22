@@ -1,9 +1,7 @@
 part of 'sign_up_bloc.dart';
 
-/// @nodoc
 @freezed
 class SignUpState with _$SignUpState {
-  /// @nodoc
   const factory SignUpState({
     required ConfirmPassword confirmPassword,
     required EmailAddress emailAddress,
@@ -15,7 +13,6 @@ class SignUpState with _$SignUpState {
     required Username username,
   }) = _SignUpState;
 
-  /// @nodoc
   factory SignUpState.initial() => SignUpState(
         confirmPassword: ConfirmPassword('', ''),
         emailAddress: EmailAddress(''),

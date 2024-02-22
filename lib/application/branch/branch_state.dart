@@ -1,9 +1,7 @@
 part of 'branch_bloc.dart';
 
-/// @nodoc
 @freezed
 class BranchState with _$BranchState {
-  /// @nodoc
   const factory BranchState({
     required bool authorIsUser,
     required User author,
@@ -16,12 +14,11 @@ class BranchState with _$BranchState {
     required List<Branch> nextBranches,
     required List<Branch> sameAuthorNextBranches,
     required double scrollProgress,
-    required User session,
     required Settings settings,
     required bool showDetails,
+    User? session,
   }) = _BranchState;
 
-  /// @nodoc
   factory BranchState.initial() => BranchState(
         authorIsUser: false,
         author: User.empty(),
@@ -34,7 +31,6 @@ class BranchState with _$BranchState {
         nextBranches: <Branch>[],
         sameAuthorNextBranches: <Branch>[],
         scrollProgress: 0,
-        session: User.empty(),
         settings: Settings.empty(),
         showDetails: false,
       );

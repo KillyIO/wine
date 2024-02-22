@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/domain/branch/branch.dart';
 import 'package:wine/domain/branch/leaf.dart';
 import 'package:wine/domain/branch/licence.dart';
+import 'package:wine/domain/branch/licence_type.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
@@ -16,10 +17,8 @@ import 'package:wine/infrastructure/core/converter.dart';
 part 'branch_dto.freezed.dart';
 part 'branch_dto.g.dart';
 
-/// @nodoc
 @freezed
 class BranchDTO with _$BranchDTO {
-  /// @nodoc
   factory BranchDTO({
     required String authorUID,
     required int bookmarksCount,
@@ -40,7 +39,6 @@ class BranchDTO with _$BranchDTO {
     required int viewsCount,
   }) = _BranchDTO;
 
-  /// @nodoc
   factory BranchDTO.fromDomain(Branch branch) {
     return BranchDTO(
       authorUID: branch.authorUID.getOrCrash(),
@@ -52,7 +50,7 @@ class BranchDTO with _$BranchDTO {
       isPublished: branch.isPublished,
       language: branch.language.getOrCrash(),
       leaf: branch.leaf.getOrCrash(),
-      licence: branch.licence.getOrCrash(),
+      licence: branch.licence.getOrCrash().name,
       likesCount: branch.likesCount,
       previousBranchUID: branch.previousBranchUID?.getOrCrash(),
       title: branch.title.getOrCrash(),
@@ -63,19 +61,15 @@ class BranchDTO with _$BranchDTO {
     );
   }
 
-  /// @nodoc
   factory BranchDTO.fromJson(Map<String, dynamic> json) =>
       _$BranchDTOFromJson(json);
 
-  /// @nodoc
   factory BranchDTO.fromFirestore(DocumentSnapshot doc) {
     return BranchDTO.fromJson(doc.data()! as Map<String, dynamic>);
   }
 }
 
-/// @nodoc
 extension BranchDTOX on BranchDTO {
-  /// @nodoc
   Branch toDomain() => Branch(
         authorUID: UniqueID.fromUniqueString(authorUID),
         bookmarksCount: bookmarksCount,
@@ -96,7 +90,8 @@ extension BranchDTOX on BranchDTO {
                   .toDelta()
                   .toJson(),
         ),
-        licence: Licence(licence),
+        licence:
+            Licence(LicenceType.values.singleWhere((e) => e.name == licence)),
         likesCount: likesCount,
         previousBranchUID: previousBranchUID != null
             ? UniqueID.fromUniqueString(previousBranchUID!)
@@ -107,7 +102,6 @@ extension BranchDTOX on BranchDTO {
         viewsCount: viewsCount,
       );
 
-  /// @nodoc
   Map<String, dynamic> toMap() => <String, dynamic>{
         'authorUID': authorUID,
         'bookmarksCount': bookmarksCount,
@@ -128,9 +122,7 @@ extension BranchDTOX on BranchDTO {
       };
 }
 
-/// @nodoc
-extension BranchMapX on Map {
-  /// @nodoc
+extension BranchMapX on Map<dynamic, dynamic> {
   Branch toDomain() => Branch(
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
         bookmarksCount: this['bookmarksCount'] as int,
@@ -148,7 +140,10 @@ extension BranchMapX on Map {
             jsonDecode(this['leaf'] as String) as List<dynamic>,
           ).toDelta().toJson(),
         ),
-        licence: Licence(this['licence'] as String),
+        licence: Licence(
+          LicenceType.values
+              .singleWhere((e) => e.name == this['licence'] as String),
+        ),
         likesCount: this['likesCount'] as int,
         previousBranchUID: this['previousBranchUID'] != null
             ? UniqueID.fromUniqueString(this['previousBranchUID'] as String)

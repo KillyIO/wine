@@ -4,15 +4,12 @@ import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/presentation/library/library_branches_layout.dart';
 import 'package:wine/presentation/library/library_trees_layout.dart';
 
-/// @nodoc
 class LibraryPageViewBuilder extends StatelessWidget {
-  /// @nodoc
   LibraryPageViewBuilder({
-    Key? key,
     required this.pageController,
-  }) : super(key: key);
+    super.key,
+  });
 
-  /// @nodoc
   final PageController pageController;
 
   final List<Widget> _pageViewLayouts = <Widget>[

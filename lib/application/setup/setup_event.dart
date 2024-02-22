@@ -1,34 +1,24 @@
 part of 'setup_bloc.dart';
 
-/// @nodoc
 @freezed
-class SetupEvent with _$SetupEvent {
-  /// @nodoc
+sealed class SetupEvent with _$SetupEvent {
   const factory SetupEvent.appLaunched() = AppLaunched;
 
-  /// @nodoc
   const factory SetupEvent.authenticated() = Authenticated;
 
-  /// @nodoc
-  const factory SetupEvent.defaultCoversCached() = DefaultCoversCached;
+  const factory SetupEvent.settingsFetched() = SettingsFetched;
 
-  /// @nodoc
+  const factory SetupEvent.sessionFetched(User session) = SessionFetched;
+
+  const factory SetupEvent.userLoaded(User user) = UserLoaded;
+
+  const factory SetupEvent.settingsNotFound() = SettingsNotFound;
+
+  const factory SetupEvent.settingsInitialized() = SettingsInitialized;
+
   const factory SetupEvent.defaultCoversLoaded(
     List<DefaultCover> defaultCovers,
   ) = DefaultCoversLoaded;
 
-  /// @nodoc
-  const factory SetupEvent.sessionFetched(User session) = SessionFetched;
-
-  /// @nodoc
-  const factory SetupEvent.settingsFetched() = SettingsFetched;
-
-  /// @nodoc
-  const factory SetupEvent.settingsInitialized() = SettingsInitialized;
-
-  /// @nodoc
-  const factory SetupEvent.settingsNotFound() = SettingsNotFound;
-
-  /// @nodoc
-  const factory SetupEvent.userLoaded(User user) = UserLoaded;
+  const factory SetupEvent.defaultCoversCached() = DefaultCoversCached;
 }

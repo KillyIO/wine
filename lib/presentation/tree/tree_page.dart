@@ -11,19 +11,17 @@ import 'package:wine/presentation/tree/tree_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
+@RoutePage()
 class TreePage extends StatelessWidget {
-  /// @nodoc
   const TreePage({
-    Key? key,
     @PathParam('id') required this.uid,
+    super.key,
     this.tree,
-  }) : super(key: key);
+  });
 
   /// nodoc
   final String uid;
 
-  /// @nodoc
   final Tree? tree;
 
   @override
@@ -57,7 +55,7 @@ class TreePage extends StatelessWidget {
                       Icons.keyboard_backspace_outlined,
                       color: Colors.black,
                     ),
-                    onPressed: context.router.root.pop,
+                    onPressed: context.router.pop,
                     splashColor: Colors.transparent,
                   ),
                 )

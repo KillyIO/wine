@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/settings/settings_account/settings_account_layout.dart';
-import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/icons.dart';
 
-/// @nodoc
+@RoutePage()
 class SettingsAccountPage extends StatelessWidget {
-  /// @nodoc
-  const SettingsAccountPage({Key? key}) : super(key: key);
+  const SettingsAccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {

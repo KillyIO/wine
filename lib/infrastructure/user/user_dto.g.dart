@@ -6,18 +6,32 @@ part of 'user_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserDTO _$$_UserDTOFromJson(Map<String, dynamic> json) => _$_UserDTO(
+_$UserDTOImpl _$$UserDTOImplFromJson(Map<String, dynamic> json) =>
+    _$UserDTOImpl(
       emailAddress: json['emailAddress'] as String,
       uid: json['uid'] as String,
-      updatedAt: const ServerTimestampConverter()
-          .fromJson(json['updatedAt'] as Object),
+      updatedAt: _$JsonConverterFromJson<Object, FieldValue>(
+          json['updatedAt'], const ServerTimestampConverter().fromJson),
       username: json['username'] as String,
     );
 
-Map<String, dynamic> _$$_UserDTOToJson(_$_UserDTO instance) =>
+Map<String, dynamic> _$$UserDTOImplToJson(_$UserDTOImpl instance) =>
     <String, dynamic>{
       'emailAddress': instance.emailAddress,
       'uid': instance.uid,
-      'updatedAt': const ServerTimestampConverter().toJson(instance.updatedAt),
+      'updatedAt': _$JsonConverterToJson<Object, FieldValue>(
+          instance.updatedAt, const ServerTimestampConverter().toJson),
       'username': instance.username,
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

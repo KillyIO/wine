@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:path/path.dart' as p;
@@ -12,16 +13,14 @@ import 'package:wine/domain/tree/i_tree_repository.dart';
 import 'package:wine/domain/tree/tree.dart';
 import 'package:wine/domain/tree/tree_failure.dart';
 import 'package:wine/infrastructure/tree/tree_dto.dart';
-import 'package:wine/utils/paths/storage.dart';
-import 'package:wine/utils/paths/tree.dart';
+import 'package:wine/utils/constants/paths/storage.dart';
+import 'package:wine/utils/constants/paths/tree.dart';
 
-/// @nodoc
 @LazySingleton(
   as: ITreeRepository,
   env: [Environment.dev, Environment.prod],
 )
 class TreeRepository implements ITreeRepository {
-  /// @nodoc
   TreeRepository(this._firestore, this._firebaseStorage);
 
   final FirebaseFirestore _firestore;
@@ -52,11 +51,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(tmpTree);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -65,14 +64,14 @@ class TreeRepository implements ITreeRepository {
     try {
       await _firestore.collection(treesPath).doc(uid.getOrCrash()).delete();
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -84,27 +83,28 @@ class TreeRepository implements ITreeRepository {
     try {
       final documentSnapshot = await _firestore
           .collection(treesBookmarksPath)
-          .doc(treeUID.getOrCrash())
+          .where('treeUID', isEqualTo: treeUID.getOrCrash())
+          .where('userUID', isEqualTo: userUID.getOrCrash())
           .get();
 
-      if (!documentSnapshot.exists) {
-        return Ok(false);
+      if (documentSnapshot.docs.isEmpty) {
+        return const Ok(false);
       }
 
-      final data = documentSnapshot.data();
+      final data = documentSnapshot.docs.firstOrNull?.data();
       if (data != null) {
-        final isBookmarked = data[userUID.getOrCrash()] as bool;
+        final isBookmarked = data['bookmarked'] as bool;
 
         return Ok(isBookmarked);
       }
-      return Ok(false);
+      return const Ok(false);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -116,27 +116,28 @@ class TreeRepository implements ITreeRepository {
     try {
       final documentSnapshot = await _firestore
           .collection(treesLikesPath)
-          .doc(treeUID.getOrCrash())
+          .where('treeUID', isEqualTo: treeUID.getOrCrash())
+          .where('userUID', isEqualTo: userUID.getOrCrash())
           .get();
 
-      if (!documentSnapshot.exists) {
-        return Ok(false);
+      if (documentSnapshot.docs.isEmpty) {
+        return const Ok(false);
       }
 
-      final data = documentSnapshot.data();
+      final data = documentSnapshot.docs.firstOrNull?.data();
       if (data != null) {
-        final isLiked = data[userUID.getOrCrash()] as bool;
+        final isLiked = data['liked'] as bool;
 
         return Ok(isLiked);
       }
-      return Ok(false);
+      return const Ok(false);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -192,11 +193,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(trees);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -210,14 +211,14 @@ class TreeRepository implements ITreeRepository {
         final tree = TreeDTO.fromJson(snapshot.data()!).toDomain();
         return Ok(tree);
       }
-      return Err(const TreeFailure.treeNotFound());
+      return const Err(TreeFailure.treeNotFound());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -262,11 +263,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(trees);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -294,11 +295,11 @@ class TreeRepository implements ITreeRepository {
       return Ok(tmpTree);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -310,18 +311,17 @@ class TreeRepository implements ITreeRepository {
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userUID register inside tree_bookmarks collection
-        final treeBookmarksReference =
-            _firestore.collection(treesBookmarksPath).doc(treeUID.getOrCrash());
+        final treeBookmarksQuery = await _firestore
+            .collection(treesBookmarksPath)
+            .where('treeUID', isEqualTo: treeUID.getOrCrash())
+            .where('userUID', isEqualTo: userUID.getOrCrash())
+            .get();
 
-        final sbrSnapshot = await transaction.get(treeBookmarksReference);
-        final dbIsBookmarked =
-            sbrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
+        final dbIsBookmarked = treeBookmarksQuery.docs.firstOrNull
+                ?.data()['bookmarked'] as bool? ??
+            false;
 
         if (isBookmarked != dbIsBookmarked) {
-          // Update tree bokmarks count
-          // TODO(SSebigo): make sure firebase rules
-          // match to prevent fraudulent updates
           final treeReference =
               _firestore.collection(treesPath).doc(treeUID.getOrCrash());
 
@@ -330,9 +330,12 @@ class TreeRepository implements ITreeRepository {
 
           transaction
             ..set(
-              treeBookmarksReference,
+              treeBookmarksQuery.docs.firstOrNull?.reference ??
+                  _firestore.collection(treesViewsPath).doc(),
               <String, dynamic>{
-                userUID.getOrCrash(): isBookmarked,
+                'treeUID': treeUID.getOrCrash(),
+                'userUID': userUID.getOrCrash(),
+                'bookmarked': isBookmarked,
               },
               SetOptions(merge: true),
             )
@@ -343,14 +346,14 @@ class TreeRepository implements ITreeRepository {
         }
       });
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (e) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -362,18 +365,16 @@ class TreeRepository implements ITreeRepository {
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
-        // Check userUID register inside tree_likes collection
-        final treeLikesReference =
-            _firestore.collection(treesLikesPath).doc(treeUID.getOrCrash());
+        final treeLikesQuery = await _firestore
+            .collection(treesLikesPath)
+            .where('treeUID', isEqualTo: treeUID.getOrCrash())
+            .where('userUID', isEqualTo: userUID.getOrCrash())
+            .get();
 
-        final slrSnapshot = await transaction.get(treeLikesReference);
         final dbIsLiked =
-            slrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
+            treeLikesQuery.docs.firstOrNull?.data()['liked'] as bool? ?? false;
 
         if (isLiked != dbIsLiked) {
-          // Update tree likes count
-          // TODO(SSebigo): make sure firebase rules
-          // match to prevent fraudulent updates
           final treeReference =
               _firestore.collection(treesPath).doc(treeUID.getOrCrash());
 
@@ -382,9 +383,12 @@ class TreeRepository implements ITreeRepository {
 
           transaction
             ..set(
-              treeLikesReference,
+              treeLikesQuery.docs.firstOrNull?.reference ??
+                  _firestore.collection(treesViewsPath).doc(),
               <String, dynamic>{
-                userUID.getOrCrash(): isLiked,
+                'treeUID': treeUID.getOrCrash(),
+                'userUID': userUID.getOrCrash(),
+                'liked': isLiked,
               },
               SetOptions(merge: true),
             )
@@ -394,14 +398,14 @@ class TreeRepository implements ITreeRepository {
         }
       });
 
-      return Ok(unit);
+      return const Ok(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (e) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -412,18 +416,16 @@ class TreeRepository implements ITreeRepository {
   ) async {
     try {
       final result = await _firestore.runTransaction((transaction) async {
-        // Check userUID register inside tree_views collection
-        final treeViewsReference =
-            _firestore.collection(treesViewsPath).doc(treeUID.getOrCrash());
+        final treeViewsQuery = await _firestore
+            .collection(treesViewsPath)
+            .where('treeUID', isEqualTo: treeUID.getOrCrash())
+            .where('userUID', isEqualTo: userUID.getOrCrash())
+            .get();
 
-        final svrSnapshot = await transaction.get(treeViewsReference);
         final viewed =
-            svrSnapshot.data()?[userUID.getOrCrash()] as bool? ?? false;
+            treeViewsQuery.docs.firstOrNull?.data()['viewed'] as bool? ?? false;
 
         if (!viewed) {
-          // Update tree views count
-          // TODO(SSebigo): make sure firebase rules
-          // match to prevent fraudulent updates
           final treeReference =
               _firestore.collection(treesPath).doc(treeUID.getOrCrash());
 
@@ -432,8 +434,13 @@ class TreeRepository implements ITreeRepository {
 
           transaction
             ..set(
-              treeViewsReference,
-              <String, dynamic>{userUID.getOrCrash(): true},
+              treeViewsQuery.docs.firstOrNull?.reference ??
+                  _firestore.collection(treesViewsPath).doc(),
+              <String, dynamic>{
+                'treeUID': treeUID.getOrCrash(),
+                'userUID': userUID.getOrCrash(),
+                'viewed': true,
+              },
               SetOptions(merge: true),
             )
             ..update(treeReference, <String, dynamic>{
@@ -446,11 +453,12 @@ class TreeRepository implements ITreeRepository {
       return Ok(result);
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
-    } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.serverError());
+    } catch (e) {
+      debugPrint('error: $e');
+      return const Err(TreeFailure.unexpected());
     }
   }
 
@@ -461,21 +469,21 @@ class TreeRepository implements ITreeRepository {
       final ref = _firebaseStorage.ref().child(
             '$treeCoversPath/${DateTime.now().millisecondsSinceEpoch}-$fileName',
           );
-      final uploadTask = await ref.putFile(cover);
-      final state = uploadTask.state;
+      final uploadTask = ref.putFile(cover);
+      final state = uploadTask.snapshot.state;
 
       if (state == TaskState.success) {
         final url = await ref.getDownloadURL();
         return Ok(url);
       }
-      return Err(const TreeFailure.coverNotUploaded());
+      return const Err(TreeFailure.coverNotUploaded());
     } on FirebaseException catch (e) {
       if (e.code == 'permission-denied') {
-        return Err(const TreeFailure.permissionDenied());
+        return const Err(TreeFailure.permissionDenied());
       }
-      return Err(const TreeFailure.serverError());
+      return const Err(TreeFailure.serverError());
     } catch (_) {
-      return Err(const TreeFailure.unexpected());
+      return const Err(TreeFailure.unexpected());
     }
   }
 }

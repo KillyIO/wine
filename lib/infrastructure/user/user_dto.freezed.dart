@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user_dto.dart';
 
@@ -12,43 +12,18 @@ part of 'user_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UserDTO _$UserDTOFromJson(Map<String, dynamic> json) {
   return _UserDTO.fromJson(json);
 }
 
 /// @nodoc
-class _$UserDTOTearOff {
-  const _$UserDTOTearOff();
-
-  _UserDTO call(
-      {required String emailAddress,
-      required String uid,
-      @ServerTimestampConverter() required FieldValue updatedAt,
-      required String username}) {
-    return _UserDTO(
-      emailAddress: emailAddress,
-      uid: uid,
-      updatedAt: updatedAt,
-      username: username,
-    );
-  }
-
-  UserDTO fromJson(Map<String, Object?> json) {
-    return UserDTO.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UserDTO = _$UserDTOTearOff();
-
-/// @nodoc
 mixin _$UserDTO {
   String get emailAddress => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  FieldValue get updatedAt => throw _privateConstructorUsedError;
+  FieldValue? get updatedAt => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -59,92 +34,98 @@ mixin _$UserDTO {
 /// @nodoc
 abstract class $UserDTOCopyWith<$Res> {
   factory $UserDTOCopyWith(UserDTO value, $Res Function(UserDTO) then) =
-      _$UserDTOCopyWithImpl<$Res>;
+      _$UserDTOCopyWithImpl<$Res, UserDTO>;
+  @useResult
   $Res call(
       {String emailAddress,
       String uid,
-      @ServerTimestampConverter() FieldValue updatedAt,
+      @ServerTimestampConverter() FieldValue? updatedAt,
       String username});
 }
 
 /// @nodoc
-class _$UserDTOCopyWithImpl<$Res> implements $UserDTOCopyWith<$Res> {
+class _$UserDTOCopyWithImpl<$Res, $Val extends UserDTO>
+    implements $UserDTOCopyWith<$Res> {
   _$UserDTOCopyWithImpl(this._value, this._then);
 
-  final UserDTO _value;
   // ignore: unused_field
-  final $Res Function(UserDTO) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailAddress = freezed,
-    Object? uid = freezed,
+    Object? emailAddress = null,
+    Object? uid = null,
     Object? updatedAt = freezed,
-    Object? username = freezed,
+    Object? username = null,
   }) {
     return _then(_value.copyWith(
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
-      username: username == freezed
+              as FieldValue?,
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$UserDTOCopyWith<$Res> implements $UserDTOCopyWith<$Res> {
-  factory _$UserDTOCopyWith(_UserDTO value, $Res Function(_UserDTO) then) =
-      __$UserDTOCopyWithImpl<$Res>;
+abstract class _$$UserDTOImplCopyWith<$Res> implements $UserDTOCopyWith<$Res> {
+  factory _$$UserDTOImplCopyWith(
+          _$UserDTOImpl value, $Res Function(_$UserDTOImpl) then) =
+      __$$UserDTOImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String emailAddress,
       String uid,
-      @ServerTimestampConverter() FieldValue updatedAt,
+      @ServerTimestampConverter() FieldValue? updatedAt,
       String username});
 }
 
 /// @nodoc
-class __$UserDTOCopyWithImpl<$Res> extends _$UserDTOCopyWithImpl<$Res>
-    implements _$UserDTOCopyWith<$Res> {
-  __$UserDTOCopyWithImpl(_UserDTO _value, $Res Function(_UserDTO) _then)
-      : super(_value, (v) => _then(v as _UserDTO));
+class __$$UserDTOImplCopyWithImpl<$Res>
+    extends _$UserDTOCopyWithImpl<$Res, _$UserDTOImpl>
+    implements _$$UserDTOImplCopyWith<$Res> {
+  __$$UserDTOImplCopyWithImpl(
+      _$UserDTOImpl _value, $Res Function(_$UserDTOImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _UserDTO get _value => super._value as _UserDTO;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? emailAddress = freezed,
-    Object? uid = freezed,
+    Object? emailAddress = null,
+    Object? uid = null,
     Object? updatedAt = freezed,
-    Object? username = freezed,
+    Object? username = null,
   }) {
-    return _then(_UserDTO(
-      emailAddress: emailAddress == freezed
+    return _then(_$UserDTOImpl(
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as String,
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
-      username: username == freezed
+              as FieldValue?,
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
@@ -154,15 +135,15 @@ class __$UserDTOCopyWithImpl<$Res> extends _$UserDTOCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserDTO implements _UserDTO {
-  _$_UserDTO(
+class _$UserDTOImpl implements _UserDTO {
+  _$UserDTOImpl(
       {required this.emailAddress,
       required this.uid,
-      @ServerTimestampConverter() required this.updatedAt,
+      @ServerTimestampConverter() this.updatedAt,
       required this.username});
 
-  factory _$_UserDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_UserDTOFromJson(json);
+  factory _$UserDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserDTOImplFromJson(json);
 
   @override
   final String emailAddress;
@@ -170,7 +151,7 @@ class _$_UserDTO implements _UserDTO {
   final String uid;
   @override
   @ServerTimestampConverter()
-  final FieldValue updatedAt;
+  final FieldValue? updatedAt;
   @override
   final String username;
 
@@ -180,44 +161,46 @@ class _$_UserDTO implements _UserDTO {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UserDTO &&
-            const DeepCollectionEquality()
-                .equals(other.emailAddress, emailAddress) &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality().equals(other.username, username));
+            other is _$UserDTOImpl &&
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.username, username) ||
+                other.username == username));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(emailAddress),
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(username));
 
   @JsonKey(ignore: true)
   @override
-  _$UserDTOCopyWith<_UserDTO> get copyWith =>
-      __$UserDTOCopyWithImpl<_UserDTO>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, emailAddress, uid, updatedAt, username);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserDTOImplCopyWith<_$UserDTOImpl> get copyWith =>
+      __$$UserDTOImplCopyWithImpl<_$UserDTOImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserDTOToJson(this);
+    return _$$UserDTOImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _UserDTO implements UserDTO {
   factory _UserDTO(
-      {required String emailAddress,
-      required String uid,
-      @ServerTimestampConverter() required FieldValue updatedAt,
-      required String username}) = _$_UserDTO;
+      {required final String emailAddress,
+      required final String uid,
+      @ServerTimestampConverter() final FieldValue? updatedAt,
+      required final String username}) = _$UserDTOImpl;
 
-  factory _UserDTO.fromJson(Map<String, dynamic> json) = _$_UserDTO.fromJson;
+  factory _UserDTO.fromJson(Map<String, dynamic> json) = _$UserDTOImpl.fromJson;
 
   @override
   String get emailAddress;
@@ -225,11 +208,11 @@ abstract class _UserDTO implements UserDTO {
   String get uid;
   @override
   @ServerTimestampConverter()
-  FieldValue get updatedAt;
+  FieldValue? get updatedAt;
   @override
   String get username;
   @override
   @JsonKey(ignore: true)
-  _$UserDTOCopyWith<_UserDTO> get copyWith =>
+  _$$UserDTOImplCopyWith<_$UserDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

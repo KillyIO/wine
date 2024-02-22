@@ -5,10 +5,9 @@ import 'package:wine/application/settings/settings_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
-/// @nodoc
+@RoutePage(name: 'SettingsWrapperRoute')
 class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
-  /// @nodoc
-  const SettingsWrapper({Key? key}) : super(key: key);
+  const SettingsWrapper({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-/// @nodoc#
 double getDialogButtonFontSize(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -11,7 +10,6 @@ double getDialogButtonFontSize(Size size) {
   return 22.5;
 }
 
-/// @nodoc#
 double getDialogButtonHeight(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -21,7 +19,6 @@ double getDialogButtonHeight(Size size) {
   return 50;
 }
 
-/// @nodoc#
 double getDialogIconSize(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -31,7 +28,6 @@ double getDialogIconSize(Size size) {
   return 75;
 }
 
-/// @nodoc#
 EdgeInsets getDialogIconPadding(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -41,7 +37,6 @@ EdgeInsets getDialogIconPadding(Size size) {
   return const EdgeInsets.symmetric(vertical: 15);
 }
 
-/// @nodoc
 double getDialogMessageFontSize(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -51,7 +46,6 @@ double getDialogMessageFontSize(Size size) {
   return 18.5;
 }
 
-/// @nodoc
 EdgeInsets getDialogMessagePadding(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -71,7 +65,6 @@ EdgeInsets getDialogMessagePadding(Size size) {
   );
 }
 
-/// @nodoc
 double getDialogTitleFontSize(Size size) {
   final deviceType = getDeviceType(size);
 
@@ -81,15 +74,12 @@ double getDialogTitleFontSize(Size size) {
   return 20;
 }
 
-/// @nodoc
 double getDialogWidth(Size size) {
   final deviceType = getDeviceType(size);
 
-  switch (deviceType) {
-    case DeviceScreenType.desktop:
-      return 500;
-    case DeviceScreenType.tablet:
-      return 350;
-  }
-  return 300;
+  return switch (deviceType) {
+    DeviceScreenType.desktop => 500,
+    DeviceScreenType.tablet => 350,
+    _ => 300,
+  };
 }

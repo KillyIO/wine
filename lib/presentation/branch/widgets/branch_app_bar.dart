@@ -6,10 +6,8 @@ import 'package:wine/application/branch/branch_bloc.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
-/// @nodoc
 class BranchAppBar extends StatelessWidget {
-  /// @nodoc
-  const BranchAppBar({Key? key}) : super(key: key);
+  const BranchAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +39,7 @@ class BranchAppBar extends StatelessWidget {
                           Icons.keyboard_backspace_outlined,
                           color: Colors.black,
                         ),
-                        onPressed: context.router.root.pop,
+                        onPressed: context.router.pop,
                         splashColor: Colors.transparent,
                       ),
                     )

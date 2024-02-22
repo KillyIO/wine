@@ -5,10 +5,8 @@ import 'package:wine/presentation/tree/widgets/tree_author_username.dart';
 import 'package:wine/presentation/tree/widgets/tree_cover.dart';
 import 'package:wine/presentation/tree/widgets/tree_title.dart';
 
-/// @nodoc
 class TreeDetails extends StatelessWidget {
-  /// @nodoc
-  const TreeDetails({Key? key}) : super(key: key);
+  const TreeDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +49,9 @@ class TreeDetails extends StatelessWidget {
                       child: BlocBuilder<TreeBloc, TreeState>(
                         builder: (context, state) {
                           return TreeAuthorUsername(
-                            authorUsername: state.author.username.getOrNull() ??
-                                state.session.username.getOrNull(),
+                            authorUsername:
+                                state.author?.username.getOrNull() ??
+                                    state.session?.username.getOrNull(),
                           );
                         },
                       ),

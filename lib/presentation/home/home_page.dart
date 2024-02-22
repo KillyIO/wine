@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,10 +6,9 @@ import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/home_layout.dart';
 
-/// @nodoc
+@RoutePage()
 class HomePage extends StatelessWidget {
-  /// @nodoc
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

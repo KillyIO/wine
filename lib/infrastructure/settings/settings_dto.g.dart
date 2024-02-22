@@ -6,8 +6,8 @@ part of 'settings_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SettingsDTO _$$_SettingsDTOFromJson(Map<String, dynamic> json) =>
-    _$_SettingsDTO(
+_$SettingsDTOImpl _$$SettingsDTOImplFromJson(Map<String, dynamic> json) =>
+    _$SettingsDTOImpl(
       enableBranchesBookmarksCount:
           json['enableBranchesBookmarksCount'] as bool?,
       enableBranchesLikesCount: json['enableBranchesLikesCount'] as bool?,
@@ -15,10 +15,9 @@ _$_SettingsDTO _$$_SettingsDTOFromJson(Map<String, dynamic> json) =>
       enableTreesBookmarksCount: json['enableTreesBookmarksCount'] as bool?,
       enableTreesLikesCount: json['enableTreesLikesCount'] as bool?,
       enableTreesViewsCount: json['enableTreesViewsCount'] as bool?,
-      uid: json['uid'] as String?,
     );
 
-Map<String, dynamic> _$$_SettingsDTOToJson(_$_SettingsDTO instance) =>
+Map<String, dynamic> _$$SettingsDTOImplToJson(_$SettingsDTOImpl instance) =>
     <String, dynamic>{
       'enableBranchesBookmarksCount': instance.enableBranchesBookmarksCount,
       'enableBranchesLikesCount': instance.enableBranchesLikesCount,
@@ -26,5 +25,4 @@ Map<String, dynamic> _$$_SettingsDTOToJson(_$_SettingsDTO instance) =>
       'enableTreesBookmarksCount': instance.enableTreesBookmarksCount,
       'enableTreesLikesCount': instance.enableTreesLikesCount,
       'enableTreesViewsCount': instance.enableTreesViewsCount,
-      'uid': instance.uid,
     };

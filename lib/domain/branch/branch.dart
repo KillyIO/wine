@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/domain/branch/leaf.dart';
 import 'package:wine/domain/branch/licence.dart';
+import 'package:wine/domain/branch/licence_type.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
@@ -9,10 +10,8 @@ import 'package:wine/domain/core/unique_id.dart';
 
 part 'branch.freezed.dart';
 
-/// @nodoc
 @freezed
 class Branch with _$Branch {
-  /// @nodoc
   factory Branch({
     required UniqueID authorUID,
     required int bookmarksCount,
@@ -32,7 +31,6 @@ class Branch with _$Branch {
     required int viewsCount,
   }) = _Branch;
 
-  /// @nodoc
   factory Branch.empty() => Branch(
         authorUID: UniqueID(),
         bookmarksCount: 0,
@@ -43,7 +41,7 @@ class Branch with _$Branch {
         isPublished: false,
         language: Language(''),
         leaf: Leaf('', const <dynamic>[]),
-        licence: Licence(''),
+        licence: Licence(LicenceType.unknown),
         likesCount: 0,
         previousBranchUID: UniqueID(),
         title: Title(''),

@@ -1,9 +1,7 @@
 part of 'settings_bloc.dart';
 
-/// @nodoc
 @freezed
 class SettingsState with _$SettingsState {
-  /// @nodoc
   const factory SettingsState({
     required Option<Result<None, CoreFailure>> failureOption,
     required bool isLoggedOut,
@@ -12,19 +10,11 @@ class SettingsState with _$SettingsState {
     required String username,
   }) = _SettingsState;
 
-  /// @nodoc
-  factory SettingsState.initial() => const SettingsState(
-        failureOption: None(),
+  factory SettingsState.initial() => SettingsState(
+        failureOption: const None(),
         isLoggedOut: false,
         isProcessing: false,
-        settings: Settings(
-          enableBranchesBookmarksCount: false,
-          enableBranchesLikesCount: false,
-          enableBranchesViewsCount: false,
-          enableTreesBookmarksCount: false,
-          enableTreesLikesCount: false,
-          enableTreesViewsCount: false,
-        ),
+        settings: Settings.empty(),
         username: '',
       );
 }

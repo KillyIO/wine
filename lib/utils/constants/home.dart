@@ -1,12 +1,10 @@
 import 'package:time/time.dart';
 
-/// @nodoc
 const List<String> homePageViewKeys = <String>[
   'topTrees',
   'newTrees',
 ];
 
-/// @nodoc
 const List<String> timeFilterKeys = <String>[
   'today',
   'week',
@@ -15,7 +13,6 @@ const List<String> timeFilterKeys = <String>[
   'all',
 ];
 
-/// @nodoc
 Map<String, int> timeFiltersTimestamps = <String, int>{
   timeFilterKeys.first: (DateTime.now() - 1.days).millisecondsSinceEpoch,
   timeFilterKeys[1]: (DateTime.now() - 1.weeks).millisecondsSinceEpoch,
