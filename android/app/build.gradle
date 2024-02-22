@@ -83,17 +83,17 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ""
-            manifestPlaceholders = [appName: "Wine"]
+            manifestPlaceholders = [appName: "Forktale"]
         }
         staging {
             dimension "default"
             applicationIdSuffix ".stg"
-            manifestPlaceholders = [appName: "[STG] Wine"]
+            manifestPlaceholders = [appName: "[STG] Forktale"]
         }
         development {
             dimension "default"
             applicationIdSuffix ".dev"
-            manifestPlaceholders = [appName: "[DEV] Wine"]
+            manifestPlaceholders = [appName: "[DEV] Forktale"]
         }
     }
 

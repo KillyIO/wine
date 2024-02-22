@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
@@ -342,6 +343,8 @@ class TreeBloc extends Bloc<TreeEvent, TreeState> {
 
   FutureOr<void> _updateTreeViews(Emitter<TreeState> emit) async {
     final session = state.session;
+
+    debugPrint('session: $session');
 
     if (session != null) {
       (await _treeRepository.updateTreeViews(session.uid, state.tree.uid))

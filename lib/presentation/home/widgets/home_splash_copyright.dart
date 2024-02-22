@@ -25,7 +25,7 @@ class HomeSplashCopyright extends StatelessWidget {
           ),
         ),
         const Text(
-          'KILLY.IO | WINE',
+          'WHISPERING STARS | FORKTALE',
           style: TextStyle(
             color: Colors.black,
             fontSize: 9,

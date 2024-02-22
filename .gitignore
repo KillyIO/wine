@@ -114,3 +114,5 @@ app.*.map.json
 **/lib/development_firebase_options.dart
 **/lib/production_firebase_options.dart
 **/lib/staging_firebase_options.dart
+
+.fvm/flutter_sdk
