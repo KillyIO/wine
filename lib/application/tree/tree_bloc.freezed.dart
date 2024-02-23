@@ -180,7 +180,9 @@ class __$$LaunchWithUIDImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LaunchWithUIDImpl implements LaunchWithUID {
+class _$LaunchWithUIDImpl
+    with DiagnosticableTreeMixin
+    implements LaunchWithUID {
   const _$LaunchWithUIDImpl(this.uid, {this.tree});
 
   @override
@@ -189,8 +191,17 @@ class _$LaunchWithUIDImpl implements LaunchWithUID {
   final Tree? tree;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.launchWithUID(uid: $uid, tree: $tree)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TreeEvent.launchWithUID'))
+      ..add(DiagnosticsProperty('uid', uid))
+      ..add(DiagnosticsProperty('tree', tree));
   }
 
   @override
@@ -358,12 +369,18 @@ class __$$TreeSetImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TreeSetImpl implements TreeSet {
+class _$TreeSetImpl with DiagnosticableTreeMixin implements TreeSet {
   const _$TreeSetImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.treeSet()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TreeEvent.treeSet'));
   }
 
   @override
@@ -515,12 +532,20 @@ class __$$SessionFetchedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SessionFetchedImpl implements SessionFetched {
+class _$SessionFetchedImpl
+    with DiagnosticableTreeMixin
+    implements SessionFetched {
   const _$SessionFetchedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.sessionFetched()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TreeEvent.sessionFetched'));
   }
 
   @override
@@ -672,12 +697,18 @@ class __$$AuthorLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AuthorLoadedImpl implements AuthorLoaded {
+class _$AuthorLoadedImpl with DiagnosticableTreeMixin implements AuthorLoaded {
   const _$AuthorLoadedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.authorLoaded()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TreeEvent.authorLoaded'));
   }
 
   @override
@@ -829,12 +860,20 @@ class __$$SettingsFetchedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SettingsFetchedImpl implements SettingsFetched {
+class _$SettingsFetchedImpl
+    with DiagnosticableTreeMixin
+    implements SettingsFetched {
   const _$SettingsFetchedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.settingsFetched()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TreeEvent.settingsFetched'));
   }
 
   @override
@@ -986,12 +1025,20 @@ class __$$BranchOneLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BranchOneLoadedImpl implements BranchOneLoaded {
+class _$BranchOneLoadedImpl
+    with DiagnosticableTreeMixin
+    implements BranchOneLoaded {
   const _$BranchOneLoadedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.branchOneLoaded()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TreeEvent.branchOneLoaded'));
   }
 
   @override
@@ -1143,12 +1190,18 @@ class __$$ViewsUpdatedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ViewsUpdatedImpl implements ViewsUpdated {
+class _$ViewsUpdatedImpl with DiagnosticableTreeMixin implements ViewsUpdated {
   const _$ViewsUpdatedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.viewsUpdated()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TreeEvent.viewsUpdated'));
   }
 
   @override
@@ -1300,12 +1353,20 @@ class __$$LikeStatusLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LikeStatusLoadedImpl implements LikeStatusLoaded {
+class _$LikeStatusLoadedImpl
+    with DiagnosticableTreeMixin
+    implements LikeStatusLoaded {
   const _$LikeStatusLoadedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.likeStatusLoaded()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TreeEvent.likeStatusLoaded'));
   }
 
   @override
@@ -1457,12 +1518,20 @@ class __$$BranchOneNotFoundImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BranchOneNotFoundImpl implements BranchOneNotFound {
+class _$BranchOneNotFoundImpl
+    with DiagnosticableTreeMixin
+    implements BranchOneNotFound {
   const _$BranchOneNotFoundImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.branchOneNotFound()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TreeEvent.branchOneNotFound'));
   }
 
   @override
@@ -1630,15 +1699,25 @@ class __$$BookmarkButtonPressedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BookmarkButtonPressedImpl implements BookmarkButtonPressed {
+class _$BookmarkButtonPressedImpl
+    with DiagnosticableTreeMixin
+    implements BookmarkButtonPressed {
   const _$BookmarkButtonPressedImpl({required this.isBookmarked});
 
   @override
   final bool isBookmarked;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.bookmarkButtonPressed(isBookmarked: $isBookmarked)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TreeEvent.bookmarkButtonPressed'))
+      ..add(DiagnosticsProperty('isBookmarked', isBookmarked));
   }
 
   @override
@@ -1821,15 +1900,25 @@ class __$$LikeButtonPressedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LikeButtonPressedImpl implements LikeButtonPressed {
+class _$LikeButtonPressedImpl
+    with DiagnosticableTreeMixin
+    implements LikeButtonPressed {
   const _$LikeButtonPressedImpl({required this.isLiked});
 
   @override
   final bool isLiked;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeEvent.likeButtonPressed(isLiked: $isLiked)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TreeEvent.likeButtonPressed'))
+      ..add(DiagnosticsProperty('isLiked', isLiked));
   }
 
   @override
@@ -2271,7 +2360,7 @@ class __$$TreeStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TreeStateImpl implements _TreeState {
+class _$TreeStateImpl with DiagnosticableTreeMixin implements _TreeState {
   const _$TreeStateImpl(
       {required this.authorIsUser,
       required this.author,
@@ -2309,8 +2398,26 @@ class _$TreeStateImpl implements _TreeState {
   final User? session;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TreeState(authorIsUser: $authorIsUser, author: $author, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, settings: $settings, tree: $tree, branchOne: $branchOne, branchResume: $branchResume, session: $session)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TreeState'))
+      ..add(DiagnosticsProperty('authorIsUser', authorIsUser))
+      ..add(DiagnosticsProperty('author', author))
+      ..add(DiagnosticsProperty('failureOption', failureOption))
+      ..add(DiagnosticsProperty('isBookmarked', isBookmarked))
+      ..add(DiagnosticsProperty('isLiked', isLiked))
+      ..add(DiagnosticsProperty('isProcessing', isProcessing))
+      ..add(DiagnosticsProperty('settings', settings))
+      ..add(DiagnosticsProperty('tree', tree))
+      ..add(DiagnosticsProperty('branchOne', branchOne))
+      ..add(DiagnosticsProperty('branchResume', branchResume))
+      ..add(DiagnosticsProperty('session', session));
   }
 
   @override

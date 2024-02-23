@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stringr/stringr.dart';
 import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/l10n/l10n.dart';
 import 'package:wine/presentation/home/widgets/home_filter_button.dart';
 
 import 'package:wine/utils/constants/core.dart';
@@ -65,7 +67,7 @@ class HomeFiltersMenuLayout extends StatelessWidget {
                             (e) => HomeFilterButton(
                               isActive: e == state.timeFilterKey,
                               onPressed: () {},
-                              title: e,
+                              title: context.getTranslation(e).capitalize(),
                             ),
                           )
                           .toList(),
@@ -89,7 +91,7 @@ class HomeFiltersMenuLayout extends StatelessWidget {
                             (e) => HomeFilterButton(
                               isActive: e == state.genreFilterKey,
                               onPressed: () {},
-                              title: e,
+                              title: context.getTranslation(e).capitalize(),
                             ),
                           )
                           .toList(),
@@ -113,7 +115,7 @@ class HomeFiltersMenuLayout extends StatelessWidget {
                             (e) => HomeFilterButton(
                               isActive: e == state.languageFilterKey,
                               onPressed: () {},
-                              title: e,
+                              title: context.getTranslation(e),
                             ),
                           )
                           .toList(),

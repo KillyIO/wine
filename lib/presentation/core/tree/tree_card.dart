@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
+import 'package:wine/l10n/l10n.dart';
 
 class TreeCard extends StatelessWidget {
   const TreeCard({
@@ -76,7 +77,9 @@ class TreeCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 7.5, right: 7.5, bottom: 5),
             child: Text(
-              language ?? 'No language*',
+              language != null
+                  ? context.getTranslation(language!)
+                  : 'No language*',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(

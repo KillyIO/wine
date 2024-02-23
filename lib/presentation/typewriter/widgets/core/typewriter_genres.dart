@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wine/l10n/l10n.dart';
 
 class TypewriterGenres extends StatelessWidget {
   const TypewriterGenres({
@@ -26,7 +27,7 @@ class TypewriterGenres extends StatelessWidget {
               ),
               child: ListTile(
                 title: Text(
-                  genre,
+                  context.getTranslation(genre),
                   style: const TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w300,

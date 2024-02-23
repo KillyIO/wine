@@ -1,7 +1,30 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+    "en": "English",
+    "fr": "French",
+    "topTrees": "Top trees",
+    "newTrees": "New trees",
+    "myTrees": "My trees",
+    "myBranches": "My branches",
+    "today": "today",
+    "week": "this week",
+    "month": "this month",
+    "year": "this year",
+    "all": "all periods combined",
+    "action": "Action",
+    "adventure": "Adventure",
+    "biography": "Biography",
+    "comedy": "Comedy",
+    "erotica": "Erotica",
+    "fantasy": "Fantasy",
+    "historical": "Historical",
+    "horror": "Horror",
+    "mystery": "Mystery",
+    "romance": "Romance",
+    "scifi": "Sci-fi",
+    "thriller": "Thriller",
+    "published": "Published",
+    "drafts": "Drafts",
+    "bookmarked": "Bookmarked",
+    "unknown": "Translation not found"
 }

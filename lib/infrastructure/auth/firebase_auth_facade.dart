@@ -72,8 +72,15 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Option<User>> getLoggedInUser() async =>
-      Option.from(_firebaseAuth.currentUser?.toDomain());
+  Future<Option<User>> getLoggedInUser() async {
+    final user = _firebaseAuth.currentUser;
+
+    if (user != null) {
+      if (user.isAnonymous) return const None();
+      return Some(user.toDomain());
+    }
+    return const None();
+  }
 
   @override
   bool get isAnonymous {

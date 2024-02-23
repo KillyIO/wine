@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wine/l10n/l10n.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 class TypewriterSelectionDialog extends StatelessWidget {
@@ -75,7 +76,7 @@ class TypewriterSelectionDialog extends StatelessWidget {
                 color: _itemColor(items[i]),
                 child: ListTile(
                   title: Text(
-                    items[i],
+                    context.getTranslation(items[i]),
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: Colors.black,

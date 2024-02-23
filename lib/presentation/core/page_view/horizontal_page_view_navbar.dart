@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:time/time.dart';
+import 'package:wine/l10n/l10n.dart';
 import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar_button.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
@@ -42,7 +43,7 @@ class HorizontalPageViewNavbar extends StatelessWidget {
               curve: Curves.linear,
               duration: 200.milliseconds,
             ),
-            title: value,
+            title: context.getTranslation(value),
           );
         }).toList(),
       ),

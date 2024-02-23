@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
+import 'package:wine/l10n/l10n.dart';
 import 'package:wine/presentation/core/navbars/vertical_navbar_button.dart';
 
 class LibraryVerticalNavbar extends StatelessWidget {
@@ -45,7 +46,7 @@ class LibraryVerticalNavbar extends StatelessWidget {
                             index,
                           ),
                         ),
-                    title: value,
+                    title: context.getTranslation(value),
                     width: width,
                   );
                 },
