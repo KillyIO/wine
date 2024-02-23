@@ -28,7 +28,7 @@ class AppDevelopment extends StatelessWidget {
         builder: (_, router) => Banner(
           color: Colors.green.withOpacity(0.6),
           location: BannerLocation.topStart,
-          message: '[DEV] Wine',
+          message: '[DEV] Forktale',
           textDirection: TextDirection.ltr,
           textStyle: const TextStyle(
             fontWeight: FontWeight.w700,
@@ -41,7 +41,7 @@ class AppDevelopment extends StatelessWidget {
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
         theme: lightTheme,
-        title: '[DEV] Wine',
+        title: '[DEV] Forktale',
       ),
     );
   }

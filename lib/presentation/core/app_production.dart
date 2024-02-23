@@ -31,7 +31,7 @@ class AppProduction extends StatelessWidget {
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
         theme: lightTheme,
-        title: 'Wine',
+        title: 'Forktale',
       ),
     );
   }

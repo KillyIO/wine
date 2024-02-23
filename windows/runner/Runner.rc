@@ -95,7 +95,7 @@ BEGIN
             VALUE "InternalName", "wine" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 io.killy.wine. All rights reserved." "\0"
             VALUE "OriginalFilename", "wine.exe" "\0"
-            VALUE "ProductName", "Wine" "\0"
+            VALUE "ProductName", "Forktale" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
